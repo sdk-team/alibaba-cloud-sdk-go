@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,15 +18,15 @@ package ecs
 
 // HaVip is a nested struct in ecs response
 type HaVip struct {
-	HaVipId                string                 `json:"HaVipId" xml:"HaVipId"`
-	RegionId               string                 `json:"RegionId" xml:"RegionId"`
-	VpcId                  string                 `json:"VpcId" xml:"VpcId"`
-	VSwitchId              string                 `json:"VSwitchId" xml:"VSwitchId"`
-	IpAddress              string                 `json:"IpAddress" xml:"IpAddress"`
-	Status                 string                 `json:"Status" xml:"Status"`
-	MasterInstanceId       string                 `json:"MasterInstanceId" xml:"MasterInstanceId"`
-	Description            string                 `json:"Description" xml:"Description"`
-	CreateTime             string                 `json:"CreateTime" xml:"CreateTime"`
-	AssociatedInstances    AssociatedInstances    `json:"AssociatedInstances" xml:"AssociatedInstances"`
-	AssociatedEipAddresses AssociatedEipAddresses `json:"AssociatedEipAddresses" xml:"AssociatedEipAddresses"`
+            HaVipId     string `json:"HaVipId" xml:"HaVipId"`
+            RegionId     string `json:"RegionId" xml:"RegionId"`
+            VpcId     string `json:"VpcId" xml:"VpcId"`
+            VSwitchId     string `json:"VSwitchId" xml:"VSwitchId"`
+            IpAddress     string `json:"IpAddress" xml:"IpAddress"`
+            Status     string `json:"Status" xml:"Status"`
+            MasterInstanceId     string `json:"MasterInstanceId" xml:"MasterInstanceId"`
+            Description     string `json:"Description" xml:"Description"`
+            CreateTime     string `json:"CreateTime" xml:"CreateTime"`
+                AssociatedInstances AssociatedInstances `json:"AssociatedInstances" xml:"AssociatedInstances"`
+                AssociatedEipAddresses AssociatedEipAddresses `json:"AssociatedEipAddresses" xml:"AssociatedEipAddresses"`
 }

@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // Images is a nested struct in ecs response
 type Images struct {
-	Image []Image `json:"Image" xml:"Image"`
+Image []Image `json:"Image" xml:"Image"`
 }

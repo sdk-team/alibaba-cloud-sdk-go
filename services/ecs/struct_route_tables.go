@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // RouteTables is a nested struct in ecs response
 type RouteTables struct {
-	RouteTable []RouteTable `json:"RouteTable" xml:"RouteTable"`
+RouteTable []RouteTable `json:"RouteTable" xml:"RouteTable"`
 }

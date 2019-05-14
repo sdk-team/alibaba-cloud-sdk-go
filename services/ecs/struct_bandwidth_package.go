@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,19 +18,19 @@ package ecs
 
 // BandwidthPackage is a nested struct in ecs response
 type BandwidthPackage struct {
-	BandwidthPackageId string            `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
-	RegionId           string            `json:"RegionId" xml:"RegionId"`
-	Name               string            `json:"Name" xml:"Name"`
-	Description        string            `json:"Description" xml:"Description"`
-	ZoneId             string            `json:"ZoneId" xml:"ZoneId"`
-	NatGatewayId       string            `json:"NatGatewayId" xml:"NatGatewayId"`
-	Bandwidth          string            `json:"Bandwidth" xml:"Bandwidth"`
-	InstanceChargeType string            `json:"InstanceChargeType" xml:"InstanceChargeType"`
-	InternetChargeType string            `json:"InternetChargeType" xml:"InternetChargeType"`
-	BusinessStatus     string            `json:"BusinessStatus" xml:"BusinessStatus"`
-	IpCount            string            `json:"IpCount" xml:"IpCount"`
-	ISP                string            `json:"ISP" xml:"ISP"`
-	CreationTime       string            `json:"CreationTime" xml:"CreationTime"`
-	Status             string            `json:"Status" xml:"Status"`
-	PublicIpAddresses  PublicIpAddresses `json:"PublicIpAddresses" xml:"PublicIpAddresses"`
+            BandwidthPackageId     string `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
+            RegionId     string `json:"RegionId" xml:"RegionId"`
+            Name     string `json:"Name" xml:"Name"`
+            Description     string `json:"Description" xml:"Description"`
+            ZoneId     string `json:"ZoneId" xml:"ZoneId"`
+            NatGatewayId     string `json:"NatGatewayId" xml:"NatGatewayId"`
+            Bandwidth     string `json:"Bandwidth" xml:"Bandwidth"`
+            InstanceChargeType     string `json:"InstanceChargeType" xml:"InstanceChargeType"`
+            InternetChargeType     string `json:"InternetChargeType" xml:"InternetChargeType"`
+            BusinessStatus     string `json:"BusinessStatus" xml:"BusinessStatus"`
+            IpCount     string `json:"IpCount" xml:"IpCount"`
+            ISP     string `json:"ISP" xml:"ISP"`
+            CreationTime     string `json:"CreationTime" xml:"CreationTime"`
+            Status     string `json:"Status" xml:"Status"`
+                    PublicIpAddresses PublicIpAddresses `json:"PublicIpAddresses" xml:"PublicIpAddresses"`
 }

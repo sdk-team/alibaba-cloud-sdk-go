@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // EipMonitorDatasInDescribeEipMonitorData is a nested struct in ecs response
 type EipMonitorDatasInDescribeEipMonitorData struct {
-	EipMonitorData []EipMonitorData `json:"EipMonitorData" xml:"EipMonitorData"`
+EipMonitorData []EipMonitorData `json:"EipMonitorData" xml:"EipMonitorData"`
 }

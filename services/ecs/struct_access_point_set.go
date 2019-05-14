@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // AccessPointSet is a nested struct in ecs response
 type AccessPointSet struct {
-	AccessPointType []AccessPointType `json:"AccessPointType" xml:"AccessPointType"`
+AccessPointType []AccessPointType `json:"AccessPointType" xml:"AccessPointType"`
 }

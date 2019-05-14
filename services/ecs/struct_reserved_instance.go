@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,19 +18,19 @@ package ecs
 
 // ReservedInstance is a nested struct in ecs response
 type ReservedInstance struct {
-	ReservedInstanceId   string                                    `json:"ReservedInstanceId" xml:"ReservedInstanceId"`
-	RegionId             string                                    `json:"RegionId" xml:"RegionId"`
-	ZoneId               string                                    `json:"ZoneId" xml:"ZoneId"`
-	ReservedInstanceName string                                    `json:"ReservedInstanceName" xml:"ReservedInstanceName"`
-	Description          string                                    `json:"Description" xml:"Description"`
-	InstanceType         string                                    `json:"InstanceType" xml:"InstanceType"`
-	Scope                string                                    `json:"Scope" xml:"Scope"`
-	OfferingType         string                                    `json:"OfferingType" xml:"OfferingType"`
-	InstanceAmount       int                                       `json:"InstanceAmount" xml:"InstanceAmount"`
-	Status               string                                    `json:"Status" xml:"Status"`
-	CreationTime         string                                    `json:"CreationTime" xml:"CreationTime"`
-	ExpiredTime          string                                    `json:"ExpiredTime" xml:"ExpiredTime"`
-	StartTime            string                                    `json:"StartTime" xml:"StartTime"`
-	ResourceGroupId      string                                    `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	OperationLocks       OperationLocksInDescribeReservedInstances `json:"OperationLocks" xml:"OperationLocks"`
+            ReservedInstanceId     string `json:"ReservedInstanceId" xml:"ReservedInstanceId"`
+            RegionId     string `json:"RegionId" xml:"RegionId"`
+            ZoneId     string `json:"ZoneId" xml:"ZoneId"`
+            ReservedInstanceName     string `json:"ReservedInstanceName" xml:"ReservedInstanceName"`
+            Description     string `json:"Description" xml:"Description"`
+            InstanceType     string `json:"InstanceType" xml:"InstanceType"`
+            Scope     string `json:"Scope" xml:"Scope"`
+            OfferingType     string `json:"OfferingType" xml:"OfferingType"`
+            InstanceAmount     int `json:"InstanceAmount" xml:"InstanceAmount"`
+            Status     string `json:"Status" xml:"Status"`
+            CreationTime     string `json:"CreationTime" xml:"CreationTime"`
+            ExpiredTime     string `json:"ExpiredTime" xml:"ExpiredTime"`
+            StartTime     string `json:"StartTime" xml:"StartTime"`
+            ResourceGroupId     string `json:"ResourceGroupId" xml:"ResourceGroupId"`
+                    OperationLocks OperationLocksInDescribeReservedInstances `json:"OperationLocks" xml:"OperationLocks"`
 }

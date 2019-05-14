@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // DedicatedHostGenerations is a nested struct in ecs response
 type DedicatedHostGenerations struct {
-	DedicatedHostGeneration []string `json:"DedicatedHostGeneration" xml:"DedicatedHostGeneration"`
+DedicatedHostGeneration []    string  `json:"DedicatedHostGeneration" xml:"DedicatedHostGeneration"`
 }

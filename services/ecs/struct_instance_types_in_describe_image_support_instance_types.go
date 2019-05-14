@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // InstanceTypesInDescribeImageSupportInstanceTypes is a nested struct in ecs response
 type InstanceTypesInDescribeImageSupportInstanceTypes struct {
-	InstanceType []InstanceType `json:"InstanceType" xml:"InstanceType"`
+InstanceType []InstanceType `json:"InstanceType" xml:"InstanceType"`
 }

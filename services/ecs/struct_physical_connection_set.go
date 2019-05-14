@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // PhysicalConnectionSet is a nested struct in ecs response
 type PhysicalConnectionSet struct {
-	PhysicalConnectionType []PhysicalConnectionType `json:"PhysicalConnectionType" xml:"PhysicalConnectionType"`
+PhysicalConnectionType []PhysicalConnectionType `json:"PhysicalConnectionType" xml:"PhysicalConnectionType"`
 }

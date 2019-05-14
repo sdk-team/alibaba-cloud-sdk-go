@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,94 +17,97 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // RecoverVirtualBorderRouter invokes the ecs.RecoverVirtualBorderRouter API synchronously
 // api document: https://help.aliyun.com/api/ecs/recovervirtualborderrouter.html
 func (client *Client) RecoverVirtualBorderRouter(request *RecoverVirtualBorderRouterRequest) (response *RecoverVirtualBorderRouterResponse, err error) {
-	response = CreateRecoverVirtualBorderRouterResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateRecoverVirtualBorderRouterResponse()
+err = client.DoAction(request, response)
+return
 }
 
 // RecoverVirtualBorderRouterWithChan invokes the ecs.RecoverVirtualBorderRouter API asynchronously
 // api document: https://help.aliyun.com/api/ecs/recovervirtualborderrouter.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecoverVirtualBorderRouterWithChan(request *RecoverVirtualBorderRouterRequest) (<-chan *RecoverVirtualBorderRouterResponse, <-chan error) {
-	responseChan := make(chan *RecoverVirtualBorderRouterResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.RecoverVirtualBorderRouter(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *RecoverVirtualBorderRouterResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.RecoverVirtualBorderRouter(request)
+if err != nil {
+errChan <- err
+} else {
+responseChan <- response
+}
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
 // RecoverVirtualBorderRouterWithCallback invokes the ecs.RecoverVirtualBorderRouter API asynchronously
 // api document: https://help.aliyun.com/api/ecs/recovervirtualborderrouter.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) RecoverVirtualBorderRouterWithCallback(request *RecoverVirtualBorderRouterRequest, callback func(response *RecoverVirtualBorderRouterResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *RecoverVirtualBorderRouterResponse
-		var err error
-		defer close(result)
-		response, err = client.RecoverVirtualBorderRouter(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) RecoverVirtualBorderRouterWithCallback(request *RecoverVirtualBorderRouterRequest, callback func(response *RecoverVirtualBorderRouterResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *RecoverVirtualBorderRouterResponse
+var err error
+defer close(result)
+response, err = client.RecoverVirtualBorderRouter(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 // RecoverVirtualBorderRouterRequest is the request struct for api RecoverVirtualBorderRouter
 type RecoverVirtualBorderRouterRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	UserCidr             string           `position:"Query" name:"UserCidr"`
-	VbrId                string           `position:"Query" name:"VbrId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
+                    ClientToken     string `position:"Query" name:"ClientToken"`
+                    VbrId     string `position:"Query" name:"VbrId"`
+                    UserCidr     string `position:"Query" name:"UserCidr"`
+                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
+                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
+                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
 }
+
 
 // RecoverVirtualBorderRouterResponse is the response struct for api RecoverVirtualBorderRouter
 type RecoverVirtualBorderRouterResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateRecoverVirtualBorderRouterRequest creates a request to invoke RecoverVirtualBorderRouter API
 func CreateRecoverVirtualBorderRouterRequest() (request *RecoverVirtualBorderRouterRequest) {
-	request = &RecoverVirtualBorderRouterRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "RecoverVirtualBorderRouter", "ecs", "openAPI")
-	return
+request = &RecoverVirtualBorderRouterRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "RecoverVirtualBorderRouter", "ecs", "openAPI")
+return
 }
 
 // CreateRecoverVirtualBorderRouterResponse creates a response to parse from RecoverVirtualBorderRouter response
 func CreateRecoverVirtualBorderRouterResponse() (response *RecoverVirtualBorderRouterResponse) {
-	response = &RecoverVirtualBorderRouterResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &RecoverVirtualBorderRouterResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+
+

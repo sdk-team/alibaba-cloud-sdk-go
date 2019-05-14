@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // DedicatedHosts is a nested struct in ecs response
 type DedicatedHosts struct {
-	DedicatedHost []DedicatedHost `json:"DedicatedHost" xml:"DedicatedHost"`
+DedicatedHost []DedicatedHost `json:"DedicatedHost" xml:"DedicatedHost"`
 }

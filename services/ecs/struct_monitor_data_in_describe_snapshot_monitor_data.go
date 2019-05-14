@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // MonitorDataInDescribeSnapshotMonitorData is a nested struct in ecs response
 type MonitorDataInDescribeSnapshotMonitorData struct {
-	DataPoint []DataPoint `json:"DataPoint" xml:"DataPoint"`
+DataPoint []DataPoint `json:"DataPoint" xml:"DataPoint"`
 }

@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // DedicatedHostIdSets is a nested struct in ecs response
 type DedicatedHostIdSets struct {
-	DedicatedHostId []string `json:"DedicatedHostId" xml:"DedicatedHostId"`
+DedicatedHostId []    string  `json:"DedicatedHostId" xml:"DedicatedHostId"`
 }

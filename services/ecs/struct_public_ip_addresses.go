@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // PublicIpAddresses is a nested struct in ecs response
 type PublicIpAddresses struct {
-	PublicIpAddresse []PublicIpAddresse `json:"PublicIpAddresse" xml:"PublicIpAddresse"`
+PublicIpAddresse []PublicIpAddresse `json:"PublicIpAddresse" xml:"PublicIpAddresse"`
 }

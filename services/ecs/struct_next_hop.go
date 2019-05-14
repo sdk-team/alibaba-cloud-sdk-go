@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,8 +18,8 @@ package ecs
 
 // NextHop is a nested struct in ecs response
 type NextHop struct {
-	NextHopType string `json:"NextHopType" xml:"NextHopType"`
-	NextHopId   string `json:"NextHopId" xml:"NextHopId"`
-	Enabled     int    `json:"Enabled" xml:"Enabled"`
-	Weight      int    `json:"Weight" xml:"Weight"`
+            NextHopType     string `json:"NextHopType" xml:"NextHopType"`
+            NextHopId     string `json:"NextHopId" xml:"NextHopId"`
+            Enabled     int `json:"Enabled" xml:"Enabled"`
+            Weight     int `json:"Weight" xml:"Weight"`
 }

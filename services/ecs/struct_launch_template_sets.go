@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // LaunchTemplateSets is a nested struct in ecs response
 type LaunchTemplateSets struct {
-	LaunchTemplateSet []LaunchTemplateSet `json:"LaunchTemplateSet" xml:"LaunchTemplateSet"`
+LaunchTemplateSet []LaunchTemplateSet `json:"LaunchTemplateSet" xml:"LaunchTemplateSet"`
 }

@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,99 +17,102 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // ModifyRouterInterfaceAttribute invokes the ecs.ModifyRouterInterfaceAttribute API synchronously
 // api document: https://help.aliyun.com/api/ecs/modifyrouterinterfaceattribute.html
 func (client *Client) ModifyRouterInterfaceAttribute(request *ModifyRouterInterfaceAttributeRequest) (response *ModifyRouterInterfaceAttributeResponse, err error) {
-	response = CreateModifyRouterInterfaceAttributeResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateModifyRouterInterfaceAttributeResponse()
+err = client.DoAction(request, response)
+return
 }
 
 // ModifyRouterInterfaceAttributeWithChan invokes the ecs.ModifyRouterInterfaceAttribute API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyrouterinterfaceattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRouterInterfaceAttributeWithChan(request *ModifyRouterInterfaceAttributeRequest) (<-chan *ModifyRouterInterfaceAttributeResponse, <-chan error) {
-	responseChan := make(chan *ModifyRouterInterfaceAttributeResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ModifyRouterInterfaceAttribute(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ModifyRouterInterfaceAttributeResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ModifyRouterInterfaceAttribute(request)
+if err != nil {
+errChan <- err
+} else {
+responseChan <- response
+}
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
 // ModifyRouterInterfaceAttributeWithCallback invokes the ecs.ModifyRouterInterfaceAttribute API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyrouterinterfaceattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ModifyRouterInterfaceAttributeWithCallback(request *ModifyRouterInterfaceAttributeRequest, callback func(response *ModifyRouterInterfaceAttributeResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ModifyRouterInterfaceAttributeResponse
-		var err error
-		defer close(result)
-		response, err = client.ModifyRouterInterfaceAttribute(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ModifyRouterInterfaceAttributeWithCallback(request *ModifyRouterInterfaceAttributeRequest, callback func(response *ModifyRouterInterfaceAttributeResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ModifyRouterInterfaceAttributeResponse
+var err error
+defer close(result)
+response, err = client.ModifyRouterInterfaceAttribute(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 // ModifyRouterInterfaceAttributeRequest is the request struct for api ModifyRouterInterfaceAttribute
 type ModifyRouterInterfaceAttributeRequest struct {
-	*requests.RpcRequest
-	OppositeRouterId         string           `position:"Query" name:"OppositeRouterId"`
-	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
-	Description              string           `position:"Query" name:"Description"`
-	HealthCheckTargetIp      string           `position:"Query" name:"HealthCheckTargetIp"`
-	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
-	RouterInterfaceId        string           `position:"Query" name:"RouterInterfaceId"`
-	OppositeInterfaceOwnerId requests.Integer `position:"Query" name:"OppositeInterfaceOwnerId"`
-	HealthCheckSourceIp      string           `position:"Query" name:"HealthCheckSourceIp"`
-	Name                     string           `position:"Query" name:"Name"`
-	OppositeRouterType       string           `position:"Query" name:"OppositeRouterType"`
-	OppositeInterfaceId      string           `position:"Query" name:"OppositeInterfaceId"`
+*requests.RpcRequest
+                    OppositeRouterId     string `position:"Query" name:"OppositeRouterId"`
+                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
+                    Description     string `position:"Query" name:"Description"`
+                    HealthCheckTargetIp     string `position:"Query" name:"HealthCheckTargetIp"`
+                    OppositeInterfaceId     string `position:"Query" name:"OppositeInterfaceId"`
+                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
+                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+                    RouterInterfaceId     string `position:"Query" name:"RouterInterfaceId"`
+                    OppositeInterfaceOwnerId     requests.Integer `position:"Query" name:"OppositeInterfaceOwnerId"`
+                    HealthCheckSourceIp     string `position:"Query" name:"HealthCheckSourceIp"`
+                    Name     string `position:"Query" name:"Name"`
+                    OppositeRouterType     string `position:"Query" name:"OppositeRouterType"`
 }
+
 
 // ModifyRouterInterfaceAttributeResponse is the response struct for api ModifyRouterInterfaceAttribute
 type ModifyRouterInterfaceAttributeResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyRouterInterfaceAttributeRequest creates a request to invoke ModifyRouterInterfaceAttribute API
 func CreateModifyRouterInterfaceAttributeRequest() (request *ModifyRouterInterfaceAttributeRequest) {
-	request = &ModifyRouterInterfaceAttributeRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyRouterInterfaceAttribute", "ecs", "openAPI")
-	return
+request = &ModifyRouterInterfaceAttributeRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyRouterInterfaceAttribute", "ecs", "openAPI")
+return
 }
 
 // CreateModifyRouterInterfaceAttributeResponse creates a response to parse from ModifyRouterInterfaceAttribute response
 func CreateModifyRouterInterfaceAttributeResponse() (response *ModifyRouterInterfaceAttributeResponse) {
-	response = &ModifyRouterInterfaceAttributeResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ModifyRouterInterfaceAttributeResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+
+

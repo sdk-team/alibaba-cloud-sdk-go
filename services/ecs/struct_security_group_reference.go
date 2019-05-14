@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,6 +18,6 @@ package ecs
 
 // SecurityGroupReference is a nested struct in ecs response
 type SecurityGroupReference struct {
-	SecurityGroupId           string                    `json:"SecurityGroupId" xml:"SecurityGroupId"`
-	ReferencingSecurityGroups ReferencingSecurityGroups `json:"ReferencingSecurityGroups" xml:"ReferencingSecurityGroups"`
+            SecurityGroupId     string `json:"SecurityGroupId" xml:"SecurityGroupId"`
+                    ReferencingSecurityGroups ReferencingSecurityGroups `json:"ReferencingSecurityGroups" xml:"ReferencingSecurityGroups"`
 }

@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // SupplyInfos is a nested struct in ecs response
 type SupplyInfos struct {
-	SupplyInfo []SupplyInfo `json:"SupplyInfo" xml:"SupplyInfo"`
+SupplyInfo []SupplyInfo `json:"SupplyInfo" xml:"SupplyInfo"`
 }

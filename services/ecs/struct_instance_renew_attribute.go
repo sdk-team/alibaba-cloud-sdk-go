@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,9 +18,9 @@ package ecs
 
 // InstanceRenewAttribute is a nested struct in ecs response
 type InstanceRenewAttribute struct {
-	InstanceId       string `json:"InstanceId" xml:"InstanceId"`
-	AutoRenewEnabled bool   `json:"AutoRenewEnabled" xml:"AutoRenewEnabled"`
-	Duration         int    `json:"Duration" xml:"Duration"`
-	PeriodUnit       string `json:"PeriodUnit" xml:"PeriodUnit"`
-	RenewalStatus    string `json:"RenewalStatus" xml:"RenewalStatus"`
+            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
+            AutoRenewEnabled     bool `json:"AutoRenewEnabled" xml:"AutoRenewEnabled"`
+            Duration     int `json:"Duration" xml:"Duration"`
+            PeriodUnit     string `json:"PeriodUnit" xml:"PeriodUnit"`
+            RenewalStatus     string `json:"RenewalStatus" xml:"RenewalStatus"`
 }

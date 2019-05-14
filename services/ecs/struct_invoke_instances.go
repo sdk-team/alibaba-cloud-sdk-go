@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // InvokeInstances is a nested struct in ecs response
 type InvokeInstances struct {
-	InvokeInstance []InvokeInstance `json:"InvokeInstance" xml:"InvokeInstance"`
+InvokeInstance []InvokeInstance `json:"InvokeInstance" xml:"InvokeInstance"`
 }

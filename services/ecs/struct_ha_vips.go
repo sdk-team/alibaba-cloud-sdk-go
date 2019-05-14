@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // HaVips is a nested struct in ecs response
 type HaVips struct {
-	HaVip []HaVip `json:"HaVip" xml:"HaVip"`
+HaVip []HaVip `json:"HaVip" xml:"HaVip"`
 }

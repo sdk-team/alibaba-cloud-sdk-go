@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // Invocations is a nested struct in ecs response
 type Invocations struct {
-	Invocation []Invocation `json:"Invocation" xml:"Invocation"`
+Invocation []Invocation `json:"Invocation" xml:"Invocation"`
 }

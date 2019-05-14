@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,14 +18,14 @@ package ecs
 
 // SnapshotLink is a nested struct in ecs response
 type SnapshotLink struct {
-	SnapshotLinkId string `json:"SnapshotLinkId" xml:"SnapshotLinkId"`
-	RegionId       string `json:"RegionId" xml:"RegionId"`
-	InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-	InstanceName   string `json:"InstanceName" xml:"InstanceName"`
-	SourceDiskId   string `json:"SourceDiskId" xml:"SourceDiskId"`
-	SourceDiskName string `json:"SourceDiskName" xml:"SourceDiskName"`
-	SourceDiskSize int    `json:"SourceDiskSize" xml:"SourceDiskSize"`
-	SourceDiskType string `json:"SourceDiskType" xml:"SourceDiskType"`
-	TotalSize      int    `json:"TotalSize" xml:"TotalSize"`
-	TotalCount     int    `json:"TotalCount" xml:"TotalCount"`
+            SnapshotLinkId     string `json:"SnapshotLinkId" xml:"SnapshotLinkId"`
+            RegionId     string `json:"RegionId" xml:"RegionId"`
+            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
+            InstanceName     string `json:"InstanceName" xml:"InstanceName"`
+            SourceDiskId     string `json:"SourceDiskId" xml:"SourceDiskId"`
+            SourceDiskName     string `json:"SourceDiskName" xml:"SourceDiskName"`
+            SourceDiskSize     int `json:"SourceDiskSize" xml:"SourceDiskSize"`
+            SourceDiskType     string `json:"SourceDiskType" xml:"SourceDiskType"`
+            TotalSize     int `json:"TotalSize" xml:"TotalSize"`
+            TotalCount     int `json:"TotalCount" xml:"TotalCount"`
 }

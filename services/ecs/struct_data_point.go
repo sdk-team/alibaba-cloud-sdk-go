@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,6 +18,6 @@ package ecs
 
 // DataPoint is a nested struct in ecs response
 type DataPoint struct {
-	TimeStamp string `json:"TimeStamp" xml:"TimeStamp"`
-	Size      int    `json:"Size" xml:"Size"`
+            TimeStamp     string `json:"TimeStamp" xml:"TimeStamp"`
+            Size     int `json:"Size" xml:"Size"`
 }

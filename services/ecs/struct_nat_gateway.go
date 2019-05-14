@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,16 +18,16 @@ package ecs
 
 // NatGateway is a nested struct in ecs response
 type NatGateway struct {
-	NatGatewayId        string                                   `json:"NatGatewayId" xml:"NatGatewayId"`
-	RegionId            string                                   `json:"RegionId" xml:"RegionId"`
-	Name                string                                   `json:"Name" xml:"Name"`
-	Description         string                                   `json:"Description" xml:"Description"`
-	VpcId               string                                   `json:"VpcId" xml:"VpcId"`
-	Spec                string                                   `json:"Spec" xml:"Spec"`
-	InstanceChargeType  string                                   `json:"InstanceChargeType" xml:"InstanceChargeType"`
-	BusinessStatus      string                                   `json:"BusinessStatus" xml:"BusinessStatus"`
-	CreationTime        string                                   `json:"CreationTime" xml:"CreationTime"`
-	Status              string                                   `json:"Status" xml:"Status"`
-	ForwardTableIds     ForwardTableIdsInDescribeNatGateways     `json:"ForwardTableIds" xml:"ForwardTableIds"`
-	BandwidthPackageIds BandwidthPackageIdsInDescribeNatGateways `json:"BandwidthPackageIds" xml:"BandwidthPackageIds"`
+            NatGatewayId     string `json:"NatGatewayId" xml:"NatGatewayId"`
+            RegionId     string `json:"RegionId" xml:"RegionId"`
+            Name     string `json:"Name" xml:"Name"`
+            Description     string `json:"Description" xml:"Description"`
+            VpcId     string `json:"VpcId" xml:"VpcId"`
+            Spec     string `json:"Spec" xml:"Spec"`
+            InstanceChargeType     string `json:"InstanceChargeType" xml:"InstanceChargeType"`
+            BusinessStatus     string `json:"BusinessStatus" xml:"BusinessStatus"`
+            CreationTime     string `json:"CreationTime" xml:"CreationTime"`
+            Status     string `json:"Status" xml:"Status"`
+                ForwardTableIds ForwardTableIdsInDescribeNatGateways `json:"ForwardTableIds" xml:"ForwardTableIds"`
+                BandwidthPackageIds BandwidthPackageIdsInDescribeNatGateways `json:"BandwidthPackageIds" xml:"BandwidthPackageIds"`
 }

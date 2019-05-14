@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,6 +18,6 @@ package ecs
 
 // PublicIpAddresse is a nested struct in ecs response
 type PublicIpAddresse struct {
-	AllocationId string `json:"AllocationId" xml:"AllocationId"`
-	IpAddress    string `json:"IpAddress" xml:"IpAddress"`
+            AllocationId     string `json:"AllocationId" xml:"AllocationId"`
+            IpAddress     string `json:"IpAddress" xml:"IpAddress"`
 }

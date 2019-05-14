@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,8 +18,8 @@ package ecs
 
 // DiskEventType is a nested struct in ecs response
 type DiskEventType struct {
-	EventId      string    `json:"EventId" xml:"EventId"`
-	EventTime    string    `json:"EventTime" xml:"EventTime"`
-	EventEndTime string    `json:"EventEndTime" xml:"EventEndTime"`
-	EventType    EventType `json:"EventType" xml:"EventType"`
+            EventId     string `json:"EventId" xml:"EventId"`
+            EventTime     string `json:"EventTime" xml:"EventTime"`
+            EventEndTime     string `json:"EventEndTime" xml:"EventEndTime"`
+            EventType EventType  `json:"EventType" xml:"EventType"`
 }

@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // AssociatedInstances is a nested struct in ecs response
 type AssociatedInstances struct {
-	AssociatedInstance []string `json:"associatedInstance" xml:"associatedInstance"`
+AssociatedInstance []    string  `json:"associatedInstance" xml:"associatedInstance"`
 }

@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // Links is a nested struct in ecs response
 type Links struct {
-	Link []Link `json:"Link" xml:"Link"`
+Link []Link `json:"Link" xml:"Link"`
 }

@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,16 +18,18 @@ package ecs
 
 // Invocation is a nested struct in ecs response
 type Invocation struct {
-	CommandId         string            `json:"CommandId" xml:"CommandId"`
-	PageNumber        int               `json:"PageNumber" xml:"PageNumber"`
-	CommandName       string            `json:"CommandName" xml:"CommandName"`
-	TotalCount        int               `json:"TotalCount" xml:"TotalCount"`
-	PageSize          int               `json:"PageSize" xml:"PageSize"`
-	InvokeId          string            `json:"InvokeId" xml:"InvokeId"`
-	InvokeStatus      string            `json:"InvokeStatus" xml:"InvokeStatus"`
-	Timed             bool              `json:"Timed" xml:"Timed"`
-	Frequency         string            `json:"Frequency" xml:"Frequency"`
-	CommandType       string            `json:"CommandType" xml:"CommandType"`
-	InvocationResults InvocationResults `json:"InvocationResults" xml:"InvocationResults"`
-	InvokeInstances   InvokeInstances   `json:"InvokeInstances" xml:"InvokeInstances"`
+            PageNumber     int `json:"PageNumber" xml:"PageNumber"`
+            CommandId     string `json:"CommandId" xml:"CommandId"`
+            TotalCount     int `json:"TotalCount" xml:"TotalCount"`
+            PageSize     int `json:"PageSize" xml:"PageSize"`
+            Timed     bool `json:"Timed" xml:"Timed"`
+            Frequency     string `json:"Frequency" xml:"Frequency"`
+            CommandName     string `json:"CommandName" xml:"CommandName"`
+            Parameters     string `json:"Parameters" xml:"Parameters"`
+            InvokeId     string `json:"InvokeId" xml:"InvokeId"`
+            InvokeStatus     string `json:"InvokeStatus" xml:"InvokeStatus"`
+            CommandContent     string `json:"CommandContent" xml:"CommandContent"`
+            CommandType     string `json:"CommandType" xml:"CommandType"`
+                    InvocationResults InvocationResults `json:"InvocationResults" xml:"InvocationResults"`
+                    InvokeInstances InvokeInstances `json:"InvokeInstances" xml:"InvokeInstances"`
 }

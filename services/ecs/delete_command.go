@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,92 +17,95 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // DeleteCommand invokes the ecs.DeleteCommand API synchronously
 // api document: https://help.aliyun.com/api/ecs/deletecommand.html
 func (client *Client) DeleteCommand(request *DeleteCommandRequest) (response *DeleteCommandResponse, err error) {
-	response = CreateDeleteCommandResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDeleteCommandResponse()
+err = client.DoAction(request, response)
+return
 }
 
 // DeleteCommandWithChan invokes the ecs.DeleteCommand API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deletecommand.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCommandWithChan(request *DeleteCommandRequest) (<-chan *DeleteCommandResponse, <-chan error) {
-	responseChan := make(chan *DeleteCommandResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DeleteCommand(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DeleteCommandResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DeleteCommand(request)
+if err != nil {
+errChan <- err
+} else {
+responseChan <- response
+}
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
 // DeleteCommandWithCallback invokes the ecs.DeleteCommand API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deletecommand.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteCommandWithCallback(request *DeleteCommandRequest, callback func(response *DeleteCommandResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DeleteCommandResponse
-		var err error
-		defer close(result)
-		response, err = client.DeleteCommand(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DeleteCommandWithCallback(request *DeleteCommandRequest, callback func(response *DeleteCommandResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DeleteCommandResponse
+var err error
+defer close(result)
+response, err = client.DeleteCommand(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 // DeleteCommandRequest is the request struct for api DeleteCommand
 type DeleteCommandRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	CommandId            string           `position:"Query" name:"CommandId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
+                    CommandId     string `position:"Query" name:"CommandId"`
+                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
+                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
+                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
 }
+
 
 // DeleteCommandResponse is the response struct for api DeleteCommand
 type DeleteCommandResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteCommandRequest creates a request to invoke DeleteCommand API
 func CreateDeleteCommandRequest() (request *DeleteCommandRequest) {
-	request = &DeleteCommandRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteCommand", "ecs", "openAPI")
-	return
+request = &DeleteCommandRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteCommand", "ecs", "openAPI")
+return
 }
 
 // CreateDeleteCommandResponse creates a response to parse from DeleteCommand response
 func CreateDeleteCommandResponse() (response *DeleteCommandResponse) {
-	response = &DeleteCommandResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DeleteCommandResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+
+

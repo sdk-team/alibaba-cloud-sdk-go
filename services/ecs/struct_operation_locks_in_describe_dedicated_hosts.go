@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // OperationLocksInDescribeDedicatedHosts is a nested struct in ecs response
 type OperationLocksInDescribeDedicatedHosts struct {
-	OperationLock []OperationLock `json:"OperationLock" xml:"OperationLock"`
+OperationLock []OperationLock `json:"OperationLock" xml:"OperationLock"`
 }

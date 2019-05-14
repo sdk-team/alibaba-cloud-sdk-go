@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // AccountAttributeItems is a nested struct in ecs response
 type AccountAttributeItems struct {
-	AccountAttributeItem []AccountAttributeItem `json:"AccountAttributeItem" xml:"AccountAttributeItem"`
+AccountAttributeItem []AccountAttributeItem `json:"AccountAttributeItem" xml:"AccountAttributeItem"`
 }

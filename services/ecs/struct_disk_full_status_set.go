@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // DiskFullStatusSet is a nested struct in ecs response
 type DiskFullStatusSet struct {
-	DiskFullStatusType []DiskFullStatusType `json:"DiskFullStatusType" xml:"DiskFullStatusType"`
+DiskFullStatusType []DiskFullStatusType `json:"DiskFullStatusType" xml:"DiskFullStatusType"`
 }

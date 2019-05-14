@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // ResultsInDetachKeyPair is a nested struct in ecs response
 type ResultsInDetachKeyPair struct {
-	Result []Result `json:"Result" xml:"Result"`
+Result []Result `json:"Result" xml:"Result"`
 }

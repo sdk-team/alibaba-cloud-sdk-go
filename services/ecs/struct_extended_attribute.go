@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,6 +18,6 @@ package ecs
 
 // ExtendedAttribute is a nested struct in ecs response
 type ExtendedAttribute struct {
-	Device string `json:"Device" xml:"Device"`
-	DiskId string `json:"DiskId" xml:"DiskId"`
+            Device     string `json:"Device" xml:"Device"`
+            DiskId     string `json:"DiskId" xml:"DiskId"`
 }

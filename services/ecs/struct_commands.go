@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // Commands is a nested struct in ecs response
 type Commands struct {
-	Command []Command `json:"Command" xml:"Command"`
+Command []Command `json:"Command" xml:"Command"`
 }

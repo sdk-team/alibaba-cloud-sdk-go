@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,10 +18,10 @@ package ecs
 
 // ValueItem is a nested struct in ecs response
 type ValueItem struct {
-	Value              string `json:"Value" xml:"Value"`
-	ExpiredTime        string `json:"ExpiredTime" xml:"ExpiredTime"`
-	ZoneId             string `json:"ZoneId" xml:"ZoneId"`
-	InstanceChargeType string `json:"InstanceChargeType" xml:"InstanceChargeType"`
-	InstanceType       string `json:"InstanceType" xml:"InstanceType"`
-	Count              int    `json:"Count" xml:"Count"`
+            Value     string `json:"Value" xml:"Value"`
+            ExpiredTime     string `json:"ExpiredTime" xml:"ExpiredTime"`
+            ZoneId     string `json:"ZoneId" xml:"ZoneId"`
+            InstanceChargeType     string `json:"InstanceChargeType" xml:"InstanceChargeType"`
+            InstanceType     string `json:"InstanceType" xml:"InstanceType"`
+            Count     int `json:"Count" xml:"Count"`
 }

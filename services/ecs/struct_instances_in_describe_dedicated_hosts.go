@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // InstancesInDescribeDedicatedHosts is a nested struct in ecs response
 type InstancesInDescribeDedicatedHosts struct {
-	Instance []Instance `json:"Instance" xml:"Instance"`
+Instance []Instance `json:"Instance" xml:"Instance"`
 }

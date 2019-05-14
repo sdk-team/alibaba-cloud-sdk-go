@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // BandwidthPackageIdsInCreateNatGateway is a nested struct in ecs response
 type BandwidthPackageIdsInCreateNatGateway struct {
-	BandwidthPackageId []string `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
+BandwidthPackageId []    string  `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
 }

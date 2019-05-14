@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,10 +18,10 @@ package ecs
 
 // SupportedResource is a nested struct in ecs response
 type SupportedResource struct {
-	Value          string `json:"Value" xml:"Value"`
-	Max            int    `json:"Max" xml:"Max"`
-	Unit           string `json:"Unit" xml:"Unit"`
-	StatusCategory string `json:"StatusCategory" xml:"StatusCategory"`
-	Status         string `json:"Status" xml:"Status"`
-	Min            int    `json:"Min" xml:"Min"`
+            Value     string `json:"Value" xml:"Value"`
+            Max     int `json:"Max" xml:"Max"`
+            Unit     string `json:"Unit" xml:"Unit"`
+            StatusCategory     string `json:"StatusCategory" xml:"StatusCategory"`
+            Status     string `json:"Status" xml:"Status"`
+            Min     int `json:"Min" xml:"Min"`
 }

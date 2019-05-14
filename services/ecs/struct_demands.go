@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // Demands is a nested struct in ecs response
 type Demands struct {
-	Demand []Demand `json:"Demand" xml:"Demand"`
+Demand []Demand `json:"Demand" xml:"Demand"`
 }

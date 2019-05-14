@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +18,7 @@ package ecs
 
 // Resource is a nested struct in ecs response
 type Resource struct {
-	ResourceId   string `json:"ResourceId" xml:"ResourceId"`
-	ResourceType string `json:"ResourceType" xml:"ResourceType"`
-	RegionId     string `json:"RegionId" xml:"RegionId"`
+            ResourceId     string `json:"ResourceId" xml:"ResourceId"`
+            ResourceType     string `json:"ResourceType" xml:"ResourceType"`
+            RegionId     string `json:"RegionId" xml:"RegionId"`
 }

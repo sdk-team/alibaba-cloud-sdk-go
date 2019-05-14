@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,6 +18,6 @@ package ecs
 
 // AssociatedPublicIp is a nested struct in ecs response
 type AssociatedPublicIp struct {
-	PublicIpAddress string `json:"PublicIpAddress" xml:"PublicIpAddress"`
-	AllocationId    string `json:"AllocationId" xml:"AllocationId"`
+            PublicIpAddress     string `json:"PublicIpAddress" xml:"PublicIpAddress"`
+            AllocationId     string `json:"AllocationId" xml:"AllocationId"`
 }

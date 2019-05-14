@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +18,7 @@ package ecs
 
 // HpcCluster is a nested struct in ecs response
 type HpcCluster struct {
-	HpcClusterId string `json:"HpcClusterId" xml:"HpcClusterId"`
-	Name         string `json:"Name" xml:"Name"`
-	Description  string `json:"Description" xml:"Description"`
+            HpcClusterId     string `json:"HpcClusterId" xml:"HpcClusterId"`
+            Name     string `json:"Name" xml:"Name"`
+            Description     string `json:"Description" xml:"Description"`
 }

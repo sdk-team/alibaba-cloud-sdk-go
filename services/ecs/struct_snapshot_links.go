@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // SnapshotLinks is a nested struct in ecs response
 type SnapshotLinks struct {
-	SnapshotLink []SnapshotLink `json:"SnapshotLink" xml:"SnapshotLink"`
+SnapshotLink []SnapshotLink `json:"SnapshotLink" xml:"SnapshotLink"`
 }

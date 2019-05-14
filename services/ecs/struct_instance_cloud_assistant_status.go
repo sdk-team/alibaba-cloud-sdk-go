@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,6 +18,6 @@ package ecs
 
 // InstanceCloudAssistantStatus is a nested struct in ecs response
 type InstanceCloudAssistantStatus struct {
-	InstanceId           string `json:"InstanceId" xml:"InstanceId"`
-	CloudAssistantStatus string `json:"CloudAssistantStatus" xml:"CloudAssistantStatus"`
+            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
+            CloudAssistantStatus     string `json:"CloudAssistantStatus" xml:"CloudAssistantStatus"`
 }

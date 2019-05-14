@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // NetworkTypesInDescribeRecommendInstanceType is a nested struct in ecs response
 type NetworkTypesInDescribeRecommendInstanceType struct {
-	NetworkType []string `json:"NetworkType" xml:"NetworkType"`
+NetworkType []    string  `json:"NetworkType" xml:"NetworkType"`
 }

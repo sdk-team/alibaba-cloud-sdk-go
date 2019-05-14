@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,94 +17,97 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // DescribeLimitation invokes the ecs.DescribeLimitation API synchronously
 // api document: https://help.aliyun.com/api/ecs/describelimitation.html
 func (client *Client) DescribeLimitation(request *DescribeLimitationRequest) (response *DescribeLimitationResponse, err error) {
-	response = CreateDescribeLimitationResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeLimitationResponse()
+err = client.DoAction(request, response)
+return
 }
 
 // DescribeLimitationWithChan invokes the ecs.DescribeLimitation API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describelimitation.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLimitationWithChan(request *DescribeLimitationRequest) (<-chan *DescribeLimitationResponse, <-chan error) {
-	responseChan := make(chan *DescribeLimitationResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeLimitation(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeLimitationResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeLimitation(request)
+if err != nil {
+errChan <- err
+} else {
+responseChan <- response
+}
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
 // DescribeLimitationWithCallback invokes the ecs.DescribeLimitation API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describelimitation.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeLimitationWithCallback(request *DescribeLimitationRequest, callback func(response *DescribeLimitationResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeLimitationResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeLimitation(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeLimitationWithCallback(request *DescribeLimitationRequest, callback func(response *DescribeLimitationResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeLimitationResponse
+var err error
+defer close(result)
+response, err = client.DescribeLimitation(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 // DescribeLimitationRequest is the request struct for api DescribeLimitation
 type DescribeLimitationRequest struct {
-	*requests.RpcRequest
-	Limitation           string           `position:"Query" name:"Limitation"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                    Limitation     string `position:"Query" name:"Limitation"`
+                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
+                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
+                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
+                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
 }
+
 
 // DescribeLimitationResponse is the response struct for api DescribeLimitation
 type DescribeLimitationResponse struct {
-	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	Limitation string `json:"Limitation" xml:"Limitation"`
-	Value      string `json:"Value" xml:"Value"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Limitation     string `json:"Limitation" xml:"Limitation"`
+            Value     string `json:"Value" xml:"Value"`
 }
 
 // CreateDescribeLimitationRequest creates a request to invoke DescribeLimitation API
 func CreateDescribeLimitationRequest() (request *DescribeLimitationRequest) {
-	request = &DescribeLimitationRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeLimitation", "ecs", "openAPI")
-	return
+request = &DescribeLimitationRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeLimitation", "ecs", "openAPI")
+return
 }
 
 // CreateDescribeLimitationResponse creates a response to parse from DescribeLimitation response
 func CreateDescribeLimitationResponse() (response *DescribeLimitationResponse) {
-	response = &DescribeLimitationResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeLimitationResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+
+

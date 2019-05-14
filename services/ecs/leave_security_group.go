@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,93 +17,96 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // LeaveSecurityGroup invokes the ecs.LeaveSecurityGroup API synchronously
 // api document: https://help.aliyun.com/api/ecs/leavesecuritygroup.html
 func (client *Client) LeaveSecurityGroup(request *LeaveSecurityGroupRequest) (response *LeaveSecurityGroupResponse, err error) {
-	response = CreateLeaveSecurityGroupResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateLeaveSecurityGroupResponse()
+err = client.DoAction(request, response)
+return
 }
 
 // LeaveSecurityGroupWithChan invokes the ecs.LeaveSecurityGroup API asynchronously
 // api document: https://help.aliyun.com/api/ecs/leavesecuritygroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) LeaveSecurityGroupWithChan(request *LeaveSecurityGroupRequest) (<-chan *LeaveSecurityGroupResponse, <-chan error) {
-	responseChan := make(chan *LeaveSecurityGroupResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.LeaveSecurityGroup(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *LeaveSecurityGroupResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.LeaveSecurityGroup(request)
+if err != nil {
+errChan <- err
+} else {
+responseChan <- response
+}
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
 // LeaveSecurityGroupWithCallback invokes the ecs.LeaveSecurityGroup API asynchronously
 // api document: https://help.aliyun.com/api/ecs/leavesecuritygroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) LeaveSecurityGroupWithCallback(request *LeaveSecurityGroupRequest, callback func(response *LeaveSecurityGroupResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *LeaveSecurityGroupResponse
-		var err error
-		defer close(result)
-		response, err = client.LeaveSecurityGroup(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) LeaveSecurityGroupWithCallback(request *LeaveSecurityGroupRequest, callback func(response *LeaveSecurityGroupResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *LeaveSecurityGroupResponse
+var err error
+defer close(result)
+response, err = client.LeaveSecurityGroup(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 // LeaveSecurityGroupRequest is the request struct for api LeaveSecurityGroup
 type LeaveSecurityGroupRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
+                    SecurityGroupId     string `position:"Query" name:"SecurityGroupId"`
+                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
+                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
+                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+                    InstanceId     string `position:"Query" name:"InstanceId"`
 }
+
 
 // LeaveSecurityGroupResponse is the response struct for api LeaveSecurityGroup
 type LeaveSecurityGroupResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateLeaveSecurityGroupRequest creates a request to invoke LeaveSecurityGroup API
 func CreateLeaveSecurityGroupRequest() (request *LeaveSecurityGroupRequest) {
-	request = &LeaveSecurityGroupRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "LeaveSecurityGroup", "ecs", "openAPI")
-	return
+request = &LeaveSecurityGroupRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "LeaveSecurityGroup", "ecs", "openAPI")
+return
 }
 
 // CreateLeaveSecurityGroupResponse creates a response to parse from LeaveSecurityGroup response
 func CreateLeaveSecurityGroupResponse() (response *LeaveSecurityGroupResponse) {
-	response = &LeaveSecurityGroupResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &LeaveSecurityGroupResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+
+

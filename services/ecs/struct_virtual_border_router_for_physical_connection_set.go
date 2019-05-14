@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // VirtualBorderRouterForPhysicalConnectionSet is a nested struct in ecs response
 type VirtualBorderRouterForPhysicalConnectionSet struct {
-	VirtualBorderRouterForPhysicalConnectionType []VirtualBorderRouterForPhysicalConnectionType `json:"VirtualBorderRouterForPhysicalConnectionType" xml:"VirtualBorderRouterForPhysicalConnectionType"`
+VirtualBorderRouterForPhysicalConnectionType []VirtualBorderRouterForPhysicalConnectionType `json:"VirtualBorderRouterForPhysicalConnectionType" xml:"VirtualBorderRouterForPhysicalConnectionType"`
 }

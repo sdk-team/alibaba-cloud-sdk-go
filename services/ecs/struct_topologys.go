@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // Topologys is a nested struct in ecs response
 type Topologys struct {
-	Topology []Topology `json:"Topology" xml:"Topology"`
+Topology []Topology `json:"Topology" xml:"Topology"`
 }

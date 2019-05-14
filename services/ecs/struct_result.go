@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,8 +18,8 @@ package ecs
 
 // Result is a nested struct in ecs response
 type Result struct {
-	Message    string `json:"Message" xml:"Message"`
-	Success    string `json:"Success" xml:"Success"`
-	Code       string `json:"Code" xml:"Code"`
-	InstanceId string `json:"InstanceId" xml:"InstanceId"`
+            Message     string `json:"Message" xml:"Message"`
+            Success     string `json:"Success" xml:"Success"`
+            Code     string `json:"Code" xml:"Code"`
+            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
 }

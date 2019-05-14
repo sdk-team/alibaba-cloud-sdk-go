@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,11 +18,11 @@ package ecs
 
 // ResourcesInfo is a nested struct in ecs response
 type ResourcesInfo struct {
-	IoOptimized          bool                                `json:"IoOptimized" xml:"IoOptimized"`
-	SystemDiskCategories SystemDiskCategories                `json:"SystemDiskCategories" xml:"SystemDiskCategories"`
-	DataDiskCategories   DataDiskCategories                  `json:"DataDiskCategories" xml:"DataDiskCategories"`
-	NetworkTypes         NetworkTypesInDescribeZones         `json:"NetworkTypes" xml:"NetworkTypes"`
-	InstanceTypes        InstanceTypesInDescribeZones        `json:"InstanceTypes" xml:"InstanceTypes"`
-	InstanceTypeFamilies InstanceTypeFamiliesInDescribeZones `json:"InstanceTypeFamilies" xml:"InstanceTypeFamilies"`
-	InstanceGenerations  InstanceGenerations                 `json:"InstanceGenerations" xml:"InstanceGenerations"`
+            IoOptimized     bool `json:"IoOptimized" xml:"IoOptimized"`
+                SystemDiskCategories SystemDiskCategories `json:"SystemDiskCategories" xml:"SystemDiskCategories"`
+                DataDiskCategories DataDiskCategories `json:"DataDiskCategories" xml:"DataDiskCategories"`
+                NetworkTypes NetworkTypesInDescribeZones `json:"NetworkTypes" xml:"NetworkTypes"`
+                InstanceTypes InstanceTypesInDescribeZones `json:"InstanceTypes" xml:"InstanceTypes"`
+                InstanceTypeFamilies InstanceTypeFamiliesInDescribeZones `json:"InstanceTypeFamilies" xml:"InstanceTypeFamilies"`
+                InstanceGenerations InstanceGenerations `json:"InstanceGenerations" xml:"InstanceGenerations"`
 }

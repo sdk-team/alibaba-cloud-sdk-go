@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // KeyPairs is a nested struct in ecs response
 type KeyPairs struct {
-	KeyPair []KeyPair `json:"KeyPair" xml:"KeyPair"`
+KeyPair []KeyPair `json:"KeyPair" xml:"KeyPair"`
 }

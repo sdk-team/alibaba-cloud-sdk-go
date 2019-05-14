@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // VSwitchIds is a nested struct in ecs response
 type VSwitchIds struct {
-	VSwitchId []string `json:"VSwitchId" xml:"VSwitchId"`
+VSwitchId []    string  `json:"VSwitchId" xml:"VSwitchId"`
 }

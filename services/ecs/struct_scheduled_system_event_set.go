@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // ScheduledSystemEventSet is a nested struct in ecs response
 type ScheduledSystemEventSet struct {
-	ScheduledSystemEventType []ScheduledSystemEventType `json:"ScheduledSystemEventType" xml:"ScheduledSystemEventType"`
+ScheduledSystemEventType []ScheduledSystemEventType `json:"ScheduledSystemEventType" xml:"ScheduledSystemEventType"`
 }

@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package ecs
 
 // DetailInfosInDescribePrice is a nested struct in ecs response
 type DetailInfosInDescribePrice struct {
-	ResourcePriceModel []ResourcePriceModel `json:"ResourcePriceModel" xml:"ResourcePriceModel"`
+ResourcePriceModel []ResourcePriceModel `json:"ResourcePriceModel" xml:"ResourcePriceModel"`
 }

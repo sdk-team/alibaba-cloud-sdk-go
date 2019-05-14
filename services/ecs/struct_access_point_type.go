@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,12 +18,12 @@ package ecs
 
 // AccessPointType is a nested struct in ecs response
 type AccessPointType struct {
-	AccessPointId    string `json:"AccessPointId" xml:"AccessPointId"`
-	Status           string `json:"Status" xml:"Status"`
-	Type             string `json:"Type" xml:"Type"`
-	AttachedRegionNo string `json:"AttachedRegionNo" xml:"AttachedRegionNo"`
-	Location         string `json:"Location" xml:"Location"`
-	HostOperator     string `json:"HostOperator" xml:"HostOperator"`
-	Name             string `json:"Name" xml:"Name"`
-	Description      string `json:"Description" xml:"Description"`
+            AccessPointId     string `json:"AccessPointId" xml:"AccessPointId"`
+            Status     string `json:"Status" xml:"Status"`
+            Type     string `json:"Type" xml:"Type"`
+            AttachedRegionNo     string `json:"AttachedRegionNo" xml:"AttachedRegionNo"`
+            Location     string `json:"Location" xml:"Location"`
+            HostOperator     string `json:"HostOperator" xml:"HostOperator"`
+            Name     string `json:"Name" xml:"Name"`
+            Description     string `json:"Description" xml:"Description"`
 }
