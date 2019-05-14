@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,6 +18,7 @@ package rds
 
 // RDSRegion is a nested struct in rds response
 type RDSRegion struct {
-	RegionId string `json:"RegionId" xml:"RegionId"`
-	ZoneId   string `json:"ZoneId" xml:"ZoneId"`
+            Category     string `json:"Category" xml:"Category"`
+            RegionId     string `json:"RegionId" xml:"RegionId"`
+            ZoneId     string `json:"ZoneId" xml:"ZoneId"`
 }

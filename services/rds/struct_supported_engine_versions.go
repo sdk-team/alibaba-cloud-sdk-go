@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,6 +18,6 @@ package rds
 
 // SupportedEngineVersions is a nested struct in rds response
 type SupportedEngineVersions struct {
-	Version           string               `json:"Version" xml:"Version"`
-	SupportedCategory []SupportedCategorys `json:"SupportedCategory" xml:"SupportedCategory"`
+            Version     string `json:"Version" xml:"Version"`
+                    SupportedCategory SupportedCategoryInDescribeAvailableResource `json:"SupportedCategory" xml:"SupportedCategory"`
 }

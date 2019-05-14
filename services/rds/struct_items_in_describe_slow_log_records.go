@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package rds
 
 // ItemsInDescribeSlowLogRecords is a nested struct in rds response
 type ItemsInDescribeSlowLogRecords struct {
-	SQLSlowRecord []SQLSlowRecord `json:"SQLSlowRecord" xml:"SQLSlowRecord"`
+SQLSlowRecord []SQLSlowRecord `json:"SQLSlowRecord" xml:"SQLSlowRecord"`
 }

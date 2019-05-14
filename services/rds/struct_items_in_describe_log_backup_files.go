@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package rds
 
 // ItemsInDescribeLogBackupFiles is a nested struct in rds response
 type ItemsInDescribeLogBackupFiles struct {
-	BinLogFile []BinLogFile `json:"BinLogFile" xml:"BinLogFile"`
+BinLogFile []BinLogFile `json:"BinLogFile" xml:"BinLogFile"`
 }

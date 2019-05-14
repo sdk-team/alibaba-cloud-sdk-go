@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,13 +18,13 @@ package rds
 
 // BinLogFile is a nested struct in rds response
 type BinLogFile struct {
-	HostInstanceID       string `json:"HostInstanceID" xml:"HostInstanceID"`
-	LogEndTime           string `json:"LogEndTime" xml:"LogEndTime"`
-	IntranetDownloadLink string `json:"IntranetDownloadLink" xml:"IntranetDownloadLink"`
-	FileSize             int    `json:"FileSize" xml:"FileSize"`
-	Checksum             string `json:"Checksum" xml:"Checksum"`
-	LinkExpiredTime      string `json:"LinkExpiredTime" xml:"LinkExpiredTime"`
-	LogFileName          string `json:"LogFileName" xml:"LogFileName"`
-	DownloadLink         string `json:"DownloadLink" xml:"DownloadLink"`
-	LogBeginTime         string `json:"LogBeginTime" xml:"LogBeginTime"`
+            HostInstanceID     string `json:"HostInstanceID" xml:"HostInstanceID"`
+            LogEndTime     string `json:"LogEndTime" xml:"LogEndTime"`
+            IntranetDownloadLink     string `json:"IntranetDownloadLink" xml:"IntranetDownloadLink"`
+            FileSize     int `json:"FileSize" xml:"FileSize"`
+            Checksum     string `json:"Checksum" xml:"Checksum"`
+            LinkExpiredTime     string `json:"LinkExpiredTime" xml:"LinkExpiredTime"`
+            LogFileName     string `json:"LogFileName" xml:"LogFileName"`
+            DownloadLink     string `json:"DownloadLink" xml:"DownloadLink"`
+            LogBeginTime     string `json:"LogBeginTime" xml:"LogBeginTime"`
 }

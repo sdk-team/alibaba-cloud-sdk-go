@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package rds
 
 // Parameters is a nested struct in rds response
 type Parameters struct {
-	TemplateRecord []TemplateRecord `json:"TemplateRecord" xml:"TemplateRecord"`
+TemplateRecord []TemplateRecord `json:"TemplateRecord" xml:"TemplateRecord"`
 }

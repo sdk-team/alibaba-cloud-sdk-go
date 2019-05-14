@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,92 +17,95 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // ReleaseReadWriteSplittingConnection invokes the rds.ReleaseReadWriteSplittingConnection API synchronously
 // api document: https://help.aliyun.com/api/rds/releasereadwritesplittingconnection.html
 func (client *Client) ReleaseReadWriteSplittingConnection(request *ReleaseReadWriteSplittingConnectionRequest) (response *ReleaseReadWriteSplittingConnectionResponse, err error) {
-	response = CreateReleaseReadWriteSplittingConnectionResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateReleaseReadWriteSplittingConnectionResponse()
+err = client.DoAction(request, response)
+return
 }
 
 // ReleaseReadWriteSplittingConnectionWithChan invokes the rds.ReleaseReadWriteSplittingConnection API asynchronously
 // api document: https://help.aliyun.com/api/rds/releasereadwritesplittingconnection.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseReadWriteSplittingConnectionWithChan(request *ReleaseReadWriteSplittingConnectionRequest) (<-chan *ReleaseReadWriteSplittingConnectionResponse, <-chan error) {
-	responseChan := make(chan *ReleaseReadWriteSplittingConnectionResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ReleaseReadWriteSplittingConnection(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ReleaseReadWriteSplittingConnectionResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ReleaseReadWriteSplittingConnection(request)
+if err != nil {
+errChan <- err
+} else {
+responseChan <- response
+}
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
 // ReleaseReadWriteSplittingConnectionWithCallback invokes the rds.ReleaseReadWriteSplittingConnection API asynchronously
 // api document: https://help.aliyun.com/api/rds/releasereadwritesplittingconnection.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ReleaseReadWriteSplittingConnectionWithCallback(request *ReleaseReadWriteSplittingConnectionRequest, callback func(response *ReleaseReadWriteSplittingConnectionResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ReleaseReadWriteSplittingConnectionResponse
-		var err error
-		defer close(result)
-		response, err = client.ReleaseReadWriteSplittingConnection(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ReleaseReadWriteSplittingConnectionWithCallback(request *ReleaseReadWriteSplittingConnectionRequest, callback func(response *ReleaseReadWriteSplittingConnectionResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ReleaseReadWriteSplittingConnectionResponse
+var err error
+defer close(result)
+response, err = client.ReleaseReadWriteSplittingConnection(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 // ReleaseReadWriteSplittingConnectionRequest is the request struct for api ReleaseReadWriteSplittingConnection
 type ReleaseReadWriteSplittingConnectionRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
+                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
+                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
+                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+                    DBInstanceId     string `position:"Query" name:"DBInstanceId"`
 }
+
 
 // ReleaseReadWriteSplittingConnectionResponse is the response struct for api ReleaseReadWriteSplittingConnection
 type ReleaseReadWriteSplittingConnectionResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateReleaseReadWriteSplittingConnectionRequest creates a request to invoke ReleaseReadWriteSplittingConnection API
 func CreateReleaseReadWriteSplittingConnectionRequest() (request *ReleaseReadWriteSplittingConnectionRequest) {
-	request = &ReleaseReadWriteSplittingConnectionRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ReleaseReadWriteSplittingConnection", "rds", "openAPI")
-	return
+request = &ReleaseReadWriteSplittingConnectionRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Rds", "2014-08-15", "ReleaseReadWriteSplittingConnection", "rds", "openAPI")
+return
 }
 
 // CreateReleaseReadWriteSplittingConnectionResponse creates a response to parse from ReleaseReadWriteSplittingConnection response
 func CreateReleaseReadWriteSplittingConnectionResponse() (response *ReleaseReadWriteSplittingConnectionResponse) {
-	response = &ReleaseReadWriteSplittingConnectionResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ReleaseReadWriteSplittingConnectionResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+
+

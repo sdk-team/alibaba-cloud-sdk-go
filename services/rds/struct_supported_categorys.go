@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,6 +18,6 @@ package rds
 
 // SupportedCategorys is a nested struct in rds response
 type SupportedCategorys struct {
-	Category             string                  `json:"Category" xml:"Category"`
-	SupportedStorageType []SupportedStorageTypes `json:"SupportedStorageType" xml:"SupportedStorageType"`
+            Category     string `json:"Category" xml:"Category"`
+                    SupportedStorageType SupportedStorageTypeInDescribeAvailableResource `json:"SupportedStorageType" xml:"SupportedStorageType"`
 }

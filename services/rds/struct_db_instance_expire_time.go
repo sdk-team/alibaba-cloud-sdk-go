@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,9 +18,9 @@ package rds
 
 // DBInstanceExpireTime is a nested struct in rds response
 type DBInstanceExpireTime struct {
-	DBInstanceId          string `json:"DBInstanceId" xml:"DBInstanceId"`
-	DBInstanceDescription string `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
-	ExpireTime            string `json:"ExpireTime" xml:"ExpireTime"`
-	DBInstanceStatus      string `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
-	LockMode              string `json:"LockMode" xml:"LockMode"`
+            DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
+            DBInstanceDescription     string `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
+            ExpireTime     string `json:"ExpireTime" xml:"ExpireTime"`
+            DBInstanceStatus     string `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
+            LockMode     string `json:"LockMode" xml:"LockMode"`
 }

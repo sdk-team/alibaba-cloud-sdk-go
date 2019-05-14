@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package rds
 
 // DatabasePrivileges is a nested struct in rds response
 type DatabasePrivileges struct {
-	DatabasePrivilege []DatabasePrivilege `json:"DatabasePrivilege" xml:"DatabasePrivilege"`
+DatabasePrivilege []DatabasePrivilege `json:"DatabasePrivilege" xml:"DatabasePrivilege"`
 }

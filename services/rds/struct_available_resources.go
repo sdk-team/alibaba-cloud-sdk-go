@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,6 +18,6 @@ package rds
 
 // AvailableResources is a nested struct in rds response
 type AvailableResources struct {
-	StorageRange    string `json:"StorageRange" xml:"StorageRange"`
-	DBInstanceClass string `json:"DBInstanceClass" xml:"DBInstanceClass"`
+            StorageRange     string `json:"StorageRange" xml:"StorageRange"`
+            DBInstanceClass     string `json:"DBInstanceClass" xml:"DBInstanceClass"`
 }

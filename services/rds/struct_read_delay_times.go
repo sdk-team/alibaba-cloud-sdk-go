@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package rds
 
 // ReadDelayTimes is a nested struct in rds response
 type ReadDelayTimes struct {
-	ReadDelayTime []string `json:"ReadDelayTime" xml:"ReadDelayTime"`
+ReadDelayTime []    string  `json:"ReadDelayTime" xml:"ReadDelayTime"`
 }

@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package rds
 
 // SupportedEngineInDescribeAvailableInstanceClass is a nested struct in rds response
 type SupportedEngineInDescribeAvailableInstanceClass struct {
-	SupportedEngines []SupportedEngines `json:"SupportedEngines" xml:"SupportedEngines"`
+SupportedEngines []SupportedEngines `json:"SupportedEngines" xml:"SupportedEngines"`
 }

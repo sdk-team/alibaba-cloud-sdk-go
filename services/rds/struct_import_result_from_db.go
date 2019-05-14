@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,9 +18,9 @@ package rds
 
 // ImportResultFromDB is a nested struct in rds response
 type ImportResultFromDB struct {
-	ImportId                    int    `json:"ImportId" xml:"ImportId"`
-	ImportDataType              string `json:"ImportDataType" xml:"ImportDataType"`
-	ImportDataStatus            string `json:"ImportDataStatus" xml:"ImportDataStatus"`
-	ImportDataStatusDescription string `json:"ImportDataStatusDescription" xml:"ImportDataStatusDescription"`
-	IncrementalImportingTime    string `json:"IncrementalImportingTime" xml:"IncrementalImportingTime"`
+            ImportId     int `json:"ImportId" xml:"ImportId"`
+            ImportDataType     string `json:"ImportDataType" xml:"ImportDataType"`
+            ImportDataStatus     string `json:"ImportDataStatus" xml:"ImportDataStatus"`
+            ImportDataStatusDescription     string `json:"ImportDataStatusDescription" xml:"ImportDataStatusDescription"`
+            IncrementalImportingTime     string `json:"IncrementalImportingTime" xml:"IncrementalImportingTime"`
 }

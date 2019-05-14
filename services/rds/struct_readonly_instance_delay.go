@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package rds
 
 // ReadonlyInstanceDelay is a nested struct in rds response
 type ReadonlyInstanceDelay struct {
-	ReadonlyInstanceDelayItem []ReadonlyInstanceDelayItem `json:"ReadonlyInstanceDelayItem" xml:"ReadonlyInstanceDelayItem"`
+ReadonlyInstanceDelayItem []ReadonlyInstanceDelayItem `json:"ReadonlyInstanceDelayItem" xml:"ReadonlyInstanceDelayItem"`
 }

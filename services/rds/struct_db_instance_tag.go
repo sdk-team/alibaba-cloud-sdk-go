@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,6 +18,6 @@ package rds
 
 // DBInstanceTag is a nested struct in rds response
 type DBInstanceTag struct {
-	DBInstanceId string `json:"DBInstanceId" xml:"DBInstanceId"`
-	Tags         Tags   `json:"Tags" xml:"Tags"`
+            DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
+                    Tags Tags `json:"Tags" xml:"Tags"`
 }

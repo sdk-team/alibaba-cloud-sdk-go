@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,12 +18,28 @@ package rds
 
 // Item is a nested struct in rds response
 type Item struct {
-	RegionId         string                               `json:"RegionId" xml:"RegionId"`
-	Duration         int                                  `json:"Duration" xml:"Duration"`
-	DBInstanceId     string                               `json:"DBInstanceId" xml:"DBInstanceId"`
-	Status           string                               `json:"Status" xml:"Status"`
-	AutoRenew        string                               `json:"AutoRenew" xml:"AutoRenew"`
-	ReportTime       string                               `json:"ReportTime" xml:"ReportTime"`
-	LatencyTopNItems LatencyTopNItemsInDescribeSQLReports `json:"LatencyTopNItems" xml:"LatencyTopNItems"`
-	QPSTopNItems     QPSTopNItemsInDescribeSQLReports     `json:"QPSTopNItems" xml:"QPSTopNItems"`
+            HAStatus     string `json:"HAStatus" xml:"HAStatus"`
+            EndPoint     string `json:"EndPoint" xml:"EndPoint"`
+            CurrentVersion     string `json:"CurrentVersion" xml:"CurrentVersion"`
+            ReportTime     string `json:"ReportTime" xml:"ReportTime"`
+            SwitchFinishTime     string `json:"SwitchFinishTime" xml:"SwitchFinishTime"`
+            NetworkLatency     string `json:"NetworkLatency" xml:"NetworkLatency"`
+            StartPoint     string `json:"StartPoint" xml:"StartPoint"`
+            SwitchCauseCode     string `json:"SwitchCauseCode" xml:"SwitchCauseCode"`
+            TotalSessions     string `json:"TotalSessions" xml:"TotalSessions"`
+            SwitchStartTime     string `json:"SwitchStartTime" xml:"SwitchStartTime"`
+            AffectedSessions     string `json:"AffectedSessions" xml:"AffectedSessions"`
+            RegionId     string `json:"RegionId" xml:"RegionId"`
+            Duration     int `json:"Duration" xml:"Duration"`
+            NetworkErrors     string `json:"NetworkErrors" xml:"NetworkErrors"`
+            NetworkTrafficIn     string `json:"NetworkTrafficIn" xml:"NetworkTrafficIn"`
+            DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
+            Status     string `json:"Status" xml:"Status"`
+            AutoRenew     string `json:"AutoRenew" xml:"AutoRenew"`
+            SwitchId     string `json:"SwitchId" xml:"SwitchId"`
+            NetworkTrafficOut     string `json:"NetworkTrafficOut" xml:"NetworkTrafficOut"`
+            BackendLatency     string `json:"BackendLatency" xml:"BackendLatency"`
+                    LatencyTopNItems LatencyTopNItemsInDescribeSQLLogReportList `json:"LatencyTopNItems" xml:"LatencyTopNItems"`
+                    SQLServerUpgradeVersions SQLServerUpgradeVersions `json:"SQLServerUpgradeVersions" xml:"SQLServerUpgradeVersions"`
+                    QPSTopNItems QPSTopNItemsInDescribeSQLLogReportList `json:"QPSTopNItems" xml:"QPSTopNItems"`
 }

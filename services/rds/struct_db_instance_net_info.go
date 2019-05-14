@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,17 +18,19 @@ package rds
 
 // DBInstanceNetInfo is a nested struct in rds response
 type DBInstanceNetInfo struct {
-	Upgradeable          string            `json:"Upgradeable" xml:"Upgradeable"`
-	ExpiredTime          string            `json:"ExpiredTime" xml:"ExpiredTime"`
-	ConnectionString     string            `json:"ConnectionString" xml:"ConnectionString"`
-	IPAddress            string            `json:"IPAddress" xml:"IPAddress"`
-	IPType               string            `json:"IPType" xml:"IPType"`
-	Port                 string            `json:"Port" xml:"Port"`
-	VPCId                string            `json:"VPCId" xml:"VPCId"`
-	VSwitchId            string            `json:"VSwitchId" xml:"VSwitchId"`
-	ConnectionStringType string            `json:"ConnectionStringType" xml:"ConnectionStringType"`
-	MaxDelayTime         string            `json:"MaxDelayTime" xml:"MaxDelayTime"`
-	DistributionType     string            `json:"DistributionType" xml:"DistributionType"`
-	SecurityIPGroups     SecurityIPGroups  `json:"SecurityIPGroups" xml:"SecurityIPGroups"`
-	DBInstanceWeights    DBInstanceWeights `json:"DBInstanceWeights" xml:"DBInstanceWeights"`
+            ExpiredTime     string `json:"ExpiredTime" xml:"ExpiredTime"`
+            VPCId     string `json:"VPCId" xml:"VPCId"`
+            Port     string `json:"Port" xml:"Port"`
+            VSwitchId     string `json:"VSwitchId" xml:"VSwitchId"`
+            ExpiredTime     string `json:"expiredTime" xml:"expiredTime"`
+            DistributionType     string `json:"DistributionType" xml:"DistributionType"`
+            IPAddress     string `json:"IPAddress" xml:"IPAddress"`
+            Availability     string `json:"Availability" xml:"Availability"`
+            Upgradeable     string `json:"Upgradeable" xml:"Upgradeable"`
+            ConnectionString     string `json:"ConnectionString" xml:"ConnectionString"`
+            IPType     string `json:"IPType" xml:"IPType"`
+            MaxDelayTime     string `json:"MaxDelayTime" xml:"MaxDelayTime"`
+            ConnectionStringType     string `json:"ConnectionStringType" xml:"ConnectionStringType"`
+                    SecurityIPGroups SecurityIPGroupsInDescribeDBInstanceNetInfo `json:"SecurityIPGroups" xml:"SecurityIPGroups"`
+                    DBInstanceWeights DBInstanceWeightsInDescribeDBInstanceNetInfo `json:"DBInstanceWeights" xml:"DBInstanceWeights"`
 }

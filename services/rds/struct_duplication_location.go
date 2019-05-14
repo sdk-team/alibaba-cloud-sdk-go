@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,6 +18,6 @@ package rds
 
 // DuplicationLocation is a nested struct in rds response
 type DuplicationLocation struct {
-	Sotrage  string   `json:"Sotrage" xml:"Sotrage"`
-	Location Location `json:"Location" xml:"Location"`
+            Sotrage     string `json:"Sotrage" xml:"Sotrage"`
+            Location Location  `json:"Location" xml:"Location"`
 }

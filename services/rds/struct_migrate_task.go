@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,15 +18,23 @@ package rds
 
 // MigrateTask is a nested struct in rds response
 type MigrateTask struct {
-	BackupMode    string `json:"BackupMode" xml:"BackupMode"`
-	EndTime       string `json:"EndTime" xml:"EndTime"`
-	Desc          string `json:"Desc" xml:"Desc"`
-	MigrateTaskId string `json:"MigrateTaskId" xml:"MigrateTaskId"`
-	CreateTime    string `json:"CreateTime" xml:"CreateTime"`
-	DBName        string `json:"DBName" xml:"DBName"`
-	MigrateIaskId string `json:"MigrateIaskId" xml:"MigrateIaskId"`
-	IsDBReplaced  string `json:"IsDBReplaced" xml:"IsDBReplaced"`
-	TaskType      string `json:"TaskType" xml:"TaskType"`
-	Status        string `json:"Status" xml:"Status"`
-	Description   string `json:"Description" xml:"Description"`
+            SourceVSwitchId     string `json:"SourceVSwitchId" xml:"SourceVSwitchId"`
+            BackupMode     string `json:"BackupMode" xml:"BackupMode"`
+            Desc     string `json:"Desc" xml:"Desc"`
+            TargetZoneId     string `json:"TargetZoneId" xml:"TargetZoneId"`
+            MigrateTaskId     string `json:"MigrateTaskId" xml:"MigrateTaskId"`
+            TargetRegionId     string `json:"TargetRegionId" xml:"TargetRegionId"`
+            CreateTime     string `json:"CreateTime" xml:"CreateTime"`
+            IsDBReplaced     string `json:"IsDBReplaced" xml:"IsDBReplaced"`
+            TargetVSwitchId     string `json:"TargetVSwitchId" xml:"TargetVSwitchId"`
+            SourceZoneId     string `json:"SourceZoneId" xml:"SourceZoneId"`
+            EndTime     string `json:"EndTime" xml:"EndTime"`
+            TargetVpcId     string `json:"TargetVpcId" xml:"TargetVpcId"`
+            DBName     string `json:"DBName" xml:"DBName"`
+            MigrateIaskId     string `json:"MigrateIaskId" xml:"MigrateIaskId"`
+            SourceRegionId     string `json:"SourceRegionId" xml:"SourceRegionId"`
+            TaskType     string `json:"TaskType" xml:"TaskType"`
+            Status     string `json:"Status" xml:"Status"`
+            Description     string `json:"Description" xml:"Description"`
+            SourceVpcId     string `json:"SourceVpcId" xml:"SourceVpcId"`
 }

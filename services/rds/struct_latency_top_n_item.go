@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +18,7 @@ package rds
 
 // LatencyTopNItem is a nested struct in rds response
 type LatencyTopNItem struct {
-	SQLExecuteTimes int    `json:"SQLExecuteTimes" xml:"SQLExecuteTimes"`
-	AvgLatency      int    `json:"AvgLatency" xml:"AvgLatency"`
-	SQLText         string `json:"SQLText" xml:"SQLText"`
+            SQLExecuteTimes     int `json:"SQLExecuteTimes" xml:"SQLExecuteTimes"`
+            AvgLatency     int `json:"AvgLatency" xml:"AvgLatency"`
+            SQLText     string `json:"SQLText" xml:"SQLText"`
 }

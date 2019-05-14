@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package rds
 
 // LatencyTopNItemsInDescribeSQLLogReports is a nested struct in rds response
 type LatencyTopNItemsInDescribeSQLLogReports struct {
-	LatencyTopNItem []LatencyTopNItem `json:"LatencyTopNItem" xml:"LatencyTopNItem"`
+LatencyTopNItem []LatencyTopNItem `json:"LatencyTopNItem" xml:"LatencyTopNItem"`
 }

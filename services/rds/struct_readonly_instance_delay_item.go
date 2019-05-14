@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,12 +18,12 @@ package rds
 
 // ReadonlyInstanceDelayItem is a nested struct in rds response
 type ReadonlyInstanceDelayItem struct {
-	ReplayLatency      string `json:"ReplayLatency" xml:"ReplayLatency"`
-	FlushLag           string `json:"FlushLag" xml:"FlushLag"`
-	FlushLatency       string `json:"FlushLatency" xml:"FlushLatency"`
-	SendLatency        string `json:"SendLatency" xml:"SendLatency"`
-	WriteLag           string `json:"WriteLag" xml:"WriteLag"`
-	ReplayLag          string `json:"ReplayLag" xml:"ReplayLag"`
-	WriteLatency       string `json:"WriteLatency" xml:"WriteLatency"`
-	ReadDBInstanceName string `json:"ReadDBInstanceName" xml:"ReadDBInstanceName"`
+            ReplayLatency     string `json:"ReplayLatency" xml:"ReplayLatency"`
+            FlushLag     string `json:"FlushLag" xml:"FlushLag"`
+            FlushLatency     string `json:"FlushLatency" xml:"FlushLatency"`
+            SendLatency     string `json:"SendLatency" xml:"SendLatency"`
+            WriteLag     string `json:"WriteLag" xml:"WriteLag"`
+            ReplayLag     string `json:"ReplayLag" xml:"ReplayLag"`
+            WriteLatency     string `json:"WriteLatency" xml:"WriteLatency"`
+            ReadDBInstanceName     string `json:"ReadDBInstanceName" xml:"ReadDBInstanceName"`
 }

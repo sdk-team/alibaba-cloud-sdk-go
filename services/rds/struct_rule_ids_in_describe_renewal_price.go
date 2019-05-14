@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package rds
 
 // RuleIdsInDescribeRenewalPrice is a nested struct in rds response
 type RuleIdsInDescribeRenewalPrice struct {
-	RuleId []string `json:"RuleId" xml:"RuleId"`
+RuleId []    string  `json:"RuleId" xml:"RuleId"`
 }

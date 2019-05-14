@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package rds
 
 // SupportedCategoryInDescribeAvailableInstanceClass is a nested struct in rds response
 type SupportedCategoryInDescribeAvailableInstanceClass struct {
-	SupportedCategorys []SupportedCategorys `json:"SupportedCategorys" xml:"SupportedCategorys"`
+SupportedCategorys []SupportedCategorys `json:"SupportedCategorys" xml:"SupportedCategorys"`
 }

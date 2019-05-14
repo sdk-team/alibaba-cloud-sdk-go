@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,25 +18,25 @@ package rds
 
 // SQLSlowLog is a nested struct in rds response
 type SQLSlowLog struct {
-	SlowLogId                     int    `json:"SlowLogId" xml:"SlowLogId"`
-	SQLHASH                       string `json:"SQLHASH" xml:"SQLHASH"`
-	SQLIdStr                      string `json:"SQLIdStr" xml:"SQLIdStr"`
-	DBName                        string `json:"DBName" xml:"DBName"`
-	SQLText                       string `json:"SQLText" xml:"SQLText"`
-	MySQLTotalExecutionCounts     int    `json:"MySQLTotalExecutionCounts" xml:"MySQLTotalExecutionCounts"`
-	MySQLTotalExecutionTimes      int    `json:"MySQLTotalExecutionTimes" xml:"MySQLTotalExecutionTimes"`
-	TotalLockTimes                int    `json:"TotalLockTimes" xml:"TotalLockTimes"`
-	MaxLockTime                   int    `json:"MaxLockTime" xml:"MaxLockTime"`
-	ParseTotalRowCounts           int    `json:"ParseTotalRowCounts" xml:"ParseTotalRowCounts"`
-	ParseMaxRowCount              int    `json:"ParseMaxRowCount" xml:"ParseMaxRowCount"`
-	ReturnTotalRowCounts          int    `json:"ReturnTotalRowCounts" xml:"ReturnTotalRowCounts"`
-	ReturnMaxRowCount             int    `json:"ReturnMaxRowCount" xml:"ReturnMaxRowCount"`
-	CreateTime                    string `json:"CreateTime" xml:"CreateTime"`
-	SQLServerTotalExecutionCounts int    `json:"SQLServerTotalExecutionCounts" xml:"SQLServerTotalExecutionCounts"`
-	SQLServerTotalExecutionTimes  int    `json:"SQLServerTotalExecutionTimes" xml:"SQLServerTotalExecutionTimes"`
-	TotalLogicalReadCounts        int    `json:"TotalLogicalReadCounts" xml:"TotalLogicalReadCounts"`
-	TotalPhysicalReadCounts       int    `json:"TotalPhysicalReadCounts" xml:"TotalPhysicalReadCounts"`
-	ReportTime                    string `json:"ReportTime" xml:"ReportTime"`
-	MaxExecutionTime              int    `json:"MaxExecutionTime" xml:"MaxExecutionTime"`
-	AvgExecutionTime              int    `json:"AvgExecutionTime" xml:"AvgExecutionTime"`
+            SlowLogId     int `json:"SlowLogId" xml:"SlowLogId"`
+            SQLHASH     string `json:"SQLHASH" xml:"SQLHASH"`
+            SQLIdStr     string `json:"SQLIdStr" xml:"SQLIdStr"`
+            DBName     string `json:"DBName" xml:"DBName"`
+            SQLText     string `json:"SQLText" xml:"SQLText"`
+            MySQLTotalExecutionCounts     int `json:"MySQLTotalExecutionCounts" xml:"MySQLTotalExecutionCounts"`
+            MySQLTotalExecutionTimes     int `json:"MySQLTotalExecutionTimes" xml:"MySQLTotalExecutionTimes"`
+            TotalLockTimes     int `json:"TotalLockTimes" xml:"TotalLockTimes"`
+            MaxLockTime     int `json:"MaxLockTime" xml:"MaxLockTime"`
+            ParseTotalRowCounts     int `json:"ParseTotalRowCounts" xml:"ParseTotalRowCounts"`
+            ParseMaxRowCount     int `json:"ParseMaxRowCount" xml:"ParseMaxRowCount"`
+            ReturnTotalRowCounts     int `json:"ReturnTotalRowCounts" xml:"ReturnTotalRowCounts"`
+            ReturnMaxRowCount     int `json:"ReturnMaxRowCount" xml:"ReturnMaxRowCount"`
+            CreateTime     string `json:"CreateTime" xml:"CreateTime"`
+            SQLServerTotalExecutionCounts     int `json:"SQLServerTotalExecutionCounts" xml:"SQLServerTotalExecutionCounts"`
+            SQLServerTotalExecutionTimes     int `json:"SQLServerTotalExecutionTimes" xml:"SQLServerTotalExecutionTimes"`
+            TotalLogicalReadCounts     int `json:"TotalLogicalReadCounts" xml:"TotalLogicalReadCounts"`
+            TotalPhysicalReadCounts     int `json:"TotalPhysicalReadCounts" xml:"TotalPhysicalReadCounts"`
+            ReportTime     string `json:"ReportTime" xml:"ReportTime"`
+            MaxExecutionTime     int `json:"MaxExecutionTime" xml:"MaxExecutionTime"`
+            AvgExecutionTime     int `json:"AvgExecutionTime" xml:"AvgExecutionTime"`
 }

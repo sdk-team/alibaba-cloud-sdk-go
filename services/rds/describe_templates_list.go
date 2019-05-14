@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,115 +17,118 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // DescribeTemplatesList invokes the rds.DescribeTemplatesList API synchronously
 // api document: https://help.aliyun.com/api/rds/describetemplateslist.html
 func (client *Client) DescribeTemplatesList(request *DescribeTemplatesListRequest) (response *DescribeTemplatesListResponse, err error) {
-	response = CreateDescribeTemplatesListResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeTemplatesListResponse()
+err = client.DoAction(request, response)
+return
 }
 
 // DescribeTemplatesListWithChan invokes the rds.DescribeTemplatesList API asynchronously
 // api document: https://help.aliyun.com/api/rds/describetemplateslist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTemplatesListWithChan(request *DescribeTemplatesListRequest) (<-chan *DescribeTemplatesListResponse, <-chan error) {
-	responseChan := make(chan *DescribeTemplatesListResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeTemplatesList(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeTemplatesListResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeTemplatesList(request)
+if err != nil {
+errChan <- err
+} else {
+responseChan <- response
+}
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
 // DescribeTemplatesListWithCallback invokes the rds.DescribeTemplatesList API asynchronously
 // api document: https://help.aliyun.com/api/rds/describetemplateslist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeTemplatesListWithCallback(request *DescribeTemplatesListRequest, callback func(response *DescribeTemplatesListResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeTemplatesListResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeTemplatesList(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeTemplatesListWithCallback(request *DescribeTemplatesListRequest, callback func(response *DescribeTemplatesListResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeTemplatesListResponse
+var err error
+defer close(result)
+response, err = client.DescribeTemplatesList(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 // DescribeTemplatesListRequest is the request struct for api DescribeTemplatesList
 type DescribeTemplatesListRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	MinAvgConsume        requests.Integer `position:"Query" name:"MinAvgConsume"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	MaxRecordsPerPage    requests.Integer `position:"Query" name:"MaxRecordsPerPage"`
-	EndTime              string           `position:"Query" name:"EndTime"`
-	StartTime            string           `position:"Query" name:"StartTime"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	MaxAvgConsume        requests.Integer `position:"Query" name:"MaxAvgConsume"`
-	SortKey              string           `position:"Query" name:"SortKey"`
-	MinAvgScanRows       requests.Integer `position:"Query" name:"MinAvgScanRows"`
-	SqType               string           `position:"Query" name:"SqType"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	SortMethod           string           `position:"Query" name:"SortMethod"`
-	PageNumbers          requests.Integer `position:"Query" name:"PageNumbers"`
-	PagingId             string           `position:"Query" name:"PagingId"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	MaxAvgScanRows       requests.Integer `position:"Query" name:"MaxAvgScanRows"`
+*requests.RpcRequest
+                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
+                    StartTime     string `position:"Query" name:"StartTime"`
+                    SortKey     string `position:"Query" name:"SortKey"`
+                    MinAvgScanRows     requests.Integer `position:"Query" name:"MinAvgScanRows"`
+                    SecurityToken     string `position:"Query" name:"SecurityToken"`
+                    PageNumbers     requests.Integer `position:"Query" name:"PageNumbers"`
+                    PagingId     string `position:"Query" name:"PagingId"`
+                    DBInstanceId     string `position:"Query" name:"DBInstanceId"`
+                    MaxAvgScanRows     requests.Integer `position:"Query" name:"MaxAvgScanRows"`
+                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
+                    MinAvgConsume     requests.Integer `position:"Query" name:"MinAvgConsume"`
+                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
+                    MaxRecordsPerPage     requests.Integer `position:"Query" name:"MaxRecordsPerPage"`
+                    EndTime     string `position:"Query" name:"EndTime"`
+                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+                    MaxAvgConsume     requests.Integer `position:"Query" name:"MaxAvgConsume"`
+                    SqType     string `position:"Query" name:"SqType"`
+                    SortMethod     string `position:"Query" name:"SortMethod"`
 }
+
 
 // DescribeTemplatesListResponse is the response struct for api DescribeTemplatesList
 type DescribeTemplatesListResponse struct {
-	*responses.BaseResponse
-	RequestId         string                       `json:"RequestId" xml:"RequestId"`
-	DBInstanceID      int                          `json:"DBInstanceID" xml:"DBInstanceID"`
-	DBInstanceName    string                       `json:"DBInstanceName" xml:"DBInstanceName"`
-	StartTime         string                       `json:"StartTime" xml:"StartTime"`
-	EndTime           string                       `json:"EndTime" xml:"EndTime"`
-	TotalRecords      int                          `json:"TotalRecords" xml:"TotalRecords"`
-	PagingID          string                       `json:"PagingID" xml:"PagingID"`
-	MaxRecordsPerPage int                          `json:"MaxRecordsPerPage" xml:"MaxRecordsPerPage"`
-	PageNumbers       int                          `json:"PageNumbers" xml:"PageNumbers"`
-	ItemsNumbers      int                          `json:"ItemsNumbers" xml:"ItemsNumbers"`
-	Items             ItemsInDescribeTemplatesList `json:"Items" xml:"Items"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            DBInstanceID     int `json:"DBInstanceID" xml:"DBInstanceID"`
+            DBInstanceName     string `json:"DBInstanceName" xml:"DBInstanceName"`
+            StartTime     string `json:"StartTime" xml:"StartTime"`
+            EndTime     string `json:"EndTime" xml:"EndTime"`
+            TotalRecords     int `json:"TotalRecords" xml:"TotalRecords"`
+            PagingID     string `json:"PagingID" xml:"PagingID"`
+            MaxRecordsPerPage     int `json:"MaxRecordsPerPage" xml:"MaxRecordsPerPage"`
+            PageNumbers     int `json:"PageNumbers" xml:"PageNumbers"`
+            ItemsNumbers     int `json:"ItemsNumbers" xml:"ItemsNumbers"`
+                    Items ItemsInDescribeTemplatesList `json:"Items" xml:"Items"`
 }
 
 // CreateDescribeTemplatesListRequest creates a request to invoke DescribeTemplatesList API
 func CreateDescribeTemplatesListRequest() (request *DescribeTemplatesListRequest) {
-	request = &DescribeTemplatesListRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeTemplatesList", "rds", "openAPI")
-	return
+request = &DescribeTemplatesListRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeTemplatesList", "rds", "openAPI")
+return
 }
 
 // CreateDescribeTemplatesListResponse creates a response to parse from DescribeTemplatesList response
 func CreateDescribeTemplatesListResponse() (response *DescribeTemplatesListResponse) {
-	response = &DescribeTemplatesListResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeTemplatesListResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+
+

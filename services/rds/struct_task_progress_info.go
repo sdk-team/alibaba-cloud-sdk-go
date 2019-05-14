@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,15 +18,15 @@ package rds
 
 // TaskProgressInfo is a nested struct in rds response
 type TaskProgressInfo struct {
-	DBName             string `json:"DBName" xml:"DBName"`
-	BeginTime          string `json:"BeginTime" xml:"BeginTime"`
-	ProgressInfo       string `json:"ProgressInfo" xml:"ProgressInfo"`
-	FinishTime         string `json:"FinishTime" xml:"FinishTime"`
-	TaskAction         string `json:"TaskAction" xml:"TaskAction"`
-	TaskId             string `json:"TaskId" xml:"TaskId"`
-	Progress           string `json:"Progress" xml:"Progress"`
-	ExpectedFinishTime string `json:"ExpectedFinishTime" xml:"ExpectedFinishTime"`
-	Status             string `json:"Status" xml:"Status"`
-	TaskErrorCode      string `json:"TaskErrorCode" xml:"TaskErrorCode"`
-	TaskErrorMessage   string `json:"TaskErrorMessage" xml:"TaskErrorMessage"`
+            DBName     string `json:"DBName" xml:"DBName"`
+            BeginTime     string `json:"BeginTime" xml:"BeginTime"`
+            ProgressInfo     string `json:"ProgressInfo" xml:"ProgressInfo"`
+            FinishTime     string `json:"FinishTime" xml:"FinishTime"`
+            TaskAction     string `json:"TaskAction" xml:"TaskAction"`
+            TaskId     string `json:"TaskId" xml:"TaskId"`
+            Progress     string `json:"Progress" xml:"Progress"`
+            ExpectedFinishTime     string `json:"ExpectedFinishTime" xml:"ExpectedFinishTime"`
+            Status     string `json:"Status" xml:"Status"`
+            TaskErrorCode     string `json:"TaskErrorCode" xml:"TaskErrorCode"`
+            TaskErrorMessage     string `json:"TaskErrorMessage" xml:"TaskErrorMessage"`
 }

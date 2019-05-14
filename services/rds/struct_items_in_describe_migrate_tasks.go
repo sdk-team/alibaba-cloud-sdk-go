@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package rds
 
 // ItemsInDescribeMigrateTasks is a nested struct in rds response
 type ItemsInDescribeMigrateTasks struct {
-	MigrateTask []MigrateTask `json:"MigrateTask" xml:"MigrateTask"`
+MigrateTask []MigrateTask `json:"MigrateTask" xml:"MigrateTask"`
 }

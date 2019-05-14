@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,95 +17,98 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // ModifyDBInstanceConnectionString invokes the rds.ModifyDBInstanceConnectionString API synchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstanceconnectionstring.html
 func (client *Client) ModifyDBInstanceConnectionString(request *ModifyDBInstanceConnectionStringRequest) (response *ModifyDBInstanceConnectionStringResponse, err error) {
-	response = CreateModifyDBInstanceConnectionStringResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateModifyDBInstanceConnectionStringResponse()
+err = client.DoAction(request, response)
+return
 }
 
 // ModifyDBInstanceConnectionStringWithChan invokes the rds.ModifyDBInstanceConnectionString API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstanceconnectionstring.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceConnectionStringWithChan(request *ModifyDBInstanceConnectionStringRequest) (<-chan *ModifyDBInstanceConnectionStringResponse, <-chan error) {
-	responseChan := make(chan *ModifyDBInstanceConnectionStringResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ModifyDBInstanceConnectionString(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ModifyDBInstanceConnectionStringResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ModifyDBInstanceConnectionString(request)
+if err != nil {
+errChan <- err
+} else {
+responseChan <- response
+}
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
 // ModifyDBInstanceConnectionStringWithCallback invokes the rds.ModifyDBInstanceConnectionString API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstanceconnectionstring.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ModifyDBInstanceConnectionStringWithCallback(request *ModifyDBInstanceConnectionStringRequest, callback func(response *ModifyDBInstanceConnectionStringResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ModifyDBInstanceConnectionStringResponse
-		var err error
-		defer close(result)
-		response, err = client.ModifyDBInstanceConnectionString(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ModifyDBInstanceConnectionStringWithCallback(request *ModifyDBInstanceConnectionStringRequest, callback func(response *ModifyDBInstanceConnectionStringResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ModifyDBInstanceConnectionStringResponse
+var err error
+defer close(result)
+response, err = client.ModifyDBInstanceConnectionString(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 // ModifyDBInstanceConnectionStringRequest is the request struct for api ModifyDBInstanceConnectionString
 type ModifyDBInstanceConnectionStringRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ConnectionStringPrefix  string           `position:"Query" name:"ConnectionStringPrefix"`
-	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
-	Port                    string           `position:"Query" name:"Port"`
-	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
-	DBInstanceId            string           `position:"Query" name:"DBInstanceId"`
-	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
-	CurrentConnectionString string           `position:"Query" name:"CurrentConnectionString"`
+*requests.RpcRequest
+                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
+                    ConnectionStringPrefix     string `position:"Query" name:"ConnectionStringPrefix"`
+                    DBInstanceId     string `position:"Query" name:"DBInstanceId"`
+                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
+                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
+                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+                    CurrentConnectionString     string `position:"Query" name:"CurrentConnectionString"`
+                    Port     string `position:"Query" name:"Port"`
 }
+
 
 // ModifyDBInstanceConnectionStringResponse is the response struct for api ModifyDBInstanceConnectionString
 type ModifyDBInstanceConnectionStringResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyDBInstanceConnectionStringRequest creates a request to invoke ModifyDBInstanceConnectionString API
 func CreateModifyDBInstanceConnectionStringRequest() (request *ModifyDBInstanceConnectionStringRequest) {
-	request = &ModifyDBInstanceConnectionStringRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceConnectionString", "rds", "openAPI")
-	return
+request = &ModifyDBInstanceConnectionStringRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceConnectionString", "rds", "openAPI")
+return
 }
 
 // CreateModifyDBInstanceConnectionStringResponse creates a response to parse from ModifyDBInstanceConnectionString response
 func CreateModifyDBInstanceConnectionStringResponse() (response *ModifyDBInstanceConnectionStringResponse) {
-	response = &ModifyDBInstanceConnectionStringResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ModifyDBInstanceConnectionStringResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+
+

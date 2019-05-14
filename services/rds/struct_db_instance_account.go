@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,11 +18,11 @@ package rds
 
 // DBInstanceAccount is a nested struct in rds response
 type DBInstanceAccount struct {
-	DBInstanceId       string             `json:"DBInstanceId" xml:"DBInstanceId"`
-	AccountName        string             `json:"AccountName" xml:"AccountName"`
-	AccountStatus      string             `json:"AccountStatus" xml:"AccountStatus"`
-	AccountType        string             `json:"AccountType" xml:"AccountType"`
-	AccountDescription string             `json:"AccountDescription" xml:"AccountDescription"`
-	PrivExceeded       string             `json:"PrivExceeded" xml:"PrivExceeded"`
-	DatabasePrivileges DatabasePrivileges `json:"DatabasePrivileges" xml:"DatabasePrivileges"`
+            DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
+            AccountName     string `json:"AccountName" xml:"AccountName"`
+            AccountStatus     string `json:"AccountStatus" xml:"AccountStatus"`
+            AccountType     string `json:"AccountType" xml:"AccountType"`
+            AccountDescription     string `json:"AccountDescription" xml:"AccountDescription"`
+            PrivExceeded     string `json:"PrivExceeded" xml:"PrivExceeded"`
+                    DatabasePrivileges DatabasePrivileges `json:"DatabasePrivileges" xml:"DatabasePrivileges"`
 }

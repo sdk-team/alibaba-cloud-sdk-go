@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,6 +18,6 @@ package rds
 
 // Tag is a nested struct in rds response
 type Tag struct {
-	TagKey   string `json:"TagKey" xml:"TagKey"`
-	TagValue string `json:"TagValue" xml:"TagValue"`
+            TagKey     string `json:"TagKey" xml:"TagKey"`
+            TagValue     string `json:"TagValue" xml:"TagValue"`
 }

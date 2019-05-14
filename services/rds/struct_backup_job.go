@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,11 +18,11 @@ package rds
 
 // BackupJob is a nested struct in rds response
 type BackupJob struct {
-	BackupProgressStatus string `json:"BackupProgressStatus" xml:"BackupProgressStatus"`
-	BackupStatus         string `json:"BackupStatus" xml:"BackupStatus"`
-	JobMode              string `json:"JobMode" xml:"JobMode"`
-	Process              string `json:"Process" xml:"Process"`
-	TaskAction           string `json:"TaskAction" xml:"TaskAction"`
-	BackupJobId          string `json:"BackupJobId" xml:"BackupJobId"`
-	BackupId             string `json:"BackupId" xml:"BackupId"`
+            BackupProgressStatus     string `json:"BackupProgressStatus" xml:"BackupProgressStatus"`
+            BackupStatus     string `json:"BackupStatus" xml:"BackupStatus"`
+            JobMode     string `json:"JobMode" xml:"JobMode"`
+            Process     string `json:"Process" xml:"Process"`
+            TaskAction     string `json:"TaskAction" xml:"TaskAction"`
+            BackupJobId     string `json:"BackupJobId" xml:"BackupJobId"`
+            BackupId     string `json:"BackupId" xml:"BackupId"`
 }

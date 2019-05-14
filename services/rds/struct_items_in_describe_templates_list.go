@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package rds
 
 // ItemsInDescribeTemplatesList is a nested struct in rds response
 type ItemsInDescribeTemplatesList struct {
-	ItemsItem []ItemsItem `json:"ItemsItem" xml:"ItemsItem"`
+ItemsItem []ItemsItem `json:"ItemsItem" xml:"ItemsItem"`
 }

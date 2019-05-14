@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,15 +18,15 @@ package rds
 
 // OssDownload is a nested struct in rds response
 type OssDownload struct {
-	FileSize    string `json:"FileSize" xml:"FileSize"`
-	IsAvail     string `json:"IsAvail" xml:"IsAvail"`
-	BackupMode  string `json:"BackupMode" xml:"BackupMode"`
-	Desc        string `json:"Desc" xml:"Desc"`
-	EndTime     string `json:"EndTime" xml:"EndTime"`
-	IsAvailable string `json:"IsAvailable" xml:"IsAvailable"`
-	CreateTime  string `json:"CreateTime" xml:"CreateTime"`
-	BakType     string `json:"BakType" xml:"BakType"`
-	Status      string `json:"Status" xml:"Status"`
-	FileName    string `json:"FileName" xml:"FileName"`
-	Description string `json:"Description" xml:"Description"`
+            FileSize     string `json:"FileSize" xml:"FileSize"`
+            BackupMode     string `json:"BackupMode" xml:"BackupMode"`
+            IsAvail     string `json:"IsAvail" xml:"IsAvail"`
+            EndTime     string `json:"EndTime" xml:"EndTime"`
+            Desc     string `json:"Desc" xml:"Desc"`
+            IsAvailable     string `json:"IsAvailable" xml:"IsAvailable"`
+            CreateTime     string `json:"CreateTime" xml:"CreateTime"`
+            BakType     string `json:"BakType" xml:"BakType"`
+            Status     string `json:"Status" xml:"Status"`
+            FileName     string `json:"FileName" xml:"FileName"`
+            Description     string `json:"Description" xml:"Description"`
 }

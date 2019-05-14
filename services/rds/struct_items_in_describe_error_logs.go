@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package rds
 
 // ItemsInDescribeErrorLogs is a nested struct in rds response
 type ItemsInDescribeErrorLogs struct {
-	ErrorLog []ErrorLog `json:"ErrorLog" xml:"ErrorLog"`
+ErrorLog []ErrorLog `json:"ErrorLog" xml:"ErrorLog"`
 }

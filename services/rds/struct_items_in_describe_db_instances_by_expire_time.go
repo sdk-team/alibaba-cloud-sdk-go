@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package rds
 
 // ItemsInDescribeDBInstancesByExpireTime is a nested struct in rds response
 type ItemsInDescribeDBInstancesByExpireTime struct {
-	DBInstanceExpireTime []DBInstanceExpireTime `json:"DBInstanceExpireTime" xml:"DBInstanceExpireTime"`
+DBInstanceExpireTime []DBInstanceExpireTime `json:"DBInstanceExpireTime" xml:"DBInstanceExpireTime"`
 }

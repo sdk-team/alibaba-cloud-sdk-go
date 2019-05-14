@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package rds
 
 // CouponsInDescribePrice is a nested struct in rds response
 type CouponsInDescribePrice struct {
-	Coupon []Coupon `json:"Coupon" xml:"Coupon"`
+Coupon []Coupon `json:"Coupon" xml:"Coupon"`
 }

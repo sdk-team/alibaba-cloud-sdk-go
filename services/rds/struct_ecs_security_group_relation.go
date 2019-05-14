@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +18,7 @@ package rds
 
 // EcsSecurityGroupRelation is a nested struct in rds response
 type EcsSecurityGroupRelation struct {
-	RegionId        string `json:"RegionId" xml:"RegionId"`
-	SecurityGroupId string `json:"SecurityGroupId" xml:"SecurityGroupId"`
-	NetworkType     string `json:"NetworkType" xml:"NetworkType"`
+            RegionId     string `json:"RegionId" xml:"RegionId"`
+            SecurityGroupId     string `json:"SecurityGroupId" xml:"SecurityGroupId"`
+            NetworkType     string `json:"NetworkType" xml:"NetworkType"`
 }

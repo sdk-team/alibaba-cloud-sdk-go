@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,93 +17,96 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // RequestServiceOfCloudDBExpert invokes the rds.RequestServiceOfCloudDBExpert API synchronously
 // api document: https://help.aliyun.com/api/rds/requestserviceofclouddbexpert.html
 func (client *Client) RequestServiceOfCloudDBExpert(request *RequestServiceOfCloudDBExpertRequest) (response *RequestServiceOfCloudDBExpertResponse, err error) {
-	response = CreateRequestServiceOfCloudDBExpertResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateRequestServiceOfCloudDBExpertResponse()
+err = client.DoAction(request, response)
+return
 }
 
 // RequestServiceOfCloudDBExpertWithChan invokes the rds.RequestServiceOfCloudDBExpert API asynchronously
 // api document: https://help.aliyun.com/api/rds/requestserviceofclouddbexpert.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RequestServiceOfCloudDBExpertWithChan(request *RequestServiceOfCloudDBExpertRequest) (<-chan *RequestServiceOfCloudDBExpertResponse, <-chan error) {
-	responseChan := make(chan *RequestServiceOfCloudDBExpertResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.RequestServiceOfCloudDBExpert(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *RequestServiceOfCloudDBExpertResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.RequestServiceOfCloudDBExpert(request)
+if err != nil {
+errChan <- err
+} else {
+responseChan <- response
+}
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
 // RequestServiceOfCloudDBExpertWithCallback invokes the rds.RequestServiceOfCloudDBExpert API asynchronously
 // api document: https://help.aliyun.com/api/rds/requestserviceofclouddbexpert.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) RequestServiceOfCloudDBExpertWithCallback(request *RequestServiceOfCloudDBExpertRequest, callback func(response *RequestServiceOfCloudDBExpertResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *RequestServiceOfCloudDBExpertResponse
-		var err error
-		defer close(result)
-		response, err = client.RequestServiceOfCloudDBExpert(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) RequestServiceOfCloudDBExpertWithCallback(request *RequestServiceOfCloudDBExpertRequest, callback func(response *RequestServiceOfCloudDBExpertResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *RequestServiceOfCloudDBExpertResponse
+var err error
+defer close(result)
+response, err = client.RequestServiceOfCloudDBExpert(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 // RequestServiceOfCloudDBExpertRequest is the request struct for api RequestServiceOfCloudDBExpert
 type RequestServiceOfCloudDBExpertRequest struct {
-	*requests.RpcRequest
-	ServiceRequestParam string `position:"Query" name:"ServiceRequestParam"`
-	DBInstanceId        string `position:"Query" name:"DBInstanceId"`
-	ServiceRequestType  string `position:"Query" name:"ServiceRequestType"`
+*requests.RpcRequest
+                    ServiceRequestType     string `position:"Query" name:"ServiceRequestType"`
+                    ServiceRequestParam     string `position:"Query" name:"ServiceRequestParam"`
+                    DBInstanceId     string `position:"Query" name:"DBInstanceId"`
 }
+
 
 // RequestServiceOfCloudDBExpertResponse is the response struct for api RequestServiceOfCloudDBExpert
 type RequestServiceOfCloudDBExpertResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Message   string `json:"Message" xml:"Message"`
-	Data      string `json:"Data" xml:"Data"`
-	Code      string `json:"Code" xml:"Code"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Message     string `json:"Message" xml:"Message"`
+            Data     string `json:"Data" xml:"Data"`
+            Code     string `json:"Code" xml:"Code"`
 }
 
 // CreateRequestServiceOfCloudDBExpertRequest creates a request to invoke RequestServiceOfCloudDBExpert API
 func CreateRequestServiceOfCloudDBExpertRequest() (request *RequestServiceOfCloudDBExpertRequest) {
-	request = &RequestServiceOfCloudDBExpertRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "RequestServiceOfCloudDBExpert", "rds", "openAPI")
-	return
+request = &RequestServiceOfCloudDBExpertRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Rds", "2014-08-15", "RequestServiceOfCloudDBExpert", "rds", "openAPI")
+return
 }
 
 // CreateRequestServiceOfCloudDBExpertResponse creates a response to parse from RequestServiceOfCloudDBExpert response
 func CreateRequestServiceOfCloudDBExpertResponse() (response *RequestServiceOfCloudDBExpertResponse) {
-	response = &RequestServiceOfCloudDBExpertResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &RequestServiceOfCloudDBExpertResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+
+

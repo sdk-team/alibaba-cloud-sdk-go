@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package rds
 
 // ItemsInDescribeSecurityGroupConfiguration is a nested struct in rds response
 type ItemsInDescribeSecurityGroupConfiguration struct {
-	EcsSecurityGroupRelation []EcsSecurityGroupRelation `json:"EcsSecurityGroupRelation" xml:"EcsSecurityGroupRelation"`
+EcsSecurityGroupRelation []EcsSecurityGroupRelation `json:"EcsSecurityGroupRelation" xml:"EcsSecurityGroupRelation"`
 }

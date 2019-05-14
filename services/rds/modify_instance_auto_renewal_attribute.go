@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,95 +17,98 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // ModifyInstanceAutoRenewalAttribute invokes the rds.ModifyInstanceAutoRenewalAttribute API synchronously
 // api document: https://help.aliyun.com/api/rds/modifyinstanceautorenewalattribute.html
 func (client *Client) ModifyInstanceAutoRenewalAttribute(request *ModifyInstanceAutoRenewalAttributeRequest) (response *ModifyInstanceAutoRenewalAttributeResponse, err error) {
-	response = CreateModifyInstanceAutoRenewalAttributeResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateModifyInstanceAutoRenewalAttributeResponse()
+err = client.DoAction(request, response)
+return
 }
 
 // ModifyInstanceAutoRenewalAttributeWithChan invokes the rds.ModifyInstanceAutoRenewalAttribute API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifyinstanceautorenewalattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceAutoRenewalAttributeWithChan(request *ModifyInstanceAutoRenewalAttributeRequest) (<-chan *ModifyInstanceAutoRenewalAttributeResponse, <-chan error) {
-	responseChan := make(chan *ModifyInstanceAutoRenewalAttributeResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ModifyInstanceAutoRenewalAttribute(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ModifyInstanceAutoRenewalAttributeResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ModifyInstanceAutoRenewalAttribute(request)
+if err != nil {
+errChan <- err
+} else {
+responseChan <- response
+}
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
 // ModifyInstanceAutoRenewalAttributeWithCallback invokes the rds.ModifyInstanceAutoRenewalAttribute API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifyinstanceautorenewalattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ModifyInstanceAutoRenewalAttributeWithCallback(request *ModifyInstanceAutoRenewalAttributeRequest, callback func(response *ModifyInstanceAutoRenewalAttributeResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ModifyInstanceAutoRenewalAttributeResponse
-		var err error
-		defer close(result)
-		response, err = client.ModifyInstanceAutoRenewalAttribute(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ModifyInstanceAutoRenewalAttributeWithCallback(request *ModifyInstanceAutoRenewalAttributeRequest, callback func(response *ModifyInstanceAutoRenewalAttributeResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ModifyInstanceAutoRenewalAttributeResponse
+var err error
+defer close(result)
+response, err = client.ModifyInstanceAutoRenewalAttribute(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 // ModifyInstanceAutoRenewalAttributeRequest is the request struct for api ModifyInstanceAutoRenewalAttribute
 type ModifyInstanceAutoRenewalAttributeRequest struct {
-	*requests.RpcRequest
-	Duration             string           `position:"Query" name:"Duration"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AutoRenew            string           `position:"Query" name:"AutoRenew"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
+                    ClientToken     string `position:"Query" name:"ClientToken"`
+                    Duration     string `position:"Query" name:"Duration"`
+                    DBInstanceId     string `position:"Query" name:"DBInstanceId"`
+                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
+                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
+                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+                    AutoRenew     string `position:"Query" name:"AutoRenew"`
 }
+
 
 // ModifyInstanceAutoRenewalAttributeResponse is the response struct for api ModifyInstanceAutoRenewalAttribute
 type ModifyInstanceAutoRenewalAttributeResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyInstanceAutoRenewalAttributeRequest creates a request to invoke ModifyInstanceAutoRenewalAttribute API
 func CreateModifyInstanceAutoRenewalAttributeRequest() (request *ModifyInstanceAutoRenewalAttributeRequest) {
-	request = &ModifyInstanceAutoRenewalAttributeRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyInstanceAutoRenewalAttribute", "rds", "openAPI")
-	return
+request = &ModifyInstanceAutoRenewalAttributeRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Rds", "2014-08-15", "ModifyInstanceAutoRenewalAttribute", "rds", "openAPI")
+return
 }
 
 // CreateModifyInstanceAutoRenewalAttributeResponse creates a response to parse from ModifyInstanceAutoRenewalAttribute response
 func CreateModifyInstanceAutoRenewalAttributeResponse() (response *ModifyInstanceAutoRenewalAttributeResponse) {
-	response = &ModifyInstanceAutoRenewalAttributeResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ModifyInstanceAutoRenewalAttributeResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+
+

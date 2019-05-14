@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package rds
 
 // ItemsInDescribeSQLLogRecords is a nested struct in rds response
 type ItemsInDescribeSQLLogRecords struct {
-	SQLRecord []SQLRecord `json:"SQLRecord" xml:"SQLRecord"`
+SQLRecord []SQLRecord `json:"SQLRecord" xml:"SQLRecord"`
 }

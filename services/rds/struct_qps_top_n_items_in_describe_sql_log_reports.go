@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package rds
 
 // QPSTopNItemsInDescribeSQLLogReports is a nested struct in rds response
 type QPSTopNItemsInDescribeSQLLogReports struct {
-	QPSTopNItem []QPSTopNItem `json:"QPSTopNItem" xml:"QPSTopNItem"`
+QPSTopNItem []QPSTopNItem `json:"QPSTopNItem" xml:"QPSTopNItem"`
 }

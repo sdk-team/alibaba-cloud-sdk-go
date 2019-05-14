@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,11 +18,11 @@ package rds
 
 // DBInstanceMigrateInfo is a nested struct in rds response
 type DBInstanceMigrateInfo struct {
-	DBInstanceId        string `json:"DBInstanceId" xml:"DBInstanceId"`
-	TargetRegionId      string `json:"TargetRegionId" xml:"TargetRegionId"`
-	TargetZoneId        string `json:"TargetZoneId" xml:"TargetZoneId"`
-	TargetVPCId         string `json:"TargetVPCId" xml:"TargetVPCId"`
-	TargetVSwitchId     string `json:"TargetVSwitchId" xml:"TargetVSwitchId"`
-	TargetIPAddress     string `json:"TargetIPAddress" xml:"TargetIPAddress"`
-	TargetVpcInstanceId string `json:"TargetVpcInstanceId" xml:"TargetVpcInstanceId"`
+            DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
+            TargetRegionId     string `json:"TargetRegionId" xml:"TargetRegionId"`
+            TargetZoneId     string `json:"TargetZoneId" xml:"TargetZoneId"`
+            TargetVPCId     string `json:"TargetVPCId" xml:"TargetVPCId"`
+            TargetVSwitchId     string `json:"TargetVSwitchId" xml:"TargetVSwitchId"`
+            TargetIPAddress     string `json:"TargetIPAddress" xml:"TargetIPAddress"`
+            TargetVpcInstanceId     string `json:"TargetVpcInstanceId" xml:"TargetVpcInstanceId"`
 }

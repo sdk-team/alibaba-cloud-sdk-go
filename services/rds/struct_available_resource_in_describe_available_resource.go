@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package rds
 
 // AvailableResourceInDescribeAvailableResource is a nested struct in rds response
 type AvailableResourceInDescribeAvailableResource struct {
-	AvailableResources []AvailableResources `json:"AvailableResources" xml:"AvailableResources"`
+AvailableResources []AvailableResources `json:"AvailableResources" xml:"AvailableResources"`
 }
