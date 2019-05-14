@@ -18,8 +18,8 @@ package ecs
 
 // Invocation is a nested struct in ecs response
 type Invocation struct {
-            CommandId     string `json:"CommandId" xml:"CommandId"`
             PageNumber     int `json:"PageNumber" xml:"PageNumber"`
+            CommandId     string `json:"CommandId" xml:"CommandId"`
             TotalCount     int `json:"TotalCount" xml:"TotalCount"`
             PageSize     int `json:"PageSize" xml:"PageSize"`
             Timed     bool `json:"Timed" xml:"Timed"`
