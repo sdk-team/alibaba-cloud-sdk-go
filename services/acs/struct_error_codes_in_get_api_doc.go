@@ -18,5 +18,5 @@ package acs
 
 // ErrorCodesInGetApiDoc is a nested struct in acs response
 type ErrorCodesInGetApiDoc struct {
-ErrorCode []ErrorCode `json:"ErrorCode" xml:"ErrorCode"`
+ErrorCode []ErrorCodeInGetApiDoc `json:"ErrorCode" xml:"ErrorCode"`
 }

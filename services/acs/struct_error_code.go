@@ -20,13 +20,11 @@ package acs
 type ErrorCode struct {
             Type     string `json:"type" xml:"type"`
             Code     string `json:"code" xml:"code"`
-            ErrorCode     string `json:"errorCode" xml:"errorCode"`
             HttpStatusCode     int `json:"httpStatusCode" xml:"httpStatusCode"`
+            ErrorCode     string `json:"errorCode" xml:"errorCode"`
             DefaultError     bool `json:"defaultError" xml:"defaultError"`
-            Index     string `json:"index" xml:"index"`
-            TagId     string `json:"tagId" xml:"tagId"`
             ExtendedErrorCode     string `json:"extendedErrorCode" xml:"extendedErrorCode"`
             ErrorMessage     string `json:"errorMessage" xml:"errorMessage"`
+            Index     int `json:"index" xml:"index"`
             HttpCode     string `json:"httpCode" xml:"httpCode"`
-            Description     string `json:"Description" xml:"Description"`
 }

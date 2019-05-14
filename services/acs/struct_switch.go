@@ -19,5 +19,5 @@ package acs
 // Switch is a nested struct in acs response
 type Switch struct {
             Default     string `json:"Default" xml:"Default"`
-                    Cases CasesInGetApiNew `json:"Cases" xml:"Cases"`
+                    Cases CasesInGetApiBackup `json:"Cases" xml:"Cases"`
 }
