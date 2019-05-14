@@ -19,16 +19,16 @@ package ecs
 // AutoSnapshotPolicy is a nested struct in ecs response
 type AutoSnapshotPolicy struct {
             DataDiskPolicyEnabled     string `json:"DataDiskPolicyEnabled" xml:"DataDiskPolicyEnabled"`
-            SystemDiskPolicyRetentionLastWeek     string `json:"SystemDiskPolicyRetentionLastWeek" xml:"SystemDiskPolicyRetentionLastWeek"`
             RepeatWeekdays     string `json:"RepeatWeekdays" xml:"RepeatWeekdays"`
+            SystemDiskPolicyRetentionLastWeek     string `json:"SystemDiskPolicyRetentionLastWeek" xml:"SystemDiskPolicyRetentionLastWeek"`
             AutoSnapshotPolicyId     string `json:"AutoSnapshotPolicyId" xml:"AutoSnapshotPolicyId"`
-            DataDiskPolicyRetentionDays     string `json:"DataDiskPolicyRetentionDays" xml:"DataDiskPolicyRetentionDays"`
             VolumeNums     int `json:"VolumeNums" xml:"VolumeNums"`
+            DataDiskPolicyRetentionDays     string `json:"DataDiskPolicyRetentionDays" xml:"DataDiskPolicyRetentionDays"`
             CreationTime     string `json:"CreationTime" xml:"CreationTime"`
             DataDiskPolicyTimePeriod     string `json:"DataDiskPolicyTimePeriod" xml:"DataDiskPolicyTimePeriod"`
             SystemDiskPolicyTimePeriod     string `json:"SystemDiskPolicyTimePeriod" xml:"SystemDiskPolicyTimePeriod"`
-            SystemDiskPolicyEnabled     string `json:"SystemDiskPolicyEnabled" xml:"SystemDiskPolicyEnabled"`
             DiskNums     int `json:"DiskNums" xml:"DiskNums"`
+            SystemDiskPolicyEnabled     string `json:"SystemDiskPolicyEnabled" xml:"SystemDiskPolicyEnabled"`
             RegionId     string `json:"RegionId" xml:"RegionId"`
             AutoSnapshotPolicyName     string `json:"AutoSnapshotPolicyName" xml:"AutoSnapshotPolicyName"`
             RetentionDays     int `json:"RetentionDays" xml:"RetentionDays"`
