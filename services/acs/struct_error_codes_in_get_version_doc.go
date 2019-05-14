@@ -18,5 +18,5 @@ package acs
 
 // ErrorCodesInGetVersionDoc is a nested struct in acs response
 type ErrorCodesInGetVersionDoc struct {
-ErrorCode []ErrorCodeInGetVersionDoc `json:"ErrorCode" xml:"ErrorCode"`
+ErrorCode []ErrorCode `json:"ErrorCode" xml:"ErrorCode"`
 }

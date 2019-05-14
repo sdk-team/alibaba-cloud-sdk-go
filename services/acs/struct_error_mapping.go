@@ -20,5 +20,5 @@ package acs
 type ErrorMapping struct {
             ExceptionExpress     string `json:"exceptionExpress" xml:"exceptionExpress"`
             UnknownError UnknownError  `json:"UnknownError" xml:"UnknownError"`
-                    ErrorCodes ErrorCodesInGetGlobal `json:"ErrorCodes" xml:"ErrorCodes"`
+                    ErrorCodes ErrorCodesInGetApiDoc `json:"ErrorCodes" xml:"ErrorCodes"`
 }
