@@ -1,3 +1,6 @@
+2019-05-16 Version: 1.58.12
+- Generated 2015-07-01 for `Aas`
+
 2019-05-15 Version: 1.58.11
 - Generated 2016-02-01, 2018-02-12 for `AMS`
 
