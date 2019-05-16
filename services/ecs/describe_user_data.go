@@ -98,7 +98,7 @@ func CreateDescribeUserDataRequest() (request *DescribeUserDataRequest) {
 request = &DescribeUserDataRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeUserData", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeUserData", "", "")
 return
 }
 

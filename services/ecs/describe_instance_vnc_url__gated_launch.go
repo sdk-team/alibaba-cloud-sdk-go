@@ -97,7 +97,7 @@ func CreateDescribeInstanceVncUrl_GatedLaunchRequest() (request *DescribeInstanc
 request = &DescribeInstanceVncUrl_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceVncUrl_GatedLaunch", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceVncUrl_GatedLaunch", "", "")
 return
 }
 

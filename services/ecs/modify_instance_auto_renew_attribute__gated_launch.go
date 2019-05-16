@@ -98,7 +98,7 @@ func CreateModifyInstanceAutoRenewAttribute_GatedLaunchRequest() (request *Modif
 request = &ModifyInstanceAutoRenewAttribute_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceAutoRenewAttribute_GatedLaunch", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceAutoRenewAttribute_GatedLaunch", "", "")
 return
 }
 

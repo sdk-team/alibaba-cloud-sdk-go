@@ -97,7 +97,7 @@ func CreateReInitDisk_GatedLaunchRequest() (request *ReInitDisk_GatedLaunchReque
 request = &ReInitDisk_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ReInitDisk_GatedLaunch", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ReInitDisk_GatedLaunch", "", "")
 return
 }
 

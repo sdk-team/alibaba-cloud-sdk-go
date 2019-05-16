@@ -119,7 +119,7 @@ func CreateAllocateDedicatedHostsRequest() (request *AllocateDedicatedHostsReque
 request = &AllocateDedicatedHostsRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "AllocateDedicatedHosts", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "AllocateDedicatedHosts", "", "")
 return
 }
 

@@ -99,7 +99,7 @@ func CreateCreateNetworkInterfacePermissionRequest() (request *CreateNetworkInte
 request = &CreateNetworkInterfacePermissionRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "CreateNetworkInterfacePermission", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "CreateNetworkInterfacePermission", "", "")
 return
 }
 

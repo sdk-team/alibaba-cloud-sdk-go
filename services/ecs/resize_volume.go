@@ -98,7 +98,7 @@ func CreateResizeVolumeRequest() (request *ResizeVolumeRequest) {
 request = &ResizeVolumeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ResizeVolume", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ResizeVolume", "", "")
 return
 }
 

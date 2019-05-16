@@ -101,7 +101,7 @@ func CreateModifyInstanceAttribute_GatedLaunchRequest() (request *ModifyInstance
 request = &ModifyInstanceAttribute_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceAttribute_GatedLaunch", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceAttribute_GatedLaunch", "", "")
 return
 }
 

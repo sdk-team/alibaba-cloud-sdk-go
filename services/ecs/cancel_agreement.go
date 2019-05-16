@@ -96,7 +96,7 @@ func CreateCancelAgreementRequest() (request *CancelAgreementRequest) {
 request = &CancelAgreementRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "CancelAgreement", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "CancelAgreement", "", "")
 return
 }
 

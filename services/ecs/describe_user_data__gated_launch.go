@@ -98,7 +98,7 @@ func CreateDescribeUserData_GatedLaunchRequest() (request *DescribeUserData_Gate
 request = &DescribeUserData_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeUserData_GatedLaunch", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeUserData_GatedLaunch", "", "")
 return
 }
 

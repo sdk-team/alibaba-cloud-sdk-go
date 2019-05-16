@@ -98,7 +98,7 @@ func CreateModifySecurityGroupAttribute_GatedLaunchRequest() (request *ModifySec
 request = &ModifySecurityGroupAttribute_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ModifySecurityGroupAttribute_GatedLaunch", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ModifySecurityGroupAttribute_GatedLaunch", "", "")
 return
 }
 

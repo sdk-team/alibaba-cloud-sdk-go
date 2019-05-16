@@ -97,7 +97,7 @@ func CreateRollbackVolume_GatedLaunchRequest() (request *RollbackVolume_GatedLau
 request = &RollbackVolume_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "RollbackVolume_GatedLaunch", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "RollbackVolume_GatedLaunch", "", "")
 return
 }
 

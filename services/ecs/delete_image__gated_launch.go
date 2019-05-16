@@ -96,7 +96,7 @@ func CreateDeleteImage_GatedLaunchRequest() (request *DeleteImage_GatedLaunchReq
 request = &DeleteImage_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteImage_GatedLaunch", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteImage_GatedLaunch", "", "")
 return
 }
 

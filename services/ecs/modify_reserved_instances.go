@@ -106,7 +106,7 @@ func CreateModifyReservedInstancesRequest() (request *ModifyReservedInstancesReq
 request = &ModifyReservedInstancesRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyReservedInstances", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyReservedInstances", "", "")
 return
 }
 

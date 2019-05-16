@@ -97,7 +97,7 @@ func CreateModifyInstanceVncPasswd_GatedLaunchRequest() (request *ModifyInstance
 request = &ModifyInstanceVncPasswd_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceVncPasswd_GatedLaunch", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceVncPasswd_GatedLaunch", "", "")
 return
 }
 

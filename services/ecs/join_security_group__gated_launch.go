@@ -97,7 +97,7 @@ func CreateJoinSecurityGroup_GatedLaunchRequest() (request *JoinSecurityGroup_Ga
 request = &JoinSecurityGroup_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "JoinSecurityGroup_GatedLaunch", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "JoinSecurityGroup_GatedLaunch", "", "")
 return
 }
 

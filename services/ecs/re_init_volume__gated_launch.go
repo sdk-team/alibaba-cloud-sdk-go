@@ -97,7 +97,7 @@ func CreateReInitVolume_GatedLaunchRequest() (request *ReInitVolume_GatedLaunchR
 request = &ReInitVolume_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ReInitVolume_GatedLaunch", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ReInitVolume_GatedLaunch", "", "")
 return
 }
 

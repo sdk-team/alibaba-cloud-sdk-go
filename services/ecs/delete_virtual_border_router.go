@@ -98,7 +98,7 @@ func CreateDeleteVirtualBorderRouterRequest() (request *DeleteVirtualBorderRoute
 request = &DeleteVirtualBorderRouterRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteVirtualBorderRouter", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteVirtualBorderRouter", "", "")
 return
 }
 

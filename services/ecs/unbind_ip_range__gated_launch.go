@@ -97,7 +97,7 @@ func CreateUnbindIpRange_GatedLaunchRequest() (request *UnbindIpRange_GatedLaunc
 request = &UnbindIpRange_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "UnbindIpRange_GatedLaunch", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "UnbindIpRange_GatedLaunch", "", "")
 return
 }
 

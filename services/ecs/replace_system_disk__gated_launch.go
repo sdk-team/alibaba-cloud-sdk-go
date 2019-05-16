@@ -102,7 +102,7 @@ func CreateReplaceSystemDisk_GatedLaunchRequest() (request *ReplaceSystemDisk_Ga
 request = &ReplaceSystemDisk_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ReplaceSystemDisk_GatedLaunch", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ReplaceSystemDisk_GatedLaunch", "", "")
 return
 }
 

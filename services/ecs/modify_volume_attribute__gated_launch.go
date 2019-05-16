@@ -98,7 +98,7 @@ func CreateModifyVolumeAttribute_GatedLaunchRequest() (request *ModifyVolumeAttr
 request = &ModifyVolumeAttribute_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyVolumeAttribute_GatedLaunch", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyVolumeAttribute_GatedLaunch", "", "")
 return
 }
 

@@ -112,7 +112,7 @@ func CreateImportImage_GatedLaunchRequest() (request *ImportImage_GatedLaunchReq
 request = &ImportImage_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ImportImage_GatedLaunch", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ImportImage_GatedLaunch", "", "")
 return
 }
 

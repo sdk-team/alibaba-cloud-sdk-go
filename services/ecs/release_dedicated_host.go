@@ -96,7 +96,7 @@ func CreateReleaseDedicatedHostRequest() (request *ReleaseDedicatedHostRequest) 
 request = &ReleaseDedicatedHostRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ReleaseDedicatedHost", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ReleaseDedicatedHost", "", "")
 return
 }
 

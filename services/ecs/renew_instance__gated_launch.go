@@ -97,7 +97,7 @@ func CreateRenewInstance_GatedLaunchRequest() (request *RenewInstance_GatedLaunc
 request = &RenewInstance_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "RenewInstance_GatedLaunch", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "RenewInstance_GatedLaunch", "", "")
 return
 }
 

@@ -98,7 +98,7 @@ func CreateModifySnapshotAttributeRequest() (request *ModifySnapshotAttributeReq
 request = &ModifySnapshotAttributeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ModifySnapshotAttribute", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ModifySnapshotAttribute", "", "")
 return
 }
 

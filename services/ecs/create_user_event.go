@@ -99,7 +99,7 @@ func CreateCreateUserEventRequest() (request *CreateUserEventRequest) {
 request = &CreateUserEventRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "CreateUserEvent", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "CreateUserEvent", "", "")
 return
 }
 

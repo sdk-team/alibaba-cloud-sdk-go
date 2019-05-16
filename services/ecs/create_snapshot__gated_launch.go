@@ -106,7 +106,7 @@ func CreateCreateSnapshot_GatedLaunchRequest() (request *CreateSnapshot_GatedLau
 request = &CreateSnapshot_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "CreateSnapshot_GatedLaunch", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "CreateSnapshot_GatedLaunch", "", "")
 return
 }
 

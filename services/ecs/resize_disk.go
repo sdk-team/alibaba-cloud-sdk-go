@@ -99,7 +99,7 @@ func CreateResizeDiskRequest() (request *ResizeDiskRequest) {
 request = &ResizeDiskRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ResizeDisk", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ResizeDisk", "", "")
 return
 }
 

@@ -98,7 +98,7 @@ func CreateResizeDisk_GatedLaunchRequest() (request *ResizeDisk_GatedLaunchReque
 request = &ResizeDisk_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ResizeDisk_GatedLaunch", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ResizeDisk_GatedLaunch", "", "")
 return
 }
 

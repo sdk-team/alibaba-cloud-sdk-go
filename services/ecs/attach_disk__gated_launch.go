@@ -99,7 +99,7 @@ func CreateAttachDisk_GatedLaunchRequest() (request *AttachDisk_GatedLaunchReque
 request = &AttachDisk_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "AttachDisk_GatedLaunch", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "AttachDisk_GatedLaunch", "", "")
 return
 }
 

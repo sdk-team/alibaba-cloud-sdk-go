@@ -97,7 +97,7 @@ func CreateDetachVolume_GatedLaunchRequest() (request *DetachVolume_GatedLaunchR
 request = &DetachVolume_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "DetachVolume_GatedLaunch", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "DetachVolume_GatedLaunch", "", "")
 return
 }
 

@@ -102,7 +102,7 @@ func CreateAddTags_GatedLaunchRequest() (request *AddTags_GatedLaunchRequest) {
 request = &AddTags_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "AddTags_GatedLaunch", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "AddTags_GatedLaunch", "", "")
 return
 }
 

@@ -118,7 +118,7 @@ func CreateDescribeVolumesRequest() (request *DescribeVolumesRequest) {
 request = &DescribeVolumesRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeVolumes", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeVolumes", "", "")
 return
 }
 

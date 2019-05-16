@@ -90,6 +90,7 @@ type CreateDiskRequest struct {
                     ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
                     OwnerAccount     string `position:"Query" name:"OwnerAccount"`
                     OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+                    InstanceId     string `position:"Query" name:"InstanceId"`
                     Size     requests.Integer `position:"Query" name:"Size"`
                     Encrypted     requests.Boolean `position:"Query" name:"Encrypted"`
                     ZoneId     string `position:"Query" name:"ZoneId"`
@@ -120,7 +121,7 @@ func CreateCreateDiskRequest() (request *CreateDiskRequest) {
 request = &CreateDiskRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "CreateDisk", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "CreateDisk", "", "")
 return
 }
 

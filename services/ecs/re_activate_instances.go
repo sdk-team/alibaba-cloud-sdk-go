@@ -96,7 +96,7 @@ func CreateReActivateInstancesRequest() (request *ReActivateInstancesRequest) {
 request = &ReActivateInstancesRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ReActivateInstances", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ReActivateInstances", "", "")
 return
 }
 

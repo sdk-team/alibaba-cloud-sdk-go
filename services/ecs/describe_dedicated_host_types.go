@@ -98,7 +98,7 @@ func CreateDescribeDedicatedHostTypesRequest() (request *DescribeDedicatedHostTy
 request = &DescribeDedicatedHostTypesRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDedicatedHostTypes", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDedicatedHostTypes", "", "")
 return
 }
 
