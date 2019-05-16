@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package bssopenapi
 
 // AttributeList is a nested struct in bssopenapi response
 type AttributeList struct {
-	Attribute []Attribute `json:"Attribute" xml:"Attribute"`
+Attribute []Attribute `json:"Attribute" xml:"Attribute"`
 }

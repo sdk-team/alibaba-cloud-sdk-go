@@ -1,3 +1,6 @@
+2019-05-16 Version: 1.58.15
+- Generated 2017-12-14 for `BssOpenApi`
+
 2019-05-16 Version: 1.58.14
 - Generated 2014-05-26 for `Ecs`
 

@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +18,7 @@ package bssopenapi
 
 // DataInQueryUserOmsData is a nested struct in bssopenapi response
 type DataInQueryUserOmsData struct {
-	Marker  string   `json:"Marker" xml:"Marker"`
-	HostId  string   `json:"HostId" xml:"HostId"`
-	OmsData []string `json:"OmsData" xml:"OmsData"`
+            Marker     string `json:"Marker" xml:"Marker"`
+            HostId     string `json:"HostId" xml:"HostId"`
+                OmsData []    string  `json:"OmsData" xml:"OmsData"`
 }

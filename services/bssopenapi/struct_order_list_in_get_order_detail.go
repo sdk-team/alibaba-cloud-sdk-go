@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package bssopenapi
 
 // OrderListInGetOrderDetail is a nested struct in bssopenapi response
 type OrderListInGetOrderDetail struct {
-	Order []Order `json:"Order" xml:"Order"`
+Order []Order `json:"Order" xml:"Order"`
 }

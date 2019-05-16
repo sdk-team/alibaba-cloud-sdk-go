@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package bssopenapi
 
 // AvailableDurations is a nested struct in bssopenapi response
 type AvailableDurations struct {
-	AvailableDuration []AvailableDuration `json:"AvailableDuration" xml:"AvailableDuration"`
+AvailableDuration []AvailableDuration `json:"AvailableDuration" xml:"AvailableDuration"`
 }

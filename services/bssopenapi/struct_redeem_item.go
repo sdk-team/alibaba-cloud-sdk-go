@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,14 +18,14 @@ package bssopenapi
 
 // RedeemItem is a nested struct in bssopenapi response
 type RedeemItem struct {
-	RedeemId           string `json:"RedeemId" xml:"RedeemId"`
-	RedeemNo           string `json:"RedeemNo" xml:"RedeemNo"`
-	Status             string `json:"Status" xml:"Status"`
-	GrantedTime        string `json:"GrantedTime" xml:"GrantedTime"`
-	EffectiveTime      string `json:"EffectiveTime" xml:"EffectiveTime"`
-	ExpiryTime         string `json:"ExpiryTime" xml:"ExpiryTime"`
-	NominalValue       string `json:"NominalValue" xml:"NominalValue"`
-	Balance            string `json:"Balance" xml:"Balance"`
-	ApplicableProducts string `json:"ApplicableProducts" xml:"ApplicableProducts"`
-	Specification      string `json:"Specification" xml:"Specification"`
+            RedeemId     string `json:"RedeemId" xml:"RedeemId"`
+            RedeemNo     string `json:"RedeemNo" xml:"RedeemNo"`
+            Status     string `json:"Status" xml:"Status"`
+            GrantedTime     string `json:"GrantedTime" xml:"GrantedTime"`
+            EffectiveTime     string `json:"EffectiveTime" xml:"EffectiveTime"`
+            ExpiryTime     string `json:"ExpiryTime" xml:"ExpiryTime"`
+            NominalValue     string `json:"NominalValue" xml:"NominalValue"`
+            Balance     string `json:"Balance" xml:"Balance"`
+            ApplicableProducts     string `json:"ApplicableProducts" xml:"ApplicableProducts"`
+            Specification     string `json:"Specification" xml:"Specification"`
 }

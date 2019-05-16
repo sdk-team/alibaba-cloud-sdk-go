@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package bssopenapi
 
 // DataInQueryCashCoupons is a nested struct in bssopenapi response
 type DataInQueryCashCoupons struct {
-	CashCoupon []CashCoupon `json:"CashCoupon" xml:"CashCoupon"`
+CashCoupon []CashCoupon `json:"CashCoupon" xml:"CashCoupon"`
 }

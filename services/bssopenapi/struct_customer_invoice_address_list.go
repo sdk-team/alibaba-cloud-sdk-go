@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package bssopenapi
 
 // CustomerInvoiceAddressList is a nested struct in bssopenapi response
 type CustomerInvoiceAddressList struct {
-	CustomerInvoiceAddress []CustomerInvoiceAddress `json:"CustomerInvoiceAddress" xml:"CustomerInvoiceAddress"`
+CustomerInvoiceAddress []CustomerInvoiceAddress `json:"CustomerInvoiceAddress" xml:"CustomerInvoiceAddress"`
 }

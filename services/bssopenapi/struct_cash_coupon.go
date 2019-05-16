@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,14 +18,14 @@ package bssopenapi
 
 // CashCoupon is a nested struct in bssopenapi response
 type CashCoupon struct {
-	CashCouponId        int    `json:"CashCouponId" xml:"CashCouponId"`
-	CashCouponNo        string `json:"CashCouponNo" xml:"CashCouponNo"`
-	GrantedTime         string `json:"GrantedTime" xml:"GrantedTime"`
-	EffectiveTime       string `json:"EffectiveTime" xml:"EffectiveTime"`
-	ExpiryTime          string `json:"ExpiryTime" xml:"ExpiryTime"`
-	ApplicableProducts  string `json:"ApplicableProducts" xml:"ApplicableProducts"`
-	ApplicableScenarios string `json:"ApplicableScenarios" xml:"ApplicableScenarios"`
-	NominalValue        string `json:"NominalValue" xml:"NominalValue"`
-	Balance             string `json:"Balance" xml:"Balance"`
-	Status              string `json:"Status" xml:"Status"`
+            CashCouponId     int `json:"CashCouponId" xml:"CashCouponId"`
+            CashCouponNo     string `json:"CashCouponNo" xml:"CashCouponNo"`
+            GrantedTime     string `json:"GrantedTime" xml:"GrantedTime"`
+            EffectiveTime     string `json:"EffectiveTime" xml:"EffectiveTime"`
+            ExpiryTime     string `json:"ExpiryTime" xml:"ExpiryTime"`
+            ApplicableProducts     string `json:"ApplicableProducts" xml:"ApplicableProducts"`
+            ApplicableScenarios     string `json:"ApplicableScenarios" xml:"ApplicableScenarios"`
+            NominalValue     string `json:"NominalValue" xml:"NominalValue"`
+            Balance     string `json:"Balance" xml:"Balance"`
+            Status     string `json:"Status" xml:"Status"`
 }

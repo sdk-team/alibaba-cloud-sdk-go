@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,29 +18,37 @@ package bssopenapi
 
 // ItemInQueryInstanceBill is a nested struct in bssopenapi response
 type ItemInQueryInstanceBill struct {
-	InstanceID                string  `json:"InstanceID" xml:"InstanceID"`
-	ServicePeriod             float64 `json:"ServicePeriod" xml:"ServicePeriod"`
-	BillingType               string  `json:"BillingType" xml:"BillingType"`
-	CostUnit                  string  `json:"CostUnit" xml:"CostUnit"`
-	ProductCode               string  `json:"ProductCode" xml:"ProductCode"`
-	ProductType               string  `json:"ProductType" xml:"ProductType"`
-	SubscriptionType          string  `json:"SubscriptionType" xml:"SubscriptionType"`
-	ProductName               string  `json:"ProductName" xml:"ProductName"`
-	ProductDetail             string  `json:"ProductDetail" xml:"ProductDetail"`
-	OwnerID                   int     `json:"OwnerID" xml:"OwnerID"`
-	BillingItem               string  `json:"BillingItem" xml:"BillingItem"`
-	ListPrice                 float64 `json:"ListPrice" xml:"ListPrice"`
-	ListPriceUnit             string  `json:"ListPriceUnit" xml:"ListPriceUnit"`
-	Usage                     float64 `json:"Usage" xml:"Usage"`
-	UsageUnit                 string  `json:"UsageUnit" xml:"UsageUnit"`
-	DeductedByResourcePackage float64 `json:"DeductedByResourcePackage" xml:"DeductedByResourcePackage"`
-	PretaxGrossAmount         float64 `json:"PretaxGrossAmount" xml:"PretaxGrossAmount"`
-	InvoiceDiscount           float64 `json:"InvoiceDiscount" xml:"InvoiceDiscount"`
-	DeductedByCoupons         float64 `json:"DeductedByCoupons" xml:"DeductedByCoupons"`
-	PretaxAmount              float64 `json:"PretaxAmount" xml:"PretaxAmount"`
-	DeductedByCashCoupons     float64 `json:"DeductedByCashCoupons" xml:"DeductedByCashCoupons"`
-	DeductedByPrepaidCard     float64 `json:"DeductedByPrepaidCard" xml:"DeductedByPrepaidCard"`
-	PaymentAmount             float64 `json:"PaymentAmount" xml:"PaymentAmount"`
-	OutstandingAmount         float64 `json:"OutstandingAmount" xml:"OutstandingAmount"`
-	Currency                  string  `json:"Currency" xml:"Currency"`
+            InstanceID     string `json:"InstanceID" xml:"InstanceID"`
+            BillingType     string `json:"BillingType" xml:"BillingType"`
+            CostUnit     string `json:"CostUnit" xml:"CostUnit"`
+            ProductCode     string `json:"ProductCode" xml:"ProductCode"`
+            ProductType     string `json:"ProductType" xml:"ProductType"`
+            SubscriptionType     string `json:"SubscriptionType" xml:"SubscriptionType"`
+            ProductName     string `json:"ProductName" xml:"ProductName"`
+            ProductDetail     string `json:"ProductDetail" xml:"ProductDetail"`
+            OwnerID     int `json:"OwnerID" xml:"OwnerID"`
+            BillingItem     string `json:"BillingItem" xml:"BillingItem"`
+            ListPrice     float64 `json:"ListPrice" xml:"ListPrice"`
+            ListPriceUnit     string `json:"ListPriceUnit" xml:"ListPriceUnit"`
+            Usage     float64 `json:"Usage" xml:"Usage"`
+            UsageUnit     string `json:"UsageUnit" xml:"UsageUnit"`
+            DeductedByResourcePackage     float64 `json:"DeductedByResourcePackage" xml:"DeductedByResourcePackage"`
+            PretaxGrossAmount     float64 `json:"PretaxGrossAmount" xml:"PretaxGrossAmount"`
+            InvoiceDiscount     float64 `json:"InvoiceDiscount" xml:"InvoiceDiscount"`
+            DeductedByCoupons     float64 `json:"DeductedByCoupons" xml:"DeductedByCoupons"`
+            PretaxAmount     float64 `json:"PretaxAmount" xml:"PretaxAmount"`
+            DeductedByCashCoupons     float64 `json:"DeductedByCashCoupons" xml:"DeductedByCashCoupons"`
+            DeductedByPrepaidCard     float64 `json:"DeductedByPrepaidCard" xml:"DeductedByPrepaidCard"`
+            PaymentAmount     float64 `json:"PaymentAmount" xml:"PaymentAmount"`
+            OutstandingAmount     float64 `json:"OutstandingAmount" xml:"OutstandingAmount"`
+            Currency     string `json:"Currency" xml:"Currency"`
+            NickName     string `json:"NickName" xml:"NickName"`
+            ResourceGroup     string `json:"ResourceGroup" xml:"ResourceGroup"`
+            Tag     string `json:"Tag" xml:"Tag"`
+            InstanceConfig     string `json:"InstanceConfig" xml:"InstanceConfig"`
+            InstanceSpec     string `json:"InstanceSpec" xml:"InstanceSpec"`
+            InternetIP     string `json:"InternetIP" xml:"InternetIP"`
+            IntranetIP     string `json:"IntranetIP" xml:"IntranetIP"`
+            Region     string `json:"Region" xml:"Region"`
+            Zone     string `json:"Zone" xml:"Zone"`
 }

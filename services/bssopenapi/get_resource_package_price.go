@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,98 +17,101 @@ package bssopenapi
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // GetResourcePackagePrice invokes the bssopenapi.GetResourcePackagePrice API synchronously
 // api document: https://help.aliyun.com/api/bssopenapi/getresourcepackageprice.html
 func (client *Client) GetResourcePackagePrice(request *GetResourcePackagePriceRequest) (response *GetResourcePackagePriceResponse, err error) {
-	response = CreateGetResourcePackagePriceResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateGetResourcePackagePriceResponse()
+err = client.DoAction(request, response)
+return
 }
 
 // GetResourcePackagePriceWithChan invokes the bssopenapi.GetResourcePackagePrice API asynchronously
 // api document: https://help.aliyun.com/api/bssopenapi/getresourcepackageprice.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetResourcePackagePriceWithChan(request *GetResourcePackagePriceRequest) (<-chan *GetResourcePackagePriceResponse, <-chan error) {
-	responseChan := make(chan *GetResourcePackagePriceResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.GetResourcePackagePrice(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *GetResourcePackagePriceResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.GetResourcePackagePrice(request)
+if err != nil {
+errChan <- err
+} else {
+responseChan <- response
+}
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
 // GetResourcePackagePriceWithCallback invokes the bssopenapi.GetResourcePackagePrice API asynchronously
 // api document: https://help.aliyun.com/api/bssopenapi/getresourcepackageprice.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) GetResourcePackagePriceWithCallback(request *GetResourcePackagePriceRequest, callback func(response *GetResourcePackagePriceResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *GetResourcePackagePriceResponse
-		var err error
-		defer close(result)
-		response, err = client.GetResourcePackagePrice(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) GetResourcePackagePriceWithCallback(request *GetResourcePackagePriceRequest, callback func(response *GetResourcePackagePriceResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *GetResourcePackagePriceResponse
+var err error
+defer close(result)
+response, err = client.GetResourcePackagePrice(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 // GetResourcePackagePriceRequest is the request struct for api GetResourcePackagePrice
 type GetResourcePackagePriceRequest struct {
-	*requests.RpcRequest
-	Duration      requests.Integer `position:"Query" name:"Duration"`
-	ProductCode   string           `position:"Query" name:"ProductCode"`
-	Specification string           `position:"Query" name:"Specification"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	PackageType   string           `position:"Query" name:"PackageType"`
-	EffectiveDate string           `position:"Query" name:"EffectiveDate"`
-	PricingCycle  string           `position:"Query" name:"PricingCycle"`
+*requests.RpcRequest
+                    ProductCode     string `position:"Query" name:"ProductCode"`
+                    Specification     string `position:"Query" name:"Specification"`
+                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+                    EffectiveDate     string `position:"Query" name:"EffectiveDate"`
+                    Duration     requests.Integer `position:"Query" name:"Duration"`
+                    PackageType     string `position:"Query" name:"PackageType"`
+                    PricingCycle     string `position:"Query" name:"PricingCycle"`
 }
+
 
 // GetResourcePackagePriceResponse is the response struct for api GetResourcePackagePrice
 type GetResourcePackagePriceResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Data      Data   `json:"Data" xml:"Data"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Success     bool `json:"Success" xml:"Success"`
+            Code     string `json:"Code" xml:"Code"`
+            Message     string `json:"Message" xml:"Message"`
+            Data Data  `json:"Data" xml:"Data"`
 }
 
 // CreateGetResourcePackagePriceRequest creates a request to invoke GetResourcePackagePrice API
 func CreateGetResourcePackagePriceRequest() (request *GetResourcePackagePriceRequest) {
-	request = &GetResourcePackagePriceRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "GetResourcePackagePrice", "", "")
-	return
+request = &GetResourcePackagePriceRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("BssOpenApi", "2017-12-14", "GetResourcePackagePrice", "", "")
+return
 }
 
 // CreateGetResourcePackagePriceResponse creates a response to parse from GetResourcePackagePrice response
 func CreateGetResourcePackagePriceResponse() (response *GetResourcePackagePriceResponse) {
-	response = &GetResourcePackagePriceResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &GetResourcePackagePriceResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+
+

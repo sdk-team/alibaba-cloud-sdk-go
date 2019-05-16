@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,95 +17,98 @@ package bssopenapi
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // SetEnduserStatus invokes the bssopenapi.SetEnduserStatus API synchronously
 // api document: https://help.aliyun.com/api/bssopenapi/setenduserstatus.html
 func (client *Client) SetEnduserStatus(request *SetEnduserStatusRequest) (response *SetEnduserStatusResponse, err error) {
-	response = CreateSetEnduserStatusResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateSetEnduserStatusResponse()
+err = client.DoAction(request, response)
+return
 }
 
 // SetEnduserStatusWithChan invokes the bssopenapi.SetEnduserStatus API asynchronously
 // api document: https://help.aliyun.com/api/bssopenapi/setenduserstatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetEnduserStatusWithChan(request *SetEnduserStatusRequest) (<-chan *SetEnduserStatusResponse, <-chan error) {
-	responseChan := make(chan *SetEnduserStatusResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.SetEnduserStatus(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *SetEnduserStatusResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.SetEnduserStatus(request)
+if err != nil {
+errChan <- err
+} else {
+responseChan <- response
+}
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
 // SetEnduserStatusWithCallback invokes the bssopenapi.SetEnduserStatus API asynchronously
 // api document: https://help.aliyun.com/api/bssopenapi/setenduserstatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) SetEnduserStatusWithCallback(request *SetEnduserStatusRequest, callback func(response *SetEnduserStatusResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *SetEnduserStatusResponse
-		var err error
-		defer close(result)
-		response, err = client.SetEnduserStatus(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) SetEnduserStatusWithCallback(request *SetEnduserStatusRequest, callback func(response *SetEnduserStatusResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *SetEnduserStatusResponse
+var err error
+defer close(result)
+response, err = client.SetEnduserStatus(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 // SetEnduserStatusRequest is the request struct for api SetEnduserStatus
 type SetEnduserStatusRequest struct {
-	*requests.RpcRequest
-	Uid            requests.Integer `position:"Query" name:"Uid"`
-	PrimaryAccount string           `position:"Query" name:"PrimaryAccount"`
-	Status         string           `position:"Query" name:"Status"`
-	BusinessType   string           `position:"Query" name:"BusinessType"`
+*requests.RpcRequest
+                    Uid     requests.Integer `position:"Query" name:"Uid"`
+                    PrimaryAccount     string `position:"Query" name:"PrimaryAccount"`
+                    Status     string `position:"Query" name:"Status"`
+                    BusinessType     string `position:"Query" name:"BusinessType"`
 }
+
 
 // SetEnduserStatusResponse is the response struct for api SetEnduserStatus
 type SetEnduserStatusResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Data      bool   `json:"Data" xml:"Data"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Code     string `json:"Code" xml:"Code"`
+            Message     string `json:"Message" xml:"Message"`
+            Success     bool `json:"Success" xml:"Success"`
+            Data     bool `json:"Data" xml:"Data"`
 }
 
 // CreateSetEnduserStatusRequest creates a request to invoke SetEnduserStatus API
 func CreateSetEnduserStatusRequest() (request *SetEnduserStatusRequest) {
-	request = &SetEnduserStatusRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "SetEnduserStatus", "", "")
-	return
+request = &SetEnduserStatusRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("BssOpenApi", "2017-12-14", "SetEnduserStatus", "", "")
+return
 }
 
 // CreateSetEnduserStatusResponse creates a response to parse from SetEnduserStatus response
 func CreateSetEnduserStatusResponse() (response *SetEnduserStatusResponse) {
-	response = &SetEnduserStatusResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &SetEnduserStatusResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+
+

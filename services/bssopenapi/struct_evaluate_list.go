@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package bssopenapi
 
 // EvaluateList is a nested struct in bssopenapi response
 type EvaluateList struct {
-	Evaluate []Evaluate `json:"Evaluate" xml:"Evaluate"`
+Evaluate []Evaluate `json:"Evaluate" xml:"Evaluate"`
 }

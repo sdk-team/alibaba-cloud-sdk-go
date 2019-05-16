@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,6 +18,6 @@ package bssopenapi
 
 // DataInCreateResourcePackage is a nested struct in bssopenapi response
 type DataInCreateResourcePackage struct {
-	OrderId    int    `json:"OrderId" xml:"OrderId"`
-	InstanceId string `json:"InstanceId" xml:"InstanceId"`
+            OrderId     int `json:"OrderId" xml:"OrderId"`
+            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
 }

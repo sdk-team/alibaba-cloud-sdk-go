@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package bssopenapi
 
 // Properties is a nested struct in bssopenapi response
 type Properties struct {
-	Property []Property `json:"Property" xml:"Property"`
+Property []Property `json:"Property" xml:"Property"`
 }

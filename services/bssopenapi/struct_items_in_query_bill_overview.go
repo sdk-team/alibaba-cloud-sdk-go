@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package bssopenapi
 
 // ItemsInQueryBillOverview is a nested struct in bssopenapi response
 type ItemsInQueryBillOverview struct {
-	Item []Item `json:"Item" xml:"Item"`
+Item []Item `json:"Item" xml:"Item"`
 }

@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,94 +17,97 @@ package bssopenapi
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // QueryAvaliableQuota invokes the bssopenapi.QueryAvaliableQuota API synchronously
 // api document: https://help.aliyun.com/api/bssopenapi/queryavaliablequota.html
 func (client *Client) QueryAvaliableQuota(request *QueryAvaliableQuotaRequest) (response *QueryAvaliableQuotaResponse, err error) {
-	response = CreateQueryAvaliableQuotaResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateQueryAvaliableQuotaResponse()
+err = client.DoAction(request, response)
+return
 }
 
 // QueryAvaliableQuotaWithChan invokes the bssopenapi.QueryAvaliableQuota API asynchronously
 // api document: https://help.aliyun.com/api/bssopenapi/queryavaliablequota.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAvaliableQuotaWithChan(request *QueryAvaliableQuotaRequest) (<-chan *QueryAvaliableQuotaResponse, <-chan error) {
-	responseChan := make(chan *QueryAvaliableQuotaResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.QueryAvaliableQuota(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *QueryAvaliableQuotaResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.QueryAvaliableQuota(request)
+if err != nil {
+errChan <- err
+} else {
+responseChan <- response
+}
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
 // QueryAvaliableQuotaWithCallback invokes the bssopenapi.QueryAvaliableQuota API asynchronously
 // api document: https://help.aliyun.com/api/bssopenapi/queryavaliablequota.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) QueryAvaliableQuotaWithCallback(request *QueryAvaliableQuotaRequest, callback func(response *QueryAvaliableQuotaResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *QueryAvaliableQuotaResponse
-		var err error
-		defer close(result)
-		response, err = client.QueryAvaliableQuota(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) QueryAvaliableQuotaWithCallback(request *QueryAvaliableQuotaRequest, callback func(response *QueryAvaliableQuotaResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *QueryAvaliableQuotaResponse
+var err error
+defer close(result)
+response, err = client.QueryAvaliableQuota(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 // QueryAvaliableQuotaRequest is the request struct for api QueryAvaliableQuota
 type QueryAvaliableQuotaRequest struct {
-	*requests.RpcRequest
-	Uid       requests.Integer `position:"Query" name:"Uid"`
-	ItemCodes string           `position:"Query" name:"ItemCodes"`
-	Bid       string           `position:"Query" name:"Bid"`
+*requests.RpcRequest
+                    Uid     requests.Integer `position:"Query" name:"Uid"`
+                    ItemCodes     string `position:"Query" name:"ItemCodes"`
+                    Bid     string `position:"Query" name:"Bid"`
 }
+
 
 // QueryAvaliableQuotaResponse is the response struct for api QueryAvaliableQuota
 type QueryAvaliableQuotaResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Data      string `json:"Data" xml:"Data"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Code     string `json:"Code" xml:"Code"`
+            Message     string `json:"Message" xml:"Message"`
+            Success     bool `json:"Success" xml:"Success"`
+            Data     string `json:"Data" xml:"Data"`
 }
 
 // CreateQueryAvaliableQuotaRequest creates a request to invoke QueryAvaliableQuota API
 func CreateQueryAvaliableQuotaRequest() (request *QueryAvaliableQuotaRequest) {
-	request = &QueryAvaliableQuotaRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryAvaliableQuota", "", "")
-	return
+request = &QueryAvaliableQuotaRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryAvaliableQuota", "", "")
+return
 }
 
 // CreateQueryAvaliableQuotaResponse creates a response to parse from QueryAvaliableQuota response
 func CreateQueryAvaliableQuotaResponse() (response *QueryAvaliableQuotaResponse) {
-	response = &QueryAvaliableQuotaResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &QueryAvaliableQuotaResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+
+

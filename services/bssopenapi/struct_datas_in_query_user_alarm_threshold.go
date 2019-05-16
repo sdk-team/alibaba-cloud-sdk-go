@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package bssopenapi
 
 // DatasInQueryUserAlarmThreshold is a nested struct in bssopenapi response
 type DatasInQueryUserAlarmThreshold struct {
-	Data []Data `json:"Data" xml:"Data"`
+Data []Data `json:"Data" xml:"Data"`
 }

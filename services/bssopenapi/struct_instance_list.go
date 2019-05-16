@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package bssopenapi
 
 // InstanceList is a nested struct in bssopenapi response
 type InstanceList struct {
-	Instance []Instance `json:"Instance" xml:"Instance"`
+Instance []Instance `json:"Instance" xml:"Instance"`
 }

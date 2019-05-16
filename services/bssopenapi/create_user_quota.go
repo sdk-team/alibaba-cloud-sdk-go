@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,96 +17,99 @@ package bssopenapi
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // CreateUserQuota invokes the bssopenapi.CreateUserQuota API synchronously
 // api document: https://help.aliyun.com/api/bssopenapi/createuserquota.html
 func (client *Client) CreateUserQuota(request *CreateUserQuotaRequest) (response *CreateUserQuotaResponse, err error) {
-	response = CreateCreateUserQuotaResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateCreateUserQuotaResponse()
+err = client.DoAction(request, response)
+return
 }
 
 // CreateUserQuotaWithChan invokes the bssopenapi.CreateUserQuota API asynchronously
 // api document: https://help.aliyun.com/api/bssopenapi/createuserquota.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateUserQuotaWithChan(request *CreateUserQuotaRequest) (<-chan *CreateUserQuotaResponse, <-chan error) {
-	responseChan := make(chan *CreateUserQuotaResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.CreateUserQuota(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *CreateUserQuotaResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.CreateUserQuota(request)
+if err != nil {
+errChan <- err
+} else {
+responseChan <- response
+}
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
 // CreateUserQuotaWithCallback invokes the bssopenapi.CreateUserQuota API asynchronously
 // api document: https://help.aliyun.com/api/bssopenapi/createuserquota.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateUserQuotaWithCallback(request *CreateUserQuotaRequest, callback func(response *CreateUserQuotaResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *CreateUserQuotaResponse
-		var err error
-		defer close(result)
-		response, err = client.CreateUserQuota(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) CreateUserQuotaWithCallback(request *CreateUserQuotaRequest, callback func(response *CreateUserQuotaResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *CreateUserQuotaResponse
+var err error
+defer close(result)
+response, err = client.CreateUserQuota(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 // CreateUserQuotaRequest is the request struct for api CreateUserQuota
 type CreateUserQuotaRequest struct {
-	*requests.RpcRequest
-	Uid      requests.Integer `position:"Query" name:"Uid"`
-	Amount   string           `position:"Query" name:"Amount"`
-	OutBizId string           `position:"Query" name:"OutBizId"`
-	Currency string           `position:"Query" name:"Currency"`
-	Bid      string           `position:"Query" name:"Bid"`
+*requests.RpcRequest
+                    Uid     requests.Integer `position:"Query" name:"Uid"`
+                    Amount     string `position:"Query" name:"Amount"`
+                    OutBizId     string `position:"Query" name:"OutBizId"`
+                    Currency     string `position:"Query" name:"Currency"`
+                    Bid     string `position:"Query" name:"Bid"`
 }
+
 
 // CreateUserQuotaResponse is the response struct for api CreateUserQuota
 type CreateUserQuotaResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Data      bool   `json:"Data" xml:"Data"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Code     string `json:"Code" xml:"Code"`
+            Message     string `json:"Message" xml:"Message"`
+            Success     bool `json:"Success" xml:"Success"`
+            Data     bool `json:"Data" xml:"Data"`
 }
 
 // CreateCreateUserQuotaRequest creates a request to invoke CreateUserQuota API
 func CreateCreateUserQuotaRequest() (request *CreateUserQuotaRequest) {
-	request = &CreateUserQuotaRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "CreateUserQuota", "", "")
-	return
+request = &CreateUserQuotaRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("BssOpenApi", "2017-12-14", "CreateUserQuota", "", "")
+return
 }
 
 // CreateCreateUserQuotaResponse creates a response to parse from CreateUserQuota response
 func CreateCreateUserQuotaResponse() (response *CreateUserQuotaResponse) {
-	response = &CreateUserQuotaResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &CreateUserQuotaResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+
+

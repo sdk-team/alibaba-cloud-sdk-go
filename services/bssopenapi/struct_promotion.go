@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,6 +18,6 @@ package bssopenapi
 
 // Promotion is a nested struct in bssopenapi response
 type Promotion struct {
-	Id   int    `json:"Id" xml:"Id"`
-	Name string `json:"Name" xml:"Name"`
+            Id     int `json:"Id" xml:"Id"`
+            Name     string `json:"Name" xml:"Name"`
 }

@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,94 +17,97 @@ package bssopenapi
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // QueryCustomerAddressList invokes the bssopenapi.QueryCustomerAddressList API synchronously
 // api document: https://help.aliyun.com/api/bssopenapi/querycustomeraddresslist.html
 func (client *Client) QueryCustomerAddressList(request *QueryCustomerAddressListRequest) (response *QueryCustomerAddressListResponse, err error) {
-	response = CreateQueryCustomerAddressListResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateQueryCustomerAddressListResponse()
+err = client.DoAction(request, response)
+return
 }
 
 // QueryCustomerAddressListWithChan invokes the bssopenapi.QueryCustomerAddressList API asynchronously
 // api document: https://help.aliyun.com/api/bssopenapi/querycustomeraddresslist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCustomerAddressListWithChan(request *QueryCustomerAddressListRequest) (<-chan *QueryCustomerAddressListResponse, <-chan error) {
-	responseChan := make(chan *QueryCustomerAddressListResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.QueryCustomerAddressList(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *QueryCustomerAddressListResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.QueryCustomerAddressList(request)
+if err != nil {
+errChan <- err
+} else {
+responseChan <- response
+}
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
 // QueryCustomerAddressListWithCallback invokes the bssopenapi.QueryCustomerAddressList API asynchronously
 // api document: https://help.aliyun.com/api/bssopenapi/querycustomeraddresslist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) QueryCustomerAddressListWithCallback(request *QueryCustomerAddressListRequest, callback func(response *QueryCustomerAddressListResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *QueryCustomerAddressListResponse
-		var err error
-		defer close(result)
-		response, err = client.QueryCustomerAddressList(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) QueryCustomerAddressListWithCallback(request *QueryCustomerAddressListRequest, callback func(response *QueryCustomerAddressListResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *QueryCustomerAddressListResponse
+var err error
+defer close(result)
+response, err = client.QueryCustomerAddressList(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 // QueryCustomerAddressListRequest is the request struct for api QueryCustomerAddressList
 type QueryCustomerAddressListRequest struct {
-	*requests.RpcRequest
-	CallerBid requests.Integer `position:"Query" name:"callerBid"`
-	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
-	CallerUid requests.Integer `position:"Query" name:"callerUid"`
+*requests.RpcRequest
+                    CallerBid     requests.Integer `position:"Query" name:"callerBid"`
+                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+                    CallerUid     requests.Integer `position:"Query" name:"callerUid"`
 }
+
 
 // QueryCustomerAddressListResponse is the response struct for api QueryCustomerAddressList
 type QueryCustomerAddressListResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Data      Data   `json:"Data" xml:"Data"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Success     bool `json:"Success" xml:"Success"`
+            Code     string `json:"Code" xml:"Code"`
+            Message     string `json:"Message" xml:"Message"`
+            Data Data  `json:"Data" xml:"Data"`
 }
 
 // CreateQueryCustomerAddressListRequest creates a request to invoke QueryCustomerAddressList API
 func CreateQueryCustomerAddressListRequest() (request *QueryCustomerAddressListRequest) {
-	request = &QueryCustomerAddressListRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryCustomerAddressList", "", "")
-	return
+request = &QueryCustomerAddressListRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryCustomerAddressList", "", "")
+return
 }
 
 // CreateQueryCustomerAddressListResponse creates a response to parse from QueryCustomerAddressList response
 func CreateQueryCustomerAddressListResponse() (response *QueryCustomerAddressListResponse) {
-	response = &QueryCustomerAddressListResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &QueryCustomerAddressListResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+
+

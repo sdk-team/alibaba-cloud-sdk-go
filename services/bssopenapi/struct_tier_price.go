@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,11 +18,11 @@ package bssopenapi
 
 // TierPrice is a nested struct in bssopenapi response
 type TierPrice struct {
-	TierStart   string `json:"TierStart" xml:"TierStart"`
-	StartSymbol string `json:"StartSymbol" xml:"StartSymbol"`
-	TierEnd     string `json:"TierEnd" xml:"TierEnd"`
-	EndSymbol   string `json:"EndSymbol" xml:"EndSymbol"`
-	TierType    string `json:"TierType" xml:"TierType"`
-	PriceType   string `json:"PriceType" xml:"PriceType"`
-	Price       string `json:"Price" xml:"Price"`
+            TierStart     string `json:"TierStart" xml:"TierStart"`
+            StartSymbol     string `json:"StartSymbol" xml:"StartSymbol"`
+            TierEnd     string `json:"TierEnd" xml:"TierEnd"`
+            EndSymbol     string `json:"EndSymbol" xml:"EndSymbol"`
+            TierType     string `json:"TierType" xml:"TierType"`
+            PriceType     string `json:"PriceType" xml:"PriceType"`
+            Price     string `json:"Price" xml:"Price"`
 }

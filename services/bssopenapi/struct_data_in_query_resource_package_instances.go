@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,9 +18,9 @@ package bssopenapi
 
 // DataInQueryResourcePackageInstances is a nested struct in bssopenapi response
 type DataInQueryResourcePackageInstances struct {
-	HostId     string    `json:"HostId" xml:"HostId"`
-	PageNum    string    `json:"PageNum" xml:"PageNum"`
-	PageSize   string    `json:"PageSize" xml:"PageSize"`
-	TotalCount string    `json:"TotalCount" xml:"TotalCount"`
-	Instances  Instances `json:"Instances" xml:"Instances"`
+            HostId     string `json:"HostId" xml:"HostId"`
+            PageNum     string `json:"PageNum" xml:"PageNum"`
+            PageSize     string `json:"PageSize" xml:"PageSize"`
+            TotalCount     string `json:"TotalCount" xml:"TotalCount"`
+                    Instances Instances `json:"Instances" xml:"Instances"`
 }

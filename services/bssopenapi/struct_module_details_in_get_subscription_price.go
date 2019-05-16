@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package bssopenapi
 
 // ModuleDetailsInGetSubscriptionPrice is a nested struct in bssopenapi response
 type ModuleDetailsInGetSubscriptionPrice struct {
-	ModuleDetail []ModuleDetail `json:"ModuleDetail" xml:"ModuleDetail"`
+ModuleDetail []ModuleDetail `json:"ModuleDetail" xml:"ModuleDetail"`
 }

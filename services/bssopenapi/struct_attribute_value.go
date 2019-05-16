@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,8 +18,8 @@ package bssopenapi
 
 // AttributeValue is a nested struct in bssopenapi response
 type AttributeValue struct {
-	Type   string `json:"Type" xml:"Type"`
-	Name   string `json:"Name" xml:"Name"`
-	Value  string `json:"Value" xml:"Value"`
-	Remark string `json:"Remark" xml:"Remark"`
+            Type     string `json:"Type" xml:"Type"`
+            Name     string `json:"Name" xml:"Name"`
+            Value     string `json:"Value" xml:"Value"`
+            Remark     string `json:"Remark" xml:"Remark"`
 }

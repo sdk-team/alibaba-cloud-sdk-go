@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package bssopenapi
 
 // ModuleList is a nested struct in bssopenapi response
 type ModuleList struct {
-	Module []Module `json:"Module" xml:"Module"`
+Module []Module `json:"Module" xml:"Module"`
 }

@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +18,7 @@ package bssopenapi
 
 // PromotionDetail is a nested struct in bssopenapi response
 type PromotionDetail struct {
-	PromotionId   int    `json:"PromotionId" xml:"PromotionId"`
-	PromotionName string `json:"PromotionName" xml:"PromotionName"`
-	PromotionDesc string `json:"PromotionDesc" xml:"PromotionDesc"`
+            PromotionId     int `json:"PromotionId" xml:"PromotionId"`
+            PromotionName     string `json:"PromotionName" xml:"PromotionName"`
+            PromotionDesc     string `json:"PromotionDesc" xml:"PromotionDesc"`
 }

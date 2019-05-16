@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package bssopenapi
 
 // ConfigList is a nested struct in bssopenapi response
 type ConfigList struct {
-	ConfigList []string `json:"ConfigList" xml:"ConfigList"`
+ConfigList []    string  `json:"ConfigList" xml:"ConfigList"`
 }

@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package bssopenapi
 
 // Redeem is a nested struct in bssopenapi response
 type Redeem struct {
-	RedeemItem []RedeemItem `json:"RedeemItem" xml:"RedeemItem"`
+RedeemItem []RedeemItem `json:"RedeemItem" xml:"RedeemItem"`
 }

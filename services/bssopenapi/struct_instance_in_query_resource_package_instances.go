@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,17 +18,17 @@ package bssopenapi
 
 // InstanceInQueryResourcePackageInstances is a nested struct in bssopenapi response
 type InstanceInQueryResourcePackageInstances struct {
-	InstanceId          string             `json:"InstanceId" xml:"InstanceId"`
-	Region              string             `json:"Region" xml:"Region"`
-	TotalAmount         string             `json:"TotalAmount" xml:"TotalAmount"`
-	TotalAmountUnit     string             `json:"TotalAmountUnit" xml:"TotalAmountUnit"`
-	RemainingAmount     string             `json:"RemainingAmount" xml:"RemainingAmount"`
-	RemainingAmountUnit string             `json:"RemainingAmountUnit" xml:"RemainingAmountUnit"`
-	EffectiveTime       string             `json:"EffectiveTime" xml:"EffectiveTime"`
-	ExpiryTime          string             `json:"ExpiryTime" xml:"ExpiryTime"`
-	Remark              string             `json:"Remark" xml:"Remark"`
-	PackageType         string             `json:"PackageType" xml:"PackageType"`
-	Status              string             `json:"Status" xml:"Status"`
-	DeductType          string             `json:"DeductType" xml:"DeductType"`
-	ApplicableProducts  ApplicableProducts `json:"ApplicableProducts" xml:"ApplicableProducts"`
+            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
+            Region     string `json:"Region" xml:"Region"`
+            TotalAmount     string `json:"TotalAmount" xml:"TotalAmount"`
+            TotalAmountUnit     string `json:"TotalAmountUnit" xml:"TotalAmountUnit"`
+            RemainingAmount     string `json:"RemainingAmount" xml:"RemainingAmount"`
+            RemainingAmountUnit     string `json:"RemainingAmountUnit" xml:"RemainingAmountUnit"`
+            EffectiveTime     string `json:"EffectiveTime" xml:"EffectiveTime"`
+            ExpiryTime     string `json:"ExpiryTime" xml:"ExpiryTime"`
+            Remark     string `json:"Remark" xml:"Remark"`
+            PackageType     string `json:"PackageType" xml:"PackageType"`
+            Status     string `json:"Status" xml:"Status"`
+            DeductType     string `json:"DeductType" xml:"DeductType"`
+                ApplicableProducts ApplicableProducts `json:"ApplicableProducts" xml:"ApplicableProducts"`
 }

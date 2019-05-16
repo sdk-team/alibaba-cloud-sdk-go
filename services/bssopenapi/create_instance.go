@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,105 +17,108 @@ package bssopenapi
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // CreateInstance invokes the bssopenapi.CreateInstance API synchronously
 // api document: https://help.aliyun.com/api/bssopenapi/createinstance.html
 func (client *Client) CreateInstance(request *CreateInstanceRequest) (response *CreateInstanceResponse, err error) {
-	response = CreateCreateInstanceResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateCreateInstanceResponse()
+err = client.DoAction(request, response)
+return
 }
 
 // CreateInstanceWithChan invokes the bssopenapi.CreateInstance API asynchronously
 // api document: https://help.aliyun.com/api/bssopenapi/createinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateInstanceWithChan(request *CreateInstanceRequest) (<-chan *CreateInstanceResponse, <-chan error) {
-	responseChan := make(chan *CreateInstanceResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.CreateInstance(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *CreateInstanceResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.CreateInstance(request)
+if err != nil {
+errChan <- err
+} else {
+responseChan <- response
+}
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
 // CreateInstanceWithCallback invokes the bssopenapi.CreateInstance API asynchronously
 // api document: https://help.aliyun.com/api/bssopenapi/createinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest, callback func(response *CreateInstanceResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *CreateInstanceResponse
-		var err error
-		defer close(result)
-		response, err = client.CreateInstance(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest, callback func(response *CreateInstanceResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *CreateInstanceResponse
+var err error
+defer close(result)
+response, err = client.CreateInstance(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 // CreateInstanceRequest is the request struct for api CreateInstance
 type CreateInstanceRequest struct {
-	*requests.RpcRequest
-	ProductCode      string                     `position:"Query" name:"ProductCode"`
-	Period           requests.Integer           `position:"Query" name:"Period"`
-	SubscriptionType string                     `position:"Query" name:"SubscriptionType"`
-	RenewPeriod      requests.Integer           `position:"Query" name:"RenewPeriod"`
-	Parameter        *[]CreateInstanceParameter `position:"Query" name:"Parameter"  type:"Repeated"`
-	RenewalStatus    string                     `position:"Query" name:"RenewalStatus"`
-	OwnerId          requests.Integer           `position:"Query" name:"OwnerId"`
-	ProductType      string                     `position:"Query" name:"ProductType"`
+*requests.RpcRequest
+                    ProductCode     string `position:"Query" name:"ProductCode"`
+                    Period     requests.Integer `position:"Query" name:"Period"`
+                    ClientToken     string `position:"Query" name:"ClientToken"`
+                    SubscriptionType     string `position:"Query" name:"SubscriptionType"`
+                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+                    ProductType     string `position:"Query" name:"ProductType"`
+                    RenewPeriod     requests.Integer `position:"Query" name:"RenewPeriod"`
+                    Parameter  *[]CreateInstanceParameter `position:"Query" name:"Parameter"  type:"Repeated"`
+                    RenewalStatus     string `position:"Query" name:"RenewalStatus"`
 }
 
 // CreateInstanceParameter is a repeated param struct in CreateInstanceRequest
-type CreateInstanceParameter struct {
-	Code  string `name:"Code"`
-	Value string `name:"Value"`
+type CreateInstanceParameter struct{
+        Code     string `name:"Code"`
+        Value     string `name:"Value"`
 }
 
 // CreateInstanceResponse is the response struct for api CreateInstance
 type CreateInstanceResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Data      Data   `json:"Data" xml:"Data"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Success     bool `json:"Success" xml:"Success"`
+            Code     string `json:"Code" xml:"Code"`
+            Message     string `json:"Message" xml:"Message"`
+            Data Data  `json:"Data" xml:"Data"`
 }
 
 // CreateCreateInstanceRequest creates a request to invoke CreateInstance API
 func CreateCreateInstanceRequest() (request *CreateInstanceRequest) {
-	request = &CreateInstanceRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "CreateInstance", "", "")
-	return
+request = &CreateInstanceRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("BssOpenApi", "2017-12-14", "CreateInstance", "", "")
+return
 }
 
 // CreateCreateInstanceResponse creates a response to parse from CreateInstance response
 func CreateCreateInstanceResponse() (response *CreateInstanceResponse) {
-	response = &CreateInstanceResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &CreateInstanceResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+
+

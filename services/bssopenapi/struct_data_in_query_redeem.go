@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,8 +18,8 @@ package bssopenapi
 
 // DataInQueryRedeem is a nested struct in bssopenapi response
 type DataInQueryRedeem struct {
-	PageNum    int    `json:"PageNum" xml:"PageNum"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	Redeem     Redeem `json:"Redeem" xml:"Redeem"`
+            PageNum     int `json:"PageNum" xml:"PageNum"`
+            PageSize     int `json:"PageSize" xml:"PageSize"`
+            TotalCount     int `json:"TotalCount" xml:"TotalCount"`
+                    Redeem Redeem `json:"Redeem" xml:"Redeem"`
 }

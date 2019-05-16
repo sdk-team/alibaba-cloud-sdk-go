@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,9 +18,9 @@ package bssopenapi
 
 // ModuleDetail is a nested struct in bssopenapi response
 type ModuleDetail struct {
-	InvoiceDiscount   float64 `json:"InvoiceDiscount" xml:"InvoiceDiscount"`
-	UnitPrice         float64 `json:"UnitPrice" xml:"UnitPrice"`
-	OriginalCost      float64 `json:"OriginalCost" xml:"OriginalCost"`
-	CostAfterDiscount float64 `json:"CostAfterDiscount" xml:"CostAfterDiscount"`
-	ModuleCode        string  `json:"ModuleCode" xml:"ModuleCode"`
+            InvoiceDiscount     float64 `json:"InvoiceDiscount" xml:"InvoiceDiscount"`
+            UnitPrice     float64 `json:"UnitPrice" xml:"UnitPrice"`
+            OriginalCost     float64 `json:"OriginalCost" xml:"OriginalCost"`
+            CostAfterDiscount     float64 `json:"CostAfterDiscount" xml:"CostAfterDiscount"`
+            ModuleCode     string `json:"ModuleCode" xml:"ModuleCode"`
 }

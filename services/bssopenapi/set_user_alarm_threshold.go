@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,95 +17,98 @@ package bssopenapi
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // SetUserAlarmThreshold invokes the bssopenapi.SetUserAlarmThreshold API synchronously
 // api document: https://help.aliyun.com/api/bssopenapi/setuseralarmthreshold.html
 func (client *Client) SetUserAlarmThreshold(request *SetUserAlarmThresholdRequest) (response *SetUserAlarmThresholdResponse, err error) {
-	response = CreateSetUserAlarmThresholdResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateSetUserAlarmThresholdResponse()
+err = client.DoAction(request, response)
+return
 }
 
 // SetUserAlarmThresholdWithChan invokes the bssopenapi.SetUserAlarmThreshold API asynchronously
 // api document: https://help.aliyun.com/api/bssopenapi/setuseralarmthreshold.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetUserAlarmThresholdWithChan(request *SetUserAlarmThresholdRequest) (<-chan *SetUserAlarmThresholdResponse, <-chan error) {
-	responseChan := make(chan *SetUserAlarmThresholdResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.SetUserAlarmThreshold(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *SetUserAlarmThresholdResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.SetUserAlarmThreshold(request)
+if err != nil {
+errChan <- err
+} else {
+responseChan <- response
+}
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
 // SetUserAlarmThresholdWithCallback invokes the bssopenapi.SetUserAlarmThreshold API asynchronously
 // api document: https://help.aliyun.com/api/bssopenapi/setuseralarmthreshold.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) SetUserAlarmThresholdWithCallback(request *SetUserAlarmThresholdRequest, callback func(response *SetUserAlarmThresholdResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *SetUserAlarmThresholdResponse
-		var err error
-		defer close(result)
-		response, err = client.SetUserAlarmThreshold(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) SetUserAlarmThresholdWithCallback(request *SetUserAlarmThresholdRequest, callback func(response *SetUserAlarmThresholdResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *SetUserAlarmThresholdResponse
+var err error
+defer close(result)
+response, err = client.SetUserAlarmThreshold(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 // SetUserAlarmThresholdRequest is the request struct for api SetUserAlarmThreshold
 type SetUserAlarmThresholdRequest struct {
-	*requests.RpcRequest
-	Uid             requests.Integer `position:"Query" name:"Uid"`
-	AlarmType       string           `position:"Query" name:"AlarmType"`
-	AlarmThresholds string           `position:"Query" name:"AlarmThresholds"`
-	Bid             string           `position:"Query" name:"Bid"`
+*requests.RpcRequest
+                    Uid     requests.Integer `position:"Query" name:"Uid"`
+                    AlarmType     string `position:"Query" name:"AlarmType"`
+                    AlarmThresholds     string `position:"Query" name:"AlarmThresholds"`
+                    Bid     string `position:"Query" name:"Bid"`
 }
+
 
 // SetUserAlarmThresholdResponse is the response struct for api SetUserAlarmThreshold
 type SetUserAlarmThresholdResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Data      bool   `json:"Data" xml:"Data"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Code     string `json:"Code" xml:"Code"`
+            Message     string `json:"Message" xml:"Message"`
+            Success     bool `json:"Success" xml:"Success"`
+            Data     bool `json:"Data" xml:"Data"`
 }
 
 // CreateSetUserAlarmThresholdRequest creates a request to invoke SetUserAlarmThreshold API
 func CreateSetUserAlarmThresholdRequest() (request *SetUserAlarmThresholdRequest) {
-	request = &SetUserAlarmThresholdRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "SetUserAlarmThreshold", "", "")
-	return
+request = &SetUserAlarmThresholdRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("BssOpenApi", "2017-12-14", "SetUserAlarmThreshold", "", "")
+return
 }
 
 // CreateSetUserAlarmThresholdResponse creates a response to parse from SetUserAlarmThreshold response
 func CreateSetUserAlarmThresholdResponse() (response *SetUserAlarmThresholdResponse) {
-	response = &SetUserAlarmThresholdResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &SetUserAlarmThresholdResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+
+

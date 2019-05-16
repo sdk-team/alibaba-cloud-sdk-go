@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,8 +18,8 @@ package bssopenapi
 
 // Product is a nested struct in bssopenapi response
 type Product struct {
-	ProductCode      string `json:"ProductCode" xml:"ProductCode"`
-	ProductName      string `json:"ProductName" xml:"ProductName"`
-	ProductType      string `json:"ProductType" xml:"ProductType"`
-	SubscriptionType string `json:"SubscriptionType" xml:"SubscriptionType"`
+            ProductCode     string `json:"ProductCode" xml:"ProductCode"`
+            ProductName     string `json:"ProductName" xml:"ProductName"`
+            ProductType     string `json:"ProductType" xml:"ProductType"`
+            SubscriptionType     string `json:"SubscriptionType" xml:"SubscriptionType"`
 }

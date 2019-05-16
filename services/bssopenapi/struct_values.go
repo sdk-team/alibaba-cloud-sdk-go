@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package bssopenapi
 
 // Values is a nested struct in bssopenapi response
 type Values struct {
-	AttributeValue []AttributeValue `json:"AttributeValue" xml:"AttributeValue"`
+AttributeValue []AttributeValue `json:"AttributeValue" xml:"AttributeValue"`
 }

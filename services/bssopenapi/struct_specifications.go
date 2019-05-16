@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package bssopenapi
 
 // Specifications is a nested struct in bssopenapi response
 type Specifications struct {
-	Specification []Specification `json:"Specification" xml:"Specification"`
+Specification []Specification `json:"Specification" xml:"Specification"`
 }

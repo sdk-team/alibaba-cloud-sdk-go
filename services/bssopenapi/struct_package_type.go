@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,8 +18,8 @@ package bssopenapi
 
 // PackageType is a nested struct in bssopenapi response
 type PackageType struct {
-	Name           string         `json:"Name" xml:"Name"`
-	Code           string         `json:"Code" xml:"Code"`
-	Properties     Properties     `json:"Properties" xml:"Properties"`
-	Specifications Specifications `json:"Specifications" xml:"Specifications"`
+            Name     string `json:"Name" xml:"Name"`
+            Code     string `json:"Code" xml:"Code"`
+                    Properties Properties `json:"Properties" xml:"Properties"`
+                    Specifications Specifications `json:"Specifications" xml:"Specifications"`
 }

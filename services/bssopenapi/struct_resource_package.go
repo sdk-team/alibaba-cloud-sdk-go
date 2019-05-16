@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,8 +18,8 @@ package bssopenapi
 
 // ResourcePackage is a nested struct in bssopenapi response
 type ResourcePackage struct {
-	ProductCode  string       `json:"ProductCode" xml:"ProductCode"`
-	ProductType  string       `json:"ProductType" xml:"ProductType"`
-	Name         string       `json:"Name" xml:"Name"`
-	PackageTypes PackageTypes `json:"PackageTypes" xml:"PackageTypes"`
+            ProductCode     string `json:"ProductCode" xml:"ProductCode"`
+            ProductType     string `json:"ProductType" xml:"ProductType"`
+            Name     string `json:"Name" xml:"Name"`
+                    PackageTypes PackageTypes `json:"PackageTypes" xml:"PackageTypes"`
 }

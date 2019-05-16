@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,16 +18,16 @@ package bssopenapi
 
 // CustomerInvoiceAddress is a nested struct in bssopenapi response
 type CustomerInvoiceAddress struct {
-	Id              int    `json:"Id" xml:"Id"`
-	UserId          int    `json:"UserId" xml:"UserId"`
-	UserNick        string `json:"UserNick" xml:"UserNick"`
-	Addressee       string `json:"Addressee" xml:"Addressee"`
-	Province        string `json:"Province" xml:"Province"`
-	City            string `json:"City" xml:"City"`
-	County          string `json:"County" xml:"County"`
-	Street          string `json:"Street" xml:"Street"`
-	PostalCode      string `json:"PostalCode" xml:"PostalCode"`
-	Phone           string `json:"Phone" xml:"Phone"`
-	BizType         string `json:"BizType" xml:"BizType"`
-	DeliveryAddress string `json:"DeliveryAddress" xml:"DeliveryAddress"`
+            Id     int `json:"Id" xml:"Id"`
+            UserId     int `json:"UserId" xml:"UserId"`
+            UserNick     string `json:"UserNick" xml:"UserNick"`
+            Addressee     string `json:"Addressee" xml:"Addressee"`
+            Province     string `json:"Province" xml:"Province"`
+            City     string `json:"City" xml:"City"`
+            County     string `json:"County" xml:"County"`
+            Street     string `json:"Street" xml:"Street"`
+            PostalCode     string `json:"PostalCode" xml:"PostalCode"`
+            Phone     string `json:"Phone" xml:"Phone"`
+            BizType     string `json:"BizType" xml:"BizType"`
+            DeliveryAddress     string `json:"DeliveryAddress" xml:"DeliveryAddress"`
 }

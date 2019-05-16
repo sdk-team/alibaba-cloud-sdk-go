@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,25 +18,25 @@ package bssopenapi
 
 // Evaluate is a nested struct in bssopenapi response
 type Evaluate struct {
-	Id                 int    `json:"Id" xml:"Id"`
-	GmtCreate          string `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified        string `json:"GmtModified" xml:"GmtModified"`
-	UserId             int    `json:"UserId" xml:"UserId"`
-	UserNick           string `json:"UserNick" xml:"UserNick"`
-	OutBizId           string `json:"OutBizId" xml:"OutBizId"`
-	BillId             int    `json:"BillId" xml:"BillId"`
-	ItemId             int    `json:"ItemId" xml:"ItemId"`
-	BillCycle          string `json:"BillCycle" xml:"BillCycle"`
-	BizType            string `json:"BizType" xml:"BizType"`
-	OriginalAmount     int    `json:"OriginalAmount" xml:"OriginalAmount"`
-	PresentAmount      int    `json:"PresentAmount" xml:"PresentAmount"`
-	CanInvoiceAmount   int    `json:"CanInvoiceAmount" xml:"CanInvoiceAmount"`
-	InvoicedAmount     int    `json:"InvoicedAmount" xml:"InvoicedAmount"`
-	OffsetCostAmount   int    `json:"OffsetCostAmount" xml:"OffsetCostAmount"`
-	OffsetAcceptAmount int    `json:"OffsetAcceptAmount" xml:"OffsetAcceptAmount"`
-	Status             int    `json:"Status" xml:"Status"`
-	OpId               string `json:"OpId" xml:"OpId"`
-	Name               string `json:"Name" xml:"Name"`
-	BizTime            string `json:"BizTime" xml:"BizTime"`
-	Type               int    `json:"Type" xml:"Type"`
+            Id     int `json:"Id" xml:"Id"`
+            GmtCreate     string `json:"GmtCreate" xml:"GmtCreate"`
+            GmtModified     string `json:"GmtModified" xml:"GmtModified"`
+            UserId     int `json:"UserId" xml:"UserId"`
+            UserNick     string `json:"UserNick" xml:"UserNick"`
+            OutBizId     string `json:"OutBizId" xml:"OutBizId"`
+            BillId     int `json:"BillId" xml:"BillId"`
+            ItemId     int `json:"ItemId" xml:"ItemId"`
+            BillCycle     string `json:"BillCycle" xml:"BillCycle"`
+            BizType     string `json:"BizType" xml:"BizType"`
+            OriginalAmount     int `json:"OriginalAmount" xml:"OriginalAmount"`
+            PresentAmount     int `json:"PresentAmount" xml:"PresentAmount"`
+            CanInvoiceAmount     int `json:"CanInvoiceAmount" xml:"CanInvoiceAmount"`
+            InvoicedAmount     int `json:"InvoicedAmount" xml:"InvoicedAmount"`
+            OffsetCostAmount     int `json:"OffsetCostAmount" xml:"OffsetCostAmount"`
+            OffsetAcceptAmount     int `json:"OffsetAcceptAmount" xml:"OffsetAcceptAmount"`
+            Status     int `json:"Status" xml:"Status"`
+            OpId     string `json:"OpId" xml:"OpId"`
+            Name     string `json:"Name" xml:"Name"`
+            BizTime     string `json:"BizTime" xml:"BizTime"`
+            Type     int `json:"Type" xml:"Type"`
 }

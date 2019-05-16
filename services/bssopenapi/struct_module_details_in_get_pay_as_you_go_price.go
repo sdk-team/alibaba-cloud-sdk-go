@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +18,5 @@ package bssopenapi
 
 // ModuleDetailsInGetPayAsYouGoPrice is a nested struct in bssopenapi response
 type ModuleDetailsInGetPayAsYouGoPrice struct {
-	ModuleDetail []ModuleDetail `json:"ModuleDetail" xml:"ModuleDetail"`
+ModuleDetail []ModuleDetail `json:"ModuleDetail" xml:"ModuleDetail"`
 }

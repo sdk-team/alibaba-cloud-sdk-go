@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,97 +17,100 @@ package bssopenapi
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // RenewInstance invokes the bssopenapi.RenewInstance API synchronously
 // api document: https://help.aliyun.com/api/bssopenapi/renewinstance.html
 func (client *Client) RenewInstance(request *RenewInstanceRequest) (response *RenewInstanceResponse, err error) {
-	response = CreateRenewInstanceResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateRenewInstanceResponse()
+err = client.DoAction(request, response)
+return
 }
 
 // RenewInstanceWithChan invokes the bssopenapi.RenewInstance API asynchronously
 // api document: https://help.aliyun.com/api/bssopenapi/renewinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RenewInstanceWithChan(request *RenewInstanceRequest) (<-chan *RenewInstanceResponse, <-chan error) {
-	responseChan := make(chan *RenewInstanceResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.RenewInstance(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *RenewInstanceResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.RenewInstance(request)
+if err != nil {
+errChan <- err
+} else {
+responseChan <- response
+}
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
 // RenewInstanceWithCallback invokes the bssopenapi.RenewInstance API asynchronously
 // api document: https://help.aliyun.com/api/bssopenapi/renewinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) RenewInstanceWithCallback(request *RenewInstanceRequest, callback func(response *RenewInstanceResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *RenewInstanceResponse
-		var err error
-		defer close(result)
-		response, err = client.RenewInstance(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) RenewInstanceWithCallback(request *RenewInstanceRequest, callback func(response *RenewInstanceResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *RenewInstanceResponse
+var err error
+defer close(result)
+response, err = client.RenewInstance(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 // RenewInstanceRequest is the request struct for api RenewInstance
 type RenewInstanceRequest struct {
-	*requests.RpcRequest
-	ProductCode string           `position:"Query" name:"ProductCode"`
-	InstanceId  string           `position:"Query" name:"InstanceId"`
-	ClientToken string           `position:"Query" name:"ClientToken"`
-	RenewPeriod requests.Integer `position:"Query" name:"RenewPeriod"`
-	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-	ProductType string           `position:"Query" name:"ProductType"`
+*requests.RpcRequest
+                    ProductCode     string `position:"Query" name:"ProductCode"`
+                    ClientToken     string `position:"Query" name:"ClientToken"`
+                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+                    ProductType     string `position:"Query" name:"ProductType"`
+                    InstanceId     string `position:"Query" name:"InstanceId"`
+                    RenewPeriod     requests.Integer `position:"Query" name:"RenewPeriod"`
 }
+
 
 // RenewInstanceResponse is the response struct for api RenewInstance
 type RenewInstanceResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Data      Data   `json:"Data" xml:"Data"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Success     bool `json:"Success" xml:"Success"`
+            Code     string `json:"Code" xml:"Code"`
+            Message     string `json:"Message" xml:"Message"`
+            Data Data  `json:"Data" xml:"Data"`
 }
 
 // CreateRenewInstanceRequest creates a request to invoke RenewInstance API
 func CreateRenewInstanceRequest() (request *RenewInstanceRequest) {
-	request = &RenewInstanceRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "RenewInstance", "", "")
-	return
+request = &RenewInstanceRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("BssOpenApi", "2017-12-14", "RenewInstance", "", "")
+return
 }
 
 // CreateRenewInstanceResponse creates a response to parse from RenewInstance response
 func CreateRenewInstanceResponse() (response *RenewInstanceResponse) {
-	response = &RenewInstanceResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &RenewInstanceResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+
+

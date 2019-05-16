@@ -1,3 +1,4 @@
+
 package bssopenapi
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,95 +17,98 @@ package bssopenapi
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // QueryAccountBookList invokes the bssopenapi.QueryAccountBookList API synchronously
 // api document: https://help.aliyun.com/api/bssopenapi/queryaccountbooklist.html
 func (client *Client) QueryAccountBookList(request *QueryAccountBookListRequest) (response *QueryAccountBookListResponse, err error) {
-	response = CreateQueryAccountBookListResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateQueryAccountBookListResponse()
+err = client.DoAction(request, response)
+return
 }
 
 // QueryAccountBookListWithChan invokes the bssopenapi.QueryAccountBookList API asynchronously
 // api document: https://help.aliyun.com/api/bssopenapi/queryaccountbooklist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAccountBookListWithChan(request *QueryAccountBookListRequest) (<-chan *QueryAccountBookListResponse, <-chan error) {
-	responseChan := make(chan *QueryAccountBookListResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.QueryAccountBookList(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *QueryAccountBookListResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.QueryAccountBookList(request)
+if err != nil {
+errChan <- err
+} else {
+responseChan <- response
+}
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
 // QueryAccountBookListWithCallback invokes the bssopenapi.QueryAccountBookList API asynchronously
 // api document: https://help.aliyun.com/api/bssopenapi/queryaccountbooklist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) QueryAccountBookListWithCallback(request *QueryAccountBookListRequest, callback func(response *QueryAccountBookListResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *QueryAccountBookListResponse
-		var err error
-		defer close(result)
-		response, err = client.QueryAccountBookList(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) QueryAccountBookListWithCallback(request *QueryAccountBookListRequest, callback func(response *QueryAccountBookListResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *QueryAccountBookListResponse
+var err error
+defer close(result)
+response, err = client.QueryAccountBookList(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 // QueryAccountBookListRequest is the request struct for api QueryAccountBookList
 type QueryAccountBookListRequest struct {
-	*requests.RpcRequest
-	Uid       requests.Integer `position:"Query" name:"Uid"`
-	ItemCodes string           `position:"Query" name:"ItemCodes"`
-	Bid       string           `position:"Query" name:"Bid"`
+*requests.RpcRequest
+                    Uid     requests.Integer `position:"Query" name:"Uid"`
+                    ItemCodes     string `position:"Query" name:"ItemCodes"`
+                    Bid     string `position:"Query" name:"Bid"`
 }
+
 
 // QueryAccountBookListResponse is the response struct for api QueryAccountBookList
 type QueryAccountBookListResponse struct {
-	*responses.BaseResponse
-	RequestId string                      `json:"RequestId" xml:"RequestId"`
-	Code      string                      `json:"Code" xml:"Code"`
-	Message   string                      `json:"Message" xml:"Message"`
-	Success   bool                        `json:"Success" xml:"Success"`
-	Count     int                         `json:"Count" xml:"Count"`
-	Datas     DatasInQueryAccountBookList `json:"Datas" xml:"Datas"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Code     string `json:"Code" xml:"Code"`
+            Message     string `json:"Message" xml:"Message"`
+            Success     bool `json:"Success" xml:"Success"`
+            Count     int `json:"Count" xml:"Count"`
+                    Datas DatasInQueryAccountBookList `json:"Datas" xml:"Datas"`
 }
 
 // CreateQueryAccountBookListRequest creates a request to invoke QueryAccountBookList API
 func CreateQueryAccountBookListRequest() (request *QueryAccountBookListRequest) {
-	request = &QueryAccountBookListRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryAccountBookList", "", "")
-	return
+request = &QueryAccountBookListRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryAccountBookList", "", "")
+return
 }
 
 // CreateQueryAccountBookListResponse creates a response to parse from QueryAccountBookList response
 func CreateQueryAccountBookListResponse() (response *QueryAccountBookListResponse) {
-	response = &QueryAccountBookListResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &QueryAccountBookListResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+
+
