@@ -97,7 +97,7 @@ func CreateSubscriptionCreateOrderApiRequest() (request *SubscriptionCreateOrder
 request = &SubscriptionCreateOrderApiRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Bss", "2014-07-14", "SubscriptionCreateOrderApi", "bss", "openAPI")
+request.InitWithApiInfo("Bss", "2014-07-14", "SubscriptionCreateOrderApi", "", "")
 return
 }
 

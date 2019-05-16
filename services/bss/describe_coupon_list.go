@@ -97,7 +97,7 @@ func CreateDescribeCouponListRequest() (request *DescribeCouponListRequest) {
 request = &DescribeCouponListRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Bss", "2014-07-14", "DescribeCouponList", "bss", "openAPI")
+request.InitWithApiInfo("Bss", "2014-07-14", "DescribeCouponList", "", "")
 return
 }
 

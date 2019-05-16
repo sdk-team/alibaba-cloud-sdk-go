@@ -96,7 +96,7 @@ func CreateOpenCallbackRequest() (request *OpenCallbackRequest) {
 request = &OpenCallbackRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Bss", "2014-07-14", "OpenCallback", "bss", "openAPI")
+request.InitWithApiInfo("Bss", "2014-07-14", "OpenCallback", "", "")
 return
 }
 
