@@ -22,5 +22,5 @@ type ResourcePriceModel struct {
             TradePrice     float64 `json:"TradePrice" xml:"TradePrice"`
             OriginalPrice     float64 `json:"OriginalPrice" xml:"OriginalPrice"`
             Resource     string `json:"Resource" xml:"Resource"`
-                    SubRules SubRulesInDescribeRenewalPrice `json:"SubRules" xml:"SubRules"`
+                    SubRules SubRulesInDescribePrice `json:"SubRules" xml:"SubRules"`
 }
