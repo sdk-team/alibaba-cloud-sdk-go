@@ -107,7 +107,7 @@ func CreateCreateOrderForTempUpgradeRequest() (request *CreateOrderForTempUpgrad
 request = &CreateOrderForTempUpgradeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "CreateOrderForTempUpgrade", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "CreateOrderForTempUpgrade", "", "")
 return
 }
 

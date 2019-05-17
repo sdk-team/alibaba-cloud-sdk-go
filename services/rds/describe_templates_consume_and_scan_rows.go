@@ -105,7 +105,7 @@ func CreateDescribeTemplatesConsumeAndScanRowsRequest() (request *DescribeTempla
 request = &DescribeTemplatesConsumeAndScanRowsRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeTemplatesConsumeAndScanRows", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeTemplatesConsumeAndScanRows", "", "")
 return
 }
 

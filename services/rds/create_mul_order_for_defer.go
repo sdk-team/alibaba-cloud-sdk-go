@@ -101,7 +101,7 @@ func CreateCreateMulOrderForDeferRequest() (request *CreateMulOrderForDeferReque
 request = &CreateMulOrderForDeferRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "CreateMulOrderForDefer", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "CreateMulOrderForDefer", "", "")
 return
 }
 

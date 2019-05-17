@@ -99,7 +99,7 @@ func CreateModifyDBInstanceDelayReplicationTimeRequest() (request *ModifyDBInsta
 request = &ModifyDBInstanceDelayReplicationTimeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceDelayReplicationTime", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceDelayReplicationTime", "", "")
 return
 }
 

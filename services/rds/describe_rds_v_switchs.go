@@ -99,7 +99,7 @@ func CreateDescribeRdsVSwitchsRequest() (request *DescribeRdsVSwitchsRequest) {
 request = &DescribeRdsVSwitchsRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeRdsVSwitchs", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeRdsVSwitchs", "", "")
 return
 }
 

@@ -104,7 +104,7 @@ func CreateQueryPriceForRefundRequest() (request *QueryPriceForRefundRequest) {
 request = &QueryPriceForRefundRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "QueryPriceForRefund", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "QueryPriceForRefund", "", "")
 return
 }
 

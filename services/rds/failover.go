@@ -98,7 +98,7 @@ func CreateFailoverRequest() (request *FailoverRequest) {
 request = &FailoverRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "Failover", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "Failover", "", "")
 return
 }
 

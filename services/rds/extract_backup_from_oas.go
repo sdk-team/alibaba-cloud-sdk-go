@@ -99,7 +99,7 @@ func CreateExtractBackupFromOASRequest() (request *ExtractBackupFromOASRequest) 
 request = &ExtractBackupFromOASRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "ExtractBackupFromOAS", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "ExtractBackupFromOAS", "", "")
 return
 }
 

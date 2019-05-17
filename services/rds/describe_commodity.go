@@ -99,7 +99,7 @@ func CreateDescribeCommodityRequest() (request *DescribeCommodityRequest) {
 request = &DescribeCommodityRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeCommodity", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeCommodity", "", "")
 return
 }
 

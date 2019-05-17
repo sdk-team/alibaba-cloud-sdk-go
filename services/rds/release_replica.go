@@ -97,7 +97,7 @@ func CreateReleaseReplicaRequest() (request *ReleaseReplicaRequest) {
 request = &ReleaseReplicaRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "ReleaseReplica", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "ReleaseReplica", "", "")
 return
 }
 

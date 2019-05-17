@@ -100,7 +100,7 @@ func CreateAllocateCloudInstanceIpRequest() (request *AllocateCloudInstanceIpReq
 request = &AllocateCloudInstanceIpRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "AllocateCloudInstanceIp", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "AllocateCloudInstanceIp", "", "")
 return
 }
 

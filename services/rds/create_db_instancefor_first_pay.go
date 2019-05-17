@@ -107,7 +107,7 @@ func CreateCreateDBInstanceforFirstPayRequest() (request *CreateDBInstanceforFir
 request = &CreateDBInstanceforFirstPayRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "CreateDBInstanceforFirstPay", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "CreateDBInstanceforFirstPay", "", "")
 return
 }
 

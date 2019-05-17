@@ -107,7 +107,7 @@ func CreateDescribeResourceUsageRequest() (request *DescribeResourceUsageRequest
 request = &DescribeResourceUsageRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeResourceUsage", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeResourceUsage", "", "")
 return
 }
 

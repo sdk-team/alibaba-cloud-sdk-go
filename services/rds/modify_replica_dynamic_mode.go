@@ -98,7 +98,7 @@ func CreateModifyReplicaDynamicModeRequest() (request *ModifyReplicaDynamicModeR
 request = &ModifyReplicaDynamicModeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "ModifyReplicaDynamicMode", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "ModifyReplicaDynamicMode", "", "")
 return
 }
 

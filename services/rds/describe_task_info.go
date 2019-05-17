@@ -110,7 +110,7 @@ func CreateDescribeTaskInfoRequest() (request *DescribeTaskInfoRequest) {
 request = &DescribeTaskInfoRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeTaskInfo", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeTaskInfo", "", "")
 return
 }
 

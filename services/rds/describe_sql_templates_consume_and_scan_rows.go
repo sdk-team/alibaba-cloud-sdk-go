@@ -108,7 +108,7 @@ func CreateDescribeSqlTemplatesConsumeAndScanRowsRequest() (request *DescribeSql
 request = &DescribeSqlTemplatesConsumeAndScanRowsRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSqlTemplatesConsumeAndScanRows", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSqlTemplatesConsumeAndScanRows", "", "")
 return
 }
 

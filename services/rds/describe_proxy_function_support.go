@@ -104,7 +104,7 @@ func CreateDescribeProxyFunctionSupportRequest() (request *DescribeProxyFunction
 request = &DescribeProxyFunctionSupportRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeProxyFunctionSupport", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeProxyFunctionSupport", "", "")
 return
 }
 

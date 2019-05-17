@@ -114,7 +114,7 @@ func CreateDescribeTemplatesSqlTypeRequest() (request *DescribeTemplatesSqlTypeR
 request = &DescribeTemplatesSqlTypeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeTemplatesSqlType", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeTemplatesSqlType", "", "")
 return
 }
 

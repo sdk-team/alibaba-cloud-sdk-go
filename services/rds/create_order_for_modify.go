@@ -116,7 +116,7 @@ func CreateCreateOrderForModifyRequest() (request *CreateOrderForModifyRequest) 
 request = &CreateOrderForModifyRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "CreateOrderForModify", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "CreateOrderForModify", "", "")
 return
 }
 

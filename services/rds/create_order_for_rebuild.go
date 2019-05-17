@@ -117,7 +117,7 @@ func CreateCreateOrderForRebuildRequest() (request *CreateOrderForRebuildRequest
 request = &CreateOrderForRebuildRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "CreateOrderForRebuild", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "CreateOrderForRebuild", "", "")
 return
 }
 

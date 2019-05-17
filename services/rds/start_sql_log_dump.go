@@ -102,7 +102,7 @@ func CreateStartSqlLogDumpRequest() (request *StartSqlLogDumpRequest) {
 request = &StartSqlLogDumpRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "StartSqlLogDump", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "StartSqlLogDump", "", "")
 return
 }
 

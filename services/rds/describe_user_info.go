@@ -96,7 +96,7 @@ func CreateDescribeUserInfoRequest() (request *DescribeUserInfoRequest) {
 request = &DescribeUserInfoRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeUserInfo", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeUserInfo", "", "")
 return
 }
 

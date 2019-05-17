@@ -96,7 +96,7 @@ func CreateUnlockDBInstanceRequest() (request *UnlockDBInstanceRequest) {
 request = &UnlockDBInstanceRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "UnlockDBInstance", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "UnlockDBInstance", "", "")
 return
 }
 

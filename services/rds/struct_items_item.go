@@ -36,8 +36,8 @@ type ItemsItem struct {
             STATUS     string `json:"STATUS" xml:"STATUS"`
             ReadWriteType     string `json:"ReadWriteType" xml:"ReadWriteType"`
             AvgConsume     float64 `json:"AvgConsume" xml:"AvgConsume"`
-            FinishTime     string `json:"FinishTime" xml:"FinishTime"`
             HasInternetIP     bool `json:"HasInternetIP" xml:"HasInternetIP"`
+            FinishTime     string `json:"FinishTime" xml:"FinishTime"`
             OccurTime     string `json:"OccurTime" xml:"OccurTime"`
             Progress     string `json:"Progress" xml:"Progress"`
             Insert     int `json:"insert" xml:"insert"`

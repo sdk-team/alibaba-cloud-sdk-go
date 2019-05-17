@@ -106,7 +106,7 @@ func CreateDescribeVerificationListRequest() (request *DescribeVerificationListR
 request = &DescribeVerificationListRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeVerificationList", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeVerificationList", "", "")
 return
 }
 

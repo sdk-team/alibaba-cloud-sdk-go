@@ -100,7 +100,7 @@ func CreateCreateMulOrderForBuyRequest() (request *CreateMulOrderForBuyRequest) 
 request = &CreateMulOrderForBuyRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "CreateMulOrderForBuy", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "CreateMulOrderForBuy", "", "")
 return
 }
 

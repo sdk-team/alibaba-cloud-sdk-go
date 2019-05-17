@@ -102,7 +102,7 @@ func CreateDescribeOptimizeAdviceByDBARequest() (request *DescribeOptimizeAdvice
 request = &DescribeOptimizeAdviceByDBARequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOptimizeAdviceByDBA", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOptimizeAdviceByDBA", "", "")
 return
 }
 

@@ -97,7 +97,7 @@ func CreateCompensateInstanceForChannelRequest() (request *CompensateInstanceFor
 request = &CompensateInstanceForChannelRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "CompensateInstanceForChannel", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "CompensateInstanceForChannel", "", "")
 return
 }
 

@@ -100,7 +100,7 @@ func CreateStartDBInstanceDiagnoseRequest() (request *StartDBInstanceDiagnoseReq
 request = &StartDBInstanceDiagnoseRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "StartDBInstanceDiagnose", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "StartDBInstanceDiagnose", "", "")
 return
 }
 

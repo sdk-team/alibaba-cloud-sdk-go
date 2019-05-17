@@ -102,7 +102,7 @@ func CreateCreateDatabaseForInnerRequest() (request *CreateDatabaseForInnerReque
 request = &CreateDatabaseForInnerRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "CreateDatabaseForInner", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "CreateDatabaseForInner", "", "")
 return
 }
 

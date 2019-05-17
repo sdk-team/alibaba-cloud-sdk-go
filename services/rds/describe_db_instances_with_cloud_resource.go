@@ -101,7 +101,7 @@ func CreateDescribeDBInstancesWithCloudResourceRequest() (request *DescribeDBIns
 request = &DescribeDBInstancesWithCloudResourceRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstancesWithCloudResource", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstancesWithCloudResource", "", "")
 return
 }
 

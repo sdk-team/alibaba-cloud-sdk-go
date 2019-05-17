@@ -82,6 +82,7 @@ type CreateOrderForDeferRequest struct {
                     ClientToken     string `position:"Query" name:"ClientToken"`
                     RenewChange     requests.Boolean `position:"Query" name:"RenewChange"`
                     DBInstanceId     string `position:"Query" name:"DBInstanceId"`
+                    DBInstanceStorageType     string `position:"Query" name:"DBInstanceStorageType"`
                     BusinessInfo     string `position:"Query" name:"BusinessInfo"`
                     AutoPay     requests.Boolean `position:"Query" name:"AutoPay"`
                     ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
@@ -108,7 +109,7 @@ func CreateCreateOrderForDeferRequest() (request *CreateOrderForDeferRequest) {
 request = &CreateOrderForDeferRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "CreateOrderForDefer", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "CreateOrderForDefer", "", "")
 return
 }
 

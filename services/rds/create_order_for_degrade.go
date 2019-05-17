@@ -110,7 +110,7 @@ func CreateCreateOrderForDegradeRequest() (request *CreateOrderForDegradeRequest
 request = &CreateOrderForDegradeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "CreateOrderForDegrade", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "CreateOrderForDegrade", "", "")
 return
 }
 

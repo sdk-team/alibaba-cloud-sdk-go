@@ -101,7 +101,7 @@ func CreateCreateOpenSearchDBInstanceRequest() (request *CreateOpenSearchDBInsta
 request = &CreateOpenSearchDBInstanceRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "CreateOpenSearchDBInstance", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "CreateOpenSearchDBInstance", "", "")
 return
 }
 

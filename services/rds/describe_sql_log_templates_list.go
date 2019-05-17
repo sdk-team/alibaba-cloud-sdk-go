@@ -122,7 +122,7 @@ func CreateDescribeSqlLogTemplatesListRequest() (request *DescribeSqlLogTemplate
 request = &DescribeSqlLogTemplatesListRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSqlLogTemplatesList", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSqlLogTemplatesList", "", "")
 return
 }
 

@@ -99,7 +99,7 @@ func CreateDescribeActiveOperationTaskRegionRequest() (request *DescribeActiveOp
 request = &DescribeActiveOperationTaskRegionRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeActiveOperationTaskRegion", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeActiveOperationTaskRegion", "", "")
 return
 }
 

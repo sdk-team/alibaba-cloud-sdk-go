@@ -102,7 +102,7 @@ func CreateDescribeInstanceLevelListRequest() (request *DescribeInstanceLevelLis
 request = &DescribeInstanceLevelListRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeInstanceLevelList", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeInstanceLevelList", "", "")
 return
 }
 

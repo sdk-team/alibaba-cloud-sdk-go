@@ -98,7 +98,7 @@ func CreateDescribeSqlLogInstancesRequest() (request *DescribeSqlLogInstancesReq
 request = &DescribeSqlLogInstancesRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSqlLogInstances", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSqlLogInstances", "", "")
 return
 }
 

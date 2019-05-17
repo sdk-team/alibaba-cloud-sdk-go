@@ -97,7 +97,7 @@ func CreateRequestServiceOfCloudDBExpertRequest() (request *RequestServiceOfClou
 request = &RequestServiceOfCloudDBExpertRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "RequestServiceOfCloudDBExpert", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "RequestServiceOfCloudDBExpert", "", "")
 return
 }
 

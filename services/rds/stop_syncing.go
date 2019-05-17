@@ -98,7 +98,7 @@ func CreateStopSyncingRequest() (request *StopSyncingRequest) {
 request = &StopSyncingRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "StopSyncing", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "StopSyncing", "", "")
 return
 }
 

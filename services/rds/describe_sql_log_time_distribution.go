@@ -110,7 +110,7 @@ func CreateDescribeSqlLogTimeDistributionRequest() (request *DescribeSqlLogTimeD
 request = &DescribeSqlLogTimeDistributionRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSqlLogTimeDistribution", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSqlLogTimeDistribution", "", "")
 return
 }
 

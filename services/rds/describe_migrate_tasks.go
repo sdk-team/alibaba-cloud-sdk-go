@@ -104,7 +104,7 @@ func CreateDescribeMigrateTasksRequest() (request *DescribeMigrateTasksRequest) 
 request = &DescribeMigrateTasksRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeMigrateTasks", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeMigrateTasks", "", "")
 return
 }
 

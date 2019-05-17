@@ -101,7 +101,7 @@ func CreateQueryPriceMultiForDeferRequest() (request *QueryPriceMultiForDeferReq
 request = &QueryPriceMultiForDeferRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "QueryPriceMultiForDefer", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "QueryPriceMultiForDefer", "", "")
 return
 }
 

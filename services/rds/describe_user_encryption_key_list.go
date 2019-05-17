@@ -98,7 +98,7 @@ func CreateDescribeUserEncryptionKeyListRequest() (request *DescribeUserEncrypti
 request = &DescribeUserEncryptionKeyListRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeUserEncryptionKeyList", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeUserEncryptionKeyList", "", "")
 return
 }
 

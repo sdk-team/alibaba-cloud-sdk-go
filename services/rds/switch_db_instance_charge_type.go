@@ -96,7 +96,7 @@ func CreateSwitchDBInstanceChargeTypeRequest() (request *SwitchDBInstanceChargeT
 request = &SwitchDBInstanceChargeTypeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "SwitchDBInstanceChargeType", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "SwitchDBInstanceChargeType", "", "")
 return
 }
 

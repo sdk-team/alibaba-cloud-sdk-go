@@ -105,7 +105,7 @@ func CreateDescribeDBInstanceSwitchLogRequest() (request *DescribeDBInstanceSwit
 request = &DescribeDBInstanceSwitchLogRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceSwitchLog", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceSwitchLog", "", "")
 return
 }
 

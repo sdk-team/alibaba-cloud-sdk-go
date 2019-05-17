@@ -22,8 +22,8 @@ type MigrateTask struct {
             BackupMode     string `json:"BackupMode" xml:"BackupMode"`
             Desc     string `json:"Desc" xml:"Desc"`
             TargetZoneId     string `json:"TargetZoneId" xml:"TargetZoneId"`
-            MigrateTaskId     string `json:"MigrateTaskId" xml:"MigrateTaskId"`
             TargetRegionId     string `json:"TargetRegionId" xml:"TargetRegionId"`
+            MigrateTaskId     string `json:"MigrateTaskId" xml:"MigrateTaskId"`
             CreateTime     string `json:"CreateTime" xml:"CreateTime"`
             IsDBReplaced     string `json:"IsDBReplaced" xml:"IsDBReplaced"`
             TargetVSwitchId     string `json:"TargetVSwitchId" xml:"TargetVSwitchId"`
@@ -33,8 +33,8 @@ type MigrateTask struct {
             DBName     string `json:"DBName" xml:"DBName"`
             MigrateIaskId     string `json:"MigrateIaskId" xml:"MigrateIaskId"`
             SourceRegionId     string `json:"SourceRegionId" xml:"SourceRegionId"`
-            TaskType     string `json:"TaskType" xml:"TaskType"`
             Status     string `json:"Status" xml:"Status"`
-            Description     string `json:"Description" xml:"Description"`
+            TaskType     string `json:"TaskType" xml:"TaskType"`
             SourceVpcId     string `json:"SourceVpcId" xml:"SourceVpcId"`
+            Description     string `json:"Description" xml:"Description"`
 }

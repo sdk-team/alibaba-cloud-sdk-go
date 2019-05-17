@@ -95,7 +95,7 @@ func CreateDescribeSyncAccountForInnerRequest() (request *DescribeSyncAccountFor
 request = &DescribeSyncAccountForInnerRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSyncAccountForInner", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSyncAccountForInner", "", "")
 return
 }
 

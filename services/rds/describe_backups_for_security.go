@@ -111,7 +111,7 @@ func CreateDescribeBackupsForSecurityRequest() (request *DescribeBackupsForSecur
 request = &DescribeBackupsForSecurityRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeBackupsForSecurity", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeBackupsForSecurity", "", "")
 return
 }
 

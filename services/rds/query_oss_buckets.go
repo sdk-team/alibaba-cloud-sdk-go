@@ -99,7 +99,7 @@ func CreateQueryOssBucketsRequest() (request *QueryOssBucketsRequest) {
 request = &QueryOssBucketsRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "QueryOssBuckets", "rds", "openAPI")
+request.InitWithApiInfo("Rds", "2014-08-15", "QueryOssBuckets", "", "")
 return
 }
 
