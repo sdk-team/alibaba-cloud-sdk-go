@@ -37,23 +37,23 @@ type Instance struct {
             InternetChargeType     string `json:"InternetChargeType" xml:"InternetChargeType"`
             InternetMaxBandwidthIn     int `json:"InternetMaxBandwidthIn" xml:"InternetMaxBandwidthIn"`
             HostName     string `json:"HostName" xml:"HostName"`
-            Status     string `json:"Status" xml:"Status"`
             Cpu     int `json:"Cpu" xml:"Cpu"`
+            Status     string `json:"Status" xml:"Status"`
             SpotPriceLimit     float64 `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
             OSName     string `json:"OSName" xml:"OSName"`
             OSNameEn     string `json:"OSNameEn" xml:"OSNameEn"`
             SerialNumber     string `json:"SerialNumber" xml:"SerialNumber"`
             RegionId     string `json:"RegionId" xml:"RegionId"`
-            IoOptimized     bool `json:"IoOptimized" xml:"IoOptimized"`
             InternetMaxBandwidthOut     int `json:"InternetMaxBandwidthOut" xml:"InternetMaxBandwidthOut"`
+            IoOptimized     bool `json:"IoOptimized" xml:"IoOptimized"`
             ResourceGroupId     string `json:"ResourceGroupId" xml:"ResourceGroupId"`
             InstanceTypeFamily     string `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
             InstanceId     string `json:"InstanceId" xml:"InstanceId"`
             DeploymentSetId     string `json:"DeploymentSetId" xml:"DeploymentSetId"`
             GPUSpec     string `json:"GPUSpec" xml:"GPUSpec"`
             Description     string `json:"Description" xml:"Description"`
-            IzNo     string `json:"IzNo" xml:"IzNo"`
             Recyclable     bool `json:"Recyclable" xml:"Recyclable"`
+            IzNo     string `json:"IzNo" xml:"IzNo"`
             SaleCycle     string `json:"SaleCycle" xml:"SaleCycle"`
             ExpiredTime     string `json:"ExpiredTime" xml:"ExpiredTime"`
             OSType     string `json:"OSType" xml:"OSType"`
@@ -66,13 +66,13 @@ type Instance struct {
             VlanId     string `json:"VlanId" xml:"VlanId"`
             StoppedMode     string `json:"StoppedMode" xml:"StoppedMode"`
             SpotStrategy     string `json:"SpotStrategy" xml:"SpotStrategy"`
-            OsType     bool `json:"OsType" xml:"OsType"`
             DeletionProtection     bool `json:"DeletionProtection" xml:"DeletionProtection"`
+            OsType     bool `json:"OsType" xml:"OsType"`
                 SecurityGroupIds SecurityGroupIdsInDescribeInstances `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
                 InnerIpAddress InnerIpAddressInDescribeInstances `json:"InnerIpAddress" xml:"InnerIpAddress"`
                 PublicIpAddress PublicIpAddressInDescribeInstances `json:"PublicIpAddress" xml:"PublicIpAddress"`
                 RdmaIpAddress RdmaIpAddress `json:"RdmaIpAddress" xml:"RdmaIpAddress"`
-            EipAddress EipAddressInDescribeInstances  `json:"EipAddress" xml:"EipAddress"`
+            EipAddress EipAddress  `json:"EipAddress" xml:"EipAddress"`
             EcsCapacityReservationAttr EcsCapacityReservationAttr  `json:"EcsCapacityReservationAttr" xml:"EcsCapacityReservationAttr"`
             DedicatedHostAttribute DedicatedHostAttribute  `json:"DedicatedHostAttribute" xml:"DedicatedHostAttribute"`
             DedicatedInstanceAttribute DedicatedInstanceAttribute  `json:"DedicatedInstanceAttribute" xml:"DedicatedInstanceAttribute"`
