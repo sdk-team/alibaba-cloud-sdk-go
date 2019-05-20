@@ -98,7 +98,7 @@ func CreateModifyInstanceVpcAttribute_GatedLaunchRequest() (request *ModifyInsta
 request = &ModifyInstanceVpcAttribute_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceVpcAttribute_GatedLaunch", "", "")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceVpcAttribute_GatedLaunch", "ecs", "openAPI")
 return
 }
 

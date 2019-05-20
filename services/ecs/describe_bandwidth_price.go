@@ -98,7 +98,7 @@ func CreateDescribeBandwidthPriceRequest() (request *DescribeBandwidthPriceReque
 request = &DescribeBandwidthPriceRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeBandwidthPrice", "", "")
+request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeBandwidthPrice", "ecs", "openAPI")
 return
 }
 

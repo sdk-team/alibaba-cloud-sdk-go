@@ -98,7 +98,7 @@ func CreateModifyIntranetBandwidthKb_GatedLaunchRequest() (request *ModifyIntran
 request = &ModifyIntranetBandwidthKb_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyIntranetBandwidthKb_GatedLaunch", "", "")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyIntranetBandwidthKb_GatedLaunch", "ecs", "openAPI")
 return
 }
 

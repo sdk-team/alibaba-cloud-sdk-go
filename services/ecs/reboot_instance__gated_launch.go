@@ -97,7 +97,7 @@ func CreateRebootInstance_GatedLaunchRequest() (request *RebootInstance_GatedLau
 request = &RebootInstance_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "RebootInstance_GatedLaunch", "", "")
+request.InitWithApiInfo("Ecs", "2014-05-26", "RebootInstance_GatedLaunch", "ecs", "openAPI")
 return
 }
 

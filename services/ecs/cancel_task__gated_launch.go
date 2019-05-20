@@ -95,7 +95,7 @@ func CreateCancelTask_GatedLaunchRequest() (request *CancelTask_GatedLaunchReque
 request = &CancelTask_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "CancelTask_GatedLaunch", "", "")
+request.InitWithApiInfo("Ecs", "2014-05-26", "CancelTask_GatedLaunch", "ecs", "openAPI")
 return
 }
 

@@ -100,7 +100,7 @@ func CreateDescribeInstancePhysicalAttribute_GatedLaunchRequest() (request *Desc
 request = &DescribeInstancePhysicalAttribute_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstancePhysicalAttribute_GatedLaunch", "", "")
+request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstancePhysicalAttribute_GatedLaunch", "ecs", "openAPI")
 return
 }
 

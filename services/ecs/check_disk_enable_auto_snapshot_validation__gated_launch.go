@@ -98,7 +98,7 @@ func CreateCheckDiskEnableAutoSnapshotValidation_GatedLaunchRequest() (request *
 request = &CheckDiskEnableAutoSnapshotValidation_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "CheckDiskEnableAutoSnapshotValidation_GatedLaunch", "", "")
+request.InitWithApiInfo("Ecs", "2014-05-26", "CheckDiskEnableAutoSnapshotValidation_GatedLaunch", "ecs", "openAPI")
 return
 }
 

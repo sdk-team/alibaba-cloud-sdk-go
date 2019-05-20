@@ -97,7 +97,7 @@ func CreateCancelUserEventRequest() (request *CancelUserEventRequest) {
 request = &CancelUserEventRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "CancelUserEvent", "", "")
+request.InitWithApiInfo("Ecs", "2014-05-26", "CancelUserEvent", "ecs", "openAPI")
 return
 }
 

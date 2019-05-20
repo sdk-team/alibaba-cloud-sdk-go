@@ -96,7 +96,7 @@ func CreateDeleteDeploymentSetRequest() (request *DeleteDeploymentSetRequest) {
 request = &DeleteDeploymentSetRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteDeploymentSet", "", "")
+request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteDeploymentSet", "ecs", "openAPI")
 return
 }
 

@@ -144,7 +144,7 @@ func CreateRunInstances_GatedLaunchRequest() (request *RunInstances_GatedLaunchR
 request = &RunInstances_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2016-03-14", "RunInstances_GatedLaunch", "", "")
+request.InitWithApiInfo("Ecs", "2016-03-14", "RunInstances_GatedLaunch", "ecs", "openAPI")
 return
 }
 

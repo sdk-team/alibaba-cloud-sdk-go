@@ -98,7 +98,7 @@ func CreateDescribeLimitation_GatedLaunchRequest() (request *DescribeLimitation_
 request = &DescribeLimitation_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeLimitation_GatedLaunch", "", "")
+request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeLimitation_GatedLaunch", "ecs", "openAPI")
 return
 }
 

@@ -112,7 +112,7 @@ func CreateCreateVolumesRequest() (request *CreateVolumesRequest) {
 request = &CreateVolumesRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2016-03-14", "CreateVolumes", "", "")
+request.InitWithApiInfo("Ecs", "2016-03-14", "CreateVolumes", "ecs", "openAPI")
 return
 }
 

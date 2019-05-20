@@ -101,7 +101,7 @@ func CreateDescribeIntranetAttributeKb_GatedLaunchRequest() (request *DescribeIn
 request = &DescribeIntranetAttributeKb_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeIntranetAttributeKb_GatedLaunch", "", "")
+request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeIntranetAttributeKb_GatedLaunch", "ecs", "openAPI")
 return
 }
 

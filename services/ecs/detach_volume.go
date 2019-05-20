@@ -97,7 +97,7 @@ func CreateDetachVolumeRequest() (request *DetachVolumeRequest) {
 request = &DetachVolumeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "DetachVolume", "", "")
+request.InitWithApiInfo("Ecs", "2014-05-26", "DetachVolume", "ecs", "openAPI")
 return
 }
 

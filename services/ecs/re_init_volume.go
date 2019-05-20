@@ -97,7 +97,7 @@ func CreateReInitVolumeRequest() (request *ReInitVolumeRequest) {
 request = &ReInitVolumeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ReInitVolume", "", "")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ReInitVolume", "ecs", "openAPI")
 return
 }
 

@@ -96,7 +96,7 @@ func CreateDeleteSecurityGroup_GatedLaunchRequest() (request *DeleteSecurityGrou
 request = &DeleteSecurityGroup_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteSecurityGroup_GatedLaunch", "", "")
+request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteSecurityGroup_GatedLaunch", "ecs", "openAPI")
 return
 }
 

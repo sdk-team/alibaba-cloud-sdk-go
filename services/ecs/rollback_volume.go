@@ -97,7 +97,7 @@ func CreateRollbackVolumeRequest() (request *RollbackVolumeRequest) {
 request = &RollbackVolumeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "RollbackVolume", "", "")
+request.InitWithApiInfo("Ecs", "2014-05-26", "RollbackVolume", "ecs", "openAPI")
 return
 }
 

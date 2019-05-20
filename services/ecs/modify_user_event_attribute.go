@@ -99,7 +99,7 @@ func CreateModifyUserEventAttributeRequest() (request *ModifyUserEventAttributeR
 request = &ModifyUserEventAttributeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyUserEventAttribute", "", "")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyUserEventAttribute", "ecs", "openAPI")
 return
 }
 

@@ -98,7 +98,7 @@ func CreateResizeVolume_GatedLaunchRequest() (request *ResizeVolume_GatedLaunchR
 request = &ResizeVolume_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ResizeVolume_GatedLaunch", "", "")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ResizeVolume_GatedLaunch", "ecs", "openAPI")
 return
 }
 

@@ -113,7 +113,7 @@ func CreateCreateDisksRequest() (request *CreateDisksRequest) {
 request = &CreateDisksRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2016-03-14", "CreateDisks", "", "")
+request.InitWithApiInfo("Ecs", "2016-03-14", "CreateDisks", "ecs", "openAPI")
 return
 }
 

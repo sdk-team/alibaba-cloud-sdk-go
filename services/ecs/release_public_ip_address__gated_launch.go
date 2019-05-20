@@ -97,7 +97,7 @@ func CreateReleasePublicIpAddress_GatedLaunchRequest() (request *ReleasePublicIp
 request = &ReleasePublicIpAddress_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ReleasePublicIpAddress_GatedLaunch", "", "")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ReleasePublicIpAddress_GatedLaunch", "ecs", "openAPI")
 return
 }
 

@@ -101,7 +101,7 @@ func CreateModifyDiskAttribute_GatedLaunchRequest() (request *ModifyDiskAttribut
 request = &ModifyDiskAttribute_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDiskAttribute_GatedLaunch", "", "")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDiskAttribute_GatedLaunch", "ecs", "openAPI")
 return
 }
 

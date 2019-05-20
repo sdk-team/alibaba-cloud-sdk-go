@@ -98,7 +98,7 @@ func CreateStopInstance_GatedLaunchRequest() (request *StopInstance_GatedLaunchR
 request = &StopInstance_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "StopInstance_GatedLaunch", "", "")
+request.InitWithApiInfo("Ecs", "2014-05-26", "StopInstance_GatedLaunch", "ecs", "openAPI")
 return
 }
 

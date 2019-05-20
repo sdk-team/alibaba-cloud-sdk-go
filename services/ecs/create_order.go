@@ -99,6 +99,7 @@ type CreateOrderResponse struct {
 *responses.BaseResponse
             RequestId     string `json:"RequestId" xml:"RequestId"`
             OrderId     string `json:"OrderId" xml:"OrderId"`
+            TradePrice     float64 `json:"TradePrice" xml:"TradePrice"`
             TaskId     string `json:"TaskId" xml:"TaskId"`
                 OrderParams OrderParamsInCreateOrder `json:"OrderParams" xml:"OrderParams"`
                     RelatedOrderItemSets RelatedOrderItemSets `json:"RelatedOrderItemSets" xml:"RelatedOrderItemSets"`
@@ -109,7 +110,7 @@ func CreateCreateOrderRequest() (request *CreateOrderRequest) {
 request = &CreateOrderRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2016-03-14", "CreateOrder", "", "")
+request.InitWithApiInfo("Ecs", "2016-03-14", "CreateOrder", "ecs", "openAPI")
 return
 }
 

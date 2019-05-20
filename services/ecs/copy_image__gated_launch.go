@@ -110,7 +110,7 @@ func CreateCopyImage_GatedLaunchRequest() (request *CopyImage_GatedLaunchRequest
 request = &CopyImage_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "CopyImage_GatedLaunch", "", "")
+request.InitWithApiInfo("Ecs", "2014-05-26", "CopyImage_GatedLaunch", "ecs", "openAPI")
 return
 }
 

@@ -125,7 +125,7 @@ func CreateCreateFleetRequest() (request *CreateFleetRequest) {
 request = &CreateFleetRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "CreateFleet", "", "")
+request.InitWithApiInfo("Ecs", "2014-05-26", "CreateFleet", "ecs", "openAPI")
 return
 }
 

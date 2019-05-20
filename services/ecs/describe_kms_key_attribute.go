@@ -106,7 +106,7 @@ func CreateDescribeKMSKeyAttributeRequest() (request *DescribeKMSKeyAttributeReq
 request = &DescribeKMSKeyAttributeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeKMSKeyAttribute", "", "")
+request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeKMSKeyAttribute", "ecs", "openAPI")
 return
 }
 

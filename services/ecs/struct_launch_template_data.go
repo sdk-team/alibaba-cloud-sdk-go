@@ -50,8 +50,8 @@ type LaunchTemplateData struct {
             SpotPriceLimit     float64 `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
             SpotDuration     int `json:"SpotDuration" xml:"SpotDuration"`
             ResourceGroupId     string `json:"ResourceGroupId" xml:"ResourceGroupId"`
-            SecurityEnhancementStrategy     string `json:"SecurityEnhancementStrategy" xml:"SecurityEnhancementStrategy"`
+            SecurityEnhancementStrategy     bool `json:"SecurityEnhancementStrategy" xml:"SecurityEnhancementStrategy"`
                     DataDisks DataDisks `json:"DataDisks" xml:"DataDisks"`
-                    NetworkInterfaces NetworkInterfacesInDescribeLaunchTemplateVersions `json:"NetworkInterfaces" xml:"NetworkInterfaces"`
-                    Tags TagsInDescribeLaunchTemplateVersions `json:"Tags" xml:"Tags"`
+                    NetworkInterfaces NetworkInterfaces `json:"NetworkInterfaces" xml:"NetworkInterfaces"`
+                    Tags TagsInGetLaunchTemplateData `json:"Tags" xml:"Tags"`
 }

@@ -106,7 +106,7 @@ func CreateDescribeEventsRequest() (request *DescribeEventsRequest) {
 request = &DescribeEventsRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeEvents", "", "")
+request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeEvents", "ecs", "openAPI")
 return
 }
 

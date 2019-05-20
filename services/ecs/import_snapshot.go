@@ -100,7 +100,7 @@ func CreateImportSnapshotRequest() (request *ImportSnapshotRequest) {
 request = &ImportSnapshotRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ImportSnapshot", "", "")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ImportSnapshot", "ecs", "openAPI")
 return
 }
 

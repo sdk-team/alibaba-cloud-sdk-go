@@ -102,7 +102,7 @@ func CreateDescribeAccountLimitsRequest() (request *DescribeAccountLimitsRequest
 request = &DescribeAccountLimitsRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeAccountLimits", "", "")
+request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeAccountLimits", "ecs", "openAPI")
 return
 }
 

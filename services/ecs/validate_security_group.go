@@ -105,7 +105,7 @@ func CreateValidateSecurityGroupRequest() (request *ValidateSecurityGroupRequest
 request = &ValidateSecurityGroupRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ValidateSecurityGroup", "", "")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ValidateSecurityGroup", "ecs", "openAPI")
 return
 }
 

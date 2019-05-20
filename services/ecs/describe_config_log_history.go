@@ -106,7 +106,7 @@ func CreateDescribeConfigLogHistoryRequest() (request *DescribeConfigLogHistoryR
 request = &DescribeConfigLogHistoryRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeConfigLogHistory", "", "")
+request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeConfigLogHistory", "ecs", "openAPI")
 return
 }
 

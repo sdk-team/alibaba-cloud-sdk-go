@@ -96,7 +96,7 @@ func CreateDeleteDisk_GatedLaunchRequest() (request *DeleteDisk_GatedLaunchReque
 request = &DeleteDisk_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteDisk_GatedLaunch", "", "")
+request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteDisk_GatedLaunch", "ecs", "openAPI")
 return
 }
 

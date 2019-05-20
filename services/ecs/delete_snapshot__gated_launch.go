@@ -96,7 +96,7 @@ func CreateDeleteSnapshot_GatedLaunchRequest() (request *DeleteSnapshot_GatedLau
 request = &DeleteSnapshot_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteSnapshot_GatedLaunch", "", "")
+request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteSnapshot_GatedLaunch", "ecs", "openAPI")
 return
 }
 

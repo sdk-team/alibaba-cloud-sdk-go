@@ -97,7 +97,7 @@ func CreateAttachVolumeRequest() (request *AttachVolumeRequest) {
 request = &AttachVolumeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "AttachVolume", "", "")
+request.InitWithApiInfo("Ecs", "2014-05-26", "AttachVolume", "ecs", "openAPI")
 return
 }
 

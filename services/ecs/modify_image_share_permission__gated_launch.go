@@ -116,7 +116,7 @@ func CreateModifyImageSharePermission_GatedLaunchRequest() (request *ModifyImage
 request = &ModifyImageSharePermission_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyImageSharePermission_GatedLaunch", "", "")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyImageSharePermission_GatedLaunch", "ecs", "openAPI")
 return
 }
 

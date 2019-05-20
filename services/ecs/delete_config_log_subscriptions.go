@@ -96,7 +96,7 @@ func CreateDeleteConfigLogSubscriptionsRequest() (request *DeleteConfigLogSubscr
 request = &DeleteConfigLogSubscriptionsRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2016-03-14", "DeleteConfigLogSubscriptions", "", "")
+request.InitWithApiInfo("Ecs", "2016-03-14", "DeleteConfigLogSubscriptions", "ecs", "openAPI")
 return
 }
 

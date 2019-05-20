@@ -18,5 +18,5 @@ package ecs
 
 // Data is a nested struct in ecs response
 type Data struct {
-RecommendInstanceType []RecommendInstanceType `json:"RecommendInstanceType" xml:"RecommendInstanceType"`
+EniQosGroups []    string  `json:"EniQosGroups" xml:"EniQosGroups"`
 }

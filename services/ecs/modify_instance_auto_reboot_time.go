@@ -96,7 +96,7 @@ func CreateModifyInstanceAutoRebootTimeRequest() (request *ModifyInstanceAutoReb
 request = &ModifyInstanceAutoRebootTimeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2016-03-14", "ModifyInstanceAutoRebootTime", "", "")
+request.InitWithApiInfo("Ecs", "2016-03-14", "ModifyInstanceAutoRebootTime", "ecs", "openAPI")
 return
 }
 

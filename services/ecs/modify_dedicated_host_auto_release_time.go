@@ -81,8 +81,8 @@ type ModifyDedicatedHostAutoReleaseTimeRequest struct {
                     ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
                     OwnerAccount     string `position:"Query" name:"OwnerAccount"`
                     AutoReleaseTime     string `position:"Query" name:"AutoReleaseTime"`
-                    DedicatedHostId     string `position:"Query" name:"DedicatedHostId"`
                     OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+                    InstanceId     string `position:"Query" name:"InstanceId"`
 }
 
 
@@ -97,7 +97,7 @@ func CreateModifyDedicatedHostAutoReleaseTimeRequest() (request *ModifyDedicated
 request = &ModifyDedicatedHostAutoReleaseTimeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDedicatedHostAutoReleaseTime", "", "")
+request.InitWithApiInfo("Ecs", "2016-03-14", "ModifyDedicatedHostAutoReleaseTime", "ecs", "openAPI")
 return
 }
 

@@ -108,7 +108,7 @@ func CreateDescribeLaunchTemplateVersionsRequest() (request *DescribeLaunchTempl
 request = &DescribeLaunchTemplateVersionsRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeLaunchTemplateVersions", "", "")
+request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeLaunchTemplateVersions", "ecs", "openAPI")
 return
 }
 

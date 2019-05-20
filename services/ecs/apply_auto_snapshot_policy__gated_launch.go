@@ -96,7 +96,7 @@ func CreateApplyAutoSnapshotPolicy_GatedLaunchRequest() (request *ApplyAutoSnaps
 request = &ApplyAutoSnapshotPolicy_GatedLaunchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ApplyAutoSnapshotPolicy_GatedLaunch", "", "")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ApplyAutoSnapshotPolicy_GatedLaunch", "ecs", "openAPI")
 return
 }
 

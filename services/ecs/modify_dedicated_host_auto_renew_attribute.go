@@ -77,15 +77,16 @@ return result
 // ModifyDedicatedHostAutoRenewAttributeRequest is the request struct for api ModifyDedicatedHostAutoRenewAttribute
 type ModifyDedicatedHostAutoRenewAttributeRequest struct {
 *requests.RpcRequest
-                    DedicatedHostIds     string `position:"Query" name:"DedicatedHostIds"`
                     ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
                     Duration     requests.Integer `position:"Query" name:"Duration"`
                     RenewalStatus     string `position:"Query" name:"RenewalStatus"`
                     ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
                     OwnerAccount     string `position:"Query" name:"OwnerAccount"`
                     OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+                    ResourceType     string `position:"Query" name:"ResourceType"`
                     PeriodUnit     string `position:"Query" name:"PeriodUnit"`
                     AutoRenew     requests.Boolean `position:"Query" name:"AutoRenew"`
+                    InstanceIds     string `position:"Query" name:"InstanceIds"`
 }
 
 
@@ -100,7 +101,7 @@ func CreateModifyDedicatedHostAutoRenewAttributeRequest() (request *ModifyDedica
 request = &ModifyDedicatedHostAutoRenewAttributeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDedicatedHostAutoRenewAttribute", "", "")
+request.InitWithApiInfo("Ecs", "2016-03-14", "ModifyDedicatedHostAutoRenewAttribute", "ecs", "openAPI")
 return
 }
 
