@@ -20,11 +20,11 @@ package ecs
 type Order struct {
             SpotInstanceTypeOriginalPrice     float64 `json:"SpotInstanceTypeOriginalPrice" xml:"SpotInstanceTypeOriginalPrice"`
             SpotInstanceTypePrice     float64 `json:"SpotInstanceTypePrice" xml:"SpotInstanceTypePrice"`
-            DiscountPrice     float64 `json:"DiscountPrice" xml:"DiscountPrice"`
             TradePrice     float64 `json:"TradePrice" xml:"TradePrice"`
+            DiscountPrice     float64 `json:"DiscountPrice" xml:"DiscountPrice"`
             OriginalPrice     float64 `json:"OriginalPrice" xml:"OriginalPrice"`
-            Currency     string `json:"Currency" xml:"Currency"`
             ReservedInstanceHourPrice     float64 `json:"ReservedInstanceHourPrice" xml:"ReservedInstanceHourPrice"`
-                RuleIdSet RuleIdSetInDescribeBandwidthPrice `json:"RuleIdSet" xml:"RuleIdSet"`
+            Currency     string `json:"Currency" xml:"Currency"`
+                RuleIdSet RuleIdSetInDescribePrice `json:"RuleIdSet" xml:"RuleIdSet"`
                     Coupons Coupons `json:"Coupons" xml:"Coupons"`
 }

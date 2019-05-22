@@ -22,5 +22,5 @@ type AvailableZone struct {
             ZoneId     string `json:"ZoneId" xml:"ZoneId"`
             StatusCategory     string `json:"StatusCategory" xml:"StatusCategory"`
             Status     string `json:"Status" xml:"Status"`
-                    AvailableResources AvailableResourcesInDescribeAvailableResource `json:"AvailableResources" xml:"AvailableResources"`
+                    AvailableResources AvailableResourcesInDescribeResourcesModification `json:"AvailableResources" xml:"AvailableResources"`
 }
