@@ -95,7 +95,7 @@ func CreateDeleteEniQosGroupRequest() (request *DeleteEniQosGroupRequest) {
 request = &DeleteEniQosGroupRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2016-03-14", "DeleteEniQosGroup", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2016-03-14", "DeleteEniQosGroup", "", "")
 return
 }
 

@@ -102,7 +102,7 @@ func CreateEipNotifyPaidRequest() (request *EipNotifyPaidRequest) {
 request = &EipNotifyPaidRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "EipNotifyPaid", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "EipNotifyPaid", "", "")
 return
 }
 

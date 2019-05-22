@@ -26,8 +26,8 @@ type DedicatedHost struct {
             MachineId     string `json:"MachineId" xml:"MachineId"`
             Description     string `json:"Description" xml:"Description"`
             DedicatedHostType     string `json:"DedicatedHostType" xml:"DedicatedHostType"`
-            TotalSockets     int `json:"TotalSockets" xml:"TotalSockets"`
-            TotalPhysicalCores     int `json:"TotalPhysicalCores" xml:"TotalPhysicalCores"`
+            Sockets     int `json:"Sockets" xml:"Sockets"`
+            Cores     int `json:"Cores" xml:"Cores"`
             PhysicalGpus     int `json:"PhysicalGpus" xml:"PhysicalGpus"`
             GPUSpec     string `json:"GPUSpec" xml:"GPUSpec"`
             ActionOnMaintenance     string `json:"ActionOnMaintenance" xml:"ActionOnMaintenance"`
@@ -38,11 +38,11 @@ type DedicatedHost struct {
             ExpiredTime     string `json:"ExpiredTime" xml:"ExpiredTime"`
             AutoReleaseTime     string `json:"AutoReleaseTime" xml:"AutoReleaseTime"`
             ResourceGroupId     string `json:"ResourceGroupId" xml:"ResourceGroupId"`
-                SupportInstanceTypeFamilies SupportInstanceTypeFamiliesInDescribeDedicatedHosts `json:"SupportInstanceTypeFamilies" xml:"SupportInstanceTypeFamilies"`
-                SupportInstanceTypesList SupportInstanceTypesListInDescribeDedicatedHosts `json:"SupportInstanceTypesList" xml:"SupportInstanceTypesList"`
+                SupportedInstanceTypeFamilies SupportedInstanceTypeFamiliesInDescribeDedicatedHosts `json:"SupportedInstanceTypeFamilies" xml:"SupportedInstanceTypeFamilies"`
+                SupportedInstanceTypesList SupportedInstanceTypesListInDescribeDedicatedHosts `json:"SupportedInstanceTypesList" xml:"SupportedInstanceTypesList"`
             Capacity Capacity  `json:"Capacity" xml:"Capacity"`
             NetworkAttributes NetworkAttributes  `json:"NetworkAttributes" xml:"NetworkAttributes"`
-                    Instances Instances `json:"Instances" xml:"Instances"`
+                    Instances InstancesInDescribeDedicatedHosts `json:"Instances" xml:"Instances"`
                     OperationLocks OperationLocksInDescribeDedicatedHosts `json:"OperationLocks" xml:"OperationLocks"`
                     Tags TagsInDescribeDedicatedHosts `json:"Tags" xml:"Tags"`
 }

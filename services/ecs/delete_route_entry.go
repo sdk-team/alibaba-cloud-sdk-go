@@ -104,7 +104,7 @@ func CreateDeleteRouteEntryRequest() (request *DeleteRouteEntryRequest) {
 request = &DeleteRouteEntryRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteRouteEntry", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteRouteEntry", "", "")
 return
 }
 

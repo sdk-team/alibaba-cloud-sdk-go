@@ -98,7 +98,7 @@ func CreateTerminatePhysicalConnectionRequest() (request *TerminatePhysicalConne
 request = &TerminatePhysicalConnectionRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "TerminatePhysicalConnection", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "TerminatePhysicalConnection", "", "")
 return
 }
 

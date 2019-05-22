@@ -100,7 +100,7 @@ func CreateAttachInstanceRamRoleRequest() (request *AttachInstanceRamRoleRequest
 request = &AttachInstanceRamRoleRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "AttachInstanceRamRole", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "AttachInstanceRamRole", "", "")
 return
 }
 

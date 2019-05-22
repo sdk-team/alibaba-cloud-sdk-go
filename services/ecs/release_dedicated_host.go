@@ -82,8 +82,6 @@ type ReleaseDedicatedHostRequest struct {
                     OwnerAccount     string `position:"Query" name:"OwnerAccount"`
                     DedicatedHostId     string `position:"Query" name:"DedicatedHostId"`
                     OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    Token     string `position:"Query" name:"Token"`
-                    Force     requests.Boolean `position:"Query" name:"Force"`
 }
 
 
@@ -98,7 +96,7 @@ func CreateReleaseDedicatedHostRequest() (request *ReleaseDedicatedHostRequest) 
 request = &ReleaseDedicatedHostRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2016-03-14", "ReleaseDedicatedHost", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ReleaseDedicatedHost", "", "")
 return
 }
 

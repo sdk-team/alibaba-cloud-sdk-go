@@ -105,7 +105,7 @@ type CreateDisksTag struct{
 type CreateDisksResponse struct {
 *responses.BaseResponse
             RequestId     string `json:"RequestId" xml:"RequestId"`
-                DiskId DiskIdInCreateDisks `json:"DiskId" xml:"DiskId"`
+                DiskId DiskId `json:"DiskId" xml:"DiskId"`
 }
 
 // CreateCreateDisksRequest creates a request to invoke CreateDisks API
@@ -113,7 +113,7 @@ func CreateCreateDisksRequest() (request *CreateDisksRequest) {
 request = &CreateDisksRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2016-03-14", "CreateDisks", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2016-03-14", "CreateDisks", "", "")
 return
 }
 

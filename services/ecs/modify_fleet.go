@@ -103,7 +103,7 @@ func CreateModifyFleetRequest() (request *ModifyFleetRequest) {
 request = &ModifyFleetRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyFleet", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyFleet", "", "")
 return
 }
 

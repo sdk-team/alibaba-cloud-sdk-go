@@ -97,7 +97,7 @@ func CreateDescribeUserBusinessBehaviorRequest() (request *DescribeUserBusinessB
 request = &DescribeUserBusinessBehaviorRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeUserBusinessBehavior", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeUserBusinessBehavior", "", "")
 return
 }
 

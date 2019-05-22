@@ -85,6 +85,7 @@ type DescribeTagsRequest struct {
                     ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
                     OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
                     ResourceType     string `position:"Query" name:"ResourceType"`
+                    Category     string `position:"Query" name:"Category"`
 }
 
 // DescribeTagsTag is a repeated param struct in DescribeTagsRequest
@@ -108,7 +109,7 @@ func CreateDescribeTagsRequest() (request *DescribeTagsRequest) {
 request = &DescribeTagsRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeTags", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeTags", "", "")
 return
 }
 

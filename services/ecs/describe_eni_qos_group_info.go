@@ -96,7 +96,7 @@ func CreateDescribeEniQosGroupInfoRequest() (request *DescribeEniQosGroupInfoReq
 request = &DescribeEniQosGroupInfoRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeEniQosGroupInfo", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeEniQosGroupInfo", "", "")
 return
 }
 

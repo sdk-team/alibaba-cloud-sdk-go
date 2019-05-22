@@ -96,7 +96,7 @@ func CreateDeleteVolumeRequest() (request *DeleteVolumeRequest) {
 request = &DeleteVolumeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteVolume", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteVolume", "", "")
 return
 }
 

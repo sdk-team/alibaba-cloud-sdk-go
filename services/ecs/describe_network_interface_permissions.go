@@ -103,7 +103,7 @@ func CreateDescribeNetworkInterfacePermissionsRequest() (request *DescribeNetwor
 request = &DescribeNetworkInterfacePermissionsRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeNetworkInterfacePermissions", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeNetworkInterfacePermissions", "", "")
 return
 }
 

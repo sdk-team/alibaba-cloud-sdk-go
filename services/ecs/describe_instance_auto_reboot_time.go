@@ -98,7 +98,7 @@ func CreateDescribeInstanceAutoRebootTimeRequest() (request *DescribeInstanceAut
 request = &DescribeInstanceAutoRebootTimeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeInstanceAutoRebootTime", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeInstanceAutoRebootTime", "", "")
 return
 }
 

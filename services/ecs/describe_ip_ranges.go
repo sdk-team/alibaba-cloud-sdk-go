@@ -105,7 +105,7 @@ func CreateDescribeIpRangesRequest() (request *DescribeIpRangesRequest) {
 request = &DescribeIpRangesRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeIpRanges", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeIpRanges", "", "")
 return
 }
 

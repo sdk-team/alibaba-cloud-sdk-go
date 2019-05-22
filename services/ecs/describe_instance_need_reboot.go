@@ -101,7 +101,7 @@ func CreateDescribeInstanceNeedRebootRequest() (request *DescribeInstanceNeedReb
 request = &DescribeInstanceNeedRebootRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeInstanceNeedReboot", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeInstanceNeedReboot", "", "")
 return
 }
 

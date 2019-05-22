@@ -98,7 +98,7 @@ func CreateModifyVolumeAttributeRequest() (request *ModifyVolumeAttributeRequest
 request = &ModifyVolumeAttributeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyVolumeAttribute", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyVolumeAttribute", "", "")
 return
 }
 

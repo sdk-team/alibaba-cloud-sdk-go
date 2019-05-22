@@ -117,7 +117,7 @@ type DescribeInstanceAttributeResponse struct {
                 PublicIpAddress PublicIpAddressInDescribeInstanceAttribute `json:"PublicIpAddress" xml:"PublicIpAddress"`
                 InnerIpAddress InnerIpAddressInDescribeInstanceAttribute `json:"InnerIpAddress" xml:"InnerIpAddress"`
             VpcAttributes VpcAttributes  `json:"VpcAttributes" xml:"VpcAttributes"`
-            EipAddress EipAddress  `json:"EipAddress" xml:"EipAddress"`
+            EipAddress EipAddressInDescribeInstanceAttribute  `json:"EipAddress" xml:"EipAddress"`
             DedicatedHostAttribute DedicatedHostAttribute  `json:"DedicatedHostAttribute" xml:"DedicatedHostAttribute"`
                     OperationLocks OperationLocksInDescribeInstanceAttribute `json:"OperationLocks" xml:"OperationLocks"`
 }
@@ -127,7 +127,7 @@ func CreateDescribeInstanceAttributeRequest() (request *DescribeInstanceAttribut
 request = &DescribeInstanceAttributeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceAttribute", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceAttribute", "", "")
 return
 }
 

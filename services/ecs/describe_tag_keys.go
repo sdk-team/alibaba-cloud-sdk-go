@@ -84,6 +84,7 @@ type DescribeTagKeysRequest struct {
                     ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
                     OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
                     ResourceType     string `position:"Query" name:"ResourceType"`
+                    Category     string `position:"Query" name:"Category"`
 }
 
 
@@ -94,7 +95,7 @@ type DescribeTagKeysResponse struct {
             PageSize     int `json:"PageSize" xml:"PageSize"`
             PageNumber     int `json:"PageNumber" xml:"PageNumber"`
             TotalCount     int `json:"TotalCount" xml:"TotalCount"`
-                TagKeys TagKeysInDescribeTagKeys `json:"TagKeys" xml:"TagKeys"`
+                TagKeys TagKeys `json:"TagKeys" xml:"TagKeys"`
 }
 
 // CreateDescribeTagKeysRequest creates a request to invoke DescribeTagKeys API
@@ -102,7 +103,7 @@ func CreateDescribeTagKeysRequest() (request *DescribeTagKeysRequest) {
 request = &DescribeTagKeysRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeTagKeys", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeTagKeys", "", "")
 return
 }
 

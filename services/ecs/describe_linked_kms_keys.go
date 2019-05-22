@@ -101,7 +101,7 @@ func CreateDescribeLinkedKMSKeysRequest() (request *DescribeLinkedKMSKeysRequest
 request = &DescribeLinkedKMSKeysRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeLinkedKMSKeys", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeLinkedKMSKeys", "", "")
 return
 }
 

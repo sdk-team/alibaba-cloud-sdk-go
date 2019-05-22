@@ -97,7 +97,7 @@ func CreateDeleteFleetRequest() (request *DeleteFleetRequest) {
 request = &DeleteFleetRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteFleet", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteFleet", "", "")
 return
 }
 

@@ -102,7 +102,7 @@ func CreateReportInstancesStatusRequest() (request *ReportInstancesStatusRequest
 request = &ReportInstancesStatusRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "ReportInstancesStatus", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "ReportInstancesStatus", "", "")
 return
 }
 

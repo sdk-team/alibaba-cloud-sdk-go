@@ -104,7 +104,7 @@ type CreateVolumesTag struct{
 type CreateVolumesResponse struct {
 *responses.BaseResponse
             RequestId     string `json:"RequestId" xml:"RequestId"`
-                VolumeIds VolumeIdsInCreateVolumes `json:"VolumeIds" xml:"VolumeIds"`
+                VolumeIds VolumeIds `json:"VolumeIds" xml:"VolumeIds"`
 }
 
 // CreateCreateVolumesRequest creates a request to invoke CreateVolumes API
@@ -112,7 +112,7 @@ func CreateCreateVolumesRequest() (request *CreateVolumesRequest) {
 request = &CreateVolumesRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2016-03-14", "CreateVolumes", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2016-03-14", "CreateVolumes", "", "")
 return
 }
 

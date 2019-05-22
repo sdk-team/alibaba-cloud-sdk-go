@@ -97,7 +97,7 @@ func CreateSetInstanceAutoReleaseTimeRequest() (request *SetInstanceAutoReleaseT
 request = &SetInstanceAutoReleaseTimeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2016-03-14", "SetInstanceAutoReleaseTime", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2016-03-14", "SetInstanceAutoReleaseTime", "", "")
 return
 }
 

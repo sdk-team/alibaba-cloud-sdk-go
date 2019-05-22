@@ -95,7 +95,7 @@ func CreateLeaveEniQosGroupRequest() (request *LeaveEniQosGroupRequest) {
 request = &LeaveEniQosGroupRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2016-03-14", "LeaveEniQosGroup", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2016-03-14", "LeaveEniQosGroup", "", "")
 return
 }
 

@@ -103,7 +103,7 @@ func CreateDescribeRecommendInstanceTypeRequest() (request *DescribeRecommendIns
 request = &DescribeRecommendInstanceTypeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeRecommendInstanceType", "ecs", "openAPI")
+request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeRecommendInstanceType", "", "")
 return
 }
 
