@@ -25,6 +25,6 @@ type Order struct {
             OriginalPrice     float64 `json:"OriginalPrice" xml:"OriginalPrice"`
             ReservedInstanceHourPrice     float64 `json:"ReservedInstanceHourPrice" xml:"ReservedInstanceHourPrice"`
             Currency     string `json:"Currency" xml:"Currency"`
-                RuleIdSet RuleIdSetInDescribePrice `json:"RuleIdSet" xml:"RuleIdSet"`
+                RuleIdSet RuleIdSetInDescribeBandwidthPrice `json:"RuleIdSet" xml:"RuleIdSet"`
                     Coupons Coupons `json:"Coupons" xml:"Coupons"`
 }
