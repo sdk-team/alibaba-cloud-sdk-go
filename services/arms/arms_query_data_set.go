@@ -103,7 +103,7 @@ func CreateArmsQueryDataSetRequest() (request *ArmsQueryDataSetRequest) {
 request = &ArmsQueryDataSetRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("ARMS", "2016-08-04", "ArmsQueryDataSet", "", "")
+request.InitWithApiInfo("ARMS", "2016-08-04", "ArmsQueryDataSet", "arms", "openAPI")
 return
 }
 
