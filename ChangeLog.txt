@@ -1,3 +1,6 @@
+2019-05-28 Version: 1.58.49
+测试发布云盾 1.0.1
+
 2019-05-28 Version: 1.58.48
 - Generated 2015-01-01 for `R-kvstore`
 
