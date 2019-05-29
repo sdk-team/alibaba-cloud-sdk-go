@@ -83,6 +83,7 @@ type CheckCloudResourceAuthorizedRequest struct {
                     ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
                     OwnerAccount     string `position:"Query" name:"OwnerAccount"`
                     OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+                    TargetRegionId     string `position:"Query" name:"TargetRegionId"`
 }
 
 
@@ -99,7 +100,7 @@ func CreateCheckCloudResourceAuthorizedRequest() (request *CheckCloudResourceAut
 request = &CheckCloudResourceAuthorizedRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "CheckCloudResourceAuthorized", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "CheckCloudResourceAuthorized", "rds", "openAPI")
 return
 }
 

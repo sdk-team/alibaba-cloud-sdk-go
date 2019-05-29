@@ -97,7 +97,7 @@ func CreateDeleteOpenSearchDBInstanceRequest() (request *DeleteOpenSearchDBInsta
 request = &DeleteOpenSearchDBInstanceRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DeleteOpenSearchDBInstance", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "DeleteOpenSearchDBInstance", "rds", "openAPI")
 return
 }
 

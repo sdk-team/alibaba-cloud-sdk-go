@@ -99,7 +99,7 @@ func CreateQueryShareDBInstancesServiceRequest() (request *QueryShareDBInstances
 request = &QueryShareDBInstancesServiceRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2013-05-28", "QueryShareDBInstancesService", "", "")
+request.InitWithApiInfo("Rds", "2013-05-28", "QueryShareDBInstancesService", "rds", "openAPI")
 return
 }
 

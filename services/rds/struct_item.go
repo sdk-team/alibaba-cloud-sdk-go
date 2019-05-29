@@ -35,11 +35,11 @@ type Item struct {
             NetworkTrafficIn     string `json:"NetworkTrafficIn" xml:"NetworkTrafficIn"`
             DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
             Status     string `json:"Status" xml:"Status"`
-            SwitchId     string `json:"SwitchId" xml:"SwitchId"`
             AutoRenew     string `json:"AutoRenew" xml:"AutoRenew"`
+            SwitchId     string `json:"SwitchId" xml:"SwitchId"`
             NetworkTrafficOut     string `json:"NetworkTrafficOut" xml:"NetworkTrafficOut"`
             BackendLatency     string `json:"BackendLatency" xml:"BackendLatency"`
-                    LatencyTopNItems LatencyTopNItemsInDescribeSQLLogReportList `json:"LatencyTopNItems" xml:"LatencyTopNItems"`
+                    LatencyTopNItems LatencyTopNItemsInDescribeSQLLogReports `json:"LatencyTopNItems" xml:"LatencyTopNItems"`
                     SQLServerUpgradeVersions SQLServerUpgradeVersions `json:"SQLServerUpgradeVersions" xml:"SQLServerUpgradeVersions"`
-                    QPSTopNItems QPSTopNItemsInDescribeSQLLogReportList `json:"QPSTopNItems" xml:"QPSTopNItems"`
+                    QPSTopNItems QPSTopNItemsInDescribeSQLLogReports `json:"QPSTopNItems" xml:"QPSTopNItems"`
 }

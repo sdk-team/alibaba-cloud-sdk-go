@@ -21,8 +21,8 @@ type BucketItem struct {
             Name     string `json:"Name" xml:"Name"`
             Location     string `json:"Location" xml:"Location"`
             StorageClass     string `json:"StorageClass" xml:"StorageClass"`
-            ExtranetEndpoint     int `json:"ExtranetEndpoint" xml:"ExtranetEndpoint"`
-            IntranetEndpoint     int `json:"IntranetEndpoint" xml:"IntranetEndpoint"`
+            ExtranetEndpoint     int64 `json:"ExtranetEndpoint" xml:"ExtranetEndpoint"`
+            IntranetEndpoint     int64 `json:"IntranetEndpoint" xml:"IntranetEndpoint"`
             CreationDate     string `json:"CreationDate" xml:"CreationDate"`
             Owner Owner  `json:"Owner" xml:"Owner"`
 }

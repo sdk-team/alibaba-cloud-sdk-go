@@ -97,7 +97,7 @@ func CreateDescribeRegionsForChannelRequest() (request *DescribeRegionsForChanne
 request = &DescribeRegionsForChannelRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeRegionsForChannel", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeRegionsForChannel", "rds", "openAPI")
 return
 }
 

@@ -104,7 +104,7 @@ func CreateCreateGuardDBInstanceRequest() (request *CreateGuardDBInstanceRequest
 request = &CreateGuardDBInstanceRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2013-05-28", "CreateGuardDBInstance", "", "")
+request.InitWithApiInfo("Rds", "2013-05-28", "CreateGuardDBInstance", "rds", "openAPI")
 return
 }
 

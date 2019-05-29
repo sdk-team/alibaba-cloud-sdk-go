@@ -98,7 +98,7 @@ func CreateDescribeActiveOperationTaskTypeRequest() (request *DescribeActiveOper
 request = &DescribeActiveOperationTaskTypeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeActiveOperationTaskType", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeActiveOperationTaskType", "rds", "openAPI")
 return
 }
 

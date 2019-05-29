@@ -22,9 +22,9 @@ type TemplateSqlDetail struct {
             AccountName     string `json:"AccountName" xml:"AccountName"`
             HostAddress     string `json:"HostAddress" xml:"HostAddress"`
             SQLText     string `json:"SQLText" xml:"SQLText"`
-            Consume     int `json:"Consume" xml:"Consume"`
-            ScanRows     int `json:"ScanRows" xml:"ScanRows"`
-            UpdateRows     int `json:"UpdateRows" xml:"UpdateRows"`
+            Consume     int64 `json:"Consume" xml:"Consume"`
+            ScanRows     int64 `json:"ScanRows" xml:"ScanRows"`
+            UpdateRows     int64 `json:"UpdateRows" xml:"UpdateRows"`
             State     string `json:"State" xml:"State"`
             ExecuteTime     string `json:"ExecuteTime" xml:"ExecuteTime"`
             ThreadID     int `json:"ThreadID" xml:"ThreadID"`

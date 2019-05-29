@@ -107,7 +107,7 @@ func CreateCreatePostpaidDBInstanceRequest() (request *CreatePostpaidDBInstanceR
 request = &CreatePostpaidDBInstanceRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "CreatePostpaidDBInstance", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "CreatePostpaidDBInstance", "rds", "openAPI")
 return
 }
 

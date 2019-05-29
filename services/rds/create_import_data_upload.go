@@ -102,7 +102,7 @@ func CreateCreateImportDataUploadRequest() (request *CreateImportDataUploadReque
 request = &CreateImportDataUploadRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2013-05-28", "CreateImportDataUpload", "", "")
+request.InitWithApiInfo("Rds", "2013-05-28", "CreateImportDataUpload", "rds", "openAPI")
 return
 }
 

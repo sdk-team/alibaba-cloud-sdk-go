@@ -100,7 +100,7 @@ func CreateDeleteCloudInstanceIpRequest() (request *DeleteCloudInstanceIpRequest
 request = &DeleteCloudInstanceIpRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DeleteCloudInstanceIp", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "DeleteCloudInstanceIp", "rds", "openAPI")
 return
 }
 

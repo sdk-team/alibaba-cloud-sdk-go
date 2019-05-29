@@ -101,7 +101,7 @@ func CreateModifySQLCollectorRetentionRequest() (request *ModifySQLCollectorRete
 request = &ModifySQLCollectorRetentionRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "ModifySQLCollectorRetention", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "ModifySQLCollectorRetention", "rds", "openAPI")
 return
 }
 

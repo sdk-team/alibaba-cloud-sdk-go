@@ -99,7 +99,7 @@ func CreateDisableSqlLogDistributionRequest() (request *DisableSqlLogDistributio
 request = &DisableSqlLogDistributionRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DisableSqlLogDistribution", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "DisableSqlLogDistribution", "rds", "openAPI")
 return
 }
 

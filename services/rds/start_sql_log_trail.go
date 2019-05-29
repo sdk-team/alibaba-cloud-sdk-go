@@ -100,7 +100,7 @@ func CreateStartSqlLogTrailRequest() (request *StartSqlLogTrailRequest) {
 request = &StartSqlLogTrailRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "StartSqlLogTrail", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "StartSqlLogTrail", "rds", "openAPI")
 return
 }
 

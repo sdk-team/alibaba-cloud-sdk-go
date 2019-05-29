@@ -99,7 +99,7 @@ func CreateBatchGrantAccountPrivilegeRequest() (request *BatchGrantAccountPrivil
 request = &BatchGrantAccountPrivilegeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "BatchGrantAccountPrivilege", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "BatchGrantAccountPrivilege", "rds", "openAPI")
 return
 }
 

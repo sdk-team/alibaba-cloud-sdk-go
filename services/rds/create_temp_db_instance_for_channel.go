@@ -105,7 +105,7 @@ func CreateCreateTempDBInstanceForChannelRequest() (request *CreateTempDBInstanc
 request = &CreateTempDBInstanceForChannelRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "CreateTempDBInstanceForChannel", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "CreateTempDBInstanceForChannel", "rds", "openAPI")
 return
 }
 

@@ -103,7 +103,7 @@ func CreateDescribeMigrateCountInfoRequest() (request *DescribeMigrateCountInfoR
 request = &DescribeMigrateCountInfoRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeMigrateCountInfo", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeMigrateCountInfo", "rds", "openAPI")
 return
 }
 

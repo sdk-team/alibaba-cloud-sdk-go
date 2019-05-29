@@ -122,7 +122,7 @@ type CreateOrderForCloneResponse struct {
 *responses.BaseResponse
             RequestId     string `json:"RequestId" xml:"RequestId"`
             DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-            OrderId     int `json:"OrderId" xml:"OrderId"`
+            OrderId     int64 `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateCreateOrderForCloneRequest creates a request to invoke CreateOrderForClone API
@@ -130,7 +130,7 @@ func CreateCreateOrderForCloneRequest() (request *CreateOrderForCloneRequest) {
 request = &CreateOrderForCloneRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "CreateOrderForClone", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "CreateOrderForClone", "rds", "openAPI")
 return
 }
 

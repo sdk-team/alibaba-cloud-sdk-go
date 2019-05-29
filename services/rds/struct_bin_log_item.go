@@ -18,7 +18,7 @@ package rds
 
 // BinLogItem is a nested struct in rds response
 type BinLogItem struct {
-            FileSize     int `json:"FileSize" xml:"FileSize"`
+            FileSize     int64 `json:"FileSize" xml:"FileSize"`
             LogBeginTime     string `json:"LogBeginTime" xml:"LogBeginTime"`
             LogEndTime     string `json:"LogEndTime" xml:"LogEndTime"`
             DownloadLink     string `json:"DownloadLink" xml:"DownloadLink"`

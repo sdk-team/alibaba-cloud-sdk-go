@@ -109,7 +109,7 @@ type CreateOrderForRebuildResponse struct {
 *responses.BaseResponse
             RequestId     string `json:"RequestId" xml:"RequestId"`
             DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-            OrderId     int `json:"OrderId" xml:"OrderId"`
+            OrderId     int64 `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateCreateOrderForRebuildRequest creates a request to invoke CreateOrderForRebuild API
@@ -117,7 +117,7 @@ func CreateCreateOrderForRebuildRequest() (request *CreateOrderForRebuildRequest
 request = &CreateOrderForRebuildRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "CreateOrderForRebuild", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "CreateOrderForRebuild", "rds", "openAPI")
 return
 }
 

@@ -101,7 +101,7 @@ func CreateDecribeSqlLogDumpStatusRequest() (request *DecribeSqlLogDumpStatusReq
 request = &DecribeSqlLogDumpStatusRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DecribeSqlLogDumpStatus", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "DecribeSqlLogDumpStatus", "rds", "openAPI")
 return
 }
 

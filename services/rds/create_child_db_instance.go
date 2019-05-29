@@ -99,7 +99,7 @@ func CreateCreateChildDBInstanceRequest() (request *CreateChildDBInstanceRequest
 request = &CreateChildDBInstanceRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2013-05-28", "CreateChildDBInstance", "", "")
+request.InitWithApiInfo("Rds", "2013-05-28", "CreateChildDBInstance", "rds", "openAPI")
 return
 }
 

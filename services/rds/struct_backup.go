@@ -27,8 +27,8 @@ type Backup struct {
             BackupMethod     string `json:"BackupMethod" xml:"BackupMethod"`
             BackupDBNames     string `json:"BackupDBNames" xml:"BackupDBNames"`
             BackupType     string `json:"BackupType" xml:"BackupType"`
-            TotalBackupSize     int `json:"TotalBackupSize" xml:"TotalBackupSize"`
-            BackupSize     int `json:"BackupSize" xml:"BackupSize"`
+            TotalBackupSize     int64 `json:"TotalBackupSize" xml:"TotalBackupSize"`
+            BackupSize     int64 `json:"BackupSize" xml:"BackupSize"`
             BackupStatus     string `json:"BackupStatus" xml:"BackupStatus"`
             StoreStatus     string `json:"StoreStatus" xml:"StoreStatus"`
             BackupStartTime     string `json:"BackupStartTime" xml:"BackupStartTime"`

@@ -21,8 +21,8 @@ type ArchiveSQLLog struct {
             JobName     string `json:"JobName" xml:"JobName"`
             CreateTime     string `json:"CreateTime" xml:"CreateTime"`
             UpdateTime     string `json:"UpdateTime" xml:"UpdateTime"`
-            ProcessRows     int `json:"ProcessRows" xml:"ProcessRows"`
-            TotalRows     int `json:"TotalRows" xml:"TotalRows"`
+            ProcessRows     int64 `json:"ProcessRows" xml:"ProcessRows"`
+            TotalRows     int64 `json:"TotalRows" xml:"TotalRows"`
             FailMsg     string `json:"FailMsg" xml:"FailMsg"`
             JobStatus     string `json:"JobStatus" xml:"JobStatus"`
             DownloadLink     string `json:"DownloadLink" xml:"DownloadLink"`

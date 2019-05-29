@@ -104,7 +104,7 @@ func CreateModifyOpenSearchDBInstanceRequest() (request *ModifyOpenSearchDBInsta
 request = &ModifyOpenSearchDBInstanceRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "ModifyOpenSearchDBInstance", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "ModifyOpenSearchDBInstance", "rds", "openAPI")
 return
 }
 

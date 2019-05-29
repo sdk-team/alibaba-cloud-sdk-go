@@ -98,7 +98,7 @@ type ModifyDBInstancePayTypeResponse struct {
 *responses.BaseResponse
             RequestId     string `json:"RequestId" xml:"RequestId"`
             DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-            OrderId     int `json:"OrderId" xml:"OrderId"`
+            OrderId     int64 `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateModifyDBInstancePayTypeRequest creates a request to invoke ModifyDBInstancePayType API
@@ -106,7 +106,7 @@ func CreateModifyDBInstancePayTypeRequest() (request *ModifyDBInstancePayTypeReq
 request = &ModifyDBInstancePayTypeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstancePayType", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstancePayType", "rds", "openAPI")
 return
 }
 

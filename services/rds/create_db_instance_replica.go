@@ -111,7 +111,7 @@ type CreateDBInstanceReplicaResponse struct {
 *responses.BaseResponse
             RequestId     string `json:"RequestId" xml:"RequestId"`
             DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-            OrderId     int `json:"OrderId" xml:"OrderId"`
+            OrderId     int64 `json:"OrderId" xml:"OrderId"`
             ReplicaId     string `json:"ReplicaId" xml:"ReplicaId"`
             WorkflowId     string `json:"WorkflowId" xml:"WorkflowId"`
 }
@@ -121,7 +121,7 @@ func CreateCreateDBInstanceReplicaRequest() (request *CreateDBInstanceReplicaReq
 request = &CreateDBInstanceReplicaRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "CreateDBInstanceReplica", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "CreateDBInstanceReplica", "rds", "openAPI")
 return
 }
 

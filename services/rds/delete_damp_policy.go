@@ -98,7 +98,7 @@ func CreateDeleteDampPolicyRequest() (request *DeleteDampPolicyRequest) {
 request = &DeleteDampPolicyRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DeleteDampPolicy", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "DeleteDampPolicy", "rds", "openAPI")
 return
 }
 

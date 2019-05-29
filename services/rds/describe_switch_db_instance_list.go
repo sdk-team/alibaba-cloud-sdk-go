@@ -99,7 +99,7 @@ func CreateDescribeSwitchDBInstanceListRequest() (request *DescribeSwitchDBInsta
 request = &DescribeSwitchDBInstanceListRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2013-05-28", "DescribeSwitchDBInstanceList", "", "")
+request.InitWithApiInfo("Rds", "2013-05-28", "DescribeSwitchDBInstanceList", "rds", "openAPI")
 return
 }
 

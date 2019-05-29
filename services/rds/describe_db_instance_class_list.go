@@ -96,7 +96,7 @@ func CreateDescribeDBInstanceClassListRequest() (request *DescribeDBInstanceClas
 request = &DescribeDBInstanceClassListRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2012-06-15", "DescribeDBInstanceClassList", "", "")
+request.InitWithApiInfo("Rds", "2012-06-15", "DescribeDBInstanceClassList", "rds", "openAPI")
 return
 }
 

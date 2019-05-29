@@ -98,7 +98,7 @@ func CreateSwitchOverRequest() (request *SwitchOverRequest) {
 request = &SwitchOverRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "SwitchOver", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "SwitchOver", "rds", "openAPI")
 return
 }
 

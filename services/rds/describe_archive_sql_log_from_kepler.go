@@ -103,7 +103,7 @@ func CreateDescribeArchiveSQLLogFromKeplerRequest() (request *DescribeArchiveSQL
 request = &DescribeArchiveSQLLogFromKeplerRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeArchiveSQLLogFromKepler", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeArchiveSQLLogFromKepler", "rds", "openAPI")
 return
 }
 

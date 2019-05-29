@@ -100,7 +100,7 @@ func CreateDescribeDataFilesRequest() (request *DescribeDataFilesRequest) {
 request = &DescribeDataFilesRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2013-05-28", "DescribeDataFiles", "", "")
+request.InitWithApiInfo("Rds", "2013-05-28", "DescribeDataFiles", "rds", "openAPI")
 return
 }
 

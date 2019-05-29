@@ -20,7 +20,7 @@ package rds
 type SQLServerUploadFile struct {
             DBName     string `json:"DBName" xml:"DBName"`
             FileName     string `json:"FileName" xml:"FileName"`
-            FileSize     int `json:"FileSize" xml:"FileSize"`
+            FileSize     int64 `json:"FileSize" xml:"FileSize"`
             InternetFtpServer     string `json:"InternetFtpServer" xml:"InternetFtpServer"`
             InternetPort     int `json:"InternetPort" xml:"InternetPort"`
             IntranetFtpserver     string `json:"IntranetFtpserver" xml:"IntranetFtpserver"`

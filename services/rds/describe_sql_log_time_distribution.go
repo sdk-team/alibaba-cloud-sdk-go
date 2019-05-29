@@ -98,7 +98,7 @@ type DescribeSqlLogTimeDistributionResponse struct {
             DBInstanceName     string `json:"DBInstanceName" xml:"DBInstanceName"`
             StartTime     string `json:"StartTime" xml:"StartTime"`
             EndTime     string `json:"EndTime" xml:"EndTime"`
-            TemplateHash     int `json:"TemplateHash" xml:"TemplateHash"`
+            TemplateHash     int64 `json:"TemplateHash" xml:"TemplateHash"`
             JobId     string `json:"JobId" xml:"JobId"`
             Finish     string `json:"Finish" xml:"Finish"`
             ItemsNumbers     int `json:"ItemsNumbers" xml:"ItemsNumbers"`
@@ -110,7 +110,7 @@ func CreateDescribeSqlLogTimeDistributionRequest() (request *DescribeSqlLogTimeD
 request = &DescribeSqlLogTimeDistributionRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSqlLogTimeDistribution", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSqlLogTimeDistribution", "rds", "openAPI")
 return
 }
 

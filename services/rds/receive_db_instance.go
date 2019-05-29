@@ -98,7 +98,7 @@ func CreateReceiveDBInstanceRequest() (request *ReceiveDBInstanceRequest) {
 request = &ReceiveDBInstanceRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "ReceiveDBInstance", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "ReceiveDBInstance", "rds", "openAPI")
 return
 }
 

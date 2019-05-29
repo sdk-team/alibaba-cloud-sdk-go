@@ -101,7 +101,7 @@ func CreateDescribeDBInstanceNetInfoForChannelRequest() (request *DescribeDBInst
 request = &DescribeDBInstanceNetInfoForChannelRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceNetInfoForChannel", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceNetInfoForChannel", "rds", "openAPI")
 return
 }
 

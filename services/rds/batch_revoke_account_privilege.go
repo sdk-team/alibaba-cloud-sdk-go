@@ -98,7 +98,7 @@ func CreateBatchRevokeAccountPrivilegeRequest() (request *BatchRevokeAccountPriv
 request = &BatchRevokeAccountPrivilegeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "BatchRevokeAccountPrivilege", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "BatchRevokeAccountPrivilege", "rds", "openAPI")
 return
 }
 

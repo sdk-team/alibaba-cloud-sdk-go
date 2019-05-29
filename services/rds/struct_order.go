@@ -22,7 +22,7 @@ type Order struct {
             OriginalAmount     float64 `json:"OriginalAmount" xml:"OriginalAmount"`
             Currency     string `json:"Currency" xml:"Currency"`
             DiscountAmount     float64 `json:"DiscountAmount" xml:"DiscountAmount"`
-                RuleIds RuleIdsInQueryPriceForRefund `json:"RuleIds" xml:"RuleIds"`
+                RuleIds RuleIdsInQueryPriceForTempUpgrade `json:"RuleIds" xml:"RuleIds"`
             ActivityInfo ActivityInfo  `json:"ActivityInfo" xml:"ActivityInfo"`
-                    Coupons CouponsInQueryPriceForRefund `json:"Coupons" xml:"Coupons"`
+                    Coupons CouponsInQueryPriceForTempUpgrade `json:"Coupons" xml:"Coupons"`
 }

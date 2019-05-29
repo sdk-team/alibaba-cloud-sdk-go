@@ -28,4 +28,5 @@ type SqlLogInstance struct {
             LoghubRegion     string `json:"LoghubRegion" xml:"LoghubRegion"`
             LoghubProject     string `json:"LoghubProject" xml:"LoghubProject"`
             LoghubLogstore     string `json:"LoghubLogstore" xml:"LoghubLogstore"`
+            SqlExplorerTrial     string `json:"SqlExplorerTrial" xml:"SqlExplorerTrial"`
 }

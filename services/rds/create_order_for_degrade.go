@@ -102,7 +102,7 @@ type CreateOrderForDegradeResponse struct {
 *responses.BaseResponse
             RequestId     string `json:"RequestId" xml:"RequestId"`
             DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-            OrderId     int `json:"OrderId" xml:"OrderId"`
+            OrderId     int64 `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateCreateOrderForDegradeRequest creates a request to invoke CreateOrderForDegrade API
@@ -110,7 +110,7 @@ func CreateCreateOrderForDegradeRequest() (request *CreateOrderForDegradeRequest
 request = &CreateOrderForDegradeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "CreateOrderForDegrade", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "CreateOrderForDegrade", "rds", "openAPI")
 return
 }
 

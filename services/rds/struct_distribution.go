@@ -18,17 +18,17 @@ package rds
 
 // Distribution is a nested struct in rds response
 type Distribution struct {
+            TotalUpdateRows     int64 `json:"TotalUpdateRows" xml:"TotalUpdateRows"`
             Time     string `json:"Time" xml:"Time"`
-            TotalUpdateRows     int `json:"TotalUpdateRows" xml:"TotalUpdateRows"`
             QueryStartTime     string `json:"QueryStartTime" xml:"QueryStartTime"`
-            UpdateCounts     int `json:"UpdateCounts" xml:"UpdateCounts"`
-            LoginCounts     int `json:"LoginCounts" xml:"LoginCounts"`
+            UpdateCounts     int64 `json:"UpdateCounts" xml:"UpdateCounts"`
+            LoginCounts     int64 `json:"LoginCounts" xml:"LoginCounts"`
             Value     float64 `json:"Value" xml:"Value"`
-            SelectCounts     int `json:"SelectCounts" xml:"SelectCounts"`
-            TotalConsume     int `json:"TotalConsume" xml:"TotalConsume"`
-            TotalCounts     int `json:"TotalCounts" xml:"TotalCounts"`
-            InsertCounts     int `json:"InsertCounts" xml:"InsertCounts"`
-            TemplateHash     int `json:"TemplateHash" xml:"TemplateHash"`
-            TotalScanRows     int `json:"TotalScanRows" xml:"TotalScanRows"`
-            DeleteCounts     int `json:"DeleteCounts" xml:"DeleteCounts"`
+            SelectCounts     int64 `json:"SelectCounts" xml:"SelectCounts"`
+            TotalConsume     int64 `json:"TotalConsume" xml:"TotalConsume"`
+            TotalCounts     int64 `json:"TotalCounts" xml:"TotalCounts"`
+            InsertCounts     int64 `json:"InsertCounts" xml:"InsertCounts"`
+            TotalScanRows     int64 `json:"TotalScanRows" xml:"TotalScanRows"`
+            TemplateHash     int64 `json:"TemplateHash" xml:"TemplateHash"`
+            DeleteCounts     int64 `json:"DeleteCounts" xml:"DeleteCounts"`
 }

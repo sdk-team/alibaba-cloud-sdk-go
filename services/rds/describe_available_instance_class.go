@@ -102,7 +102,7 @@ func CreateDescribeAvailableInstanceClassRequest() (request *DescribeAvailableIn
 request = &DescribeAvailableInstanceClassRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeAvailableInstanceClass", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeAvailableInstanceClass", "rds", "openAPI")
 return
 }
 

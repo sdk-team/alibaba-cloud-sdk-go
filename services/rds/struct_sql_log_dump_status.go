@@ -20,9 +20,9 @@ package rds
 type SqlLogDumpStatus struct {
             Status     int `json:"Status" xml:"Status"`
             DumpStartTime     string `json:"DumpStartTime" xml:"DumpStartTime"`
-            TotalRows     int `json:"TotalRows" xml:"TotalRows"`
+            TotalRows     int64 `json:"TotalRows" xml:"TotalRows"`
             UpdateTime     string `json:"UpdateTime" xml:"UpdateTime"`
-            ProcessRows     int `json:"ProcessRows" xml:"ProcessRows"`
+            ProcessRows     int64 `json:"ProcessRows" xml:"ProcessRows"`
             CreateTime     string `json:"CreateTime" xml:"CreateTime"`
             JobStatus     string `json:"JobStatus" xml:"JobStatus"`
             JobName     string `json:"JobName" xml:"JobName"`

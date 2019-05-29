@@ -98,7 +98,7 @@ func CreateDescribeSQLServerUpgradeVersionsRequest() (request *DescribeSQLServer
 request = &DescribeSQLServerUpgradeVersionsRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLServerUpgradeVersions", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLServerUpgradeVersions", "rds", "openAPI")
 return
 }
 

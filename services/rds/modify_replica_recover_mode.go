@@ -98,7 +98,7 @@ func CreateModifyReplicaRecoverModeRequest() (request *ModifyReplicaRecoverModeR
 request = &ModifyReplicaRecoverModeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "ModifyReplicaRecoverMode", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "ModifyReplicaRecoverMode", "rds", "openAPI")
 return
 }
 

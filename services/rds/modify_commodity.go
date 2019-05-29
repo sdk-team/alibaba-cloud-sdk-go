@@ -97,7 +97,7 @@ func CreateModifyCommodityRequest() (request *ModifyCommodityRequest) {
 request = &ModifyCommodityRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "ModifyCommodity", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "ModifyCommodity", "rds", "openAPI")
 return
 }
 

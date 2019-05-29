@@ -107,7 +107,7 @@ func CreateDescribeOperationLogsRequest() (request *DescribeOperationLogsRequest
 request = &DescribeOperationLogsRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOperationLogs", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOperationLogs", "rds", "openAPI")
 return
 }
 

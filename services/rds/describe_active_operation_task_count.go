@@ -98,7 +98,7 @@ func CreateDescribeActiveOperationTaskCountRequest() (request *DescribeActiveOpe
 request = &DescribeActiveOperationTaskCountRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeActiveOperationTaskCount", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeActiveOperationTaskCount", "rds", "openAPI")
 return
 }
 

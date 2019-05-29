@@ -98,7 +98,7 @@ func CreateModifyDBInstanceNetExpireTimeRequest() (request *ModifyDBInstanceNetE
 request = &ModifyDBInstanceNetExpireTimeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceNetExpireTime", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceNetExpireTime", "rds", "openAPI")
 return
 }
 

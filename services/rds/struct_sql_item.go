@@ -18,11 +18,8 @@ package rds
 
 // SQLItem is a nested struct in rds response
 type SQLItem struct {
-            ExecuteTime     string `json:"ExecuteTime" xml:"ExecuteTime"`
-            TotalExecutionTimes     int `json:"TotalExecutionTimes" xml:"TotalExecutionTimes"`
-            HostAddress     string `json:"HostAddress" xml:"HostAddress"`
-            AccountName     string `json:"AccountName" xml:"AccountName"`
-            DBName     string `json:"DBName" xml:"DBName"`
+            TotalExecutionCounts     string `json:"TotalExecutionCounts" xml:"TotalExecutionCounts"`
+            TotalExecutionTimes     string `json:"TotalExecutionTimes" xml:"TotalExecutionTimes"`
+            ReturnTotalRowCounts     string `json:"ReturnTotalRowCounts" xml:"ReturnTotalRowCounts"`
             SQLText     string `json:"SQLText" xml:"SQLText"`
-            ReturnRowCounts     int `json:"ReturnRowCounts" xml:"ReturnRowCounts"`
 }

@@ -82,7 +82,9 @@ type DescribeDBInstanceEncryptionKeyRequest struct {
                     DBInstanceId     string `position:"Query" name:"DBInstanceId"`
                     ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
                     OwnerAccount     string `position:"Query" name:"OwnerAccount"`
+                    EncryptionKey     string `position:"Query" name:"EncryptionKey"`
                     OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+                    TargetRegionId     string `position:"Query" name:"TargetRegionId"`
 }
 
 
@@ -105,7 +107,7 @@ func CreateDescribeDBInstanceEncryptionKeyRequest() (request *DescribeDBInstance
 request = &DescribeDBInstanceEncryptionKeyRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceEncryptionKey", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceEncryptionKey", "rds", "openAPI")
 return
 }
 

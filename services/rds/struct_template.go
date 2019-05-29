@@ -18,12 +18,12 @@ package rds
 
 // Template is a nested struct in rds response
 type Template struct {
-            TotalConsume     int `json:"TotalConsume" xml:"TotalConsume"`
-            TotalUpdateRows     int `json:"TotalUpdateRows" xml:"TotalUpdateRows"`
+            TotalConsume     int64 `json:"TotalConsume" xml:"TotalConsume"`
+            TotalUpdateRows     int64 `json:"TotalUpdateRows" xml:"TotalUpdateRows"`
             SqlType     string `json:"SqlType" xml:"SqlType"`
             Template     string `json:"Template" xml:"Template"`
-            TotalCounts     int `json:"TotalCounts" xml:"TotalCounts"`
-            TotalScanRows     int `json:"TotalScanRows" xml:"TotalScanRows"`
+            TotalCounts     int64 `json:"TotalCounts" xml:"TotalCounts"`
+            TotalScanRows     int64 `json:"TotalScanRows" xml:"TotalScanRows"`
             AvgUpdateRows     float64 `json:"AvgUpdateRows" xml:"AvgUpdateRows"`
             TemplateHash     string `json:"TemplateHash" xml:"TemplateHash"`
             AvgConsume     float64 `json:"AvgConsume" xml:"AvgConsume"`

@@ -109,7 +109,7 @@ func CreateCloneDBInstanceForSecurityRequest() (request *CloneDBInstanceForSecur
 request = &CloneDBInstanceForSecurityRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "CloneDBInstanceForSecurity", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "CloneDBInstanceForSecurity", "rds", "openAPI")
 return
 }
 

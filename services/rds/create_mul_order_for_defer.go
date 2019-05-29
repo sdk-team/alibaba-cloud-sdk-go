@@ -93,7 +93,7 @@ type CreateMulOrderForDeferResponse struct {
 *responses.BaseResponse
             RequestId     string `json:"RequestId" xml:"RequestId"`
             DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-            OrderId     int `json:"OrderId" xml:"OrderId"`
+            OrderId     int64 `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateCreateMulOrderForDeferRequest creates a request to invoke CreateMulOrderForDefer API
@@ -101,7 +101,7 @@ func CreateCreateMulOrderForDeferRequest() (request *CreateMulOrderForDeferReque
 request = &CreateMulOrderForDeferRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "CreateMulOrderForDefer", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "CreateMulOrderForDefer", "rds", "openAPI")
 return
 }
 

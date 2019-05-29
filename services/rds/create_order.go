@@ -90,6 +90,7 @@ type CreateOrderRequest struct {
                     Resource     string `position:"Query" name:"Resource"`
                     BackupId     string `position:"Query" name:"BackupId"`
                     CommodityCode     string `position:"Query" name:"CommodityCode"`
+                    EncryptionKey     string `position:"Query" name:"EncryptionKey"`
                     OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
                     DBInstanceClass     string `position:"Query" name:"DBInstanceClass"`
                     SecurityIPList     string `position:"Query" name:"SecurityIPList"`
@@ -97,6 +98,7 @@ type CreateOrderRequest struct {
                     PrivateIpAddress     string `position:"Query" name:"PrivateIpAddress"`
                     AutoRenew     string `position:"Query" name:"AutoRenew"`
                     PromotionCode     string `position:"Query" name:"PromotionCode"`
+                    RoleARN     string `position:"Query" name:"RoleARN"`
                     ZoneId     string `position:"Query" name:"ZoneId"`
                     TimeType     string `position:"Query" name:"TimeType"`
                     InstanceNetworkType     string `position:"Query" name:"InstanceNetworkType"`
@@ -127,7 +129,7 @@ type CreateOrderResponse struct {
 *responses.BaseResponse
             RequestId     string `json:"RequestId" xml:"RequestId"`
             DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-            OrderId     int `json:"OrderId" xml:"OrderId"`
+            OrderId     int64 `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateCreateOrderRequest creates a request to invoke CreateOrder API
@@ -135,7 +137,7 @@ func CreateCreateOrderRequest() (request *CreateOrderRequest) {
 request = &CreateOrderRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "CreateOrder", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "CreateOrder", "rds", "openAPI")
 return
 }
 

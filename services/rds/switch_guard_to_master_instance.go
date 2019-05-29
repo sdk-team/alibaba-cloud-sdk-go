@@ -97,7 +97,7 @@ func CreateSwitchGuardToMasterInstanceRequest() (request *SwitchGuardToMasterIns
 request = &SwitchGuardToMasterInstanceRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "SwitchGuardToMasterInstance", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "SwitchGuardToMasterInstance", "rds", "openAPI")
 return
 }
 

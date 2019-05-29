@@ -101,7 +101,7 @@ func CreateEvaluateFailOverSwitchRequest() (request *EvaluateFailOverSwitchReque
 request = &EvaluateFailOverSwitchRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "EvaluateFailOverSwitch", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "EvaluateFailOverSwitch", "rds", "openAPI")
 return
 }
 

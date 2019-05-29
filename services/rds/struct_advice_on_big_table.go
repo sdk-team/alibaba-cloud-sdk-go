@@ -20,7 +20,7 @@ package rds
 type AdviceOnBigTable struct {
             DBName     string `json:"DBName" xml:"DBName"`
             TableName     string `json:"TableName" xml:"TableName"`
-            TableSize     int `json:"TableSize" xml:"TableSize"`
-            DataSize     int `json:"DataSize" xml:"DataSize"`
-            IndexSize     int `json:"IndexSize" xml:"IndexSize"`
+            TableSize     int64 `json:"TableSize" xml:"TableSize"`
+            DataSize     int64 `json:"DataSize" xml:"DataSize"`
+            IndexSize     int64 `json:"IndexSize" xml:"IndexSize"`
 }

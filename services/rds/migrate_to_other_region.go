@@ -102,7 +102,7 @@ func CreateMigrateToOtherRegionRequest() (request *MigrateToOtherRegionRequest) 
 request = &MigrateToOtherRegionRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "MigrateToOtherRegion", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "MigrateToOtherRegion", "rds", "openAPI")
 return
 }
 

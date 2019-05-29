@@ -98,7 +98,7 @@ func CreateAddBuDBInstanceRelationRequest() (request *AddBuDBInstanceRelationReq
 request = &AddBuDBInstanceRelationRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "AddBuDBInstanceRelation", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "AddBuDBInstanceRelation", "rds", "openAPI")
 return
 }
 

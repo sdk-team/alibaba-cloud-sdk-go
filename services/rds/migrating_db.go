@@ -100,7 +100,7 @@ func CreateMigratingDBRequest() (request *MigratingDBRequest) {
 request = &MigratingDBRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2013-05-28", "MigratingDB", "", "")
+request.InitWithApiInfo("Rds", "2013-05-28", "MigratingDB", "rds", "openAPI")
 return
 }
 

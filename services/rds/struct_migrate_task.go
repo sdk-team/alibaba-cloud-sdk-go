@@ -33,8 +33,8 @@ type MigrateTask struct {
             DBName     string `json:"DBName" xml:"DBName"`
             MigrateIaskId     string `json:"MigrateIaskId" xml:"MigrateIaskId"`
             SourceRegionId     string `json:"SourceRegionId" xml:"SourceRegionId"`
-            Status     string `json:"Status" xml:"Status"`
             TaskType     string `json:"TaskType" xml:"TaskType"`
+            Status     string `json:"Status" xml:"Status"`
             SourceVpcId     string `json:"SourceVpcId" xml:"SourceVpcId"`
             Description     string `json:"Description" xml:"Description"`
 }

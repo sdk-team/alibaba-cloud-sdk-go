@@ -100,7 +100,7 @@ func CreateDescribeSQLCollectorVersionRequest() (request *DescribeSQLCollectorVe
 request = &DescribeSQLCollectorVersionRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLCollectorVersion", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLCollectorVersion", "rds", "openAPI")
 return
 }
 

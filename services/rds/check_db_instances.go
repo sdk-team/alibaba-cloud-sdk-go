@@ -96,7 +96,7 @@ func CreateCheckDBInstancesRequest() (request *CheckDBInstancesRequest) {
 request = &CheckDBInstancesRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "CheckDBInstances", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "CheckDBInstances", "rds", "openAPI")
 return
 }
 

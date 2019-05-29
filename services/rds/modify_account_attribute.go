@@ -100,7 +100,7 @@ func CreateModifyAccountAttributeRequest() (request *ModifyAccountAttributeReque
 request = &ModifyAccountAttributeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2013-05-28", "ModifyAccountAttribute", "", "")
+request.InitWithApiInfo("Rds", "2013-05-28", "ModifyAccountAttribute", "rds", "openAPI")
 return
 }
 

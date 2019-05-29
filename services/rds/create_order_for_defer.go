@@ -101,7 +101,7 @@ type CreateOrderForDeferResponse struct {
 *responses.BaseResponse
             RequestId     string `json:"RequestId" xml:"RequestId"`
             DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-            OrderId     int `json:"OrderId" xml:"OrderId"`
+            OrderId     int64 `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateCreateOrderForDeferRequest creates a request to invoke CreateOrderForDefer API
@@ -109,7 +109,7 @@ func CreateCreateOrderForDeferRequest() (request *CreateOrderForDeferRequest) {
 request = &CreateOrderForDeferRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "CreateOrderForDefer", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "CreateOrderForDefer", "rds", "openAPI")
 return
 }
 

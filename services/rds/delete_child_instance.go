@@ -98,7 +98,7 @@ func CreateDeleteChildInstanceRequest() (request *DeleteChildInstanceRequest) {
 request = &DeleteChildInstanceRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2013-05-28", "DeleteChildInstance", "", "")
+request.InitWithApiInfo("Rds", "2013-05-28", "DeleteChildInstance", "rds", "openAPI")
 return
 }
 

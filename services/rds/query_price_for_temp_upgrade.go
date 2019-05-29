@@ -106,7 +106,7 @@ func CreateQueryPriceForTempUpgradeRequest() (request *QueryPriceForTempUpgradeR
 request = &QueryPriceForTempUpgradeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "QueryPriceForTempUpgrade", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "QueryPriceForTempUpgrade", "rds", "openAPI")
 return
 }
 

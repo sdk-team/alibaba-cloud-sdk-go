@@ -92,7 +92,7 @@ type RenewInstanceRequest struct {
 type RenewInstanceResponse struct {
 *responses.BaseResponse
             RequestId     string `json:"RequestId" xml:"RequestId"`
-            OrderId     int `json:"OrderId" xml:"OrderId"`
+            OrderId     int64 `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateRenewInstanceRequest creates a request to invoke RenewInstance API
@@ -100,7 +100,7 @@ func CreateRenewInstanceRequest() (request *RenewInstanceRequest) {
 request = &RenewInstanceRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "RenewInstance", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "RenewInstance", "rds", "openAPI")
 return
 }
 

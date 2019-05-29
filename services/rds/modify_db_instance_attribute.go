@@ -100,7 +100,7 @@ func CreateModifyDBInstanceAttributeRequest() (request *ModifyDBInstanceAttribut
 request = &ModifyDBInstanceAttributeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2013-05-28", "ModifyDBInstanceAttribute", "", "")
+request.InitWithApiInfo("Rds", "2013-05-28", "ModifyDBInstanceAttribute", "rds", "openAPI")
 return
 }
 

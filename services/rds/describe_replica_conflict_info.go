@@ -106,7 +106,7 @@ func CreateDescribeReplicaConflictInfoRequest() (request *DescribeReplicaConflic
 request = &DescribeReplicaConflictInfoRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeReplicaConflictInfo", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeReplicaConflictInfo", "rds", "openAPI")
 return
 }
 

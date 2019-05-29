@@ -100,7 +100,7 @@ func CreateAllocateInstanceVpcNetworkTypeRequest() (request *AllocateInstanceVpc
 request = &AllocateInstanceVpcNetworkTypeRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "AllocateInstanceVpcNetworkType", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "AllocateInstanceVpcNetworkType", "rds", "openAPI")
 return
 }
 

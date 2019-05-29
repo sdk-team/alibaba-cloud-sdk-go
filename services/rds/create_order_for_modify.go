@@ -108,7 +108,7 @@ type CreateOrderForModifyResponse struct {
 *responses.BaseResponse
             RequestId     string `json:"RequestId" xml:"RequestId"`
             DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-            OrderId     int `json:"OrderId" xml:"OrderId"`
+            OrderId     int64 `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateCreateOrderForModifyRequest creates a request to invoke CreateOrderForModify API
@@ -116,7 +116,7 @@ func CreateCreateOrderForModifyRequest() (request *CreateOrderForModifyRequest) 
 request = &CreateOrderForModifyRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "CreateOrderForModify", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "CreateOrderForModify", "rds", "openAPI")
 return
 }
 

@@ -20,5 +20,5 @@ package rds
 type AdviceOnExcessIndex struct {
             DBName     string `json:"DBName" xml:"DBName"`
             TableName     string `json:"TableName" xml:"TableName"`
-            IndexCount     int `json:"IndexCount" xml:"IndexCount"`
+            IndexCount     int64 `json:"IndexCount" xml:"IndexCount"`
 }

@@ -92,7 +92,7 @@ type CreateMulOrderForBuyResponse struct {
 *responses.BaseResponse
             RequestId     string `json:"RequestId" xml:"RequestId"`
             DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-            OrderId     int `json:"OrderId" xml:"OrderId"`
+            OrderId     int64 `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateCreateMulOrderForBuyRequest creates a request to invoke CreateMulOrderForBuy API
@@ -100,7 +100,7 @@ func CreateCreateMulOrderForBuyRequest() (request *CreateMulOrderForBuyRequest) 
 request = &CreateMulOrderForBuyRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "CreateMulOrderForBuy", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "CreateMulOrderForBuy", "rds", "openAPI")
 return
 }
 

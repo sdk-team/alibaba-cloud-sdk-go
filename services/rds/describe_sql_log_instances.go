@@ -89,7 +89,7 @@ type DescribeSqlLogInstancesRequest struct {
 type DescribeSqlLogInstancesResponse struct {
 *responses.BaseResponse
             RequestId     string `json:"RequestId" xml:"RequestId"`
-            Uid     int `json:"Uid" xml:"Uid"`
+            Uid     int64 `json:"Uid" xml:"Uid"`
                     Items ItemsInDescribeSqlLogInstances `json:"Items" xml:"Items"`
 }
 
@@ -98,7 +98,7 @@ func CreateDescribeSqlLogInstancesRequest() (request *DescribeSqlLogInstancesReq
 request = &DescribeSqlLogInstancesRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSqlLogInstances", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSqlLogInstances", "rds", "openAPI")
 return
 }
 

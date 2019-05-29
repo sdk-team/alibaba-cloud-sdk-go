@@ -18,45 +18,45 @@ package rds
 
 // ItemsItem is a nested struct in rds response
 type ItemsItem struct {
-            ConflictGtid     string `json:"ConflictGtid" xml:"ConflictGtid"`
             DestinationDetail     string `json:"DestinationDetail" xml:"DestinationDetail"`
-            TotalConsume     int `json:"TotalConsume" xml:"TotalConsume"`
+            ConflictGtid     string `json:"ConflictGtid" xml:"ConflictGtid"`
+            TotalConsume     int64 `json:"TotalConsume" xml:"TotalConsume"`
             Role     string `json:"Role" xml:"Role"`
             InstanceNetworkType     string `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
             Template     string `json:"Template" xml:"Template"`
-            RecoveryMode     string `json:"RecoveryMode" xml:"RecoveryMode"`
             AbnormalType     string `json:"AbnormalType" xml:"AbnormalType"`
-            TotalScanRows     int `json:"TotalScanRows" xml:"TotalScanRows"`
+            RecoveryMode     string `json:"RecoveryMode" xml:"RecoveryMode"`
+            TotalScanRows     int64 `json:"TotalScanRows" xml:"TotalScanRows"`
             DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
             Select     string `json:"select" xml:"select"`
             DatabaseName     string `json:"DatabaseName" xml:"DatabaseName"`
             SecurityIPList     string `json:"SecurityIPList" xml:"SecurityIPList"`
-            TotalUpdateRows     int `json:"TotalUpdateRows" xml:"TotalUpdateRows"`
+            TotalUpdateRows     int64 `json:"TotalUpdateRows" xml:"TotalUpdateRows"`
             Schema     string `json:"Schema" xml:"Schema"`
             STATUS     string `json:"STATUS" xml:"STATUS"`
             ReadWriteType     string `json:"ReadWriteType" xml:"ReadWriteType"`
             AvgConsume     float64 `json:"AvgConsume" xml:"AvgConsume"`
             HasInternetIP     bool `json:"HasInternetIP" xml:"HasInternetIP"`
             FinishTime     string `json:"FinishTime" xml:"FinishTime"`
-            OccurTime     string `json:"OccurTime" xml:"OccurTime"`
             Progress     string `json:"Progress" xml:"Progress"`
-            Insert     int `json:"insert" xml:"insert"`
+            OccurTime     string `json:"OccurTime" xml:"OccurTime"`
             SqlType     string `json:"SqlType" xml:"SqlType"`
+            Insert     int64 `json:"insert" xml:"insert"`
             SourceInstanceId     string `json:"SourceInstanceId" xml:"SourceInstanceId"`
-            TOTALROWS     int `json:"TOTAL_ROWS" xml:"TOTAL_ROWS"`
-            TotalCounts     int `json:"TotalCounts" xml:"TotalCounts"`
+            TOTALROWS     int64 `json:"TOTAL_ROWS" xml:"TOTAL_ROWS"`
+            TotalCounts     int64 `json:"TotalCounts" xml:"TotalCounts"`
             InconsistentType     string `json:"InconsistentType" xml:"InconsistentType"`
-            ConfictKey     string `json:"ConfictKey" xml:"ConfictKey"`
             KeyType     string `json:"KeyType" xml:"KeyType"`
+            ConfictKey     string `json:"ConfictKey" xml:"ConfictKey"`
             Status     string `json:"Status" xml:"Status"`
             ReplicaId     string `json:"ReplicaId" xml:"ReplicaId"`
-            Update     int `json:"update" xml:"update"`
-            PROCESSROWS     int `json:"PROCESS_ROWS" xml:"PROCESS_ROWS"`
-            ConfictReason     string `json:"ConfictReason" xml:"ConfictReason"`
+            Update     int64 `json:"update" xml:"update"`
+            PROCESSROWS     int64 `json:"PROCESS_ROWS" xml:"PROCESS_ROWS"`
             InternetIP     string `json:"InternetIP" xml:"InternetIP"`
             SourceDetail     string `json:"SourceDetail" xml:"SourceDetail"`
+            ConfictReason     string `json:"ConfictReason" xml:"ConfictReason"`
             InconsistentFields     string `json:"InconsistentFields" xml:"InconsistentFields"`
-            Delete     int `json:"delete" xml:"delete"`
+            Delete     int64 `json:"delete" xml:"delete"`
             InstanceIdA     string `json:"InstanceIdA" xml:"InstanceIdA"`
             Key     string `json:"Key" xml:"Key"`
             RegionId     string `json:"RegionId" xml:"RegionId"`
@@ -73,7 +73,7 @@ type ItemsItem struct {
             CREATETIME     string `json:"CREATE_TIME" xml:"CREATE_TIME"`
             CurrentStep     string `json:"CurrentStep" xml:"CurrentStep"`
             JOBNAME     string `json:"JOB_NAME" xml:"JOB_NAME"`
-            Show     int `json:"show" xml:"show"`
+            Show     int64 `json:"show" xml:"show"`
                 ReadDBInstanceNames []    string  `json:"ReadDBInstanceNames" xml:"ReadDBInstanceNames"`
                 ReadDelayTimes []    string  `json:"ReadDelayTimes" xml:"ReadDelayTimes"`
                     InconsistentFileds []InconsistentFiledsItem  `json:"InconsistentFileds" xml:"InconsistentFileds"`

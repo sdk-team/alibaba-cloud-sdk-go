@@ -98,7 +98,7 @@ func CreateModifyDBInstanceOwnerRequest() (request *ModifyDBInstanceOwnerRequest
 request = &ModifyDBInstanceOwnerRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceOwner", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceOwner", "rds", "openAPI")
 return
 }
 

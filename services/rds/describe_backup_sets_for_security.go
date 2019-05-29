@@ -102,7 +102,7 @@ type DescribeBackupSetsForSecurityResponse struct {
             TotalRecordCount     string `json:"TotalRecordCount" xml:"TotalRecordCount"`
             PageNumber     string `json:"PageNumber" xml:"PageNumber"`
             PageRecordCount     string `json:"PageRecordCount" xml:"PageRecordCount"`
-            TotalBackupSize     int `json:"TotalBackupSize" xml:"TotalBackupSize"`
+            TotalBackupSize     int64 `json:"TotalBackupSize" xml:"TotalBackupSize"`
                     Items ItemsInDescribeBackupSetsForSecurity `json:"Items" xml:"Items"`
 }
 
@@ -111,7 +111,7 @@ func CreateDescribeBackupSetsForSecurityRequest() (request *DescribeBackupSetsFo
 request = &DescribeBackupSetsForSecurityRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeBackupSetsForSecurity", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeBackupSetsForSecurity", "rds", "openAPI")
 return
 }
 

@@ -99,7 +99,7 @@ func CreateDegradeDBInstanceSpecRequest() (request *DegradeDBInstanceSpecRequest
 request = &DegradeDBInstanceSpecRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DegradeDBInstanceSpec", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "DegradeDBInstanceSpec", "rds", "openAPI")
 return
 }
 

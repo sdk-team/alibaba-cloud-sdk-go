@@ -83,6 +83,7 @@ type DescribeUserEncryptionKeyListRequest struct {
                     ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
                     OwnerAccount     string `position:"Query" name:"OwnerAccount"`
                     OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+                    TargetRegionId     string `position:"Query" name:"TargetRegionId"`
 }
 
 
@@ -98,7 +99,7 @@ func CreateDescribeUserEncryptionKeyListRequest() (request *DescribeUserEncrypti
 request = &DescribeUserEncryptionKeyListRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeUserEncryptionKeyList", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeUserEncryptionKeyList", "rds", "openAPI")
 return
 }
 

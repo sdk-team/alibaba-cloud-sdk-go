@@ -97,7 +97,7 @@ func CreateLockDBInstanceRequest() (request *LockDBInstanceRequest) {
 request = &LockDBInstanceRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "LockDBInstance", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "LockDBInstance", "rds", "openAPI")
 return
 }
 

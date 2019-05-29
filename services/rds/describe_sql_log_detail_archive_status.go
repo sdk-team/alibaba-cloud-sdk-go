@@ -101,7 +101,7 @@ func CreateDescribeSqlLogDetailArchiveStatusRequest() (request *DescribeSqlLogDe
 request = &DescribeSqlLogDetailArchiveStatusRequest{
 RpcRequest: &requests.RpcRequest{},
 }
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSqlLogDetailArchiveStatus", "", "")
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSqlLogDetailArchiveStatus", "rds", "openAPI")
 return
 }
 
