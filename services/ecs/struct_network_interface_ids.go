@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // NetworkInterfaceIds is a nested struct in ecs response
 type NetworkInterfaceIds struct {
-NetworkInterfaceId []    string  `json:"NetworkInterfaceId" xml:"NetworkInterfaceId"`
+	NetworkInterfaceId []string `json:"NetworkInterfaceId" xml:"NetworkInterfaceId"`
 }

@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // NetworkTypesInDescribeZones is a nested struct in ecs response
 type NetworkTypesInDescribeZones struct {
-SupportedNetworkCategory []    string  `json:"supportedNetworkCategory" xml:"supportedNetworkCategory"`
+	SupportedNetworkCategory []string `json:"supportedNetworkCategory" xml:"supportedNetworkCategory"`
 }

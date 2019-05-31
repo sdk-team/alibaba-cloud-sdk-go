@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // TagResources is a nested struct in ecs response
 type TagResources struct {
-TagResource []TagResource `json:"TagResource" xml:"TagResource"`
+	TagResource []TagResource `json:"TagResource" xml:"TagResource"`
 }

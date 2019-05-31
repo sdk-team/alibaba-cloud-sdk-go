@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,11 +17,11 @@ package ecs
 
 // VRouter is a nested struct in ecs response
 type VRouter struct {
-            RegionId     string `json:"RegionId" xml:"RegionId"`
-            VpcId     string `json:"VpcId" xml:"VpcId"`
-            VRouterName     string `json:"VRouterName" xml:"VRouterName"`
-            Description     string `json:"Description" xml:"Description"`
-            VRouterId     string `json:"VRouterId" xml:"VRouterId"`
-            CreationTime     string `json:"CreationTime" xml:"CreationTime"`
-                RouteTableIds RouteTableIds `json:"RouteTableIds" xml:"RouteTableIds"`
+	RegionId      string        `json:"RegionId" xml:"RegionId"`
+	VpcId         string        `json:"VpcId" xml:"VpcId"`
+	VRouterName   string        `json:"VRouterName" xml:"VRouterName"`
+	Description   string        `json:"Description" xml:"Description"`
+	VRouterId     string        `json:"VRouterId" xml:"VRouterId"`
+	CreationTime  string        `json:"CreationTime" xml:"CreationTime"`
+	RouteTableIds RouteTableIds `json:"RouteTableIds" xml:"RouteTableIds"`
 }

@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,98 +16,95 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // ModifyEniQosGroup invokes the ecs.ModifyEniQosGroup API synchronously
 // api document: https://help.aliyun.com/api/ecs/modifyeniqosgroup.html
 func (client *Client) ModifyEniQosGroup(request *ModifyEniQosGroupRequest) (response *ModifyEniQosGroupResponse, err error) {
-response = CreateModifyEniQosGroupResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateModifyEniQosGroupResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // ModifyEniQosGroupWithChan invokes the ecs.ModifyEniQosGroup API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyeniqosgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyEniQosGroupWithChan(request *ModifyEniQosGroupRequest) (<-chan *ModifyEniQosGroupResponse, <-chan error) {
-responseChan := make(chan *ModifyEniQosGroupResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ModifyEniQosGroup(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ModifyEniQosGroupResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ModifyEniQosGroup(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // ModifyEniQosGroupWithCallback invokes the ecs.ModifyEniQosGroup API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyeniqosgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ModifyEniQosGroupWithCallback(request *ModifyEniQosGroupRequest, callback func(response *ModifyEniQosGroupResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ModifyEniQosGroupResponse
-var err error
-defer close(result)
-response, err = client.ModifyEniQosGroup(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ModifyEniQosGroupWithCallback(request *ModifyEniQosGroupRequest, callback func(response *ModifyEniQosGroupResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ModifyEniQosGroupResponse
+		var err error
+		defer close(result)
+		response, err = client.ModifyEniQosGroup(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // ModifyEniQosGroupRequest is the request struct for api ModifyEniQosGroup
 type ModifyEniQosGroupRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    Tx     requests.Integer `position:"Query" name:"Tx"`
-                    Rx     requests.Integer `position:"Query" name:"Rx"`
-                    RxPps     requests.Integer `position:"Query" name:"RxPps"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    QosGroupName     string `position:"Query" name:"QosGroupName"`
-                    TxPps     requests.Integer `position:"Query" name:"TxPps"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Tx                   requests.Integer `position:"Query" name:"Tx"`
+	Rx                   requests.Integer `position:"Query" name:"Rx"`
+	RxPps                requests.Integer `position:"Query" name:"RxPps"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	QosGroupName         string           `position:"Query" name:"QosGroupName"`
+	TxPps                requests.Integer `position:"Query" name:"TxPps"`
 }
-
 
 // ModifyEniQosGroupResponse is the response struct for api ModifyEniQosGroup
 type ModifyEniQosGroupResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyEniQosGroupRequest creates a request to invoke ModifyEniQosGroup API
 func CreateModifyEniQosGroupRequest() (request *ModifyEniQosGroupRequest) {
-request = &ModifyEniQosGroupRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2016-03-14", "ModifyEniQosGroup", "", "")
-return
+	request = &ModifyEniQosGroupRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2016-03-14", "ModifyEniQosGroup", "ecs", "openAPI")
+	return
 }
 
 // CreateModifyEniQosGroupResponse creates a response to parse from ModifyEniQosGroup response
 func CreateModifyEniQosGroupResponse() (response *ModifyEniQosGroupResponse) {
-response = &ModifyEniQosGroupResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ModifyEniQosGroupResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

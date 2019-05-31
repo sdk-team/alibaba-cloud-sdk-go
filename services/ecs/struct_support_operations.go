@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // SupportOperations is a nested struct in ecs response
 type SupportOperations struct {
-SupportOperation []    string  `json:"SupportOperation" xml:"SupportOperation"`
+	SupportOperation []string `json:"SupportOperation" xml:"SupportOperation"`
 }

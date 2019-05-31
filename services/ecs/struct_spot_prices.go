@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // SpotPrices is a nested struct in ecs response
 type SpotPrices struct {
-SpotPriceType []SpotPriceType `json:"SpotPriceType" xml:"SpotPriceType"`
+	SpotPriceType []SpotPriceType `json:"SpotPriceType" xml:"SpotPriceType"`
 }

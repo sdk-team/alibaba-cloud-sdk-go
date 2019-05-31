@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,6 @@ package ecs
 
 // Host is a nested struct in ecs response
 type Host struct {
-            HostId     string `json:"HostId" xml:"HostId"`
-                InstanceIds InstanceIdsInDescribeDeploymentSetTopology `json:"InstanceIds" xml:"InstanceIds"`
+	HostId      string                                     `json:"HostId" xml:"HostId"`
+	InstanceIds InstanceIdsInDescribeDeploymentSetTopology `json:"InstanceIds" xml:"InstanceIds"`
 }

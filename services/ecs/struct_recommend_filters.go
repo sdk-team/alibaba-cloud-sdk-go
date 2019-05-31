@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // RecommendFilters is a nested struct in ecs response
 type RecommendFilters struct {
-RecommendFilter []RecommendFilter `json:"RecommendFilter" xml:"RecommendFilter"`
+	RecommendFilter []RecommendFilter `json:"RecommendFilter" xml:"RecommendFilter"`
 }

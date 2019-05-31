@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // TagsInDescribeTags is a nested struct in ecs response
 type TagsInDescribeTags struct {
-Tag []Tag `json:"Tag" xml:"Tag"`
+	Tag []Tag `json:"Tag" xml:"Tag"`
 }

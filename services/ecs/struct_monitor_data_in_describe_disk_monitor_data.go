@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // MonitorDataInDescribeDiskMonitorData is a nested struct in ecs response
 type MonitorDataInDescribeDiskMonitorData struct {
-DiskMonitorData []DiskMonitorData `json:"DiskMonitorData" xml:"DiskMonitorData"`
+	DiskMonitorData []DiskMonitorData `json:"DiskMonitorData" xml:"DiskMonitorData"`
 }

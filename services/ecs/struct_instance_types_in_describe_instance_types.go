@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // InstanceTypesInDescribeInstanceTypes is a nested struct in ecs response
 type InstanceTypesInDescribeInstanceTypes struct {
-InstanceType []InstanceType `json:"InstanceType" xml:"InstanceType"`
+	InstanceType []InstanceType `json:"InstanceType" xml:"InstanceType"`
 }

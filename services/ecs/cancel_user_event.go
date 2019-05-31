@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,96 +16,93 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // CancelUserEvent invokes the ecs.CancelUserEvent API synchronously
 // api document: https://help.aliyun.com/api/ecs/canceluserevent.html
 func (client *Client) CancelUserEvent(request *CancelUserEventRequest) (response *CancelUserEventResponse, err error) {
-response = CreateCancelUserEventResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateCancelUserEventResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // CancelUserEventWithChan invokes the ecs.CancelUserEvent API asynchronously
 // api document: https://help.aliyun.com/api/ecs/canceluserevent.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelUserEventWithChan(request *CancelUserEventRequest) (<-chan *CancelUserEventResponse, <-chan error) {
-responseChan := make(chan *CancelUserEventResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.CancelUserEvent(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *CancelUserEventResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.CancelUserEvent(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // CancelUserEventWithCallback invokes the ecs.CancelUserEvent API asynchronously
 // api document: https://help.aliyun.com/api/ecs/canceluserevent.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CancelUserEventWithCallback(request *CancelUserEventRequest, callback func(response *CancelUserEventResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *CancelUserEventResponse
-var err error
-defer close(result)
-response, err = client.CancelUserEvent(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) CancelUserEventWithCallback(request *CancelUserEventRequest, callback func(response *CancelUserEventResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *CancelUserEventResponse
+		var err error
+		defer close(result)
+		response, err = client.CancelUserEvent(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // CancelUserEventRequest is the request struct for api CancelUserEvent
 type CancelUserEventRequest struct {
-*requests.RpcRequest
-                    EventId     string `position:"Query" name:"EventId"`
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    ResourceId     string `position:"Query" name:"ResourceId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	EventId              string           `position:"Query" name:"EventId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceId           string           `position:"Query" name:"ResourceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
-
 
 // CancelUserEventResponse is the response struct for api CancelUserEvent
 type CancelUserEventResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            EventId     string `json:"EventId" xml:"EventId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	EventId   string `json:"EventId" xml:"EventId"`
 }
 
 // CreateCancelUserEventRequest creates a request to invoke CancelUserEvent API
 func CreateCancelUserEventRequest() (request *CancelUserEventRequest) {
-request = &CancelUserEventRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "CancelUserEvent", "", "")
-return
+	request = &CancelUserEventRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CancelUserEvent", "ecs", "openAPI")
+	return
 }
 
 // CreateCancelUserEventResponse creates a response to parse from CancelUserEvent response
 func CreateCancelUserEventResponse() (response *CancelUserEventResponse) {
-response = &CancelUserEventResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &CancelUserEventResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

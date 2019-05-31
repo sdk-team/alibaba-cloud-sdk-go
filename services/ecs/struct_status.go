@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,6 @@ package ecs
 
 // Status is a nested struct in ecs response
 type Status struct {
-            Name     string `json:"Name" xml:"Name"`
-            Code     int `json:"Code" xml:"Code"`
+	Name string `json:"Name" xml:"Name"`
+	Code int    `json:"Code" xml:"Code"`
 }

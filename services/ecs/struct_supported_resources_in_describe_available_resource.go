@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // SupportedResourcesInDescribeAvailableResource is a nested struct in ecs response
 type SupportedResourcesInDescribeAvailableResource struct {
-SupportedResource []SupportedResource `json:"SupportedResource" xml:"SupportedResource"`
+	SupportedResource []SupportedResource `json:"SupportedResource" xml:"SupportedResource"`
 }

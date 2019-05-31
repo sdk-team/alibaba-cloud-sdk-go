@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,11 +17,11 @@ package ecs
 
 // NetworkInterface is a nested struct in ecs response
 type NetworkInterface struct {
-            SecurityGroupId     string `json:"SecurityGroupId" xml:"SecurityGroupId"`
-            VSwitchId     string `json:"VSwitchId" xml:"VSwitchId"`
-            NetworkInterfaceId     string `json:"NetworkInterfaceId" xml:"NetworkInterfaceId"`
-            PrimaryIpAddress     string `json:"PrimaryIpAddress" xml:"PrimaryIpAddress"`
-            MacAddress     string `json:"MacAddress" xml:"MacAddress"`
-            Description     string `json:"Description" xml:"Description"`
-            NetworkInterfaceName     string `json:"NetworkInterfaceName" xml:"NetworkInterfaceName"`
+	SecurityGroupId      string `json:"SecurityGroupId" xml:"SecurityGroupId"`
+	VSwitchId            string `json:"VSwitchId" xml:"VSwitchId"`
+	NetworkInterfaceId   string `json:"NetworkInterfaceId" xml:"NetworkInterfaceId"`
+	PrimaryIpAddress     string `json:"PrimaryIpAddress" xml:"PrimaryIpAddress"`
+	MacAddress           string `json:"MacAddress" xml:"MacAddress"`
+	Description          string `json:"Description" xml:"Description"`
+	NetworkInterfaceName string `json:"NetworkInterfaceName" xml:"NetworkInterfaceName"`
 }

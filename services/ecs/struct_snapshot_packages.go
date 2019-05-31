@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // SnapshotPackages is a nested struct in ecs response
 type SnapshotPackages struct {
-SnapshotPackage []SnapshotPackage `json:"SnapshotPackage" xml:"SnapshotPackage"`
+	SnapshotPackage []SnapshotPackage `json:"SnapshotPackage" xml:"SnapshotPackage"`
 }

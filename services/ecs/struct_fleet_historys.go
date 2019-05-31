@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // FleetHistorys is a nested struct in ecs response
 type FleetHistorys struct {
-FleetHistory []FleetHistory `json:"FleetHistory" xml:"FleetHistory"`
+	FleetHistory []FleetHistory `json:"FleetHistory" xml:"FleetHistory"`
 }

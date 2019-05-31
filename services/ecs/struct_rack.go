@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,6 @@ package ecs
 
 // Rack is a nested struct in ecs response
 type Rack struct {
-            RackId     string `json:"RackId" xml:"RackId"`
-                    Hosts HostsInDescribeDeploymentSetTopology `json:"Hosts" xml:"Hosts"`
+	RackId string                               `json:"RackId" xml:"RackId"`
+	Hosts  HostsInDescribeDeploymentSetTopology `json:"Hosts" xml:"Hosts"`
 }

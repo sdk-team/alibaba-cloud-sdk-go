@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,24 +17,24 @@ package ecs
 
 // Volume is a nested struct in ecs response
 type Volume struct {
-            VolumeId     string `json:"VolumeId" xml:"VolumeId"`
-            RegionId     string `json:"RegionId" xml:"RegionId"`
-            ZoneId     string `json:"ZoneId" xml:"ZoneId"`
-            VolumeName     string `json:"VolumeName" xml:"VolumeName"`
-            Description     string `json:"Description" xml:"Description"`
-            Category     string `json:"Category" xml:"Category"`
-            Size     int `json:"Size" xml:"Size"`
-            SourceSnapshotId     string `json:"SourceSnapshotId" xml:"SourceSnapshotId"`
-            AutoSnapshotPolicyId     string `json:"AutoSnapshotPolicyId" xml:"AutoSnapshotPolicyId"`
-            SnapshotLinkId     string `json:"SnapshotLinkId" xml:"SnapshotLinkId"`
-            Status     string `json:"Status" xml:"Status"`
-            EnableAutomatedSnapshotPolicy     bool `json:"EnableAutomatedSnapshotPolicy" xml:"EnableAutomatedSnapshotPolicy"`
-            CreationTime     string `json:"CreationTime" xml:"CreationTime"`
-            VolumeChargeType     string `json:"VolumeChargeType" xml:"VolumeChargeType"`
-            MountInstanceNum     int `json:"MountInstanceNum" xml:"MountInstanceNum"`
-            Encrypted     bool `json:"Encrypted" xml:"Encrypted"`
-            KMSKeyId     string `json:"KMSKeyId" xml:"KMSKeyId"`
-                    OperationLocks OperationLocksInDescribeVolumes `json:"OperationLocks" xml:"OperationLocks"`
-                    MountInstances MountInstancesInDescribeVolumes `json:"MountInstances" xml:"MountInstances"`
-                    Tags TagsInDescribeVolumes `json:"Tags" xml:"Tags"`
+	VolumeId                      string                          `json:"VolumeId" xml:"VolumeId"`
+	RegionId                      string                          `json:"RegionId" xml:"RegionId"`
+	ZoneId                        string                          `json:"ZoneId" xml:"ZoneId"`
+	VolumeName                    string                          `json:"VolumeName" xml:"VolumeName"`
+	Description                   string                          `json:"Description" xml:"Description"`
+	Category                      string                          `json:"Category" xml:"Category"`
+	Size                          int                             `json:"Size" xml:"Size"`
+	SourceSnapshotId              string                          `json:"SourceSnapshotId" xml:"SourceSnapshotId"`
+	AutoSnapshotPolicyId          string                          `json:"AutoSnapshotPolicyId" xml:"AutoSnapshotPolicyId"`
+	SnapshotLinkId                string                          `json:"SnapshotLinkId" xml:"SnapshotLinkId"`
+	Status                        string                          `json:"Status" xml:"Status"`
+	EnableAutomatedSnapshotPolicy bool                            `json:"EnableAutomatedSnapshotPolicy" xml:"EnableAutomatedSnapshotPolicy"`
+	CreationTime                  string                          `json:"CreationTime" xml:"CreationTime"`
+	VolumeChargeType              string                          `json:"VolumeChargeType" xml:"VolumeChargeType"`
+	MountInstanceNum              int                             `json:"MountInstanceNum" xml:"MountInstanceNum"`
+	Encrypted                     bool                            `json:"Encrypted" xml:"Encrypted"`
+	KMSKeyId                      string                          `json:"KMSKeyId" xml:"KMSKeyId"`
+	OperationLocks                OperationLocksInDescribeVolumes `json:"OperationLocks" xml:"OperationLocks"`
+	MountInstances                MountInstancesInDescribeVolumes `json:"MountInstances" xml:"MountInstances"`
+	Tags                          TagsInDescribeVolumes           `json:"Tags" xml:"Tags"`
 }

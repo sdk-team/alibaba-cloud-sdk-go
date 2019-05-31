@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +17,8 @@ package ecs
 
 // Bandwidth is a nested struct in ecs response
 type Bandwidth struct {
-            InternetChargeType     string `json:"InternetChargeType" xml:"InternetChargeType"`
-            Min     int `json:"Min" xml:"Min"`
-            Max     int `json:"Max" xml:"Max"`
-            Unit     string `json:"Unit" xml:"Unit"`
+	InternetChargeType string `json:"InternetChargeType" xml:"InternetChargeType"`
+	Min                int    `json:"Min" xml:"Min"`
+	Max                int    `json:"Max" xml:"Max"`
+	Unit               string `json:"Unit" xml:"Unit"`
 }

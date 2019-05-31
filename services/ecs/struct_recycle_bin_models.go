@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // RecycleBinModels is a nested struct in ecs response
 type RecycleBinModels struct {
-RecycleBinModel []RecycleBinModel `json:"RecycleBinModel" xml:"RecycleBinModel"`
+	RecycleBinModel []RecycleBinModel `json:"RecycleBinModel" xml:"RecycleBinModel"`
 }

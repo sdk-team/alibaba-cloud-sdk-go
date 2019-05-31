@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // InvocationResults is a nested struct in ecs response
 type InvocationResults struct {
-InvocationResult []InvocationResult `json:"InvocationResult" xml:"InvocationResult"`
+	InvocationResult []InvocationResult `json:"InvocationResult" xml:"InvocationResult"`
 }

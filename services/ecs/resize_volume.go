@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,97 +16,94 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // ResizeVolume invokes the ecs.ResizeVolume API synchronously
 // api document: https://help.aliyun.com/api/ecs/resizevolume.html
 func (client *Client) ResizeVolume(request *ResizeVolumeRequest) (response *ResizeVolumeResponse, err error) {
-response = CreateResizeVolumeResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateResizeVolumeResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // ResizeVolumeWithChan invokes the ecs.ResizeVolume API asynchronously
 // api document: https://help.aliyun.com/api/ecs/resizevolume.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResizeVolumeWithChan(request *ResizeVolumeRequest) (<-chan *ResizeVolumeResponse, <-chan error) {
-responseChan := make(chan *ResizeVolumeResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ResizeVolume(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ResizeVolumeResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ResizeVolume(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // ResizeVolumeWithCallback invokes the ecs.ResizeVolume API asynchronously
 // api document: https://help.aliyun.com/api/ecs/resizevolume.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ResizeVolumeWithCallback(request *ResizeVolumeRequest, callback func(response *ResizeVolumeResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ResizeVolumeResponse
-var err error
-defer close(result)
-response, err = client.ResizeVolume(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ResizeVolumeWithCallback(request *ResizeVolumeRequest, callback func(response *ResizeVolumeResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ResizeVolumeResponse
+		var err error
+		defer close(result)
+		response, err = client.ResizeVolume(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // ResizeVolumeRequest is the request struct for api ResizeVolume
 type ResizeVolumeRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    ClientToken     string `position:"Query" name:"ClientToken"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    NewSize     requests.Integer `position:"Query" name:"NewSize"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    VolumeId     string `position:"Query" name:"VolumeId"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	NewSize              requests.Integer `position:"Query" name:"NewSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	VolumeId             string           `position:"Query" name:"VolumeId"`
 }
-
 
 // ResizeVolumeResponse is the response struct for api ResizeVolume
 type ResizeVolumeResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateResizeVolumeRequest creates a request to invoke ResizeVolume API
 func CreateResizeVolumeRequest() (request *ResizeVolumeRequest) {
-request = &ResizeVolumeRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "ResizeVolume", "", "")
-return
+	request = &ResizeVolumeRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ResizeVolume", "ecs", "openAPI")
+	return
 }
 
 // CreateResizeVolumeResponse creates a response to parse from ResizeVolume response
 func CreateResizeVolumeResponse() (response *ResizeVolumeResponse) {
-response = &ResizeVolumeResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ResizeVolumeResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

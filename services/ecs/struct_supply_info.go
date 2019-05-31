@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +17,8 @@ package ecs
 
 // SupplyInfo is a nested struct in ecs response
 type SupplyInfo struct {
-            Amount     int `json:"Amount" xml:"Amount"`
-            SupplyStatus     string `json:"SupplyStatus" xml:"SupplyStatus"`
-            SupplyStartTime     string `json:"SupplyStartTime" xml:"SupplyStartTime"`
-            SupplyEndTime     string `json:"SupplyEndTime" xml:"SupplyEndTime"`
+	Amount          int    `json:"Amount" xml:"Amount"`
+	SupplyStatus    string `json:"SupplyStatus" xml:"SupplyStatus"`
+	SupplyStartTime string `json:"SupplyStartTime" xml:"SupplyStartTime"`
+	SupplyEndTime   string `json:"SupplyEndTime" xml:"SupplyEndTime"`
 }

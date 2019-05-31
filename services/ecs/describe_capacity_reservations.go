@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,110 +16,108 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // DescribeCapacityReservations invokes the ecs.DescribeCapacityReservations API synchronously
 // api document: https://help.aliyun.com/api/ecs/describecapacityreservations.html
 func (client *Client) DescribeCapacityReservations(request *DescribeCapacityReservationsRequest) (response *DescribeCapacityReservationsResponse, err error) {
-response = CreateDescribeCapacityReservationsResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeCapacityReservationsResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // DescribeCapacityReservationsWithChan invokes the ecs.DescribeCapacityReservations API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describecapacityreservations.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCapacityReservationsWithChan(request *DescribeCapacityReservationsRequest) (<-chan *DescribeCapacityReservationsResponse, <-chan error) {
-responseChan := make(chan *DescribeCapacityReservationsResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeCapacityReservations(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeCapacityReservationsResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeCapacityReservations(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // DescribeCapacityReservationsWithCallback invokes the ecs.DescribeCapacityReservations API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describecapacityreservations.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeCapacityReservationsWithCallback(request *DescribeCapacityReservationsRequest, callback func(response *DescribeCapacityReservationsResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeCapacityReservationsResponse
-var err error
-defer close(result)
-response, err = client.DescribeCapacityReservations(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeCapacityReservationsWithCallback(request *DescribeCapacityReservationsRequest, callback func(response *DescribeCapacityReservationsResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeCapacityReservationsResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeCapacityReservations(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // DescribeCapacityReservationsRequest is the request struct for api DescribeCapacityReservations
 type DescribeCapacityReservationsRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
-                    PageSize     requests.Integer `position:"Query" name:"PageSize"`
-                    Tag  *[]DescribeCapacityReservationsTag `position:"Query" name:"Tag"  type:"Repeated"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    CapacityReservationIds     string `position:"Query" name:"CapacityReservationIds"`
-                    CapacityReservationName     string `position:"Query" name:"CapacityReservationName"`
-                    ZoneId     string `position:"Query" name:"ZoneId"`
-                    Status     string `position:"Query" name:"Status"`
+	*requests.RpcRequest
+	ResourceOwnerId         requests.Integer                   `position:"Query" name:"ResourceOwnerId"`
+	PageNumber              requests.Integer                   `position:"Query" name:"PageNumber"`
+	PageSize                requests.Integer                   `position:"Query" name:"PageSize"`
+	Tag                     *[]DescribeCapacityReservationsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ResourceOwnerAccount    string                             `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount            string                             `position:"Query" name:"OwnerAccount"`
+	OwnerId                 requests.Integer                   `position:"Query" name:"OwnerId"`
+	CapacityReservationIds  string                             `position:"Query" name:"CapacityReservationIds"`
+	CapacityReservationName string                             `position:"Query" name:"CapacityReservationName"`
+	ZoneId                  string                             `position:"Query" name:"ZoneId"`
+	Status                  string                             `position:"Query" name:"Status"`
 }
 
 // DescribeCapacityReservationsTag is a repeated param struct in DescribeCapacityReservationsRequest
-type DescribeCapacityReservationsTag struct{
-        Key     string `name:"Key"`
-        Value     string `name:"Value"`
+type DescribeCapacityReservationsTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // DescribeCapacityReservationsResponse is the response struct for api DescribeCapacityReservations
 type DescribeCapacityReservationsResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            TotalCount     int `json:"TotalCount" xml:"TotalCount"`
-            PageNumber     int `json:"PageNumber" xml:"PageNumber"`
-            PageSize     int `json:"PageSize" xml:"PageSize"`
-                    CapacityReservations CapacityReservations `json:"CapacityReservations" xml:"CapacityReservations"`
+	*responses.BaseResponse
+	RequestId            string               `json:"RequestId" xml:"RequestId"`
+	TotalCount           int                  `json:"TotalCount" xml:"TotalCount"`
+	PageNumber           int                  `json:"PageNumber" xml:"PageNumber"`
+	PageSize             int                  `json:"PageSize" xml:"PageSize"`
+	CapacityReservations CapacityReservations `json:"CapacityReservations" xml:"CapacityReservations"`
 }
 
 // CreateDescribeCapacityReservationsRequest creates a request to invoke DescribeCapacityReservations API
 func CreateDescribeCapacityReservationsRequest() (request *DescribeCapacityReservationsRequest) {
-request = &DescribeCapacityReservationsRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeCapacityReservations", "", "")
-return
+	request = &DescribeCapacityReservationsRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeCapacityReservations", "ecs", "openAPI")
+	return
 }
 
 // CreateDescribeCapacityReservationsResponse creates a response to parse from DescribeCapacityReservations response
 func CreateDescribeCapacityReservationsResponse() (response *DescribeCapacityReservationsResponse) {
-response = &DescribeCapacityReservationsResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeCapacityReservationsResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // TagKeys is a nested struct in ecs response
 type TagKeys struct {
-TagKey []    string  `json:"TagKey" xml:"TagKey"`
+	TagKey []string `json:"TagKey" xml:"TagKey"`
 }

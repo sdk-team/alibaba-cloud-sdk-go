@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,6 @@ package ecs
 
 // InstanceTypeFamily is a nested struct in ecs response
 type InstanceTypeFamily struct {
-            InstanceTypeFamilyId     string `json:"InstanceTypeFamilyId" xml:"InstanceTypeFamilyId"`
-            Generation     string `json:"Generation" xml:"Generation"`
+	InstanceTypeFamilyId string `json:"InstanceTypeFamilyId" xml:"InstanceTypeFamilyId"`
+	Generation           string `json:"Generation" xml:"Generation"`
 }

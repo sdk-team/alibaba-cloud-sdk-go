@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,96 +16,93 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // ReleaseCapacityReservation invokes the ecs.ReleaseCapacityReservation API synchronously
 // api document: https://help.aliyun.com/api/ecs/releasecapacityreservation.html
 func (client *Client) ReleaseCapacityReservation(request *ReleaseCapacityReservationRequest) (response *ReleaseCapacityReservationResponse, err error) {
-response = CreateReleaseCapacityReservationResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateReleaseCapacityReservationResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // ReleaseCapacityReservationWithChan invokes the ecs.ReleaseCapacityReservation API asynchronously
 // api document: https://help.aliyun.com/api/ecs/releasecapacityreservation.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseCapacityReservationWithChan(request *ReleaseCapacityReservationRequest) (<-chan *ReleaseCapacityReservationResponse, <-chan error) {
-responseChan := make(chan *ReleaseCapacityReservationResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ReleaseCapacityReservation(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ReleaseCapacityReservationResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ReleaseCapacityReservation(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // ReleaseCapacityReservationWithCallback invokes the ecs.ReleaseCapacityReservation API asynchronously
 // api document: https://help.aliyun.com/api/ecs/releasecapacityreservation.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ReleaseCapacityReservationWithCallback(request *ReleaseCapacityReservationRequest, callback func(response *ReleaseCapacityReservationResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ReleaseCapacityReservationResponse
-var err error
-defer close(result)
-response, err = client.ReleaseCapacityReservation(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ReleaseCapacityReservationWithCallback(request *ReleaseCapacityReservationRequest, callback func(response *ReleaseCapacityReservationResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ReleaseCapacityReservationResponse
+		var err error
+		defer close(result)
+		response, err = client.ReleaseCapacityReservation(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // ReleaseCapacityReservationRequest is the request struct for api ReleaseCapacityReservation
 type ReleaseCapacityReservationRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    CapacityReservationId     string `position:"Query" name:"CapacityReservationId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    Token     string `position:"Query" name:"Token"`
+	*requests.RpcRequest
+	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	CapacityReservationId string           `position:"Query" name:"CapacityReservationId"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	Token                 string           `position:"Query" name:"Token"`
 }
-
 
 // ReleaseCapacityReservationResponse is the response struct for api ReleaseCapacityReservation
 type ReleaseCapacityReservationResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateReleaseCapacityReservationRequest creates a request to invoke ReleaseCapacityReservation API
 func CreateReleaseCapacityReservationRequest() (request *ReleaseCapacityReservationRequest) {
-request = &ReleaseCapacityReservationRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2016-03-14", "ReleaseCapacityReservation", "", "")
-return
+	request = &ReleaseCapacityReservationRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2016-03-14", "ReleaseCapacityReservation", "ecs", "openAPI")
+	return
 }
 
 // CreateReleaseCapacityReservationResponse creates a response to parse from ReleaseCapacityReservation response
 func CreateReleaseCapacityReservationResponse() (response *ReleaseCapacityReservationResponse) {
-response = &ReleaseCapacityReservationResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ReleaseCapacityReservationResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

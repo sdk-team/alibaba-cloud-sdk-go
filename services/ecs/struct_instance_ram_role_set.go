@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,6 @@ package ecs
 
 // InstanceRamRoleSet is a nested struct in ecs response
 type InstanceRamRoleSet struct {
-            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-            RamRoleName     string `json:"RamRoleName" xml:"RamRoleName"`
+	InstanceId  string `json:"InstanceId" xml:"InstanceId"`
+	RamRoleName string `json:"RamRoleName" xml:"RamRoleName"`
 }

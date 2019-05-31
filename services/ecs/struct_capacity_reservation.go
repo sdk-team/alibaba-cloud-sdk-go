@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,18 +17,18 @@ package ecs
 
 // CapacityReservation is a nested struct in ecs response
 type CapacityReservation struct {
-            CapacityReservationId     string `json:"CapacityReservationId" xml:"CapacityReservationId"`
-            RegionId     string `json:"RegionId" xml:"RegionId"`
-            ZoneId     string `json:"ZoneId" xml:"ZoneId"`
-            CapacityReservationName     string `json:"CapacityReservationName" xml:"CapacityReservationName"`
-            Status     string `json:"Status" xml:"Status"`
-            Description     string `json:"Description" xml:"Description"`
-            InstancePlatform     string `json:"InstancePlatform" xml:"InstancePlatform"`
-            TotalInstanceCount     int `json:"TotalInstanceCount" xml:"TotalInstanceCount"`
-            AvailableInstanceCount     int `json:"AvailableInstanceCount" xml:"AvailableInstanceCount"`
-            NetworkType     string `json:"NetworkType" xml:"NetworkType"`
-            EndDateType     string `json:"EndDateType" xml:"EndDateType"`
-            InstanceMatchCriteria     string `json:"InstanceMatchCriteria" xml:"InstanceMatchCriteria"`
-            InstanceType     string `json:"InstanceType" xml:"InstanceType"`
-            TimeSlot     string `json:"TimeSlot" xml:"TimeSlot"`
+	CapacityReservationId   string `json:"CapacityReservationId" xml:"CapacityReservationId"`
+	RegionId                string `json:"RegionId" xml:"RegionId"`
+	ZoneId                  string `json:"ZoneId" xml:"ZoneId"`
+	CapacityReservationName string `json:"CapacityReservationName" xml:"CapacityReservationName"`
+	Status                  string `json:"Status" xml:"Status"`
+	Description             string `json:"Description" xml:"Description"`
+	InstancePlatform        string `json:"InstancePlatform" xml:"InstancePlatform"`
+	TotalInstanceCount      int    `json:"TotalInstanceCount" xml:"TotalInstanceCount"`
+	AvailableInstanceCount  int    `json:"AvailableInstanceCount" xml:"AvailableInstanceCount"`
+	NetworkType             string `json:"NetworkType" xml:"NetworkType"`
+	EndDateType             string `json:"EndDateType" xml:"EndDateType"`
+	InstanceMatchCriteria   string `json:"InstanceMatchCriteria" xml:"InstanceMatchCriteria"`
+	InstanceType            string `json:"InstanceType" xml:"InstanceType"`
+	TimeSlot                string `json:"TimeSlot" xml:"TimeSlot"`
 }

@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,6 @@ package ecs
 
 // ActivityDetail is a nested struct in ecs response
 type ActivityDetail struct {
-            Detail     string `json:"Detail" xml:"Detail"`
-            Status     float64 `json:"Status" xml:"Status"`
+	Detail string  `json:"Detail" xml:"Detail"`
+	Status float64 `json:"Status" xml:"Status"`
 }

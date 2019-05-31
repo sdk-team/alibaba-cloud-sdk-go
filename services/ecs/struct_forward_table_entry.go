@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,12 +17,12 @@ package ecs
 
 // ForwardTableEntry is a nested struct in ecs response
 type ForwardTableEntry struct {
-            ForwardTableId     string `json:"ForwardTableId" xml:"ForwardTableId"`
-            ForwardEntryId     string `json:"ForwardEntryId" xml:"ForwardEntryId"`
-            ExternalIp     string `json:"ExternalIp" xml:"ExternalIp"`
-            ExternalPort     string `json:"ExternalPort" xml:"ExternalPort"`
-            IpProtocol     string `json:"IpProtocol" xml:"IpProtocol"`
-            InternalIp     string `json:"InternalIp" xml:"InternalIp"`
-            InternalPort     string `json:"InternalPort" xml:"InternalPort"`
-            Status     string `json:"Status" xml:"Status"`
+	ForwardTableId string `json:"ForwardTableId" xml:"ForwardTableId"`
+	ForwardEntryId string `json:"ForwardEntryId" xml:"ForwardEntryId"`
+	ExternalIp     string `json:"ExternalIp" xml:"ExternalIp"`
+	ExternalPort   string `json:"ExternalPort" xml:"ExternalPort"`
+	IpProtocol     string `json:"IpProtocol" xml:"IpProtocol"`
+	InternalIp     string `json:"InternalIp" xml:"InternalIp"`
+	InternalPort   string `json:"InternalPort" xml:"InternalPort"`
+	Status         string `json:"Status" xml:"Status"`
 }

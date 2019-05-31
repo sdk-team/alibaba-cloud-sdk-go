@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // Bandwidths is a nested struct in ecs response
 type Bandwidths struct {
-Bandwidth []Bandwidth `json:"Bandwidth" xml:"Bandwidth"`
+	Bandwidth []Bandwidth `json:"Bandwidth" xml:"Bandwidth"`
 }

@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // AssociatedEipAddresses is a nested struct in ecs response
 type AssociatedEipAddresses struct {
-AssociatedEipAddresse []    string  `json:"associatedEipAddresse" xml:"associatedEipAddresse"`
+	AssociatedEipAddresse []string `json:"associatedEipAddresse" xml:"associatedEipAddresse"`
 }

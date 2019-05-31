@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // Regions is a nested struct in ecs response
 type Regions struct {
-Region []Region `json:"Region" xml:"Region"`
+	Region []Region `json:"Region" xml:"Region"`
 }

@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,10 +17,10 @@ package ecs
 
 // Task is a nested struct in ecs response
 type Task struct {
-            TaskId     string `json:"TaskId" xml:"TaskId"`
-            TaskAction     string `json:"TaskAction" xml:"TaskAction"`
-            TaskStatus     string `json:"TaskStatus" xml:"TaskStatus"`
-            SupportCancel     string `json:"SupportCancel" xml:"SupportCancel"`
-            CreationTime     string `json:"CreationTime" xml:"CreationTime"`
-            FinishedTime     string `json:"FinishedTime" xml:"FinishedTime"`
+	TaskId        string `json:"TaskId" xml:"TaskId"`
+	TaskAction    string `json:"TaskAction" xml:"TaskAction"`
+	TaskStatus    string `json:"TaskStatus" xml:"TaskStatus"`
+	SupportCancel string `json:"SupportCancel" xml:"SupportCancel"`
+	CreationTime  string `json:"CreationTime" xml:"CreationTime"`
+	FinishedTime  string `json:"FinishedTime" xml:"FinishedTime"`
 }

@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,117 +16,115 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // DescribeVolumes invokes the ecs.DescribeVolumes API synchronously
 // api document: https://help.aliyun.com/api/ecs/describevolumes.html
 func (client *Client) DescribeVolumes(request *DescribeVolumesRequest) (response *DescribeVolumesResponse, err error) {
-response = CreateDescribeVolumesResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeVolumesResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // DescribeVolumesWithChan invokes the ecs.DescribeVolumes API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describevolumes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVolumesWithChan(request *DescribeVolumesRequest) (<-chan *DescribeVolumesResponse, <-chan error) {
-responseChan := make(chan *DescribeVolumesResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeVolumes(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeVolumesResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeVolumes(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // DescribeVolumesWithCallback invokes the ecs.DescribeVolumes API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describevolumes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeVolumesWithCallback(request *DescribeVolumesRequest, callback func(response *DescribeVolumesResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeVolumesResponse
-var err error
-defer close(result)
-response, err = client.DescribeVolumes(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeVolumesWithCallback(request *DescribeVolumesRequest, callback func(response *DescribeVolumesResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeVolumesResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeVolumes(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // DescribeVolumesRequest is the request struct for api DescribeVolumes
 type DescribeVolumesRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    SnapshotId     string `position:"Query" name:"SnapshotId"`
-                    AutoSnapshotPolicyId     string `position:"Query" name:"AutoSnapshotPolicyId"`
-                    PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
-                    LockReason     string `position:"Query" name:"LockReason"`
-                    PageSize     requests.Integer `position:"Query" name:"PageSize"`
-                    Tag  *[]DescribeVolumesTag `position:"Query" name:"Tag"  type:"Repeated"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    EnableAutomatedSnapshotPolicy     requests.Boolean `position:"Query" name:"EnableAutomatedSnapshotPolicy"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    InstanceId     string `position:"Query" name:"InstanceId"`
-                    Encrypted     requests.Boolean `position:"Query" name:"Encrypted"`
-                    ZoneId     string `position:"Query" name:"ZoneId"`
-                    VolumeIds     string `position:"Query" name:"VolumeIds"`
-                    Category     string `position:"Query" name:"Category"`
-                    KMSKeyId     string `position:"Query" name:"KMSKeyId"`
-                    Status     string `position:"Query" name:"Status"`
+	*requests.RpcRequest
+	ResourceOwnerId               requests.Integer      `position:"Query" name:"ResourceOwnerId"`
+	SnapshotId                    string                `position:"Query" name:"SnapshotId"`
+	AutoSnapshotPolicyId          string                `position:"Query" name:"AutoSnapshotPolicyId"`
+	PageNumber                    requests.Integer      `position:"Query" name:"PageNumber"`
+	LockReason                    string                `position:"Query" name:"LockReason"`
+	PageSize                      requests.Integer      `position:"Query" name:"PageSize"`
+	Tag                           *[]DescribeVolumesTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ResourceOwnerAccount          string                `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount                  string                `position:"Query" name:"OwnerAccount"`
+	EnableAutomatedSnapshotPolicy requests.Boolean      `position:"Query" name:"EnableAutomatedSnapshotPolicy"`
+	OwnerId                       requests.Integer      `position:"Query" name:"OwnerId"`
+	InstanceId                    string                `position:"Query" name:"InstanceId"`
+	Encrypted                     requests.Boolean      `position:"Query" name:"Encrypted"`
+	ZoneId                        string                `position:"Query" name:"ZoneId"`
+	VolumeIds                     string                `position:"Query" name:"VolumeIds"`
+	Category                      string                `position:"Query" name:"Category"`
+	KMSKeyId                      string                `position:"Query" name:"KMSKeyId"`
+	Status                        string                `position:"Query" name:"Status"`
 }
 
 // DescribeVolumesTag is a repeated param struct in DescribeVolumesRequest
-type DescribeVolumesTag struct{
-        Value     string `name:"Value"`
-        Key     string `name:"Key"`
+type DescribeVolumesTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeVolumesResponse is the response struct for api DescribeVolumes
 type DescribeVolumesResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            TotalCount     int `json:"TotalCount" xml:"TotalCount"`
-            PageNumber     int `json:"PageNumber" xml:"PageNumber"`
-            PageSize     int `json:"PageSize" xml:"PageSize"`
-                    Volumes Volumes `json:"Volumes" xml:"Volumes"`
+	*responses.BaseResponse
+	RequestId  string  `json:"RequestId" xml:"RequestId"`
+	TotalCount int     `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int     `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int     `json:"PageSize" xml:"PageSize"`
+	Volumes    Volumes `json:"Volumes" xml:"Volumes"`
 }
 
 // CreateDescribeVolumesRequest creates a request to invoke DescribeVolumes API
 func CreateDescribeVolumesRequest() (request *DescribeVolumesRequest) {
-request = &DescribeVolumesRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeVolumes", "", "")
-return
+	request = &DescribeVolumesRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeVolumes", "ecs", "openAPI")
+	return
 }
 
 // CreateDescribeVolumesResponse creates a response to parse from DescribeVolumes response
 func CreateDescribeVolumesResponse() (response *DescribeVolumesResponse) {
-response = &DescribeVolumesResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeVolumesResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

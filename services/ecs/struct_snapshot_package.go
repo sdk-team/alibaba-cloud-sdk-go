@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +17,8 @@ package ecs
 
 // SnapshotPackage is a nested struct in ecs response
 type SnapshotPackage struct {
-            StartTime     string `json:"StartTime" xml:"StartTime"`
-            EndTime     string `json:"EndTime" xml:"EndTime"`
-            InitCapacity     int `json:"InitCapacity" xml:"InitCapacity"`
-            DisplayName     string `json:"DisplayName" xml:"DisplayName"`
+	StartTime    string `json:"StartTime" xml:"StartTime"`
+	EndTime      string `json:"EndTime" xml:"EndTime"`
+	InitCapacity int64  `json:"InitCapacity" xml:"InitCapacity"`
+	DisplayName  string `json:"DisplayName" xml:"DisplayName"`
 }

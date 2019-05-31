@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +17,8 @@ package ecs
 
 // OperationProgress is a nested struct in ecs response
 type OperationProgress struct {
-            OperationStatus     string `json:"OperationStatus" xml:"OperationStatus"`
-            ErrorCode     string `json:"ErrorCode" xml:"ErrorCode"`
-            ErrorMsg     string `json:"ErrorMsg" xml:"ErrorMsg"`
-                    RelatedItemSet RelatedItemSet `json:"RelatedItemSet" xml:"RelatedItemSet"`
+	OperationStatus string         `json:"OperationStatus" xml:"OperationStatus"`
+	ErrorCode       string         `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMsg        string         `json:"ErrorMsg" xml:"ErrorMsg"`
+	RelatedItemSet  RelatedItemSet `json:"RelatedItemSet" xml:"RelatedItemSet"`
 }

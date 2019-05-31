@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +17,8 @@ package ecs
 
 // AttachInstanceRamRoleResult is a nested struct in ecs response
 type AttachInstanceRamRoleResult struct {
-            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-            Success     bool `json:"Success" xml:"Success"`
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
+	InstanceId string `json:"InstanceId" xml:"InstanceId"`
+	Success    bool   `json:"Success" xml:"Success"`
+	Code       string `json:"Code" xml:"Code"`
+	Message    string `json:"Message" xml:"Message"`
 }

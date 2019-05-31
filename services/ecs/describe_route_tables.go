@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,105 +16,102 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // DescribeRouteTables invokes the ecs.DescribeRouteTables API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeroutetables.html
 func (client *Client) DescribeRouteTables(request *DescribeRouteTablesRequest) (response *DescribeRouteTablesResponse, err error) {
-response = CreateDescribeRouteTablesResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeRouteTablesResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // DescribeRouteTablesWithChan invokes the ecs.DescribeRouteTables API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeroutetables.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRouteTablesWithChan(request *DescribeRouteTablesRequest) (<-chan *DescribeRouteTablesResponse, <-chan error) {
-responseChan := make(chan *DescribeRouteTablesResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeRouteTables(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeRouteTablesResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeRouteTables(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // DescribeRouteTablesWithCallback invokes the ecs.DescribeRouteTables API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeroutetables.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeRouteTablesWithCallback(request *DescribeRouteTablesRequest, callback func(response *DescribeRouteTablesResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeRouteTablesResponse
-var err error
-defer close(result)
-response, err = client.DescribeRouteTables(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeRouteTablesWithCallback(request *DescribeRouteTablesRequest, callback func(response *DescribeRouteTablesResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeRouteTablesResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeRouteTables(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // DescribeRouteTablesRequest is the request struct for api DescribeRouteTables
 type DescribeRouteTablesRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    VRouterId     string `position:"Query" name:"VRouterId"`
-                    PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
-                    RouteTableName     string `position:"Query" name:"RouteTableName"`
-                    PageSize     requests.Integer `position:"Query" name:"PageSize"`
-                    RouteTableId     string `position:"Query" name:"RouteTableId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    RouterType     string `position:"Query" name:"RouterType"`
-                    RouterId     string `position:"Query" name:"RouterId"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	VRouterId            string           `position:"Query" name:"VRouterId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	RouteTableName       string           `position:"Query" name:"RouteTableName"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	RouteTableId         string           `position:"Query" name:"RouteTableId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	RouterType           string           `position:"Query" name:"RouterType"`
+	RouterId             string           `position:"Query" name:"RouterId"`
 }
-
 
 // DescribeRouteTablesResponse is the response struct for api DescribeRouteTables
 type DescribeRouteTablesResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            TotalCount     int `json:"TotalCount" xml:"TotalCount"`
-            PageNumber     int `json:"PageNumber" xml:"PageNumber"`
-            PageSize     int `json:"PageSize" xml:"PageSize"`
-                    RouteTables RouteTables `json:"RouteTables" xml:"RouteTables"`
+	*responses.BaseResponse
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	TotalCount  int         `json:"TotalCount" xml:"TotalCount"`
+	PageNumber  int         `json:"PageNumber" xml:"PageNumber"`
+	PageSize    int         `json:"PageSize" xml:"PageSize"`
+	RouteTables RouteTables `json:"RouteTables" xml:"RouteTables"`
 }
 
 // CreateDescribeRouteTablesRequest creates a request to invoke DescribeRouteTables API
 func CreateDescribeRouteTablesRequest() (request *DescribeRouteTablesRequest) {
-request = &DescribeRouteTablesRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeRouteTables", "", "")
-return
+	request = &DescribeRouteTablesRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeRouteTables", "ecs", "openAPI")
+	return
 }
 
 // CreateDescribeRouteTablesResponse creates a response to parse from DescribeRouteTables response
 func CreateDescribeRouteTablesResponse() (response *DescribeRouteTablesResponse) {
-response = &DescribeRouteTablesResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeRouteTablesResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

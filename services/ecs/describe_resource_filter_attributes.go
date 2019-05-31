@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,103 +16,101 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // DescribeResourceFilterAttributes invokes the ecs.DescribeResourceFilterAttributes API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeresourcefilterattributes.html
 func (client *Client) DescribeResourceFilterAttributes(request *DescribeResourceFilterAttributesRequest) (response *DescribeResourceFilterAttributesResponse, err error) {
-response = CreateDescribeResourceFilterAttributesResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeResourceFilterAttributesResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // DescribeResourceFilterAttributesWithChan invokes the ecs.DescribeResourceFilterAttributes API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeresourcefilterattributes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeResourceFilterAttributesWithChan(request *DescribeResourceFilterAttributesRequest) (<-chan *DescribeResourceFilterAttributesResponse, <-chan error) {
-responseChan := make(chan *DescribeResourceFilterAttributesResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeResourceFilterAttributes(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeResourceFilterAttributesResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeResourceFilterAttributes(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // DescribeResourceFilterAttributesWithCallback invokes the ecs.DescribeResourceFilterAttributes API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeresourcefilterattributes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeResourceFilterAttributesWithCallback(request *DescribeResourceFilterAttributesRequest, callback func(response *DescribeResourceFilterAttributesResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeResourceFilterAttributesResponse
-var err error
-defer close(result)
-response, err = client.DescribeResourceFilterAttributes(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeResourceFilterAttributesWithCallback(request *DescribeResourceFilterAttributesRequest, callback func(response *DescribeResourceFilterAttributesResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeResourceFilterAttributesResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeResourceFilterAttributes(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // DescribeResourceFilterAttributesRequest is the request struct for api DescribeResourceFilterAttributes
 type DescribeResourceFilterAttributesRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    TemplateTag  *[]DescribeResourceFilterAttributesTemplateTag `position:"Query" name:"TemplateTag"  type:"Repeated"`
-                    Product     string `position:"Query" name:"Product"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    ResourceType     string `position:"Query" name:"ResourceType"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer                               `position:"Query" name:"ResourceOwnerId"`
+	TemplateTag          *[]DescribeResourceFilterAttributesTemplateTag `position:"Query" name:"TemplateTag"  type:"Repeated"`
+	Product              string                                         `position:"Query" name:"Product"`
+	ResourceOwnerAccount string                                         `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                                         `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer                               `position:"Query" name:"OwnerId"`
+	ResourceType         string                                         `position:"Query" name:"ResourceType"`
 }
 
 // DescribeResourceFilterAttributesTemplateTag is a repeated param struct in DescribeResourceFilterAttributesRequest
-type DescribeResourceFilterAttributesTemplateTag struct{
-        Key     string `name:"Key"`
-        Value     string `name:"Value"`
+type DescribeResourceFilterAttributesTemplateTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // DescribeResourceFilterAttributesResponse is the response struct for api DescribeResourceFilterAttributes
 type DescribeResourceFilterAttributesResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-                    FilterAttributes FilterAttributes `json:"FilterAttributes" xml:"FilterAttributes"`
+	*responses.BaseResponse
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	FilterAttributes FilterAttributes `json:"FilterAttributes" xml:"FilterAttributes"`
 }
 
 // CreateDescribeResourceFilterAttributesRequest creates a request to invoke DescribeResourceFilterAttributes API
 func CreateDescribeResourceFilterAttributesRequest() (request *DescribeResourceFilterAttributesRequest) {
-request = &DescribeResourceFilterAttributesRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeResourceFilterAttributes", "", "")
-return
+	request = &DescribeResourceFilterAttributesRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeResourceFilterAttributes", "ecs", "openAPI")
+	return
 }
 
 // CreateDescribeResourceFilterAttributesResponse creates a response to parse from DescribeResourceFilterAttributes response
 func CreateDescribeResourceFilterAttributesResponse() (response *DescribeResourceFilterAttributesResponse) {
-response = &DescribeResourceFilterAttributesResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeResourceFilterAttributesResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

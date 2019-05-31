@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,9 +17,9 @@ package ecs
 
 // InvokeInstance is a nested struct in ecs response
 type InvokeInstance struct {
-            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-            InstanceInvokeStatus     string `json:"InstanceInvokeStatus" xml:"InstanceInvokeStatus"`
-            CreationTime     string `json:"CreationTime" xml:"CreationTime"`
-            StartTime     string `json:"StartTime" xml:"StartTime"`
-            FinishTime     string `json:"FinishTime" xml:"FinishTime"`
+	InstanceId           string `json:"InstanceId" xml:"InstanceId"`
+	InstanceInvokeStatus string `json:"InstanceInvokeStatus" xml:"InstanceInvokeStatus"`
+	CreationTime         string `json:"CreationTime" xml:"CreationTime"`
+	StartTime            string `json:"StartTime" xml:"StartTime"`
+	FinishTime           string `json:"FinishTime" xml:"FinishTime"`
 }

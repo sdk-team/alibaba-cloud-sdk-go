@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +17,7 @@ package ecs
 
 // QosGroupInfo is a nested struct in ecs response
 type QosGroupInfo struct {
-            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-                NetworkInterfaceIds NetworkInterfaceIds `json:"NetworkInterfaceIds" xml:"NetworkInterfaceIds"`
-            QosGroup QosGroup  `json:"QosGroup" xml:"QosGroup"`
+	InstanceId          string              `json:"InstanceId" xml:"InstanceId"`
+	NetworkInterfaceIds NetworkInterfaceIds `json:"NetworkInterfaceIds" xml:"NetworkInterfaceIds"`
+	QosGroup            QosGroup            `json:"QosGroup" xml:"QosGroup"`
 }

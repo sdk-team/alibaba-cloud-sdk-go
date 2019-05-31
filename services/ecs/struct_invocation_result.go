@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,12 +17,12 @@ package ecs
 
 // InvocationResult is a nested struct in ecs response
 type InvocationResult struct {
-            CommandId     string `json:"CommandId" xml:"CommandId"`
-            InvokeId     string `json:"InvokeId" xml:"InvokeId"`
-            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-            StartTime     string `json:"StartTime" xml:"StartTime"`
-            FinishedTime     string `json:"FinishedTime" xml:"FinishedTime"`
-            Output     string `json:"Output" xml:"Output"`
-            InvokeRecordStatus     string `json:"InvokeRecordStatus" xml:"InvokeRecordStatus"`
-            ExitCode     int `json:"ExitCode" xml:"ExitCode"`
+	CommandId          string `json:"CommandId" xml:"CommandId"`
+	InvokeId           string `json:"InvokeId" xml:"InvokeId"`
+	InstanceId         string `json:"InstanceId" xml:"InstanceId"`
+	StartTime          string `json:"StartTime" xml:"StartTime"`
+	FinishedTime       string `json:"FinishedTime" xml:"FinishedTime"`
+	Output             string `json:"Output" xml:"Output"`
+	InvokeRecordStatus string `json:"InvokeRecordStatus" xml:"InvokeRecordStatus"`
+	ExitCode           int64  `json:"ExitCode" xml:"ExitCode"`
 }

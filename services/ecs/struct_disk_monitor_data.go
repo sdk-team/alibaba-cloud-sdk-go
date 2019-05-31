@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,14 +17,14 @@ package ecs
 
 // DiskMonitorData is a nested struct in ecs response
 type DiskMonitorData struct {
-            DiskId     string `json:"DiskId" xml:"DiskId"`
-            IOPSRead     int `json:"IOPSRead" xml:"IOPSRead"`
-            IOPSWrite     int `json:"IOPSWrite" xml:"IOPSWrite"`
-            IOPSTotal     int `json:"IOPSTotal" xml:"IOPSTotal"`
-            BPSRead     int `json:"BPSRead" xml:"BPSRead"`
-            BPSWrite     int `json:"BPSWrite" xml:"BPSWrite"`
-            BPSTotal     int `json:"BPSTotal" xml:"BPSTotal"`
-            LatencyRead     int `json:"LatencyRead" xml:"LatencyRead"`
-            LatencyWrite     int `json:"LatencyWrite" xml:"LatencyWrite"`
-            TimeStamp     string `json:"TimeStamp" xml:"TimeStamp"`
+	DiskId       string `json:"DiskId" xml:"DiskId"`
+	IOPSRead     int    `json:"IOPSRead" xml:"IOPSRead"`
+	IOPSWrite    int    `json:"IOPSWrite" xml:"IOPSWrite"`
+	IOPSTotal    int    `json:"IOPSTotal" xml:"IOPSTotal"`
+	BPSRead      int    `json:"BPSRead" xml:"BPSRead"`
+	BPSWrite     int    `json:"BPSWrite" xml:"BPSWrite"`
+	BPSTotal     int    `json:"BPSTotal" xml:"BPSTotal"`
+	LatencyRead  int    `json:"LatencyRead" xml:"LatencyRead"`
+	LatencyWrite int    `json:"LatencyWrite" xml:"LatencyWrite"`
+	TimeStamp    string `json:"TimeStamp" xml:"TimeStamp"`
 }

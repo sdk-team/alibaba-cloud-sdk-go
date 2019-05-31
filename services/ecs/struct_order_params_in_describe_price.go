@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // OrderParamsInDescribePrice is a nested struct in ecs response
 type OrderParamsInDescribePrice struct {
-OrderParam []    string  `json:"OrderParam" xml:"OrderParam"`
+	OrderParam []string `json:"OrderParam" xml:"OrderParam"`
 }

@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,6 @@ package ecs
 
 // Switch is a nested struct in ecs response
 type Switch struct {
-            SwitchId     string `json:"SwitchId" xml:"SwitchId"`
-                    Hosts HostsInDescribeDeploymentSetTopology `json:"Hosts" xml:"Hosts"`
+	SwitchId string                               `json:"SwitchId" xml:"SwitchId"`
+	Hosts    HostsInDescribeDeploymentSetTopology `json:"Hosts" xml:"Hosts"`
 }

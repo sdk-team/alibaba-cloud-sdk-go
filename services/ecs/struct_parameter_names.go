@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // ParameterNames is a nested struct in ecs response
 type ParameterNames struct {
-ParameterName []    string  `json:"ParameterName" xml:"ParameterName"`
+	ParameterName []string `json:"ParameterName" xml:"ParameterName"`
 }

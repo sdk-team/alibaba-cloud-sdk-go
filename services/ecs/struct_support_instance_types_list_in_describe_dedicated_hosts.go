@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // SupportInstanceTypesListInDescribeDedicatedHosts is a nested struct in ecs response
 type SupportInstanceTypesListInDescribeDedicatedHosts struct {
-SupportInstanceTypesList []    string  `json:"SupportInstanceTypesList" xml:"SupportInstanceTypesList"`
+	SupportInstanceTypesList []string `json:"SupportInstanceTypesList" xml:"SupportInstanceTypesList"`
 }

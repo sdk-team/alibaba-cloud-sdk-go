@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,105 +16,102 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // DescribeConfigLogHistory invokes the ecs.DescribeConfigLogHistory API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeconfigloghistory.html
 func (client *Client) DescribeConfigLogHistory(request *DescribeConfigLogHistoryRequest) (response *DescribeConfigLogHistoryResponse, err error) {
-response = CreateDescribeConfigLogHistoryResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeConfigLogHistoryResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // DescribeConfigLogHistoryWithChan invokes the ecs.DescribeConfigLogHistory API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeconfigloghistory.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeConfigLogHistoryWithChan(request *DescribeConfigLogHistoryRequest) (<-chan *DescribeConfigLogHistoryResponse, <-chan error) {
-responseChan := make(chan *DescribeConfigLogHistoryResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeConfigLogHistory(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeConfigLogHistoryResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeConfigLogHistory(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // DescribeConfigLogHistoryWithCallback invokes the ecs.DescribeConfigLogHistory API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeconfigloghistory.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeConfigLogHistoryWithCallback(request *DescribeConfigLogHistoryRequest, callback func(response *DescribeConfigLogHistoryResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeConfigLogHistoryResponse
-var err error
-defer close(result)
-response, err = client.DescribeConfigLogHistory(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeConfigLogHistoryWithCallback(request *DescribeConfigLogHistoryRequest, callback func(response *DescribeConfigLogHistoryResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeConfigLogHistoryResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeConfigLogHistory(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // DescribeConfigLogHistoryRequest is the request struct for api DescribeConfigLogHistory
 type DescribeConfigLogHistoryRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    StartTime     string `position:"Query" name:"StartTime"`
-                    PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
-                    ChronologicalOrder     string `position:"Query" name:"ChronologicalOrder"`
-                    PageSize     requests.Integer `position:"Query" name:"PageSize"`
-                    ResourceId     string `position:"Query" name:"ResourceId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    EndTime     string `position:"Query" name:"EndTime"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    ResourceType     string `position:"Query" name:"ResourceType"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ChronologicalOrder   string           `position:"Query" name:"ChronologicalOrder"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceId           string           `position:"Query" name:"ResourceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceType         string           `position:"Query" name:"ResourceType"`
 }
-
 
 // DescribeConfigLogHistoryResponse is the response struct for api DescribeConfigLogHistory
 type DescribeConfigLogHistoryResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            TotalCount     int `json:"TotalCount" xml:"TotalCount"`
-            PageNumber     int `json:"PageNumber" xml:"PageNumber"`
-            PageSize     int `json:"PageSize" xml:"PageSize"`
-                    ConfigurationItemSet ConfigurationItemSet `json:"ConfigurationItemSet" xml:"ConfigurationItemSet"`
+	*responses.BaseResponse
+	RequestId            string               `json:"RequestId" xml:"RequestId"`
+	TotalCount           int                  `json:"TotalCount" xml:"TotalCount"`
+	PageNumber           int                  `json:"PageNumber" xml:"PageNumber"`
+	PageSize             int                  `json:"PageSize" xml:"PageSize"`
+	ConfigurationItemSet ConfigurationItemSet `json:"ConfigurationItemSet" xml:"ConfigurationItemSet"`
 }
 
 // CreateDescribeConfigLogHistoryRequest creates a request to invoke DescribeConfigLogHistory API
 func CreateDescribeConfigLogHistoryRequest() (request *DescribeConfigLogHistoryRequest) {
-request = &DescribeConfigLogHistoryRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeConfigLogHistory", "", "")
-return
+	request = &DescribeConfigLogHistoryRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeConfigLogHistory", "ecs", "openAPI")
+	return
 }
 
 // CreateDescribeConfigLogHistoryResponse creates a response to parse from DescribeConfigLogHistory response
 func CreateDescribeConfigLogHistoryResponse() (response *DescribeConfigLogHistoryResponse) {
-response = &DescribeConfigLogHistoryResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeConfigLogHistoryResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

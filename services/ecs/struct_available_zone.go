@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,9 +17,9 @@ package ecs
 
 // AvailableZone is a nested struct in ecs response
 type AvailableZone struct {
-            RegionId     string `json:"RegionId" xml:"RegionId"`
-            ZoneId     string `json:"ZoneId" xml:"ZoneId"`
-            StatusCategory     string `json:"StatusCategory" xml:"StatusCategory"`
-            Status     string `json:"Status" xml:"Status"`
-                    AvailableResources AvailableResourcesInDescribeResourcesModification `json:"AvailableResources" xml:"AvailableResources"`
+	RegionId           string                                            `json:"RegionId" xml:"RegionId"`
+	ZoneId             string                                            `json:"ZoneId" xml:"ZoneId"`
+	StatusCategory     string                                            `json:"StatusCategory" xml:"StatusCategory"`
+	Status             string                                            `json:"Status" xml:"Status"`
+	AvailableResources AvailableResourcesInDescribeResourcesModification `json:"AvailableResources" xml:"AvailableResources"`
 }

@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,15 +17,15 @@ package ecs
 
 // Vpc is a nested struct in ecs response
 type Vpc struct {
-            VpcId     string `json:"VpcId" xml:"VpcId"`
-            RegionId     string `json:"RegionId" xml:"RegionId"`
-            Status     string `json:"Status" xml:"Status"`
-            VpcName     string `json:"VpcName" xml:"VpcName"`
-            CreationTime     string `json:"CreationTime" xml:"CreationTime"`
-            CidrBlock     string `json:"CidrBlock" xml:"CidrBlock"`
-            VRouterId     string `json:"VRouterId" xml:"VRouterId"`
-            Description     string `json:"Description" xml:"Description"`
-            IsDefault     bool `json:"IsDefault" xml:"IsDefault"`
-                VSwitchIds VSwitchIds `json:"VSwitchIds" xml:"VSwitchIds"`
-                UserCidrs UserCidrs `json:"UserCidrs" xml:"UserCidrs"`
+	VpcId        string     `json:"VpcId" xml:"VpcId"`
+	RegionId     string     `json:"RegionId" xml:"RegionId"`
+	Status       string     `json:"Status" xml:"Status"`
+	VpcName      string     `json:"VpcName" xml:"VpcName"`
+	CreationTime string     `json:"CreationTime" xml:"CreationTime"`
+	CidrBlock    string     `json:"CidrBlock" xml:"CidrBlock"`
+	VRouterId    string     `json:"VRouterId" xml:"VRouterId"`
+	Description  string     `json:"Description" xml:"Description"`
+	IsDefault    bool       `json:"IsDefault" xml:"IsDefault"`
+	VSwitchIds   VSwitchIds `json:"VSwitchIds" xml:"VSwitchIds"`
+	UserCidrs    UserCidrs  `json:"UserCidrs" xml:"UserCidrs"`
 }

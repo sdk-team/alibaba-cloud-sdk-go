@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // Vpcs is a nested struct in ecs response
 type Vpcs struct {
-Vpc []Vpc `json:"Vpc" xml:"Vpc"`
+	Vpc []Vpc `json:"Vpc" xml:"Vpc"`
 }

@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,97 +16,94 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // RedeployInstance invokes the ecs.RedeployInstance API synchronously
 // api document: https://help.aliyun.com/api/ecs/redeployinstance.html
 func (client *Client) RedeployInstance(request *RedeployInstanceRequest) (response *RedeployInstanceResponse, err error) {
-response = CreateRedeployInstanceResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateRedeployInstanceResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // RedeployInstanceWithChan invokes the ecs.RedeployInstance API asynchronously
 // api document: https://help.aliyun.com/api/ecs/redeployinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RedeployInstanceWithChan(request *RedeployInstanceRequest) (<-chan *RedeployInstanceResponse, <-chan error) {
-responseChan := make(chan *RedeployInstanceResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.RedeployInstance(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *RedeployInstanceResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.RedeployInstance(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // RedeployInstanceWithCallback invokes the ecs.RedeployInstance API asynchronously
 // api document: https://help.aliyun.com/api/ecs/redeployinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) RedeployInstanceWithCallback(request *RedeployInstanceRequest, callback func(response *RedeployInstanceResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *RedeployInstanceResponse
-var err error
-defer close(result)
-response, err = client.RedeployInstance(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) RedeployInstanceWithCallback(request *RedeployInstanceRequest, callback func(response *RedeployInstanceResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *RedeployInstanceResponse
+		var err error
+		defer close(result)
+		response, err = client.RedeployInstance(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // RedeployInstanceRequest is the request struct for api RedeployInstance
 type RedeployInstanceRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    ForceStop     requests.Boolean `position:"Query" name:"ForceStop"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    InstanceId     string `position:"Query" name:"InstanceId"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ForceStop            requests.Boolean `position:"Query" name:"ForceStop"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
-
 
 // RedeployInstanceResponse is the response struct for api RedeployInstance
 type RedeployInstanceResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            TaskId     string `json:"TaskId" xml:"TaskId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	TaskId    string `json:"TaskId" xml:"TaskId"`
 }
 
 // CreateRedeployInstanceRequest creates a request to invoke RedeployInstance API
 func CreateRedeployInstanceRequest() (request *RedeployInstanceRequest) {
-request = &RedeployInstanceRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "RedeployInstance", "", "")
-return
+	request = &RedeployInstanceRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "RedeployInstance", "ecs", "openAPI")
+	return
 }
 
 // CreateRedeployInstanceResponse creates a response to parse from RedeployInstance response
 func CreateRedeployInstanceResponse() (response *RedeployInstanceResponse) {
-response = &RedeployInstanceResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &RedeployInstanceResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

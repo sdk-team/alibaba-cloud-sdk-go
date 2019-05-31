@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,9 +17,9 @@ package ecs
 
 // LaunchTemplateConfig is a nested struct in ecs response
 type LaunchTemplateConfig struct {
-            InstanceType     string `json:"InstanceType" xml:"InstanceType"`
-            MaxPrice     float64 `json:"MaxPrice" xml:"MaxPrice"`
-            VSWitchId     string `json:"VSWitchId" xml:"VSWitchId"`
-            WeightedCapacity     float64 `json:"WeightedCapacity" xml:"WeightedCapacity"`
-            Priority     float64 `json:"Priority" xml:"Priority"`
+	InstanceType     string  `json:"InstanceType" xml:"InstanceType"`
+	MaxPrice         float64 `json:"MaxPrice" xml:"MaxPrice"`
+	VSWitchId        string  `json:"VSWitchId" xml:"VSWitchId"`
+	WeightedCapacity float64 `json:"WeightedCapacity" xml:"WeightedCapacity"`
+	Priority         float64 `json:"Priority" xml:"Priority"`
 }

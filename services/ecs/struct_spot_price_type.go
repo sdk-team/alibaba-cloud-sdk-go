@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,11 +17,11 @@ package ecs
 
 // SpotPriceType is a nested struct in ecs response
 type SpotPriceType struct {
-            ZoneId     string `json:"ZoneId" xml:"ZoneId"`
-            InstanceType     string `json:"InstanceType" xml:"InstanceType"`
-            IoOptimized     string `json:"IoOptimized" xml:"IoOptimized"`
-            Timestamp     string `json:"Timestamp" xml:"Timestamp"`
-            NetworkType     string `json:"NetworkType" xml:"NetworkType"`
-            SpotPrice     float64 `json:"SpotPrice" xml:"SpotPrice"`
-            OriginPrice     float64 `json:"OriginPrice" xml:"OriginPrice"`
+	ZoneId       string  `json:"ZoneId" xml:"ZoneId"`
+	InstanceType string  `json:"InstanceType" xml:"InstanceType"`
+	IoOptimized  string  `json:"IoOptimized" xml:"IoOptimized"`
+	Timestamp    string  `json:"Timestamp" xml:"Timestamp"`
+	NetworkType  string  `json:"NetworkType" xml:"NetworkType"`
+	SpotPrice    float64 `json:"SpotPrice" xml:"SpotPrice"`
+	OriginPrice  float64 `json:"OriginPrice" xml:"OriginPrice"`
 }

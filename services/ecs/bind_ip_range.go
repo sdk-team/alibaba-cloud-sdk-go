@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,96 +16,93 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // BindIpRange invokes the ecs.BindIpRange API synchronously
 // api document: https://help.aliyun.com/api/ecs/bindiprange.html
 func (client *Client) BindIpRange(request *BindIpRangeRequest) (response *BindIpRangeResponse, err error) {
-response = CreateBindIpRangeResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateBindIpRangeResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // BindIpRangeWithChan invokes the ecs.BindIpRange API asynchronously
 // api document: https://help.aliyun.com/api/ecs/bindiprange.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindIpRangeWithChan(request *BindIpRangeRequest) (<-chan *BindIpRangeResponse, <-chan error) {
-responseChan := make(chan *BindIpRangeResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.BindIpRange(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *BindIpRangeResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.BindIpRange(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // BindIpRangeWithCallback invokes the ecs.BindIpRange API asynchronously
 // api document: https://help.aliyun.com/api/ecs/bindiprange.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) BindIpRangeWithCallback(request *BindIpRangeRequest, callback func(response *BindIpRangeResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *BindIpRangeResponse
-var err error
-defer close(result)
-response, err = client.BindIpRange(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) BindIpRangeWithCallback(request *BindIpRangeRequest, callback func(response *BindIpRangeResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *BindIpRangeResponse
+		var err error
+		defer close(result)
+		response, err = client.BindIpRange(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // BindIpRangeRequest is the request struct for api BindIpRange
 type BindIpRangeRequest struct {
-*requests.RpcRequest
-                    IpAddress     string `position:"Query" name:"IpAddress"`
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    InstanceId     string `position:"Query" name:"InstanceId"`
+	*requests.RpcRequest
+	IpAddress            string           `position:"Query" name:"IpAddress"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
-
 
 // BindIpRangeResponse is the response struct for api BindIpRange
 type BindIpRangeResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateBindIpRangeRequest creates a request to invoke BindIpRange API
 func CreateBindIpRangeRequest() (request *BindIpRangeRequest) {
-request = &BindIpRangeRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "BindIpRange", "", "")
-return
+	request = &BindIpRangeRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "BindIpRange", "ecs", "openAPI")
+	return
 }
 
 // CreateBindIpRangeResponse creates a response to parse from BindIpRange response
 func CreateBindIpRangeResponse() (response *BindIpRangeResponse) {
-response = &BindIpRangeResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &BindIpRangeResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

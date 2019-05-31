@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // LimitValueSet is a nested struct in ecs response
 type LimitValueSet struct {
-LimitValue []    string  `json:"LimitValue" xml:"LimitValue"`
+	LimitValue []string `json:"LimitValue" xml:"LimitValue"`
 }

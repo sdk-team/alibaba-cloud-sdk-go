@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,95 +16,92 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // CancelCopyImage invokes the ecs.CancelCopyImage API synchronously
 // api document: https://help.aliyun.com/api/ecs/cancelcopyimage.html
 func (client *Client) CancelCopyImage(request *CancelCopyImageRequest) (response *CancelCopyImageResponse, err error) {
-response = CreateCancelCopyImageResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateCancelCopyImageResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // CancelCopyImageWithChan invokes the ecs.CancelCopyImage API asynchronously
 // api document: https://help.aliyun.com/api/ecs/cancelcopyimage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelCopyImageWithChan(request *CancelCopyImageRequest) (<-chan *CancelCopyImageResponse, <-chan error) {
-responseChan := make(chan *CancelCopyImageResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.CancelCopyImage(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *CancelCopyImageResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.CancelCopyImage(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // CancelCopyImageWithCallback invokes the ecs.CancelCopyImage API asynchronously
 // api document: https://help.aliyun.com/api/ecs/cancelcopyimage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CancelCopyImageWithCallback(request *CancelCopyImageRequest, callback func(response *CancelCopyImageResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *CancelCopyImageResponse
-var err error
-defer close(result)
-response, err = client.CancelCopyImage(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) CancelCopyImageWithCallback(request *CancelCopyImageRequest, callback func(response *CancelCopyImageResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *CancelCopyImageResponse
+		var err error
+		defer close(result)
+		response, err = client.CancelCopyImage(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // CancelCopyImageRequest is the request struct for api CancelCopyImage
 type CancelCopyImageRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    ImageId     string `position:"Query" name:"ImageId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ImageId              string           `position:"Query" name:"ImageId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
-
 
 // CancelCopyImageResponse is the response struct for api CancelCopyImage
 type CancelCopyImageResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCancelCopyImageRequest creates a request to invoke CancelCopyImage API
 func CreateCancelCopyImageRequest() (request *CancelCopyImageRequest) {
-request = &CancelCopyImageRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "CancelCopyImage", "", "")
-return
+	request = &CancelCopyImageRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CancelCopyImage", "ecs", "openAPI")
+	return
 }
 
 // CreateCancelCopyImageResponse creates a response to parse from CancelCopyImage response
 func CreateCancelCopyImageResponse() (response *CancelCopyImageResponse) {
-response = &CancelCopyImageResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &CancelCopyImageResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,6 @@ package ecs
 
 // AccountLimit is a nested struct in ecs response
 type AccountLimit struct {
-            LimitName     string `json:"LimitName" xml:"LimitName"`
-                LimitValueSet LimitValueSet `json:"LimitValueSet" xml:"LimitValueSet"`
+	LimitName     string        `json:"LimitName" xml:"LimitName"`
+	LimitValueSet LimitValueSet `json:"LimitValueSet" xml:"LimitValueSet"`
 }

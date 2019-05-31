@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,96 +16,93 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // DescribeDedicatedHostAutoRenew invokes the ecs.DescribeDedicatedHostAutoRenew API synchronously
 // api document: https://help.aliyun.com/api/ecs/describededicatedhostautorenew.html
 func (client *Client) DescribeDedicatedHostAutoRenew(request *DescribeDedicatedHostAutoRenewRequest) (response *DescribeDedicatedHostAutoRenewResponse, err error) {
-response = CreateDescribeDedicatedHostAutoRenewResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeDedicatedHostAutoRenewResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // DescribeDedicatedHostAutoRenewWithChan invokes the ecs.DescribeDedicatedHostAutoRenew API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describededicatedhostautorenew.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDedicatedHostAutoRenewWithChan(request *DescribeDedicatedHostAutoRenewRequest) (<-chan *DescribeDedicatedHostAutoRenewResponse, <-chan error) {
-responseChan := make(chan *DescribeDedicatedHostAutoRenewResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeDedicatedHostAutoRenew(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeDedicatedHostAutoRenewResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeDedicatedHostAutoRenew(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // DescribeDedicatedHostAutoRenewWithCallback invokes the ecs.DescribeDedicatedHostAutoRenew API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describededicatedhostautorenew.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeDedicatedHostAutoRenewWithCallback(request *DescribeDedicatedHostAutoRenewRequest, callback func(response *DescribeDedicatedHostAutoRenewResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeDedicatedHostAutoRenewResponse
-var err error
-defer close(result)
-response, err = client.DescribeDedicatedHostAutoRenew(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeDedicatedHostAutoRenewWithCallback(request *DescribeDedicatedHostAutoRenewRequest, callback func(response *DescribeDedicatedHostAutoRenewResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeDedicatedHostAutoRenewResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeDedicatedHostAutoRenew(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // DescribeDedicatedHostAutoRenewRequest is the request struct for api DescribeDedicatedHostAutoRenew
 type DescribeDedicatedHostAutoRenewRequest struct {
-*requests.RpcRequest
-                    DedicatedHostIds     string `position:"Query" name:"DedicatedHostIds"`
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	DedicatedHostIds     string           `position:"Query" name:"DedicatedHostIds"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
-
 
 // DescribeDedicatedHostAutoRenewResponse is the response struct for api DescribeDedicatedHostAutoRenew
 type DescribeDedicatedHostAutoRenewResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-                    DedicatedHostRenewAttributes DedicatedHostRenewAttributes `json:"DedicatedHostRenewAttributes" xml:"DedicatedHostRenewAttributes"`
+	*responses.BaseResponse
+	RequestId                    string                       `json:"RequestId" xml:"RequestId"`
+	DedicatedHostRenewAttributes DedicatedHostRenewAttributes `json:"DedicatedHostRenewAttributes" xml:"DedicatedHostRenewAttributes"`
 }
 
 // CreateDescribeDedicatedHostAutoRenewRequest creates a request to invoke DescribeDedicatedHostAutoRenew API
 func CreateDescribeDedicatedHostAutoRenewRequest() (request *DescribeDedicatedHostAutoRenewRequest) {
-request = &DescribeDedicatedHostAutoRenewRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDedicatedHostAutoRenew", "", "")
-return
+	request = &DescribeDedicatedHostAutoRenewRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDedicatedHostAutoRenew", "ecs", "openAPI")
+	return
 }
 
 // CreateDescribeDedicatedHostAutoRenewResponse creates a response to parse from DescribeDedicatedHostAutoRenew response
 func CreateDescribeDedicatedHostAutoRenewResponse() (response *DescribeDedicatedHostAutoRenewResponse) {
-response = &DescribeDedicatedHostAutoRenewResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeDedicatedHostAutoRenewResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

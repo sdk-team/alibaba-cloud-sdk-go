@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // InstanceRamRoleSetsInDetachInstanceRamRole is a nested struct in ecs response
 type InstanceRamRoleSetsInDetachInstanceRamRole struct {
-InstanceRamRoleSet []InstanceRamRoleSet `json:"InstanceRamRoleSet" xml:"InstanceRamRoleSet"`
+	InstanceRamRoleSet []InstanceRamRoleSet `json:"InstanceRamRoleSet" xml:"InstanceRamRoleSet"`
 }

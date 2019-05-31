@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // Account is a nested struct in ecs response
 type Account struct {
-            AliyunId     string `json:"AliyunId" xml:"AliyunId"`
+	AliyunId string `json:"AliyunId" xml:"AliyunId"`
 }

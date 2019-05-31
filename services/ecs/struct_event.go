@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,12 +17,12 @@ package ecs
 
 // Event is a nested struct in ecs response
 type Event struct {
-            ResourceId     string `json:"ResourceId" xml:"ResourceId"`
-            EventType     string `json:"EventType" xml:"EventType"`
-            EventCategory     string `json:"EventCategory" xml:"EventCategory"`
-            Status     string `json:"Status" xml:"Status"`
-            SupportModify     string `json:"SupportModify" xml:"SupportModify"`
-            PlanTime     string `json:"PlanTime" xml:"PlanTime"`
-            ExpireTime     string `json:"ExpireTime" xml:"ExpireTime"`
-            EventId     string `json:"EventId" xml:"EventId"`
+	ResourceId    string `json:"ResourceId" xml:"ResourceId"`
+	EventType     string `json:"EventType" xml:"EventType"`
+	EventCategory string `json:"EventCategory" xml:"EventCategory"`
+	Status        string `json:"Status" xml:"Status"`
+	SupportModify string `json:"SupportModify" xml:"SupportModify"`
+	PlanTime      string `json:"PlanTime" xml:"PlanTime"`
+	ExpireTime    string `json:"ExpireTime" xml:"ExpireTime"`
+	EventId       string `json:"EventId" xml:"EventId"`
 }

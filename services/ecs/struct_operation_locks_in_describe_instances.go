@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // OperationLocksInDescribeInstances is a nested struct in ecs response
 type OperationLocksInDescribeInstances struct {
-LockReason []LockReason `json:"LockReason" xml:"LockReason"`
+	LockReason []LockReason `json:"LockReason" xml:"LockReason"`
 }

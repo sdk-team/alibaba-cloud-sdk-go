@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,96 +16,93 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // DeleteForwardEntry invokes the ecs.DeleteForwardEntry API synchronously
 // api document: https://help.aliyun.com/api/ecs/deleteforwardentry.html
 func (client *Client) DeleteForwardEntry(request *DeleteForwardEntryRequest) (response *DeleteForwardEntryResponse, err error) {
-response = CreateDeleteForwardEntryResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDeleteForwardEntryResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // DeleteForwardEntryWithChan invokes the ecs.DeleteForwardEntry API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deleteforwardentry.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteForwardEntryWithChan(request *DeleteForwardEntryRequest) (<-chan *DeleteForwardEntryResponse, <-chan error) {
-responseChan := make(chan *DeleteForwardEntryResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DeleteForwardEntry(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DeleteForwardEntryResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DeleteForwardEntry(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // DeleteForwardEntryWithCallback invokes the ecs.DeleteForwardEntry API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deleteforwardentry.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteForwardEntryWithCallback(request *DeleteForwardEntryRequest, callback func(response *DeleteForwardEntryResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DeleteForwardEntryResponse
-var err error
-defer close(result)
-response, err = client.DeleteForwardEntry(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DeleteForwardEntryWithCallback(request *DeleteForwardEntryRequest, callback func(response *DeleteForwardEntryResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DeleteForwardEntryResponse
+		var err error
+		defer close(result)
+		response, err = client.DeleteForwardEntry(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // DeleteForwardEntryRequest is the request struct for api DeleteForwardEntry
 type DeleteForwardEntryRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    ForwardTableId     string `position:"Query" name:"ForwardTableId"`
-                    ForwardEntryId     string `position:"Query" name:"ForwardEntryId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ForwardTableId       string           `position:"Query" name:"ForwardTableId"`
+	ForwardEntryId       string           `position:"Query" name:"ForwardEntryId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
-
 
 // DeleteForwardEntryResponse is the response struct for api DeleteForwardEntry
 type DeleteForwardEntryResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteForwardEntryRequest creates a request to invoke DeleteForwardEntry API
 func CreateDeleteForwardEntryRequest() (request *DeleteForwardEntryRequest) {
-request = &DeleteForwardEntryRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteForwardEntry", "", "")
-return
+	request = &DeleteForwardEntryRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteForwardEntry", "ecs", "openAPI")
+	return
 }
 
 // CreateDeleteForwardEntryResponse creates a response to parse from DeleteForwardEntry response
 func CreateDeleteForwardEntryResponse() (response *DeleteForwardEntryResponse) {
-response = &DeleteForwardEntryResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DeleteForwardEntryResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

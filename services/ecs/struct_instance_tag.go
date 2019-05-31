@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,6 @@ package ecs
 
 // InstanceTag is a nested struct in ecs response
 type InstanceTag struct {
-            Key     string `json:"Key" xml:"Key"`
-            Value     string `json:"Value" xml:"Value"`
+	Key   string `json:"Key" xml:"Key"`
+	Value string `json:"Value" xml:"Value"`
 }

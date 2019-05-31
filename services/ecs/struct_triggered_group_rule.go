@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,20 +17,20 @@ package ecs
 
 // TriggeredGroupRule is a nested struct in ecs response
 type TriggeredGroupRule struct {
-            IpProtocol     string `json:"IpProtocol" xml:"IpProtocol"`
-            PortRange     string `json:"PortRange" xml:"PortRange"`
-            SourceGroupId     string `json:"SourceGroupId" xml:"SourceGroupId"`
-            SourceGroupName     string `json:"SourceGroupName" xml:"SourceGroupName"`
-            SourceCidrIp     string `json:"SourceCidrIp" xml:"SourceCidrIp"`
-            Policy     string `json:"Policy" xml:"Policy"`
-            NicType     string `json:"NicType" xml:"NicType"`
-            SourceGroupOwnerAccount     string `json:"SourceGroupOwnerAccount" xml:"SourceGroupOwnerAccount"`
-            DestGroupId     string `json:"DestGroupId" xml:"DestGroupId"`
-            DestGroupName     string `json:"DestGroupName" xml:"DestGroupName"`
-            DestCidrIp     string `json:"DestCidrIp" xml:"DestCidrIp"`
-            DestGroupOwnerAccount     string `json:"DestGroupOwnerAccount" xml:"DestGroupOwnerAccount"`
-            Priority     string `json:"Priority" xml:"Priority"`
-            Direction     string `json:"Direction" xml:"Direction"`
-            Description     string `json:"Description" xml:"Description"`
-            CreateTime     string `json:"CreateTime" xml:"CreateTime"`
+	IpProtocol              string `json:"IpProtocol" xml:"IpProtocol"`
+	PortRange               string `json:"PortRange" xml:"PortRange"`
+	SourceGroupId           string `json:"SourceGroupId" xml:"SourceGroupId"`
+	SourceGroupName         string `json:"SourceGroupName" xml:"SourceGroupName"`
+	SourceCidrIp            string `json:"SourceCidrIp" xml:"SourceCidrIp"`
+	Policy                  string `json:"Policy" xml:"Policy"`
+	NicType                 string `json:"NicType" xml:"NicType"`
+	SourceGroupOwnerAccount string `json:"SourceGroupOwnerAccount" xml:"SourceGroupOwnerAccount"`
+	DestGroupId             string `json:"DestGroupId" xml:"DestGroupId"`
+	DestGroupName           string `json:"DestGroupName" xml:"DestGroupName"`
+	DestCidrIp              string `json:"DestCidrIp" xml:"DestCidrIp"`
+	DestGroupOwnerAccount   string `json:"DestGroupOwnerAccount" xml:"DestGroupOwnerAccount"`
+	Priority                string `json:"Priority" xml:"Priority"`
+	Direction               string `json:"Direction" xml:"Direction"`
+	Description             string `json:"Description" xml:"Description"`
+	CreateTime              string `json:"CreateTime" xml:"CreateTime"`
 }

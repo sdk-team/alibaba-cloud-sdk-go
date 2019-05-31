@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +17,8 @@ package ecs
 
 // InstanceFullStatusType is a nested struct in ecs response
 type InstanceFullStatusType struct {
-            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-            Status Status  `json:"Status" xml:"Status"`
-            HealthStatus HealthStatus  `json:"HealthStatus" xml:"HealthStatus"`
-                    ScheduledSystemEventSet ScheduledSystemEventSet `json:"ScheduledSystemEventSet" xml:"ScheduledSystemEventSet"`
+	InstanceId              string                  `json:"InstanceId" xml:"InstanceId"`
+	Status                  Status                  `json:"Status" xml:"Status"`
+	HealthStatus            HealthStatus            `json:"HealthStatus" xml:"HealthStatus"`
+	ScheduledSystemEventSet ScheduledSystemEventSet `json:"ScheduledSystemEventSet" xml:"ScheduledSystemEventSet"`
 }

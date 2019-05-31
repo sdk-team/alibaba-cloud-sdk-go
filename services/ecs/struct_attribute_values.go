@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // AttributeValues is a nested struct in ecs response
 type AttributeValues struct {
-ValueItem []ValueItem `json:"ValueItem" xml:"ValueItem"`
+	ValueItem []ValueItem `json:"ValueItem" xml:"ValueItem"`
 }

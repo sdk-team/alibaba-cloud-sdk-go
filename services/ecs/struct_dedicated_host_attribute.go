@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,6 @@ package ecs
 
 // DedicatedHostAttribute is a nested struct in ecs response
 type DedicatedHostAttribute struct {
-            DedicatedHostName     string `json:"DedicatedHostName" xml:"DedicatedHostName"`
-            DedicatedHostId     string `json:"DedicatedHostId" xml:"DedicatedHostId"`
+	DedicatedHostName string `json:"DedicatedHostName" xml:"DedicatedHostName"`
+	DedicatedHostId   string `json:"DedicatedHostId" xml:"DedicatedHostId"`
 }

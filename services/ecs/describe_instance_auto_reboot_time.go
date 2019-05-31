@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,97 +16,94 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // DescribeInstanceAutoRebootTime invokes the ecs.DescribeInstanceAutoRebootTime API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstanceautoreboottime.html
 func (client *Client) DescribeInstanceAutoRebootTime(request *DescribeInstanceAutoRebootTimeRequest) (response *DescribeInstanceAutoRebootTimeResponse, err error) {
-response = CreateDescribeInstanceAutoRebootTimeResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeInstanceAutoRebootTimeResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // DescribeInstanceAutoRebootTimeWithChan invokes the ecs.DescribeInstanceAutoRebootTime API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstanceautoreboottime.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceAutoRebootTimeWithChan(request *DescribeInstanceAutoRebootTimeRequest) (<-chan *DescribeInstanceAutoRebootTimeResponse, <-chan error) {
-responseChan := make(chan *DescribeInstanceAutoRebootTimeResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeInstanceAutoRebootTime(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeInstanceAutoRebootTimeResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeInstanceAutoRebootTime(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // DescribeInstanceAutoRebootTimeWithCallback invokes the ecs.DescribeInstanceAutoRebootTime API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstanceautoreboottime.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeInstanceAutoRebootTimeWithCallback(request *DescribeInstanceAutoRebootTimeRequest, callback func(response *DescribeInstanceAutoRebootTimeResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeInstanceAutoRebootTimeResponse
-var err error
-defer close(result)
-response, err = client.DescribeInstanceAutoRebootTime(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeInstanceAutoRebootTimeWithCallback(request *DescribeInstanceAutoRebootTimeRequest, callback func(response *DescribeInstanceAutoRebootTimeResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeInstanceAutoRebootTimeResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeInstanceAutoRebootTime(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // DescribeInstanceAutoRebootTimeRequest is the request struct for api DescribeInstanceAutoRebootTime
 type DescribeInstanceAutoRebootTimeRequest struct {
-*requests.RpcRequest
-                    AutoRebootTimeTo     string `position:"Query" name:"AutoRebootTimeTo"`
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    AutoRebootTimeFrom     string `position:"Query" name:"AutoRebootTimeFrom"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    InstanceIds  *[]string `position:"Query" name:"InstanceIds"  type:"Repeated"`
+	*requests.RpcRequest
+	AutoRebootTimeTo     string           `position:"Query" name:"AutoRebootTimeTo"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AutoRebootTimeFrom   string           `position:"Query" name:"AutoRebootTimeFrom"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceIds          *[]string        `position:"Query" name:"InstanceIds"  type:"Repeated"`
 }
-
 
 // DescribeInstanceAutoRebootTimeResponse is the response struct for api DescribeInstanceAutoRebootTime
 type DescribeInstanceAutoRebootTimeResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-                    AutoRebootInfos AutoRebootInfos `json:"AutoRebootInfos" xml:"AutoRebootInfos"`
+	*responses.BaseResponse
+	RequestId       string          `json:"RequestId" xml:"RequestId"`
+	AutoRebootInfos AutoRebootInfos `json:"AutoRebootInfos" xml:"AutoRebootInfos"`
 }
 
 // CreateDescribeInstanceAutoRebootTimeRequest creates a request to invoke DescribeInstanceAutoRebootTime API
 func CreateDescribeInstanceAutoRebootTimeRequest() (request *DescribeInstanceAutoRebootTimeRequest) {
-request = &DescribeInstanceAutoRebootTimeRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeInstanceAutoRebootTime", "", "")
-return
+	request = &DescribeInstanceAutoRebootTimeRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeInstanceAutoRebootTime", "ecs", "openAPI")
+	return
 }
 
 // CreateDescribeInstanceAutoRebootTimeResponse creates a response to parse from DescribeInstanceAutoRebootTime response
 func CreateDescribeInstanceAutoRebootTimeResponse() (response *DescribeInstanceAutoRebootTimeResponse) {
-response = &DescribeInstanceAutoRebootTimeResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeInstanceAutoRebootTimeResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

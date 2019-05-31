@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,97 +16,94 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // DeleteInstance invokes the ecs.DeleteInstance API synchronously
 // api document: https://help.aliyun.com/api/ecs/deleteinstance.html
 func (client *Client) DeleteInstance(request *DeleteInstanceRequest) (response *DeleteInstanceResponse, err error) {
-response = CreateDeleteInstanceResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDeleteInstanceResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // DeleteInstanceWithChan invokes the ecs.DeleteInstance API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deleteinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteInstanceWithChan(request *DeleteInstanceRequest) (<-chan *DeleteInstanceResponse, <-chan error) {
-responseChan := make(chan *DeleteInstanceResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DeleteInstance(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DeleteInstanceResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DeleteInstance(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // DeleteInstanceWithCallback invokes the ecs.DeleteInstance API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deleteinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteInstanceWithCallback(request *DeleteInstanceRequest, callback func(response *DeleteInstanceResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DeleteInstanceResponse
-var err error
-defer close(result)
-response, err = client.DeleteInstance(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DeleteInstanceWithCallback(request *DeleteInstanceRequest, callback func(response *DeleteInstanceResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DeleteInstanceResponse
+		var err error
+		defer close(result)
+		response, err = client.DeleteInstance(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // DeleteInstanceRequest is the request struct for api DeleteInstance
 type DeleteInstanceRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    TerminateSubscription     requests.Boolean `position:"Query" name:"TerminateSubscription"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    InstanceId     string `position:"Query" name:"InstanceId"`
-                    Force     requests.Boolean `position:"Query" name:"Force"`
+	*requests.RpcRequest
+	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	TerminateSubscription requests.Boolean `position:"Query" name:"TerminateSubscription"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId            string           `position:"Query" name:"InstanceId"`
+	Force                 requests.Boolean `position:"Query" name:"Force"`
 }
-
 
 // DeleteInstanceResponse is the response struct for api DeleteInstance
 type DeleteInstanceResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteInstanceRequest creates a request to invoke DeleteInstance API
 func CreateDeleteInstanceRequest() (request *DeleteInstanceRequest) {
-request = &DeleteInstanceRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteInstance", "", "")
-return
+	request = &DeleteInstanceRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteInstance", "ecs", "openAPI")
+	return
 }
 
 // CreateDeleteInstanceResponse creates a response to parse from DeleteInstance response
 func CreateDeleteInstanceResponse() (response *DeleteInstanceResponse) {
-response = &DeleteInstanceResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DeleteInstanceResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

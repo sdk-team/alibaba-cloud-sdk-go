@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // ForwardTableEntries is a nested struct in ecs response
 type ForwardTableEntries struct {
-ForwardTableEntry []ForwardTableEntry `json:"ForwardTableEntry" xml:"ForwardTableEntry"`
+	ForwardTableEntry []ForwardTableEntry `json:"ForwardTableEntry" xml:"ForwardTableEntry"`
 }

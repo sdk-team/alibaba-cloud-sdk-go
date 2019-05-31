@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +17,8 @@ package ecs
 
 // RecommendFilter is a nested struct in ecs response
 type RecommendFilter struct {
-            Product     string `json:"Product" xml:"Product"`
-            ResourceType     string `json:"ResourceType" xml:"ResourceType"`
-            AttributeName     string `json:"AttributeName" xml:"AttributeName"`
-            AttributeValue     string `json:"AttributeValue" xml:"AttributeValue"`
+	Product        string `json:"Product" xml:"Product"`
+	ResourceType   string `json:"ResourceType" xml:"ResourceType"`
+	AttributeName  string `json:"AttributeName" xml:"AttributeName"`
+	AttributeValue string `json:"AttributeValue" xml:"AttributeValue"`
 }

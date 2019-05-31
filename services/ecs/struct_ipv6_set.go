@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // Ipv6Set is a nested struct in ecs response
 type Ipv6Set struct {
-            Ipv6Address     string `json:"Ipv6Address" xml:"Ipv6Address"`
+	Ipv6Address string `json:"Ipv6Address" xml:"Ipv6Address"`
 }

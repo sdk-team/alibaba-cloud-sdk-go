@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // DataDiskCategories is a nested struct in ecs response
 type DataDiskCategories struct {
-SupportedDataDiskCategory []    string  `json:"supportedDataDiskCategory" xml:"supportedDataDiskCategory"`
+	SupportedDataDiskCategory []string `json:"supportedDataDiskCategory" xml:"supportedDataDiskCategory"`
 }

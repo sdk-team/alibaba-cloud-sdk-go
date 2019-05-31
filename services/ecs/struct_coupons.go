@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // Coupons is a nested struct in ecs response
 type Coupons struct {
-Coupon []Coupon `json:"Coupon" xml:"Coupon"`
+	Coupon []Coupon `json:"Coupon" xml:"Coupon"`
 }

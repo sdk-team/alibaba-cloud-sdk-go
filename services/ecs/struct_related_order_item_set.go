@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,6 @@ package ecs
 
 // RelatedOrderItemSet is a nested struct in ecs response
 type RelatedOrderItemSet struct {
-                InstanceIdSet InstanceIdSet `json:"InstanceIdSet" xml:"InstanceIdSet"`
-                RelatedOrderIds RelatedOrderIds `json:"RelatedOrderIds" xml:"RelatedOrderIds"`
+	InstanceIdSet   InstanceIdSet   `json:"InstanceIdSet" xml:"InstanceIdSet"`
+	RelatedOrderIds RelatedOrderIds `json:"RelatedOrderIds" xml:"RelatedOrderIds"`
 }

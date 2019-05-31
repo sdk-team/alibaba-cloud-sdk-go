@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,10 +17,10 @@ package ecs
 
 // NetworkInterfacePermission is a nested struct in ecs response
 type NetworkInterfacePermission struct {
-            Permission     string `json:"Permission" xml:"Permission"`
-            AccountId     int `json:"AccountId" xml:"AccountId"`
-            NetworkInterfaceId     string `json:"NetworkInterfaceId" xml:"NetworkInterfaceId"`
-            ServiceName     string `json:"ServiceName" xml:"ServiceName"`
-            NetworkInterfacePermissionId     string `json:"NetworkInterfacePermissionId" xml:"NetworkInterfacePermissionId"`
-            PermissionState     string `json:"PermissionState" xml:"PermissionState"`
+	Permission                   string `json:"Permission" xml:"Permission"`
+	AccountId                    int64  `json:"AccountId" xml:"AccountId"`
+	NetworkInterfaceId           string `json:"NetworkInterfaceId" xml:"NetworkInterfaceId"`
+	ServiceName                  string `json:"ServiceName" xml:"ServiceName"`
+	NetworkInterfacePermissionId string `json:"NetworkInterfacePermissionId" xml:"NetworkInterfacePermissionId"`
+	PermissionState              string `json:"PermissionState" xml:"PermissionState"`
 }

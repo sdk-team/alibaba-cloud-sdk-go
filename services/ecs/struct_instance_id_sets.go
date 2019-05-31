@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // InstanceIdSets is a nested struct in ecs response
 type InstanceIdSets struct {
-InstanceIdSet []    string  `json:"InstanceIdSet" xml:"InstanceIdSet"`
+	InstanceIdSet []string `json:"InstanceIdSet" xml:"InstanceIdSet"`
 }

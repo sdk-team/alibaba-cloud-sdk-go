@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // DedicatedHostRenewAttributes is a nested struct in ecs response
 type DedicatedHostRenewAttributes struct {
-DedicatedHostRenewAttribute []DedicatedHostRenewAttribute `json:"DedicatedHostRenewAttribute" xml:"DedicatedHostRenewAttribute"`
+	DedicatedHostRenewAttribute []DedicatedHostRenewAttribute `json:"DedicatedHostRenewAttribute" xml:"DedicatedHostRenewAttribute"`
 }

@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +17,7 @@ package ecs
 
 // PrivateIpSet is a nested struct in ecs response
 type PrivateIpSet struct {
-            PrivateIpAddress     string `json:"PrivateIpAddress" xml:"PrivateIpAddress"`
-            Primary     bool `json:"Primary" xml:"Primary"`
-            AssociatedPublicIp AssociatedPublicIp  `json:"AssociatedPublicIp" xml:"AssociatedPublicIp"`
+	PrivateIpAddress   string             `json:"PrivateIpAddress" xml:"PrivateIpAddress"`
+	Primary            bool               `json:"Primary" xml:"Primary"`
+	AssociatedPublicIp AssociatedPublicIp `json:"AssociatedPublicIp" xml:"AssociatedPublicIp"`
 }

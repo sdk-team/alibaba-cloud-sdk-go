@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,12 +17,12 @@ package ecs
 
 // QosGroup is a nested struct in ecs response
 type QosGroup struct {
-            QosGroupName     string `json:"QosGroupName" xml:"QosGroupName"`
-            Rx     string `json:"Rx" xml:"Rx"`
-            Tx     string `json:"Tx" xml:"Tx"`
-            RxPps     string `json:"RxPps" xml:"RxPps"`
-            TxPps     string `json:"TxPps" xml:"TxPps"`
-            Type     string `json:"Type" xml:"Type"`
-            GmtCreate     string `json:"GmtCreate" xml:"GmtCreate"`
-            GmtModify     string `json:"GmtModify" xml:"GmtModify"`
+	QosGroupName string `json:"QosGroupName" xml:"QosGroupName"`
+	Rx           string `json:"Rx" xml:"Rx"`
+	Tx           string `json:"Tx" xml:"Tx"`
+	RxPps        string `json:"RxPps" xml:"RxPps"`
+	TxPps        string `json:"TxPps" xml:"TxPps"`
+	Type         string `json:"Type" xml:"Type"`
+	GmtCreate    string `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModify    string `json:"GmtModify" xml:"GmtModify"`
 }

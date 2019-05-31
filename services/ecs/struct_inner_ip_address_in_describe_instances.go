@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // InnerIpAddressInDescribeInstances is a nested struct in ecs response
 type InnerIpAddressInDescribeInstances struct {
-IpAddress []    string  `json:"IpAddress" xml:"IpAddress"`
+	IpAddress []string `json:"IpAddress" xml:"IpAddress"`
 }

@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // DiskDeviceMappings is a nested struct in ecs response
 type DiskDeviceMappings struct {
-DiskDeviceMapping []DiskDeviceMapping `json:"DiskDeviceMapping" xml:"DiskDeviceMapping"`
+	DiskDeviceMapping []DiskDeviceMapping `json:"DiskDeviceMapping" xml:"DiskDeviceMapping"`
 }

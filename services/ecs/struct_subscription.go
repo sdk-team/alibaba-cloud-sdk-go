@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +17,7 @@ package ecs
 
 // Subscription is a nested struct in ecs response
 type Subscription struct {
-            Name     string `json:"Name" xml:"Name"`
-            ResourceType     string `json:"ResourceType" xml:"ResourceType"`
-            MnsQueueArn     string `json:"MnsQueueArn" xml:"MnsQueueArn"`
+	Name         string `json:"Name" xml:"Name"`
+	ResourceType string `json:"ResourceType" xml:"ResourceType"`
+	MnsQueueArn  string `json:"MnsQueueArn" xml:"MnsQueueArn"`
 }

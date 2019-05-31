@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // Events is a nested struct in ecs response
 type Events struct {
-Event []Event `json:"Event" xml:"Event"`
+	Event []Event `json:"Event" xml:"Event"`
 }

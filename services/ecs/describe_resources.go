@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,118 +16,117 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // DescribeResources invokes the ecs.DescribeResources API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeresources.html
 func (client *Client) DescribeResources(request *DescribeResourcesRequest) (response *DescribeResourcesResponse, err error) {
-response = CreateDescribeResourcesResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeResourcesResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // DescribeResourcesWithChan invokes the ecs.DescribeResources API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeresources.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeResourcesWithChan(request *DescribeResourcesRequest) (<-chan *DescribeResourcesResponse, <-chan error) {
-responseChan := make(chan *DescribeResourcesResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeResources(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeResourcesResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeResources(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // DescribeResourcesWithCallback invokes the ecs.DescribeResources API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeresources.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeResourcesWithCallback(request *DescribeResourcesRequest, callback func(response *DescribeResourcesResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeResourcesResponse
-var err error
-defer close(result)
-response, err = client.DescribeResources(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeResourcesWithCallback(request *DescribeResourcesRequest, callback func(response *DescribeResourcesResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeResourcesResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeResources(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // DescribeResourcesRequest is the request struct for api DescribeResources
 type DescribeResourcesRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    Global     string `position:"Query" name:"Global"`
-                    TemplateTag  *[]DescribeResourcesTemplateTag `position:"Query" name:"TemplateTag"  type:"Repeated"`
-                    Keyword     string `position:"Query" name:"Keyword"`
-                    Product     string `position:"Query" name:"Product"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    ResourceType     string `position:"Query" name:"ResourceType"`
-                    RegionNo     string `position:"Query" name:"RegionNo"`
-                    Filter  *[]DescribeResourcesFilter `position:"Query" name:"Filter"  type:"Repeated"`
-                    Marker     string `position:"Query" name:"Marker"`
-                    MaxItems     requests.Integer `position:"Query" name:"MaxItems"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer                `position:"Query" name:"ResourceOwnerId"`
+	Global               string                          `position:"Query" name:"Global"`
+	TemplateTag          *[]DescribeResourcesTemplateTag `position:"Query" name:"TemplateTag"  type:"Repeated"`
+	Keyword              string                          `position:"Query" name:"Keyword"`
+	Product              string                          `position:"Query" name:"Product"`
+	ResourceOwnerAccount string                          `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                          `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer                `position:"Query" name:"OwnerId"`
+	ResourceType         string                          `position:"Query" name:"ResourceType"`
+	RegionNo             string                          `position:"Query" name:"RegionNo"`
+	Filter               *[]DescribeResourcesFilter      `position:"Query" name:"Filter"  type:"Repeated"`
+	Marker               string                          `position:"Query" name:"Marker"`
+	MaxItems             requests.Integer                `position:"Query" name:"MaxItems"`
 }
 
 // DescribeResourcesTemplateTag is a repeated param struct in DescribeResourcesRequest
-type DescribeResourcesTemplateTag struct{
-        Key     string `name:"Key"`
-        Value     string `name:"Value"`
+type DescribeResourcesTemplateTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
+
 // DescribeResourcesFilter is a repeated param struct in DescribeResourcesRequest
-type DescribeResourcesFilter struct{
-        AttributeName     string `name:"AttributeName"`
-        Operation     string `name:"Operation"`
-        AttributeValue     string `name:"AttributeValue"`
+type DescribeResourcesFilter struct {
+	AttributeName  string `name:"AttributeName"`
+	Operation      string `name:"Operation"`
+	AttributeValue string `name:"AttributeValue"`
 }
 
 // DescribeResourcesResponse is the response struct for api DescribeResources
 type DescribeResourcesResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            Marker     string `json:"Marker" xml:"Marker"`
-            Truncated     bool `json:"Truncated" xml:"Truncated"`
-            EstimatedTotal     int `json:"EstimatedTotal" xml:"EstimatedTotal"`
-                    Resources Resources `json:"Resources" xml:"Resources"`
+	*responses.BaseResponse
+	RequestId      string    `json:"RequestId" xml:"RequestId"`
+	Marker         string    `json:"Marker" xml:"Marker"`
+	Truncated      bool      `json:"Truncated" xml:"Truncated"`
+	EstimatedTotal int       `json:"EstimatedTotal" xml:"EstimatedTotal"`
+	Resources      Resources `json:"Resources" xml:"Resources"`
 }
 
 // CreateDescribeResourcesRequest creates a request to invoke DescribeResources API
 func CreateDescribeResourcesRequest() (request *DescribeResourcesRequest) {
-request = &DescribeResourcesRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeResources", "", "")
-return
+	request = &DescribeResourcesRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeResources", "ecs", "openAPI")
+	return
 }
 
 // CreateDescribeResourcesResponse creates a response to parse from DescribeResources response
 func CreateDescribeResourcesResponse() (response *DescribeResourcesResponse) {
-response = &DescribeResourcesResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeResourcesResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

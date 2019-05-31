@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // InstanceGenerations is a nested struct in ecs response
 type InstanceGenerations struct {
-SupportedInstanceGeneration []    string  `json:"supportedInstanceGeneration" xml:"supportedInstanceGeneration"`
+	SupportedInstanceGeneration []string `json:"supportedInstanceGeneration" xml:"supportedInstanceGeneration"`
 }

@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // IpRanges is a nested struct in ecs response
 type IpRanges struct {
-IpRange []IpRange `json:"IpRange" xml:"IpRange"`
+	IpRange []IpRange `json:"IpRange" xml:"IpRange"`
 }

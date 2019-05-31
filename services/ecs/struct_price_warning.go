@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,6 @@ package ecs
 
 // PriceWarning is a nested struct in ecs response
 type PriceWarning struct {
-            Code     string `json:"Code" xml:"Code"`
-            Msg     string `json:"Msg" xml:"Msg"`
+	Code string `json:"Code" xml:"Code"`
+	Msg  string `json:"Msg" xml:"Msg"`
 }

@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,99 +16,96 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // DescribeZones invokes the ecs.DescribeZones API synchronously
 // api document: https://help.aliyun.com/api/ecs/describezones.html
 func (client *Client) DescribeZones(request *DescribeZonesRequest) (response *DescribeZonesResponse, err error) {
-response = CreateDescribeZonesResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeZonesResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // DescribeZonesWithChan invokes the ecs.DescribeZones API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describezones.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeZonesWithChan(request *DescribeZonesRequest) (<-chan *DescribeZonesResponse, <-chan error) {
-responseChan := make(chan *DescribeZonesResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeZones(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeZonesResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeZones(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // DescribeZonesWithCallback invokes the ecs.DescribeZones API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describezones.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeZonesWithCallback(request *DescribeZonesRequest, callback func(response *DescribeZonesResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeZonesResponse
-var err error
-defer close(result)
-response, err = client.DescribeZones(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeZonesWithCallback(request *DescribeZonesRequest, callback func(response *DescribeZonesResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeZonesResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeZones(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // DescribeZonesRequest is the request struct for api DescribeZones
 type DescribeZonesRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    InstanceChargeType     string `position:"Query" name:"InstanceChargeType"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    Verbose     requests.Boolean `position:"Query" name:"Verbose"`
-                    SpotStrategy     string `position:"Query" name:"SpotStrategy"`
-                    AcceptLanguage     string `position:"Query" name:"AcceptLanguage"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Verbose              requests.Boolean `position:"Query" name:"Verbose"`
+	SpotStrategy         string           `position:"Query" name:"SpotStrategy"`
+	AcceptLanguage       string           `position:"Query" name:"AcceptLanguage"`
 }
-
 
 // DescribeZonesResponse is the response struct for api DescribeZones
 type DescribeZonesResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-                    Zones ZonesInDescribeZones `json:"Zones" xml:"Zones"`
+	*responses.BaseResponse
+	RequestId string               `json:"RequestId" xml:"RequestId"`
+	Zones     ZonesInDescribeZones `json:"Zones" xml:"Zones"`
 }
 
 // CreateDescribeZonesRequest creates a request to invoke DescribeZones API
 func CreateDescribeZonesRequest() (request *DescribeZonesRequest) {
-request = &DescribeZonesRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeZones", "", "")
-return
+	request = &DescribeZonesRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeZones", "ecs", "openAPI")
+	return
 }
 
 // CreateDescribeZonesResponse creates a response to parse from DescribeZones response
 func CreateDescribeZonesResponse() (response *DescribeZonesResponse) {
-response = &DescribeZonesResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeZonesResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

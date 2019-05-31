@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,6 @@ package ecs
 
 // LockReason is a nested struct in ecs response
 type LockReason struct {
-            LockReason     string `json:"LockReason" xml:"LockReason"`
-            LockMsg     string `json:"LockMsg" xml:"LockMsg"`
+	LockReason string `json:"LockReason" xml:"LockReason"`
+	LockMsg    string `json:"LockMsg" xml:"LockMsg"`
 }

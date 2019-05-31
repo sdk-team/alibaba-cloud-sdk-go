@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,13 +17,13 @@ package ecs
 
 // Capacity is a nested struct in ecs response
 type Capacity struct {
-            TotalVcpus     int `json:"TotalVcpus" xml:"TotalVcpus"`
-            AvailableVcpus     int `json:"AvailableVcpus" xml:"AvailableVcpus"`
-            TotalVgpus     int `json:"TotalVgpus" xml:"TotalVgpus"`
-            AvailableVgpus     int `json:"AvailableVgpus" xml:"AvailableVgpus"`
-            TotalMemory     float64 `json:"TotalMemory" xml:"TotalMemory"`
-            AvailableMemory     float64 `json:"AvailableMemory" xml:"AvailableMemory"`
-            TotalLocalStorage     int `json:"TotalLocalStorage" xml:"TotalLocalStorage"`
-            AvailableLocalStorage     int `json:"AvailableLocalStorage" xml:"AvailableLocalStorage"`
-            LocalStorageCategory     string `json:"LocalStorageCategory" xml:"LocalStorageCategory"`
+	TotalVcpus            int     `json:"TotalVcpus" xml:"TotalVcpus"`
+	AvailableVcpus        int     `json:"AvailableVcpus" xml:"AvailableVcpus"`
+	TotalVgpus            int     `json:"TotalVgpus" xml:"TotalVgpus"`
+	AvailableVgpus        int     `json:"AvailableVgpus" xml:"AvailableVgpus"`
+	TotalMemory           float64 `json:"TotalMemory" xml:"TotalMemory"`
+	AvailableMemory       float64 `json:"AvailableMemory" xml:"AvailableMemory"`
+	TotalLocalStorage     int     `json:"TotalLocalStorage" xml:"TotalLocalStorage"`
+	AvailableLocalStorage int     `json:"AvailableLocalStorage" xml:"AvailableLocalStorage"`
+	LocalStorageCategory  string  `json:"LocalStorageCategory" xml:"LocalStorageCategory"`
 }

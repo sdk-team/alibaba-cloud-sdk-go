@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +17,8 @@ package ecs
 
 // FilterAttribute is a nested struct in ecs response
 type FilterAttribute struct {
-            Name     string `json:"Name" xml:"Name"`
-            Type     string `json:"Type" xml:"Type"`
-                Values Values `json:"Values" xml:"Values"`
-                SupportOperations SupportOperations `json:"SupportOperations" xml:"SupportOperations"`
+	Name              string            `json:"Name" xml:"Name"`
+	Type              string            `json:"Type" xml:"Type"`
+	Values            Values            `json:"Values" xml:"Values"`
+	SupportOperations SupportOperations `json:"SupportOperations" xml:"SupportOperations"`
 }

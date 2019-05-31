@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // KMSKeys is a nested struct in ecs response
 type KMSKeys struct {
-KMSKey []KMSKey `json:"KMSKey" xml:"KMSKey"`
+	KMSKey []KMSKey `json:"KMSKey" xml:"KMSKey"`
 }

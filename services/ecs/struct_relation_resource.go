@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,6 @@ package ecs
 
 // RelationResource is a nested struct in ecs response
 type RelationResource struct {
-            RelationResourceId     string `json:"RelationResourceId" xml:"RelationResourceId"`
-            RelationResourceType     string `json:"RelationResourceType" xml:"RelationResourceType"`
+	RelationResourceId   string `json:"RelationResourceId" xml:"RelationResourceId"`
+	RelationResourceType string `json:"RelationResourceType" xml:"RelationResourceType"`
 }

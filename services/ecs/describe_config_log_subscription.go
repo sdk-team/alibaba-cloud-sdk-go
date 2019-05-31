@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,102 +16,99 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // DescribeConfigLogSubscription invokes the ecs.DescribeConfigLogSubscription API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeconfiglogsubscription.html
 func (client *Client) DescribeConfigLogSubscription(request *DescribeConfigLogSubscriptionRequest) (response *DescribeConfigLogSubscriptionResponse, err error) {
-response = CreateDescribeConfigLogSubscriptionResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeConfigLogSubscriptionResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // DescribeConfigLogSubscriptionWithChan invokes the ecs.DescribeConfigLogSubscription API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeconfiglogsubscription.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeConfigLogSubscriptionWithChan(request *DescribeConfigLogSubscriptionRequest) (<-chan *DescribeConfigLogSubscriptionResponse, <-chan error) {
-responseChan := make(chan *DescribeConfigLogSubscriptionResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeConfigLogSubscription(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeConfigLogSubscriptionResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeConfigLogSubscription(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // DescribeConfigLogSubscriptionWithCallback invokes the ecs.DescribeConfigLogSubscription API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeconfiglogsubscription.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeConfigLogSubscriptionWithCallback(request *DescribeConfigLogSubscriptionRequest, callback func(response *DescribeConfigLogSubscriptionResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeConfigLogSubscriptionResponse
-var err error
-defer close(result)
-response, err = client.DescribeConfigLogSubscription(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeConfigLogSubscriptionWithCallback(request *DescribeConfigLogSubscriptionRequest, callback func(response *DescribeConfigLogSubscriptionResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeConfigLogSubscriptionResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeConfigLogSubscription(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // DescribeConfigLogSubscriptionRequest is the request struct for api DescribeConfigLogSubscription
 type DescribeConfigLogSubscriptionRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
-                    PageSize     requests.Integer `position:"Query" name:"PageSize"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    ResourceType  *[]string `position:"Query" name:"ResourceType"  type:"Repeated"`
-                    Name  *[]string `position:"Query" name:"Name"  type:"Repeated"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceType         *[]string        `position:"Query" name:"ResourceType"  type:"Repeated"`
+	Name                 *[]string        `position:"Query" name:"Name"  type:"Repeated"`
 }
-
 
 // DescribeConfigLogSubscriptionResponse is the response struct for api DescribeConfigLogSubscription
 type DescribeConfigLogSubscriptionResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            TotalCount     int `json:"TotalCount" xml:"TotalCount"`
-            PageNumber     int `json:"PageNumber" xml:"PageNumber"`
-            PageSize     int `json:"PageSize" xml:"PageSize"`
-                    SubscriptionSet SubscriptionSet `json:"SubscriptionSet" xml:"SubscriptionSet"`
+	*responses.BaseResponse
+	RequestId       string          `json:"RequestId" xml:"RequestId"`
+	TotalCount      int             `json:"TotalCount" xml:"TotalCount"`
+	PageNumber      int             `json:"PageNumber" xml:"PageNumber"`
+	PageSize        int             `json:"PageSize" xml:"PageSize"`
+	SubscriptionSet SubscriptionSet `json:"SubscriptionSet" xml:"SubscriptionSet"`
 }
 
 // CreateDescribeConfigLogSubscriptionRequest creates a request to invoke DescribeConfigLogSubscription API
 func CreateDescribeConfigLogSubscriptionRequest() (request *DescribeConfigLogSubscriptionRequest) {
-request = &DescribeConfigLogSubscriptionRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeConfigLogSubscription", "", "")
-return
+	request = &DescribeConfigLogSubscriptionRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeConfigLogSubscription", "ecs", "openAPI")
+	return
 }
 
 // CreateDescribeConfigLogSubscriptionResponse creates a response to parse from DescribeConfigLogSubscription response
 func CreateDescribeConfigLogSubscriptionResponse() (response *DescribeConfigLogSubscriptionResponse) {
-response = &DescribeConfigLogSubscriptionResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeConfigLogSubscriptionResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // Values is a nested struct in ecs response
 type Values struct {
-Value []    string  `json:"Value" xml:"Value"`
+	Value []string `json:"Value" xml:"Value"`
 }

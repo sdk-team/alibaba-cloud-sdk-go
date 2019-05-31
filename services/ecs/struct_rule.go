@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,6 @@ package ecs
 
 // Rule is a nested struct in ecs response
 type Rule struct {
-            RuleId     int `json:"RuleId" xml:"RuleId"`
-            Description     string `json:"Description" xml:"Description"`
+	RuleId      int64  `json:"RuleId" xml:"RuleId"`
+	Description string `json:"Description" xml:"Description"`
 }

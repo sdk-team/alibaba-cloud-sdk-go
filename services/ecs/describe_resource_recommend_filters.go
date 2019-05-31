@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,108 +16,106 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // DescribeResourceRecommendFilters invokes the ecs.DescribeResourceRecommendFilters API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeresourcerecommendfilters.html
 func (client *Client) DescribeResourceRecommendFilters(request *DescribeResourceRecommendFiltersRequest) (response *DescribeResourceRecommendFiltersResponse, err error) {
-response = CreateDescribeResourceRecommendFiltersResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeResourceRecommendFiltersResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // DescribeResourceRecommendFiltersWithChan invokes the ecs.DescribeResourceRecommendFilters API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeresourcerecommendfilters.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeResourceRecommendFiltersWithChan(request *DescribeResourceRecommendFiltersRequest) (<-chan *DescribeResourceRecommendFiltersResponse, <-chan error) {
-responseChan := make(chan *DescribeResourceRecommendFiltersResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeResourceRecommendFilters(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeResourceRecommendFiltersResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeResourceRecommendFilters(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // DescribeResourceRecommendFiltersWithCallback invokes the ecs.DescribeResourceRecommendFilters API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeresourcerecommendfilters.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeResourceRecommendFiltersWithCallback(request *DescribeResourceRecommendFiltersRequest, callback func(response *DescribeResourceRecommendFiltersResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeResourceRecommendFiltersResponse
-var err error
-defer close(result)
-response, err = client.DescribeResourceRecommendFilters(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeResourceRecommendFiltersWithCallback(request *DescribeResourceRecommendFiltersRequest, callback func(response *DescribeResourceRecommendFiltersResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeResourceRecommendFiltersResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeResourceRecommendFilters(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // DescribeResourceRecommendFiltersRequest is the request struct for api DescribeResourceRecommendFilters
 type DescribeResourceRecommendFiltersRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    AttributeValue     string `position:"Query" name:"AttributeValue"`
-                    Global     string `position:"Query" name:"Global"`
-                    AttributeName     string `position:"Query" name:"AttributeName"`
-                    TemplateTag  *[]DescribeResourceRecommendFiltersTemplateTag `position:"Query" name:"TemplateTag"  type:"Repeated"`
-                    Product     string `position:"Query" name:"Product"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    ResourceType     string `position:"Query" name:"ResourceType"`
-                    RegionNo     string `position:"Query" name:"RegionNo"`
-                    MaxItems     requests.Integer `position:"Query" name:"MaxItems"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer                               `position:"Query" name:"ResourceOwnerId"`
+	AttributeValue       string                                         `position:"Query" name:"AttributeValue"`
+	Global               string                                         `position:"Query" name:"Global"`
+	AttributeName        string                                         `position:"Query" name:"AttributeName"`
+	TemplateTag          *[]DescribeResourceRecommendFiltersTemplateTag `position:"Query" name:"TemplateTag"  type:"Repeated"`
+	Product              string                                         `position:"Query" name:"Product"`
+	ResourceOwnerAccount string                                         `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                                         `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer                               `position:"Query" name:"OwnerId"`
+	ResourceType         string                                         `position:"Query" name:"ResourceType"`
+	RegionNo             string                                         `position:"Query" name:"RegionNo"`
+	MaxItems             requests.Integer                               `position:"Query" name:"MaxItems"`
 }
 
 // DescribeResourceRecommendFiltersTemplateTag is a repeated param struct in DescribeResourceRecommendFiltersRequest
-type DescribeResourceRecommendFiltersTemplateTag struct{
-        Key     string `name:"Key"`
-        Value     string `name:"Value"`
+type DescribeResourceRecommendFiltersTemplateTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // DescribeResourceRecommendFiltersResponse is the response struct for api DescribeResourceRecommendFilters
 type DescribeResourceRecommendFiltersResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-                    RecommendFilters RecommendFilters `json:"RecommendFilters" xml:"RecommendFilters"`
+	*responses.BaseResponse
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	RecommendFilters RecommendFilters `json:"RecommendFilters" xml:"RecommendFilters"`
 }
 
 // CreateDescribeResourceRecommendFiltersRequest creates a request to invoke DescribeResourceRecommendFilters API
 func CreateDescribeResourceRecommendFiltersRequest() (request *DescribeResourceRecommendFiltersRequest) {
-request = &DescribeResourceRecommendFiltersRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeResourceRecommendFilters", "", "")
-return
+	request = &DescribeResourceRecommendFiltersRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeResourceRecommendFilters", "ecs", "openAPI")
+	return
 }
 
 // CreateDescribeResourceRecommendFiltersResponse creates a response to parse from DescribeResourceRecommendFilters response
 func CreateDescribeResourceRecommendFiltersResponse() (response *DescribeResourceRecommendFiltersResponse) {
-response = &DescribeResourceRecommendFiltersResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeResourceRecommendFiltersResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

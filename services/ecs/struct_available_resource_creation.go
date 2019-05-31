@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // AvailableResourceCreation is a nested struct in ecs response
 type AvailableResourceCreation struct {
-ResourceTypes []    string  `json:"ResourceTypes" xml:"ResourceTypes"`
+	ResourceTypes []string `json:"ResourceTypes" xml:"ResourceTypes"`
 }

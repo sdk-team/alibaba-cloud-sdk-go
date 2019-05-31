@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,96 +16,93 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // AttachVolume invokes the ecs.AttachVolume API synchronously
 // api document: https://help.aliyun.com/api/ecs/attachvolume.html
 func (client *Client) AttachVolume(request *AttachVolumeRequest) (response *AttachVolumeResponse, err error) {
-response = CreateAttachVolumeResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateAttachVolumeResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // AttachVolumeWithChan invokes the ecs.AttachVolume API asynchronously
 // api document: https://help.aliyun.com/api/ecs/attachvolume.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachVolumeWithChan(request *AttachVolumeRequest) (<-chan *AttachVolumeResponse, <-chan error) {
-responseChan := make(chan *AttachVolumeResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.AttachVolume(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *AttachVolumeResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.AttachVolume(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // AttachVolumeWithCallback invokes the ecs.AttachVolume API asynchronously
 // api document: https://help.aliyun.com/api/ecs/attachvolume.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) AttachVolumeWithCallback(request *AttachVolumeRequest, callback func(response *AttachVolumeResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *AttachVolumeResponse
-var err error
-defer close(result)
-response, err = client.AttachVolume(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) AttachVolumeWithCallback(request *AttachVolumeRequest, callback func(response *AttachVolumeResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *AttachVolumeResponse
+		var err error
+		defer close(result)
+		response, err = client.AttachVolume(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // AttachVolumeRequest is the request struct for api AttachVolume
 type AttachVolumeRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    InstanceId     string `position:"Query" name:"InstanceId"`
-                    VolumeId     string `position:"Query" name:"VolumeId"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	VolumeId             string           `position:"Query" name:"VolumeId"`
 }
-
 
 // AttachVolumeResponse is the response struct for api AttachVolume
 type AttachVolumeResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateAttachVolumeRequest creates a request to invoke AttachVolume API
 func CreateAttachVolumeRequest() (request *AttachVolumeRequest) {
-request = &AttachVolumeRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "AttachVolume", "", "")
-return
+	request = &AttachVolumeRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "AttachVolume", "ecs", "openAPI")
+	return
 }
 
 // CreateAttachVolumeResponse creates a response to parse from AttachVolume response
 func CreateAttachVolumeResponse() (response *AttachVolumeResponse) {
-response = &AttachVolumeResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &AttachVolumeResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

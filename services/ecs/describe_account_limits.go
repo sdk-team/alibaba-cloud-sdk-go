@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,101 +16,99 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // DescribeAccountLimits invokes the ecs.DescribeAccountLimits API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeaccountlimits.html
 func (client *Client) DescribeAccountLimits(request *DescribeAccountLimitsRequest) (response *DescribeAccountLimitsResponse, err error) {
-response = CreateDescribeAccountLimitsResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeAccountLimitsResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // DescribeAccountLimitsWithChan invokes the ecs.DescribeAccountLimits API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeaccountlimits.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccountLimitsWithChan(request *DescribeAccountLimitsRequest) (<-chan *DescribeAccountLimitsResponse, <-chan error) {
-responseChan := make(chan *DescribeAccountLimitsResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeAccountLimits(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeAccountLimitsResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeAccountLimits(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // DescribeAccountLimitsWithCallback invokes the ecs.DescribeAccountLimits API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeaccountlimits.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeAccountLimitsWithCallback(request *DescribeAccountLimitsRequest, callback func(response *DescribeAccountLimitsResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeAccountLimitsResponse
-var err error
-defer close(result)
-response, err = client.DescribeAccountLimits(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeAccountLimitsWithCallback(request *DescribeAccountLimitsRequest, callback func(response *DescribeAccountLimitsResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeAccountLimitsResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeAccountLimits(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // DescribeAccountLimitsRequest is the request struct for api DescribeAccountLimits
 type DescribeAccountLimitsRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    Filter  *[]DescribeAccountLimitsFilter `position:"Query" name:"Filter"  type:"Repeated"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer               `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string                         `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                         `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer               `position:"Query" name:"OwnerId"`
+	Filter               *[]DescribeAccountLimitsFilter `position:"Query" name:"Filter"  type:"Repeated"`
 }
 
 // DescribeAccountLimitsFilter is a repeated param struct in DescribeAccountLimitsRequest
-type DescribeAccountLimitsFilter struct{
-        Value *[]    string `name:"Value" type:"Repeated"`
-        Key     string `name:"Key"`
+type DescribeAccountLimitsFilter struct {
+	Value *[]string `name:"Value" type:"Repeated"`
+	Key   string    `name:"Key"`
 }
 
 // DescribeAccountLimitsResponse is the response struct for api DescribeAccountLimits
 type DescribeAccountLimitsResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-                    AccountLimitTypeSet AccountLimitTypeSet `json:"AccountLimitTypeSet" xml:"AccountLimitTypeSet"`
+	*responses.BaseResponse
+	RequestId           string              `json:"RequestId" xml:"RequestId"`
+	AccountLimitTypeSet AccountLimitTypeSet `json:"AccountLimitTypeSet" xml:"AccountLimitTypeSet"`
 }
 
 // CreateDescribeAccountLimitsRequest creates a request to invoke DescribeAccountLimits API
 func CreateDescribeAccountLimitsRequest() (request *DescribeAccountLimitsRequest) {
-request = &DescribeAccountLimitsRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeAccountLimits", "", "")
-return
+	request = &DescribeAccountLimitsRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeAccountLimits", "ecs", "openAPI")
+	return
 }
 
 // CreateDescribeAccountLimitsResponse creates a response to parse from DescribeAccountLimits response
 func CreateDescribeAccountLimitsResponse() (response *DescribeAccountLimitsResponse) {
-response = &DescribeAccountLimitsResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeAccountLimitsResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

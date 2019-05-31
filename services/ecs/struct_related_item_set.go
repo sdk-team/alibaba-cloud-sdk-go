@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // RelatedItemSet is a nested struct in ecs response
 type RelatedItemSet struct {
-RelatedItem []RelatedItem `json:"RelatedItem" xml:"RelatedItem"`
+	RelatedItem []RelatedItem `json:"RelatedItem" xml:"RelatedItem"`
 }

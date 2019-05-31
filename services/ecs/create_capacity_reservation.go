@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,112 +16,110 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // CreateCapacityReservation invokes the ecs.CreateCapacityReservation API synchronously
 // api document: https://help.aliyun.com/api/ecs/createcapacityreservation.html
 func (client *Client) CreateCapacityReservation(request *CreateCapacityReservationRequest) (response *CreateCapacityReservationResponse, err error) {
-response = CreateCreateCapacityReservationResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateCreateCapacityReservationResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // CreateCapacityReservationWithChan invokes the ecs.CreateCapacityReservation API asynchronously
 // api document: https://help.aliyun.com/api/ecs/createcapacityreservation.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCapacityReservationWithChan(request *CreateCapacityReservationRequest) (<-chan *CreateCapacityReservationResponse, <-chan error) {
-responseChan := make(chan *CreateCapacityReservationResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.CreateCapacityReservation(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *CreateCapacityReservationResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.CreateCapacityReservation(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // CreateCapacityReservationWithCallback invokes the ecs.CreateCapacityReservation API asynchronously
 // api document: https://help.aliyun.com/api/ecs/createcapacityreservation.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateCapacityReservationWithCallback(request *CreateCapacityReservationRequest, callback func(response *CreateCapacityReservationResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *CreateCapacityReservationResponse
-var err error
-defer close(result)
-response, err = client.CreateCapacityReservation(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) CreateCapacityReservationWithCallback(request *CreateCapacityReservationRequest, callback func(response *CreateCapacityReservationResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *CreateCapacityReservationResponse
+		var err error
+		defer close(result)
+		response, err = client.CreateCapacityReservation(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // CreateCapacityReservationRequest is the request struct for api CreateCapacityReservation
 type CreateCapacityReservationRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    Description     string `position:"Query" name:"Description"`
-                    NetworkType     string `position:"Query" name:"NetworkType"`
-                    ResourceGroupId     string `position:"Query" name:"ResourceGroupId"`
-                    InstanceCount     string `position:"Query" name:"InstanceCount"`
-                    InstanceType     string `position:"Query" name:"InstanceType"`
-                    Tag  *[]CreateCapacityReservationTag `position:"Query" name:"Tag"  type:"Repeated"`
-                    InstancePlatform     string `position:"Query" name:"InstancePlatform"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    EndDateType     string `position:"Query" name:"EndDateType"`
-                    InstanceMatchCriteria     string `position:"Query" name:"InstanceMatchCriteria"`
-                    TimeSlot     string `position:"Query" name:"TimeSlot"`
-                    CapacityReservationName     string `position:"Query" name:"CapacityReservationName"`
-                    ZoneId     string `position:"Query" name:"ZoneId"`
+	*requests.RpcRequest
+	ResourceOwnerId         requests.Integer                `position:"Query" name:"ResourceOwnerId"`
+	Description             string                          `position:"Query" name:"Description"`
+	NetworkType             string                          `position:"Query" name:"NetworkType"`
+	ResourceGroupId         string                          `position:"Query" name:"ResourceGroupId"`
+	InstanceCount           string                          `position:"Query" name:"InstanceCount"`
+	InstanceType            string                          `position:"Query" name:"InstanceType"`
+	Tag                     *[]CreateCapacityReservationTag `position:"Query" name:"Tag"  type:"Repeated"`
+	InstancePlatform        string                          `position:"Query" name:"InstancePlatform"`
+	ResourceOwnerAccount    string                          `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount            string                          `position:"Query" name:"OwnerAccount"`
+	OwnerId                 requests.Integer                `position:"Query" name:"OwnerId"`
+	EndDateType             string                          `position:"Query" name:"EndDateType"`
+	InstanceMatchCriteria   string                          `position:"Query" name:"InstanceMatchCriteria"`
+	TimeSlot                string                          `position:"Query" name:"TimeSlot"`
+	CapacityReservationName string                          `position:"Query" name:"CapacityReservationName"`
+	ZoneId                  string                          `position:"Query" name:"ZoneId"`
 }
 
 // CreateCapacityReservationTag is a repeated param struct in CreateCapacityReservationRequest
-type CreateCapacityReservationTag struct{
-        Key     string `name:"Key"`
-        Value     string `name:"Value"`
+type CreateCapacityReservationTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // CreateCapacityReservationResponse is the response struct for api CreateCapacityReservation
 type CreateCapacityReservationResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            CapacityReservationId     string `json:"CapacityReservationId" xml:"CapacityReservationId"`
+	*responses.BaseResponse
+	RequestId             string `json:"RequestId" xml:"RequestId"`
+	CapacityReservationId string `json:"CapacityReservationId" xml:"CapacityReservationId"`
 }
 
 // CreateCreateCapacityReservationRequest creates a request to invoke CreateCapacityReservation API
 func CreateCreateCapacityReservationRequest() (request *CreateCapacityReservationRequest) {
-request = &CreateCapacityReservationRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2016-03-14", "CreateCapacityReservation", "", "")
-return
+	request = &CreateCapacityReservationRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2016-03-14", "CreateCapacityReservation", "ecs", "openAPI")
+	return
 }
 
 // CreateCreateCapacityReservationResponse creates a response to parse from CreateCapacityReservation response
 func CreateCreateCapacityReservationResponse() (response *CreateCapacityReservationResponse) {
-response = &CreateCapacityReservationResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &CreateCapacityReservationResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

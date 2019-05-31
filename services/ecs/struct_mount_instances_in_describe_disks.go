@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // MountInstancesInDescribeDisks is a nested struct in ecs response
 type MountInstancesInDescribeDisks struct {
-MountInstance []MountInstance `json:"MountInstance" xml:"MountInstance"`
+	MountInstance []MountInstance `json:"MountInstance" xml:"MountInstance"`
 }

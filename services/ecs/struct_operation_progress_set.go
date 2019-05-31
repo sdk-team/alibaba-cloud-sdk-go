@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // OperationProgressSet is a nested struct in ecs response
 type OperationProgressSet struct {
-OperationProgress []OperationProgress `json:"OperationProgress" xml:"OperationProgress"`
+	OperationProgress []OperationProgress `json:"OperationProgress" xml:"OperationProgress"`
 }

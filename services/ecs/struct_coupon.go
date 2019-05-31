@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,9 +17,9 @@ package ecs
 
 // Coupon is a nested struct in ecs response
 type Coupon struct {
-            CouponNo     string `json:"CouponNo" xml:"CouponNo"`
-            Name     string `json:"Name" xml:"Name"`
-            Description     string `json:"Description" xml:"Description"`
-            DiscountOff     float64 `json:"DiscountOff" xml:"DiscountOff"`
-            IsSelected     bool `json:"IsSelected" xml:"IsSelected"`
+	CouponNo    string  `json:"CouponNo" xml:"CouponNo"`
+	Name        string  `json:"Name" xml:"Name"`
+	Description string  `json:"Description" xml:"Description"`
+	DiscountOff float64 `json:"DiscountOff" xml:"DiscountOff"`
+	IsSelected  bool    `json:"IsSelected" xml:"IsSelected"`
 }

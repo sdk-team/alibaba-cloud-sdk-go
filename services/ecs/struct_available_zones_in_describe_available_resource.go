@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // AvailableZonesInDescribeAvailableResource is a nested struct in ecs response
 type AvailableZonesInDescribeAvailableResource struct {
-AvailableZone []AvailableZone `json:"AvailableZone" xml:"AvailableZone"`
+	AvailableZone []AvailableZone `json:"AvailableZone" xml:"AvailableZone"`
 }

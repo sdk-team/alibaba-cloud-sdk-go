@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // RouteEntrys is a nested struct in ecs response
 type RouteEntrys struct {
-RouteEntry []RouteEntry `json:"RouteEntry" xml:"RouteEntry"`
+	RouteEntry []RouteEntry `json:"RouteEntry" xml:"RouteEntry"`
 }

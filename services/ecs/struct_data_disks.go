@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // DataDisks is a nested struct in ecs response
 type DataDisks struct {
-DataDisk []DataDisk `json:"DataDisk" xml:"DataDisk"`
+	DataDisk []DataDisk `json:"DataDisk" xml:"DataDisk"`
 }

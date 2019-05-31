@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,98 +16,95 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // ResizeDisk invokes the ecs.ResizeDisk API synchronously
 // api document: https://help.aliyun.com/api/ecs/resizedisk.html
 func (client *Client) ResizeDisk(request *ResizeDiskRequest) (response *ResizeDiskResponse, err error) {
-response = CreateResizeDiskResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateResizeDiskResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // ResizeDiskWithChan invokes the ecs.ResizeDisk API asynchronously
 // api document: https://help.aliyun.com/api/ecs/resizedisk.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResizeDiskWithChan(request *ResizeDiskRequest) (<-chan *ResizeDiskResponse, <-chan error) {
-responseChan := make(chan *ResizeDiskResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ResizeDisk(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ResizeDiskResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ResizeDisk(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // ResizeDiskWithCallback invokes the ecs.ResizeDisk API asynchronously
 // api document: https://help.aliyun.com/api/ecs/resizedisk.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ResizeDiskWithCallback(request *ResizeDiskRequest, callback func(response *ResizeDiskResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ResizeDiskResponse
-var err error
-defer close(result)
-response, err = client.ResizeDisk(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ResizeDiskWithCallback(request *ResizeDiskRequest, callback func(response *ResizeDiskResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ResizeDiskResponse
+		var err error
+		defer close(result)
+		response, err = client.ResizeDisk(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // ResizeDiskRequest is the request struct for api ResizeDisk
 type ResizeDiskRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    ClientToken     string `position:"Query" name:"ClientToken"`
-                    Type     string `position:"Query" name:"Type"`
-                    DiskId     string `position:"Query" name:"DiskId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    NewSize     requests.Integer `position:"Query" name:"NewSize"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	Type                 string           `position:"Query" name:"Type"`
+	DiskId               string           `position:"Query" name:"DiskId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	NewSize              requests.Integer `position:"Query" name:"NewSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
-
 
 // ResizeDiskResponse is the response struct for api ResizeDisk
 type ResizeDiskResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateResizeDiskRequest creates a request to invoke ResizeDisk API
 func CreateResizeDiskRequest() (request *ResizeDiskRequest) {
-request = &ResizeDiskRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "ResizeDisk", "", "")
-return
+	request = &ResizeDiskRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ResizeDisk", "ecs", "openAPI")
+	return
 }
 
 // CreateResizeDiskResponse creates a response to parse from ResizeDisk response
 func CreateResizeDiskResponse() (response *ResizeDiskResponse) {
-response = &ResizeDiskResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ResizeDiskResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

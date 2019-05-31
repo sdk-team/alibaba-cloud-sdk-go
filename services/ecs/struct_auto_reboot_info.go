@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +17,8 @@ package ecs
 
 // AutoRebootInfo is a nested struct in ecs response
 type AutoRebootInfo struct {
-            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-            RebootTime     string `json:"RebootTime" xml:"RebootTime"`
-            OrderType     string `json:"OrderType" xml:"OrderType"`
-            LimitRebootTime     string `json:"LimitRebootTime" xml:"LimitRebootTime"`
+	InstanceId      string `json:"InstanceId" xml:"InstanceId"`
+	RebootTime      string `json:"RebootTime" xml:"RebootTime"`
+	OrderType       string `json:"OrderType" xml:"OrderType"`
+	LimitRebootTime string `json:"LimitRebootTime" xml:"LimitRebootTime"`
 }

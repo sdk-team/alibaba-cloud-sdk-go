@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,94 +16,91 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // CancelTask invokes the ecs.CancelTask API synchronously
 // api document: https://help.aliyun.com/api/ecs/canceltask.html
 func (client *Client) CancelTask(request *CancelTaskRequest) (response *CancelTaskResponse, err error) {
-response = CreateCancelTaskResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateCancelTaskResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // CancelTaskWithChan invokes the ecs.CancelTask API asynchronously
 // api document: https://help.aliyun.com/api/ecs/canceltask.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelTaskWithChan(request *CancelTaskRequest) (<-chan *CancelTaskResponse, <-chan error) {
-responseChan := make(chan *CancelTaskResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.CancelTask(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *CancelTaskResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.CancelTask(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // CancelTaskWithCallback invokes the ecs.CancelTask API asynchronously
 // api document: https://help.aliyun.com/api/ecs/canceltask.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CancelTaskWithCallback(request *CancelTaskRequest, callback func(response *CancelTaskResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *CancelTaskResponse
-var err error
-defer close(result)
-response, err = client.CancelTask(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) CancelTaskWithCallback(request *CancelTaskRequest, callback func(response *CancelTaskResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *CancelTaskResponse
+		var err error
+		defer close(result)
+		response, err = client.CancelTask(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // CancelTaskRequest is the request struct for api CancelTask
 type CancelTaskRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    TaskId     string `position:"Query" name:"TaskId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	TaskId               string           `position:"Query" name:"TaskId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
-
 
 // CancelTaskResponse is the response struct for api CancelTask
 type CancelTaskResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCancelTaskRequest creates a request to invoke CancelTask API
 func CreateCancelTaskRequest() (request *CancelTaskRequest) {
-request = &CancelTaskRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "CancelTask", "", "")
-return
+	request = &CancelTaskRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CancelTask", "ecs", "openAPI")
+	return
 }
 
 // CreateCancelTaskResponse creates a response to parse from CancelTask response
 func CreateCancelTaskResponse() (response *CancelTaskResponse) {
-response = &CancelTaskResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &CancelTaskResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

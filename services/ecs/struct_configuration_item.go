@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,14 +17,14 @@ package ecs
 
 // ConfigurationItem is a nested struct in ecs response
 type ConfigurationItem struct {
-            ConfigurationItemVersion     string `json:"ConfigurationItemVersion" xml:"ConfigurationItemVersion"`
-            ConfigurationCaptureTime     string `json:"ConfigurationCaptureTime" xml:"ConfigurationCaptureTime"`
-            ResourceId     string `json:"ResourceId" xml:"ResourceId"`
-            ResourceType     string `json:"ResourceType" xml:"ResourceType"`
-            AliUid     int `json:"AliUid" xml:"AliUid"`
-            Arn     string `json:"Arn" xml:"Arn"`
-            ResourceCreationTime     string `json:"ResourceCreationTime" xml:"ResourceCreationTime"`
-            RegionId     string `json:"RegionId" xml:"RegionId"`
-            ZoneId     string `json:"ZoneId" xml:"ZoneId"`
-            Configuration     string `json:"Configuration" xml:"Configuration"`
+	ConfigurationItemVersion string `json:"ConfigurationItemVersion" xml:"ConfigurationItemVersion"`
+	ConfigurationCaptureTime string `json:"ConfigurationCaptureTime" xml:"ConfigurationCaptureTime"`
+	ResourceId               string `json:"ResourceId" xml:"ResourceId"`
+	ResourceType             string `json:"ResourceType" xml:"ResourceType"`
+	AliUid                   int64  `json:"AliUid" xml:"AliUid"`
+	Arn                      string `json:"Arn" xml:"Arn"`
+	ResourceCreationTime     string `json:"ResourceCreationTime" xml:"ResourceCreationTime"`
+	RegionId                 string `json:"RegionId" xml:"RegionId"`
+	ZoneId                   string `json:"ZoneId" xml:"ZoneId"`
+	Configuration            string `json:"Configuration" xml:"Configuration"`
 }

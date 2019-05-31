@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // VSwitches is a nested struct in ecs response
 type VSwitches struct {
-VSwitch []VSwitch `json:"VSwitch" xml:"VSwitch"`
+	VSwitch []VSwitch `json:"VSwitch" xml:"VSwitch"`
 }

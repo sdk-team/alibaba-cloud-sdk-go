@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,6 @@ package ecs
 
 // PriceInfo is a nested struct in ecs response
 type PriceInfo struct {
-            Price Price  `json:"Price" xml:"Price"`
-                    Rules RulesInDescribeRenewalPrice `json:"Rules" xml:"Rules"`
+	Price Price                       `json:"Price" xml:"Price"`
+	Rules RulesInDescribeRenewalPrice `json:"Rules" xml:"Rules"`
 }

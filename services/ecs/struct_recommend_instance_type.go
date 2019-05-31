@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,9 +17,9 @@ package ecs
 
 // RecommendInstanceType is a nested struct in ecs response
 type RecommendInstanceType struct {
-            RegionNo     string `json:"RegionNo" xml:"RegionNo"`
-            CommodityCode     string `json:"CommodityCode" xml:"CommodityCode"`
-            Scene     string `json:"Scene" xml:"Scene"`
-            InstanceType InstanceType  `json:"InstanceType" xml:"InstanceType"`
-                    Zones ZonesInDescribeRecommendInstanceType `json:"Zones" xml:"Zones"`
+	RegionNo      string                               `json:"RegionNo" xml:"RegionNo"`
+	CommodityCode string                               `json:"CommodityCode" xml:"CommodityCode"`
+	Scene         string                               `json:"Scene" xml:"Scene"`
+	InstanceType  InstanceType                         `json:"InstanceType" xml:"InstanceType"`
+	Zones         ZonesInDescribeRecommendInstanceType `json:"Zones" xml:"Zones"`
 }

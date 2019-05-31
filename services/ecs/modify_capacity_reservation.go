@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,97 +16,94 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // ModifyCapacityReservation invokes the ecs.ModifyCapacityReservation API synchronously
 // api document: https://help.aliyun.com/api/ecs/modifycapacityreservation.html
 func (client *Client) ModifyCapacityReservation(request *ModifyCapacityReservationRequest) (response *ModifyCapacityReservationResponse, err error) {
-response = CreateModifyCapacityReservationResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateModifyCapacityReservationResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // ModifyCapacityReservationWithChan invokes the ecs.ModifyCapacityReservation API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifycapacityreservation.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCapacityReservationWithChan(request *ModifyCapacityReservationRequest) (<-chan *ModifyCapacityReservationResponse, <-chan error) {
-responseChan := make(chan *ModifyCapacityReservationResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ModifyCapacityReservation(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ModifyCapacityReservationResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ModifyCapacityReservation(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // ModifyCapacityReservationWithCallback invokes the ecs.ModifyCapacityReservation API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifycapacityreservation.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ModifyCapacityReservationWithCallback(request *ModifyCapacityReservationRequest, callback func(response *ModifyCapacityReservationResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ModifyCapacityReservationResponse
-var err error
-defer close(result)
-response, err = client.ModifyCapacityReservation(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ModifyCapacityReservationWithCallback(request *ModifyCapacityReservationRequest, callback func(response *ModifyCapacityReservationResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ModifyCapacityReservationResponse
+		var err error
+		defer close(result)
+		response, err = client.ModifyCapacityReservation(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // ModifyCapacityReservationRequest is the request struct for api ModifyCapacityReservation
 type ModifyCapacityReservationRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    CapacityReservationId     string `position:"Query" name:"CapacityReservationId"`
-                    InstanceCount     requests.Integer `position:"Query" name:"InstanceCount"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    Token     string `position:"Query" name:"Token"`
+	*requests.RpcRequest
+	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	CapacityReservationId string           `position:"Query" name:"CapacityReservationId"`
+	InstanceCount         requests.Integer `position:"Query" name:"InstanceCount"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	Token                 string           `position:"Query" name:"Token"`
 }
-
 
 // ModifyCapacityReservationResponse is the response struct for api ModifyCapacityReservation
 type ModifyCapacityReservationResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyCapacityReservationRequest creates a request to invoke ModifyCapacityReservation API
 func CreateModifyCapacityReservationRequest() (request *ModifyCapacityReservationRequest) {
-request = &ModifyCapacityReservationRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2016-03-14", "ModifyCapacityReservation", "", "")
-return
+	request = &ModifyCapacityReservationRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2016-03-14", "ModifyCapacityReservation", "ecs", "openAPI")
+	return
 }
 
 // CreateModifyCapacityReservationResponse creates a response to parse from ModifyCapacityReservation response
 func CreateModifyCapacityReservationResponse() (response *ModifyCapacityReservationResponse) {
-response = &ModifyCapacityReservationResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ModifyCapacityReservationResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // InstanceStatuses is a nested struct in ecs response
 type InstanceStatuses struct {
-InstanceStatus []InstanceStatus `json:"InstanceStatus" xml:"InstanceStatus"`
+	InstanceStatus []InstanceStatus `json:"InstanceStatus" xml:"InstanceStatus"`
 }

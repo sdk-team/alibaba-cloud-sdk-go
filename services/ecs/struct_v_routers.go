@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package ecs
 
 // VRouters is a nested struct in ecs response
 type VRouters struct {
-VRouter []VRouter `json:"VRouter" xml:"VRouter"`
+	VRouter []VRouter `json:"VRouter" xml:"VRouter"`
 }

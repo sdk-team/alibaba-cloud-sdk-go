@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,10 +17,10 @@ package ecs
 
 // RecycleBinModel is a nested struct in ecs response
 type RecycleBinModel struct {
-            ResourceId     string `json:"ResourceId" xml:"ResourceId"`
-            RegionId     string `json:"RegionId" xml:"RegionId"`
-            ResourceType     string `json:"ResourceType" xml:"ResourceType"`
-            CreationTime     string `json:"CreationTime" xml:"CreationTime"`
-            Status     string `json:"Status" xml:"Status"`
-                    RelationResources RelationResources `json:"RelationResources" xml:"RelationResources"`
+	ResourceId        string            `json:"ResourceId" xml:"ResourceId"`
+	RegionId          string            `json:"RegionId" xml:"RegionId"`
+	ResourceType      string            `json:"ResourceType" xml:"ResourceType"`
+	CreationTime      string            `json:"CreationTime" xml:"CreationTime"`
+	Status            string            `json:"Status" xml:"Status"`
+	RelationResources RelationResources `json:"RelationResources" xml:"RelationResources"`
 }

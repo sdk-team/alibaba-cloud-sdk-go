@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,6 @@ package ecs
 
 // AvailableResource is a nested struct in ecs response
 type AvailableResource struct {
-            Type     string `json:"Type" xml:"Type"`
-                    SupportedResources SupportedResourcesInDescribeResourcesModification `json:"SupportedResources" xml:"SupportedResources"`
+	Type               string                                            `json:"Type" xml:"Type"`
+	SupportedResources SupportedResourcesInDescribeResourcesModification `json:"SupportedResources" xml:"SupportedResources"`
 }

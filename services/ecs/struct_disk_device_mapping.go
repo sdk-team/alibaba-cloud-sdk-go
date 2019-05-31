@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,13 +17,13 @@ package ecs
 
 // DiskDeviceMapping is a nested struct in ecs response
 type DiskDeviceMapping struct {
-            SnapshotId     string `json:"SnapshotId" xml:"SnapshotId"`
-            Size     string `json:"Size" xml:"Size"`
-            Device     string `json:"Device" xml:"Device"`
-            Type     string `json:"Type" xml:"Type"`
-            Format     string `json:"Format" xml:"Format"`
-            ImportOSSBucket     string `json:"ImportOSSBucket" xml:"ImportOSSBucket"`
-            ImportOSSObject     string `json:"ImportOSSObject" xml:"ImportOSSObject"`
-            Progress     string `json:"Progress" xml:"Progress"`
-            RemainTime     int `json:"RemainTime" xml:"RemainTime"`
+	SnapshotId      string `json:"SnapshotId" xml:"SnapshotId"`
+	Size            string `json:"Size" xml:"Size"`
+	Device          string `json:"Device" xml:"Device"`
+	Type            string `json:"Type" xml:"Type"`
+	Format          string `json:"Format" xml:"Format"`
+	ImportOSSBucket string `json:"ImportOSSBucket" xml:"ImportOSSBucket"`
+	ImportOSSObject string `json:"ImportOSSObject" xml:"ImportOSSObject"`
+	Progress        string `json:"Progress" xml:"Progress"`
+	RemainTime      int    `json:"RemainTime" xml:"RemainTime"`
 }

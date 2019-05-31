@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +17,7 @@ package ecs
 
 // MountInstance is a nested struct in ecs response
 type MountInstance struct {
-            Device     string `json:"Device" xml:"Device"`
-            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-            AttachedTime     string `json:"AttachedTime" xml:"AttachedTime"`
+	Device       string `json:"Device" xml:"Device"`
+	InstanceId   string `json:"InstanceId" xml:"InstanceId"`
+	AttachedTime string `json:"AttachedTime" xml:"AttachedTime"`
 }

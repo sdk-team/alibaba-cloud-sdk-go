@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,6 @@ package ecs
 
 // AutoSnapshotExcutionStatus is a nested struct in ecs response
 type AutoSnapshotExcutionStatus struct {
-            SystemDiskExcutionStatus     string `json:"SystemDiskExcutionStatus" xml:"SystemDiskExcutionStatus"`
-            DataDiskExcutionStatus     string `json:"DataDiskExcutionStatus" xml:"DataDiskExcutionStatus"`
+	SystemDiskExcutionStatus string `json:"SystemDiskExcutionStatus" xml:"SystemDiskExcutionStatus"`
+	DataDiskExcutionStatus   string `json:"DataDiskExcutionStatus" xml:"DataDiskExcutionStatus"`
 }
