@@ -1,4 +1,3 @@
-
 package acs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,96 +16,93 @@ package acs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // PutFlowControl invokes the acs.PutFlowControl API synchronously
 // api document: https://help.aliyun.com/api/acs/putflowcontrol.html
 func (client *Client) PutFlowControl(request *PutFlowControlRequest) (response *PutFlowControlResponse, err error) {
-response = CreatePutFlowControlResponse()
-err = client.DoAction(request, response)
-return
+	response = CreatePutFlowControlResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // PutFlowControlWithChan invokes the acs.PutFlowControl API asynchronously
 // api document: https://help.aliyun.com/api/acs/putflowcontrol.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutFlowControlWithChan(request *PutFlowControlRequest) (<-chan *PutFlowControlResponse, <-chan error) {
-responseChan := make(chan *PutFlowControlResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.PutFlowControl(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *PutFlowControlResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.PutFlowControl(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // PutFlowControlWithCallback invokes the acs.PutFlowControl API asynchronously
 // api document: https://help.aliyun.com/api/acs/putflowcontrol.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) PutFlowControlWithCallback(request *PutFlowControlRequest, callback func(response *PutFlowControlResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *PutFlowControlResponse
-var err error
-defer close(result)
-response, err = client.PutFlowControl(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) PutFlowControlWithCallback(request *PutFlowControlRequest, callback func(response *PutFlowControlResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *PutFlowControlResponse
+		var err error
+		defer close(result)
+		response, err = client.PutFlowControl(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // PutFlowControlRequest is the request struct for api PutFlowControl
 type PutFlowControlRequest struct {
-*requests.RoaRequest
-                    BodyContent     string `position:"Body" name:"BodyContent"`
-                    ApiName     string `position:"Path" name:"ApiName"`
-                    ProductName     string `position:"Path" name:"ProductName"`
-                    VersionName     string `position:"Path" name:"VersionName"`
-                    Accept     string `position:"Header" name:"Accept"`
+	*requests.RoaRequest
+	BodyContent string `position:"Body" name:"BodyContent"`
+	ApiName     string `position:"Path" name:"ApiName"`
+	ProductName string `position:"Path" name:"ProductName"`
+	VersionName string `position:"Path" name:"VersionName"`
+	Accept      string `position:"Header" name:"Accept"`
 }
-
 
 // PutFlowControlResponse is the response struct for api PutFlowControl
 type PutFlowControlResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreatePutFlowControlRequest creates a request to invoke PutFlowControl API
 func CreatePutFlowControlRequest() (request *PutFlowControlRequest) {
-request = &PutFlowControlRequest{
-RoaRequest: &requests.RoaRequest{},
-}
-request.InitWithApiInfo("Acs", "2015-01-01", "PutFlowControl", "/FlowControl/[ProductName]/[VersionName]/[ApiName]", "", "")
-request.Method = requests.PUT
-return
+	request = &PutFlowControlRequest{
+		RoaRequest: &requests.RoaRequest{},
+	}
+	request.InitWithApiInfo("Acs", "2015-01-01", "PutFlowControl", "/FlowControl/[ProductName]/[VersionName]/[ApiName]", "dsafsd", "openAPI")
+	request.Method = requests.PUT
+	return
 }
 
 // CreatePutFlowControlResponse creates a response to parse from PutFlowControl response
 func CreatePutFlowControlResponse() (response *PutFlowControlResponse) {
-response = &PutFlowControlResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &PutFlowControlResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-
