@@ -1,4 +1,3 @@
-
 package aas
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package aas
 
 // AccessKeys is a nested struct in aas response
 type AccessKeys struct {
-AccessKey []AccessKey `json:"AccessKey" xml:"AccessKey"`
+	AccessKey []AccessKey `json:"AccessKey" xml:"AccessKey"`
 }

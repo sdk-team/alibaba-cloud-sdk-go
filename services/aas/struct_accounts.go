@@ -1,4 +1,3 @@
-
 package aas
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package aas
 
 // Accounts is a nested struct in aas response
 type Accounts struct {
-Account []Account `json:"Account" xml:"Account"`
+	Account []Account `json:"Account" xml:"Account"`
 }

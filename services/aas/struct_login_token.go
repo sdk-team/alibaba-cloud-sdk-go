@@ -1,4 +1,3 @@
-
 package aas
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,6 @@ package aas
 
 // LoginToken is a nested struct in aas response
 type LoginToken struct {
-            LoginTokenString     string `json:"LoginTokenString" xml:"LoginTokenString"`
-            TargetPk     string `json:"TargetPk" xml:"TargetPk"`
+	LoginTokenString string `json:"LoginTokenString" xml:"LoginTokenString"`
+	TargetPk         string `json:"TargetPk" xml:"TargetPk"`
 }

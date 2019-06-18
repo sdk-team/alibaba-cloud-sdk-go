@@ -1,4 +1,3 @@
-
 package aas
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,94 +16,91 @@ package aas
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // UpdateStatusForAccount invokes the aas.UpdateStatusForAccount API synchronously
 // api document: https://help.aliyun.com/api/aas/updatestatusforaccount.html
 func (client *Client) UpdateStatusForAccount(request *UpdateStatusForAccountRequest) (response *UpdateStatusForAccountResponse, err error) {
-response = CreateUpdateStatusForAccountResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateUpdateStatusForAccountResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // UpdateStatusForAccountWithChan invokes the aas.UpdateStatusForAccount API asynchronously
 // api document: https://help.aliyun.com/api/aas/updatestatusforaccount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateStatusForAccountWithChan(request *UpdateStatusForAccountRequest) (<-chan *UpdateStatusForAccountResponse, <-chan error) {
-responseChan := make(chan *UpdateStatusForAccountResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.UpdateStatusForAccount(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *UpdateStatusForAccountResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.UpdateStatusForAccount(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // UpdateStatusForAccountWithCallback invokes the aas.UpdateStatusForAccount API asynchronously
 // api document: https://help.aliyun.com/api/aas/updatestatusforaccount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) UpdateStatusForAccountWithCallback(request *UpdateStatusForAccountRequest, callback func(response *UpdateStatusForAccountResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *UpdateStatusForAccountResponse
-var err error
-defer close(result)
-response, err = client.UpdateStatusForAccount(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) UpdateStatusForAccountWithCallback(request *UpdateStatusForAccountRequest, callback func(response *UpdateStatusForAccountResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *UpdateStatusForAccountResponse
+		var err error
+		defer close(result)
+		response, err = client.UpdateStatusForAccount(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // UpdateStatusForAccountRequest is the request struct for api UpdateStatusForAccount
 type UpdateStatusForAccountRequest struct {
-*requests.RpcRequest
-                    AccountStatus     string `position:"Query" name:"AccountStatus"`
-                    PK     string `position:"Query" name:"PK"`
+	*requests.RpcRequest
+	AccountStatus string `position:"Query" name:"AccountStatus"`
+	PK            string `position:"Query" name:"PK"`
 }
-
 
 // UpdateStatusForAccountResponse is the response struct for api UpdateStatusForAccount
 type UpdateStatusForAccountResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            PK     string `json:"PK" xml:"PK"`
-            Result     string `json:"Result" xml:"Result"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	PK        string `json:"PK" xml:"PK"`
+	Result    string `json:"Result" xml:"Result"`
 }
 
 // CreateUpdateStatusForAccountRequest creates a request to invoke UpdateStatusForAccount API
 func CreateUpdateStatusForAccountRequest() (request *UpdateStatusForAccountRequest) {
-request = &UpdateStatusForAccountRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Aas", "2015-07-01", "UpdateStatusForAccount", "", "")
-return
+	request = &UpdateStatusForAccountRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Aas", "2015-07-01", "UpdateStatusForAccount", "aas", "openAPI")
+	return
 }
 
 // CreateUpdateStatusForAccountResponse creates a response to parse from UpdateStatusForAccount response
 func CreateUpdateStatusForAccountResponse() (response *UpdateStatusForAccountResponse) {
-response = &UpdateStatusForAccountResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &UpdateStatusForAccountResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

@@ -1,4 +1,3 @@
-
 package aas
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,94 +16,91 @@ package aas
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // GetBasicInfoForAccount invokes the aas.GetBasicInfoForAccount API synchronously
 // api document: https://help.aliyun.com/api/aas/getbasicinfoforaccount.html
 func (client *Client) GetBasicInfoForAccount(request *GetBasicInfoForAccountRequest) (response *GetBasicInfoForAccountResponse, err error) {
-response = CreateGetBasicInfoForAccountResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateGetBasicInfoForAccountResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // GetBasicInfoForAccountWithChan invokes the aas.GetBasicInfoForAccount API asynchronously
 // api document: https://help.aliyun.com/api/aas/getbasicinfoforaccount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetBasicInfoForAccountWithChan(request *GetBasicInfoForAccountRequest) (<-chan *GetBasicInfoForAccountResponse, <-chan error) {
-responseChan := make(chan *GetBasicInfoForAccountResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.GetBasicInfoForAccount(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *GetBasicInfoForAccountResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.GetBasicInfoForAccount(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // GetBasicInfoForAccountWithCallback invokes the aas.GetBasicInfoForAccount API asynchronously
 // api document: https://help.aliyun.com/api/aas/getbasicinfoforaccount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) GetBasicInfoForAccountWithCallback(request *GetBasicInfoForAccountRequest, callback func(response *GetBasicInfoForAccountResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *GetBasicInfoForAccountResponse
-var err error
-defer close(result)
-response, err = client.GetBasicInfoForAccount(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) GetBasicInfoForAccountWithCallback(request *GetBasicInfoForAccountRequest, callback func(response *GetBasicInfoForAccountResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *GetBasicInfoForAccountResponse
+		var err error
+		defer close(result)
+		response, err = client.GetBasicInfoForAccount(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // GetBasicInfoForAccountRequest is the request struct for api GetBasicInfoForAccount
 type GetBasicInfoForAccountRequest struct {
-*requests.RpcRequest
-                    AliyunId     string `position:"Query" name:"AliyunId"`
+	*requests.RpcRequest
+	AliyunId string `position:"Query" name:"AliyunId"`
 }
-
 
 // GetBasicInfoForAccountResponse is the response struct for api GetBasicInfoForAccount
 type GetBasicInfoForAccountResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            PK     string `json:"PK" xml:"PK"`
-            LastLoginDate     string `json:"LastLoginDate" xml:"LastLoginDate"`
-            AccountStatus     string `json:"AccountStatus" xml:"AccountStatus"`
+	*responses.BaseResponse
+	RequestId     string `json:"RequestId" xml:"RequestId"`
+	PK            string `json:"PK" xml:"PK"`
+	LastLoginDate string `json:"LastLoginDate" xml:"LastLoginDate"`
+	AccountStatus string `json:"AccountStatus" xml:"AccountStatus"`
 }
 
 // CreateGetBasicInfoForAccountRequest creates a request to invoke GetBasicInfoForAccount API
 func CreateGetBasicInfoForAccountRequest() (request *GetBasicInfoForAccountRequest) {
-request = &GetBasicInfoForAccountRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Aas", "2015-07-01", "GetBasicInfoForAccount", "", "")
-return
+	request = &GetBasicInfoForAccountRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Aas", "2015-07-01", "GetBasicInfoForAccount", "aas", "openAPI")
+	return
 }
 
 // CreateGetBasicInfoForAccountResponse creates a response to parse from GetBasicInfoForAccount response
 func CreateGetBasicInfoForAccountResponse() (response *GetBasicInfoForAccountResponse) {
-response = &GetBasicInfoForAccountResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &GetBasicInfoForAccountResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

@@ -1,4 +1,3 @@
-
 package aas
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,94 +16,91 @@ package aas
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // UpdatePasswordForAccount invokes the aas.UpdatePasswordForAccount API synchronously
 // api document: https://help.aliyun.com/api/aas/updatepasswordforaccount.html
 func (client *Client) UpdatePasswordForAccount(request *UpdatePasswordForAccountRequest) (response *UpdatePasswordForAccountResponse, err error) {
-response = CreateUpdatePasswordForAccountResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateUpdatePasswordForAccountResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // UpdatePasswordForAccountWithChan invokes the aas.UpdatePasswordForAccount API asynchronously
 // api document: https://help.aliyun.com/api/aas/updatepasswordforaccount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdatePasswordForAccountWithChan(request *UpdatePasswordForAccountRequest) (<-chan *UpdatePasswordForAccountResponse, <-chan error) {
-responseChan := make(chan *UpdatePasswordForAccountResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.UpdatePasswordForAccount(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *UpdatePasswordForAccountResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.UpdatePasswordForAccount(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // UpdatePasswordForAccountWithCallback invokes the aas.UpdatePasswordForAccount API asynchronously
 // api document: https://help.aliyun.com/api/aas/updatepasswordforaccount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) UpdatePasswordForAccountWithCallback(request *UpdatePasswordForAccountRequest, callback func(response *UpdatePasswordForAccountResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *UpdatePasswordForAccountResponse
-var err error
-defer close(result)
-response, err = client.UpdatePasswordForAccount(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) UpdatePasswordForAccountWithCallback(request *UpdatePasswordForAccountRequest, callback func(response *UpdatePasswordForAccountResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *UpdatePasswordForAccountResponse
+		var err error
+		defer close(result)
+		response, err = client.UpdatePasswordForAccount(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // UpdatePasswordForAccountRequest is the request struct for api UpdatePasswordForAccount
 type UpdatePasswordForAccountRequest struct {
-*requests.RpcRequest
-                    PK     string `position:"Query" name:"PK"`
-                    NewPassword     string `position:"Query" name:"NewPassword"`
+	*requests.RpcRequest
+	PK          string `position:"Query" name:"PK"`
+	NewPassword string `position:"Query" name:"NewPassword"`
 }
-
 
 // UpdatePasswordForAccountResponse is the response struct for api UpdatePasswordForAccount
 type UpdatePasswordForAccountResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            PK     string `json:"PK" xml:"PK"`
-            Result     string `json:"Result" xml:"Result"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	PK        string `json:"PK" xml:"PK"`
+	Result    string `json:"Result" xml:"Result"`
 }
 
 // CreateUpdatePasswordForAccountRequest creates a request to invoke UpdatePasswordForAccount API
 func CreateUpdatePasswordForAccountRequest() (request *UpdatePasswordForAccountRequest) {
-request = &UpdatePasswordForAccountRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Aas", "2015-07-01", "UpdatePasswordForAccount", "", "")
-return
+	request = &UpdatePasswordForAccountRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Aas", "2015-07-01", "UpdatePasswordForAccount", "aas", "openAPI")
+	return
 }
 
 // CreateUpdatePasswordForAccountResponse creates a response to parse from UpdatePasswordForAccount response
 func CreateUpdatePasswordForAccountResponse() (response *UpdatePasswordForAccountResponse) {
-response = &UpdatePasswordForAccountResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &UpdatePasswordForAccountResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

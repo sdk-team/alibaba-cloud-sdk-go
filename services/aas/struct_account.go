@@ -1,4 +1,3 @@
-
 package aas
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +17,8 @@ package aas
 
 // Account is a nested struct in aas response
 type Account struct {
-            PK     string `json:"PK" xml:"PK"`
-            LastLoginDate     string `json:"LastLoginDate" xml:"LastLoginDate"`
-            AccountStatus     string `json:"AccountStatus" xml:"AccountStatus"`
-            AliyunId     string `json:"AliyunId" xml:"AliyunId"`
+	PK            string `json:"PK" xml:"PK"`
+	LastLoginDate string `json:"LastLoginDate" xml:"LastLoginDate"`
+	AccountStatus string `json:"AccountStatus" xml:"AccountStatus"`
+	AliyunId      string `json:"AliyunId" xml:"AliyunId"`
 }

@@ -1,4 +1,3 @@
-
 package aas
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,94 +16,91 @@ package aas
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // CreateAccessKeyForAccount invokes the aas.CreateAccessKeyForAccount API synchronously
 // api document: https://help.aliyun.com/api/aas/createaccesskeyforaccount.html
 func (client *Client) CreateAccessKeyForAccount(request *CreateAccessKeyForAccountRequest) (response *CreateAccessKeyForAccountResponse, err error) {
-response = CreateCreateAccessKeyForAccountResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateCreateAccessKeyForAccountResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // CreateAccessKeyForAccountWithChan invokes the aas.CreateAccessKeyForAccount API asynchronously
 // api document: https://help.aliyun.com/api/aas/createaccesskeyforaccount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAccessKeyForAccountWithChan(request *CreateAccessKeyForAccountRequest) (<-chan *CreateAccessKeyForAccountResponse, <-chan error) {
-responseChan := make(chan *CreateAccessKeyForAccountResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.CreateAccessKeyForAccount(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *CreateAccessKeyForAccountResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.CreateAccessKeyForAccount(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // CreateAccessKeyForAccountWithCallback invokes the aas.CreateAccessKeyForAccount API asynchronously
 // api document: https://help.aliyun.com/api/aas/createaccesskeyforaccount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateAccessKeyForAccountWithCallback(request *CreateAccessKeyForAccountRequest, callback func(response *CreateAccessKeyForAccountResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *CreateAccessKeyForAccountResponse
-var err error
-defer close(result)
-response, err = client.CreateAccessKeyForAccount(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) CreateAccessKeyForAccountWithCallback(request *CreateAccessKeyForAccountRequest, callback func(response *CreateAccessKeyForAccountResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *CreateAccessKeyForAccountResponse
+		var err error
+		defer close(result)
+		response, err = client.CreateAccessKeyForAccount(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // CreateAccessKeyForAccountRequest is the request struct for api CreateAccessKeyForAccount
 type CreateAccessKeyForAccountRequest struct {
-*requests.RpcRequest
-                    AKSecret     string `position:"Query" name:"AKSecret"`
-                    PK     string `position:"Query" name:"PK"`
+	*requests.RpcRequest
+	AKSecret string `position:"Query" name:"AKSecret"`
+	PK       string `position:"Query" name:"PK"`
 }
-
 
 // CreateAccessKeyForAccountResponse is the response struct for api CreateAccessKeyForAccount
 type CreateAccessKeyForAccountResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            PK     string `json:"PK" xml:"PK"`
-            AccessKey AccessKey  `json:"AccessKey" xml:"AccessKey"`
+	*responses.BaseResponse
+	RequestId string    `json:"RequestId" xml:"RequestId"`
+	PK        string    `json:"PK" xml:"PK"`
+	AccessKey AccessKey `json:"AccessKey" xml:"AccessKey"`
 }
 
 // CreateCreateAccessKeyForAccountRequest creates a request to invoke CreateAccessKeyForAccount API
 func CreateCreateAccessKeyForAccountRequest() (request *CreateAccessKeyForAccountRequest) {
-request = &CreateAccessKeyForAccountRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Aas", "2015-07-01", "CreateAccessKeyForAccount", "", "")
-return
+	request = &CreateAccessKeyForAccountRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Aas", "2015-07-01", "CreateAccessKeyForAccount", "aas", "openAPI")
+	return
 }
 
 // CreateCreateAccessKeyForAccountResponse creates a response to parse from CreateAccessKeyForAccount response
 func CreateCreateAccessKeyForAccountResponse() (response *CreateAccessKeyForAccountResponse) {
-response = &CreateAccessKeyForAccountResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &CreateAccessKeyForAccountResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

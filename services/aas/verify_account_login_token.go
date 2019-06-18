@@ -1,4 +1,3 @@
-
 package aas
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,92 +16,89 @@ package aas
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // VerifyAccountLoginToken invokes the aas.VerifyAccountLoginToken API synchronously
 // api document: https://help.aliyun.com/api/aas/verifyaccountlogintoken.html
 func (client *Client) VerifyAccountLoginToken(request *VerifyAccountLoginTokenRequest) (response *VerifyAccountLoginTokenResponse, err error) {
-response = CreateVerifyAccountLoginTokenResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateVerifyAccountLoginTokenResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // VerifyAccountLoginTokenWithChan invokes the aas.VerifyAccountLoginToken API asynchronously
 // api document: https://help.aliyun.com/api/aas/verifyaccountlogintoken.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyAccountLoginTokenWithChan(request *VerifyAccountLoginTokenRequest) (<-chan *VerifyAccountLoginTokenResponse, <-chan error) {
-responseChan := make(chan *VerifyAccountLoginTokenResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.VerifyAccountLoginToken(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *VerifyAccountLoginTokenResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.VerifyAccountLoginToken(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // VerifyAccountLoginTokenWithCallback invokes the aas.VerifyAccountLoginToken API asynchronously
 // api document: https://help.aliyun.com/api/aas/verifyaccountlogintoken.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) VerifyAccountLoginTokenWithCallback(request *VerifyAccountLoginTokenRequest, callback func(response *VerifyAccountLoginTokenResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *VerifyAccountLoginTokenResponse
-var err error
-defer close(result)
-response, err = client.VerifyAccountLoginToken(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) VerifyAccountLoginTokenWithCallback(request *VerifyAccountLoginTokenRequest, callback func(response *VerifyAccountLoginTokenResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *VerifyAccountLoginTokenResponse
+		var err error
+		defer close(result)
+		response, err = client.VerifyAccountLoginToken(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // VerifyAccountLoginTokenRequest is the request struct for api VerifyAccountLoginToken
 type VerifyAccountLoginTokenRequest struct {
-*requests.RpcRequest
-                    LoginToken     string `position:"Query" name:"LoginToken"`
+	*requests.RpcRequest
+	LoginToken string `position:"Query" name:"LoginToken"`
 }
-
 
 // VerifyAccountLoginTokenResponse is the response struct for api VerifyAccountLoginToken
 type VerifyAccountLoginTokenResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            LoginToken LoginToken  `json:"LoginToken" xml:"LoginToken"`
+	*responses.BaseResponse
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	LoginToken LoginToken `json:"LoginToken" xml:"LoginToken"`
 }
 
 // CreateVerifyAccountLoginTokenRequest creates a request to invoke VerifyAccountLoginToken API
 func CreateVerifyAccountLoginTokenRequest() (request *VerifyAccountLoginTokenRequest) {
-request = &VerifyAccountLoginTokenRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Aas", "2015-07-01", "VerifyAccountLoginToken", "", "")
-return
+	request = &VerifyAccountLoginTokenRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Aas", "2015-07-01", "VerifyAccountLoginToken", "aas", "openAPI")
+	return
 }
 
 // CreateVerifyAccountLoginTokenResponse creates a response to parse from VerifyAccountLoginToken response
 func CreateVerifyAccountLoginTokenResponse() (response *VerifyAccountLoginTokenResponse) {
-response = &VerifyAccountLoginTokenResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &VerifyAccountLoginTokenResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

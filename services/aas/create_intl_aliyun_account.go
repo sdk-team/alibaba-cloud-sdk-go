@@ -1,4 +1,3 @@
-
 package aas
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,92 +16,89 @@ package aas
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // CreateIntlAliyunAccount invokes the aas.CreateIntlAliyunAccount API synchronously
 // api document: https://help.aliyun.com/api/aas/createintlaliyunaccount.html
 func (client *Client) CreateIntlAliyunAccount(request *CreateIntlAliyunAccountRequest) (response *CreateIntlAliyunAccountResponse, err error) {
-response = CreateCreateIntlAliyunAccountResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateCreateIntlAliyunAccountResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // CreateIntlAliyunAccountWithChan invokes the aas.CreateIntlAliyunAccount API asynchronously
 // api document: https://help.aliyun.com/api/aas/createintlaliyunaccount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateIntlAliyunAccountWithChan(request *CreateIntlAliyunAccountRequest) (<-chan *CreateIntlAliyunAccountResponse, <-chan error) {
-responseChan := make(chan *CreateIntlAliyunAccountResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.CreateIntlAliyunAccount(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *CreateIntlAliyunAccountResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.CreateIntlAliyunAccount(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // CreateIntlAliyunAccountWithCallback invokes the aas.CreateIntlAliyunAccount API asynchronously
 // api document: https://help.aliyun.com/api/aas/createintlaliyunaccount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateIntlAliyunAccountWithCallback(request *CreateIntlAliyunAccountRequest, callback func(response *CreateIntlAliyunAccountResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *CreateIntlAliyunAccountResponse
-var err error
-defer close(result)
-response, err = client.CreateIntlAliyunAccount(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) CreateIntlAliyunAccountWithCallback(request *CreateIntlAliyunAccountRequest, callback func(response *CreateIntlAliyunAccountResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *CreateIntlAliyunAccountResponse
+		var err error
+		defer close(result)
+		response, err = client.CreateIntlAliyunAccount(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // CreateIntlAliyunAccountRequest is the request struct for api CreateIntlAliyunAccount
 type CreateIntlAliyunAccountRequest struct {
-*requests.RpcRequest
-                    NationalityCode     string `position:"Query" name:"NationalityCode"`
+	*requests.RpcRequest
+	NationalityCode string `position:"Query" name:"NationalityCode"`
 }
-
 
 // CreateIntlAliyunAccountResponse is the response struct for api CreateIntlAliyunAccount
 type CreateIntlAliyunAccountResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            PK     string `json:"PK" xml:"PK"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	PK        string `json:"PK" xml:"PK"`
 }
 
 // CreateCreateIntlAliyunAccountRequest creates a request to invoke CreateIntlAliyunAccount API
 func CreateCreateIntlAliyunAccountRequest() (request *CreateIntlAliyunAccountRequest) {
-request = &CreateIntlAliyunAccountRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Aas", "2015-07-01", "CreateIntlAliyunAccount", "", "")
-return
+	request = &CreateIntlAliyunAccountRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Aas", "2015-07-01", "CreateIntlAliyunAccount", "aas", "openAPI")
+	return
 }
 
 // CreateCreateIntlAliyunAccountResponse creates a response to parse from CreateIntlAliyunAccount response
 func CreateCreateIntlAliyunAccountResponse() (response *CreateIntlAliyunAccountResponse) {
-response = &CreateIntlAliyunAccountResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &CreateIntlAliyunAccountResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

@@ -1,4 +1,3 @@
-
 package aas
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,95 +16,92 @@ package aas
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // GetShortTermAccessKeyForAccount invokes the aas.GetShortTermAccessKeyForAccount API synchronously
 // api document: https://help.aliyun.com/api/aas/getshorttermaccesskeyforaccount.html
 func (client *Client) GetShortTermAccessKeyForAccount(request *GetShortTermAccessKeyForAccountRequest) (response *GetShortTermAccessKeyForAccountResponse, err error) {
-response = CreateGetShortTermAccessKeyForAccountResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateGetShortTermAccessKeyForAccountResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // GetShortTermAccessKeyForAccountWithChan invokes the aas.GetShortTermAccessKeyForAccount API asynchronously
 // api document: https://help.aliyun.com/api/aas/getshorttermaccesskeyforaccount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetShortTermAccessKeyForAccountWithChan(request *GetShortTermAccessKeyForAccountRequest) (<-chan *GetShortTermAccessKeyForAccountResponse, <-chan error) {
-responseChan := make(chan *GetShortTermAccessKeyForAccountResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.GetShortTermAccessKeyForAccount(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *GetShortTermAccessKeyForAccountResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.GetShortTermAccessKeyForAccount(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // GetShortTermAccessKeyForAccountWithCallback invokes the aas.GetShortTermAccessKeyForAccount API asynchronously
 // api document: https://help.aliyun.com/api/aas/getshorttermaccesskeyforaccount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) GetShortTermAccessKeyForAccountWithCallback(request *GetShortTermAccessKeyForAccountRequest, callback func(response *GetShortTermAccessKeyForAccountResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *GetShortTermAccessKeyForAccountResponse
-var err error
-defer close(result)
-response, err = client.GetShortTermAccessKeyForAccount(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) GetShortTermAccessKeyForAccountWithCallback(request *GetShortTermAccessKeyForAccountRequest, callback func(response *GetShortTermAccessKeyForAccountResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *GetShortTermAccessKeyForAccountResponse
+		var err error
+		defer close(result)
+		response, err = client.GetShortTermAccessKeyForAccount(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // GetShortTermAccessKeyForAccountRequest is the request struct for api GetShortTermAccessKeyForAccount
 type GetShortTermAccessKeyForAccountRequest struct {
-*requests.RpcRequest
-                    ExpireTime     string `position:"Query" name:"ExpireTime"`
-                    IsMfaPresent     requests.Boolean `position:"Query" name:"IsMfaPresent"`
-                    PK     string `position:"Query" name:"PK"`
+	*requests.RpcRequest
+	ExpireTime   string           `position:"Query" name:"ExpireTime"`
+	IsMfaPresent requests.Boolean `position:"Query" name:"IsMfaPresent"`
+	PK           string           `position:"Query" name:"PK"`
 }
-
 
 // GetShortTermAccessKeyForAccountResponse is the response struct for api GetShortTermAccessKeyForAccount
 type GetShortTermAccessKeyForAccountResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            PK     string `json:"PK" xml:"PK"`
-            AccessKey AccessKey  `json:"AccessKey" xml:"AccessKey"`
+	*responses.BaseResponse
+	RequestId string    `json:"RequestId" xml:"RequestId"`
+	PK        string    `json:"PK" xml:"PK"`
+	AccessKey AccessKey `json:"AccessKey" xml:"AccessKey"`
 }
 
 // CreateGetShortTermAccessKeyForAccountRequest creates a request to invoke GetShortTermAccessKeyForAccount API
 func CreateGetShortTermAccessKeyForAccountRequest() (request *GetShortTermAccessKeyForAccountRequest) {
-request = &GetShortTermAccessKeyForAccountRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Aas", "2015-07-01", "GetShortTermAccessKeyForAccount", "", "")
-return
+	request = &GetShortTermAccessKeyForAccountRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Aas", "2015-07-01", "GetShortTermAccessKeyForAccount", "aas", "openAPI")
+	return
 }
 
 // CreateGetShortTermAccessKeyForAccountResponse creates a response to parse from GetShortTermAccessKeyForAccount response
 func CreateGetShortTermAccessKeyForAccountResponse() (response *GetShortTermAccessKeyForAccountResponse) {
-response = &GetShortTermAccessKeyForAccountResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &GetShortTermAccessKeyForAccountResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

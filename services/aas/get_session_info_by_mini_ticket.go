@@ -1,4 +1,3 @@
-
 package aas
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,92 +16,89 @@ package aas
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // GetSessionInfoByMiniTicket invokes the aas.GetSessionInfoByMiniTicket API synchronously
 // api document: https://help.aliyun.com/api/aas/getsessioninfobyminiticket.html
 func (client *Client) GetSessionInfoByMiniTicket(request *GetSessionInfoByMiniTicketRequest) (response *GetSessionInfoByMiniTicketResponse, err error) {
-response = CreateGetSessionInfoByMiniTicketResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateGetSessionInfoByMiniTicketResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // GetSessionInfoByMiniTicketWithChan invokes the aas.GetSessionInfoByMiniTicket API asynchronously
 // api document: https://help.aliyun.com/api/aas/getsessioninfobyminiticket.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSessionInfoByMiniTicketWithChan(request *GetSessionInfoByMiniTicketRequest) (<-chan *GetSessionInfoByMiniTicketResponse, <-chan error) {
-responseChan := make(chan *GetSessionInfoByMiniTicketResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.GetSessionInfoByMiniTicket(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *GetSessionInfoByMiniTicketResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.GetSessionInfoByMiniTicket(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // GetSessionInfoByMiniTicketWithCallback invokes the aas.GetSessionInfoByMiniTicket API asynchronously
 // api document: https://help.aliyun.com/api/aas/getsessioninfobyminiticket.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) GetSessionInfoByMiniTicketWithCallback(request *GetSessionInfoByMiniTicketRequest, callback func(response *GetSessionInfoByMiniTicketResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *GetSessionInfoByMiniTicketResponse
-var err error
-defer close(result)
-response, err = client.GetSessionInfoByMiniTicket(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) GetSessionInfoByMiniTicketWithCallback(request *GetSessionInfoByMiniTicketRequest, callback func(response *GetSessionInfoByMiniTicketResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *GetSessionInfoByMiniTicketResponse
+		var err error
+		defer close(result)
+		response, err = client.GetSessionInfoByMiniTicket(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // GetSessionInfoByMiniTicketRequest is the request struct for api GetSessionInfoByMiniTicket
 type GetSessionInfoByMiniTicketRequest struct {
-*requests.RpcRequest
-                    Ticket     string `position:"Query" name:"Ticket"`
+	*requests.RpcRequest
+	Ticket string `position:"Query" name:"Ticket"`
 }
-
 
 // GetSessionInfoByMiniTicketResponse is the response struct for api GetSessionInfoByMiniTicket
 type GetSessionInfoByMiniTicketResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            SessionInfo     string `json:"SessionInfo" xml:"SessionInfo"`
+	*responses.BaseResponse
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	SessionInfo string `json:"SessionInfo" xml:"SessionInfo"`
 }
 
 // CreateGetSessionInfoByMiniTicketRequest creates a request to invoke GetSessionInfoByMiniTicket API
 func CreateGetSessionInfoByMiniTicketRequest() (request *GetSessionInfoByMiniTicketRequest) {
-request = &GetSessionInfoByMiniTicketRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Aas", "2015-07-01", "GetSessionInfoByMiniTicket", "", "")
-return
+	request = &GetSessionInfoByMiniTicketRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Aas", "2015-07-01", "GetSessionInfoByMiniTicket", "aas", "openAPI")
+	return
 }
 
 // CreateGetSessionInfoByMiniTicketResponse creates a response to parse from GetSessionInfoByMiniTicket response
 func CreateGetSessionInfoByMiniTicketResponse() (response *GetSessionInfoByMiniTicketResponse) {
-response = &GetSessionInfoByMiniTicketResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &GetSessionInfoByMiniTicketResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

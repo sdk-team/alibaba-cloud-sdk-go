@@ -1,4 +1,3 @@
-
 package aas
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,93 +16,90 @@ package aas
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // GetAliyunAccountWithBindTaobaoHid invokes the aas.GetAliyunAccountWithBindTaobaoHid API synchronously
 // api document: https://help.aliyun.com/api/aas/getaliyunaccountwithbindtaobaohid.html
 func (client *Client) GetAliyunAccountWithBindTaobaoHid(request *GetAliyunAccountWithBindTaobaoHidRequest) (response *GetAliyunAccountWithBindTaobaoHidResponse, err error) {
-response = CreateGetAliyunAccountWithBindTaobaoHidResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateGetAliyunAccountWithBindTaobaoHidResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // GetAliyunAccountWithBindTaobaoHidWithChan invokes the aas.GetAliyunAccountWithBindTaobaoHid API asynchronously
 // api document: https://help.aliyun.com/api/aas/getaliyunaccountwithbindtaobaohid.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAliyunAccountWithBindTaobaoHidWithChan(request *GetAliyunAccountWithBindTaobaoHidRequest) (<-chan *GetAliyunAccountWithBindTaobaoHidResponse, <-chan error) {
-responseChan := make(chan *GetAliyunAccountWithBindTaobaoHidResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.GetAliyunAccountWithBindTaobaoHid(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *GetAliyunAccountWithBindTaobaoHidResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.GetAliyunAccountWithBindTaobaoHid(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // GetAliyunAccountWithBindTaobaoHidWithCallback invokes the aas.GetAliyunAccountWithBindTaobaoHid API asynchronously
 // api document: https://help.aliyun.com/api/aas/getaliyunaccountwithbindtaobaohid.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) GetAliyunAccountWithBindTaobaoHidWithCallback(request *GetAliyunAccountWithBindTaobaoHidRequest, callback func(response *GetAliyunAccountWithBindTaobaoHidResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *GetAliyunAccountWithBindTaobaoHidResponse
-var err error
-defer close(result)
-response, err = client.GetAliyunAccountWithBindTaobaoHid(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) GetAliyunAccountWithBindTaobaoHidWithCallback(request *GetAliyunAccountWithBindTaobaoHidRequest, callback func(response *GetAliyunAccountWithBindTaobaoHidResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *GetAliyunAccountWithBindTaobaoHidResponse
+		var err error
+		defer close(result)
+		response, err = client.GetAliyunAccountWithBindTaobaoHid(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // GetAliyunAccountWithBindTaobaoHidRequest is the request struct for api GetAliyunAccountWithBindTaobaoHid
 type GetAliyunAccountWithBindTaobaoHidRequest struct {
-*requests.RpcRequest
-                    HavanaId     string `position:"Query" name:"HavanaId"`
+	*requests.RpcRequest
+	HavanaId string `position:"Query" name:"HavanaId"`
 }
-
 
 // GetAliyunAccountWithBindTaobaoHidResponse is the response struct for api GetAliyunAccountWithBindTaobaoHid
 type GetAliyunAccountWithBindTaobaoHidResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            PK     string `json:"PK" xml:"PK"`
-            PartnerPk     string `json:"PartnerPk" xml:"PartnerPk"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	PK        string `json:"PK" xml:"PK"`
+	PartnerPk string `json:"PartnerPk" xml:"PartnerPk"`
 }
 
 // CreateGetAliyunAccountWithBindTaobaoHidRequest creates a request to invoke GetAliyunAccountWithBindTaobaoHid API
 func CreateGetAliyunAccountWithBindTaobaoHidRequest() (request *GetAliyunAccountWithBindTaobaoHidRequest) {
-request = &GetAliyunAccountWithBindTaobaoHidRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Aas", "2015-07-01", "GetAliyunAccountWithBindTaobaoHid", "", "")
-return
+	request = &GetAliyunAccountWithBindTaobaoHidRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Aas", "2015-07-01", "GetAliyunAccountWithBindTaobaoHid", "aas", "openAPI")
+	return
 }
 
 // CreateGetAliyunAccountWithBindTaobaoHidResponse creates a response to parse from GetAliyunAccountWithBindTaobaoHid response
 func CreateGetAliyunAccountWithBindTaobaoHidResponse() (response *GetAliyunAccountWithBindTaobaoHidResponse) {
-response = &GetAliyunAccountWithBindTaobaoHidResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &GetAliyunAccountWithBindTaobaoHidResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

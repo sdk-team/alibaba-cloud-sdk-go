@@ -1,4 +1,3 @@
-
 package aas
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,95 +16,92 @@ package aas
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // ListAccessKeysForAccount invokes the aas.ListAccessKeysForAccount API synchronously
 // api document: https://help.aliyun.com/api/aas/listaccesskeysforaccount.html
 func (client *Client) ListAccessKeysForAccount(request *ListAccessKeysForAccountRequest) (response *ListAccessKeysForAccountResponse, err error) {
-response = CreateListAccessKeysForAccountResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateListAccessKeysForAccountResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // ListAccessKeysForAccountWithChan invokes the aas.ListAccessKeysForAccount API asynchronously
 // api document: https://help.aliyun.com/api/aas/listaccesskeysforaccount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAccessKeysForAccountWithChan(request *ListAccessKeysForAccountRequest) (<-chan *ListAccessKeysForAccountResponse, <-chan error) {
-responseChan := make(chan *ListAccessKeysForAccountResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ListAccessKeysForAccount(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ListAccessKeysForAccountResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ListAccessKeysForAccount(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // ListAccessKeysForAccountWithCallback invokes the aas.ListAccessKeysForAccount API asynchronously
 // api document: https://help.aliyun.com/api/aas/listaccesskeysforaccount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ListAccessKeysForAccountWithCallback(request *ListAccessKeysForAccountRequest, callback func(response *ListAccessKeysForAccountResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ListAccessKeysForAccountResponse
-var err error
-defer close(result)
-response, err = client.ListAccessKeysForAccount(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ListAccessKeysForAccountWithCallback(request *ListAccessKeysForAccountRequest, callback func(response *ListAccessKeysForAccountResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ListAccessKeysForAccountResponse
+		var err error
+		defer close(result)
+		response, err = client.ListAccessKeysForAccount(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // ListAccessKeysForAccountRequest is the request struct for api ListAccessKeysForAccount
 type ListAccessKeysForAccountRequest struct {
-*requests.RpcRequest
-                    AKType     string `position:"Query" name:"AKType"`
-                    AKStatus     string `position:"Query" name:"AKStatus"`
-                    PK     string `position:"Query" name:"PK"`
+	*requests.RpcRequest
+	AKType   string `position:"Query" name:"AKType"`
+	AKStatus string `position:"Query" name:"AKStatus"`
+	PK       string `position:"Query" name:"PK"`
 }
-
 
 // ListAccessKeysForAccountResponse is the response struct for api ListAccessKeysForAccount
 type ListAccessKeysForAccountResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            PK     string `json:"PK" xml:"PK"`
-                    AccessKeys AccessKeys `json:"AccessKeys" xml:"AccessKeys"`
+	*responses.BaseResponse
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	PK         string     `json:"PK" xml:"PK"`
+	AccessKeys AccessKeys `json:"AccessKeys" xml:"AccessKeys"`
 }
 
 // CreateListAccessKeysForAccountRequest creates a request to invoke ListAccessKeysForAccount API
 func CreateListAccessKeysForAccountRequest() (request *ListAccessKeysForAccountRequest) {
-request = &ListAccessKeysForAccountRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Aas", "2015-07-01", "ListAccessKeysForAccount", "", "")
-return
+	request = &ListAccessKeysForAccountRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Aas", "2015-07-01", "ListAccessKeysForAccount", "aas", "openAPI")
+	return
 }
 
 // CreateListAccessKeysForAccountResponse creates a response to parse from ListAccessKeysForAccount response
 func CreateListAccessKeysForAccountResponse() (response *ListAccessKeysForAccountResponse) {
-response = &ListAccessKeysForAccountResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ListAccessKeysForAccountResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

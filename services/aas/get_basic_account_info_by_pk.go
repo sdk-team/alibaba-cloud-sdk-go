@@ -1,4 +1,3 @@
-
 package aas
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,103 +16,100 @@ package aas
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // GetBasicAccountInfoByPk invokes the aas.GetBasicAccountInfoByPk API synchronously
 // api document: https://help.aliyun.com/api/aas/getbasicaccountinfobypk.html
 func (client *Client) GetBasicAccountInfoByPk(request *GetBasicAccountInfoByPkRequest) (response *GetBasicAccountInfoByPkResponse, err error) {
-response = CreateGetBasicAccountInfoByPkResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateGetBasicAccountInfoByPkResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // GetBasicAccountInfoByPkWithChan invokes the aas.GetBasicAccountInfoByPk API asynchronously
 // api document: https://help.aliyun.com/api/aas/getbasicaccountinfobypk.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetBasicAccountInfoByPkWithChan(request *GetBasicAccountInfoByPkRequest) (<-chan *GetBasicAccountInfoByPkResponse, <-chan error) {
-responseChan := make(chan *GetBasicAccountInfoByPkResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.GetBasicAccountInfoByPk(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *GetBasicAccountInfoByPkResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.GetBasicAccountInfoByPk(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // GetBasicAccountInfoByPkWithCallback invokes the aas.GetBasicAccountInfoByPk API asynchronously
 // api document: https://help.aliyun.com/api/aas/getbasicaccountinfobypk.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) GetBasicAccountInfoByPkWithCallback(request *GetBasicAccountInfoByPkRequest, callback func(response *GetBasicAccountInfoByPkResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *GetBasicAccountInfoByPkResponse
-var err error
-defer close(result)
-response, err = client.GetBasicAccountInfoByPk(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) GetBasicAccountInfoByPkWithCallback(request *GetBasicAccountInfoByPkRequest, callback func(response *GetBasicAccountInfoByPkResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *GetBasicAccountInfoByPkResponse
+		var err error
+		defer close(result)
+		response, err = client.GetBasicAccountInfoByPk(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // GetBasicAccountInfoByPkRequest is the request struct for api GetBasicAccountInfoByPk
 type GetBasicAccountInfoByPkRequest struct {
-*requests.RpcRequest
-                    PK     string `position:"Query" name:"PK"`
+	*requests.RpcRequest
+	PK string `position:"Query" name:"PK"`
 }
-
 
 // GetBasicAccountInfoByPkResponse is the response struct for api GetBasicAccountInfoByPk
 type GetBasicAccountInfoByPkResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            PK     string `json:"PK" xml:"PK"`
-            HavanaId     string `json:"HavanaId" xml:"HavanaId"`
-            ParentPk     string `json:"ParentPk" xml:"ParentPk"`
-            PartnerPk     string `json:"PartnerPk" xml:"PartnerPk"`
-            AccountStructure     string `json:"AccountStructure" xml:"AccountStructure"`
-            SymmetricAkLimit     int `json:"SymmetricAkLimit" xml:"SymmetricAkLimit"`
-            RSAAkLimit     int `json:"RSAAkLimit" xml:"RSAAkLimit"`
-            VirtualMFALimit     int `json:"VirtualMFALimit" xml:"VirtualMFALimit"`
-            MulitiBidUser     bool `json:"MulitiBidUser" xml:"MulitiBidUser"`
-            LastLoginTime     string `json:"LastLoginTime" xml:"LastLoginTime"`
-            CreateTime     string `json:"CreateTime" xml:"CreateTime"`
-            AccountStatus     string `json:"AccountStatus" xml:"AccountStatus"`
+	*responses.BaseResponse
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	PK               string `json:"PK" xml:"PK"`
+	HavanaId         string `json:"HavanaId" xml:"HavanaId"`
+	ParentPk         string `json:"ParentPk" xml:"ParentPk"`
+	PartnerPk        string `json:"PartnerPk" xml:"PartnerPk"`
+	AccountStructure string `json:"AccountStructure" xml:"AccountStructure"`
+	SymmetricAkLimit int    `json:"SymmetricAkLimit" xml:"SymmetricAkLimit"`
+	RSAAkLimit       int    `json:"RSAAkLimit" xml:"RSAAkLimit"`
+	VirtualMFALimit  int    `json:"VirtualMFALimit" xml:"VirtualMFALimit"`
+	MulitiBidUser    bool   `json:"MulitiBidUser" xml:"MulitiBidUser"`
+	LastLoginTime    string `json:"LastLoginTime" xml:"LastLoginTime"`
+	CreateTime       string `json:"CreateTime" xml:"CreateTime"`
+	AccountStatus    string `json:"AccountStatus" xml:"AccountStatus"`
 }
 
 // CreateGetBasicAccountInfoByPkRequest creates a request to invoke GetBasicAccountInfoByPk API
 func CreateGetBasicAccountInfoByPkRequest() (request *GetBasicAccountInfoByPkRequest) {
-request = &GetBasicAccountInfoByPkRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Aas", "2015-07-01", "GetBasicAccountInfoByPk", "", "")
-return
+	request = &GetBasicAccountInfoByPkRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Aas", "2015-07-01", "GetBasicAccountInfoByPk", "aas", "openAPI")
+	return
 }
 
 // CreateGetBasicAccountInfoByPkResponse creates a response to parse from GetBasicAccountInfoByPk response
 func CreateGetBasicAccountInfoByPkResponse() (response *GetBasicAccountInfoByPkResponse) {
-response = &GetBasicAccountInfoByPkResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &GetBasicAccountInfoByPkResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-
