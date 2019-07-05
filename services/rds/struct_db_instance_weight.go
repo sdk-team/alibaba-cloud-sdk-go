@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,9 +17,9 @@ package rds
 
 // DBInstanceWeight is a nested struct in rds response
 type DBInstanceWeight struct {
-            Availability     string `json:"Availability" xml:"Availability"`
-            DBInstanceType     string `json:"DBInstanceType" xml:"DBInstanceType"`
-            DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-            Weight     string `json:"Weight" xml:"Weight"`
-            ReadonlyInstanceSQLDelayedTime     string `json:"ReadonlyInstanceSQLDelayedTime" xml:"ReadonlyInstanceSQLDelayedTime"`
+	Availability                   string `json:"Availability" xml:"Availability"`
+	DBInstanceType                 string `json:"DBInstanceType" xml:"DBInstanceType"`
+	DBInstanceId                   string `json:"DBInstanceId" xml:"DBInstanceId"`
+	ReadonlyInstanceSQLDelayedTime string `json:"ReadonlyInstanceSQLDelayedTime" xml:"ReadonlyInstanceSQLDelayedTime"`
+	Weight                         string `json:"Weight" xml:"Weight"`
 }

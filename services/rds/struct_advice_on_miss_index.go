@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +17,8 @@ package rds
 
 // AdviceOnMissIndex is a nested struct in rds response
 type AdviceOnMissIndex struct {
-            DBName     string `json:"DBName" xml:"DBName"`
-            TableName     string `json:"TableName" xml:"TableName"`
-            QueryColumn     string `json:"QueryColumn" xml:"QueryColumn"`
-            SQLText     string `json:"SQLText" xml:"SQLText"`
+	DBName      string `json:"DBName" xml:"DBName"`
+	TableName   string `json:"TableName" xml:"TableName"`
+	QueryColumn string `json:"QueryColumn" xml:"QueryColumn"`
+	SQLText     string `json:"SQLText" xml:"SQLText"`
 }

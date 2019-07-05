@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // ItemsInDescribeDBInstances is a nested struct in rds response
 type ItemsInDescribeDBInstances struct {
-DBInstance []DBInstance `json:"DBInstance" xml:"DBInstance"`
+	DBInstance []DBInstance `json:"DBInstance" xml:"DBInstance"`
 }

@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,6 @@ package rds
 
 // AdviceOnMissPK is a nested struct in rds response
 type AdviceOnMissPK struct {
-            DBName     string `json:"DBName" xml:"DBName"`
-            TableName     string `json:"TableName" xml:"TableName"`
+	DBName    string `json:"DBName" xml:"DBName"`
+	TableName string `json:"TableName" xml:"TableName"`
 }

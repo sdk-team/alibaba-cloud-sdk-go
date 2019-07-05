@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,96 +16,93 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // RestartDBInstance invokes the rds.RestartDBInstance API synchronously
 // api document: https://help.aliyun.com/api/rds/restartdbinstance.html
 func (client *Client) RestartDBInstance(request *RestartDBInstanceRequest) (response *RestartDBInstanceResponse, err error) {
-response = CreateRestartDBInstanceResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateRestartDBInstanceResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // RestartDBInstanceWithChan invokes the rds.RestartDBInstance API asynchronously
 // api document: https://help.aliyun.com/api/rds/restartdbinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestartDBInstanceWithChan(request *RestartDBInstanceRequest) (<-chan *RestartDBInstanceResponse, <-chan error) {
-responseChan := make(chan *RestartDBInstanceResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.RestartDBInstance(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *RestartDBInstanceResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.RestartDBInstance(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // RestartDBInstanceWithCallback invokes the rds.RestartDBInstance API asynchronously
 // api document: https://help.aliyun.com/api/rds/restartdbinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) RestartDBInstanceWithCallback(request *RestartDBInstanceRequest, callback func(response *RestartDBInstanceResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *RestartDBInstanceResponse
-var err error
-defer close(result)
-response, err = client.RestartDBInstance(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) RestartDBInstanceWithCallback(request *RestartDBInstanceRequest, callback func(response *RestartDBInstanceResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *RestartDBInstanceResponse
+		var err error
+		defer close(result)
+		response, err = client.RestartDBInstance(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // RestartDBInstanceRequest is the request struct for api RestartDBInstance
 type RestartDBInstanceRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    ClientToken     string `position:"Query" name:"ClientToken"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    DBInstanceId     string `position:"Query" name:"DBInstanceId"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
-
 
 // RestartDBInstanceResponse is the response struct for api RestartDBInstance
 type RestartDBInstanceResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateRestartDBInstanceRequest creates a request to invoke RestartDBInstance API
 func CreateRestartDBInstanceRequest() (request *RestartDBInstanceRequest) {
-request = &RestartDBInstanceRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "RestartDBInstance", "rds", "openAPI")
-return
+	request = &RestartDBInstanceRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "RestartDBInstance", "rds", "openAPI")
+	return
 }
 
 // CreateRestartDBInstanceResponse creates a response to parse from RestartDBInstance response
 func CreateRestartDBInstanceResponse() (response *RestartDBInstanceResponse) {
-response = &RestartDBInstanceResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &RestartDBInstanceResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

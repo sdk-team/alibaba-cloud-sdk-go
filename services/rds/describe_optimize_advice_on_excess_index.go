@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,101 +16,98 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // DescribeOptimizeAdviceOnExcessIndex invokes the rds.DescribeOptimizeAdviceOnExcessIndex API synchronously
 // api document: https://help.aliyun.com/api/rds/describeoptimizeadviceonexcessindex.html
 func (client *Client) DescribeOptimizeAdviceOnExcessIndex(request *DescribeOptimizeAdviceOnExcessIndexRequest) (response *DescribeOptimizeAdviceOnExcessIndexResponse, err error) {
-response = CreateDescribeOptimizeAdviceOnExcessIndexResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeOptimizeAdviceOnExcessIndexResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // DescribeOptimizeAdviceOnExcessIndexWithChan invokes the rds.DescribeOptimizeAdviceOnExcessIndex API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeoptimizeadviceonexcessindex.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOptimizeAdviceOnExcessIndexWithChan(request *DescribeOptimizeAdviceOnExcessIndexRequest) (<-chan *DescribeOptimizeAdviceOnExcessIndexResponse, <-chan error) {
-responseChan := make(chan *DescribeOptimizeAdviceOnExcessIndexResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeOptimizeAdviceOnExcessIndex(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeOptimizeAdviceOnExcessIndexResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeOptimizeAdviceOnExcessIndex(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // DescribeOptimizeAdviceOnExcessIndexWithCallback invokes the rds.DescribeOptimizeAdviceOnExcessIndex API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeoptimizeadviceonexcessindex.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeOptimizeAdviceOnExcessIndexWithCallback(request *DescribeOptimizeAdviceOnExcessIndexRequest, callback func(response *DescribeOptimizeAdviceOnExcessIndexResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeOptimizeAdviceOnExcessIndexResponse
-var err error
-defer close(result)
-response, err = client.DescribeOptimizeAdviceOnExcessIndex(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeOptimizeAdviceOnExcessIndexWithCallback(request *DescribeOptimizeAdviceOnExcessIndexRequest, callback func(response *DescribeOptimizeAdviceOnExcessIndexResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeOptimizeAdviceOnExcessIndexResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeOptimizeAdviceOnExcessIndex(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // DescribeOptimizeAdviceOnExcessIndexRequest is the request struct for api DescribeOptimizeAdviceOnExcessIndex
 type DescribeOptimizeAdviceOnExcessIndexRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
-                    PageSize     requests.Integer `position:"Query" name:"PageSize"`
-                    DBInstanceId     string `position:"Query" name:"DBInstanceId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 }
-
 
 // DescribeOptimizeAdviceOnExcessIndexResponse is the response struct for api DescribeOptimizeAdviceOnExcessIndex
 type DescribeOptimizeAdviceOnExcessIndexResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            TotalRecordsCount     int `json:"TotalRecordsCount" xml:"TotalRecordsCount"`
-            PageNumber     int `json:"PageNumber" xml:"PageNumber"`
-            PageRecordCount     int `json:"PageRecordCount" xml:"PageRecordCount"`
-                    Items ItemsInDescribeOptimizeAdviceOnExcessIndex `json:"Items" xml:"Items"`
+	*responses.BaseResponse
+	RequestId         string                                     `json:"RequestId" xml:"RequestId"`
+	TotalRecordsCount int                                        `json:"TotalRecordsCount" xml:"TotalRecordsCount"`
+	PageNumber        int                                        `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount   int                                        `json:"PageRecordCount" xml:"PageRecordCount"`
+	Items             ItemsInDescribeOptimizeAdviceOnExcessIndex `json:"Items" xml:"Items"`
 }
 
 // CreateDescribeOptimizeAdviceOnExcessIndexRequest creates a request to invoke DescribeOptimizeAdviceOnExcessIndex API
 func CreateDescribeOptimizeAdviceOnExcessIndexRequest() (request *DescribeOptimizeAdviceOnExcessIndexRequest) {
-request = &DescribeOptimizeAdviceOnExcessIndexRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOptimizeAdviceOnExcessIndex", "rds", "openAPI")
-return
+	request = &DescribeOptimizeAdviceOnExcessIndexRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOptimizeAdviceOnExcessIndex", "rds", "openAPI")
+	return
 }
 
 // CreateDescribeOptimizeAdviceOnExcessIndexResponse creates a response to parse from DescribeOptimizeAdviceOnExcessIndex response
 func CreateDescribeOptimizeAdviceOnExcessIndexResponse() (response *DescribeOptimizeAdviceOnExcessIndexResponse) {
-response = &DescribeOptimizeAdviceOnExcessIndexResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeOptimizeAdviceOnExcessIndexResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // CollationTimeZones is a nested struct in rds response
 type CollationTimeZones struct {
-CollationTimeZone []CollationTimeZone `json:"CollationTimeZone" xml:"CollationTimeZone"`
+	CollationTimeZone []CollationTimeZone `json:"CollationTimeZone" xml:"CollationTimeZone"`
 }

@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // ItemsInDescribeTags is a nested struct in rds response
 type ItemsInDescribeTags struct {
-TagInfos []TagInfos `json:"TagInfos" xml:"TagInfos"`
+	TagInfos []TagInfos `json:"TagInfos" xml:"TagInfos"`
 }

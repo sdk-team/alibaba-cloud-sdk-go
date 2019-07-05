@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,36 +17,36 @@ package rds
 
 // DBInstance is a nested struct in rds response
 type DBInstance struct {
-            Category     string `json:"Category" xml:"Category"`
-            LockReason     string `json:"LockReason" xml:"LockReason"`
-            InsId     int `json:"InsId" xml:"InsId"`
-            GuardDBInstanceId     string `json:"GuardDBInstanceId" xml:"GuardDBInstanceId"`
-            DBInstanceDescription     string `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
-            Engine     string `json:"Engine" xml:"Engine"`
-            CreateTime     string `json:"CreateTime" xml:"CreateTime"`
-            DBInstanceName     string `json:"DBInstanceName" xml:"DBInstanceName"`
-            DBInstanceNetType     string `json:"DBInstanceNetType" xml:"DBInstanceNetType"`
-            DBInstanceClass     string `json:"DBInstanceClass" xml:"DBInstanceClass"`
-            VpcCloudInstanceId     string `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
-            DestroyTime     string `json:"DestroyTime" xml:"DestroyTime"`
-            RegionId     string `json:"RegionId" xml:"RegionId"`
-            InstanceNetworkType     string `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
-            ResourceGroupId     string `json:"ResourceGroupId" xml:"ResourceGroupId"`
-            DBInstanceType     string `json:"DBInstanceType" xml:"DBInstanceType"`
-            ExpireTime     string `json:"ExpireTime" xml:"ExpireTime"`
-            DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-            VpcId     string `json:"VpcId" xml:"VpcId"`
-            DBInstanceStorageType     string `json:"DBInstanceStorageType" xml:"DBInstanceStorageType"`
-            MutriORsignle     bool `json:"MutriORsignle" xml:"MutriORsignle"`
-            EngineVersion     string `json:"EngineVersion" xml:"EngineVersion"`
-            PayType     string `json:"PayType" xml:"PayType"`
-            VSwitchId     string `json:"VSwitchId" xml:"VSwitchId"`
-            MasterInstanceId     string `json:"MasterInstanceId" xml:"MasterInstanceId"`
-            TempDBInstanceId     string `json:"TempDBInstanceId" xml:"TempDBInstanceId"`
-            DBInstanceStatus     string `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
-            ZoneId     string `json:"ZoneId" xml:"ZoneId"`
-            ReplicateId     string `json:"ReplicateId" xml:"ReplicateId"`
-            ConnectionMode     string `json:"ConnectionMode" xml:"ConnectionMode"`
-            LockMode     string `json:"LockMode" xml:"LockMode"`
-                    ReadOnlyDBInstanceIds ReadOnlyDBInstanceIdsInDescribeDBInstances `json:"ReadOnlyDBInstanceIds" xml:"ReadOnlyDBInstanceIds"`
+	Category                string                                             `json:"Category" xml:"Category"`
+	LockReason              string                                             `json:"LockReason" xml:"LockReason"`
+	InsId                   int                                                `json:"InsId" xml:"InsId"`
+	GuardDBInstanceId       string                                             `json:"GuardDBInstanceId" xml:"GuardDBInstanceId"`
+	DBInstanceDescription   string                                             `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
+	Engine                  string                                             `json:"Engine" xml:"Engine"`
+	CreateTime              string                                             `json:"CreateTime" xml:"CreateTime"`
+	DBInstanceNetType       string                                             `json:"DBInstanceNetType" xml:"DBInstanceNetType"`
+	DBInstanceClass         string                                             `json:"DBInstanceClass" xml:"DBInstanceClass"`
+	VpcCloudInstanceId      string                                             `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
+	DestroyTime             string                                             `json:"DestroyTime" xml:"DestroyTime"`
+	RegionId                string                                             `json:"RegionId" xml:"RegionId"`
+	InstanceNetworkType     string                                             `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
+	ResourceGroupId         string                                             `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	DBInstanceType          string                                             `json:"DBInstanceType" xml:"DBInstanceType"`
+	ExpireTime              string                                             `json:"ExpireTime" xml:"ExpireTime"`
+	DBInstanceId            string                                             `json:"DBInstanceId" xml:"DBInstanceId"`
+	VpcId                   string                                             `json:"VpcId" xml:"VpcId"`
+	DBInstanceStorageType   string                                             `json:"DBInstanceStorageType" xml:"DBInstanceStorageType"`
+	MutriORsignle           bool                                               `json:"MutriORsignle" xml:"MutriORsignle"`
+	EngineVersion           string                                             `json:"EngineVersion" xml:"EngineVersion"`
+	PayType                 string                                             `json:"PayType" xml:"PayType"`
+	VSwitchId               string                                             `json:"VSwitchId" xml:"VSwitchId"`
+	MasterInstanceId        string                                             `json:"MasterInstanceId" xml:"MasterInstanceId"`
+	TempDBInstanceId        string                                             `json:"TempDBInstanceId" xml:"TempDBInstanceId"`
+	DBInstanceStatus        string                                             `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
+	ZoneId                  string                                             `json:"ZoneId" xml:"ZoneId"`
+	ReplicateId             string                                             `json:"ReplicateId" xml:"ReplicateId"`
+	ConnectionMode          string                                             `json:"ConnectionMode" xml:"ConnectionMode"`
+	AutoUpgradeMinorVersion string                                             `json:"AutoUpgradeMinorVersion" xml:"AutoUpgradeMinorVersion"`
+	LockMode                string                                             `json:"LockMode" xml:"LockMode"`
+	ReadOnlyDBInstanceIds   ReadOnlyDBInstanceIdsInDescribeDBInstancesForClone `json:"ReadOnlyDBInstanceIds" xml:"ReadOnlyDBInstanceIds"`
 }

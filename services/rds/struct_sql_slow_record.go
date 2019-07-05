@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,12 +17,12 @@ package rds
 
 // SQLSlowRecord is a nested struct in rds response
 type SQLSlowRecord struct {
-            HostAddress     string `json:"HostAddress" xml:"HostAddress"`
-            DBName     string `json:"DBName" xml:"DBName"`
-            SQLText     string `json:"SQLText" xml:"SQLText"`
-            QueryTimes     int64 `json:"QueryTimes" xml:"QueryTimes"`
-            LockTimes     int64 `json:"LockTimes" xml:"LockTimes"`
-            ParseRowCounts     int64 `json:"ParseRowCounts" xml:"ParseRowCounts"`
-            ReturnRowCounts     int64 `json:"ReturnRowCounts" xml:"ReturnRowCounts"`
-            ExecutionStartTime     string `json:"ExecutionStartTime" xml:"ExecutionStartTime"`
+	HostAddress        string `json:"HostAddress" xml:"HostAddress"`
+	DBName             string `json:"DBName" xml:"DBName"`
+	SQLText            string `json:"SQLText" xml:"SQLText"`
+	QueryTimes         int64  `json:"QueryTimes" xml:"QueryTimes"`
+	LockTimes          int64  `json:"LockTimes" xml:"LockTimes"`
+	ParseRowCounts     int64  `json:"ParseRowCounts" xml:"ParseRowCounts"`
+	ReturnRowCounts    int64  `json:"ReturnRowCounts" xml:"ReturnRowCounts"`
+	ExecutionStartTime string `json:"ExecutionStartTime" xml:"ExecutionStartTime"`
 }

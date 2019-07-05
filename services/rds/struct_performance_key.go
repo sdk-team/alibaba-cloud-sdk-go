@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +17,8 @@ package rds
 
 // PerformanceKey is a nested struct in rds response
 type PerformanceKey struct {
-            Key     string `json:"Key" xml:"Key"`
-            Unit     string `json:"Unit" xml:"Unit"`
-            ValueFormat     string `json:"ValueFormat" xml:"ValueFormat"`
-                    Values ValuesInDescribeDBInstancePerformance `json:"Values" xml:"Values"`
+	Key         string `json:"Key" xml:"Key"`
+	Unit        string `json:"Unit" xml:"Unit"`
+	ValueFormat string `json:"ValueFormat" xml:"ValueFormat"`
+	Values      Values `json:"Values" xml:"Values"`
 }

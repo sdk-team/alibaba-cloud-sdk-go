@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // CharacterSetNameItems is a nested struct in rds response
 type CharacterSetNameItems struct {
-CharacterSetName []    string  `json:"CharacterSetName" xml:"CharacterSetName"`
+	CharacterSetName []string `json:"CharacterSetName" xml:"CharacterSetName"`
 }

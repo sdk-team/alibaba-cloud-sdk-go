@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // PerformanceValueInDescribeReplicaUsage is a nested struct in rds response
 type PerformanceValueInDescribeReplicaUsage struct {
-PerformanceValueItem []PerformanceValueItem `json:"PerformanceValueItem" xml:"PerformanceValueItem"`
+	PerformanceValueItem []PerformanceValueItem `json:"PerformanceValueItem" xml:"PerformanceValueItem"`
 }

@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,100 +16,97 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // DescribeParameters invokes the rds.DescribeParameters API synchronously
 // api document: https://help.aliyun.com/api/rds/describeparameters.html
 func (client *Client) DescribeParameters(request *DescribeParametersRequest) (response *DescribeParametersResponse, err error) {
-response = CreateDescribeParametersResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeParametersResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // DescribeParametersWithChan invokes the rds.DescribeParameters API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeparameters.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeParametersWithChan(request *DescribeParametersRequest) (<-chan *DescribeParametersResponse, <-chan error) {
-responseChan := make(chan *DescribeParametersResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeParameters(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeParametersResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeParameters(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // DescribeParametersWithCallback invokes the rds.DescribeParameters API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeparameters.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeParametersWithCallback(request *DescribeParametersRequest, callback func(response *DescribeParametersResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeParametersResponse
-var err error
-defer close(result)
-response, err = client.DescribeParameters(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeParametersWithCallback(request *DescribeParametersRequest, callback func(response *DescribeParametersResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeParametersResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeParameters(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // DescribeParametersRequest is the request struct for api DescribeParameters
 type DescribeParametersRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    ClientToken     string `position:"Query" name:"ClientToken"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    DBInstanceId     string `position:"Query" name:"DBInstanceId"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
-
 
 // DescribeParametersResponse is the response struct for api DescribeParameters
 type DescribeParametersResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            Engine     string `json:"Engine" xml:"Engine"`
-            EngineVersion     string `json:"EngineVersion" xml:"EngineVersion"`
-                    ConfigParameters ConfigParameters `json:"ConfigParameters" xml:"ConfigParameters"`
-                    RunningParameters RunningParameters `json:"RunningParameters" xml:"RunningParameters"`
+	*responses.BaseResponse
+	RequestId         string            `json:"RequestId" xml:"RequestId"`
+	Engine            string            `json:"Engine" xml:"Engine"`
+	EngineVersion     string            `json:"EngineVersion" xml:"EngineVersion"`
+	ConfigParameters  ConfigParameters  `json:"ConfigParameters" xml:"ConfigParameters"`
+	RunningParameters RunningParameters `json:"RunningParameters" xml:"RunningParameters"`
 }
 
 // CreateDescribeParametersRequest creates a request to invoke DescribeParameters API
 func CreateDescribeParametersRequest() (request *DescribeParametersRequest) {
-request = &DescribeParametersRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeParameters", "rds", "openAPI")
-return
+	request = &DescribeParametersRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeParameters", "rds", "openAPI")
+	return
 }
 
 // CreateDescribeParametersResponse creates a response to parse from DescribeParameters response
 func CreateDescribeParametersResponse() (response *DescribeParametersResponse) {
-response = &DescribeParametersResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeParametersResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

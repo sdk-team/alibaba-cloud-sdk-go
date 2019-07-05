@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,9 +17,9 @@ package rds
 
 // DBInstanceIPArray is a nested struct in rds response
 type DBInstanceIPArray struct {
-            DBInstanceIPArrayName     string `json:"DBInstanceIPArrayName" xml:"DBInstanceIPArrayName"`
-            DBInstanceIPArrayAttribute     string `json:"DBInstanceIPArrayAttribute" xml:"DBInstanceIPArrayAttribute"`
-            SecurityIPType     string `json:"SecurityIPType" xml:"SecurityIPType"`
-            SecurityIPList     string `json:"SecurityIPList" xml:"SecurityIPList"`
-            WhitelistNetworkType     string `json:"WhitelistNetworkType" xml:"WhitelistNetworkType"`
+	DBInstanceIPArrayName      string `json:"DBInstanceIPArrayName" xml:"DBInstanceIPArrayName"`
+	DBInstanceIPArrayAttribute string `json:"DBInstanceIPArrayAttribute" xml:"DBInstanceIPArrayAttribute"`
+	SecurityIPType             string `json:"SecurityIPType" xml:"SecurityIPType"`
+	SecurityIPList             string `json:"SecurityIPList" xml:"SecurityIPList"`
+	WhitelistNetworkType       string `json:"WhitelistNetworkType" xml:"WhitelistNetworkType"`
 }

@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,97 +16,94 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // AllocateInstancePrivateConnection invokes the rds.AllocateInstancePrivateConnection API synchronously
 // api document: https://help.aliyun.com/api/rds/allocateinstanceprivateconnection.html
 func (client *Client) AllocateInstancePrivateConnection(request *AllocateInstancePrivateConnectionRequest) (response *AllocateInstancePrivateConnectionResponse, err error) {
-response = CreateAllocateInstancePrivateConnectionResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateAllocateInstancePrivateConnectionResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // AllocateInstancePrivateConnectionWithChan invokes the rds.AllocateInstancePrivateConnection API asynchronously
 // api document: https://help.aliyun.com/api/rds/allocateinstanceprivateconnection.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateInstancePrivateConnectionWithChan(request *AllocateInstancePrivateConnectionRequest) (<-chan *AllocateInstancePrivateConnectionResponse, <-chan error) {
-responseChan := make(chan *AllocateInstancePrivateConnectionResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.AllocateInstancePrivateConnection(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *AllocateInstancePrivateConnectionResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.AllocateInstancePrivateConnection(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // AllocateInstancePrivateConnectionWithCallback invokes the rds.AllocateInstancePrivateConnection API asynchronously
 // api document: https://help.aliyun.com/api/rds/allocateinstanceprivateconnection.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) AllocateInstancePrivateConnectionWithCallback(request *AllocateInstancePrivateConnectionRequest, callback func(response *AllocateInstancePrivateConnectionResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *AllocateInstancePrivateConnectionResponse
-var err error
-defer close(result)
-response, err = client.AllocateInstancePrivateConnection(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) AllocateInstancePrivateConnectionWithCallback(request *AllocateInstancePrivateConnectionRequest, callback func(response *AllocateInstancePrivateConnectionResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *AllocateInstancePrivateConnectionResponse
+		var err error
+		defer close(result)
+		response, err = client.AllocateInstancePrivateConnection(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // AllocateInstancePrivateConnectionRequest is the request struct for api AllocateInstancePrivateConnection
 type AllocateInstancePrivateConnectionRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    ConnectionStringPrefix     string `position:"Query" name:"ConnectionStringPrefix"`
-                    DBInstanceId     string `position:"Query" name:"DBInstanceId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    Port     string `position:"Query" name:"Port"`
+	*requests.RpcRequest
+	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ConnectionStringPrefix string           `position:"Query" name:"ConnectionStringPrefix"`
+	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
+	Port                   string           `position:"Query" name:"Port"`
+	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId           string           `position:"Query" name:"DBInstanceId"`
+	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 }
-
 
 // AllocateInstancePrivateConnectionResponse is the response struct for api AllocateInstancePrivateConnection
 type AllocateInstancePrivateConnectionResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateAllocateInstancePrivateConnectionRequest creates a request to invoke AllocateInstancePrivateConnection API
 func CreateAllocateInstancePrivateConnectionRequest() (request *AllocateInstancePrivateConnectionRequest) {
-request = &AllocateInstancePrivateConnectionRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "AllocateInstancePrivateConnection", "rds", "openAPI")
-return
+	request = &AllocateInstancePrivateConnectionRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "AllocateInstancePrivateConnection", "rds", "openAPI")
+	return
 }
 
 // CreateAllocateInstancePrivateConnectionResponse creates a response to parse from AllocateInstancePrivateConnection response
 func CreateAllocateInstancePrivateConnectionResponse() (response *AllocateInstancePrivateConnectionResponse) {
-response = &AllocateInstancePrivateConnectionResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &AllocateInstancePrivateConnectionResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // Policies is a nested struct in rds response
 type Policies struct {
-Policy []Policy `json:"Policy" xml:"Policy"`
+	Policy []Policy `json:"Policy" xml:"Policy"`
 }

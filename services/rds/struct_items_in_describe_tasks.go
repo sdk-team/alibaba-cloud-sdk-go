@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // ItemsInDescribeTasks is a nested struct in rds response
 type ItemsInDescribeTasks struct {
-TaskProgressInfo []TaskProgressInfo `json:"TaskProgressInfo" xml:"TaskProgressInfo"`
+	TaskProgressInfo []TaskProgressInfo `json:"TaskProgressInfo" xml:"TaskProgressInfo"`
 }

@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // AbnormalItems is a nested struct in rds response
 type AbnormalItems struct {
-AbnormalItem []AbnormalItem `json:"AbnormalItem" xml:"AbnormalItem"`
+	AbnormalItem []AbnormalItem `json:"AbnormalItem" xml:"AbnormalItem"`
 }

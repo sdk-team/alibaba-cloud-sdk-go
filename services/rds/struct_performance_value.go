@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,6 @@ package rds
 
 // PerformanceValue is a nested struct in rds response
 type PerformanceValue struct {
-            Value     string `json:"Value" xml:"Value"`
-            Date     string `json:"Date" xml:"Date"`
+	Value string `json:"Value" xml:"Value"`
+	Date  string `json:"Date" xml:"Date"`
 }

@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,11 +17,11 @@ package rds
 
 // NodeInfo is a nested struct in rds response
 type NodeInfo struct {
-            NodeId     string `json:"NodeId" xml:"NodeId"`
-            RegionId     string `json:"RegionId" xml:"RegionId"`
-            LogSyncTime     string `json:"LogSyncTime" xml:"LogSyncTime"`
-            DataSyncTime     string `json:"DataSyncTime" xml:"DataSyncTime"`
-            NodeType     string `json:"NodeType" xml:"NodeType"`
-            ZoneId     string `json:"ZoneId" xml:"ZoneId"`
-            SyncStatus     string `json:"SyncStatus" xml:"SyncStatus"`
+	NodeId       string `json:"NodeId" xml:"NodeId"`
+	RegionId     string `json:"RegionId" xml:"RegionId"`
+	LogSyncTime  string `json:"LogSyncTime" xml:"LogSyncTime"`
+	DataSyncTime string `json:"DataSyncTime" xml:"DataSyncTime"`
+	NodeType     string `json:"NodeType" xml:"NodeType"`
+	ZoneId       string `json:"ZoneId" xml:"ZoneId"`
+	SyncStatus   string `json:"SyncStatus" xml:"SyncStatus"`
 }

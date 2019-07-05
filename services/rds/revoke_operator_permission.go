@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,95 +16,92 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // RevokeOperatorPermission invokes the rds.RevokeOperatorPermission API synchronously
 // api document: https://help.aliyun.com/api/rds/revokeoperatorpermission.html
 func (client *Client) RevokeOperatorPermission(request *RevokeOperatorPermissionRequest) (response *RevokeOperatorPermissionResponse, err error) {
-response = CreateRevokeOperatorPermissionResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateRevokeOperatorPermissionResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // RevokeOperatorPermissionWithChan invokes the rds.RevokeOperatorPermission API asynchronously
 // api document: https://help.aliyun.com/api/rds/revokeoperatorpermission.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RevokeOperatorPermissionWithChan(request *RevokeOperatorPermissionRequest) (<-chan *RevokeOperatorPermissionResponse, <-chan error) {
-responseChan := make(chan *RevokeOperatorPermissionResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.RevokeOperatorPermission(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *RevokeOperatorPermissionResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.RevokeOperatorPermission(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // RevokeOperatorPermissionWithCallback invokes the rds.RevokeOperatorPermission API asynchronously
 // api document: https://help.aliyun.com/api/rds/revokeoperatorpermission.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) RevokeOperatorPermissionWithCallback(request *RevokeOperatorPermissionRequest, callback func(response *RevokeOperatorPermissionResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *RevokeOperatorPermissionResponse
-var err error
-defer close(result)
-response, err = client.RevokeOperatorPermission(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) RevokeOperatorPermissionWithCallback(request *RevokeOperatorPermissionRequest, callback func(response *RevokeOperatorPermissionResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *RevokeOperatorPermissionResponse
+		var err error
+		defer close(result)
+		response, err = client.RevokeOperatorPermission(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // RevokeOperatorPermissionRequest is the request struct for api RevokeOperatorPermission
 type RevokeOperatorPermissionRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    DBInstanceId     string `position:"Query" name:"DBInstanceId"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
-
 
 // RevokeOperatorPermissionResponse is the response struct for api RevokeOperatorPermission
 type RevokeOperatorPermissionResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateRevokeOperatorPermissionRequest creates a request to invoke RevokeOperatorPermission API
 func CreateRevokeOperatorPermissionRequest() (request *RevokeOperatorPermissionRequest) {
-request = &RevokeOperatorPermissionRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "RevokeOperatorPermission", "rds", "openAPI")
-return
+	request = &RevokeOperatorPermissionRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "RevokeOperatorPermission", "rds", "openAPI")
+	return
 }
 
 // CreateRevokeOperatorPermissionResponse creates a response to parse from RevokeOperatorPermission response
 func CreateRevokeOperatorPermissionResponse() (response *RevokeOperatorPermissionResponse) {
-response = &RevokeOperatorPermissionResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &RevokeOperatorPermissionResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

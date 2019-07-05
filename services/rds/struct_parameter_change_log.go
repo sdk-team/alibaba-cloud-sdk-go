@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,9 +17,9 @@ package rds
 
 // ParameterChangeLog is a nested struct in rds response
 type ParameterChangeLog struct {
-            ModifyTime     string `json:"ModifyTime" xml:"ModifyTime"`
-            OldParameterValue     string `json:"OldParameterValue" xml:"OldParameterValue"`
-            NewParameterValue     string `json:"NewParameterValue" xml:"NewParameterValue"`
-            ParameterName     string `json:"ParameterName" xml:"ParameterName"`
-            Status     string `json:"Status" xml:"Status"`
+	ModifyTime        string `json:"ModifyTime" xml:"ModifyTime"`
+	OldParameterValue string `json:"OldParameterValue" xml:"OldParameterValue"`
+	NewParameterValue string `json:"NewParameterValue" xml:"NewParameterValue"`
+	ParameterName     string `json:"ParameterName" xml:"ParameterName"`
+	Status            string `json:"Status" xml:"Status"`
 }

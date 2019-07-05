@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,9 +17,9 @@ package rds
 
 // SQLServerImport is a nested struct in rds response
 type SQLServerImport struct {
-            ImportId     int `json:"ImportId" xml:"ImportId"`
-            FileName     string `json:"FileName" xml:"FileName"`
-            DBName     string `json:"DBName" xml:"DBName"`
-            ImportStatus     string `json:"ImportStatus" xml:"ImportStatus"`
-            StartTime     string `json:"StartTime" xml:"StartTime"`
+	ImportId     int    `json:"ImportId" xml:"ImportId"`
+	FileName     string `json:"FileName" xml:"FileName"`
+	DBName       string `json:"DBName" xml:"DBName"`
+	ImportStatus string `json:"ImportStatus" xml:"ImportStatus"`
+	StartTime    string `json:"StartTime" xml:"StartTime"`
 }

@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,101 +16,98 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // DescribeOptimizeAdviceOnMissPK invokes the rds.DescribeOptimizeAdviceOnMissPK API synchronously
 // api document: https://help.aliyun.com/api/rds/describeoptimizeadviceonmisspk.html
 func (client *Client) DescribeOptimizeAdviceOnMissPK(request *DescribeOptimizeAdviceOnMissPKRequest) (response *DescribeOptimizeAdviceOnMissPKResponse, err error) {
-response = CreateDescribeOptimizeAdviceOnMissPKResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeOptimizeAdviceOnMissPKResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // DescribeOptimizeAdviceOnMissPKWithChan invokes the rds.DescribeOptimizeAdviceOnMissPK API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeoptimizeadviceonmisspk.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOptimizeAdviceOnMissPKWithChan(request *DescribeOptimizeAdviceOnMissPKRequest) (<-chan *DescribeOptimizeAdviceOnMissPKResponse, <-chan error) {
-responseChan := make(chan *DescribeOptimizeAdviceOnMissPKResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeOptimizeAdviceOnMissPK(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeOptimizeAdviceOnMissPKResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeOptimizeAdviceOnMissPK(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // DescribeOptimizeAdviceOnMissPKWithCallback invokes the rds.DescribeOptimizeAdviceOnMissPK API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeoptimizeadviceonmisspk.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeOptimizeAdviceOnMissPKWithCallback(request *DescribeOptimizeAdviceOnMissPKRequest, callback func(response *DescribeOptimizeAdviceOnMissPKResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeOptimizeAdviceOnMissPKResponse
-var err error
-defer close(result)
-response, err = client.DescribeOptimizeAdviceOnMissPK(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeOptimizeAdviceOnMissPKWithCallback(request *DescribeOptimizeAdviceOnMissPKRequest, callback func(response *DescribeOptimizeAdviceOnMissPKResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeOptimizeAdviceOnMissPKResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeOptimizeAdviceOnMissPK(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // DescribeOptimizeAdviceOnMissPKRequest is the request struct for api DescribeOptimizeAdviceOnMissPK
 type DescribeOptimizeAdviceOnMissPKRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
-                    PageSize     requests.Integer `position:"Query" name:"PageSize"`
-                    DBInstanceId     string `position:"Query" name:"DBInstanceId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 }
-
 
 // DescribeOptimizeAdviceOnMissPKResponse is the response struct for api DescribeOptimizeAdviceOnMissPK
 type DescribeOptimizeAdviceOnMissPKResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            TotalRecordsCount     int `json:"TotalRecordsCount" xml:"TotalRecordsCount"`
-            PageNumber     int `json:"PageNumber" xml:"PageNumber"`
-            PageRecordCount     int `json:"PageRecordCount" xml:"PageRecordCount"`
-                    Items ItemsInDescribeOptimizeAdviceOnMissPK `json:"Items" xml:"Items"`
+	*responses.BaseResponse
+	RequestId         string                                `json:"RequestId" xml:"RequestId"`
+	TotalRecordsCount int                                   `json:"TotalRecordsCount" xml:"TotalRecordsCount"`
+	PageNumber        int                                   `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount   int                                   `json:"PageRecordCount" xml:"PageRecordCount"`
+	Items             ItemsInDescribeOptimizeAdviceOnMissPK `json:"Items" xml:"Items"`
 }
 
 // CreateDescribeOptimizeAdviceOnMissPKRequest creates a request to invoke DescribeOptimizeAdviceOnMissPK API
 func CreateDescribeOptimizeAdviceOnMissPKRequest() (request *DescribeOptimizeAdviceOnMissPKRequest) {
-request = &DescribeOptimizeAdviceOnMissPKRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOptimizeAdviceOnMissPK", "rds", "openAPI")
-return
+	request = &DescribeOptimizeAdviceOnMissPKRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOptimizeAdviceOnMissPK", "rds", "openAPI")
+	return
 }
 
 // CreateDescribeOptimizeAdviceOnMissPKResponse creates a response to parse from DescribeOptimizeAdviceOnMissPK response
 func CreateDescribeOptimizeAdviceOnMissPKResponse() (response *DescribeOptimizeAdviceOnMissPKResponse) {
-response = &DescribeOptimizeAdviceOnMissPKResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeOptimizeAdviceOnMissPKResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

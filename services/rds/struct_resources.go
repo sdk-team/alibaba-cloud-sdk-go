@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // Resources is a nested struct in rds response
 type Resources struct {
-Resource []Resource `json:"Resource" xml:"Resource"`
+	Resource []Resource `json:"Resource" xml:"Resource"`
 }

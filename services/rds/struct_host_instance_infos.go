@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // HostInstanceInfos is a nested struct in rds response
 type HostInstanceInfos struct {
-NodeInfo []NodeInfo `json:"NodeInfo" xml:"NodeInfo"`
+	NodeInfo []NodeInfo `json:"NodeInfo" xml:"NodeInfo"`
 }

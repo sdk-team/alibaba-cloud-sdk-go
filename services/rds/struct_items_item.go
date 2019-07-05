@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,65 +17,28 @@ package rds
 
 // ItemsItem is a nested struct in rds response
 type ItemsItem struct {
-            DestinationDetail     string `json:"DestinationDetail" xml:"DestinationDetail"`
-            ConflictGtid     string `json:"ConflictGtid" xml:"ConflictGtid"`
-            TotalConsume     int64 `json:"TotalConsume" xml:"TotalConsume"`
-            Role     string `json:"Role" xml:"Role"`
-            InstanceNetworkType     string `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
-            Template     string `json:"Template" xml:"Template"`
-            AbnormalType     string `json:"AbnormalType" xml:"AbnormalType"`
-            RecoveryMode     string `json:"RecoveryMode" xml:"RecoveryMode"`
-            TotalScanRows     int64 `json:"TotalScanRows" xml:"TotalScanRows"`
-            DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-            Select     string `json:"select" xml:"select"`
-            DatabaseName     string `json:"DatabaseName" xml:"DatabaseName"`
-            SecurityIPList     string `json:"SecurityIPList" xml:"SecurityIPList"`
-            TotalUpdateRows     int64 `json:"TotalUpdateRows" xml:"TotalUpdateRows"`
-            Schema     string `json:"Schema" xml:"Schema"`
-            STATUS     string `json:"STATUS" xml:"STATUS"`
-            ReadWriteType     string `json:"ReadWriteType" xml:"ReadWriteType"`
-            AvgConsume     float64 `json:"AvgConsume" xml:"AvgConsume"`
-            HasInternetIP     bool `json:"HasInternetIP" xml:"HasInternetIP"`
-            FinishTime     string `json:"FinishTime" xml:"FinishTime"`
-            Progress     string `json:"Progress" xml:"Progress"`
-            OccurTime     string `json:"OccurTime" xml:"OccurTime"`
-            SqlType     string `json:"SqlType" xml:"SqlType"`
-            Insert     int64 `json:"insert" xml:"insert"`
-            SourceInstanceId     string `json:"SourceInstanceId" xml:"SourceInstanceId"`
-            TOTALROWS     int64 `json:"TOTAL_ROWS" xml:"TOTAL_ROWS"`
-            TotalCounts     int64 `json:"TotalCounts" xml:"TotalCounts"`
-            InconsistentType     string `json:"InconsistentType" xml:"InconsistentType"`
-            KeyType     string `json:"KeyType" xml:"KeyType"`
-            ConfictKey     string `json:"ConfictKey" xml:"ConfictKey"`
-            Status     string `json:"Status" xml:"Status"`
-            ReplicaId     string `json:"ReplicaId" xml:"ReplicaId"`
-            Update     int64 `json:"update" xml:"update"`
-            PROCESSROWS     int64 `json:"PROCESS_ROWS" xml:"PROCESS_ROWS"`
-            InternetIP     string `json:"InternetIP" xml:"InternetIP"`
-            SourceDetail     string `json:"SourceDetail" xml:"SourceDetail"`
-            ConfictReason     string `json:"ConfictReason" xml:"ConfictReason"`
-            InconsistentFields     string `json:"InconsistentFields" xml:"InconsistentFields"`
-            Delete     int64 `json:"delete" xml:"delete"`
-            InstanceIdA     string `json:"InstanceIdA" xml:"InstanceIdA"`
-            Key     string `json:"Key" xml:"Key"`
-            RegionId     string `json:"RegionId" xml:"RegionId"`
-            FAILMSG     string `json:"FAIL_MSG" xml:"FAIL_MSG"`
-            LinkExpiredTime     string `json:"LinkExpiredTime" xml:"LinkExpiredTime"`
-            AvgUpdateRows     float64 `json:"AvgUpdateRows" xml:"AvgUpdateRows"`
-            UPDATETIME     string `json:"UPDATE_TIME" xml:"UPDATE_TIME"`
-            DownloadLink     string `json:"DownloadLink" xml:"DownloadLink"`
-            DetailInfo     string `json:"DetailInfo" xml:"DetailInfo"`
-            TemplateHash     string `json:"TemplateHash" xml:"TemplateHash"`
-            AvgScanRows     float64 `json:"AvgScanRows" xml:"AvgScanRows"`
-            DestinationInstanceId     string `json:"DestinationInstanceId" xml:"DestinationInstanceId"`
-            InstanceIdB     string `json:"InstanceIdB" xml:"InstanceIdB"`
-            CREATETIME     string `json:"CREATE_TIME" xml:"CREATE_TIME"`
-            CurrentStep     string `json:"CurrentStep" xml:"CurrentStep"`
-            JOBNAME     string `json:"JOB_NAME" xml:"JOB_NAME"`
-            Show     int64 `json:"show" xml:"show"`
-                ReadDBInstanceNames []    string  `json:"ReadDBInstanceNames" xml:"ReadDBInstanceNames"`
-                ReadDelayTimes []    string  `json:"ReadDelayTimes" xml:"ReadDelayTimes"`
-                    InconsistentFileds []InconsistentFiledsItem  `json:"InconsistentFileds" xml:"InconsistentFileds"`
-                    Accounts []AccountsItem  `json:"Accounts" xml:"Accounts"`
-                    ReadonlyInstanceDelay ReadonlyInstanceDelay `json:"ReadonlyInstanceDelay" xml:"ReadonlyInstanceDelay"`
+	Schema                string             `json:"Schema" xml:"Schema"`
+	SourceDetail          string             `json:"SourceDetail" xml:"SourceDetail"`
+	ConfictReason         string             `json:"ConfictReason" xml:"ConfictReason"`
+	InstanceIdA           string             `json:"InstanceIdA" xml:"InstanceIdA"`
+	DestinationDetail     string             `json:"DestinationDetail" xml:"DestinationDetail"`
+	FinishTime            string             `json:"FinishTime" xml:"FinishTime"`
+	DestinationInstanceId string             `json:"DestinationInstanceId" xml:"DestinationInstanceId"`
+	ConflictGtid          string             `json:"ConflictGtid" xml:"ConflictGtid"`
+	Key                   string             `json:"Key" xml:"Key"`
+	OccurTime             string             `json:"OccurTime" xml:"OccurTime"`
+	Progress              string             `json:"Progress" xml:"Progress"`
+	InstanceIdB           string             `json:"InstanceIdB" xml:"InstanceIdB"`
+	CurrentStep           string             `json:"CurrentStep" xml:"CurrentStep"`
+	SourceInstanceId      string             `json:"SourceInstanceId" xml:"SourceInstanceId"`
+	AbnormalType          string             `json:"AbnormalType" xml:"AbnormalType"`
+	RecoveryMode          string             `json:"RecoveryMode" xml:"RecoveryMode"`
+	InconsistentType      string             `json:"InconsistentType" xml:"InconsistentType"`
+	KeyType               string             `json:"KeyType" xml:"KeyType"`
+	ConfictKey            string             `json:"ConfictKey" xml:"ConfictKey"`
+	Status                string             `json:"Status" xml:"Status"`
+	ReplicaId             string             `json:"ReplicaId" xml:"ReplicaId"`
+	DatabaseName          string             `json:"DatabaseName" xml:"DatabaseName"`
+	DetailInfo            string             `json:"DetailInfo" xml:"DetailInfo"`
+	InconsistentFileds    InconsistentFileds `json:"InconsistentFileds" xml:"InconsistentFileds"`
 }

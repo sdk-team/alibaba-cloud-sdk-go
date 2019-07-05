@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,97 +16,94 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // ModifyDBInstanceECSSGRelation invokes the rds.ModifyDBInstanceECSSGRelation API synchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstanceecssgrelation.html
 func (client *Client) ModifyDBInstanceECSSGRelation(request *ModifyDBInstanceECSSGRelationRequest) (response *ModifyDBInstanceECSSGRelationResponse, err error) {
-response = CreateModifyDBInstanceECSSGRelationResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateModifyDBInstanceECSSGRelationResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // ModifyDBInstanceECSSGRelationWithChan invokes the rds.ModifyDBInstanceECSSGRelation API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstanceecssgrelation.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceECSSGRelationWithChan(request *ModifyDBInstanceECSSGRelationRequest) (<-chan *ModifyDBInstanceECSSGRelationResponse, <-chan error) {
-responseChan := make(chan *ModifyDBInstanceECSSGRelationResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ModifyDBInstanceECSSGRelation(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ModifyDBInstanceECSSGRelationResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ModifyDBInstanceECSSGRelation(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // ModifyDBInstanceECSSGRelationWithCallback invokes the rds.ModifyDBInstanceECSSGRelation API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstanceecssgrelation.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ModifyDBInstanceECSSGRelationWithCallback(request *ModifyDBInstanceECSSGRelationRequest, callback func(response *ModifyDBInstanceECSSGRelationResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ModifyDBInstanceECSSGRelationResponse
-var err error
-defer close(result)
-response, err = client.ModifyDBInstanceECSSGRelation(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ModifyDBInstanceECSSGRelationWithCallback(request *ModifyDBInstanceECSSGRelationRequest, callback func(response *ModifyDBInstanceECSSGRelationResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ModifyDBInstanceECSSGRelationResponse
+		var err error
+		defer close(result)
+		response, err = client.ModifyDBInstanceECSSGRelation(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // ModifyDBInstanceECSSGRelationRequest is the request struct for api ModifyDBInstanceECSSGRelation
 type ModifyDBInstanceECSSGRelationRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    SecurityGroupId     string `position:"Query" name:"SecurityGroupId"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    DBInstanceId     string `position:"Query" name:"DBInstanceId"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	EcsSecurityGroupId   string           `position:"Query" name:"EcsSecurityGroupId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
-
 
 // ModifyDBInstanceECSSGRelationResponse is the response struct for api ModifyDBInstanceECSSGRelation
 type ModifyDBInstanceECSSGRelationResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            DBInstanceName     string `json:"DBInstanceName" xml:"DBInstanceName"`
-                    Items ItemsInModifyDBInstanceECSSGRelation `json:"Items" xml:"Items"`
+	*responses.BaseResponse
+	RequestId      string                               `json:"RequestId" xml:"RequestId"`
+	DBInstanceName string                               `json:"DBInstanceName" xml:"DBInstanceName"`
+	Items          ItemsInModifyDBInstanceECSSGRelation `json:"Items" xml:"Items"`
 }
 
 // CreateModifyDBInstanceECSSGRelationRequest creates a request to invoke ModifyDBInstanceECSSGRelation API
 func CreateModifyDBInstanceECSSGRelationRequest() (request *ModifyDBInstanceECSSGRelationRequest) {
-request = &ModifyDBInstanceECSSGRelationRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceECSSGRelation", "rds", "openAPI")
-return
+	request = &ModifyDBInstanceECSSGRelationRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceECSSGRelation", "rds", "openAPI")
+	return
 }
 
 // CreateModifyDBInstanceECSSGRelationResponse creates a response to parse from ModifyDBInstanceECSSGRelation response
 func CreateModifyDBInstanceECSSGRelationResponse() (response *ModifyDBInstanceECSSGRelationResponse) {
-response = &ModifyDBInstanceECSSGRelationResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ModifyDBInstanceECSSGRelationResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

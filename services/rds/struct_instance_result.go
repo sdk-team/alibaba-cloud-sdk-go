@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +17,7 @@ package rds
 
 // InstanceResult is a nested struct in rds response
 type InstanceResult struct {
-            DBInstanceDescription     string `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
-            DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-                    AbnormalItems AbnormalItems `json:"AbnormalItems" xml:"AbnormalItems"`
+	DBInstanceDescription string        `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
+	DBInstanceId          string        `json:"DBInstanceId" xml:"DBInstanceId"`
+	AbnormalItems         AbnormalItems `json:"AbnormalItems" xml:"AbnormalItems"`
 }

@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,9 +17,9 @@ package rds
 
 // Report is a nested struct in rds response
 type Report struct {
-            DiagnosticTime     string `json:"DiagnosticTime" xml:"DiagnosticTime"`
-            Score     int `json:"Score" xml:"Score"`
-            StartTime     string `json:"StartTime" xml:"StartTime"`
-            EndTime     string `json:"EndTime" xml:"EndTime"`
-            DownloadURL     string `json:"DownloadURL" xml:"DownloadURL"`
+	DiagnosticTime string `json:"DiagnosticTime" xml:"DiagnosticTime"`
+	Score          int    `json:"Score" xml:"Score"`
+	StartTime      string `json:"StartTime" xml:"StartTime"`
+	EndTime        string `json:"EndTime" xml:"EndTime"`
+	DownloadURL    string `json:"DownloadURL" xml:"DownloadURL"`
 }

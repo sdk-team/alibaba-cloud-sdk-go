@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // Replicas is a nested struct in rds response
 type Replicas struct {
-Items []Items `json:"Items" xml:"Items"`
+	Items []Items `json:"Items" xml:"Items"`
 }

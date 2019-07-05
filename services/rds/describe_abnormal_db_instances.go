@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,114 +16,111 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // DescribeAbnormalDBInstances invokes the rds.DescribeAbnormalDBInstances API synchronously
 // api document: https://help.aliyun.com/api/rds/describeabnormaldbinstances.html
 func (client *Client) DescribeAbnormalDBInstances(request *DescribeAbnormalDBInstancesRequest) (response *DescribeAbnormalDBInstancesResponse, err error) {
-response = CreateDescribeAbnormalDBInstancesResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeAbnormalDBInstancesResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // DescribeAbnormalDBInstancesWithChan invokes the rds.DescribeAbnormalDBInstances API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeabnormaldbinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAbnormalDBInstancesWithChan(request *DescribeAbnormalDBInstancesRequest) (<-chan *DescribeAbnormalDBInstancesResponse, <-chan error) {
-responseChan := make(chan *DescribeAbnormalDBInstancesResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeAbnormalDBInstances(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeAbnormalDBInstancesResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeAbnormalDBInstances(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // DescribeAbnormalDBInstancesWithCallback invokes the rds.DescribeAbnormalDBInstances API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeabnormaldbinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeAbnormalDBInstancesWithCallback(request *DescribeAbnormalDBInstancesRequest, callback func(response *DescribeAbnormalDBInstancesResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeAbnormalDBInstancesResponse
-var err error
-defer close(result)
-response, err = client.DescribeAbnormalDBInstances(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeAbnormalDBInstancesWithCallback(request *DescribeAbnormalDBInstancesRequest, callback func(response *DescribeAbnormalDBInstancesResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeAbnormalDBInstancesResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeAbnormalDBInstances(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // DescribeAbnormalDBInstancesRequest is the request struct for api DescribeAbnormalDBInstances
 type DescribeAbnormalDBInstancesRequest struct {
-*requests.RpcRequest
-                    Tag4Value     string `position:"Query" name:"Tag.4.value"`
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    Tag2Key     string `position:"Query" name:"Tag.2.key"`
-                    ClientToken     string `position:"Query" name:"ClientToken"`
-                    Tag3Key     string `position:"Query" name:"Tag.3.key"`
-                    PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
-                    Tag1Value     string `position:"Query" name:"Tag.1.value"`
-                    PageSize     requests.Integer `position:"Query" name:"PageSize"`
-                    DBInstanceId     string `position:"Query" name:"DBInstanceId"`
-                    Tag3Value     string `position:"Query" name:"Tag.3.value"`
-                    ProxyId     string `position:"Query" name:"proxyId"`
-                    Tag5Key     string `position:"Query" name:"Tag.5.key"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    Tag5Value     string `position:"Query" name:"Tag.5.value"`
-                    Tags     string `position:"Query" name:"Tags"`
-                    Tag1Key     string `position:"Query" name:"Tag.1.key"`
-                    Tag2Value     string `position:"Query" name:"Tag.2.value"`
-                    Tag4Key     string `position:"Query" name:"Tag.4.key"`
+	*requests.RpcRequest
+	Tag4Value            string           `position:"Query" name:"Tag.4.value"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Tag2Key              string           `position:"Query" name:"Tag.2.key"`
+	Tag5Key              string           `position:"Query" name:"Tag.5.key"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Tag3Key              string           `position:"Query" name:"Tag.3.key"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Tag5Value            string           `position:"Query" name:"Tag.5.value"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	Tag1Key              string           `position:"Query" name:"Tag.1.key"`
+	Tag1Value            string           `position:"Query" name:"Tag.1.value"`
+	Tag2Value            string           `position:"Query" name:"Tag.2.value"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	Tag4Key              string           `position:"Query" name:"Tag.4.key"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	Tag3Value            string           `position:"Query" name:"Tag.3.value"`
+	ProxyId              string           `position:"Query" name:"proxyId"`
 }
-
 
 // DescribeAbnormalDBInstancesResponse is the response struct for api DescribeAbnormalDBInstances
 type DescribeAbnormalDBInstancesResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            TotalRecordCount     int `json:"TotalRecordCount" xml:"TotalRecordCount"`
-            PageNumber     int `json:"PageNumber" xml:"PageNumber"`
-            PageRecordCount     int `json:"PageRecordCount" xml:"PageRecordCount"`
-                    Items ItemsInDescribeAbnormalDBInstances `json:"Items" xml:"Items"`
+	*responses.BaseResponse
+	RequestId        string                             `json:"RequestId" xml:"RequestId"`
+	TotalRecordCount int                                `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       int                                `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  int                                `json:"PageRecordCount" xml:"PageRecordCount"`
+	Items            ItemsInDescribeAbnormalDBInstances `json:"Items" xml:"Items"`
 }
 
 // CreateDescribeAbnormalDBInstancesRequest creates a request to invoke DescribeAbnormalDBInstances API
 func CreateDescribeAbnormalDBInstancesRequest() (request *DescribeAbnormalDBInstancesRequest) {
-request = &DescribeAbnormalDBInstancesRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeAbnormalDBInstances", "rds", "openAPI")
-return
+	request = &DescribeAbnormalDBInstancesRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeAbnormalDBInstances", "rds", "openAPI")
+	return
 }
 
 // CreateDescribeAbnormalDBInstancesResponse creates a response to parse from DescribeAbnormalDBInstances response
 func CreateDescribeAbnormalDBInstancesResponse() (response *DescribeAbnormalDBInstancesResponse) {
-response = &DescribeAbnormalDBInstancesResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeAbnormalDBInstancesResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

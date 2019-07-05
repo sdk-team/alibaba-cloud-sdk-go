@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,13 +17,13 @@ package rds
 
 // LogicDBInstanceParameter is a nested struct in rds response
 type LogicDBInstanceParameter struct {
-            DBInstanceID     int `json:"DBInstanceID" xml:"DBInstanceID"`
-            DBInstanceName     string `json:"DBInstanceName" xml:"DBInstanceName"`
-            DBInstanceStatus     int `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
-            DBInstanceStatusDesc     string `json:"DBInstanceStatusDesc" xml:"DBInstanceStatusDesc"`
-            DBInstanceConnType     string `json:"DBInstanceConnType" xml:"DBInstanceConnType"`
-            DBInstanceDescription     string `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
-            Engine     string `json:"Engine" xml:"Engine"`
-            EngineVersion     string `json:"EngineVersion" xml:"EngineVersion"`
-            CharacterType     string `json:"CharacterType" xml:"CharacterType"`
+	DBInstanceID          int    `json:"DBInstanceID" xml:"DBInstanceID"`
+	DBInstanceName        string `json:"DBInstanceName" xml:"DBInstanceName"`
+	DBInstanceStatus      int    `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
+	DBInstanceStatusDesc  string `json:"DBInstanceStatusDesc" xml:"DBInstanceStatusDesc"`
+	DBInstanceConnType    string `json:"DBInstanceConnType" xml:"DBInstanceConnType"`
+	DBInstanceDescription string `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
+	Engine                string `json:"Engine" xml:"Engine"`
+	EngineVersion         string `json:"EngineVersion" xml:"EngineVersion"`
+	CharacterType         string `json:"CharacterType" xml:"CharacterType"`
 }

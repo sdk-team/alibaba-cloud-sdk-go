@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // ItemsInDescribeOptimizeAdviceOnBigTable is a nested struct in rds response
 type ItemsInDescribeOptimizeAdviceOnBigTable struct {
-AdviceOnBigTable []AdviceOnBigTable `json:"AdviceOnBigTable" xml:"AdviceOnBigTable"`
+	AdviceOnBigTable []AdviceOnBigTable `json:"AdviceOnBigTable" xml:"AdviceOnBigTable"`
 }

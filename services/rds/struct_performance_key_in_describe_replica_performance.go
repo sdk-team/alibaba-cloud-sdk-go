@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // PerformanceKeyInDescribeReplicaPerformance is a nested struct in rds response
 type PerformanceKeyInDescribeReplicaPerformance struct {
-PerformanceKeyItem []PerformanceKeyItem `json:"PerformanceKeyItem" xml:"PerformanceKeyItem"`
+	PerformanceKeyItem []PerformanceKeyItem `json:"PerformanceKeyItem" xml:"PerformanceKeyItem"`
 }

@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // SQLDiagList is a nested struct in rds response
 type SQLDiagList struct {
-SQLDiag []SQLDiag `json:"SQLDiag" xml:"SQLDiag"`
+	SQLDiag []SQLDiag `json:"SQLDiag" xml:"SQLDiag"`
 }

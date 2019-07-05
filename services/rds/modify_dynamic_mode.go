@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,97 +16,94 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // ModifyDynamicMode invokes the rds.ModifyDynamicMode API synchronously
 // api document: https://help.aliyun.com/api/rds/modifydynamicmode.html
 func (client *Client) ModifyDynamicMode(request *ModifyDynamicModeRequest) (response *ModifyDynamicModeResponse, err error) {
-response = CreateModifyDynamicModeResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateModifyDynamicModeResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // ModifyDynamicModeWithChan invokes the rds.ModifyDynamicMode API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifydynamicmode.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDynamicModeWithChan(request *ModifyDynamicModeRequest) (<-chan *ModifyDynamicModeResponse, <-chan error) {
-responseChan := make(chan *ModifyDynamicModeResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ModifyDynamicMode(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ModifyDynamicModeResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ModifyDynamicMode(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // ModifyDynamicModeWithCallback invokes the rds.ModifyDynamicMode API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifydynamicmode.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ModifyDynamicModeWithCallback(request *ModifyDynamicModeRequest, callback func(response *ModifyDynamicModeResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ModifyDynamicModeResponse
-var err error
-defer close(result)
-response, err = client.ModifyDynamicMode(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ModifyDynamicModeWithCallback(request *ModifyDynamicModeRequest, callback func(response *ModifyDynamicModeResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ModifyDynamicModeResponse
+		var err error
+		defer close(result)
+		response, err = client.ModifyDynamicMode(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // ModifyDynamicModeRequest is the request struct for api ModifyDynamicMode
 type ModifyDynamicModeRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    DynamicMode     string `position:"Query" name:"DynamicMode"`
-                    SecurityToken     string `position:"Query" name:"SecurityToken"`
-                    ReplicaId     string `position:"Query" name:"ReplicaId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DynamicMode          string           `position:"Query" name:"DynamicMode"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	ReplicaId            string           `position:"Query" name:"ReplicaId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
-
 
 // ModifyDynamicModeResponse is the response struct for api ModifyDynamicMode
 type ModifyDynamicModeResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyDynamicModeRequest creates a request to invoke ModifyDynamicMode API
 func CreateModifyDynamicModeRequest() (request *ModifyDynamicModeRequest) {
-request = &ModifyDynamicModeRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDynamicMode", "rds", "openAPI")
-return
+	request = &ModifyDynamicModeRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDynamicMode", "rds", "openAPI")
+	return
 }
 
 // CreateModifyDynamicModeResponse creates a response to parse from ModifyDynamicMode response
 func CreateModifyDynamicModeResponse() (response *ModifyDynamicModeResponse) {
-response = &ModifyDynamicModeResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ModifyDynamicModeResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

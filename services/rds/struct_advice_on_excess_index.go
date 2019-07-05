@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +17,7 @@ package rds
 
 // AdviceOnExcessIndex is a nested struct in rds response
 type AdviceOnExcessIndex struct {
-            DBName     string `json:"DBName" xml:"DBName"`
-            TableName     string `json:"TableName" xml:"TableName"`
-            IndexCount     int64 `json:"IndexCount" xml:"IndexCount"`
+	DBName     string `json:"DBName" xml:"DBName"`
+	TableName  string `json:"TableName" xml:"TableName"`
+	IndexCount int64  `json:"IndexCount" xml:"IndexCount"`
 }

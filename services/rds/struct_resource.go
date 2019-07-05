@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +17,7 @@ package rds
 
 // Resource is a nested struct in rds response
 type Resource struct {
-            DBInstanceAvailable     string `json:"DBInstanceAvailable" xml:"DBInstanceAvailable"`
-            Engine     string `json:"Engine" xml:"Engine"`
-            EngineVersion     string `json:"EngineVersion" xml:"EngineVersion"`
+	DBInstanceAvailable string `json:"DBInstanceAvailable" xml:"DBInstanceAvailable"`
+	Engine              string `json:"Engine" xml:"Engine"`
+	EngineVersion       string `json:"EngineVersion" xml:"EngineVersion"`
 }

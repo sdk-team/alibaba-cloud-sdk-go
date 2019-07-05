@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // ReportList is a nested struct in rds response
 type ReportList struct {
-Report []Report `json:"Report" xml:"Report"`
+	Report []Report `json:"Report" xml:"Report"`
 }

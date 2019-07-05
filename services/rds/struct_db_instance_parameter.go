@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +17,7 @@ package rds
 
 // DBInstanceParameter is a nested struct in rds response
 type DBInstanceParameter struct {
-            ParameterName     string `json:"ParameterName" xml:"ParameterName"`
-            ParameterDescription     string `json:"ParameterDescription" xml:"ParameterDescription"`
-            ParameterValue     string `json:"ParameterValue" xml:"ParameterValue"`
+	ParameterName        string `json:"ParameterName" xml:"ParameterName"`
+	ParameterDescription string `json:"ParameterDescription" xml:"ParameterDescription"`
+	ParameterValue       string `json:"ParameterValue" xml:"ParameterValue"`
 }

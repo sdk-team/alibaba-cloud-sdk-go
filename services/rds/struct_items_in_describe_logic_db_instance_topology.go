@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // ItemsInDescribeLogicDBInstanceTopology is a nested struct in rds response
 type ItemsInDescribeLogicDBInstanceTopology struct {
-LogicDBInstanceParameter []LogicDBInstanceParameter `json:"LogicDBInstanceParameter" xml:"LogicDBInstanceParameter"`
+	LogicDBInstanceParameter []LogicDBInstanceParameter `json:"LogicDBInstanceParameter" xml:"LogicDBInstanceParameter"`
 }

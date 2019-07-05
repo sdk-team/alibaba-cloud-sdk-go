@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,99 +16,96 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // DescribeDBInstanceSSL invokes the rds.DescribeDBInstanceSSL API synchronously
 // api document: https://help.aliyun.com/api/rds/describedbinstancessl.html
 func (client *Client) DescribeDBInstanceSSL(request *DescribeDBInstanceSSLRequest) (response *DescribeDBInstanceSSLResponse, err error) {
-response = CreateDescribeDBInstanceSSLResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeDBInstanceSSLResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // DescribeDBInstanceSSLWithChan invokes the rds.DescribeDBInstanceSSL API asynchronously
 // api document: https://help.aliyun.com/api/rds/describedbinstancessl.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceSSLWithChan(request *DescribeDBInstanceSSLRequest) (<-chan *DescribeDBInstanceSSLResponse, <-chan error) {
-responseChan := make(chan *DescribeDBInstanceSSLResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeDBInstanceSSL(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeDBInstanceSSLResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeDBInstanceSSL(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // DescribeDBInstanceSSLWithCallback invokes the rds.DescribeDBInstanceSSL API asynchronously
 // api document: https://help.aliyun.com/api/rds/describedbinstancessl.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeDBInstanceSSLWithCallback(request *DescribeDBInstanceSSLRequest, callback func(response *DescribeDBInstanceSSLResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeDBInstanceSSLResponse
-var err error
-defer close(result)
-response, err = client.DescribeDBInstanceSSL(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeDBInstanceSSLWithCallback(request *DescribeDBInstanceSSLRequest, callback func(response *DescribeDBInstanceSSLResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeDBInstanceSSLResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeDBInstanceSSL(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // DescribeDBInstanceSSLRequest is the request struct for api DescribeDBInstanceSSL
 type DescribeDBInstanceSSLRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    DBInstanceId     string `position:"Query" name:"DBInstanceId"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
-
 
 // DescribeDBInstanceSSLResponse is the response struct for api DescribeDBInstanceSSL
 type DescribeDBInstanceSSLResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            ConnectionString     string `json:"ConnectionString" xml:"ConnectionString"`
-            SSLExpireTime     string `json:"SSLExpireTime" xml:"SSLExpireTime"`
-            RequireUpdate     string `json:"RequireUpdate" xml:"RequireUpdate"`
-            RequireUpdateReason     string `json:"RequireUpdateReason" xml:"RequireUpdateReason"`
+	*responses.BaseResponse
+	RequestId           string `json:"RequestId" xml:"RequestId"`
+	ConnectionString    string `json:"ConnectionString" xml:"ConnectionString"`
+	SSLExpireTime       string `json:"SSLExpireTime" xml:"SSLExpireTime"`
+	RequireUpdate       string `json:"RequireUpdate" xml:"RequireUpdate"`
+	RequireUpdateReason string `json:"RequireUpdateReason" xml:"RequireUpdateReason"`
 }
 
 // CreateDescribeDBInstanceSSLRequest creates a request to invoke DescribeDBInstanceSSL API
 func CreateDescribeDBInstanceSSLRequest() (request *DescribeDBInstanceSSLRequest) {
-request = &DescribeDBInstanceSSLRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceSSL", "rds", "openAPI")
-return
+	request = &DescribeDBInstanceSSLRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceSSL", "rds", "openAPI")
+	return
 }
 
 // CreateDescribeDBInstanceSSLResponse creates a response to parse from DescribeDBInstanceSSL response
 func CreateDescribeDBInstanceSSLResponse() (response *DescribeDBInstanceSSLResponse) {
-response = &DescribeDBInstanceSSLResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeDBInstanceSSLResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,24 +17,24 @@ package rds
 
 // Backup is a nested struct in rds response
 type Backup struct {
-            MetaStatus     string `json:"MetaStatus" xml:"MetaStatus"`
-            BackupExtractionStatus     string `json:"BackupExtractionStatus" xml:"BackupExtractionStatus"`
-            HostInstanceID     string `json:"HostInstanceID" xml:"HostInstanceID"`
-            BackupMode     string `json:"BackupMode" xml:"BackupMode"`
-            BackupIntranetDownloadURL     string `json:"BackupIntranetDownloadURL" xml:"BackupIntranetDownloadURL"`
-            BackupEndTime     string `json:"BackupEndTime" xml:"BackupEndTime"`
-            BackupMethod     string `json:"BackupMethod" xml:"BackupMethod"`
-            BackupDBNames     string `json:"BackupDBNames" xml:"BackupDBNames"`
-            BackupType     string `json:"BackupType" xml:"BackupType"`
-            TotalBackupSize     int64 `json:"TotalBackupSize" xml:"TotalBackupSize"`
-            BackupSize     int64 `json:"BackupSize" xml:"BackupSize"`
-            BackupStatus     string `json:"BackupStatus" xml:"BackupStatus"`
-            StoreStatus     string `json:"StoreStatus" xml:"StoreStatus"`
-            BackupStartTime     string `json:"BackupStartTime" xml:"BackupStartTime"`
-            DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-            BackupId     string `json:"BackupId" xml:"BackupId"`
-            BackupLocation     string `json:"BackupLocation" xml:"BackupLocation"`
-            BackupScale     string `json:"BackupScale" xml:"BackupScale"`
-            BackupDownloadURL     string `json:"BackupDownloadURL" xml:"BackupDownloadURL"`
-            SlaveStatus     string `json:"SlaveStatus" xml:"SlaveStatus"`
+	MetaStatus                string `json:"MetaStatus" xml:"MetaStatus"`
+	BackupExtractionStatus    string `json:"BackupExtractionStatus" xml:"BackupExtractionStatus"`
+	HostInstanceID            string `json:"HostInstanceID" xml:"HostInstanceID"`
+	BackupMode                string `json:"BackupMode" xml:"BackupMode"`
+	BackupIntranetDownloadURL string `json:"BackupIntranetDownloadURL" xml:"BackupIntranetDownloadURL"`
+	BackupEndTime             string `json:"BackupEndTime" xml:"BackupEndTime"`
+	BackupMethod              string `json:"BackupMethod" xml:"BackupMethod"`
+	BackupDBNames             string `json:"BackupDBNames" xml:"BackupDBNames"`
+	BackupType                string `json:"BackupType" xml:"BackupType"`
+	TotalBackupSize           int64  `json:"TotalBackupSize" xml:"TotalBackupSize"`
+	BackupSize                int64  `json:"BackupSize" xml:"BackupSize"`
+	BackupStatus              string `json:"BackupStatus" xml:"BackupStatus"`
+	StoreStatus               string `json:"StoreStatus" xml:"StoreStatus"`
+	BackupStartTime           string `json:"BackupStartTime" xml:"BackupStartTime"`
+	DBInstanceId              string `json:"DBInstanceId" xml:"DBInstanceId"`
+	BackupId                  string `json:"BackupId" xml:"BackupId"`
+	BackupLocation            string `json:"BackupLocation" xml:"BackupLocation"`
+	BackupScale               string `json:"BackupScale" xml:"BackupScale"`
+	BackupDownloadURL         string `json:"BackupDownloadURL" xml:"BackupDownloadURL"`
+	SlaveStatus               string `json:"SlaveStatus" xml:"SlaveStatus"`
 }

@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // Tasks is a nested struct in rds response
 type Tasks struct {
-RealtimeDiagnoseTasks []RealtimeDiagnoseTasks `json:"RealtimeDiagnoseTasks" xml:"RealtimeDiagnoseTasks"`
+	RealtimeDiagnoseTasks []RealtimeDiagnoseTasks `json:"RealtimeDiagnoseTasks" xml:"RealtimeDiagnoseTasks"`
 }

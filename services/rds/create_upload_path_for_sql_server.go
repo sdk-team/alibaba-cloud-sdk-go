@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,103 +16,100 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // CreateUploadPathForSQLServer invokes the rds.CreateUploadPathForSQLServer API synchronously
 // api document: https://help.aliyun.com/api/rds/createuploadpathforsqlserver.html
 func (client *Client) CreateUploadPathForSQLServer(request *CreateUploadPathForSQLServerRequest) (response *CreateUploadPathForSQLServerResponse, err error) {
-response = CreateCreateUploadPathForSQLServerResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateCreateUploadPathForSQLServerResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // CreateUploadPathForSQLServerWithChan invokes the rds.CreateUploadPathForSQLServer API asynchronously
 // api document: https://help.aliyun.com/api/rds/createuploadpathforsqlserver.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateUploadPathForSQLServerWithChan(request *CreateUploadPathForSQLServerRequest) (<-chan *CreateUploadPathForSQLServerResponse, <-chan error) {
-responseChan := make(chan *CreateUploadPathForSQLServerResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.CreateUploadPathForSQLServer(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *CreateUploadPathForSQLServerResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.CreateUploadPathForSQLServer(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // CreateUploadPathForSQLServerWithCallback invokes the rds.CreateUploadPathForSQLServer API asynchronously
 // api document: https://help.aliyun.com/api/rds/createuploadpathforsqlserver.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateUploadPathForSQLServerWithCallback(request *CreateUploadPathForSQLServerRequest, callback func(response *CreateUploadPathForSQLServerResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *CreateUploadPathForSQLServerResponse
-var err error
-defer close(result)
-response, err = client.CreateUploadPathForSQLServer(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) CreateUploadPathForSQLServerWithCallback(request *CreateUploadPathForSQLServerRequest, callback func(response *CreateUploadPathForSQLServerResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *CreateUploadPathForSQLServerResponse
+		var err error
+		defer close(result)
+		response, err = client.CreateUploadPathForSQLServer(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // CreateUploadPathForSQLServerRequest is the request struct for api CreateUploadPathForSQLServer
 type CreateUploadPathForSQLServerRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    DBName     string `position:"Query" name:"DBName"`
-                    DBInstanceId     string `position:"Query" name:"DBInstanceId"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBName               string           `position:"Query" name:"DBName"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
-
 
 // CreateUploadPathForSQLServerResponse is the response struct for api CreateUploadPathForSQLServer
 type CreateUploadPathForSQLServerResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            InternetFtpServer     string `json:"InternetFtpServer" xml:"InternetFtpServer"`
-            InternetPort     int `json:"InternetPort" xml:"InternetPort"`
-            IntranetFtpserver     string `json:"IntranetFtpserver" xml:"IntranetFtpserver"`
-            Intranetport     int `json:"Intranetport" xml:"Intranetport"`
-            UserName     string `json:"UserName" xml:"UserName"`
-            Password     string `json:"Password" xml:"Password"`
-            FileName     string `json:"FileName" xml:"FileName"`
+	*responses.BaseResponse
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	InternetFtpServer string `json:"InternetFtpServer" xml:"InternetFtpServer"`
+	InternetPort      int    `json:"InternetPort" xml:"InternetPort"`
+	IntranetFtpserver string `json:"IntranetFtpserver" xml:"IntranetFtpserver"`
+	Intranetport      int    `json:"Intranetport" xml:"Intranetport"`
+	UserName          string `json:"UserName" xml:"UserName"`
+	Password          string `json:"Password" xml:"Password"`
+	FileName          string `json:"FileName" xml:"FileName"`
 }
 
 // CreateCreateUploadPathForSQLServerRequest creates a request to invoke CreateUploadPathForSQLServer API
 func CreateCreateUploadPathForSQLServerRequest() (request *CreateUploadPathForSQLServerRequest) {
-request = &CreateUploadPathForSQLServerRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "CreateUploadPathForSQLServer", "rds", "openAPI")
-return
+	request = &CreateUploadPathForSQLServerRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateUploadPathForSQLServer", "rds", "openAPI")
+	return
 }
 
 // CreateCreateUploadPathForSQLServerResponse creates a response to parse from CreateUploadPathForSQLServer response
 func CreateCreateUploadPathForSQLServerResponse() (response *CreateUploadPathForSQLServerResponse) {
-response = &CreateUploadPathForSQLServerResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &CreateUploadPathForSQLServerResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

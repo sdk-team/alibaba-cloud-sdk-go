@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,9 +17,9 @@ package rds
 
 // AdviceOnBigTable is a nested struct in rds response
 type AdviceOnBigTable struct {
-            DBName     string `json:"DBName" xml:"DBName"`
-            TableName     string `json:"TableName" xml:"TableName"`
-            TableSize     int64 `json:"TableSize" xml:"TableSize"`
-            DataSize     int64 `json:"DataSize" xml:"DataSize"`
-            IndexSize     int64 `json:"IndexSize" xml:"IndexSize"`
+	DBName    string `json:"DBName" xml:"DBName"`
+	TableName string `json:"TableName" xml:"TableName"`
+	TableSize int64  `json:"TableSize" xml:"TableSize"`
+	DataSize  int64  `json:"DataSize" xml:"DataSize"`
+	IndexSize int64  `json:"IndexSize" xml:"IndexSize"`
 }

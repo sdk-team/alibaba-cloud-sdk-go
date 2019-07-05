@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +17,7 @@ package rds
 
 // ActivityInfo is a nested struct in rds response
 type ActivityInfo struct {
-            Success     string `json:"Success" xml:"Success"`
-            CheckErrMsg     string `json:"CheckErrMsg" xml:"CheckErrMsg"`
-            ErrorCode     string `json:"ErrorCode" xml:"ErrorCode"`
+	Success     string `json:"Success" xml:"Success"`
+	CheckErrMsg string `json:"CheckErrMsg" xml:"CheckErrMsg"`
+	ErrorCode   string `json:"ErrorCode" xml:"ErrorCode"`
 }

@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // ItemsInDescribeSQLInjectionInfos is a nested struct in rds response
 type ItemsInDescribeSQLInjectionInfos struct {
-SQLInjectionInfo []SQLInjectionInfo `json:"SQLInjectionInfo" xml:"SQLInjectionInfo"`
+	SQLInjectionInfo []SQLInjectionInfo `json:"SQLInjectionInfo" xml:"SQLInjectionInfo"`
 }

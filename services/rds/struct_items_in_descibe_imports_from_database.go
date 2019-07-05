@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // ItemsInDescibeImportsFromDatabase is a nested struct in rds response
 type ItemsInDescibeImportsFromDatabase struct {
-ImportResultFromDB []ImportResultFromDB `json:"ImportResultFromDB" xml:"ImportResultFromDB"`
+	ImportResultFromDB []ImportResultFromDB `json:"ImportResultFromDB" xml:"ImportResultFromDB"`
 }

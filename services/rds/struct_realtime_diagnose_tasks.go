@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +17,8 @@ package rds
 
 // RealtimeDiagnoseTasks is a nested struct in rds response
 type RealtimeDiagnoseTasks struct {
-            CreateTime     string `json:"CreateTime" xml:"CreateTime"`
-            TaskId     string `json:"TaskId" xml:"TaskId"`
-            HealthScore     string `json:"HealthScore" xml:"HealthScore"`
-            Status     string `json:"Status" xml:"Status"`
+	CreateTime  string `json:"CreateTime" xml:"CreateTime"`
+	TaskId      string `json:"TaskId" xml:"TaskId"`
+	HealthScore string `json:"HealthScore" xml:"HealthScore"`
+	Status      string `json:"Status" xml:"Status"`
 }

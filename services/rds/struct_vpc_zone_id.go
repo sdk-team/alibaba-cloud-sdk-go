@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +17,7 @@ package rds
 
 // VpcZoneId is a nested struct in rds response
 type VpcZoneId struct {
-            ZoneId     string `json:"ZoneId" xml:"ZoneId"`
-            Region     string `json:"Region" xml:"Region"`
-            SubDomain     string `json:"SubDomain" xml:"SubDomain"`
+	ZoneId    string `json:"ZoneId" xml:"ZoneId"`
+	Region    string `json:"Region" xml:"Region"`
+	SubDomain string `json:"SubDomain" xml:"SubDomain"`
 }

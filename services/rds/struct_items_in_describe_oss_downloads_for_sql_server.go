@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // ItemsInDescribeOssDownloadsForSQLServer is a nested struct in rds response
 type ItemsInDescribeOssDownloadsForSQLServer struct {
-OssDownload []OssDownload `json:"OssDownload" xml:"OssDownload"`
+	OssDownload []OssDownload `json:"OssDownload" xml:"OssDownload"`
 }

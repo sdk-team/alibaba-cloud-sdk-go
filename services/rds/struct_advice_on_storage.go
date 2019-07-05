@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +17,8 @@ package rds
 
 // AdviceOnStorage is a nested struct in rds response
 type AdviceOnStorage struct {
-            DBName     string `json:"DBName" xml:"DBName"`
-            TableName     string `json:"TableName" xml:"TableName"`
-            CurrentEngine     string `json:"CurrentEngine" xml:"CurrentEngine"`
-            AdviseEngine     string `json:"AdviseEngine" xml:"AdviseEngine"`
+	DBName        string `json:"DBName" xml:"DBName"`
+	TableName     string `json:"TableName" xml:"TableName"`
+	CurrentEngine string `json:"CurrentEngine" xml:"CurrentEngine"`
+	AdviseEngine  string `json:"AdviseEngine" xml:"AdviseEngine"`
 }

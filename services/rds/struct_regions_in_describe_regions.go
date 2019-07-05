@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // RegionsInDescribeRegions is a nested struct in rds response
 type RegionsInDescribeRegions struct {
-RDSRegion []RDSRegion `json:"RDSRegion" xml:"RDSRegion"`
+	RDSRegion []RDSRegion `json:"RDSRegion" xml:"RDSRegion"`
 }

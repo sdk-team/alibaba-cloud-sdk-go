@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,95 +16,93 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // CheckDBInstances invokes the rds.CheckDBInstances API synchronously
 // api document: https://help.aliyun.com/api/rds/checkdbinstances.html
 func (client *Client) CheckDBInstances(request *CheckDBInstancesRequest) (response *CheckDBInstancesResponse, err error) {
-response = CreateCheckDBInstancesResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateCheckDBInstancesResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // CheckDBInstancesWithChan invokes the rds.CheckDBInstances API asynchronously
 // api document: https://help.aliyun.com/api/rds/checkdbinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDBInstancesWithChan(request *CheckDBInstancesRequest) (<-chan *CheckDBInstancesResponse, <-chan error) {
-responseChan := make(chan *CheckDBInstancesResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.CheckDBInstances(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *CheckDBInstancesResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.CheckDBInstances(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // CheckDBInstancesWithCallback invokes the rds.CheckDBInstances API asynchronously
 // api document: https://help.aliyun.com/api/rds/checkdbinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CheckDBInstancesWithCallback(request *CheckDBInstancesRequest, callback func(response *CheckDBInstancesResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *CheckDBInstancesResponse
-var err error
-defer close(result)
-response, err = client.CheckDBInstances(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) CheckDBInstancesWithCallback(request *CheckDBInstancesRequest, callback func(response *CheckDBInstancesResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *CheckDBInstancesResponse
+		var err error
+		defer close(result)
+		response, err = client.CheckDBInstances(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // CheckDBInstancesRequest is the request struct for api CheckDBInstances
 type CheckDBInstancesRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    DBInstanceId     string `position:"Query" name:"DBInstanceId"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
-
 
 // CheckDBInstancesResponse is the response struct for api CheckDBInstances
 type CheckDBInstancesResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            IsExistInstance     bool `json:"IsExistInstance" xml:"IsExistInstance"`
+	*responses.BaseResponse
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
+	DBInstanceStatus string `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
 }
 
 // CreateCheckDBInstancesRequest creates a request to invoke CheckDBInstances API
 func CreateCheckDBInstancesRequest() (request *CheckDBInstancesRequest) {
-request = &CheckDBInstancesRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "CheckDBInstances", "rds", "openAPI")
-return
+	request = &CheckDBInstancesRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "CheckDBInstances", "rds", "openAPI")
+	return
 }
 
 // CreateCheckDBInstancesResponse creates a response to parse from CheckDBInstances response
 func CreateCheckDBInstancesResponse() (response *CheckDBInstancesResponse) {
-response = &CheckDBInstancesResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &CheckDBInstancesResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // InconsistentFileds is a nested struct in rds response
 type InconsistentFileds struct {
-InconsistentFiledsItem []InconsistentFiledsItem `json:"InconsistentFiledsItem" xml:"InconsistentFiledsItem"`
+	InconsistentFiled []InconsistentFiledItem `json:"InconsistentFiled" xml:"InconsistentFiled"`
 }

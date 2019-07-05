@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,9 +17,9 @@ package rds
 
 // SQLDiag is a nested struct in rds response
 type SQLDiag struct {
-            SQLDiagId     string `json:"SQLDiagId" xml:"SQLDiagId"`
-            StartTime     string `json:"StartTime" xml:"StartTime"`
-            EndTime     string `json:"EndTime" xml:"EndTime"`
-            Status     int `json:"Status" xml:"Status"`
-            Progress     int `json:"Progress" xml:"Progress"`
+	SQLDiagId string `json:"SQLDiagId" xml:"SQLDiagId"`
+	StartTime string `json:"StartTime" xml:"StartTime"`
+	EndTime   string `json:"EndTime" xml:"EndTime"`
+	Status    int    `json:"Status" xml:"Status"`
+	Progress  int    `json:"Progress" xml:"Progress"`
 }

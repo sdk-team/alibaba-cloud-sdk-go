@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // DatabasesInDescribeDatabases is a nested struct in rds response
 type DatabasesInDescribeDatabases struct {
-Database []Database `json:"Database" xml:"Database"`
+	Database []Database `json:"Database" xml:"Database"`
 }

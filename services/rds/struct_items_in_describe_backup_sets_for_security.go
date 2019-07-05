@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // ItemsInDescribeBackupSetsForSecurity is a nested struct in rds response
 type ItemsInDescribeBackupSetsForSecurity struct {
-Backup []Backup `json:"Backup" xml:"Backup"`
+	Backup []Backup `json:"Backup" xml:"Backup"`
 }

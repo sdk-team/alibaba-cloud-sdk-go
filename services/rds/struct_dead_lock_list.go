@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // DeadLockList is a nested struct in rds response
 type DeadLockList struct {
-DeadLock []    string  `json:"DeadLock" xml:"DeadLock"`
+	DeadLock []string `json:"DeadLock" xml:"DeadLock"`
 }

@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +17,8 @@ package rds
 
 // PreCheckResult is a nested struct in rds response
 type PreCheckResult struct {
-            PreCheckName     string `json:"PreCheckName" xml:"PreCheckName"`
-            PreCheckResult     string `json:"PreCheckResult" xml:"PreCheckResult"`
-            FailReasion     string `json:"FailReasion" xml:"FailReasion"`
-            RepairMethod     string `json:"RepairMethod" xml:"RepairMethod"`
+	PreCheckName   string `json:"PreCheckName" xml:"PreCheckName"`
+	PreCheckResult string `json:"PreCheckResult" xml:"PreCheckResult"`
+	FailReasion    string `json:"FailReasion" xml:"FailReasion"`
+	RepairMethod   string `json:"RepairMethod" xml:"RepairMethod"`
 }

@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +17,8 @@ package rds
 
 // Coupon is a nested struct in rds response
 type Coupon struct {
-            Name     string `json:"Name" xml:"Name"`
-            CouponNo     string `json:"CouponNo" xml:"CouponNo"`
-            IsSelected     string `json:"IsSelected" xml:"IsSelected"`
-            Description     string `json:"Description" xml:"Description"`
+	Name        string `json:"Name" xml:"Name"`
+	CouponNo    string `json:"CouponNo" xml:"CouponNo"`
+	IsSelected  string `json:"IsSelected" xml:"IsSelected"`
+	Description string `json:"Description" xml:"Description"`
 }

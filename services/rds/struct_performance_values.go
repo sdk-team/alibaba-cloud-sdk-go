@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // PerformanceValues is a nested struct in rds response
 type PerformanceValues struct {
-                    PerformanceValue []PerformanceValueItem  `json:"PerformanceValue" xml:"PerformanceValue"`
+	PerformanceValue []PerformanceValueItem `json:"PerformanceValue" xml:"PerformanceValue"`
 }

@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,96 +16,93 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // ModifyDBInstanceConnectionMode invokes the rds.ModifyDBInstanceConnectionMode API synchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstanceconnectionmode.html
 func (client *Client) ModifyDBInstanceConnectionMode(request *ModifyDBInstanceConnectionModeRequest) (response *ModifyDBInstanceConnectionModeResponse, err error) {
-response = CreateModifyDBInstanceConnectionModeResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateModifyDBInstanceConnectionModeResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // ModifyDBInstanceConnectionModeWithChan invokes the rds.ModifyDBInstanceConnectionMode API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstanceconnectionmode.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceConnectionModeWithChan(request *ModifyDBInstanceConnectionModeRequest) (<-chan *ModifyDBInstanceConnectionModeResponse, <-chan error) {
-responseChan := make(chan *ModifyDBInstanceConnectionModeResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ModifyDBInstanceConnectionMode(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ModifyDBInstanceConnectionModeResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ModifyDBInstanceConnectionMode(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // ModifyDBInstanceConnectionModeWithCallback invokes the rds.ModifyDBInstanceConnectionMode API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstanceconnectionmode.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ModifyDBInstanceConnectionModeWithCallback(request *ModifyDBInstanceConnectionModeRequest, callback func(response *ModifyDBInstanceConnectionModeResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ModifyDBInstanceConnectionModeResponse
-var err error
-defer close(result)
-response, err = client.ModifyDBInstanceConnectionMode(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ModifyDBInstanceConnectionModeWithCallback(request *ModifyDBInstanceConnectionModeRequest, callback func(response *ModifyDBInstanceConnectionModeResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ModifyDBInstanceConnectionModeResponse
+		var err error
+		defer close(result)
+		response, err = client.ModifyDBInstanceConnectionMode(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // ModifyDBInstanceConnectionModeRequest is the request struct for api ModifyDBInstanceConnectionMode
 type ModifyDBInstanceConnectionModeRequest struct {
-*requests.RpcRequest
-                    ConnectionMode     string `position:"Query" name:"ConnectionMode"`
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    DBInstanceId     string `position:"Query" name:"DBInstanceId"`
+	*requests.RpcRequest
+	ConnectionMode       string           `position:"Query" name:"ConnectionMode"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
-
 
 // ModifyDBInstanceConnectionModeResponse is the response struct for api ModifyDBInstanceConnectionMode
 type ModifyDBInstanceConnectionModeResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyDBInstanceConnectionModeRequest creates a request to invoke ModifyDBInstanceConnectionMode API
 func CreateModifyDBInstanceConnectionModeRequest() (request *ModifyDBInstanceConnectionModeRequest) {
-request = &ModifyDBInstanceConnectionModeRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceConnectionMode", "rds", "openAPI")
-return
+	request = &ModifyDBInstanceConnectionModeRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceConnectionMode", "rds", "openAPI")
+	return
 }
 
 // CreateModifyDBInstanceConnectionModeResponse creates a response to parse from ModifyDBInstanceConnectionMode response
 func CreateModifyDBInstanceConnectionModeResponse() (response *ModifyDBInstanceConnectionModeResponse) {
-response = &ModifyDBInstanceConnectionModeResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ModifyDBInstanceConnectionModeResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

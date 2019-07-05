@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,6 @@ package rds
 
 // SupportedStorageTypes is a nested struct in rds response
 type SupportedStorageTypes struct {
-            StorageType     string `json:"StorageType" xml:"StorageType"`
-                    AvailableResource AvailableResourceInDescribeAvailableResource `json:"AvailableResource" xml:"AvailableResource"`
+	StorageType       string            `json:"StorageType" xml:"StorageType"`
+	AvailableResource AvailableResource `json:"AvailableResource" xml:"AvailableResource"`
 }

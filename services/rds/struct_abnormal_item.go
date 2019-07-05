@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,11 +17,11 @@ package rds
 
 // AbnormalItem is a nested struct in rds response
 type AbnormalItem struct {
-            CheckTime     string `json:"CheckTime" xml:"CheckTime"`
-            CheckItem     string `json:"CheckItem" xml:"CheckItem"`
-            AbnormalReason     string `json:"AbnormalReason" xml:"AbnormalReason"`
-            AbnormalValue     string `json:"AbnormalValue" xml:"AbnormalValue"`
-            AbnormalDetail     string `json:"AbnormalDetail" xml:"AbnormalDetail"`
-            AdviceKey     string `json:"AdviceKey" xml:"AdviceKey"`
-                AdviseValue AdviseValue `json:"AdviseValue" xml:"AdviseValue"`
+	CheckTime      string      `json:"CheckTime" xml:"CheckTime"`
+	CheckItem      string      `json:"CheckItem" xml:"CheckItem"`
+	AbnormalReason string      `json:"AbnormalReason" xml:"AbnormalReason"`
+	AbnormalValue  string      `json:"AbnormalValue" xml:"AbnormalValue"`
+	AbnormalDetail string      `json:"AbnormalDetail" xml:"AbnormalDetail"`
+	AdviceKey      string      `json:"AdviceKey" xml:"AdviceKey"`
+	AdviseValue    AdviseValue `json:"AdviseValue" xml:"AdviseValue"`
 }

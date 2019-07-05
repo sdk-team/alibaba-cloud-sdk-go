@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,10 +17,10 @@ package rds
 
 // TemplateRecord is a nested struct in rds response
 type TemplateRecord struct {
-            ParameterName     string `json:"ParameterName" xml:"ParameterName"`
-            ParameterValue     string `json:"ParameterValue" xml:"ParameterValue"`
-            ForceModify     string `json:"ForceModify" xml:"ForceModify"`
-            ForceRestart     string `json:"ForceRestart" xml:"ForceRestart"`
-            CheckingCode     string `json:"CheckingCode" xml:"CheckingCode"`
-            ParameterDescription     string `json:"ParameterDescription" xml:"ParameterDescription"`
+	ParameterName        string `json:"ParameterName" xml:"ParameterName"`
+	ParameterValue       string `json:"ParameterValue" xml:"ParameterValue"`
+	ForceModify          string `json:"ForceModify" xml:"ForceModify"`
+	ForceRestart         string `json:"ForceRestart" xml:"ForceRestart"`
+	CheckingCode         string `json:"CheckingCode" xml:"CheckingCode"`
+	ParameterDescription string `json:"ParameterDescription" xml:"ParameterDescription"`
 }

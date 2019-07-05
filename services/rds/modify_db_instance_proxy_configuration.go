@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,96 +16,93 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // ModifyDBInstanceProxyConfiguration invokes the rds.ModifyDBInstanceProxyConfiguration API synchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstanceproxyconfiguration.html
 func (client *Client) ModifyDBInstanceProxyConfiguration(request *ModifyDBInstanceProxyConfigurationRequest) (response *ModifyDBInstanceProxyConfigurationResponse, err error) {
-response = CreateModifyDBInstanceProxyConfigurationResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateModifyDBInstanceProxyConfigurationResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // ModifyDBInstanceProxyConfigurationWithChan invokes the rds.ModifyDBInstanceProxyConfiguration API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstanceproxyconfiguration.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceProxyConfigurationWithChan(request *ModifyDBInstanceProxyConfigurationRequest) (<-chan *ModifyDBInstanceProxyConfigurationResponse, <-chan error) {
-responseChan := make(chan *ModifyDBInstanceProxyConfigurationResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ModifyDBInstanceProxyConfiguration(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ModifyDBInstanceProxyConfigurationResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ModifyDBInstanceProxyConfiguration(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // ModifyDBInstanceProxyConfigurationWithCallback invokes the rds.ModifyDBInstanceProxyConfiguration API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstanceproxyconfiguration.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ModifyDBInstanceProxyConfigurationWithCallback(request *ModifyDBInstanceProxyConfigurationRequest, callback func(response *ModifyDBInstanceProxyConfigurationResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ModifyDBInstanceProxyConfigurationResponse
-var err error
-defer close(result)
-response, err = client.ModifyDBInstanceProxyConfiguration(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ModifyDBInstanceProxyConfigurationWithCallback(request *ModifyDBInstanceProxyConfigurationRequest, callback func(response *ModifyDBInstanceProxyConfigurationResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ModifyDBInstanceProxyConfigurationResponse
+		var err error
+		defer close(result)
+		response, err = client.ModifyDBInstanceProxyConfiguration(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // ModifyDBInstanceProxyConfigurationRequest is the request struct for api ModifyDBInstanceProxyConfiguration
 type ModifyDBInstanceProxyConfigurationRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    ProxyConfigurationValue     string `position:"Query" name:"ProxyConfigurationValue"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    ProxyConfigurationKey     string `position:"Query" name:"ProxyConfigurationKey"`
-                    DBInstanceId     string `position:"Query" name:"DBInstanceId"`
+	*requests.RpcRequest
+	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
+	ProxyConfigurationKey   string           `position:"Query" name:"ProxyConfigurationKey"`
+	ProxyConfigurationValue string           `position:"Query" name:"ProxyConfigurationValue"`
+	DBInstanceId            string           `position:"Query" name:"DBInstanceId"`
+	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
 }
-
 
 // ModifyDBInstanceProxyConfigurationResponse is the response struct for api ModifyDBInstanceProxyConfiguration
 type ModifyDBInstanceProxyConfigurationResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyDBInstanceProxyConfigurationRequest creates a request to invoke ModifyDBInstanceProxyConfiguration API
 func CreateModifyDBInstanceProxyConfigurationRequest() (request *ModifyDBInstanceProxyConfigurationRequest) {
-request = &ModifyDBInstanceProxyConfigurationRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceProxyConfiguration", "rds", "openAPI")
-return
+	request = &ModifyDBInstanceProxyConfigurationRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceProxyConfiguration", "rds", "openAPI")
+	return
 }
 
 // CreateModifyDBInstanceProxyConfigurationResponse creates a response to parse from ModifyDBInstanceProxyConfiguration response
 func CreateModifyDBInstanceProxyConfigurationResponse() (response *ModifyDBInstanceProxyConfigurationResponse) {
-response = &ModifyDBInstanceProxyConfigurationResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ModifyDBInstanceProxyConfigurationResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

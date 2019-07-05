@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // ItemsInDescribeVpcZoneNos is a nested struct in rds response
 type ItemsInDescribeVpcZoneNos struct {
-VpcZoneId []VpcZoneId `json:"VpcZoneId" xml:"VpcZoneId"`
+	VpcZoneId []VpcZoneId `json:"VpcZoneId" xml:"VpcZoneId"`
 }

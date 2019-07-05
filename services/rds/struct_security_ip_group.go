@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,6 @@ package rds
 
 // SecurityIPGroup is a nested struct in rds response
 type SecurityIPGroup struct {
-            SecurityIPs     string `json:"SecurityIPs" xml:"SecurityIPs"`
-            SecurityIPGroupName     string `json:"SecurityIPGroupName" xml:"SecurityIPGroupName"`
+	SecurityIPGroupName string `json:"SecurityIPGroupName" xml:"SecurityIPGroupName"`
+	SecurityIPs         string `json:"SecurityIPs" xml:"SecurityIPs"`
 }

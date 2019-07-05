@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,98 +16,95 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // DescribeOssDownloads invokes the rds.DescribeOssDownloads API synchronously
 // api document: https://help.aliyun.com/api/rds/describeossdownloads.html
 func (client *Client) DescribeOssDownloads(request *DescribeOssDownloadsRequest) (response *DescribeOssDownloadsResponse, err error) {
-response = CreateDescribeOssDownloadsResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeOssDownloadsResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // DescribeOssDownloadsWithChan invokes the rds.DescribeOssDownloads API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeossdownloads.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOssDownloadsWithChan(request *DescribeOssDownloadsRequest) (<-chan *DescribeOssDownloadsResponse, <-chan error) {
-responseChan := make(chan *DescribeOssDownloadsResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeOssDownloads(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeOssDownloadsResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeOssDownloads(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // DescribeOssDownloadsWithCallback invokes the rds.DescribeOssDownloads API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeossdownloads.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeOssDownloadsWithCallback(request *DescribeOssDownloadsRequest, callback func(response *DescribeOssDownloadsResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeOssDownloadsResponse
-var err error
-defer close(result)
-response, err = client.DescribeOssDownloads(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeOssDownloadsWithCallback(request *DescribeOssDownloadsRequest, callback func(response *DescribeOssDownloadsResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeOssDownloadsResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeOssDownloads(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // DescribeOssDownloadsRequest is the request struct for api DescribeOssDownloads
 type DescribeOssDownloadsRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    MigrateTaskId     string `position:"Query" name:"MigrateTaskId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    DBInstanceId     string `position:"Query" name:"DBInstanceId"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	MigrateTaskId        string           `position:"Query" name:"MigrateTaskId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
-
 
 // DescribeOssDownloadsResponse is the response struct for api DescribeOssDownloads
 type DescribeOssDownloadsResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-            MigrateTaskId     string `json:"MigrateTaskId" xml:"MigrateTaskId"`
-                    Items ItemsInDescribeOssDownloads `json:"Items" xml:"Items"`
+	*responses.BaseResponse
+	RequestId     string                      `json:"RequestId" xml:"RequestId"`
+	DBInstanceId  string                      `json:"DBInstanceId" xml:"DBInstanceId"`
+	MigrateTaskId string                      `json:"MigrateTaskId" xml:"MigrateTaskId"`
+	Items         ItemsInDescribeOssDownloads `json:"Items" xml:"Items"`
 }
 
 // CreateDescribeOssDownloadsRequest creates a request to invoke DescribeOssDownloads API
 func CreateDescribeOssDownloadsRequest() (request *DescribeOssDownloadsRequest) {
-request = &DescribeOssDownloadsRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOssDownloads", "rds", "openAPI")
-return
+	request = &DescribeOssDownloadsRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOssDownloads", "rds", "openAPI")
+	return
 }
 
 // CreateDescribeOssDownloadsResponse creates a response to parse from DescribeOssDownloads response
 func CreateDescribeOssDownloadsResponse() (response *DescribeOssDownloadsResponse) {
-response = &DescribeOssDownloadsResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeOssDownloadsResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

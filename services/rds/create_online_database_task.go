@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,99 +16,96 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // CreateOnlineDatabaseTask invokes the rds.CreateOnlineDatabaseTask API synchronously
 // api document: https://help.aliyun.com/api/rds/createonlinedatabasetask.html
 func (client *Client) CreateOnlineDatabaseTask(request *CreateOnlineDatabaseTaskRequest) (response *CreateOnlineDatabaseTaskResponse, err error) {
-response = CreateCreateOnlineDatabaseTaskResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateCreateOnlineDatabaseTaskResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // CreateOnlineDatabaseTaskWithChan invokes the rds.CreateOnlineDatabaseTask API asynchronously
 // api document: https://help.aliyun.com/api/rds/createonlinedatabasetask.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateOnlineDatabaseTaskWithChan(request *CreateOnlineDatabaseTaskRequest) (<-chan *CreateOnlineDatabaseTaskResponse, <-chan error) {
-responseChan := make(chan *CreateOnlineDatabaseTaskResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.CreateOnlineDatabaseTask(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *CreateOnlineDatabaseTaskResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.CreateOnlineDatabaseTask(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // CreateOnlineDatabaseTaskWithCallback invokes the rds.CreateOnlineDatabaseTask API asynchronously
 // api document: https://help.aliyun.com/api/rds/createonlinedatabasetask.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateOnlineDatabaseTaskWithCallback(request *CreateOnlineDatabaseTaskRequest, callback func(response *CreateOnlineDatabaseTaskResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *CreateOnlineDatabaseTaskResponse
-var err error
-defer close(result)
-response, err = client.CreateOnlineDatabaseTask(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) CreateOnlineDatabaseTaskWithCallback(request *CreateOnlineDatabaseTaskRequest, callback func(response *CreateOnlineDatabaseTaskResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *CreateOnlineDatabaseTaskResponse
+		var err error
+		defer close(result)
+		response, err = client.CreateOnlineDatabaseTask(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // CreateOnlineDatabaseTaskRequest is the request struct for api CreateOnlineDatabaseTask
 type CreateOnlineDatabaseTaskRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    ClientToken     string `position:"Query" name:"ClientToken"`
-                    DBInstanceId     string `position:"Query" name:"DBInstanceId"`
-                    MigrateTaskId     string `position:"Query" name:"MigrateTaskId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    DBName     string `position:"Query" name:"DBName"`
-                    CheckDBMode     string `position:"Query" name:"CheckDBMode"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	MigrateTaskId        string           `position:"Query" name:"MigrateTaskId"`
+	DBName               string           `position:"Query" name:"DBName"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	CheckDBMode          string           `position:"Query" name:"CheckDBMode"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
-
 
 // CreateOnlineDatabaseTaskResponse is the response struct for api CreateOnlineDatabaseTask
 type CreateOnlineDatabaseTaskResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateOnlineDatabaseTaskRequest creates a request to invoke CreateOnlineDatabaseTask API
 func CreateCreateOnlineDatabaseTaskRequest() (request *CreateOnlineDatabaseTaskRequest) {
-request = &CreateOnlineDatabaseTaskRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "CreateOnlineDatabaseTask", "rds", "openAPI")
-return
+	request = &CreateOnlineDatabaseTaskRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateOnlineDatabaseTask", "rds", "openAPI")
+	return
 }
 
 // CreateCreateOnlineDatabaseTaskResponse creates a response to parse from CreateOnlineDatabaseTask response
 func CreateCreateOnlineDatabaseTaskResponse() (response *CreateOnlineDatabaseTaskResponse) {
-response = &CreateOnlineDatabaseTaskResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &CreateOnlineDatabaseTaskResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

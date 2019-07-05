@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,11 +17,11 @@ package rds
 
 // SQLInjectionInfo is a nested struct in rds response
 type SQLInjectionInfo struct {
-            DBName     string `json:"DBName" xml:"DBName"`
-            SQLText     string `json:"SQLText" xml:"SQLText"`
-            LatencyTime     string `json:"LatencyTime" xml:"LatencyTime"`
-            HostAddress     string `json:"HostAddress" xml:"HostAddress"`
-            ExecuteTime     string `json:"ExecuteTime" xml:"ExecuteTime"`
-            AccountName     string `json:"AccountName" xml:"AccountName"`
-            EffectRowCount     string `json:"EffectRowCount" xml:"EffectRowCount"`
+	DBName         string `json:"DBName" xml:"DBName"`
+	SQLText        string `json:"SQLText" xml:"SQLText"`
+	LatencyTime    string `json:"LatencyTime" xml:"LatencyTime"`
+	HostAddress    string `json:"HostAddress" xml:"HostAddress"`
+	ExecuteTime    string `json:"ExecuteTime" xml:"ExecuteTime"`
+	AccountName    string `json:"AccountName" xml:"AccountName"`
+	EffectRowCount string `json:"EffectRowCount" xml:"EffectRowCount"`
 }

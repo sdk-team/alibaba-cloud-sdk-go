@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,97 +16,94 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // ResetAccountForPG invokes the rds.ResetAccountForPG API synchronously
 // api document: https://help.aliyun.com/api/rds/resetaccountforpg.html
 func (client *Client) ResetAccountForPG(request *ResetAccountForPGRequest) (response *ResetAccountForPGResponse, err error) {
-response = CreateResetAccountForPGResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateResetAccountForPGResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // ResetAccountForPGWithChan invokes the rds.ResetAccountForPG API asynchronously
 // api document: https://help.aliyun.com/api/rds/resetaccountforpg.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetAccountForPGWithChan(request *ResetAccountForPGRequest) (<-chan *ResetAccountForPGResponse, <-chan error) {
-responseChan := make(chan *ResetAccountForPGResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ResetAccountForPG(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ResetAccountForPGResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ResetAccountForPG(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // ResetAccountForPGWithCallback invokes the rds.ResetAccountForPG API asynchronously
 // api document: https://help.aliyun.com/api/rds/resetaccountforpg.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ResetAccountForPGWithCallback(request *ResetAccountForPGRequest, callback func(response *ResetAccountForPGResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ResetAccountForPGResponse
-var err error
-defer close(result)
-response, err = client.ResetAccountForPG(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ResetAccountForPGWithCallback(request *ResetAccountForPGRequest, callback func(response *ResetAccountForPGResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ResetAccountForPGResponse
+		var err error
+		defer close(result)
+		response, err = client.ResetAccountForPG(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // ResetAccountForPGRequest is the request struct for api ResetAccountForPG
 type ResetAccountForPGRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    AccountName     string `position:"Query" name:"AccountName"`
-                    DBInstanceId     string `position:"Query" name:"DBInstanceId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    AccountPassword     string `position:"Query" name:"AccountPassword"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AccountPassword      string           `position:"Query" name:"AccountPassword"`
+	AccountName          string           `position:"Query" name:"AccountName"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
-
 
 // ResetAccountForPGResponse is the response struct for api ResetAccountForPG
 type ResetAccountForPGResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateResetAccountForPGRequest creates a request to invoke ResetAccountForPG API
 func CreateResetAccountForPGRequest() (request *ResetAccountForPGRequest) {
-request = &ResetAccountForPGRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "ResetAccountForPG", "rds", "openAPI")
-return
+	request = &ResetAccountForPGRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "ResetAccountForPG", "rds", "openAPI")
+	return
 }
 
 // CreateResetAccountForPGResponse creates a response to parse from ResetAccountForPG response
 func CreateResetAccountForPGResponse() (response *ResetAccountForPGResponse) {
-response = &ResetAccountForPGResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ResetAccountForPGResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

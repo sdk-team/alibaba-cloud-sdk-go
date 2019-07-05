@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,96 +16,93 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // DescribeCustinsKernelReleaseNotes invokes the rds.DescribeCustinsKernelReleaseNotes API synchronously
 // api document: https://help.aliyun.com/api/rds/describecustinskernelreleasenotes.html
 func (client *Client) DescribeCustinsKernelReleaseNotes(request *DescribeCustinsKernelReleaseNotesRequest) (response *DescribeCustinsKernelReleaseNotesResponse, err error) {
-response = CreateDescribeCustinsKernelReleaseNotesResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeCustinsKernelReleaseNotesResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // DescribeCustinsKernelReleaseNotesWithChan invokes the rds.DescribeCustinsKernelReleaseNotes API asynchronously
 // api document: https://help.aliyun.com/api/rds/describecustinskernelreleasenotes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCustinsKernelReleaseNotesWithChan(request *DescribeCustinsKernelReleaseNotesRequest) (<-chan *DescribeCustinsKernelReleaseNotesResponse, <-chan error) {
-responseChan := make(chan *DescribeCustinsKernelReleaseNotesResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeCustinsKernelReleaseNotes(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeCustinsKernelReleaseNotesResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeCustinsKernelReleaseNotes(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // DescribeCustinsKernelReleaseNotesWithCallback invokes the rds.DescribeCustinsKernelReleaseNotes API asynchronously
 // api document: https://help.aliyun.com/api/rds/describecustinskernelreleasenotes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeCustinsKernelReleaseNotesWithCallback(request *DescribeCustinsKernelReleaseNotesRequest, callback func(response *DescribeCustinsKernelReleaseNotesResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeCustinsKernelReleaseNotesResponse
-var err error
-defer close(result)
-response, err = client.DescribeCustinsKernelReleaseNotes(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeCustinsKernelReleaseNotesWithCallback(request *DescribeCustinsKernelReleaseNotesRequest, callback func(response *DescribeCustinsKernelReleaseNotesResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeCustinsKernelReleaseNotesResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeCustinsKernelReleaseNotes(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // DescribeCustinsKernelReleaseNotesRequest is the request struct for api DescribeCustinsKernelReleaseNotes
 type DescribeCustinsKernelReleaseNotesRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    DBInstanceId     string `position:"Query" name:"DBInstanceId"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
-
 
 // DescribeCustinsKernelReleaseNotesResponse is the response struct for api DescribeCustinsKernelReleaseNotes
 type DescribeCustinsKernelReleaseNotesResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-            DBInstanceDiffReleaseNote     string `json:"DBInstanceDiffReleaseNote" xml:"DBInstanceDiffReleaseNote"`
+	*responses.BaseResponse
+	RequestId                 string `json:"RequestId" xml:"RequestId"`
+	DBInstanceName            string `json:"DBInstanceName" xml:"DBInstanceName"`
+	DBInstanceDiffReleaseNote string `json:"DBInstanceDiffReleaseNote" xml:"DBInstanceDiffReleaseNote"`
 }
 
 // CreateDescribeCustinsKernelReleaseNotesRequest creates a request to invoke DescribeCustinsKernelReleaseNotes API
 func CreateDescribeCustinsKernelReleaseNotesRequest() (request *DescribeCustinsKernelReleaseNotesRequest) {
-request = &DescribeCustinsKernelReleaseNotesRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeCustinsKernelReleaseNotes", "rds", "openAPI")
-return
+	request = &DescribeCustinsKernelReleaseNotesRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeCustinsKernelReleaseNotes", "rds", "openAPI")
+	return
 }
 
 // CreateDescribeCustinsKernelReleaseNotesResponse creates a response to parse from DescribeCustinsKernelReleaseNotes response
 func CreateDescribeCustinsKernelReleaseNotesResponse() (response *DescribeCustinsKernelReleaseNotesResponse) {
-response = &DescribeCustinsKernelReleaseNotesResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeCustinsKernelReleaseNotesResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

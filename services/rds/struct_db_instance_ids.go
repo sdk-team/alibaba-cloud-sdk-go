@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // DBInstanceIds is a nested struct in rds response
 type DBInstanceIds struct {
-DBInstanceIds []    string  `json:"DBInstanceIds" xml:"DBInstanceIds"`
+	DBInstanceIds []string `json:"DBInstanceIds" xml:"DBInstanceIds"`
 }

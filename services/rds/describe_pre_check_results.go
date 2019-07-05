@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,99 +16,96 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // DescribePreCheckResults invokes the rds.DescribePreCheckResults API synchronously
 // api document: https://help.aliyun.com/api/rds/describeprecheckresults.html
 func (client *Client) DescribePreCheckResults(request *DescribePreCheckResultsRequest) (response *DescribePreCheckResultsResponse, err error) {
-response = CreateDescribePreCheckResultsResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribePreCheckResultsResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // DescribePreCheckResultsWithChan invokes the rds.DescribePreCheckResults API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeprecheckresults.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePreCheckResultsWithChan(request *DescribePreCheckResultsRequest) (<-chan *DescribePreCheckResultsResponse, <-chan error) {
-responseChan := make(chan *DescribePreCheckResultsResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribePreCheckResults(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribePreCheckResultsResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribePreCheckResults(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // DescribePreCheckResultsWithCallback invokes the rds.DescribePreCheckResults API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeprecheckresults.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribePreCheckResultsWithCallback(request *DescribePreCheckResultsRequest, callback func(response *DescribePreCheckResultsResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribePreCheckResultsResponse
-var err error
-defer close(result)
-response, err = client.DescribePreCheckResults(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribePreCheckResultsWithCallback(request *DescribePreCheckResultsRequest, callback func(response *DescribePreCheckResultsResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribePreCheckResultsResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribePreCheckResults(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // DescribePreCheckResultsRequest is the request struct for api DescribePreCheckResults
 type DescribePreCheckResultsRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    ClientToken     string `position:"Query" name:"ClientToken"`
-                    PreCheckId     string `position:"Query" name:"PreCheckId"`
-                    DBInstanceId     string `position:"Query" name:"DBInstanceId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerAccount     string `position:"Query" name:"OwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	PreCheckId           string           `position:"Query" name:"PreCheckId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
-
 
 // DescribePreCheckResultsResponse is the response struct for api DescribePreCheckResults
 type DescribePreCheckResultsResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-                    Items ItemsInDescribePreCheckResults `json:"Items" xml:"Items"`
+	*responses.BaseResponse
+	RequestId    string                         `json:"RequestId" xml:"RequestId"`
+	DBInstanceId string                         `json:"DBInstanceId" xml:"DBInstanceId"`
+	Items        ItemsInDescribePreCheckResults `json:"Items" xml:"Items"`
 }
 
 // CreateDescribePreCheckResultsRequest creates a request to invoke DescribePreCheckResults API
 func CreateDescribePreCheckResultsRequest() (request *DescribePreCheckResultsRequest) {
-request = &DescribePreCheckResultsRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribePreCheckResults", "rds", "openAPI")
-return
+	request = &DescribePreCheckResultsRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribePreCheckResults", "rds", "openAPI")
+	return
 }
 
 // CreateDescribePreCheckResultsResponse creates a response to parse from DescribePreCheckResults response
 func CreateDescribePreCheckResultsResponse() (response *DescribePreCheckResultsResponse) {
-response = &DescribePreCheckResultsResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribePreCheckResultsResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

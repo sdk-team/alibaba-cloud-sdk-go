@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,9 +17,7 @@ package rds
 
 // Rule is a nested struct in rds response
 type Rule struct {
-            Name     string `json:"Name" xml:"Name"`
-            RuleDescId     int64 `json:"RuleDescId" xml:"RuleDescId"`
-            Title     string `json:"Title" xml:"Title"`
-            RuleId     int64 `json:"RuleId" xml:"RuleId"`
-            Description     string `json:"Description" xml:"Description"`
+	Name        string `json:"Name" xml:"Name"`
+	RuleId      int64  `json:"RuleId" xml:"RuleId"`
+	Description string `json:"Description" xml:"Description"`
 }
