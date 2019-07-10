@@ -60,6 +60,7 @@ type Item struct {
 	ConsistentTime            string                               `json:"ConsistentTime" xml:"ConsistentTime"`
 	CrossBackupType           string                               `json:"CrossBackupType" xml:"CrossBackupType"`
 	Status                    string                               `json:"Status" xml:"Status"`
+	RelServiceId              string                               `json:"RelServiceId" xml:"RelServiceId"`
 	LockMode                  string                               `json:"LockMode" xml:"LockMode"`
 	RestoreRegions            RestoreRegions                       `json:"RestoreRegions" xml:"RestoreRegions"`
 	LatencyTopNItems          LatencyTopNItemsInDescribeSQLReports `json:"LatencyTopNItems" xml:"LatencyTopNItems"`
