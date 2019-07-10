@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,6 @@ package rds
 
 // NetworkValue is a nested struct in rds response
 type NetworkValue struct {
-            Value     string `json:"Value" xml:"Value"`
-            DateTime     string `json:"DateTime" xml:"DateTime"`
+	Value    string `json:"Value" xml:"Value"`
+	DateTime string `json:"DateTime" xml:"DateTime"`
 }

@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // ValuesInDescribeDBInstancePerformance is a nested struct in rds response
 type ValuesInDescribeDBInstancePerformance struct {
-PerformanceValue []PerformanceValue `json:"PerformanceValue" xml:"PerformanceValue"`
+	PerformanceValue []PerformanceValue `json:"PerformanceValue" xml:"PerformanceValue"`
 }

@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // Connection is a nested struct in rds response
 type Connection struct {
-Detail []    string  `json:"Detail" xml:"Detail"`
+	Detail []string `json:"Detail" xml:"Detail"`
 }

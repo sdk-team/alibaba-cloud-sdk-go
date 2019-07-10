@@ -95,7 +95,6 @@ type RecoveryDBInstanceRequest struct {
 	VPCId                 string           `position:"Query" name:"VPCId"`
 	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
 	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
-	DBInstanceStorageType string           `position:"Query" name:"DBInstanceStorageType"`
 	PayType               string           `position:"Query" name:"PayType"`
 	InstanceNetworkType   string           `position:"Query" name:"InstanceNetworkType"`
 }

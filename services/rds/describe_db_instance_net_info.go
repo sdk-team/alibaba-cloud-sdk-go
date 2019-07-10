@@ -91,7 +91,6 @@ type DescribeDBInstanceNetInfoResponse struct {
 	*responses.BaseResponse
 	RequestId           string             `json:"RequestId" xml:"RequestId"`
 	InstanceNetworkType string             `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
-	SecurityIPMode      string             `json:"SecurityIPMode" xml:"SecurityIPMode"`
 	DBInstanceNetInfos  DBInstanceNetInfos `json:"DBInstanceNetInfos" xml:"DBInstanceNetInfos"`
 }
 

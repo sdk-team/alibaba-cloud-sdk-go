@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // NetworkDetail is a nested struct in rds response
 type NetworkDetail struct {
-NetworkKey []NetworkKey `json:"NetworkKey" xml:"NetworkKey"`
+	NetworkKey []NetworkKey `json:"NetworkKey" xml:"NetworkKey"`
 }

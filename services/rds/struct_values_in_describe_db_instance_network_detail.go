@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // ValuesInDescribeDBInstanceNetworkDetail is a nested struct in rds response
 type ValuesInDescribeDBInstanceNetworkDetail struct {
-NetworkValue []NetworkValue `json:"NetworkValue" xml:"NetworkValue"`
+	NetworkValue []NetworkValue `json:"NetworkValue" xml:"NetworkValue"`
 }
