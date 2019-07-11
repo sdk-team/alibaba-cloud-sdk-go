@@ -1,4 +1,3 @@
-
 package bss
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,107 +16,104 @@ package bss
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // DescribeCouponDetail invokes the bss.DescribeCouponDetail API synchronously
 // api document: https://help.aliyun.com/api/bss/describecoupondetail.html
 func (client *Client) DescribeCouponDetail(request *DescribeCouponDetailRequest) (response *DescribeCouponDetailResponse, err error) {
-response = CreateDescribeCouponDetailResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeCouponDetailResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // DescribeCouponDetailWithChan invokes the bss.DescribeCouponDetail API asynchronously
 // api document: https://help.aliyun.com/api/bss/describecoupondetail.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCouponDetailWithChan(request *DescribeCouponDetailRequest) (<-chan *DescribeCouponDetailResponse, <-chan error) {
-responseChan := make(chan *DescribeCouponDetailResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeCouponDetail(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeCouponDetailResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeCouponDetail(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // DescribeCouponDetailWithCallback invokes the bss.DescribeCouponDetail API asynchronously
 // api document: https://help.aliyun.com/api/bss/describecoupondetail.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeCouponDetailWithCallback(request *DescribeCouponDetailRequest, callback func(response *DescribeCouponDetailResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeCouponDetailResponse
-var err error
-defer close(result)
-response, err = client.DescribeCouponDetail(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeCouponDetailWithCallback(request *DescribeCouponDetailRequest, callback func(response *DescribeCouponDetailResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeCouponDetailResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeCouponDetail(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // DescribeCouponDetailRequest is the request struct for api DescribeCouponDetail
 type DescribeCouponDetailRequest struct {
-*requests.RpcRequest
-                    CouponNumber     string `position:"Query" name:"CouponNumber"`
+	*requests.RpcRequest
+	CouponNumber string `position:"Query" name:"CouponNumber"`
 }
-
 
 // DescribeCouponDetailResponse is the response struct for api DescribeCouponDetail
 type DescribeCouponDetailResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            CouponTemplateId     int `json:"CouponTemplateId" xml:"CouponTemplateId"`
-            TotalAmount     string `json:"TotalAmount" xml:"TotalAmount"`
-            BalanceAmount     string `json:"BalanceAmount" xml:"BalanceAmount"`
-            FrozenAmount     string `json:"FrozenAmount" xml:"FrozenAmount"`
-            ExpiredAmount     string `json:"ExpiredAmount" xml:"ExpiredAmount"`
-            DeliveryTime     string `json:"DeliveryTime" xml:"DeliveryTime"`
-            ExpiredTime     string `json:"ExpiredTime" xml:"ExpiredTime"`
-            CouponNumber     string `json:"CouponNumber" xml:"CouponNumber"`
-            Status     string `json:"Status" xml:"Status"`
-            Description     string `json:"Description" xml:"Description"`
-            CreationTime     string `json:"CreationTime" xml:"CreationTime"`
-            ModificationTime     string `json:"ModificationTime" xml:"ModificationTime"`
-            PriceLimit     string `json:"PriceLimit" xml:"PriceLimit"`
-            Application     string `json:"Application" xml:"Application"`
-                ProductCodes ProductCodesInDescribeCouponDetail `json:"ProductCodes" xml:"ProductCodes"`
-                TradeTypes TradeTypesInDescribeCouponDetail `json:"TradeTypes" xml:"TradeTypes"`
+	*responses.BaseResponse
+	RequestId        string                             `json:"RequestId" xml:"RequestId"`
+	CouponTemplateId int64                              `json:"CouponTemplateId" xml:"CouponTemplateId"`
+	TotalAmount      string                             `json:"TotalAmount" xml:"TotalAmount"`
+	BalanceAmount    string                             `json:"BalanceAmount" xml:"BalanceAmount"`
+	FrozenAmount     string                             `json:"FrozenAmount" xml:"FrozenAmount"`
+	ExpiredAmount    string                             `json:"ExpiredAmount" xml:"ExpiredAmount"`
+	DeliveryTime     string                             `json:"DeliveryTime" xml:"DeliveryTime"`
+	ExpiredTime      string                             `json:"ExpiredTime" xml:"ExpiredTime"`
+	CouponNumber     string                             `json:"CouponNumber" xml:"CouponNumber"`
+	Status           string                             `json:"Status" xml:"Status"`
+	Description      string                             `json:"Description" xml:"Description"`
+	CreationTime     string                             `json:"CreationTime" xml:"CreationTime"`
+	ModificationTime string                             `json:"ModificationTime" xml:"ModificationTime"`
+	PriceLimit       string                             `json:"PriceLimit" xml:"PriceLimit"`
+	Application      string                             `json:"Application" xml:"Application"`
+	ProductCodes     ProductCodesInDescribeCouponDetail `json:"ProductCodes" xml:"ProductCodes"`
+	TradeTypes       TradeTypesInDescribeCouponDetail   `json:"TradeTypes" xml:"TradeTypes"`
 }
 
 // CreateDescribeCouponDetailRequest creates a request to invoke DescribeCouponDetail API
 func CreateDescribeCouponDetailRequest() (request *DescribeCouponDetailRequest) {
-request = &DescribeCouponDetailRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Bss", "2014-07-14", "DescribeCouponDetail", "", "")
-return
+	request = &DescribeCouponDetailRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Bss", "2014-07-14", "DescribeCouponDetail", "", "")
+	return
 }
 
 // CreateDescribeCouponDetailResponse creates a response to parse from DescribeCouponDetail response
 func CreateDescribeCouponDetailResponse() (response *DescribeCouponDetailResponse) {
-response = &DescribeCouponDetailResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeCouponDetailResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

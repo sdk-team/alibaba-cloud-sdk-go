@@ -1,4 +1,3 @@
-
 package bss
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package bss
 
 // ProductCodesInDescribeCouponList is a nested struct in bss response
 type ProductCodesInDescribeCouponList struct {
-ProductCode []    string  `json:"ProductCode" xml:"ProductCode"`
+	ProductCode []string `json:"ProductCode" xml:"ProductCode"`
 }

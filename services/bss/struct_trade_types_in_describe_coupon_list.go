@@ -1,4 +1,3 @@
-
 package bss
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package bss
 
 // TradeTypesInDescribeCouponList is a nested struct in bss response
 type TradeTypesInDescribeCouponList struct {
-TradeType []    string  `json:"TradeType" xml:"TradeType"`
+	TradeType []string `json:"TradeType" xml:"TradeType"`
 }

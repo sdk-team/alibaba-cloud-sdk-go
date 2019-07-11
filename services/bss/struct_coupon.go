@@ -1,4 +1,3 @@
-
 package bss
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,20 +17,20 @@ package bss
 
 // Coupon is a nested struct in bss response
 type Coupon struct {
-            CouponTemplateId     int `json:"CouponTemplateId" xml:"CouponTemplateId"`
-            TotalAmount     string `json:"TotalAmount" xml:"TotalAmount"`
-            BalanceAmount     string `json:"BalanceAmount" xml:"BalanceAmount"`
-            FrozenAmount     string `json:"FrozenAmount" xml:"FrozenAmount"`
-            ExpiredAmount     string `json:"ExpiredAmount" xml:"ExpiredAmount"`
-            DeliveryTime     string `json:"DeliveryTime" xml:"DeliveryTime"`
-            ExpiredTime     string `json:"ExpiredTime" xml:"ExpiredTime"`
-            CouponNumber     string `json:"CouponNumber" xml:"CouponNumber"`
-            Status     string `json:"Status" xml:"Status"`
-            Description     string `json:"Description" xml:"Description"`
-            CreationTime     string `json:"CreationTime" xml:"CreationTime"`
-            ModificationTime     string `json:"ModificationTime" xml:"ModificationTime"`
-            PriceLimit     string `json:"PriceLimit" xml:"PriceLimit"`
-            Application     string `json:"Application" xml:"Application"`
-                ProductCodes ProductCodesInDescribeCouponList `json:"ProductCodes" xml:"ProductCodes"`
-                TradeTypes TradeTypesInDescribeCouponList `json:"TradeTypes" xml:"TradeTypes"`
+	CouponTemplateId int64                            `json:"CouponTemplateId" xml:"CouponTemplateId"`
+	TotalAmount      string                           `json:"TotalAmount" xml:"TotalAmount"`
+	BalanceAmount    string                           `json:"BalanceAmount" xml:"BalanceAmount"`
+	FrozenAmount     string                           `json:"FrozenAmount" xml:"FrozenAmount"`
+	ExpiredAmount    string                           `json:"ExpiredAmount" xml:"ExpiredAmount"`
+	DeliveryTime     string                           `json:"DeliveryTime" xml:"DeliveryTime"`
+	ExpiredTime      string                           `json:"ExpiredTime" xml:"ExpiredTime"`
+	CouponNumber     string                           `json:"CouponNumber" xml:"CouponNumber"`
+	Status           string                           `json:"Status" xml:"Status"`
+	Description      string                           `json:"Description" xml:"Description"`
+	CreationTime     string                           `json:"CreationTime" xml:"CreationTime"`
+	ModificationTime string                           `json:"ModificationTime" xml:"ModificationTime"`
+	PriceLimit       string                           `json:"PriceLimit" xml:"PriceLimit"`
+	Application      string                           `json:"Application" xml:"Application"`
+	ProductCodes     ProductCodesInDescribeCouponList `json:"ProductCodes" xml:"ProductCodes"`
+	TradeTypes       TradeTypesInDescribeCouponList   `json:"TradeTypes" xml:"TradeTypes"`
 }
