@@ -93,7 +93,7 @@ func CreateDeleteApiOnlineRequest() (request *DeleteApiOnlineRequest) {
 	request = &DeleteApiOnlineRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Acs", "2015-01-01", "DeleteApiOnline", "/deleteApiOnline", "dsafsd", "openAPI")
+	request.InitWithApiInfo("Acs", "2015-01-01", "DeleteApiOnline", "/deleteApiOnline", "12334", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -93,7 +93,7 @@ func CreateDeleteApiInDailyRequest() (request *DeleteApiInDailyRequest) {
 	request = &DeleteApiInDailyRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Acs", "2015-01-01", "DeleteApiInDaily", "/deleteApiInDaily", "dsafsd", "openAPI")
+	request.InitWithApiInfo("Acs", "2015-01-01", "DeleteApiInDaily", "/deleteApiInDaily", "12334", "openAPI")
 	request.Method = requests.POST
 	return
 }

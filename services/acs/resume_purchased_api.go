@@ -93,7 +93,7 @@ func CreateResumePurchasedApiRequest() (request *ResumePurchasedApiRequest) {
 	request = &ResumePurchasedApiRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Acs", "2015-01-01", "ResumePurchasedApi", "/Api/ResumePurchasedApi", "dsafsd", "openAPI")
+	request.InitWithApiInfo("Acs", "2015-01-01", "ResumePurchasedApi", "/Api/ResumePurchasedApi", "12334", "openAPI")
 	request.Method = requests.POST
 	return
 }

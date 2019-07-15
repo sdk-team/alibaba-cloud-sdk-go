@@ -94,7 +94,7 @@ func CreatePutFlowControlRequest() (request *PutFlowControlRequest) {
 	request = &PutFlowControlRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Acs", "2015-01-01", "PutFlowControl", "/FlowControl/[ProductName]/[VersionName]/[ApiName]", "dsafsd", "openAPI")
+	request.InitWithApiInfo("Acs", "2015-01-01", "PutFlowControl", "/FlowControl/[ProductName]/[VersionName]/[ApiName]", "12334", "openAPI")
 	request.Method = requests.PUT
 	return
 }

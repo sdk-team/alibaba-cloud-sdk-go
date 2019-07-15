@@ -94,7 +94,7 @@ func CreateModifyApiNameInDailyRequest() (request *ModifyApiNameInDailyRequest) 
 	request = &ModifyApiNameInDailyRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Acs", "2015-01-01", "ModifyApiNameInDaily", "/modifyApiNameInDaily", "dsafsd", "openAPI")
+	request.InitWithApiInfo("Acs", "2015-01-01", "ModifyApiNameInDaily", "/modifyApiNameInDaily", "12334", "openAPI")
 	request.Method = requests.POST
 	return
 }

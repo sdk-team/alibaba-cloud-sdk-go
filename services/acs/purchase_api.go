@@ -98,7 +98,7 @@ func CreatePurchaseApiRequest() (request *PurchaseApiRequest) {
 	request = &PurchaseApiRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Acs", "2015-01-01", "PurchaseApi", "/Api/PurchaseApi", "dsafsd", "openAPI")
+	request.InitWithApiInfo("Acs", "2015-01-01", "PurchaseApi", "/Api/PurchaseApi", "12334", "openAPI")
 	request.Method = requests.POST
 	return
 }

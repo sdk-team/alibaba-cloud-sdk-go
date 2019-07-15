@@ -93,7 +93,7 @@ func CreateStopPurchasedApiRequest() (request *StopPurchasedApiRequest) {
 	request = &StopPurchasedApiRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Acs", "2015-01-01", "StopPurchasedApi", "/Api/StopPurchasedApi", "dsafsd", "openAPI")
+	request.InitWithApiInfo("Acs", "2015-01-01", "StopPurchasedApi", "/Api/StopPurchasedApi", "12334", "openAPI")
 	request.Method = requests.POST
 	return
 }
