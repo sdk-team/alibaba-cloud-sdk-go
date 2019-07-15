@@ -1,3 +1,6 @@
+2019-07-15 Version: 1.58.98
+- Debugger.
+
 2019-07-15 Version: 1.58.97
 - Debugger.
 
