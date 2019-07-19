@@ -1,4 +1,3 @@
-
 package bss
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,95 +16,92 @@ package bss
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // VnoPayCallBackNotify invokes the bss.VnoPayCallBackNotify API synchronously
 // api document: https://help.aliyun.com/api/bss/vnopaycallbacknotify.html
 func (client *Client) VnoPayCallBackNotify(request *VnoPayCallBackNotifyRequest) (response *VnoPayCallBackNotifyResponse, err error) {
-response = CreateVnoPayCallBackNotifyResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateVnoPayCallBackNotifyResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // VnoPayCallBackNotifyWithChan invokes the bss.VnoPayCallBackNotify API asynchronously
 // api document: https://help.aliyun.com/api/bss/vnopaycallbacknotify.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VnoPayCallBackNotifyWithChan(request *VnoPayCallBackNotifyRequest) (<-chan *VnoPayCallBackNotifyResponse, <-chan error) {
-responseChan := make(chan *VnoPayCallBackNotifyResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.VnoPayCallBackNotify(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *VnoPayCallBackNotifyResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.VnoPayCallBackNotify(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // VnoPayCallBackNotifyWithCallback invokes the bss.VnoPayCallBackNotify API asynchronously
 // api document: https://help.aliyun.com/api/bss/vnopaycallbacknotify.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) VnoPayCallBackNotifyWithCallback(request *VnoPayCallBackNotifyRequest, callback func(response *VnoPayCallBackNotifyResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *VnoPayCallBackNotifyResponse
-var err error
-defer close(result)
-response, err = client.VnoPayCallBackNotify(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) VnoPayCallBackNotifyWithCallback(request *VnoPayCallBackNotifyRequest, callback func(response *VnoPayCallBackNotifyResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *VnoPayCallBackNotifyResponse
+		var err error
+		defer close(result)
+		response, err = client.VnoPayCallBackNotify(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // VnoPayCallBackNotifyRequest is the request struct for api VnoPayCallBackNotify
 type VnoPayCallBackNotifyRequest struct {
-*requests.RpcRequest
-                    ParamStr     string `position:"Query" name:"paramStr"`
+	*requests.RpcRequest
+	ParamStr string `position:"Query" name:"paramStr"`
 }
-
 
 // VnoPayCallBackNotifyResponse is the response struct for api VnoPayCallBackNotify
 type VnoPayCallBackNotifyResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            Success     bool `json:"Success" xml:"Success"`
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
-            Data     string `json:"Data" xml:"Data"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	Data      string `json:"Data" xml:"Data"`
 }
 
 // CreateVnoPayCallBackNotifyRequest creates a request to invoke VnoPayCallBackNotify API
 func CreateVnoPayCallBackNotifyRequest() (request *VnoPayCallBackNotifyRequest) {
-request = &VnoPayCallBackNotifyRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Bss", "2014-07-14", "VnoPayCallBackNotify", "", "")
-return
+	request = &VnoPayCallBackNotifyRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Bss", "2014-07-14", "VnoPayCallBackNotify", "", "")
+	return
 }
 
 // CreateVnoPayCallBackNotifyResponse creates a response to parse from VnoPayCallBackNotify response
 func CreateVnoPayCallBackNotifyResponse() (response *VnoPayCallBackNotifyResponse) {
-response = &VnoPayCallBackNotifyResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &VnoPayCallBackNotifyResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

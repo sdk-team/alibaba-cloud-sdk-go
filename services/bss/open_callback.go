@@ -1,4 +1,3 @@
-
 package bss
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,95 +16,92 @@ package bss
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // OpenCallback invokes the bss.OpenCallback API synchronously
 // api document: https://help.aliyun.com/api/bss/opencallback.html
 func (client *Client) OpenCallback(request *OpenCallbackRequest) (response *OpenCallbackResponse, err error) {
-response = CreateOpenCallbackResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateOpenCallbackResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // OpenCallbackWithChan invokes the bss.OpenCallback API asynchronously
 // api document: https://help.aliyun.com/api/bss/opencallback.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OpenCallbackWithChan(request *OpenCallbackRequest) (<-chan *OpenCallbackResponse, <-chan error) {
-responseChan := make(chan *OpenCallbackResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.OpenCallback(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *OpenCallbackResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.OpenCallback(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // OpenCallbackWithCallback invokes the bss.OpenCallback API asynchronously
 // api document: https://help.aliyun.com/api/bss/opencallback.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) OpenCallbackWithCallback(request *OpenCallbackRequest, callback func(response *OpenCallbackResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *OpenCallbackResponse
-var err error
-defer close(result)
-response, err = client.OpenCallback(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) OpenCallbackWithCallback(request *OpenCallbackRequest, callback func(response *OpenCallbackResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *OpenCallbackResponse
+		var err error
+		defer close(result)
+		response, err = client.OpenCallback(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // OpenCallbackRequest is the request struct for api OpenCallback
 type OpenCallbackRequest struct {
-*requests.RpcRequest
-                    ParamStr     string `position:"Query" name:"paramStr"`
+	*requests.RpcRequest
+	ParamStr string `position:"Query" name:"paramStr"`
 }
-
 
 // OpenCallbackResponse is the response struct for api OpenCallback
 type OpenCallbackResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            Success     bool `json:"Success" xml:"Success"`
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
-            Data     string `json:"Data" xml:"Data"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	Data      string `json:"Data" xml:"Data"`
 }
 
 // CreateOpenCallbackRequest creates a request to invoke OpenCallback API
 func CreateOpenCallbackRequest() (request *OpenCallbackRequest) {
-request = &OpenCallbackRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Bss", "2014-07-14", "OpenCallback", "", "")
-return
+	request = &OpenCallbackRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Bss", "2014-07-14", "OpenCallback", "", "")
+	return
 }
 
 // CreateOpenCallbackResponse creates a response to parse from OpenCallback response
 func CreateOpenCallbackResponse() (response *OpenCallbackResponse) {
-response = &OpenCallbackResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &OpenCallbackResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

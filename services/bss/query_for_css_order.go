@@ -1,4 +1,3 @@
-
 package bss
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,95 +16,92 @@ package bss
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // QueryForCssOrder invokes the bss.QueryForCssOrder API synchronously
 // api document: https://help.aliyun.com/api/bss/queryforcssorder.html
 func (client *Client) QueryForCssOrder(request *QueryForCssOrderRequest) (response *QueryForCssOrderResponse, err error) {
-response = CreateQueryForCssOrderResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateQueryForCssOrderResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // QueryForCssOrderWithChan invokes the bss.QueryForCssOrder API asynchronously
 // api document: https://help.aliyun.com/api/bss/queryforcssorder.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryForCssOrderWithChan(request *QueryForCssOrderRequest) (<-chan *QueryForCssOrderResponse, <-chan error) {
-responseChan := make(chan *QueryForCssOrderResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.QueryForCssOrder(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *QueryForCssOrderResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.QueryForCssOrder(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // QueryForCssOrderWithCallback invokes the bss.QueryForCssOrder API asynchronously
 // api document: https://help.aliyun.com/api/bss/queryforcssorder.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) QueryForCssOrderWithCallback(request *QueryForCssOrderRequest, callback func(response *QueryForCssOrderResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *QueryForCssOrderResponse
-var err error
-defer close(result)
-response, err = client.QueryForCssOrder(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) QueryForCssOrderWithCallback(request *QueryForCssOrderRequest, callback func(response *QueryForCssOrderResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *QueryForCssOrderResponse
+		var err error
+		defer close(result)
+		response, err = client.QueryForCssOrder(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // QueryForCssOrderRequest is the request struct for api QueryForCssOrder
 type QueryForCssOrderRequest struct {
-*requests.RpcRequest
-                    ParamStr     string `position:"Query" name:"paramStr"`
+	*requests.RpcRequest
+	ParamStr string `position:"Query" name:"paramStr"`
 }
-
 
 // QueryForCssOrderResponse is the response struct for api QueryForCssOrder
 type QueryForCssOrderResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            Success     bool `json:"Success" xml:"Success"`
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
-            Data     string `json:"Data" xml:"Data"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	Data      string `json:"Data" xml:"Data"`
 }
 
 // CreateQueryForCssOrderRequest creates a request to invoke QueryForCssOrder API
 func CreateQueryForCssOrderRequest() (request *QueryForCssOrderRequest) {
-request = &QueryForCssOrderRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Bss", "2014-07-14", "QueryForCssOrder", "", "")
-return
+	request = &QueryForCssOrderRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Bss", "2014-07-14", "QueryForCssOrder", "", "")
+	return
 }
 
 // CreateQueryForCssOrderResponse creates a response to parse from QueryForCssOrder response
 func CreateQueryForCssOrderResponse() (response *QueryForCssOrderResponse) {
-response = &QueryForCssOrderResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &QueryForCssOrderResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-
