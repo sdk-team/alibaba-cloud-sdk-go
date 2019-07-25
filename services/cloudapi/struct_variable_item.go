@@ -17,8 +17,8 @@ package cloudapi
 
 // VariableItem is a nested struct in cloudapi response
 type VariableItem struct {
-	VariableName    string          `json:"VariableName" xml:"VariableName"`
 	VariableValue   string          `json:"VariableValue" xml:"VariableValue"`
 	SupportRoute    bool            `json:"SupportRoute" xml:"SupportRoute"`
+	VariableName    string          `json:"VariableName" xml:"VariableName"`
 	StageRouteModel StageRouteModel `json:"StageRouteModel" xml:"StageRouteModel"`
 }

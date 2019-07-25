@@ -84,14 +84,14 @@ type DescribeApiStageRequest struct {
 // DescribeApiStageResponse is the response struct for api DescribeApiStage
 type DescribeApiStageResponse struct {
 	*responses.BaseResponse
-	RequestId    string    `json:"RequestId" xml:"RequestId"`
-	GroupId      string    `json:"GroupId" xml:"GroupId"`
-	StageId      string    `json:"StageId" xml:"StageId"`
-	StageName    string    `json:"StageName" xml:"StageName"`
-	Description  string    `json:"Description" xml:"Description"`
-	CreatedTime  string    `json:"CreatedTime" xml:"CreatedTime"`
-	ModifiedTime string    `json:"ModifiedTime" xml:"ModifiedTime"`
-	Variables    Variables `json:"Variables" xml:"Variables"`
+	RequestId    string                      `json:"RequestId" xml:"RequestId"`
+	GroupId      string                      `json:"GroupId" xml:"GroupId"`
+	StageId      string                      `json:"StageId" xml:"StageId"`
+	StageName    string                      `json:"StageName" xml:"StageName"`
+	Description  string                      `json:"Description" xml:"Description"`
+	CreatedTime  string                      `json:"CreatedTime" xml:"CreatedTime"`
+	ModifiedTime string                      `json:"ModifiedTime" xml:"ModifiedTime"`
+	Variables    VariablesInDescribeApiStage `json:"Variables" xml:"Variables"`
 }
 
 // CreateDescribeApiStageRequest creates a request to invoke DescribeApiStage API

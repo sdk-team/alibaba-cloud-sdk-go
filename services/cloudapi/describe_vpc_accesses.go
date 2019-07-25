@@ -78,17 +78,18 @@ type DescribeVpcAccessesRequest struct {
 	*requests.RpcRequest
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	UseSourceVpc  requests.Boolean `position:"Query" name:"UseSourceVpc"`
 	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeVpcAccessesResponse is the response struct for api DescribeVpcAccesses
 type DescribeVpcAccessesResponse struct {
 	*responses.BaseResponse
-	RequestId           string              `json:"RequestId" xml:"RequestId"`
-	TotalCount          int                 `json:"TotalCount" xml:"TotalCount"`
-	PageSize            int                 `json:"PageSize" xml:"PageSize"`
-	PageNumber          int                 `json:"PageNumber" xml:"PageNumber"`
-	VpcAccessAttributes VpcAccessAttributes `json:"VpcAccessAttributes" xml:"VpcAccessAttributes"`
+	RequestId           string                                   `json:"RequestId" xml:"RequestId"`
+	TotalCount          int                                      `json:"TotalCount" xml:"TotalCount"`
+	PageSize            int                                      `json:"PageSize" xml:"PageSize"`
+	PageNumber          int                                      `json:"PageNumber" xml:"PageNumber"`
+	VpcAccessAttributes VpcAccessAttributesInDescribeVpcAccesses `json:"VpcAccessAttributes" xml:"VpcAccessAttributes"`
 }
 
 // CreateDescribeVpcAccessesRequest creates a request to invoke DescribeVpcAccesses API

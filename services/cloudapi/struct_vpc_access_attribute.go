@@ -17,10 +17,10 @@ package cloudapi
 
 // VpcAccessAttribute is a nested struct in cloudapi response
 type VpcAccessAttribute struct {
-	VpcId       string `json:"VpcId" xml:"VpcId"`
-	InstanceId  string `json:"InstanceId" xml:"InstanceId"`
-	CreatedTime string `json:"CreatedTime" xml:"CreatedTime"`
-	Port        int    `json:"Port" xml:"Port"`
-	RegionId    string `json:"RegionId" xml:"RegionId"`
 	Name        string `json:"Name" xml:"Name"`
+	Port        int    `json:"Port" xml:"Port"`
+	CreatedTime string `json:"CreatedTime" xml:"CreatedTime"`
+	RegionId    string `json:"RegionId" xml:"RegionId"`
+	InstanceId  string `json:"InstanceId" xml:"InstanceId"`
+	VpcId       string `json:"VpcId" xml:"VpcId"`
 }
