@@ -17,7 +17,7 @@ package csb
 
 // Data is a nested struct in csb response
 type Data struct {
-	Id                   int                      `json:"Id" xml:"Id"`
+	Id                   int64                    `json:"Id" xml:"Id"`
 	UpdateCount          int                      `json:"UpdateCount" xml:"UpdateCount"`
 	CurrentPage          int                      `json:"CurrentPage" xml:"CurrentPage"`
 	Total                int                      `json:"Total" xml:"Total"`

@@ -21,7 +21,7 @@ type Service struct {
 	RouteConfJson          string           `json:"RouteConfJson" xml:"RouteConfJson"`
 	ServiceProviderType    string           `json:"ServiceProviderType" xml:"ServiceProviderType"`
 	StatisticName          string           `json:"StatisticName" xml:"StatisticName"`
-	CreateTime             int              `json:"CreateTime" xml:"CreateTime"`
+	CreateTime             int64            `json:"CreateTime" xml:"CreateTime"`
 	AllVisiable            bool             `json:"AllVisiable" xml:"AllVisiable"`
 	ServiceOpenRestfulPath string           `json:"ServiceOpenRestfulPath" xml:"ServiceOpenRestfulPath"`
 	ConsumeTypesJSON       string           `json:"ConsumeTypesJSON" xml:"ConsumeTypesJSON"`
@@ -42,19 +42,19 @@ type Service struct {
 	PrincipalName          string           `json:"PrincipalName" xml:"PrincipalName"`
 	Active                 bool             `json:"Active" xml:"Active"`
 	OrderInfo              string           `json:"OrderInfo" xml:"OrderInfo"`
-	Id                     int              `json:"Id" xml:"Id"`
+	Id                     int64            `json:"Id" xml:"Id"`
 	OttFlag                bool             `json:"OttFlag" xml:"OttFlag"`
 	AccessParamsJSON       string           `json:"AccessParamsJSON" xml:"AccessParamsJSON"`
 	PolicyHandler          string           `json:"PolicyHandler" xml:"PolicyHandler"`
-	ModifiedTime           int              `json:"ModifiedTime" xml:"ModifiedTime"`
+	ModifiedTime           int64            `json:"ModifiedTime" xml:"ModifiedTime"`
 	OpenRestfulPath        string           `json:"OpenRestfulPath" xml:"OpenRestfulPath"`
 	InterfaceName          string           `json:"InterfaceName" xml:"InterfaceName"`
 	OwnerId                string           `json:"OwnerId" xml:"OwnerId"`
 	ValidConsumeTypes      bool             `json:"ValidConsumeTypes" xml:"ValidConsumeTypes"`
 	Qps                    int              `json:"Qps" xml:"Qps"`
-	CsbId                  int              `json:"CsbId" xml:"CsbId"`
+	CsbId                  int64            `json:"CsbId" xml:"CsbId"`
 	Alias                  string           `json:"Alias" xml:"Alias"`
-	ProjectId              int              `json:"ProjectId" xml:"ProjectId"`
+	ProjectId              int64            `json:"ProjectId" xml:"ProjectId"`
 	ValidProvideType       bool             `json:"ValidProvideType" xml:"ValidProvideType"`
 	SkipAuth               bool             `json:"SkipAuth" xml:"SkipAuth"`
 	ServiceVersion         string           `json:"ServiceVersion" xml:"ServiceVersion"`

@@ -23,7 +23,7 @@ type OrderInFindOrderedList struct {
 	ServiceVersion        string                               `json:"ServiceVersion" xml:"ServiceVersion"`
 	OrderStatus           int                                  `json:"OrderStatus" xml:"OrderStatus"`
 	AliveOrderCount       int                                  `json:"AliveOrderCount" xml:"AliveOrderCount"`
-	GmtCreate             int                                  `json:"GmtCreate" xml:"GmtCreate"`
+	GmtCreate             int64                                `json:"GmtCreate" xml:"GmtCreate"`
 	MaxRT                 int                                  `json:"MaxRT" xml:"MaxRT"`
 	MinRT                 int                                  `json:"MinRT" xml:"MinRT"`
 	ServiceId             string                               `json:"ServiceId" xml:"ServiceId"`

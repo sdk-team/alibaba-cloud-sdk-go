@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteServiceList invokes the csb.DeleteServiceList API synchronously
-// api document: https://help.aliyun.com/api/csb/deleteservicelist.html
-func (client *Client) DeleteServiceList(request *DeleteServiceListRequest) (response *DeleteServiceListResponse, err error) {
-	response = CreateDeleteServiceListResponse()
+// ImportCredentials invokes the csb.ImportCredentials API synchronously
+// api document: https://help.aliyun.com/api/csb/importcredentials.html
+func (client *Client) ImportCredentials(request *ImportCredentialsRequest) (response *ImportCredentialsResponse, err error) {
+	response = CreateImportCredentialsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteServiceListWithChan invokes the csb.DeleteServiceList API asynchronously
-// api document: https://help.aliyun.com/api/csb/deleteservicelist.html
+// ImportCredentialsWithChan invokes the csb.ImportCredentials API asynchronously
+// api document: https://help.aliyun.com/api/csb/importcredentials.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteServiceListWithChan(request *DeleteServiceListRequest) (<-chan *DeleteServiceListResponse, <-chan error) {
-	responseChan := make(chan *DeleteServiceListResponse, 1)
+func (client *Client) ImportCredentialsWithChan(request *ImportCredentialsRequest) (<-chan *ImportCredentialsResponse, <-chan error) {
+	responseChan := make(chan *ImportCredentialsResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteServiceList(request)
+		response, err := client.ImportCredentials(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DeleteServiceListWithChan(request *DeleteServiceListReques
 	return responseChan, errChan
 }
 
-// DeleteServiceListWithCallback invokes the csb.DeleteServiceList API asynchronously
-// api document: https://help.aliyun.com/api/csb/deleteservicelist.html
+// ImportCredentialsWithCallback invokes the csb.ImportCredentials API asynchronously
+// api document: https://help.aliyun.com/api/csb/importcredentials.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteServiceListWithCallback(request *DeleteServiceListRequest, callback func(response *DeleteServiceListResponse, err error)) <-chan int {
+func (client *Client) ImportCredentialsWithCallback(request *ImportCredentialsRequest, callback func(response *ImportCredentialsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteServiceListResponse
+		var response *ImportCredentialsResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteServiceList(request)
+		response, err = client.ImportCredentials(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,33 +73,34 @@ func (client *Client) DeleteServiceListWithCallback(request *DeleteServiceListRe
 	return result
 }
 
-// DeleteServiceListRequest is the request struct for api DeleteServiceList
-type DeleteServiceListRequest struct {
+// ImportCredentialsRequest is the request struct for api ImportCredentials
+type ImportCredentialsRequest struct {
 	*requests.RpcRequest
 	Data  string           `position:"Body" name:"Data"`
 	CsbId requests.Integer `position:"Query" name:"CsbId"`
 }
 
-// DeleteServiceListResponse is the response struct for api DeleteServiceList
-type DeleteServiceListResponse struct {
+// ImportCredentialsResponse is the response struct for api ImportCredentials
+type ImportCredentialsResponse struct {
 	*responses.BaseResponse
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateDeleteServiceListRequest creates a request to invoke DeleteServiceList API
-func CreateDeleteServiceListRequest() (request *DeleteServiceListRequest) {
-	request = &DeleteServiceListRequest{
+// CreateImportCredentialsRequest creates a request to invoke ImportCredentials API
+func CreateImportCredentialsRequest() (request *ImportCredentialsRequest) {
+	request = &ImportCredentialsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "DeleteServiceList", "csb", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "ImportCredentials", "csb", "openAPI")
 	return
 }
 
-// CreateDeleteServiceListResponse creates a response to parse from DeleteServiceList response
-func CreateDeleteServiceListResponse() (response *DeleteServiceListResponse) {
-	response = &DeleteServiceListResponse{
+// CreateImportCredentialsResponse creates a response to parse from ImportCredentials response
+func CreateImportCredentialsResponse() (response *ImportCredentialsResponse) {
+	response = &ImportCredentialsResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

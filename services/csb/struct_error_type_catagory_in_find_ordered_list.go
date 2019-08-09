@@ -18,6 +18,6 @@ package csb
 // ErrorTypeCatagoryInFindOrderedList is a nested struct in csb response
 type ErrorTypeCatagoryInFindOrderedList struct {
 	Name     string `json:"Name" xml:"Name"`
-	Total    int    `json:"Total" xml:"Total"`
-	ErrorNum int    `json:"ErrorNum" xml:"ErrorNum"`
+	Total    int64  `json:"Total" xml:"Total"`
+	ErrorNum int64  `json:"ErrorNum" xml:"ErrorNum"`
 }

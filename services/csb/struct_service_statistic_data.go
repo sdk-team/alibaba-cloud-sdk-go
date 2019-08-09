@@ -20,7 +20,7 @@ type ServiceStatisticData struct {
 	AvgRt       float64 `json:"AvgRt" xml:"AvgRt"`
 	MaxRt       float64 `json:"MaxRt" xml:"MaxRt"`
 	MinRt       float64 `json:"MinRt" xml:"MinRt"`
-	RequestTime int     `json:"RequestTime" xml:"RequestTime"`
+	RequestTime int64   `json:"RequestTime" xml:"RequestTime"`
 	ServiceName string  `json:"ServiceName" xml:"ServiceName"`
 	UserId      string  `json:"UserId" xml:"UserId"`
 	Total       Total   `json:"Total" xml:"Total"`

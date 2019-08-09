@@ -97,7 +97,7 @@ func CreateFindOrderableListRequest() (request *FindOrderableListRequest) {
 	request = &FindOrderableListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "FindOrderableList", "", "")
+	request.InitWithApiInfo("CSB", "2017-11-18", "FindOrderableList", "csb", "openAPI")
 	return
 }
 

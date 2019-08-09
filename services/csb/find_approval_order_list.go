@@ -77,10 +77,11 @@ func (client *Client) FindApprovalOrderListWithCallback(request *FindApprovalOrd
 type FindApprovalOrderListRequest struct {
 	*requests.RpcRequest
 	ProjectName string           `position:"Query" name:"ProjectName"`
+	CsbId       requests.Integer `position:"Query" name:"CsbId"`
 	Alias       string           `position:"Query" name:"Alias"`
 	ServiceName string           `position:"Query" name:"ServiceName"`
-	PageNum     requests.Integer `position:"Query" name:"PageNum"`
 	ServiceId   requests.Integer `position:"Query" name:"ServiceId"`
+	PageNum     requests.Integer `position:"Query" name:"PageNum"`
 	OnlyPending requests.Boolean `position:"Query" name:"OnlyPending"`
 }
 
@@ -98,7 +99,7 @@ func CreateFindApprovalOrderListRequest() (request *FindApprovalOrderListRequest
 	request = &FindApprovalOrderListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "FindApprovalOrderList", "", "")
+	request.InitWithApiInfo("CSB", "2017-11-18", "FindApprovalOrderList", "csb", "openAPI")
 	return
 }
 

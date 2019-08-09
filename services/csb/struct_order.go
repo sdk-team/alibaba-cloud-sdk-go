@@ -20,19 +20,19 @@ type Order struct {
 	StatisticName         string              `json:"StatisticName" xml:"StatisticName"`
 	GroupName             string              `json:"GroupName" xml:"GroupName"`
 	ApproveComments       string              `json:"ApproveComments" xml:"ApproveComments"`
-	CredentialGroupId     int                 `json:"CredentialGroupId" xml:"CredentialGroupId"`
+	CredentialGroupId     int64               `json:"CredentialGroupId" xml:"CredentialGroupId"`
 	StrictWhiteListJson   string              `json:"StrictWhiteListJson" xml:"StrictWhiteListJson"`
 	ProjectName           string              `json:"ProjectName" xml:"ProjectName"`
 	UserId                string              `json:"UserId" xml:"UserId"`
 	DauthGroupName        string              `json:"DauthGroupName" xml:"DauthGroupName"`
 	ServiceName           string              `json:"ServiceName" xml:"ServiceName"`
 	Status                int                 `json:"Status" xml:"Status"`
-	Id                    int                 `json:"Id" xml:"Id"`
+	Id                    int64               `json:"Id" xml:"Id"`
 	ServiceStatus         int                 `json:"ServiceStatus" xml:"ServiceStatus"`
-	GmtCreate             int                 `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified           int                 `json:"GmtModified" xml:"GmtModified"`
-	ServiceId             int                 `json:"ServiceId" xml:"ServiceId"`
-	CsbId                 int                 `json:"CsbId" xml:"CsbId"`
+	GmtCreate             int64               `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified           int64               `json:"GmtModified" xml:"GmtModified"`
+	ServiceId             int64               `json:"ServiceId" xml:"ServiceId"`
+	CsbId                 int64               `json:"CsbId" xml:"CsbId"`
 	UserName              string              `json:"UserName" xml:"UserName"`
 	Alias                 string              `json:"Alias" xml:"Alias"`
 	ServiceVersion        string              `json:"ServiceVersion" xml:"ServiceVersion"`
