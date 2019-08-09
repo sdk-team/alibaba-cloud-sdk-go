@@ -100,7 +100,7 @@ func CreateFindOrderedListRequest() (request *FindOrderedListRequest) {
 	request = &FindOrderedListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "FindOrderedList", "csb", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "FindOrderedList", "", "")
 	return
 }
 

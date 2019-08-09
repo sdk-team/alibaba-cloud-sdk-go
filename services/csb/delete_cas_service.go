@@ -95,7 +95,7 @@ func CreateDeleteCasServiceRequest() (request *DeleteCasServiceRequest) {
 	request = &DeleteCasServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "DeleteCasService", "csb", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "DeleteCasService", "", "")
 	return
 }
 

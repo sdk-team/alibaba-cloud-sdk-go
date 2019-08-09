@@ -94,7 +94,7 @@ func CreateCreateOrderRequest() (request *CreateOrderRequest) {
 	request = &CreateOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "CreateOrder", "csb", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "CreateOrder", "", "")
 	return
 }
 

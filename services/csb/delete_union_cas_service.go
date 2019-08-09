@@ -95,7 +95,7 @@ func CreateDeleteUnionCasServiceRequest() (request *DeleteUnionCasServiceRequest
 	request = &DeleteUnionCasServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "DeleteUnionCasService", "csb", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "DeleteUnionCasService", "", "")
 	return
 }
 

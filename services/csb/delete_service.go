@@ -93,7 +93,7 @@ func CreateDeleteServiceRequest() (request *DeleteServiceRequest) {
 	request = &DeleteServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "DeleteService", "csb", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "DeleteService", "", "")
 	return
 }
 

@@ -96,7 +96,7 @@ func CreateFindInstanceListRequest() (request *FindInstanceListRequest) {
 	request = &FindInstanceListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "FindInstanceList", "csb", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "FindInstanceList", "", "")
 	return
 }
 

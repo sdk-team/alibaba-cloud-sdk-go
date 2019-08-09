@@ -99,7 +99,7 @@ func CreateFindApprovalOrderListRequest() (request *FindApprovalOrderListRequest
 	request = &FindApprovalOrderListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "FindApprovalOrderList", "csb", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "FindApprovalOrderList", "", "")
 	return
 }
 

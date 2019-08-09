@@ -93,7 +93,7 @@ func CreateUpdateServiceListStatusRequest() (request *UpdateServiceListStatusReq
 	request = &UpdateServiceListStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "UpdateServiceListStatus", "csb", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "UpdateServiceListStatus", "", "")
 	return
 }
 

@@ -99,7 +99,7 @@ func CreateFindServiceListRequest() (request *FindServiceListRequest) {
 	request = &FindServiceListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "FindServiceList", "csb", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "FindServiceList", "", "")
 	return
 }
 

@@ -94,7 +94,7 @@ func CreateImportCredentialsRequest() (request *ImportCredentialsRequest) {
 	request = &ImportCredentialsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "ImportCredentials", "csb", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "ImportCredentials", "", "")
 	return
 }
 

@@ -98,7 +98,7 @@ func CreateFindApproveServiceListRequest() (request *FindApproveServiceListReque
 	request = &FindApproveServiceListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "FindApproveServiceList", "csb", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "FindApproveServiceList", "", "")
 	return
 }
 
