@@ -101,7 +101,7 @@ func CreateDescribeDBInstancesTagsRequest() (request *DescribeDBInstancesTagsReq
 	request = &DescribeDBInstancesTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstancesTags", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstancesTags", "", "")
 	return
 }
 

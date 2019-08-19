@@ -97,7 +97,7 @@ func CreateCreateStaticVerificationRequest() (request *CreateStaticVerificationR
 	request = &CreateStaticVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateStaticVerification", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateStaticVerification", "", "")
 	return
 }
 

@@ -102,7 +102,7 @@ func CreateModifyDampPolicyRequest() (request *ModifyDampPolicyRequest) {
 	request = &ModifyDampPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDampPolicy", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDampPolicy", "", "")
 	return
 }
 

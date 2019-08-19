@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,16 +17,16 @@ package rds
 
 // ParameterGroup is a nested struct in rds response
 type ParameterGroup struct {
-            ParamGroupId     string `json:"ParamGroupId" xml:"ParamGroupId"`
-            Created     string `json:"Created" xml:"Created"`
-            Engine     string `json:"Engine" xml:"Engine"`
-            EngineVersion     string `json:"EngineVersion" xml:"EngineVersion"`
-            ParameterGroupName     string `json:"ParameterGroupName" xml:"ParameterGroupName"`
-            ParameterDescription     string `json:"ParameterDescription" xml:"ParameterDescription"`
-            ParameterGroupType     int `json:"ParameterGroupType" xml:"ParameterGroupType"`
-            ParameterGroupId     int `json:"ParameterGroupId" xml:"ParameterGroupId"`
-            Modified     string `json:"Modified" xml:"Modified"`
-            ParamCounts     int `json:"ParamCounts" xml:"ParamCounts"`
-            ForceRestart     int `json:"ForceRestart" xml:"ForceRestart"`
-                    ParamDetail ParamDetail `json:"ParamDetail" xml:"ParamDetail"`
+	ParamGroupId       string      `json:"ParamGroupId" xml:"ParamGroupId"`
+	Created            string      `json:"Created" xml:"Created"`
+	Engine             string      `json:"Engine" xml:"Engine"`
+	EngineVersion      string      `json:"EngineVersion" xml:"EngineVersion"`
+	ParameterGroupName string      `json:"ParameterGroupName" xml:"ParameterGroupName"`
+	ParameterGroupType int         `json:"ParameterGroupType" xml:"ParameterGroupType"`
+	ParameterGroupDesc string      `json:"ParameterGroupDesc" xml:"ParameterGroupDesc"`
+	ParameterGroupId   int         `json:"ParameterGroupId" xml:"ParameterGroupId"`
+	Modified           string      `json:"Modified" xml:"Modified"`
+	ParamCounts        int         `json:"ParamCounts" xml:"ParamCounts"`
+	ForceRestart       int         `json:"ForceRestart" xml:"ForceRestart"`
+	ParamDetail        ParamDetail `json:"ParamDetail" xml:"ParamDetail"`
 }

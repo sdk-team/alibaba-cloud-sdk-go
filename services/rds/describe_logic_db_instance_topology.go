@@ -100,7 +100,7 @@ func CreateDescribeLogicDBInstanceTopologyRequest() (request *DescribeLogicDBIns
 	request = &DescribeLogicDBInstanceTopologyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeLogicDBInstanceTopology", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeLogicDBInstanceTopology", "", "")
 	return
 }
 

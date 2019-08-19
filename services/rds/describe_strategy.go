@@ -98,7 +98,7 @@ func CreateDescribeStrategyRequest() (request *DescribeStrategyRequest) {
 	request = &DescribeStrategyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeStrategy", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeStrategy", "", "")
 	return
 }
 

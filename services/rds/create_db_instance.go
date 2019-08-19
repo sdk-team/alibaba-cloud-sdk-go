@@ -81,6 +81,8 @@ type CreateDBInstanceRequest struct {
 	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
 	SystemDBCharset       string           `position:"Query" name:"SystemDBCharset"`
 	ClientToken           string           `position:"Query" name:"ClientToken"`
+	ZoneIdSlave1          string           `position:"Query" name:"ZoneIdSlave1"`
+	ZoneIdSlave2          string           `position:"Query" name:"ZoneIdSlave2"`
 	EngineVersion         string           `position:"Query" name:"EngineVersion"`
 	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
 	Engine                string           `position:"Query" name:"Engine"`
@@ -103,6 +105,7 @@ type CreateDBInstanceRequest struct {
 	VPCId                 string           `position:"Query" name:"VPCId"`
 	TunnelId              string           `position:"Query" name:"TunnelId"`
 	ZoneId                string           `position:"Query" name:"ZoneId"`
+	Category              string           `position:"Query" name:"Category"`
 	PayType               string           `position:"Query" name:"PayType"`
 	InstanceNetworkType   string           `position:"Query" name:"InstanceNetworkType"`
 }
@@ -122,7 +125,7 @@ func CreateCreateDBInstanceRequest() (request *CreateDBInstanceRequest) {
 	request = &CreateDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDBInstance", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDBInstance", "", "")
 	return
 }
 

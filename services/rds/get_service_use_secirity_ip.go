@@ -96,7 +96,7 @@ func CreateGetServiceUseSecirityIPRequest() (request *GetServiceUseSecirityIPReq
 	request = &GetServiceUseSecirityIPRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "GetServiceUseSecirityIP", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "GetServiceUseSecirityIP", "", "")
 	return
 }
 

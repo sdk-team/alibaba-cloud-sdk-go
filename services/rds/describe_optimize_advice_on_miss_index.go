@@ -101,7 +101,7 @@ func CreateDescribeOptimizeAdviceOnMissIndexRequest() (request *DescribeOptimize
 	request = &DescribeOptimizeAdviceOnMissIndexRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOptimizeAdviceOnMissIndex", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOptimizeAdviceOnMissIndex", "", "")
 	return
 }
 

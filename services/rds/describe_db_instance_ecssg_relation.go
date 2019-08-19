@@ -95,7 +95,7 @@ func CreateDescribeDBInstanceECSSGRelationRequest() (request *DescribeDBInstance
 	request = &DescribeDBInstanceECSSGRelationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceECSSGRelation", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceECSSGRelation", "", "")
 	return
 }
 

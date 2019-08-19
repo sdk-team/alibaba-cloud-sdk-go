@@ -103,7 +103,7 @@ func CreateDescribeSQLInjectionInfosRequest() (request *DescribeSQLInjectionInfo
 	request = &DescribeSQLInjectionInfosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLInjectionInfos", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLInjectionInfos", "", "")
 	return
 }
 

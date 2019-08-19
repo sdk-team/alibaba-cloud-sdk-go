@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,6 @@ package rds
 
 // ParameterDetail is a nested struct in rds response
 type ParameterDetail struct {
-            ParamName     string `json:"ParamName" xml:"ParamName"`
-            ParamValue     string `json:"ParamValue" xml:"ParamValue"`
+	ParamName  string `json:"ParamName" xml:"ParamName"`
+	ParamValue string `json:"ParamValue" xml:"ParamValue"`
 }

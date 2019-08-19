@@ -102,7 +102,7 @@ func CreateDescribeInstanceAutoRenewAttributeRequest() (request *DescribeInstanc
 	request = &DescribeInstanceAutoRenewAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeInstanceAutoRenewAttribute", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeInstanceAutoRenewAttribute", "", "")
 	return
 }
 

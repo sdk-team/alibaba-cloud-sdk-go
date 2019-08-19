@@ -82,9 +82,12 @@ type RestoreTableRequest struct {
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	BackupId             string           `position:"Query" name:"BackupId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	BackupSetID          requests.Integer `position:"Query" name:"BackupSetID"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	RestoreType          requests.Integer `position:"Query" name:"RestoreType"`
 	TableMeta            string           `position:"Query" name:"TableMeta"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DBInstanceNetType    requests.Integer `position:"Query" name:"DBInstanceNetType"`
 }
 
 // RestoreTableResponse is the response struct for api RestoreTable
@@ -98,7 +101,7 @@ func CreateRestoreTableRequest() (request *RestoreTableRequest) {
 	request = &RestoreTableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "RestoreTable", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "RestoreTable", "", "")
 	return
 }
 

@@ -96,7 +96,7 @@ func CreateGetServiceSecurityListRequest() (request *GetServiceSecurityListReque
 	request = &GetServiceSecurityListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "GetServiceSecurityList", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "GetServiceSecurityList", "", "")
 	return
 }
 

@@ -76,30 +76,26 @@ func (client *Client) ModifyBackupPolicyWithCallback(request *ModifyBackupPolicy
 // ModifyBackupPolicyRequest is the request struct for api ModifyBackupPolicy
 type ModifyBackupPolicyRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	LocalLogRetentionHours     string           `position:"Query" name:"LocalLogRetentionHours"`
-	LogBackupFrequency         string           `position:"Query" name:"LogBackupFrequency"`
-	BackupLog                  string           `position:"Query" name:"BackupLog"`
-	DuplicationContent         string           `position:"Query" name:"DuplicationContent"`
-	HighSpaceUsageProtection   string           `position:"Query" name:"HighSpaceUsageProtection"`
-	DBInstanceId               string           `position:"Query" name:"DBInstanceId"`
-	EnableBackupLog            string           `position:"Query" name:"EnableBackupLog"`
-	EnableCrossRegionLogBackup string           `position:"Query" name:"EnableCrossRegionLogBackup"`
-	BackupPolicyMode           string           `position:"Query" name:"BackupPolicyMode"`
-	PreferredBackupPeriod      string           `position:"Query" name:"PreferredBackupPeriod"`
-	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
-	CompressType               string           `position:"Query" name:"CompressType"`
-	LocalLogRetentionSpace     string           `position:"Query" name:"LocalLogRetentionSpace"`
-	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
-	CrossBackupRegion          string           `position:"Query" name:"CrossBackupRegion"`
-	Duplication                string           `position:"Query" name:"Duplication"`
-	PreferredBackupTime        string           `position:"Query" name:"PreferredBackupTime"`
-	BackupRetentionPeriod      string           `position:"Query" name:"BackupRetentionPeriod"`
-	CrossRegionBackupRetention requests.Integer `position:"Query" name:"CrossRegionBackupRetention"`
-	EnableCrossRegionBackup    string           `position:"Query" name:"EnableCrossRegionBackup"`
-	DuplicationLocation        string           `position:"Query" name:"DuplicationLocation"`
-	LogBackupRetentionPeriod   string           `position:"Query" name:"LogBackupRetentionPeriod"`
+	PreferredBackupPeriod    string           `position:"Query" name:"PreferredBackupPeriod"`
+	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
+	LocalLogRetentionHours   string           `position:"Query" name:"LocalLogRetentionHours"`
+	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
+	LogBackupFrequency       string           `position:"Query" name:"LogBackupFrequency"`
+	CompressType             string           `position:"Query" name:"CompressType"`
+	BackupLog                string           `position:"Query" name:"BackupLog"`
+	LocalLogRetentionSpace   string           `position:"Query" name:"LocalLogRetentionSpace"`
+	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
+	Duplication              string           `position:"Query" name:"Duplication"`
+	PreferredBackupTime      string           `position:"Query" name:"PreferredBackupTime"`
+	BackupRetentionPeriod    string           `position:"Query" name:"BackupRetentionPeriod"`
+	DuplicationContent       string           `position:"Query" name:"DuplicationContent"`
+	HighSpaceUsageProtection string           `position:"Query" name:"HighSpaceUsageProtection"`
+	DBInstanceId             string           `position:"Query" name:"DBInstanceId"`
+	DuplicationLocation      string           `position:"Query" name:"DuplicationLocation"`
+	LogBackupRetentionPeriod string           `position:"Query" name:"LogBackupRetentionPeriod"`
+	EnableBackupLog          string           `position:"Query" name:"EnableBackupLog"`
+	BackupPolicyMode         string           `position:"Query" name:"BackupPolicyMode"`
 }
 
 // ModifyBackupPolicyResponse is the response struct for api ModifyBackupPolicy
@@ -119,7 +115,7 @@ func CreateModifyBackupPolicyRequest() (request *ModifyBackupPolicyRequest) {
 	request = &ModifyBackupPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyBackupPolicy", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyBackupPolicy", "", "")
 	return
 }
 

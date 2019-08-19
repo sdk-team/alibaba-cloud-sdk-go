@@ -91,7 +91,7 @@ func CreateDescribeSQLDiagnosisListRequest() (request *DescribeSQLDiagnosisListR
 	request = &DescribeSQLDiagnosisListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLDiagnosisList", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLDiagnosisList", "", "")
 	return
 }
 

@@ -113,7 +113,7 @@ func CreateDescribeAbnormalDBInstancesRequest() (request *DescribeAbnormalDBInst
 	request = &DescribeAbnormalDBInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeAbnormalDBInstances", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeAbnormalDBInstances", "", "")
 	return
 }
 

@@ -96,7 +96,7 @@ func CreateModifyReplicaFilterModeRequest() (request *ModifyReplicaFilterModeReq
 	request = &ModifyReplicaFilterModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyReplicaFilterMode", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyReplicaFilterMode", "", "")
 	return
 }
 

@@ -98,7 +98,7 @@ func CreateGrantAccountPrivilegeRequest() (request *GrantAccountPrivilegeRequest
 	request = &GrantAccountPrivilegeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "GrantAccountPrivilege", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "GrantAccountPrivilege", "", "")
 	return
 }
 

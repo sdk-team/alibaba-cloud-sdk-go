@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,5 +17,5 @@ package rds
 
 // ParameterGroups is a nested struct in rds response
 type ParameterGroups struct {
-ParameterGroup []ParameterGroup `json:"ParameterGroup" xml:"ParameterGroup"`
+	ParameterGroup []ParameterGroup `json:"ParameterGroup" xml:"ParameterGroup"`
 }

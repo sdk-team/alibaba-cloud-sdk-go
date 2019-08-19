@@ -76,20 +76,14 @@ func (client *Client) UpgradeDBInstanceEngineVersionWithCallback(request *Upgrad
 // UpgradeDBInstanceEngineVersionRequest is the request struct for api UpgradeDBInstanceEngineVersion
 type UpgradeDBInstanceEngineVersionRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken           string           `position:"Query" name:"ClientToken"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	EngineVersion         string           `position:"Query" name:"EngineVersion"`
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
-	VSwitchId             string           `position:"Query" name:"VSwitchId"`
-	EffectiveTime         string           `position:"Query" name:"EffectiveTime"`
-	VpcId                 string           `position:"Query" name:"VpcId"`
-	ZoneId                string           `position:"Query" name:"ZoneId"`
-	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
-	DBInstanceStorageType string           `position:"Query" name:"DBInstanceStorageType"`
-	InstanceNetworkType   string           `position:"Query" name:"InstanceNetworkType"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	EngineVersion        string           `position:"Query" name:"EngineVersion"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // UpgradeDBInstanceEngineVersionResponse is the response struct for api UpgradeDBInstanceEngineVersion
@@ -104,7 +98,7 @@ func CreateUpgradeDBInstanceEngineVersionRequest() (request *UpgradeDBInstanceEn
 	request = &UpgradeDBInstanceEngineVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "UpgradeDBInstanceEngineVersion", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "UpgradeDBInstanceEngineVersion", "", "")
 	return
 }
 

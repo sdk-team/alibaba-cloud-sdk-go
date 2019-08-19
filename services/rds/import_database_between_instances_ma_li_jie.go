@@ -97,7 +97,7 @@ func CreateImportDatabaseBetweenInstancesMaLiJieRequest() (request *ImportDataba
 	request = &ImportDatabaseBetweenInstancesMaLiJieRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ImportDatabaseBetweenInstancesMaLiJie", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ImportDatabaseBetweenInstancesMaLiJie", "", "")
 	return
 }
 

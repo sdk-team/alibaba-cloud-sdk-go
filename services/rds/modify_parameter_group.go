@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,97 +16,94 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // ModifyParameterGroup invokes the rds.ModifyParameterGroup API synchronously
 // api document: https://help.aliyun.com/api/rds/modifyparametergroup.html
 func (client *Client) ModifyParameterGroup(request *ModifyParameterGroupRequest) (response *ModifyParameterGroupResponse, err error) {
-response = CreateModifyParameterGroupResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateModifyParameterGroupResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // ModifyParameterGroupWithChan invokes the rds.ModifyParameterGroup API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifyparametergroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyParameterGroupWithChan(request *ModifyParameterGroupRequest) (<-chan *ModifyParameterGroupResponse, <-chan error) {
-responseChan := make(chan *ModifyParameterGroupResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ModifyParameterGroup(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ModifyParameterGroupResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ModifyParameterGroup(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // ModifyParameterGroupWithCallback invokes the rds.ModifyParameterGroup API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifyparametergroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ModifyParameterGroupWithCallback(request *ModifyParameterGroupRequest, callback func(response *ModifyParameterGroupResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ModifyParameterGroupResponse
-var err error
-defer close(result)
-response, err = client.ModifyParameterGroup(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ModifyParameterGroupWithCallback(request *ModifyParameterGroupRequest, callback func(response *ModifyParameterGroupResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ModifyParameterGroupResponse
+		var err error
+		defer close(result)
+		response, err = client.ModifyParameterGroup(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // ModifyParameterGroupRequest is the request struct for api ModifyParameterGroup
 type ModifyParameterGroupRequest struct {
-*requests.RpcRequest
-                    ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-                    ParameterGroupId     string `position:"Query" name:"ParameterGroupId"`
-                    ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-                    OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-                    ParameterGroupName     string `position:"Query" name:"ParameterGroupName"`
-                    Parameters     string `position:"Query" name:"Parameters"`
-                    ParameterGroupDesc     string `position:"Query" name:"ParameterGroupDesc"`
+	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ParameterGroupId     string           `position:"Query" name:"ParameterGroupId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ParameterGroupName   string           `position:"Query" name:"ParameterGroupName"`
+	Parameters           string           `position:"Query" name:"Parameters"`
+	ParameterGroupDesc   string           `position:"Query" name:"ParameterGroupDesc"`
 }
-
 
 // ModifyParameterGroupResponse is the response struct for api ModifyParameterGroup
 type ModifyParameterGroupResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyParameterGroupRequest creates a request to invoke ModifyParameterGroup API
 func CreateModifyParameterGroupRequest() (request *ModifyParameterGroupRequest) {
-request = &ModifyParameterGroupRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "ModifyParameterGroup", "rds", "openAPI")
-return
+	request = &ModifyParameterGroupRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyParameterGroup", "", "")
+	return
 }
 
 // CreateModifyParameterGroupResponse creates a response to parse from ModifyParameterGroup response
 func CreateModifyParameterGroupResponse() (response *ModifyParameterGroupResponse) {
-response = &ModifyParameterGroupResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ModifyParameterGroupResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

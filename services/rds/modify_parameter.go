@@ -77,6 +77,7 @@ func (client *Client) ModifyParameterWithCallback(request *ModifyParameterReques
 type ModifyParameterRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ParameterGroupId     string           `position:"Query" name:"ParameterGroupId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -97,7 +98,7 @@ func CreateModifyParameterRequest() (request *ModifyParameterRequest) {
 	request = &ModifyParameterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyParameter", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyParameter", "", "")
 	return
 }
 

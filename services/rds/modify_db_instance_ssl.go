@@ -82,6 +82,7 @@ type ModifyDBInstanceSSLRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SSLEnabled           requests.Integer `position:"Query" name:"SSLEnabled"`
 }
 
 // ModifyDBInstanceSSLResponse is the response struct for api ModifyDBInstanceSSL
@@ -95,7 +96,7 @@ func CreateModifyDBInstanceSSLRequest() (request *ModifyDBInstanceSSLRequest) {
 	request = &ModifyDBInstanceSSLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceSSL", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceSSL", "", "")
 	return
 }
 

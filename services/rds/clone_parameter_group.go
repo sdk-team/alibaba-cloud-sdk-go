@@ -81,6 +81,8 @@ type CloneParameterGroupRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	TargetRegionId       string           `position:"Query" name:"TargetRegionId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ParameterGroupName   string           `position:"Query" name:"ParameterGroupName"`
+	ParameterGroupDesc   string           `position:"Query" name:"ParameterGroupDesc"`
 }
 
 // CloneParameterGroupResponse is the response struct for api CloneParameterGroup
@@ -94,7 +96,7 @@ func CreateCloneParameterGroupRequest() (request *CloneParameterGroupRequest) {
 	request = &CloneParameterGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CloneParameterGroup", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CloneParameterGroup", "", "")
 	return
 }
 

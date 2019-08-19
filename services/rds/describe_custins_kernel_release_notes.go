@@ -95,7 +95,7 @@ func CreateDescribeCustinsKernelReleaseNotesRequest() (request *DescribeCustinsK
 	request = &DescribeCustinsKernelReleaseNotesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeCustinsKernelReleaseNotes", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeCustinsKernelReleaseNotes", "", "")
 	return
 }
 
