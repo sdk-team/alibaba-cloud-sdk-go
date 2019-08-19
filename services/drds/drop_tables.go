@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateDrdsDB invokes the drds.CreateDrdsDB API synchronously
-// api document: https://help.aliyun.com/api/drds/createdrdsdb.html
-func (client *Client) CreateDrdsDB(request *CreateDrdsDBRequest) (response *CreateDrdsDBResponse, err error) {
-	response = CreateCreateDrdsDBResponse()
+// DropTables invokes the drds.DropTables API synchronously
+// api document: https://help.aliyun.com/api/drds/droptables.html
+func (client *Client) DropTables(request *DropTablesRequest) (response *DropTablesResponse, err error) {
+	response = CreateDropTablesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateDrdsDBWithChan invokes the drds.CreateDrdsDB API asynchronously
-// api document: https://help.aliyun.com/api/drds/createdrdsdb.html
+// DropTablesWithChan invokes the drds.DropTables API asynchronously
+// api document: https://help.aliyun.com/api/drds/droptables.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateDrdsDBWithChan(request *CreateDrdsDBRequest) (<-chan *CreateDrdsDBResponse, <-chan error) {
-	responseChan := make(chan *CreateDrdsDBResponse, 1)
+func (client *Client) DropTablesWithChan(request *DropTablesRequest) (<-chan *DropTablesResponse, <-chan error) {
+	responseChan := make(chan *DropTablesResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateDrdsDB(request)
+		response, err := client.DropTables(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) CreateDrdsDBWithChan(request *CreateDrdsDBRequest) (<-chan
 	return responseChan, errChan
 }
 
-// CreateDrdsDBWithCallback invokes the drds.CreateDrdsDB API asynchronously
-// api document: https://help.aliyun.com/api/drds/createdrdsdb.html
+// DropTablesWithCallback invokes the drds.DropTables API asynchronously
+// api document: https://help.aliyun.com/api/drds/droptables.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateDrdsDBWithCallback(request *CreateDrdsDBRequest, callback func(response *CreateDrdsDBResponse, err error)) <-chan int {
+func (client *Client) DropTablesWithCallback(request *DropTablesRequest, callback func(response *DropTablesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateDrdsDBResponse
+		var response *DropTablesResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateDrdsDB(request)
+		response, err = client.DropTables(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,35 +73,33 @@ func (client *Client) CreateDrdsDBWithCallback(request *CreateDrdsDBRequest, cal
 	return result
 }
 
-// CreateDrdsDBRequest is the request struct for api CreateDrdsDB
-type CreateDrdsDBRequest struct {
+// DropTablesRequest is the request struct for api DropTables
+type DropTablesRequest struct {
 	*requests.RpcRequest
-	Encode         string `position:"Query" name:"Encode"`
-	Password       string `position:"Query" name:"Password"`
+	Tables         string `position:"Query" name:"Tables"`
 	DbName         string `position:"Query" name:"DbName"`
-	RdsInstances   string `position:"Query" name:"RdsInstances"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 }
 
-// CreateDrdsDBResponse is the response struct for api CreateDrdsDB
-type CreateDrdsDBResponse struct {
+// DropTablesResponse is the response struct for api DropTables
+type DropTablesResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
+	TaskId    string `json:"TaskId" xml:"TaskId"`
 }
 
-// CreateCreateDrdsDBRequest creates a request to invoke CreateDrdsDB API
-func CreateCreateDrdsDBRequest() (request *CreateDrdsDBRequest) {
-	request = &CreateDrdsDBRequest{
+// CreateDropTablesRequest creates a request to invoke DropTables API
+func CreateDropTablesRequest() (request *DropTablesRequest) {
+	request = &DropTablesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2015-04-13", "CreateDrdsDB", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2015-04-13", "DropTables", "drds", "openAPI")
 	return
 }
 
-// CreateCreateDrdsDBResponse creates a response to parse from CreateDrdsDB response
-func CreateCreateDrdsDBResponse() (response *CreateDrdsDBResponse) {
-	response = &CreateDrdsDBResponse{
+// CreateDropTablesResponse creates a response to parse from DropTables response
+func CreateDropTablesResponse() (response *DropTablesResponse) {
+	response = &DropTablesResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

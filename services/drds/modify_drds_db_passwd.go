@@ -93,7 +93,7 @@ func CreateModifyDrdsDBPasswdRequest() (request *ModifyDrdsDBPasswdRequest) {
 	request = &ModifyDrdsDBPasswdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2017-10-16", "ModifyDrdsDBPasswd", "", "")
+	request.InitWithApiInfo("Drds", "2015-04-13", "ModifyDrdsDBPasswd", "drds", "openAPI")
 	return
 }
 

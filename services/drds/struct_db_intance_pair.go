@@ -19,5 +19,4 @@ package drds
 type DbIntancePair struct {
 	SubDbName    string `json:"SubDbName" xml:"SubDbName"`
 	InstanceName string `json:"InstanceName" xml:"InstanceName"`
-	GroupName    string `json:"GroupName" xml:"GroupName"`
 }

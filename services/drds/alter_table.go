@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateDrdsDB invokes the drds.CreateDrdsDB API synchronously
-// api document: https://help.aliyun.com/api/drds/createdrdsdb.html
-func (client *Client) CreateDrdsDB(request *CreateDrdsDBRequest) (response *CreateDrdsDBResponse, err error) {
-	response = CreateCreateDrdsDBResponse()
+// AlterTable invokes the drds.AlterTable API synchronously
+// api document: https://help.aliyun.com/api/drds/altertable.html
+func (client *Client) AlterTable(request *AlterTableRequest) (response *AlterTableResponse, err error) {
+	response = CreateAlterTableResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateDrdsDBWithChan invokes the drds.CreateDrdsDB API asynchronously
-// api document: https://help.aliyun.com/api/drds/createdrdsdb.html
+// AlterTableWithChan invokes the drds.AlterTable API asynchronously
+// api document: https://help.aliyun.com/api/drds/altertable.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateDrdsDBWithChan(request *CreateDrdsDBRequest) (<-chan *CreateDrdsDBResponse, <-chan error) {
-	responseChan := make(chan *CreateDrdsDBResponse, 1)
+func (client *Client) AlterTableWithChan(request *AlterTableRequest) (<-chan *AlterTableResponse, <-chan error) {
+	responseChan := make(chan *AlterTableResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateDrdsDB(request)
+		response, err := client.AlterTable(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) CreateDrdsDBWithChan(request *CreateDrdsDBRequest) (<-chan
 	return responseChan, errChan
 }
 
-// CreateDrdsDBWithCallback invokes the drds.CreateDrdsDB API asynchronously
-// api document: https://help.aliyun.com/api/drds/createdrdsdb.html
+// AlterTableWithCallback invokes the drds.AlterTable API asynchronously
+// api document: https://help.aliyun.com/api/drds/altertable.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateDrdsDBWithCallback(request *CreateDrdsDBRequest, callback func(response *CreateDrdsDBResponse, err error)) <-chan int {
+func (client *Client) AlterTableWithCallback(request *AlterTableRequest, callback func(response *AlterTableResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateDrdsDBResponse
+		var response *AlterTableResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateDrdsDB(request)
+		response, err = client.AlterTable(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,35 +73,33 @@ func (client *Client) CreateDrdsDBWithCallback(request *CreateDrdsDBRequest, cal
 	return result
 }
 
-// CreateDrdsDBRequest is the request struct for api CreateDrdsDB
-type CreateDrdsDBRequest struct {
+// AlterTableRequest is the request struct for api AlterTable
+type AlterTableRequest struct {
 	*requests.RpcRequest
-	Encode         string `position:"Query" name:"Encode"`
-	Password       string `position:"Query" name:"Password"`
 	DbName         string `position:"Query" name:"DbName"`
-	RdsInstances   string `position:"Query" name:"RdsInstances"`
+	DdlSql         string `position:"Query" name:"DdlSql"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 }
 
-// CreateDrdsDBResponse is the response struct for api CreateDrdsDB
-type CreateDrdsDBResponse struct {
+// AlterTableResponse is the response struct for api AlterTable
+type AlterTableResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
+	TaskId    string `json:"TaskId" xml:"TaskId"`
 }
 
-// CreateCreateDrdsDBRequest creates a request to invoke CreateDrdsDB API
-func CreateCreateDrdsDBRequest() (request *CreateDrdsDBRequest) {
-	request = &CreateDrdsDBRequest{
+// CreateAlterTableRequest creates a request to invoke AlterTable API
+func CreateAlterTableRequest() (request *AlterTableRequest) {
+	request = &AlterTableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2015-04-13", "CreateDrdsDB", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2015-04-13", "AlterTable", "drds", "openAPI")
 	return
 }
 
-// CreateCreateDrdsDBResponse creates a response to parse from CreateDrdsDB response
-func CreateCreateDrdsDBResponse() (response *CreateDrdsDBResponse) {
-	response = &CreateDrdsDBResponse{
+// CreateAlterTableResponse creates a response to parse from AlterTable response
+func CreateAlterTableResponse() (response *AlterTableResponse) {
+	response = &AlterTableResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

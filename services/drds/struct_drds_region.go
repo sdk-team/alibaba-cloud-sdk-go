@@ -17,9 +17,8 @@ package drds
 
 // DrdsRegion is a nested struct in drds response
 type DrdsRegion struct {
-	RegionId           string             `json:"RegionId" xml:"RegionId"`
-	RegionName         string             `json:"RegionName" xml:"RegionName"`
-	ZoneId             string             `json:"ZoneId" xml:"ZoneId"`
-	ZoneName           string             `json:"ZoneName" xml:"ZoneName"`
-	InstanceSeriesList InstanceSeriesList `json:"InstanceSeriesList" xml:"InstanceSeriesList"`
+	RegionId   string `json:"RegionId" xml:"RegionId"`
+	RegionName string `json:"RegionName" xml:"RegionName"`
+	ZoneId     string `json:"ZoneId" xml:"ZoneId"`
+	ZoneName   string `json:"ZoneName" xml:"ZoneName"`
 }

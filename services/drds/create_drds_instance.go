@@ -76,20 +76,14 @@ func (client *Client) CreateDrdsInstanceWithCallback(request *CreateDrdsInstance
 // CreateDrdsInstanceRequest is the request struct for api CreateDrdsInstance
 type CreateDrdsInstanceRequest struct {
 	*requests.RpcRequest
-	IsAutoRenew    requests.Boolean `position:"Query" name:"IsAutoRenew"`
-	Quantity       requests.Integer `position:"Query" name:"Quantity"`
-	ClientToken    string           `position:"Query" name:"ClientToken"`
-	Description    string           `position:"Query" name:"Description"`
-	Specification  string           `position:"Query" name:"Specification"`
-	Type           string           `position:"Query" name:"Type"`
-	VswitchId      string           `position:"Query" name:"VswitchId"`
-	Duration       requests.Integer `position:"Query" name:"Duration"`
-	IsHa           requests.Boolean `position:"Query" name:"IsHa"`
-	InstanceSeries string           `position:"Query" name:"InstanceSeries"`
-	VpcId          string           `position:"Query" name:"VpcId"`
-	ZoneId         string           `position:"Query" name:"ZoneId"`
-	PayType        string           `position:"Query" name:"PayType"`
-	PricingCycle   string           `position:"Query" name:"PricingCycle"`
+	VswitchId     string           `position:"Query" name:"VswitchId"`
+	Quantity      requests.Integer `position:"Query" name:"Quantity"`
+	VpcId         string           `position:"Query" name:"VpcId"`
+	Description   string           `position:"Query" name:"Description"`
+	ZoneId        string           `position:"Query" name:"ZoneId"`
+	Specification string           `position:"Query" name:"Specification"`
+	Type          string           `position:"Query" name:"Type"`
+	PayType       string           `position:"Query" name:"PayType"`
 }
 
 // CreateDrdsInstanceResponse is the response struct for api CreateDrdsInstance
@@ -105,7 +99,7 @@ func CreateCreateDrdsInstanceRequest() (request *CreateDrdsInstanceRequest) {
 	request = &CreateDrdsInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2017-10-16", "CreateDrdsInstance", "", "")
+	request.InitWithApiInfo("Drds", "2015-04-13", "CreateDrdsInstance", "drds", "openAPI")
 	return
 }
 

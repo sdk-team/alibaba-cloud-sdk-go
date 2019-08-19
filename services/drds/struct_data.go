@@ -17,22 +17,33 @@ package drds
 
 // Data is a nested struct in drds response
 type Data struct {
-	Version            int                           `json:"Version" xml:"Version"`
 	SpecTypeName       string                        `json:"SpecTypeName" xml:"SpecTypeName"`
-	OrderId            int                           `json:"OrderId" xml:"OrderId"`
-	CreateTime         int                           `json:"CreateTime" xml:"CreateTime"`
+	OrderId            int64                         `json:"OrderId" xml:"OrderId"`
+	CreateTime         int64                         `json:"CreateTime" xml:"CreateTime"`
+	TaskStatus         int                           `json:"TaskStatus" xml:"TaskStatus"`
+	TaskPhase          string                        `json:"TaskPhase" xml:"TaskPhase"`
+	ErrMsg             string                        `json:"ErrMsg" xml:"ErrMsg"`
+	AllowCancel        string                        `json:"AllowCancel" xml:"AllowCancel"`
+	RegionId           string                        `json:"RegionId" xml:"RegionId"`
+	TargetId           string                        `json:"TargetId" xml:"TargetId"`
+	Name               string                        `json:"name" xml:"name"`
+	NetworkType        string                        `json:"NetworkType" xml:"NetworkType"`
+	Description        string                        `json:"Description" xml:"Description"`
+	Type               string                        `json:"Type" xml:"Type"`
+	TaskDetail         string                        `json:"TaskDetail" xml:"TaskDetail"`
+	TaskType           int                           `json:"TaskType" xml:"TaskType"`
+	Version            int64                         `json:"Version" xml:"Version"`
+	Gender             string                        `json:"gender" xml:"gender"`
 	DrdsInstanceId     string                        `json:"DrdsInstanceId" xml:"DrdsInstanceId"`
 	DbName             string                        `json:"DbName" xml:"DbName"`
-	VpcCloudInstanceId string                        `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
-	RegionId           string                        `json:"RegionId" xml:"RegionId"`
+	GmtCreate          int64                         `json:"GmtCreate" xml:"GmtCreate"`
 	ZoneId             string                        `json:"ZoneId" xml:"ZoneId"`
 	AccountName        string                        `json:"AccountName" xml:"AccountName"`
+	RequestId          string                        `json:"RequestId" xml:"RequestId"`
+	TaskName           string                        `json:"TaskName" xml:"TaskName"`
 	SpecTypeId         string                        `json:"SpecTypeId" xml:"SpecTypeId"`
-	NetworkType        string                        `json:"NetworkType" xml:"NetworkType"`
 	Status             string                        `json:"Status" xml:"Status"`
-	Description        string                        `json:"Description" xml:"Description"`
 	Specification      string                        `json:"Specification" xml:"Specification"`
-	Type               string                        `json:"Type" xml:"Type"`
 	DrdsInstanceIdList DrdsInstanceIdList            `json:"DrdsInstanceIdList" xml:"DrdsInstanceIdList"`
 	IpWhiteList        IpWhiteList                   `json:"IpWhiteList" xml:"IpWhiteList"`
 	Vips               VipsInQueryInstanceInfoByConn `json:"Vips" xml:"Vips"`

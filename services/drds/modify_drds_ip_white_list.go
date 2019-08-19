@@ -96,7 +96,7 @@ func CreateModifyDrdsIpWhiteListRequest() (request *ModifyDrdsIpWhiteListRequest
 	request = &ModifyDrdsIpWhiteListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2017-10-16", "ModifyDrdsIpWhiteList", "", "")
+	request.InitWithApiInfo("Drds", "2015-04-13", "ModifyDrdsIpWhiteList", "drds", "openAPI")
 	return
 }
 

@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateDrdsDB invokes the drds.CreateDrdsDB API synchronously
-// api document: https://help.aliyun.com/api/drds/createdrdsdb.html
-func (client *Client) CreateDrdsDB(request *CreateDrdsDBRequest) (response *CreateDrdsDBResponse, err error) {
-	response = CreateCreateDrdsDBResponse()
+// CancleDDLTask invokes the drds.CancleDDLTask API synchronously
+// api document: https://help.aliyun.com/api/drds/cancleddltask.html
+func (client *Client) CancleDDLTask(request *CancleDDLTaskRequest) (response *CancleDDLTaskResponse, err error) {
+	response = CreateCancleDDLTaskResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateDrdsDBWithChan invokes the drds.CreateDrdsDB API asynchronously
-// api document: https://help.aliyun.com/api/drds/createdrdsdb.html
+// CancleDDLTaskWithChan invokes the drds.CancleDDLTask API asynchronously
+// api document: https://help.aliyun.com/api/drds/cancleddltask.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateDrdsDBWithChan(request *CreateDrdsDBRequest) (<-chan *CreateDrdsDBResponse, <-chan error) {
-	responseChan := make(chan *CreateDrdsDBResponse, 1)
+func (client *Client) CancleDDLTaskWithChan(request *CancleDDLTaskRequest) (<-chan *CancleDDLTaskResponse, <-chan error) {
+	responseChan := make(chan *CancleDDLTaskResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateDrdsDB(request)
+		response, err := client.CancleDDLTask(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) CreateDrdsDBWithChan(request *CreateDrdsDBRequest) (<-chan
 	return responseChan, errChan
 }
 
-// CreateDrdsDBWithCallback invokes the drds.CreateDrdsDB API asynchronously
-// api document: https://help.aliyun.com/api/drds/createdrdsdb.html
+// CancleDDLTaskWithCallback invokes the drds.CancleDDLTask API asynchronously
+// api document: https://help.aliyun.com/api/drds/cancleddltask.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateDrdsDBWithCallback(request *CreateDrdsDBRequest, callback func(response *CreateDrdsDBResponse, err error)) <-chan int {
+func (client *Client) CancleDDLTaskWithCallback(request *CancleDDLTaskRequest, callback func(response *CancleDDLTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateDrdsDBResponse
+		var response *CancleDDLTaskResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateDrdsDB(request)
+		response, err = client.CancleDDLTask(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,35 +73,32 @@ func (client *Client) CreateDrdsDBWithCallback(request *CreateDrdsDBRequest, cal
 	return result
 }
 
-// CreateDrdsDBRequest is the request struct for api CreateDrdsDB
-type CreateDrdsDBRequest struct {
+// CancleDDLTaskRequest is the request struct for api CancleDDLTask
+type CancleDDLTaskRequest struct {
 	*requests.RpcRequest
-	Encode         string `position:"Query" name:"Encode"`
-	Password       string `position:"Query" name:"Password"`
 	DbName         string `position:"Query" name:"DbName"`
-	RdsInstances   string `position:"Query" name:"RdsInstances"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	TaskId         string `position:"Query" name:"TaskId"`
 }
 
-// CreateDrdsDBResponse is the response struct for api CreateDrdsDB
-type CreateDrdsDBResponse struct {
+// CancleDDLTaskResponse is the response struct for api CancleDDLTask
+type CancleDDLTaskResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 }
 
-// CreateCreateDrdsDBRequest creates a request to invoke CreateDrdsDB API
-func CreateCreateDrdsDBRequest() (request *CreateDrdsDBRequest) {
-	request = &CreateDrdsDBRequest{
+// CreateCancleDDLTaskRequest creates a request to invoke CancleDDLTask API
+func CreateCancleDDLTaskRequest() (request *CancleDDLTaskRequest) {
+	request = &CancleDDLTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2015-04-13", "CreateDrdsDB", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2015-04-13", "CancleDDLTask", "drds", "openAPI")
 	return
 }
 
-// CreateCreateDrdsDBResponse creates a response to parse from CreateDrdsDB response
-func CreateCreateDrdsDBResponse() (response *CreateDrdsDBResponse) {
-	response = &CreateDrdsDBResponse{
+// CreateCancleDDLTaskResponse creates a response to parse from CancleDDLTask response
+func CreateCancleDDLTaskResponse() (response *CancleDDLTaskResponse) {
+	response = &CancleDDLTaskResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

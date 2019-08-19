@@ -17,15 +17,14 @@ package drds
 
 // Instance is a nested struct in drds response
 type Instance struct {
-	DrdsInstanceId     string                      `json:"DrdsInstanceId" xml:"DrdsInstanceId"`
-	Type               string                      `json:"Type" xml:"Type"`
-	RegionId           string                      `json:"RegionId" xml:"RegionId"`
-	ZoneId             string                      `json:"ZoneId" xml:"ZoneId"`
-	Description        string                      `json:"Description" xml:"Description"`
-	NetworkType        string                      `json:"NetworkType" xml:"NetworkType"`
-	Status             string                      `json:"Status" xml:"Status"`
-	CreateTime         int                         `json:"CreateTime" xml:"CreateTime"`
-	Version            int                         `json:"Version" xml:"Version"`
-	VpcCloudInstanceId string                      `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
-	Vips               VipsInDescribeDrdsInstances `json:"Vips" xml:"Vips"`
+	DrdsInstanceId string                      `json:"DrdsInstanceId" xml:"DrdsInstanceId"`
+	Type           string                      `json:"Type" xml:"Type"`
+	RegionId       string                      `json:"RegionId" xml:"RegionId"`
+	ZoneId         string                      `json:"ZoneId" xml:"ZoneId"`
+	Description    string                      `json:"Description" xml:"Description"`
+	NetworkType    string                      `json:"NetworkType" xml:"NetworkType"`
+	Status         string                      `json:"Status" xml:"Status"`
+	CreateTime     int64                       `json:"CreateTime" xml:"CreateTime"`
+	Version        int64                       `json:"Version" xml:"Version"`
+	Vips           VipsInDescribeDrdsInstances `json:"Vips" xml:"Vips"`
 }
