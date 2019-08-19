@@ -92,7 +92,7 @@ func CreateModifyDrdsInstanceDescriptionRequest() (request *ModifyDrdsInstanceDe
 	request = &ModifyDrdsInstanceDescriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2015-04-13", "ModifyDrdsInstanceDescription", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "ModifyDrdsInstanceDescription", "drds", "openAPI")
 	return
 }
 
