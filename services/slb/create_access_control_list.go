@@ -82,7 +82,6 @@ type CreateAccessControlListRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	AddressIPVersion     string           `position:"Query" name:"AddressIPVersion"`
 	Tags                 string           `position:"Query" name:"Tags"`
 }
 

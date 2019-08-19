@@ -17,19 +17,16 @@ package slb
 
 // ServerCertificate is a nested struct in slb response
 type ServerCertificate struct {
-	ServerCertificateId     string                                              `json:"ServerCertificateId" xml:"ServerCertificateId"`
-	Fingerprint             string                                              `json:"Fingerprint" xml:"Fingerprint"`
-	ServerCertificateName   string                                              `json:"ServerCertificateName" xml:"ServerCertificateName"`
-	RegionId                string                                              `json:"RegionId" xml:"RegionId"`
-	RegionIdAlias           string                                              `json:"RegionIdAlias" xml:"RegionIdAlias"`
-	AliCloudCertificateId   string                                              `json:"AliCloudCertificateId" xml:"AliCloudCertificateId"`
-	AliCloudCertificateName string                                              `json:"AliCloudCertificateName" xml:"AliCloudCertificateName"`
-	IsAliCloudCertificate   int                                                 `json:"IsAliCloudCertificate" xml:"IsAliCloudCertificate"`
-	ResourceGroupId         string                                              `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	CreateTime              string                                              `json:"CreateTime" xml:"CreateTime"`
-	CreateTimeStamp         int                                                 `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
-	ExpireTime              string                                              `json:"ExpireTime" xml:"ExpireTime"`
-	ExpireTimeStamp         int                                                 `json:"ExpireTimeStamp" xml:"ExpireTimeStamp"`
-	CommonName              string                                              `json:"CommonName" xml:"CommonName"`
-	SubjectAlternativeNames SubjectAlternativeNamesInDescribeServerCertificates `json:"SubjectAlternativeNames" xml:"SubjectAlternativeNames"`
+	ServerCertificateId     string             `json:"ServerCertificateId" xml:"ServerCertificateId"`
+	Fingerprint             string             `json:"Fingerprint" xml:"Fingerprint"`
+	ServerCertificateName   string             `json:"ServerCertificateName" xml:"ServerCertificateName"`
+	RegionId                string             `json:"RegionId" xml:"RegionId"`
+	RegionIdAlias           string             `json:"RegionIdAlias" xml:"RegionIdAlias"`
+	AliCloudCertificateId   string             `json:"AliCloudCertificateId" xml:"AliCloudCertificateId"`
+	AliCloudCertificateName string             `json:"AliCloudCertificateName" xml:"AliCloudCertificateName"`
+	IsAliCloudCertificate   int                `json:"IsAliCloudCertificate" xml:"IsAliCloudCertificate"`
+	ExpireTime              string             `json:"ExpireTime" xml:"ExpireTime"`
+	ExpireTimeStamp         int64              `json:"ExpireTimeStamp" xml:"ExpireTimeStamp"`
+	Domain                  string             `json:"Domain" xml:"Domain"`
+	AlternativeDomains      AlternativeDomains `json:"AlternativeDomains" xml:"AlternativeDomains"`
 }

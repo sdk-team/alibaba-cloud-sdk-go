@@ -80,7 +80,6 @@ type CreateLoadBalancerTCPListenerRequest struct {
 	HealthCheckConnectTimeout requests.Integer `position:"Query" name:"HealthCheckConnectTimeout"`
 	ResourceOwnerId           requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	HealthCheckURI            string           `position:"Query" name:"HealthCheckURI"`
-	Description               string           `position:"Query" name:"Description"`
 	UnhealthyThreshold        requests.Integer `position:"Query" name:"UnhealthyThreshold"`
 	HealthyThreshold          requests.Integer `position:"Query" name:"HealthyThreshold"`
 	AclStatus                 string           `position:"Query" name:"AclStatus"`

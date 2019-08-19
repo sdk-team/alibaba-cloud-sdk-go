@@ -86,6 +86,7 @@ type CreateLoadBalancerRequest struct {
 	LoadBalancerName     string           `position:"Query" name:"LoadBalancerName"`
 	AddressType          string           `position:"Query" name:"AddressType"`
 	SlaveZoneId          string           `position:"Query" name:"SlaveZoneId"`
+	DeleteProtection     string           `position:"Query" name:"DeleteProtection"`
 	LoadBalancerSpec     string           `position:"Query" name:"LoadBalancerSpec"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -112,7 +113,7 @@ type CreateLoadBalancerResponse struct {
 	VpcId            string `json:"VpcId" xml:"VpcId"`
 	VSwitchId        string `json:"VSwitchId" xml:"VSwitchId"`
 	NetworkType      string `json:"NetworkType" xml:"NetworkType"`
-	OrderId          int    `json:"OrderId" xml:"OrderId"`
+	OrderId          int64  `json:"OrderId" xml:"OrderId"`
 	AddressIPVersion string `json:"AddressIPVersion" xml:"AddressIPVersion"`
 }
 

@@ -24,8 +24,10 @@ type Rule struct {
 	StickySession          string `json:"StickySession" xml:"StickySession"`
 	HealthCheckInterval    int    `json:"HealthCheckInterval" xml:"HealthCheckInterval"`
 	ListenerSync           string `json:"ListenerSync" xml:"ListenerSync"`
+	ServerCertificateId    string `json:"ServerCertificateId" xml:"ServerCertificateId"`
 	RuleId                 string `json:"RuleId" xml:"RuleId"`
 	HealthCheckDomain      string `json:"HealthCheckDomain" xml:"HealthCheckDomain"`
+	LoadBalancerId         string `json:"LoadBalancerId" xml:"LoadBalancerId"`
 	Scheduler              string `json:"Scheduler" xml:"Scheduler"`
 	Url                    string `json:"Url" xml:"Url"`
 	VServerGroupId         string `json:"VServerGroupId" xml:"VServerGroupId"`
@@ -34,6 +36,7 @@ type Rule struct {
 	HealthCheckHttpCode    string `json:"HealthCheckHttpCode" xml:"HealthCheckHttpCode"`
 	UnhealthyThreshold     int    `json:"UnhealthyThreshold" xml:"UnhealthyThreshold"`
 	StickySessionType      string `json:"StickySessionType" xml:"StickySessionType"`
+	ListenerPort           int    `json:"ListenerPort" xml:"ListenerPort"`
 	HealthCheckConnectPort int    `json:"HealthCheckConnectPort" xml:"HealthCheckConnectPort"`
 	Cookie                 string `json:"Cookie" xml:"Cookie"`
 	HealthCheck            string `json:"HealthCheck" xml:"HealthCheck"`

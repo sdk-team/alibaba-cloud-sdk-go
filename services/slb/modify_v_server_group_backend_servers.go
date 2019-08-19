@@ -84,7 +84,6 @@ type ModifyVServerGroupBackendServersRequest struct {
 	NewBackendServers    string           `position:"Query" name:"NewBackendServers"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Tags                 string           `position:"Query" name:"Tags"`
 }
 
 // ModifyVServerGroupBackendServersResponse is the response struct for api ModifyVServerGroupBackendServers

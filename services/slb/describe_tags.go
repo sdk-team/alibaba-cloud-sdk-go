@@ -78,24 +78,24 @@ type DescribeTagsRequest struct {
 	*requests.RpcRequest
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	DistinctKey          requests.Boolean `position:"Query" name:"DistinctKey"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	Tags                 string           `position:"Query" name:"Tags"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // DescribeTagsResponse is the response struct for api DescribeTags
 type DescribeTagsResponse struct {
 	*responses.BaseResponse
-	RequestId  string  `json:"RequestId" xml:"RequestId"`
-	PageSize   int     `json:"PageSize" xml:"PageSize"`
-	PageNumber int     `json:"PageNumber" xml:"PageNumber"`
-	TotalCount int     `json:"TotalCount" xml:"TotalCount"`
-	TagSets    TagSets `json:"TagSets" xml:"TagSets"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	PageSize   int    `json:"PageSize" xml:"PageSize"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	TagSet     TagSet `json:"TagSet" xml:"TagSet"`
 }
 
 // CreateDescribeTagsRequest creates a request to invoke DescribeTags API

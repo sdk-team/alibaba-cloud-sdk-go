@@ -77,7 +77,6 @@ func (client *Client) DescribeCACertificatesWithCallback(request *DescribeCACert
 type DescribeCACertificatesRequest struct {
 	*requests.RpcRequest
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

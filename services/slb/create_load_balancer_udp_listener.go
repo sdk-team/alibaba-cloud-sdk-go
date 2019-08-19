@@ -79,7 +79,6 @@ type CreateLoadBalancerUDPListenerRequest struct {
 	AccessKeyId               string           `position:"Query" name:"access_key_id"`
 	HealthCheckConnectTimeout requests.Integer `position:"Query" name:"HealthCheckConnectTimeout"`
 	ResourceOwnerId           requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Description               string           `position:"Query" name:"Description"`
 	UnhealthyThreshold        requests.Integer `position:"Query" name:"UnhealthyThreshold"`
 	HealthyThreshold          requests.Integer `position:"Query" name:"HealthyThreshold"`
 	AclStatus                 string           `position:"Query" name:"AclStatus"`

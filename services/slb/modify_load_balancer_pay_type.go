@@ -78,7 +78,6 @@ type ModifyLoadBalancerPayTypeRequest struct {
 	*requests.RpcRequest
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -93,7 +92,6 @@ type ModifyLoadBalancerPayTypeRequest struct {
 type ModifyLoadBalancerPayTypeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	OrderId   int    `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateModifyLoadBalancerPayTypeRequest creates a request to invoke ModifyLoadBalancerPayType API

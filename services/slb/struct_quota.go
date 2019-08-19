@@ -17,7 +17,6 @@ package slb
 
 // Quota is a nested struct in slb response
 type Quota struct {
-	Max       string `json:"Max" xml:"Max"`
 	QuotaName string `json:"QuotaName" xml:"QuotaName"`
-	Comment   string `json:"Comment" xml:"Comment"`
+	Max       string `json:"Max" xml:"Max"`
 }

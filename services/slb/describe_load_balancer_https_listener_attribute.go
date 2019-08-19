@@ -118,15 +118,7 @@ type DescribeLoadBalancerHTTPSListenerAttributeResponse struct {
 	XForwardedForSLBIP     string                                                       `json:"XForwardedFor_SLBIP" xml:"XForwardedFor_SLBIP"`
 	XForwardedForSLBID     string                                                       `json:"XForwardedFor_SLBID" xml:"XForwardedFor_SLBID"`
 	XForwardedForProto     string                                                       `json:"XForwardedFor_proto" xml:"XForwardedFor_proto"`
-	AclId                  string                                                       `json:"AclId" xml:"AclId"`
-	AclType                string                                                       `json:"AclType" xml:"AclType"`
-	AclStatus              string                                                       `json:"AclStatus" xml:"AclStatus"`
-	VpcIds                 string                                                       `json:"VpcIds" xml:"VpcIds"`
-	RequestTimeout         int                                                          `json:"RequestTimeout" xml:"RequestTimeout"`
-	IdleTimeout            int                                                          `json:"IdleTimeout" xml:"IdleTimeout"`
-	EnableHttp2            string                                                       `json:"EnableHttp2" xml:"EnableHttp2"`
 	TLSCipherPolicy        string                                                       `json:"TLSCipherPolicy" xml:"TLSCipherPolicy"`
-	Description            string                                                       `json:"Description" xml:"Description"`
 	Rules                  RulesInDescribeLoadBalancerHTTPSListenerAttribute            `json:"Rules" xml:"Rules"`
 	DomainExtensions       DomainExtensionsInDescribeLoadBalancerHTTPSListenerAttribute `json:"DomainExtensions" xml:"DomainExtensions"`
 }

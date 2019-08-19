@@ -76,11 +76,10 @@ func (client *Client) ModifyLoadBalancerInstanceSpecWithCallback(request *Modify
 // ModifyLoadBalancerInstanceSpecRequest is the request struct for api ModifyLoadBalancerInstanceSpec
 type ModifyLoadBalancerInstanceSpecRequest struct {
 	*requests.RpcRequest
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	LoadBalancerSpec     string           `position:"Query" name:"LoadBalancerSpec"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
-	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -91,7 +90,6 @@ type ModifyLoadBalancerInstanceSpecRequest struct {
 type ModifyLoadBalancerInstanceSpecResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	OrderId   int    `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateModifyLoadBalancerInstanceSpecRequest creates a request to invoke ModifyLoadBalancerInstanceSpec API

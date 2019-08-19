@@ -84,7 +84,6 @@ type CreateRulesRequest struct {
 	RuleList             string           `position:"Query" name:"RuleList"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Tags                 string           `position:"Query" name:"Tags"`
 }
 
 // CreateRulesResponse is the response struct for api CreateRules

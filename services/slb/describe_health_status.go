@@ -83,7 +83,6 @@ type DescribeHealthStatusRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Tags                 string           `position:"Query" name:"Tags"`
 }
 
 // DescribeHealthStatusResponse is the response struct for api DescribeHealthStatus

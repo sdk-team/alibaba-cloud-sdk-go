@@ -17,7 +17,6 @@ package slb
 
 // MasterSlaveServerGroup is a nested struct in slb response
 type MasterSlaveServerGroup struct {
-	MasterSlaveServerGroupId   string            `json:"MasterSlaveServerGroupId" xml:"MasterSlaveServerGroupId"`
-	MasterSlaveServerGroupName string            `json:"MasterSlaveServerGroupName" xml:"MasterSlaveServerGroupName"`
-	AssociatedObjects          AssociatedObjects `json:"AssociatedObjects" xml:"AssociatedObjects"`
+	MasterSlaveServerGroupId   string `json:"MasterSlaveServerGroupId" xml:"MasterSlaveServerGroupId"`
+	MasterSlaveServerGroupName string `json:"MasterSlaveServerGroupName" xml:"MasterSlaveServerGroupName"`
 }

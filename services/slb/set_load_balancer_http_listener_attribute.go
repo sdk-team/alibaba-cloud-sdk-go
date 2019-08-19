@@ -81,7 +81,6 @@ type SetLoadBalancerHTTPListenerAttributeRequest struct {
 	HealthCheckTimeout     requests.Integer `position:"Query" name:"HealthCheckTimeout"`
 	XForwardedFor          string           `position:"Query" name:"XForwardedFor"`
 	HealthCheckURI         string           `position:"Query" name:"HealthCheckURI"`
-	Description            string           `position:"Query" name:"Description"`
 	UnhealthyThreshold     requests.Integer `position:"Query" name:"UnhealthyThreshold"`
 	HealthyThreshold       requests.Integer `position:"Query" name:"HealthyThreshold"`
 	AclStatus              string           `position:"Query" name:"AclStatus"`
@@ -89,6 +88,7 @@ type SetLoadBalancerHTTPListenerAttributeRequest struct {
 	AclType                string           `position:"Query" name:"AclType"`
 	HealthCheck            string           `position:"Query" name:"HealthCheck"`
 	MaxConnection          requests.Integer `position:"Query" name:"MaxConnection"`
+	EnableHttp2            string           `position:"Query" name:"EnableHttp2"`
 	CookieTimeout          requests.Integer `position:"Query" name:"CookieTimeout"`
 	StickySessionType      string           `position:"Query" name:"StickySessionType"`
 	VpcIds                 string           `position:"Query" name:"VpcIds"`
@@ -99,6 +99,7 @@ type SetLoadBalancerHTTPListenerAttributeRequest struct {
 	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	Bandwidth              requests.Integer `position:"Query" name:"Bandwidth"`
 	StickySession          string           `position:"Query" name:"StickySession"`
+	HealthCheckMethod      string           `position:"Query" name:"HealthCheckMethod"`
 	HealthCheckDomain      string           `position:"Query" name:"HealthCheckDomain"`
 	RequestTimeout         requests.Integer `position:"Query" name:"RequestTimeout"`
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`

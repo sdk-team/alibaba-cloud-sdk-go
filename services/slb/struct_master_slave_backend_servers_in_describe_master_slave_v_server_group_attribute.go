@@ -17,5 +17,5 @@ package slb
 
 // MasterSlaveBackendServersInDescribeMasterSlaveVServerGroupAttribute is a nested struct in slb response
 type MasterSlaveBackendServersInDescribeMasterSlaveVServerGroupAttribute struct {
-	MasterSlaveBackendServer []MasterSlaveBackendServer `json:"MasterSlaveBackendServer" xml:"MasterSlaveBackendServer"`
+	BackendServer []BackendServer `json:"BackendServer" xml:"BackendServer"`
 }

@@ -17,6 +17,6 @@ package slb
 
 // Listener is a nested struct in slb response
 type Listener struct {
-	Port     int    `json:"Port" xml:"Port"`
-	Protocol string `json:"Protocol" xml:"Protocol"`
+	LoadBalancerId string `json:"LoadBalancerId" xml:"LoadBalancerId"`
+	ListenerPort   int    `json:"ListenerPort" xml:"ListenerPort"`
 }

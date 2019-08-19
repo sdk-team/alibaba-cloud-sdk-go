@@ -91,6 +91,7 @@ type CreateVServerGroupRequest struct {
 type CreateVServerGroupResponse struct {
 	*responses.BaseResponse
 	RequestId      string                             `json:"RequestId" xml:"RequestId"`
+	LoadBalancerId string                             `json:"LoadBalancerId" xml:"LoadBalancerId"`
 	VServerGroupId string                             `json:"VServerGroupId" xml:"VServerGroupId"`
 	BackendServers BackendServersInCreateVServerGroup `json:"BackendServers" xml:"BackendServers"`
 }

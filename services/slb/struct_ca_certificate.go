@@ -21,10 +21,7 @@ type CACertificate struct {
 	CACertificateId   string `json:"CACertificateId" xml:"CACertificateId"`
 	CACertificateName string `json:"CACertificateName" xml:"CACertificateName"`
 	Fingerprint       string `json:"Fingerprint" xml:"Fingerprint"`
-	ResourceGroupId   string `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	CreateTime        string `json:"CreateTime" xml:"CreateTime"`
-	CreateTimeStamp   int    `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
 	ExpireTime        string `json:"ExpireTime" xml:"ExpireTime"`
-	ExpireTimeStamp   int    `json:"ExpireTimeStamp" xml:"ExpireTimeStamp"`
+	ExpireTimeStamp   int64  `json:"ExpireTimeStamp" xml:"ExpireTimeStamp"`
 	CommonName        string `json:"CommonName" xml:"CommonName"`
 }

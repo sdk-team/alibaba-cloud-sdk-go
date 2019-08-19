@@ -82,7 +82,6 @@ type DeleteVServerGroupRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Tags                 string           `position:"Query" name:"Tags"`
 }
 
 // DeleteVServerGroupResponse is the response struct for api DeleteVServerGroup

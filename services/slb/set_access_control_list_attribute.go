@@ -90,7 +90,6 @@ type SetAccessControlListAttributeRequest struct {
 type SetAccessControlListAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	AclId     string `json:"AclId" xml:"AclId"`
 }
 
 // CreateSetAccessControlListAttributeRequest creates a request to invoke SetAccessControlListAttribute API

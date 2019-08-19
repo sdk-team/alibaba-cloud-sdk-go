@@ -82,7 +82,6 @@ type DescribeRuleAttributeRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	RuleId               string           `position:"Query" name:"RuleId"`
-	Tags                 string           `position:"Query" name:"Tags"`
 }
 
 // DescribeRuleAttributeResponse is the response struct for api DescribeRuleAttribute

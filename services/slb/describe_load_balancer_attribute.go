@@ -77,6 +77,7 @@ func (client *Client) DescribeLoadBalancerAttributeWithCallback(request *Describ
 type DescribeLoadBalancerAttributeRequest struct {
 	*requests.RpcRequest
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	IncludeReservedData  requests.Boolean `position:"Query" name:"IncludeReservedData"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -88,38 +89,51 @@ type DescribeLoadBalancerAttributeRequest struct {
 // DescribeLoadBalancerAttributeResponse is the response struct for api DescribeLoadBalancerAttribute
 type DescribeLoadBalancerAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId                string                                        `json:"RequestId" xml:"RequestId"`
-	LoadBalancerId           string                                        `json:"LoadBalancerId" xml:"LoadBalancerId"`
-	ResourceGroupId          string                                        `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	LoadBalancerName         string                                        `json:"LoadBalancerName" xml:"LoadBalancerName"`
-	LoadBalancerStatus       string                                        `json:"LoadBalancerStatus" xml:"LoadBalancerStatus"`
-	RegionId                 string                                        `json:"RegionId" xml:"RegionId"`
-	RegionIdAlias            string                                        `json:"RegionIdAlias" xml:"RegionIdAlias"`
-	Address                  string                                        `json:"Address" xml:"Address"`
-	AddressType              string                                        `json:"AddressType" xml:"AddressType"`
-	VpcId                    string                                        `json:"VpcId" xml:"VpcId"`
-	VSwitchId                string                                        `json:"VSwitchId" xml:"VSwitchId"`
-	NetworkType              string                                        `json:"NetworkType" xml:"NetworkType"`
-	InternetChargeType       string                                        `json:"InternetChargeType" xml:"InternetChargeType"`
-	AutoReleaseTime          int                                           `json:"AutoReleaseTime" xml:"AutoReleaseTime"`
-	Bandwidth                int                                           `json:"Bandwidth" xml:"Bandwidth"`
-	LoadBalancerSpec         string                                        `json:"LoadBalancerSpec" xml:"LoadBalancerSpec"`
-	CreateTime               string                                        `json:"CreateTime" xml:"CreateTime"`
-	CreateTimeStamp          int                                           `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
-	EndTime                  string                                        `json:"EndTime" xml:"EndTime"`
-	EndTimeStamp             int                                           `json:"EndTimeStamp" xml:"EndTimeStamp"`
-	PayType                  string                                        `json:"PayType" xml:"PayType"`
-	MasterZoneId             string                                        `json:"MasterZoneId" xml:"MasterZoneId"`
-	SlaveZoneId              string                                        `json:"SlaveZoneId" xml:"SlaveZoneId"`
-	AddressIPVersion         string                                        `json:"AddressIPVersion" xml:"AddressIPVersion"`
-	CloudType                string                                        `json:"CloudType" xml:"CloudType"`
-	RenewalDuration          int                                           `json:"RenewalDuration" xml:"RenewalDuration"`
-	RenewalStatus            string                                        `json:"RenewalStatus" xml:"RenewalStatus"`
-	RenewalCycUnit           string                                        `json:"RenewalCycUnit" xml:"RenewalCycUnit"`
-	ListenerPorts            ListenerPorts                                 `json:"ListenerPorts" xml:"ListenerPorts"`
-	ListenerPortsAndProtocal ListenerPortsAndProtocal                      `json:"ListenerPortsAndProtocal" xml:"ListenerPortsAndProtocal"`
-	ListenerPortsAndProtocol ListenerPortsAndProtocol                      `json:"ListenerPortsAndProtocol" xml:"ListenerPortsAndProtocol"`
-	BackendServers           BackendServersInDescribeLoadBalancerAttribute `json:"BackendServers" xml:"BackendServers"`
+	RequestId                      string                                        `json:"RequestId" xml:"RequestId"`
+	LoadBalancerId                 string                                        `json:"LoadBalancerId" xml:"LoadBalancerId"`
+	ResourceGroupId                string                                        `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	LoadBalancerName               string                                        `json:"LoadBalancerName" xml:"LoadBalancerName"`
+	LoadBalancerStatus             string                                        `json:"LoadBalancerStatus" xml:"LoadBalancerStatus"`
+	RegionId                       string                                        `json:"RegionId" xml:"RegionId"`
+	RegionIdAlias                  string                                        `json:"RegionIdAlias" xml:"RegionIdAlias"`
+	Address                        string                                        `json:"Address" xml:"Address"`
+	AddressType                    string                                        `json:"AddressType" xml:"AddressType"`
+	VpcId                          string                                        `json:"VpcId" xml:"VpcId"`
+	VSwitchId                      string                                        `json:"VSwitchId" xml:"VSwitchId"`
+	NetworkType                    string                                        `json:"NetworkType" xml:"NetworkType"`
+	InternetChargeType             string                                        `json:"InternetChargeType" xml:"InternetChargeType"`
+	AutoReleaseTime                int64                                         `json:"AutoReleaseTime" xml:"AutoReleaseTime"`
+	Bandwidth                      int                                           `json:"Bandwidth" xml:"Bandwidth"`
+	LoadBalancerSpec               string                                        `json:"LoadBalancerSpec" xml:"LoadBalancerSpec"`
+	CreateTime                     string                                        `json:"CreateTime" xml:"CreateTime"`
+	CreateTimeStamp                int64                                         `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
+	EndTime                        string                                        `json:"EndTime" xml:"EndTime"`
+	AddressIPVersion               string                                        `json:"AddressIPVersion" xml:"AddressIPVersion"`
+	EndTimeStamp                   int64                                         `json:"EndTimeStamp" xml:"EndTimeStamp"`
+	PayType                        string                                        `json:"PayType" xml:"PayType"`
+	MasterZoneId                   string                                        `json:"MasterZoneId" xml:"MasterZoneId"`
+	SlaveZoneId                    string                                        `json:"SlaveZoneId" xml:"SlaveZoneId"`
+	CloudType                      string                                        `json:"CloudType" xml:"CloudType"`
+	RenewalDuration                int                                           `json:"RenewalDuration" xml:"RenewalDuration"`
+	RenewalStatus                  string                                        `json:"RenewalStatus" xml:"RenewalStatus"`
+	RenewalCycUnit                 string                                        `json:"RenewalCycUnit" xml:"RenewalCycUnit"`
+	HasReservedInfo                string                                        `json:"HasReservedInfo" xml:"HasReservedInfo"`
+	ReservedInfoOrderType          string                                        `json:"ReservedInfoOrderType" xml:"ReservedInfoOrderType"`
+	ReservedInfoInternetChargeType string                                        `json:"ReservedInfoInternetChargeType" xml:"ReservedInfoInternetChargeType"`
+	ReservedInfoBandwidth          string                                        `json:"ReservedInfoBandwidth" xml:"ReservedInfoBandwidth"`
+	ReservedInfoActiveTime         string                                        `json:"ReservedInfoActiveTime" xml:"ReservedInfoActiveTime"`
+	Ratio                          int                                           `json:"Ratio" xml:"Ratio"`
+	DeleteProtection               string                                        `json:"DeleteProtection" xml:"DeleteProtection"`
+	AssociatedCenId                string                                        `json:"AssociatedCenId" xml:"AssociatedCenId"`
+	AssociatedCenStatus            string                                        `json:"AssociatedCenStatus" xml:"AssociatedCenStatus"`
+	CloudInstanceType              string                                        `json:"CloudInstanceType" xml:"CloudInstanceType"`
+	CloudInstanceId                string                                        `json:"CloudInstanceId" xml:"CloudInstanceId"`
+	TunnelType                     string                                        `json:"TunnelType" xml:"TunnelType"`
+	CloudInstanceUid               int64                                         `json:"CloudInstanceUid" xml:"CloudInstanceUid"`
+	ListenerPorts                  ListenerPorts                                 `json:"ListenerPorts" xml:"ListenerPorts"`
+	ListenerPortsAndProtocal       ListenerPortsAndProtocal                      `json:"ListenerPortsAndProtocal" xml:"ListenerPortsAndProtocal"`
+	ListenerPortsAndProtocol       ListenerPortsAndProtocol                      `json:"ListenerPortsAndProtocol" xml:"ListenerPortsAndProtocol"`
+	BackendServers                 BackendServersInDescribeLoadBalancerAttribute `json:"BackendServers" xml:"BackendServers"`
 }
 
 // CreateDescribeLoadBalancerAttributeRequest creates a request to invoke DescribeLoadBalancerAttribute API

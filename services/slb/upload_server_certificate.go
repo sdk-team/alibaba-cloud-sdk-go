@@ -86,7 +86,6 @@ type UploadServerCertificateRequest struct {
 	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
 	Tags                    string           `position:"Query" name:"Tags"`
 	PrivateKey              string           `position:"Query" name:"PrivateKey"`
-	ResourceGroupId         string           `position:"Query" name:"ResourceGroupId"`
 	ServerCertificateName   string           `position:"Query" name:"ServerCertificateName"`
 }
 
@@ -102,11 +101,8 @@ type UploadServerCertificateResponse struct {
 	AliCloudCertificateId   string                                           `json:"AliCloudCertificateId" xml:"AliCloudCertificateId"`
 	AliCloudCertificateName string                                           `json:"AliCloudCertificateName" xml:"AliCloudCertificateName"`
 	IsAliCloudCertificate   int                                              `json:"IsAliCloudCertificate" xml:"IsAliCloudCertificate"`
-	ResourceGroupId         string                                           `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	CreateTime              string                                           `json:"CreateTime" xml:"CreateTime"`
-	CreateTimeStamp         int                                              `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
 	ExpireTime              string                                           `json:"ExpireTime" xml:"ExpireTime"`
-	ExpireTimeStamp         int                                              `json:"ExpireTimeStamp" xml:"ExpireTimeStamp"`
+	ExpireTimeStamp         int64                                            `json:"ExpireTimeStamp" xml:"ExpireTimeStamp"`
 	CommonName              string                                           `json:"CommonName" xml:"CommonName"`
 	SubjectAlternativeNames SubjectAlternativeNamesInUploadServerCertificate `json:"SubjectAlternativeNames" xml:"SubjectAlternativeNames"`
 }

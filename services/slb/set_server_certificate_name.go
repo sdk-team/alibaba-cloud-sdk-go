@@ -83,7 +83,6 @@ type SetServerCertificateNameRequest struct {
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 	ServerCertificateId   string           `position:"Query" name:"ServerCertificateId"`
 	ServerCertificateName string           `position:"Query" name:"ServerCertificateName"`
-	Tags                  string           `position:"Query" name:"Tags"`
 }
 
 // SetServerCertificateNameResponse is the response struct for api SetServerCertificateName

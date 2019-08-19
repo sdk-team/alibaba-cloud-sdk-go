@@ -81,18 +81,17 @@ type DescribeAccessControlListsRequest struct {
 	AclName              string           `position:"Query" name:"AclName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	AddressIPVersion     string           `position:"Query" name:"AddressIPVersion"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	Tags                 string           `position:"Query" name:"Tags"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // DescribeAccessControlListsResponse is the response struct for api DescribeAccessControlLists
 type DescribeAccessControlListsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Acls      Acls   `json:"Acls" xml:"Acls"`
+	RequestId string                           `json:"RequestId" xml:"RequestId"`
+	Acls      AclsInDescribeAccessControlLists `json:"Acls" xml:"Acls"`
 }
 
 // CreateDescribeAccessControlListsRequest creates a request to invoke DescribeAccessControlLists API

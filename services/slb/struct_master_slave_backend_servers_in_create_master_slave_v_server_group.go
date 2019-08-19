@@ -17,5 +17,5 @@ package slb
 
 // MasterSlaveBackendServersInCreateMasterSlaveVServerGroup is a nested struct in slb response
 type MasterSlaveBackendServersInCreateMasterSlaveVServerGroup struct {
-	MasterSlaveBackendServer []MasterSlaveBackendServer `json:"MasterSlaveBackendServer" xml:"MasterSlaveBackendServer"`
+	BackendServer []BackendServer `json:"BackendServer" xml:"BackendServer"`
 }

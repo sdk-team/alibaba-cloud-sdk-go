@@ -116,15 +116,6 @@ type DescribeLoadBalancerHTTPListenerAttributeResponse struct {
 	XForwardedForSLBIP     string                                           `json:"XForwardedFor_SLBIP" xml:"XForwardedFor_SLBIP"`
 	XForwardedForSLBID     string                                           `json:"XForwardedFor_SLBID" xml:"XForwardedFor_SLBID"`
 	XForwardedForProto     string                                           `json:"XForwardedFor_proto" xml:"XForwardedFor_proto"`
-	AclId                  string                                           `json:"AclId" xml:"AclId"`
-	AclType                string                                           `json:"AclType" xml:"AclType"`
-	AclStatus              string                                           `json:"AclStatus" xml:"AclStatus"`
-	VpcIds                 string                                           `json:"VpcIds" xml:"VpcIds"`
-	ListenerForward        string                                           `json:"ListenerForward" xml:"ListenerForward"`
-	ForwardPort            int                                              `json:"ForwardPort" xml:"ForwardPort"`
-	RequestTimeout         int                                              `json:"RequestTimeout" xml:"RequestTimeout"`
-	IdleTimeout            int                                              `json:"IdleTimeout" xml:"IdleTimeout"`
-	Description            string                                           `json:"Description" xml:"Description"`
 	Rules                  RulesInDescribeLoadBalancerHTTPListenerAttribute `json:"Rules" xml:"Rules"`
 }
 

@@ -83,7 +83,6 @@ type SetBackendServersRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	BackendServers       string           `position:"Query" name:"BackendServers"`
-	Tags                 string           `position:"Query" name:"Tags"`
 }
 
 // SetBackendServersResponse is the response struct for api SetBackendServers

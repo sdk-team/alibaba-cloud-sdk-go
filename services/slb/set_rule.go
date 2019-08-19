@@ -95,7 +95,6 @@ type SetRuleRequest struct {
 	HealthCheckDomain      string           `position:"Query" name:"HealthCheckDomain"`
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
-	Tags                   string           `position:"Query" name:"Tags"`
 	HealthCheckInterval    requests.Integer `position:"Query" name:"HealthCheckInterval"`
 	RuleId                 string           `position:"Query" name:"RuleId"`
 	HealthCheckConnectPort requests.Integer `position:"Query" name:"HealthCheckConnectPort"`

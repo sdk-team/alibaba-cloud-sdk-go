@@ -89,12 +89,11 @@ type DescribeAccessControlListAttributeRequest struct {
 // DescribeAccessControlListAttributeResponse is the response struct for api DescribeAccessControlListAttribute
 type DescribeAccessControlListAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	AclId            string           `json:"AclId" xml:"AclId"`
-	AclName          string           `json:"AclName" xml:"AclName"`
-	AddressIPVersion string           `json:"AddressIPVersion" xml:"AddressIPVersion"`
-	AclEntrys        AclEntrys        `json:"AclEntrys" xml:"AclEntrys"`
-	RelatedListeners RelatedListeners `json:"RelatedListeners" xml:"RelatedListeners"`
+	RequestId        string                                               `json:"RequestId" xml:"RequestId"`
+	AclId            string                                               `json:"AclId" xml:"AclId"`
+	AclName          string                                               `json:"AclName" xml:"AclName"`
+	AclEntrys        AclEntrysInDescribeAccessControlListAttribute        `json:"AclEntrys" xml:"AclEntrys"`
+	RelatedListeners RelatedListenersInDescribeAccessControlListAttribute `json:"RelatedListeners" xml:"RelatedListeners"`
 }
 
 // CreateDescribeAccessControlListAttributeRequest creates a request to invoke DescribeAccessControlListAttribute API

@@ -77,7 +77,6 @@ func (client *Client) UploadCACertificateWithCallback(request *UploadCACertifica
 type UploadCACertificateRequest struct {
 	*requests.RpcRequest
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	CACertificate        string           `position:"Query" name:"CACertificate"`
 	CACertificateName    string           `position:"Query" name:"CACertificateName"`
@@ -93,11 +92,8 @@ type UploadCACertificateResponse struct {
 	CACertificateId   string `json:"CACertificateId" xml:"CACertificateId"`
 	CACertificateName string `json:"CACertificateName" xml:"CACertificateName"`
 	Fingerprint       string `json:"Fingerprint" xml:"Fingerprint"`
-	ResourceGroupId   string `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	CreateTime        string `json:"CreateTime" xml:"CreateTime"`
-	CreateTimeStamp   int    `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
 	ExpireTime        string `json:"ExpireTime" xml:"ExpireTime"`
-	ExpireTimeStamp   int    `json:"ExpireTimeStamp" xml:"ExpireTimeStamp"`
+	ExpireTimeStamp   int64  `json:"ExpireTimeStamp" xml:"ExpireTimeStamp"`
 	CommonName        string `json:"CommonName" xml:"CommonName"`
 }
 

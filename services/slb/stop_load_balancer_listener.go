@@ -83,7 +83,6 @@ type StopLoadBalancerListenerRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Tags                 string           `position:"Query" name:"Tags"`
 }
 
 // StopLoadBalancerListenerResponse is the response struct for api StopLoadBalancerListener

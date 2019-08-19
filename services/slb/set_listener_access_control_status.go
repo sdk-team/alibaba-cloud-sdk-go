@@ -84,7 +84,6 @@ type SetListenerAccessControlStatusRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	AccessControlStatus  string           `position:"Query" name:"AccessControlStatus"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Tags                 string           `position:"Query" name:"Tags"`
 }
 
 // SetListenerAccessControlStatusResponse is the response struct for api SetListenerAccessControlStatus

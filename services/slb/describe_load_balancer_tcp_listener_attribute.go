@@ -115,7 +115,6 @@ type DescribeLoadBalancerTCPListenerAttributeResponse struct {
 	AclType                   string `json:"AclType" xml:"AclType"`
 	AclStatus                 string `json:"AclStatus" xml:"AclStatus"`
 	VpcIds                    string `json:"VpcIds" xml:"VpcIds"`
-	Description               string `json:"Description" xml:"Description"`
 }
 
 // CreateDescribeLoadBalancerTCPListenerAttributeRequest creates a request to invoke DescribeLoadBalancerTCPListenerAttribute API

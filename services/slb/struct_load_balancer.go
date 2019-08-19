@@ -17,26 +17,29 @@ package slb
 
 // LoadBalancer is a nested struct in slb response
 type LoadBalancer struct {
-	Count                    int                                                       `json:"Count" xml:"Count"`
-	SlaveZoneId              string                                                    `json:"SlaveZoneId" xml:"SlaveZoneId"`
-	LoadBalancerStatus       string                                                    `json:"LoadBalancerStatus" xml:"LoadBalancerStatus"`
-	VSwitchId                string                                                    `json:"VSwitchId" xml:"VSwitchId"`
-	MasterZoneId             string                                                    `json:"MasterZoneId" xml:"MasterZoneId"`
-	PayType                  string                                                    `json:"PayType" xml:"PayType"`
-	RegionIdAlias            string                                                    `json:"RegionIdAlias" xml:"RegionIdAlias"`
-	CreateTime               string                                                    `json:"CreateTime" xml:"CreateTime"`
-	Address                  string                                                    `json:"Address" xml:"Address"`
-	LoadBalancerId           string                                                    `json:"LoadBalancerId" xml:"LoadBalancerId"`
-	AddressIPVersion         string                                                    `json:"AddressIPVersion" xml:"AddressIPVersion"`
-	CreateTimeStamp          int                                                       `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
-	RegionId                 string                                                    `json:"RegionId" xml:"RegionId"`
-	ResourceGroupId          string                                                    `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	LoadBalancerName         string                                                    `json:"LoadBalancerName" xml:"LoadBalancerName"`
-	InternetChargeType       string                                                    `json:"InternetChargeType" xml:"InternetChargeType"`
-	AddressType              string                                                    `json:"AddressType" xml:"AddressType"`
-	VpcId                    string                                                    `json:"VpcId" xml:"VpcId"`
-	NetworkType              string                                                    `json:"NetworkType" xml:"NetworkType"`
-	BackendServers           BackendServersInDescribeLoadBalancersRelatedEcs           `json:"BackendServers" xml:"BackendServers"`
-	VServerGroups            VServerGroupsInDescribeLoadBalancersRelatedEcs            `json:"VServerGroups" xml:"VServerGroups"`
-	MasterSlaveVServerGroups MasterSlaveVServerGroupsInDescribeLoadBalancersRelatedEcs `json:"MasterSlaveVServerGroups" xml:"MasterSlaveVServerGroups"`
+	EndTimeStamp       int64  `json:"EndTimeStamp" xml:"EndTimeStamp"`
+	SlaveZoneId        string `json:"SlaveZoneId" xml:"SlaveZoneId"`
+	LoadBalancerStatus string `json:"LoadBalancerStatus" xml:"LoadBalancerStatus"`
+	MasterZoneId       string `json:"MasterZoneId" xml:"MasterZoneId"`
+	CreateTime         string `json:"CreateTime" xml:"CreateTime"`
+	AddressIPVersion   string `json:"AddressIPVersion" xml:"AddressIPVersion"`
+	Bandwidth          int    `json:"Bandwidth" xml:"Bandwidth"`
+	RegionId           string `json:"RegionId" xml:"RegionId"`
+	ResourceGroupId    string `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	LoadBalancerName   string `json:"LoadBalancerName" xml:"LoadBalancerName"`
+	RenewalCycUnit     string `json:"RenewalCycUnit" xml:"RenewalCycUnit"`
+	AddressType        string `json:"AddressType" xml:"AddressType"`
+	VpcId              string `json:"VpcId" xml:"VpcId"`
+	NetworkType        string `json:"NetworkType" xml:"NetworkType"`
+	DeleteProtection   string `json:"DeleteProtection" xml:"DeleteProtection"`
+	RenewalStatus      string `json:"RenewalStatus" xml:"RenewalStatus"`
+	VSwitchId          string `json:"VSwitchId" xml:"VSwitchId"`
+	PayType            string `json:"PayType" xml:"PayType"`
+	RegionIdAlias      string `json:"RegionIdAlias" xml:"RegionIdAlias"`
+	Address            string `json:"Address" xml:"Address"`
+	LoadBalancerId     string `json:"LoadBalancerId" xml:"LoadBalancerId"`
+	RenewalDuration    int    `json:"RenewalDuration" xml:"RenewalDuration"`
+	CreateTimeStamp    int64  `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
+	InternetChargeType string `json:"InternetChargeType" xml:"InternetChargeType"`
+	Tags               Tags   `json:"Tags" xml:"Tags"`
 }

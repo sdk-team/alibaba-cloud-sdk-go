@@ -81,7 +81,6 @@ type CreateLoadBalancerHTTPSListenerRequest struct {
 	HealthCheckTimeout     requests.Integer `position:"Query" name:"HealthCheckTimeout"`
 	XForwardedFor          string           `position:"Query" name:"XForwardedFor"`
 	HealthCheckURI         string           `position:"Query" name:"HealthCheckURI"`
-	Description            string           `position:"Query" name:"Description"`
 	UnhealthyThreshold     requests.Integer `position:"Query" name:"UnhealthyThreshold"`
 	HealthyThreshold       requests.Integer `position:"Query" name:"HealthyThreshold"`
 	AclStatus              string           `position:"Query" name:"AclStatus"`
@@ -100,11 +99,12 @@ type CreateLoadBalancerHTTPSListenerRequest struct {
 	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	Bandwidth              requests.Integer `position:"Query" name:"Bandwidth"`
 	StickySession          string           `position:"Query" name:"StickySession"`
+	HealthCheckMethod      string           `position:"Query" name:"HealthCheckMethod"`
 	HealthCheckDomain      string           `position:"Query" name:"HealthCheckDomain"`
 	RequestTimeout         requests.Integer `position:"Query" name:"RequestTimeout"`
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
-	Gzip                   string           `position:"Query" name:"Gzip"`
 	TLSCipherPolicy        string           `position:"Query" name:"TLSCipherPolicy"`
+	Gzip                   string           `position:"Query" name:"Gzip"`
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 	ServerCertificateId    string           `position:"Query" name:"ServerCertificateId"`
 	CACertificateId        string           `position:"Query" name:"CACertificateId"`

@@ -83,7 +83,6 @@ type AddVServerGroupBackendServersRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	BackendServers       string           `position:"Query" name:"BackendServers"`
-	Tags                 string           `position:"Query" name:"Tags"`
 }
 
 // AddVServerGroupBackendServersResponse is the response struct for api AddVServerGroupBackendServers

@@ -23,7 +23,5 @@ type MasterSlaveBackendServer struct {
 	ServerType string `json:"ServerType" xml:"ServerType"`
 	VpcId      string `json:"VpcId" xml:"VpcId"`
 	Weight     int    `json:"Weight" xml:"Weight"`
-	EniHost    string `json:"EniHost" xml:"EniHost"`
-	IsBackup   int    `json:"IsBackup" xml:"IsBackup"`
 	Type       string `json:"Type" xml:"Type"`
 }

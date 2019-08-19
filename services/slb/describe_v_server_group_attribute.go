@@ -82,7 +82,6 @@ type DescribeVServerGroupAttributeRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Tags                 string           `position:"Query" name:"Tags"`
 }
 
 // DescribeVServerGroupAttributeResponse is the response struct for api DescribeVServerGroupAttribute

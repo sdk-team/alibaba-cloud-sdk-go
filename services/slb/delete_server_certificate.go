@@ -82,7 +82,6 @@ type DeleteServerCertificateRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ServerCertificateId  string           `position:"Query" name:"ServerCertificateId"`
-	Tags                 string           `position:"Query" name:"Tags"`
 }
 
 // DeleteServerCertificateResponse is the response struct for api DeleteServerCertificate

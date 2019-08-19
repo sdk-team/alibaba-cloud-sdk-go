@@ -83,6 +83,7 @@ type SetLoadBalancerStatusRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	LoadBalancerStatus   string           `position:"Query" name:"LoadBalancerStatus"`
+	DeleteProtection     string           `position:"Query" name:"DeleteProtection"`
 	Tags                 string           `position:"Query" name:"Tags"`
 }
 
