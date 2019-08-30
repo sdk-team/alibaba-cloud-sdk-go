@@ -77,18 +77,18 @@ func (client *Client) ModifyPrepayInstanceSpecWithCallback(request *ModifyPrepay
 type ModifyPrepayInstanceSpecRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	OperatorType         string           `position:"Query" name:"OperatorType"`
-	SystemDiskCategory   string           `position:"Query" name:"SystemDisk.Category"`
-	RebootTime           string           `position:"Query" name:"RebootTime"`
-	MigrateAcrossZone    requests.Boolean `position:"Query" name:"MigrateAcrossZone"`
-	InstanceType         string           `position:"Query" name:"InstanceType"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	EndTime              string           `position:"Query" name:"EndTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	OperatorType         string           `position:"Query" name:"OperatorType"`
+	SystemDiskCategory   string           `position:"Query" name:"SystemDisk.Category"`
+	RebootTime           string           `position:"Query" name:"RebootTime"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	MigrateAcrossZone    requests.Boolean `position:"Query" name:"MigrateAcrossZone"`
+	InstanceType         string           `position:"Query" name:"InstanceType"`
 }
 
 // ModifyPrepayInstanceSpecResponse is the response struct for api ModifyPrepayInstanceSpec
@@ -103,7 +103,7 @@ func CreateModifyPrepayInstanceSpecRequest() (request *ModifyPrepayInstanceSpecR
 	request = &ModifyPrepayInstanceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyPrepayInstanceSpec", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyPrepayInstanceSpec", "", "")
 	return
 }
 

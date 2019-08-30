@@ -17,6 +17,7 @@ package ecs
 
 // Rule is a nested struct in ecs response
 type Rule struct {
-	RuleId      int64  `json:"RuleId" xml:"RuleId"`
-	Description string `json:"Description" xml:"Description"`
+	Name   string `json:"Name" xml:"Name"`
+	Title  string `json:"Title" xml:"Title"`
+	RuleId int64  `json:"RuleId" xml:"RuleId"`
 }

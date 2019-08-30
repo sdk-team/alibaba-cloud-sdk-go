@@ -76,27 +76,40 @@ func (client *Client) PurchaseReservedInstancesOfferingWithCallback(request *Pur
 // PurchaseReservedInstancesOfferingRequest is the request struct for api PurchaseReservedInstancesOffering
 type PurchaseReservedInstancesOfferingRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	Description          string           `position:"Query" name:"Description"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	Scope                string           `position:"Query" name:"Scope"`
-	InstanceType         string           `position:"Query" name:"InstanceType"`
-	Period               requests.Integer `position:"Query" name:"Period"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PeriodUnit           string           `position:"Query" name:"PeriodUnit"`
-	OfferingType         string           `position:"Query" name:"OfferingType"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
-	ReservedInstanceName string           `position:"Query" name:"ReservedInstanceName"`
-	InstanceAmount       requests.Integer `position:"Query" name:"InstanceAmount"`
+	ResourceOwnerId      requests.Integer                        `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string                                  `position:"Query" name:"ClientToken"`
+	Description          string                                  `position:"Query" name:"Description"`
+	Platform             string                                  `position:"Query" name:"Platform"`
+	ResourceGroupId      string                                  `position:"Query" name:"ResourceGroupId"`
+	Scope                string                                  `position:"Query" name:"Scope"`
+	InstanceType         string                                  `position:"Query" name:"InstanceType"`
+	Tag                  *[]PurchaseReservedInstancesOfferingTag `position:"Query" name:"Tag"  type:"Repeated"`
+	BusinessInfo         string                                  `position:"Query" name:"BusinessInfo"`
+	Period               requests.Integer                        `position:"Query" name:"Period"`
+	AutoPay              requests.Boolean                        `position:"Query" name:"AutoPay"`
+	FromApp              string                                  `position:"Query" name:"FromApp"`
+	ResourceOwnerAccount string                                  `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                                  `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer                        `position:"Query" name:"OwnerId"`
+	PeriodUnit           string                                  `position:"Query" name:"PeriodUnit"`
+	OfferingType         string                                  `position:"Query" name:"OfferingType"`
+	ZoneId               string                                  `position:"Query" name:"ZoneId"`
+	ReservedInstanceName string                                  `position:"Query" name:"ReservedInstanceName"`
+	ChargeType           string                                  `position:"Query" name:"ChargeType"`
+	InstanceAmount       requests.Integer                        `position:"Query" name:"InstanceAmount"`
+}
+
+// PurchaseReservedInstancesOfferingTag is a repeated param struct in PurchaseReservedInstancesOfferingRequest
+type PurchaseReservedInstancesOfferingTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // PurchaseReservedInstancesOfferingResponse is the response struct for api PurchaseReservedInstancesOffering
 type PurchaseReservedInstancesOfferingResponse struct {
 	*responses.BaseResponse
 	RequestId              string                                                    `json:"RequestId" xml:"RequestId"`
+	OrderId                string                                                    `json:"OrderId" xml:"OrderId"`
 	ReservedInstanceIdSets ReservedInstanceIdSetsInPurchaseReservedInstancesOffering `json:"ReservedInstanceIdSets" xml:"ReservedInstanceIdSets"`
 }
 
@@ -105,7 +118,7 @@ func CreatePurchaseReservedInstancesOfferingRequest() (request *PurchaseReserved
 	request = &PurchaseReservedInstancesOfferingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "PurchaseReservedInstancesOffering", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2016-03-14", "PurchaseReservedInstancesOffering", "", "")
 	return
 }
 

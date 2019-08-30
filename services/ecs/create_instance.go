@@ -85,6 +85,7 @@ type CreateInstanceRequest struct {
 	ResourceGroupId               string                    `position:"Query" name:"ResourceGroupId"`
 	HostName                      string                    `position:"Query" name:"HostName"`
 	Password                      string                    `position:"Query" name:"Password"`
+	StorageSetPartitionNumber     requests.Integer          `position:"Query" name:"StorageSetPartitionNumber"`
 	Tag                           *[]CreateInstanceTag      `position:"Query" name:"Tag"  type:"Repeated"`
 	AutoRenewPeriod               requests.Integer          `position:"Query" name:"AutoRenewPeriod"`
 	NodeControllerId              string                    `position:"Query" name:"NodeControllerId"`
@@ -113,6 +114,7 @@ type CreateInstanceRequest struct {
 	Description                   string                    `position:"Query" name:"Description"`
 	SystemDiskCategory            string                    `position:"Query" name:"SystemDisk.Category"`
 	CapacityReservationId         string                    `position:"Query" name:"CapacityReservationId"`
+	SystemDiskPerformanceLevel    string                    `position:"Query" name:"SystemDisk.PerformanceLevel"`
 	UserData                      string                    `position:"Query" name:"UserData"`
 	PasswordInherit               requests.Boolean          `position:"Query" name:"PasswordInherit"`
 	InstanceType                  string                    `position:"Query" name:"InstanceType"`
@@ -128,7 +130,9 @@ type CreateInstanceRequest struct {
 	DedicatedHostId               string                    `position:"Query" name:"DedicatedHostId"`
 	ClusterId                     string                    `position:"Query" name:"ClusterId"`
 	CreditSpecification           string                    `position:"Query" name:"CreditSpecification"`
+	SpotDuration                  requests.Integer          `position:"Query" name:"SpotDuration"`
 	DataDisk                      *[]CreateInstanceDataDisk `position:"Query" name:"DataDisk"  type:"Repeated"`
+	StorageSetId                  string                    `position:"Query" name:"StorageSetId"`
 	SystemDiskSize                requests.Integer          `position:"Query" name:"SystemDisk.Size"`
 	SystemDiskDescription         string                    `position:"Query" name:"SystemDisk.Description"`
 }
@@ -152,6 +156,7 @@ type CreateInstanceDataDisk struct {
 	SnapshotId         string `name:"SnapshotId"`
 	Size               string `name:"Size"`
 	Encrypted          string `name:"Encrypted"`
+	PerformanceLevel   string `name:"PerformanceLevel"`
 	Description        string `name:"Description"`
 	Category           string `name:"Category"`
 	KMSKeyId           string `name:"KMSKeyId"`
@@ -172,7 +177,7 @@ func CreateCreateInstanceRequest() (request *CreateInstanceRequest) {
 	request = &CreateInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateInstance", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateInstance", "", "")
 	return
 }
 

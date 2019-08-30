@@ -77,13 +77,13 @@ func (client *Client) DescribeInstanceAutoRenewAttributeWithCallback(request *De
 type DescribeInstanceAutoRenewAttributeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageNumber           string           `position:"Query" name:"PageNumber"`
-	RenewalStatus        string           `position:"Query" name:"RenewalStatus"`
-	PageSize             string           `position:"Query" name:"PageSize"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	RenewalStatus        string           `position:"Query" name:"RenewalStatus"`
+	PageSize             string           `position:"Query" name:"PageSize"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
+	PageNumber           string           `position:"Query" name:"PageNumber"`
 }
 
 // DescribeInstanceAutoRenewAttributeResponse is the response struct for api DescribeInstanceAutoRenewAttribute
@@ -101,7 +101,7 @@ func CreateDescribeInstanceAutoRenewAttributeRequest() (request *DescribeInstanc
 	request = &DescribeInstanceAutoRenewAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceAutoRenewAttribute", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceAutoRenewAttribute", "", "")
 	return
 }
 

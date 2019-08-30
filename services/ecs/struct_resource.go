@@ -17,7 +17,13 @@ package ecs
 
 // Resource is a nested struct in ecs response
 type Resource struct {
-	ResourceId   string `json:"ResourceId" xml:"ResourceId"`
-	ResourceType string `json:"ResourceType" xml:"ResourceType"`
-	RegionId     string `json:"RegionId" xml:"RegionId"`
+	Product           string `json:"Product" xml:"Product"`
+	ResourceType      string `json:"ResourceType" xml:"ResourceType"`
+	ResourceId        string `json:"ResourceId" xml:"ResourceId"`
+	ResourceName      string `json:"ResourceName" xml:"ResourceName"`
+	CreateTime        string `json:"CreateTime" xml:"CreateTime"`
+	UpdateTime        string `json:"UpdateTime" xml:"UpdateTime"`
+	RegionId          string `json:"RegionId" xml:"RegionId"`
+	MatchedAttributes string `json:"MatchedAttributes" xml:"MatchedAttributes"`
+	Arn               string `json:"Arn" xml:"Arn"`
 }

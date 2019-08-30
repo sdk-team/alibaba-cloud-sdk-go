@@ -108,7 +108,7 @@ func CreateDescribeResourceRecommendFiltersRequest() (request *DescribeResourceR
 	request = &DescribeResourceRecommendFiltersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeResourceRecommendFilters", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeResourceRecommendFilters", "", "")
 	return
 }
 

@@ -77,8 +77,8 @@ func (client *Client) DescribeBandwidthPriceWithCallback(request *DescribeBandwi
 type DescribeBandwidthPriceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PriceUnit            string           `position:"Query" name:"PriceUnit"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PriceUnit            string           `position:"Query" name:"PriceUnit"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Verbose              requests.Boolean `position:"Query" name:"Verbose"`
@@ -96,7 +96,7 @@ func CreateDescribeBandwidthPriceRequest() (request *DescribeBandwidthPriceReque
 	request = &DescribeBandwidthPriceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeBandwidthPrice", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeBandwidthPrice", "", "")
 	return
 }
 

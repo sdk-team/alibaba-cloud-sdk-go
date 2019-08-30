@@ -76,12 +76,12 @@ func (client *Client) DescribeRouterInterfacesWithCallback(request *DescribeRout
 // DescribeRouterInterfacesRequest is the request struct for api DescribeRouterInterfaces
 type DescribeRouterInterfacesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer                  `position:"Query" name:"ResourceOwnerId"`
-	PageNumber           requests.Integer                  `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer                  `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string                            `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer                  `position:"Query" name:"OwnerId"`
 	Filter               *[]DescribeRouterInterfacesFilter `position:"Query" name:"Filter"  type:"Repeated"`
+	ResourceOwnerId      requests.Integer                  `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string                            `position:"Query" name:"ResourceOwnerAccount"`
+	PageSize             requests.Integer                  `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer                  `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer                  `position:"Query" name:"PageNumber"`
 }
 
 // DescribeRouterInterfacesFilter is a repeated param struct in DescribeRouterInterfacesRequest
@@ -105,7 +105,7 @@ func CreateDescribeRouterInterfacesRequest() (request *DescribeRouterInterfacesR
 	request = &DescribeRouterInterfacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeRouterInterfaces", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeRouterInterfaces", "", "")
 	return
 }
 

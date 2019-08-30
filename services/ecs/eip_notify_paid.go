@@ -78,10 +78,10 @@ type EipNotifyPaidRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Data                 string           `position:"Query" name:"data"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	UserCidr             string           `position:"Query" name:"UserCidr"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	UserCidr             string           `position:"Query" name:"UserCidr"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
@@ -100,7 +100,7 @@ func CreateEipNotifyPaidRequest() (request *EipNotifyPaidRequest) {
 	request = &EipNotifyPaidRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "EipNotifyPaid", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "EipNotifyPaid", "", "")
 	return
 }
 

@@ -77,10 +77,10 @@ func (client *Client) ReActivateInstancesWithCallback(request *ReActivateInstanc
 type ReActivateInstancesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // ReActivateInstancesResponse is the response struct for api ReActivateInstances
@@ -94,7 +94,7 @@ func CreateReActivateInstancesRequest() (request *ReActivateInstancesRequest) {
 	request = &ReActivateInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ReActivateInstances", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ReActivateInstances", "", "")
 	return
 }
 

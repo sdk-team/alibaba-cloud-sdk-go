@@ -77,13 +77,14 @@ func (client *Client) CreateSnapshotWithCallback(request *CreateSnapshotRequest,
 type CreateSnapshotRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer     `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string               `position:"Query" name:"ClientToken"`
-	Description          string               `position:"Query" name:"Description"`
-	SnapshotName         string               `position:"Query" name:"SnapshotName"`
-	DiskId               string               `position:"Query" name:"DiskId"`
-	Tag                  *[]CreateSnapshotTag `position:"Query" name:"Tag"  type:"Repeated"`
 	ResourceOwnerAccount string               `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string               `position:"Query" name:"ClientToken"`
 	OwnerAccount         string               `position:"Query" name:"OwnerAccount"`
+	Description          string               `position:"Query" name:"Description"`
+	DiskId               string               `position:"Query" name:"DiskId"`
+	SnapshotName         string               `position:"Query" name:"SnapshotName"`
+	RetentionDays        requests.Integer     `position:"Query" name:"RetentionDays"`
+	Tag                  *[]CreateSnapshotTag `position:"Query" name:"Tag"  type:"Repeated"`
 	OwnerId              requests.Integer     `position:"Query" name:"OwnerId"`
 }
 
@@ -105,7 +106,7 @@ func CreateCreateSnapshotRequest() (request *CreateSnapshotRequest) {
 	request = &CreateSnapshotRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateSnapshot", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateSnapshot", "", "")
 	return
 }
 

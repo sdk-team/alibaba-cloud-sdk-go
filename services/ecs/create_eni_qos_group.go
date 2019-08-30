@@ -99,7 +99,7 @@ func CreateCreateEniQosGroupRequest() (request *CreateEniQosGroupRequest) {
 	request = &CreateEniQosGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2016-03-14", "CreateEniQosGroup", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2016-03-14", "CreateEniQosGroup", "", "")
 	return
 }
 

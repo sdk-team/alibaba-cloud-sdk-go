@@ -94,7 +94,7 @@ func CreateJoinEniQosGroupRequest() (request *JoinEniQosGroupRequest) {
 	request = &JoinEniQosGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2016-03-14", "JoinEniQosGroup", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2016-03-14", "JoinEniQosGroup", "", "")
 	return
 }
 

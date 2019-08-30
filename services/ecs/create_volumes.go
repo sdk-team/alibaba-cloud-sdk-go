@@ -76,21 +76,23 @@ func (client *Client) CreateVolumesWithCallback(request *CreateVolumesRequest, c
 // CreateVolumesRequest is the request struct for api CreateVolumes
 type CreateVolumesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer    `position:"Query" name:"ResourceOwnerId"`
-	SnapshotId           string              `position:"Query" name:"SnapshotId"`
-	ClientToken          string              `position:"Query" name:"ClientToken"`
-	Description          string              `position:"Query" name:"Description"`
-	VolumeCategory       string              `position:"Query" name:"VolumeCategory"`
-	Tag                  *[]CreateVolumesTag `position:"Query" name:"Tag"  type:"Repeated"`
-	Amount               requests.Integer    `position:"Query" name:"Amount"`
-	VolumeName           string              `position:"Query" name:"VolumeName"`
-	VolumeEncrypted      requests.Boolean    `position:"Query" name:"VolumeEncrypted"`
-	ResourceOwnerAccount string              `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string              `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer    `position:"Query" name:"OwnerId"`
-	Size                 requests.Integer    `position:"Query" name:"Size"`
-	ZoneId               string              `position:"Query" name:"ZoneId"`
-	KMSKeyId             string              `position:"Query" name:"KMSKeyId"`
+	ResourceOwnerId           requests.Integer    `position:"Query" name:"ResourceOwnerId"`
+	Amount                    requests.Integer    `position:"Query" name:"Amount"`
+	SnapshotId                string              `position:"Query" name:"SnapshotId"`
+	VolumeName                string              `position:"Query" name:"VolumeName"`
+	VolumeEncrypted           requests.Boolean    `position:"Query" name:"VolumeEncrypted"`
+	ResourceOwnerAccount      string              `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken               string              `position:"Query" name:"ClientToken"`
+	OwnerAccount              string              `position:"Query" name:"OwnerAccount"`
+	Description               string              `position:"Query" name:"Description"`
+	OwnerId                   requests.Integer    `position:"Query" name:"OwnerId"`
+	VolumeCategory            string              `position:"Query" name:"VolumeCategory"`
+	StorageSetId              string              `position:"Query" name:"StorageSetId"`
+	Size                      requests.Integer    `position:"Query" name:"Size"`
+	ZoneId                    string              `position:"Query" name:"ZoneId"`
+	StorageSetPartitionNumber requests.Integer    `position:"Query" name:"StorageSetPartitionNumber"`
+	Tag                       *[]CreateVolumesTag `position:"Query" name:"Tag"  type:"Repeated"`
+	KMSKeyId                  string              `position:"Query" name:"KMSKeyId"`
 }
 
 // CreateVolumesTag is a repeated param struct in CreateVolumesRequest
@@ -111,7 +113,7 @@ func CreateCreateVolumesRequest() (request *CreateVolumesRequest) {
 	request = &CreateVolumesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2016-03-14", "CreateVolumes", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2016-03-14", "CreateVolumes", "", "")
 	return
 }
 

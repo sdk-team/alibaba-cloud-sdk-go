@@ -78,6 +78,7 @@ type ModifyReservedInstancesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer                        `position:"Query" name:"ResourceOwnerId"`
 	Configuration        *[]ModifyReservedInstancesConfiguration `position:"Query" name:"Configuration"  type:"Repeated"`
+	Tag                  *[]ModifyReservedInstancesTag           `position:"Query" name:"Tag"  type:"Repeated"`
 	ResourceOwnerAccount string                                  `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string                                  `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer                        `position:"Query" name:"OwnerId"`
@@ -93,10 +94,17 @@ type ModifyReservedInstancesConfiguration struct {
 	InstanceAmount       string `name:"InstanceAmount"`
 }
 
+// ModifyReservedInstancesTag is a repeated param struct in ModifyReservedInstancesRequest
+type ModifyReservedInstancesTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
+}
+
 // ModifyReservedInstancesResponse is the response struct for api ModifyReservedInstances
 type ModifyReservedInstancesResponse struct {
 	*responses.BaseResponse
 	RequestId              string                                          `json:"RequestId" xml:"RequestId"`
+	OrderId                string                                          `json:"OrderId" xml:"OrderId"`
 	ReservedInstanceIdSets ReservedInstanceIdSetsInModifyReservedInstances `json:"ReservedInstanceIdSets" xml:"ReservedInstanceIdSets"`
 }
 
@@ -105,7 +113,7 @@ func CreateModifyReservedInstancesRequest() (request *ModifyReservedInstancesReq
 	request = &ModifyReservedInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyReservedInstances", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2016-03-14", "ModifyReservedInstances", "", "")
 	return
 }
 

@@ -77,10 +77,10 @@ func (client *Client) ModifyDedicatedHostAutoReleaseTimeWithCallback(request *Mo
 type ModifyDedicatedHostAutoReleaseTimeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	AutoReleaseTime      string           `position:"Query" name:"AutoReleaseTime"`
-	DedicatedHostId      string           `position:"Query" name:"DedicatedHostId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
@@ -95,7 +95,7 @@ func CreateModifyDedicatedHostAutoReleaseTimeRequest() (request *ModifyDedicated
 	request = &ModifyDedicatedHostAutoReleaseTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDedicatedHostAutoReleaseTime", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2016-03-14", "ModifyDedicatedHostAutoReleaseTime", "", "")
 	return
 }
 

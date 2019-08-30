@@ -104,7 +104,7 @@ func CreateDescribeReservedInstancePriceRequest() (request *DescribeReservedInst
 	request = &DescribeReservedInstancePriceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeReservedInstancePrice", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeReservedInstancePrice", "", "")
 	return
 }
 

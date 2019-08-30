@@ -77,12 +77,12 @@ func (client *Client) DeleteInstanceWithCallback(request *DeleteInstanceRequest,
 type DeleteInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	TerminateSubscription requests.Boolean `position:"Query" name:"TerminateSubscription"`
+	InstanceId            string           `position:"Query" name:"InstanceId"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceId            string           `position:"Query" name:"InstanceId"`
+	TerminateSubscription requests.Boolean `position:"Query" name:"TerminateSubscription"`
 	Force                 requests.Boolean `position:"Query" name:"Force"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DeleteInstanceResponse is the response struct for api DeleteInstance
@@ -96,7 +96,7 @@ func CreateDeleteInstanceRequest() (request *DeleteInstanceRequest) {
 	request = &DeleteInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteInstance", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteInstance", "", "")
 	return
 }
 

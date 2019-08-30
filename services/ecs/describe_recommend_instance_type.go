@@ -77,16 +77,24 @@ func (client *Client) DescribeRecommendInstanceTypeWithCallback(request *Describ
 type DescribeRecommendInstanceTypeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Channel              string           `position:"Query" name:"channel"`
-	NetworkType          string           `position:"Query" name:"NetworkType"`
-	Operator             string           `position:"Query" name:"operator"`
-	Scene                string           `position:"Query" name:"Scene"`
-	InstanceType         string           `position:"Query" name:"InstanceType"`
-	ProxyId              string           `position:"Query" name:"proxyId"`
+	Memory               requests.Float   `position:"Query" name:"Memory"`
+	MaxPrice             requests.Float   `position:"Query" name:"MaxPrice"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	IoOptimized          string           `position:"Query" name:"IoOptimized"`
+	InstancePps          requests.Integer `position:"Query" name:"InstancePps"`
+	InstanceTypeFamily   *[]string        `position:"Query" name:"InstanceTypeFamily"  type:"Repeated"`
+	NetworkType          string           `position:"Query" name:"NetworkType"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Token                string           `position:"Query" name:"token"`
+	Scene                string           `position:"Query" name:"Scene"`
+	SpotStrategy         string           `position:"Query" name:"SpotStrategy"`
+	PriorityStrategy     string           `position:"Query" name:"PriorityStrategy"`
+	Cores                requests.Integer `position:"Query" name:"Cores"`
+	SystemDiskCategory   string           `position:"Query" name:"SystemDiskCategory"`
+	InstanceType         string           `position:"Query" name:"InstanceType"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
+	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
+	InstanceBandwidth    requests.Integer `position:"Query" name:"InstanceBandwidth"`
 }
 
 // DescribeRecommendInstanceTypeResponse is the response struct for api DescribeRecommendInstanceType
@@ -101,7 +109,7 @@ func CreateDescribeRecommendInstanceTypeRequest() (request *DescribeRecommendIns
 	request = &DescribeRecommendInstanceTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeRecommendInstanceType", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeRecommendInstanceType", "", "")
 	return
 }
 

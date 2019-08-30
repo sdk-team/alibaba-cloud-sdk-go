@@ -77,16 +77,16 @@ func (client *Client) CreateSecurityGroupWithCallback(request *CreateSecurityGro
 type CreateSecurityGroupRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer          `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string                    `position:"Query" name:"ClientToken"`
-	Description          string                    `position:"Query" name:"Description"`
-	SecurityGroupName    string                    `position:"Query" name:"SecurityGroupName"`
-	ResourceGroupId      string                    `position:"Query" name:"ResourceGroupId"`
-	Tag                  *[]CreateSecurityGroupTag `position:"Query" name:"Tag"  type:"Repeated"`
 	ResourceOwnerAccount string                    `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string                    `position:"Query" name:"ClientToken"`
 	OwnerAccount         string                    `position:"Query" name:"OwnerAccount"`
+	Description          string                    `position:"Query" name:"Description"`
 	OwnerId              requests.Integer          `position:"Query" name:"OwnerId"`
+	SecurityGroupName    string                    `position:"Query" name:"SecurityGroupName"`
 	SecurityGroupType    string                    `position:"Query" name:"SecurityGroupType"`
+	ResourceGroupId      string                    `position:"Query" name:"ResourceGroupId"`
 	VpcId                string                    `position:"Query" name:"VpcId"`
+	Tag                  *[]CreateSecurityGroupTag `position:"Query" name:"Tag"  type:"Repeated"`
 }
 
 // CreateSecurityGroupTag is a repeated param struct in CreateSecurityGroupRequest
@@ -107,7 +107,7 @@ func CreateCreateSecurityGroupRequest() (request *CreateSecurityGroupRequest) {
 	request = &CreateSecurityGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateSecurityGroup", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateSecurityGroup", "", "")
 	return
 }
 

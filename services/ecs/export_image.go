@@ -78,12 +78,12 @@ type ExportImageRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ImageId              string           `position:"Query" name:"ImageId"`
-	ImageFormat          string           `position:"Query" name:"ImageFormat"`
 	OSSBucket            string           `position:"Query" name:"OSSBucket"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OSSPrefix            string           `position:"Query" name:"OSSPrefix"`
 	RoleName             string           `position:"Query" name:"RoleName"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	OSSPrefix            string           `position:"Query" name:"OSSPrefix"`
+	ImageFormat          string           `position:"Query" name:"ImageFormat"`
 }
 
 // ExportImageResponse is the response struct for api ExportImage
@@ -99,7 +99,7 @@ func CreateExportImageRequest() (request *ExportImageRequest) {
 	request = &ExportImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ExportImage", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ExportImage", "", "")
 	return
 }
 

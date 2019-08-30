@@ -76,15 +76,15 @@ func (client *Client) ModifyInstanceAutoRenewAttributeWithCallback(request *Modi
 // ModifyInstanceAutoRenewAttributeRequest is the request struct for api ModifyInstanceAutoRenewAttribute
 type ModifyInstanceAutoRenewAttributeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Duration             requests.Integer `position:"Query" name:"Duration"`
-	RenewalStatus        string           `position:"Query" name:"RenewalStatus"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	PeriodUnit           string           `position:"Query" name:"PeriodUnit"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 	AutoRenew            requests.Boolean `position:"Query" name:"AutoRenew"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	RenewalStatus        string           `position:"Query" name:"RenewalStatus"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ModifyInstanceAutoRenewAttributeResponse is the response struct for api ModifyInstanceAutoRenewAttribute
@@ -98,7 +98,7 @@ func CreateModifyInstanceAutoRenewAttributeRequest() (request *ModifyInstanceAut
 	request = &ModifyInstanceAutoRenewAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceAutoRenewAttribute", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceAutoRenewAttribute", "", "")
 	return
 }
 

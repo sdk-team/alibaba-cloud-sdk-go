@@ -77,12 +77,12 @@ func (client *Client) DescribeInstanceRamRoleWithCallback(request *DescribeInsta
 type DescribeInstanceRamRoleRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	InstanceIds          string           `position:"Query" name:"InstanceIds"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	RamRoleName          string           `position:"Query" name:"RamRoleName"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceIds          string           `position:"Query" name:"InstanceIds"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeInstanceRamRoleResponse is the response struct for api DescribeInstanceRamRole
@@ -99,7 +99,7 @@ func CreateDescribeInstanceRamRoleRequest() (request *DescribeInstanceRamRoleReq
 	request = &DescribeInstanceRamRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceRamRole", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceRamRole", "", "")
 	return
 }
 

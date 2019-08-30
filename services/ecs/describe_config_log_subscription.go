@@ -101,7 +101,7 @@ func CreateDescribeConfigLogSubscriptionRequest() (request *DescribeConfigLogSub
 	request = &DescribeConfigLogSubscriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeConfigLogSubscription", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeConfigLogSubscription", "", "")
 	return
 }
 

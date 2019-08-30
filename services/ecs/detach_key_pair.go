@@ -77,10 +77,10 @@ func (client *Client) DetachKeyPairWithCallback(request *DetachKeyPairRequest, c
 type DetachKeyPairRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	KeyPairName          string           `position:"Query" name:"KeyPairName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceIds          string           `position:"Query" name:"InstanceIds"`
+	KeyPairName          string           `position:"Query" name:"KeyPairName"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DetachKeyPairResponse is the response struct for api DetachKeyPair
@@ -98,7 +98,7 @@ func CreateDetachKeyPairRequest() (request *DetachKeyPairRequest) {
 	request = &DetachKeyPairRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DetachKeyPair", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DetachKeyPair", "", "")
 	return
 }
 

@@ -76,18 +76,19 @@ func (client *Client) DescribeDedicatedHostAutoRenewWithCallback(request *Descri
 // DescribeDedicatedHostAutoRenewRequest is the request struct for api DescribeDedicatedHostAutoRenew
 type DescribeDedicatedHostAutoRenewRequest struct {
 	*requests.RpcRequest
-	DedicatedHostIds     string           `position:"Query" name:"DedicatedHostIds"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	InstanceIds          string           `position:"Query" name:"InstanceIds"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceType         string           `position:"Query" name:"ResourceType"`
 }
 
 // DescribeDedicatedHostAutoRenewResponse is the response struct for api DescribeDedicatedHostAutoRenew
 type DescribeDedicatedHostAutoRenewResponse struct {
 	*responses.BaseResponse
-	RequestId                    string                       `json:"RequestId" xml:"RequestId"`
-	DedicatedHostRenewAttributes DedicatedHostRenewAttributes `json:"DedicatedHostRenewAttributes" xml:"DedicatedHostRenewAttributes"`
+	RequestId               string                  `json:"RequestId" xml:"RequestId"`
+	InstanceRenewAttributes InstanceRenewAttributes `json:"InstanceRenewAttributes" xml:"InstanceRenewAttributes"`
 }
 
 // CreateDescribeDedicatedHostAutoRenewRequest creates a request to invoke DescribeDedicatedHostAutoRenew API
@@ -95,7 +96,7 @@ func CreateDescribeDedicatedHostAutoRenewRequest() (request *DescribeDedicatedHo
 	request = &DescribeDedicatedHostAutoRenewRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDedicatedHostAutoRenew", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeDedicatedHostAutoRenew", "", "")
 	return
 }
 

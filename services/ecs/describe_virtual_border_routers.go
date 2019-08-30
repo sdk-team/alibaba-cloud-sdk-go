@@ -76,12 +76,12 @@ func (client *Client) DescribeVirtualBorderRoutersWithCallback(request *Describe
 // DescribeVirtualBorderRoutersRequest is the request struct for api DescribeVirtualBorderRouters
 type DescribeVirtualBorderRoutersRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer                      `position:"Query" name:"ResourceOwnerId"`
-	PageNumber           requests.Integer                      `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer                      `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string                                `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer                      `position:"Query" name:"OwnerId"`
 	Filter               *[]DescribeVirtualBorderRoutersFilter `position:"Query" name:"Filter"  type:"Repeated"`
+	ResourceOwnerId      requests.Integer                      `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string                                `position:"Query" name:"ResourceOwnerAccount"`
+	PageSize             requests.Integer                      `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer                      `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer                      `position:"Query" name:"PageNumber"`
 }
 
 // DescribeVirtualBorderRoutersFilter is a repeated param struct in DescribeVirtualBorderRoutersRequest
@@ -105,7 +105,7 @@ func CreateDescribeVirtualBorderRoutersRequest() (request *DescribeVirtualBorder
 	request = &DescribeVirtualBorderRoutersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeVirtualBorderRouters", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeVirtualBorderRouters", "", "")
 	return
 }
 

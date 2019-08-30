@@ -79,7 +79,9 @@ type RenewDedicatedHostsRequest struct {
 	DedicatedHostIds     string           `position:"Query" name:"DedicatedHostIds"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
 	Period               requests.Integer `position:"Query" name:"Period"`
+	FromApp              string           `position:"Query" name:"FromApp"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -89,7 +91,9 @@ type RenewDedicatedHostsRequest struct {
 // RenewDedicatedHostsResponse is the response struct for api RenewDedicatedHosts
 type RenewDedicatedHostsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId           string                                   `json:"RequestId" xml:"RequestId"`
+	OrderId             string                                   `json:"OrderId" xml:"OrderId"`
+	DedicatedHostIdSets DedicatedHostIdSetsInRenewDedicatedHosts `json:"DedicatedHostIdSets" xml:"DedicatedHostIdSets"`
 }
 
 // CreateRenewDedicatedHostsRequest creates a request to invoke RenewDedicatedHosts API
@@ -97,7 +101,7 @@ func CreateRenewDedicatedHostsRequest() (request *RenewDedicatedHostsRequest) {
 	request = &RenewDedicatedHostsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "RenewDedicatedHosts", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2016-03-14", "RenewDedicatedHosts", "", "")
 	return
 }
 

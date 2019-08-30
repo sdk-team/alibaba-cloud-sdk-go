@@ -94,7 +94,7 @@ func CreateQueryEniQosGroupByEniRequest() (request *QueryEniQosGroupByEniRequest
 	request = &QueryEniQosGroupByEniRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2016-03-14", "QueryEniQosGroupByEni", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2016-03-14", "QueryEniQosGroupByEni", "", "")
 	return
 }
 

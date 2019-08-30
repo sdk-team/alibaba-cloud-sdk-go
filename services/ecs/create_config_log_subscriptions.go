@@ -101,7 +101,7 @@ func CreateCreateConfigLogSubscriptionsRequest() (request *CreateConfigLogSubscr
 	request = &CreateConfigLogSubscriptionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2016-03-14", "CreateConfigLogSubscriptions", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2016-03-14", "CreateConfigLogSubscriptions", "", "")
 	return
 }
 

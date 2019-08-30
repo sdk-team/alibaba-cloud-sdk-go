@@ -76,15 +76,15 @@ func (client *Client) DescribeKeyPairsWithCallback(request *DescribeKeyPairsRequ
 // DescribeKeyPairsRequest is the request struct for api DescribeKeyPairs
 type DescribeKeyPairsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer       `position:"Query" name:"ResourceOwnerId"`
-	KeyPairFingerPrint   string                 `position:"Query" name:"KeyPairFingerPrint"`
-	KeyPairName          string                 `position:"Query" name:"KeyPairName"`
-	PageNumber           requests.Integer       `position:"Query" name:"PageNumber"`
 	ResourceGroupId      string                 `position:"Query" name:"ResourceGroupId"`
-	PageSize             requests.Integer       `position:"Query" name:"PageSize"`
-	Tag                  *[]DescribeKeyPairsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ResourceOwnerId      requests.Integer       `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string                 `position:"Query" name:"ResourceOwnerAccount"`
+	KeyPairFingerPrint   string                 `position:"Query" name:"KeyPairFingerPrint"`
+	PageSize             requests.Integer       `position:"Query" name:"PageSize"`
+	KeyPairName          string                 `position:"Query" name:"KeyPairName"`
+	Tag                  *[]DescribeKeyPairsTag `position:"Query" name:"Tag"  type:"Repeated"`
 	OwnerId              requests.Integer       `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer       `position:"Query" name:"PageNumber"`
 }
 
 // DescribeKeyPairsTag is a repeated param struct in DescribeKeyPairsRequest
@@ -108,7 +108,7 @@ func CreateDescribeKeyPairsRequest() (request *DescribeKeyPairsRequest) {
 	request = &DescribeKeyPairsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeKeyPairs", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeKeyPairs", "", "")
 	return
 }
 

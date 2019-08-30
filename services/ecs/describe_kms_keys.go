@@ -104,7 +104,7 @@ func CreateDescribeKMSKeysRequest() (request *DescribeKMSKeysRequest) {
 	request = &DescribeKMSKeysRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeKMSKeys", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeKMSKeys", "", "")
 	return
 }
 

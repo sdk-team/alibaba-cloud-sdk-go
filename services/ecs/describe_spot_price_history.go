@@ -87,6 +87,7 @@ type DescribeSpotPriceHistoryRequest struct {
 	EndTime              string           `position:"Query" name:"EndTime"`
 	OSType               string           `position:"Query" name:"OSType"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SpotDuration         requests.Integer `position:"Query" name:"SpotDuration"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
 }
 
@@ -104,7 +105,7 @@ func CreateDescribeSpotPriceHistoryRequest() (request *DescribeSpotPriceHistoryR
 	request = &DescribeSpotPriceHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSpotPriceHistory", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSpotPriceHistory", "", "")
 	return
 }
 

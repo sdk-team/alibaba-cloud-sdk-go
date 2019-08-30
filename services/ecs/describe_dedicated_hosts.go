@@ -78,17 +78,17 @@ type DescribeDedicatedHostsRequest struct {
 	*requests.RpcRequest
 	DedicatedHostIds     string                       `position:"Query" name:"DedicatedHostIds"`
 	ResourceOwnerId      requests.Integer             `position:"Query" name:"ResourceOwnerId"`
-	PageNumber           requests.Integer             `position:"Query" name:"PageNumber"`
-	ResourceGroupId      string                       `position:"Query" name:"ResourceGroupId"`
-	LockReason           string                       `position:"Query" name:"LockReason"`
-	PageSize             requests.Integer             `position:"Query" name:"PageSize"`
-	DedicatedHostType    string                       `position:"Query" name:"DedicatedHostType"`
-	Tag                  *[]DescribeDedicatedHostsTag `position:"Query" name:"Tag"  type:"Repeated"`
 	DedicatedHostName    string                       `position:"Query" name:"DedicatedHostName"`
 	ResourceOwnerAccount string                       `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string                       `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer             `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer             `position:"Query" name:"PageNumber"`
+	ResourceGroupId      string                       `position:"Query" name:"ResourceGroupId"`
+	LockReason           string                       `position:"Query" name:"LockReason"`
+	PageSize             requests.Integer             `position:"Query" name:"PageSize"`
 	ZoneId               string                       `position:"Query" name:"ZoneId"`
+	DedicatedHostType    string                       `position:"Query" name:"DedicatedHostType"`
+	Tag                  *[]DescribeDedicatedHostsTag `position:"Query" name:"Tag"  type:"Repeated"`
 	Status               string                       `position:"Query" name:"Status"`
 }
 
@@ -113,7 +113,7 @@ func CreateDescribeDedicatedHostsRequest() (request *DescribeDedicatedHostsReque
 	request = &DescribeDedicatedHostsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDedicatedHosts", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeDedicatedHosts", "", "")
 	return
 }
 

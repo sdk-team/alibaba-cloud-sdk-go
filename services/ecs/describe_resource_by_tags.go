@@ -77,12 +77,12 @@ func (client *Client) DescribeResourceByTagsWithCallback(request *DescribeResour
 type DescribeResourceByTagsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer             `position:"Query" name:"ResourceOwnerId"`
-	PageNumber           requests.Integer             `position:"Query" name:"PageNumber"`
+	ResourceOwnerAccount string                       `position:"Query" name:"ResourceOwnerAccount"`
 	PageSize             requests.Integer             `position:"Query" name:"PageSize"`
 	Tag                  *[]DescribeResourceByTagsTag `position:"Query" name:"Tag"  type:"Repeated"`
-	ResourceOwnerAccount string                       `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer             `position:"Query" name:"OwnerId"`
 	ResourceType         string                       `position:"Query" name:"ResourceType"`
+	PageNumber           requests.Integer             `position:"Query" name:"PageNumber"`
 }
 
 // DescribeResourceByTagsTag is a repeated param struct in DescribeResourceByTagsRequest
@@ -106,7 +106,7 @@ func CreateDescribeResourceByTagsRequest() (request *DescribeResourceByTagsReque
 	request = &DescribeResourceByTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeResourceByTags", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeResourceByTags", "", "")
 	return
 }
 

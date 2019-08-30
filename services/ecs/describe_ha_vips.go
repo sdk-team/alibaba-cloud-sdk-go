@@ -76,13 +76,13 @@ func (client *Client) DescribeHaVipsWithCallback(request *DescribeHaVipsRequest,
 // DescribeHaVipsRequest is the request struct for api DescribeHaVips
 type DescribeHaVipsRequest struct {
 	*requests.RpcRequest
+	Filter               *[]DescribeHaVipsFilter `position:"Query" name:"Filter"  type:"Repeated"`
 	ResourceOwnerId      requests.Integer        `position:"Query" name:"ResourceOwnerId"`
-	PageNumber           requests.Integer        `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer        `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string                  `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string                  `position:"Query" name:"OwnerAccount"`
+	PageSize             requests.Integer        `position:"Query" name:"PageSize"`
 	OwnerId              requests.Integer        `position:"Query" name:"OwnerId"`
-	Filter               *[]DescribeHaVipsFilter `position:"Query" name:"Filter"  type:"Repeated"`
+	PageNumber           requests.Integer        `position:"Query" name:"PageNumber"`
 }
 
 // DescribeHaVipsFilter is a repeated param struct in DescribeHaVipsRequest
@@ -106,7 +106,7 @@ func CreateDescribeHaVipsRequest() (request *DescribeHaVipsRequest) {
 	request = &DescribeHaVipsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeHaVips", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeHaVips", "", "")
 	return
 }
 

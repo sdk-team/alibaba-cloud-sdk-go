@@ -96,7 +96,7 @@ func CreateExportSnapshotRequest() (request *ExportSnapshotRequest) {
 	request = &ExportSnapshotRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ExportSnapshot", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ExportSnapshot", "", "")
 	return
 }
 

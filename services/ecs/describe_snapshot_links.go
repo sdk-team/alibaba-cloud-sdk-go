@@ -77,14 +77,14 @@ func (client *Client) DescribeSnapshotLinksWithCallback(request *DescribeSnapsho
 type DescribeSnapshotLinksRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	DiskIds              string           `position:"Query" name:"DiskIds"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	DiskIds              string           `position:"Query" name:"DiskIds"`
 	SnapshotLinkIds      string           `position:"Query" name:"SnapshotLinkIds"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeSnapshotLinksResponse is the response struct for api DescribeSnapshotLinks
@@ -102,7 +102,7 @@ func CreateDescribeSnapshotLinksRequest() (request *DescribeSnapshotLinksRequest
 	request = &DescribeSnapshotLinksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSnapshotLinks", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSnapshotLinks", "", "")
 	return
 }
 

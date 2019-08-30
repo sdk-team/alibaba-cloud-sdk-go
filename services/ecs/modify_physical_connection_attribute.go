@@ -76,21 +76,21 @@ func (client *Client) ModifyPhysicalConnectionAttributeWithCallback(request *Mod
 // ModifyPhysicalConnectionAttributeRequest is the request struct for api ModifyPhysicalConnectionAttribute
 type ModifyPhysicalConnectionAttributeRequest struct {
 	*requests.RpcRequest
+	RedundantPhysicalConnectionId string           `position:"Query" name:"RedundantPhysicalConnectionId"`
+	PeerLocation                  string           `position:"Query" name:"PeerLocation"`
 	ResourceOwnerId               requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	PortType                      string           `position:"Query" name:"PortType"`
 	CircuitCode                   string           `position:"Query" name:"CircuitCode"`
-	ClientToken                   string           `position:"Query" name:"ClientToken"`
-	Description                   string           `position:"Query" name:"Description"`
-	UserCidr                      string           `position:"Query" name:"UserCidr"`
-	RedundantPhysicalConnectionId string           `position:"Query" name:"RedundantPhysicalConnectionId"`
-	PeerLocation                  string           `position:"Query" name:"PeerLocation"`
 	Bandwidth                     requests.Integer `position:"Query" name:"bandwidth"`
+	ClientToken                   string           `position:"Query" name:"ClientToken"`
 	ResourceOwnerAccount          string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                  string           `position:"Query" name:"OwnerAccount"`
+	Description                   string           `position:"Query" name:"Description"`
 	OwnerId                       requests.Integer `position:"Query" name:"OwnerId"`
 	LineOperator                  string           `position:"Query" name:"LineOperator"`
 	PhysicalConnectionId          string           `position:"Query" name:"PhysicalConnectionId"`
 	Name                          string           `position:"Query" name:"Name"`
+	UserCidr                      string           `position:"Query" name:"UserCidr"`
 }
 
 // ModifyPhysicalConnectionAttributeResponse is the response struct for api ModifyPhysicalConnectionAttribute
@@ -104,7 +104,7 @@ func CreateModifyPhysicalConnectionAttributeRequest() (request *ModifyPhysicalCo
 	request = &ModifyPhysicalConnectionAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyPhysicalConnectionAttribute", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyPhysicalConnectionAttribute", "", "")
 	return
 }
 

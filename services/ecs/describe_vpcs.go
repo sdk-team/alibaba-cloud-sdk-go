@@ -77,13 +77,13 @@ func (client *Client) DescribeVpcsWithCallback(request *DescribeVpcsRequest, cal
 type DescribeVpcsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	VpcId                string           `position:"Query" name:"VpcId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	IsDefault            requests.Boolean `position:"Query" name:"IsDefault"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	VpcId                string           `position:"Query" name:"VpcId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeVpcsResponse is the response struct for api DescribeVpcs
@@ -101,7 +101,7 @@ func CreateDescribeVpcsRequest() (request *DescribeVpcsRequest) {
 	request = &DescribeVpcsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeVpcs", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeVpcs", "", "")
 	return
 }
 

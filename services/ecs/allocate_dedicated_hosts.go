@@ -83,10 +83,12 @@ type AllocateDedicatedHostsRequest struct {
 	ActionOnMaintenance            string                       `position:"Query" name:"ActionOnMaintenance"`
 	Tag                            *[]AllocateDedicatedHostsTag `position:"Query" name:"Tag"  type:"Repeated"`
 	DedicatedHostType              string                       `position:"Query" name:"DedicatedHostType"`
+	BusinessInfo                   string                       `position:"Query" name:"BusinessInfo"`
 	AutoRenewPeriod                requests.Integer             `position:"Query" name:"AutoRenewPeriod"`
 	Period                         requests.Integer             `position:"Query" name:"Period"`
 	Quantity                       requests.Integer             `position:"Query" name:"Quantity"`
 	DedicatedHostName              string                       `position:"Query" name:"DedicatedHostName"`
+	FromApp                        string                       `position:"Query" name:"FromApp"`
 	ResourceOwnerAccount           string                       `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                   string                       `position:"Query" name:"OwnerAccount"`
 	AutoReleaseTime                string                       `position:"Query" name:"AutoReleaseTime"`
@@ -109,8 +111,9 @@ type AllocateDedicatedHostsTag struct {
 // AllocateDedicatedHostsResponse is the response struct for api AllocateDedicatedHosts
 type AllocateDedicatedHostsResponse struct {
 	*responses.BaseResponse
-	RequestId           string              `json:"RequestId" xml:"RequestId"`
-	DedicatedHostIdSets DedicatedHostIdSets `json:"DedicatedHostIdSets" xml:"DedicatedHostIdSets"`
+	RequestId           string                                      `json:"RequestId" xml:"RequestId"`
+	OrderId             string                                      `json:"OrderId" xml:"OrderId"`
+	DedicatedHostIdSets DedicatedHostIdSetsInAllocateDedicatedHosts `json:"DedicatedHostIdSets" xml:"DedicatedHostIdSets"`
 }
 
 // CreateAllocateDedicatedHostsRequest creates a request to invoke AllocateDedicatedHosts API
@@ -118,7 +121,7 @@ func CreateAllocateDedicatedHostsRequest() (request *AllocateDedicatedHostsReque
 	request = &AllocateDedicatedHostsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "AllocateDedicatedHosts", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2016-03-14", "AllocateDedicatedHosts", "", "")
 	return
 }
 

@@ -76,15 +76,15 @@ func (client *Client) ModifyVpcAttributeWithCallback(request *ModifyVpcAttribute
 // ModifyVpcAttributeRequest is the request struct for api ModifyVpcAttribute
 type ModifyVpcAttributeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Description          string           `position:"Query" name:"Description"`
 	VpcName              string           `position:"Query" name:"VpcName"`
-	UserCidr             string           `position:"Query" name:"UserCidr"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	VpcId                string           `position:"Query" name:"VpcId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	CidrBlock            string           `position:"Query" name:"CidrBlock"`
+	Description          string           `position:"Query" name:"Description"`
+	UserCidr             string           `position:"Query" name:"UserCidr"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ModifyVpcAttributeResponse is the response struct for api ModifyVpcAttribute
@@ -98,7 +98,7 @@ func CreateModifyVpcAttributeRequest() (request *ModifyVpcAttributeRequest) {
 	request = &ModifyVpcAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyVpcAttribute", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyVpcAttribute", "", "")
 	return
 }
 

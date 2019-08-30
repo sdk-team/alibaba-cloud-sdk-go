@@ -76,22 +76,26 @@ func (client *Client) CreateDisksWithCallback(request *CreateDisksRequest, callb
 // CreateDisksRequest is the request struct for api CreateDisks
 type CreateDisksRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer  `position:"Query" name:"ResourceOwnerId"`
-	SnapshotId           string            `position:"Query" name:"SnapshotId"`
-	ClientToken          string            `position:"Query" name:"ClientToken"`
-	Description          string            `position:"Query" name:"Description"`
-	DiskName             string            `position:"Query" name:"DiskName"`
-	ResourceGroupId      string            `position:"Query" name:"ResourceGroupId"`
-	Tag                  *[]CreateDisksTag `position:"Query" name:"Tag"  type:"Repeated"`
-	Amount               requests.Integer  `position:"Query" name:"Amount"`
-	ResourceOwnerAccount string            `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string            `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer  `position:"Query" name:"OwnerId"`
-	Size                 requests.Integer  `position:"Query" name:"Size"`
-	Encrypted            requests.Boolean  `position:"Query" name:"Encrypted"`
-	ZoneId               string            `position:"Query" name:"ZoneId"`
-	Category             string            `position:"Query" name:"Category"`
-	KMSKeyId             string            `position:"Query" name:"KMSKeyId"`
+	ResourceOwnerId           requests.Integer  `position:"Query" name:"ResourceOwnerId"`
+	Amount                    requests.Integer  `position:"Query" name:"Amount"`
+	SnapshotId                string            `position:"Query" name:"SnapshotId"`
+	ResourceOwnerAccount      string            `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken               string            `position:"Query" name:"ClientToken"`
+	PerformanceLevel          string            `position:"Query" name:"PerformanceLevel"`
+	AutoSnapshotPolicyId      string            `position:"Query" name:"AutoSnapshotPolicyId"`
+	OwnerAccount              string            `position:"Query" name:"OwnerAccount"`
+	Description               string            `position:"Query" name:"Description"`
+	OwnerId                   requests.Integer  `position:"Query" name:"OwnerId"`
+	DiskName                  string            `position:"Query" name:"DiskName"`
+	ResourceGroupId           string            `position:"Query" name:"ResourceGroupId"`
+	StorageSetId              string            `position:"Query" name:"StorageSetId"`
+	Size                      requests.Integer  `position:"Query" name:"Size"`
+	Encrypted                 requests.Boolean  `position:"Query" name:"Encrypted"`
+	ZoneId                    string            `position:"Query" name:"ZoneId"`
+	StorageSetPartitionNumber requests.Integer  `position:"Query" name:"StorageSetPartitionNumber"`
+	Tag                       *[]CreateDisksTag `position:"Query" name:"Tag"  type:"Repeated"`
+	Category                  string            `position:"Query" name:"Category"`
+	KMSKeyId                  string            `position:"Query" name:"KMSKeyId"`
 }
 
 // CreateDisksTag is a repeated param struct in CreateDisksRequest
@@ -112,7 +116,7 @@ func CreateCreateDisksRequest() (request *CreateDisksRequest) {
 	request = &CreateDisksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2016-03-14", "CreateDisks", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2016-03-14", "CreateDisks", "", "")
 	return
 }
 

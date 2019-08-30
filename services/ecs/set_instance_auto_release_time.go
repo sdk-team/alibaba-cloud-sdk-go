@@ -77,11 +77,11 @@ func (client *Client) SetInstanceAutoReleaseTimeWithCallback(request *SetInstanc
 type SetInstanceAutoReleaseTimeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	AutoReleaseTime      string           `position:"Query" name:"AutoReleaseTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // SetInstanceAutoReleaseTimeResponse is the response struct for api SetInstanceAutoReleaseTime
@@ -95,7 +95,7 @@ func CreateSetInstanceAutoReleaseTimeRequest() (request *SetInstanceAutoReleaseT
 	request = &SetInstanceAutoReleaseTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2016-03-14", "SetInstanceAutoReleaseTime", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2016-03-14", "SetInstanceAutoReleaseTime", "", "")
 	return
 }
 

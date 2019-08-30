@@ -77,14 +77,14 @@ func (client *Client) DescribeTagsWithCallback(request *DescribeTagsRequest, cal
 type DescribeTagsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer   `position:"Query" name:"ResourceOwnerId"`
-	PageNumber           requests.Integer   `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer   `position:"Query" name:"PageSize"`
-	Tag                  *[]DescribeTagsTag `position:"Query" name:"Tag"  type:"Repeated"`
 	ResourceId           string             `position:"Query" name:"ResourceId"`
 	ResourceOwnerAccount string             `position:"Query" name:"ResourceOwnerAccount"`
+	PageSize             requests.Integer   `position:"Query" name:"PageSize"`
+	Tag                  *[]DescribeTagsTag `position:"Query" name:"Tag"  type:"Repeated"`
 	OwnerId              requests.Integer   `position:"Query" name:"OwnerId"`
-	ResourceType         string             `position:"Query" name:"ResourceType"`
 	Category             string             `position:"Query" name:"Category"`
+	ResourceType         string             `position:"Query" name:"ResourceType"`
+	PageNumber           requests.Integer   `position:"Query" name:"PageNumber"`
 }
 
 // DescribeTagsTag is a repeated param struct in DescribeTagsRequest
@@ -108,7 +108,7 @@ func CreateDescribeTagsRequest() (request *DescribeTagsRequest) {
 	request = &DescribeTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeTags", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeTags", "", "")
 	return
 }
 

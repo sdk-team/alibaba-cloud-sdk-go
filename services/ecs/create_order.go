@@ -79,15 +79,15 @@ type CreateOrderRequest struct {
 	Commodity            string           `position:"Query" name:"Commodity"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	AsyncPattern         requests.Boolean `position:"Query" name:"AsyncPattern"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
 	FromApp              string           `position:"Query" name:"FromApp"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	Tenancy              string           `position:"Query" name:"Tenancy"`
 	DedicatedHostId      string           `position:"Query" name:"DedicatedHostId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ChargeType           string           `position:"Query" name:"ChargeType"`
+	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
 	OrderType            string           `position:"Query" name:"OrderType"`
 	Affinity             string           `position:"Query" name:"Affinity"`
 }
@@ -108,7 +108,7 @@ func CreateCreateOrderRequest() (request *CreateOrderRequest) {
 	request = &CreateOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2016-03-14", "CreateOrder", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2016-03-14", "CreateOrder", "", "")
 	return
 }
 

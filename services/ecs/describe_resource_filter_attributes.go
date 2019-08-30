@@ -103,7 +103,7 @@ func CreateDescribeResourceFilterAttributesRequest() (request *DescribeResourceF
 	request = &DescribeResourceFilterAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeResourceFilterAttributes", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeResourceFilterAttributes", "", "")
 	return
 }
 

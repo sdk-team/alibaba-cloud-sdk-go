@@ -17,7 +17,6 @@ package ecs
 
 // Tag is a nested struct in ecs response
 type Tag struct {
-	TagValue          string            `json:"TagValue" xml:"TagValue"`
-	TagKey            string            `json:"TagKey" xml:"TagKey"`
-	ResourceTypeCount ResourceTypeCount `json:"ResourceTypeCount" xml:"ResourceTypeCount"`
+	TagValue string `json:"TagValue" xml:"TagValue"`
+	TagKey   string `json:"TagKey" xml:"TagKey"`
 }

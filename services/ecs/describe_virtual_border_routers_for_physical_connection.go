@@ -76,13 +76,13 @@ func (client *Client) DescribeVirtualBorderRoutersForPhysicalConnectionWithCallb
 // DescribeVirtualBorderRoutersForPhysicalConnectionRequest is the request struct for api DescribeVirtualBorderRoutersForPhysicalConnection
 type DescribeVirtualBorderRoutersForPhysicalConnectionRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer                                           `position:"Query" name:"ResourceOwnerId"`
-	PageNumber           requests.Integer                                           `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer                                           `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string                                                     `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer                                           `position:"Query" name:"OwnerId"`
 	Filter               *[]DescribeVirtualBorderRoutersForPhysicalConnectionFilter `position:"Query" name:"Filter"  type:"Repeated"`
+	ResourceOwnerId      requests.Integer                                           `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string                                                     `position:"Query" name:"ResourceOwnerAccount"`
 	PhysicalConnectionId string                                                     `position:"Query" name:"PhysicalConnectionId"`
+	PageSize             requests.Integer                                           `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer                                           `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer                                           `position:"Query" name:"PageNumber"`
 }
 
 // DescribeVirtualBorderRoutersForPhysicalConnectionFilter is a repeated param struct in DescribeVirtualBorderRoutersForPhysicalConnectionRequest
@@ -106,7 +106,7 @@ func CreateDescribeVirtualBorderRoutersForPhysicalConnectionRequest() (request *
 	request = &DescribeVirtualBorderRoutersForPhysicalConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeVirtualBorderRoutersForPhysicalConnection", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeVirtualBorderRoutersForPhysicalConnection", "", "")
 	return
 }
 

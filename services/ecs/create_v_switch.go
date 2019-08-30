@@ -77,15 +77,15 @@ func (client *Client) CreateVSwitchWithCallback(request *CreateVSwitchRequest, c
 type CreateVSwitchRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	Description          string           `position:"Query" name:"Description"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	VpcId                string           `position:"Query" name:"VpcId"`
 	VSwitchName          string           `position:"Query" name:"VSwitchName"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	CidrBlock            string           `position:"Query" name:"CidrBlock"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
+	Description          string           `position:"Query" name:"Description"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // CreateVSwitchResponse is the response struct for api CreateVSwitch
@@ -100,7 +100,7 @@ func CreateCreateVSwitchRequest() (request *CreateVSwitchRequest) {
 	request = &CreateVSwitchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateVSwitch", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateVSwitch", "", "")
 	return
 }
 

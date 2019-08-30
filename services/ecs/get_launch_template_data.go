@@ -77,9 +77,9 @@ func (client *Client) GetLaunchTemplateDataWithCallback(request *GetLaunchTempla
 type GetLaunchTemplateDataRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // GetLaunchTemplateDataResponse is the response struct for api GetLaunchTemplateData
@@ -94,7 +94,7 @@ func CreateGetLaunchTemplateDataRequest() (request *GetLaunchTemplateDataRequest
 	request = &GetLaunchTemplateDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2016-03-14", "GetLaunchTemplateData", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2016-03-14", "GetLaunchTemplateData", "", "")
 	return
 }
 

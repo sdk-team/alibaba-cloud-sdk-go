@@ -76,11 +76,11 @@ func (client *Client) DescribeAccountLimitsWithCallback(request *DescribeAccount
 // DescribeAccountLimitsRequest is the request struct for api DescribeAccountLimits
 type DescribeAccountLimitsRequest struct {
 	*requests.RpcRequest
+	Filter               *[]DescribeAccountLimitsFilter `position:"Query" name:"Filter"  type:"Repeated"`
 	ResourceOwnerId      requests.Integer               `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string                         `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string                         `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer               `position:"Query" name:"OwnerId"`
-	Filter               *[]DescribeAccountLimitsFilter `position:"Query" name:"Filter"  type:"Repeated"`
 }
 
 // DescribeAccountLimitsFilter is a repeated param struct in DescribeAccountLimitsRequest
@@ -101,7 +101,7 @@ func CreateDescribeAccountLimitsRequest() (request *DescribeAccountLimitsRequest
 	request = &DescribeAccountLimitsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeAccountLimits", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeAccountLimits", "", "")
 	return
 }
 

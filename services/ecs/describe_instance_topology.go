@@ -78,8 +78,8 @@ type DescribeInstanceTopologyRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceIds          string           `position:"Query" name:"InstanceIds"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeInstanceTopologyResponse is the response struct for api DescribeInstanceTopology
@@ -94,7 +94,7 @@ func CreateDescribeInstanceTopologyRequest() (request *DescribeInstanceTopologyR
 	request = &DescribeInstanceTopologyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceTopology", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceTopology", "", "")
 	return
 }
 

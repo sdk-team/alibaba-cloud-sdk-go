@@ -78,11 +78,11 @@ type AllocatePublicIpAddressRequest struct {
 	*requests.RpcRequest
 	IpAddress            string           `position:"Query" name:"IpAddress"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	VlanId               string           `position:"Query" name:"VlanId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	VlanId               string           `position:"Query" name:"VlanId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // AllocatePublicIpAddressResponse is the response struct for api AllocatePublicIpAddress
@@ -97,7 +97,7 @@ func CreateAllocatePublicIpAddressRequest() (request *AllocatePublicIpAddressReq
 	request = &AllocatePublicIpAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "AllocatePublicIpAddress", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "AllocatePublicIpAddress", "", "")
 	return
 }
 

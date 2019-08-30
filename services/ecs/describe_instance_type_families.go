@@ -76,8 +76,8 @@ func (client *Client) DescribeInstanceTypeFamiliesWithCallback(request *Describe
 // DescribeInstanceTypeFamiliesRequest is the request struct for api DescribeInstanceTypeFamilies
 type DescribeInstanceTypeFamiliesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Generation           string           `position:"Query" name:"Generation"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -95,7 +95,7 @@ func CreateDescribeInstanceTypeFamiliesRequest() (request *DescribeInstanceTypeF
 	request = &DescribeInstanceTypeFamiliesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceTypeFamilies", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceTypeFamilies", "", "")
 	return
 }
 

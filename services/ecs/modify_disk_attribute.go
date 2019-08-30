@@ -76,16 +76,16 @@ func (client *Client) ModifyDiskAttributeWithCallback(request *ModifyDiskAttribu
 // ModifyDiskAttributeRequest is the request struct for api ModifyDiskAttribute
 type ModifyDiskAttributeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Description          string           `position:"Query" name:"Description"`
 	DiskName             string           `position:"Query" name:"DiskName"`
 	DeleteAutoSnapshot   requests.Boolean `position:"Query" name:"DeleteAutoSnapshot"`
-	DiskId               string           `position:"Query" name:"DiskId"`
-	DeleteWithInstance   requests.Boolean `position:"Query" name:"DeleteWithInstance"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	EnableAutoSnapshot   requests.Boolean `position:"Query" name:"EnableAutoSnapshot"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Description          string           `position:"Query" name:"Description"`
+	DiskId               string           `position:"Query" name:"DiskId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DeleteWithInstance   requests.Boolean `position:"Query" name:"DeleteWithInstance"`
 }
 
 // ModifyDiskAttributeResponse is the response struct for api ModifyDiskAttribute
@@ -99,7 +99,7 @@ func CreateModifyDiskAttributeRequest() (request *ModifyDiskAttributeRequest) {
 	request = &ModifyDiskAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDiskAttribute", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDiskAttribute", "", "")
 	return
 }
 

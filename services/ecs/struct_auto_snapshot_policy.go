@@ -17,22 +17,14 @@ package ecs
 
 // AutoSnapshotPolicy is a nested struct in ecs response
 type AutoSnapshotPolicy struct {
-	DataDiskPolicyEnabled             string `json:"DataDiskPolicyEnabled" xml:"DataDiskPolicyEnabled"`
-	SystemDiskPolicyRetentionLastWeek string `json:"SystemDiskPolicyRetentionLastWeek" xml:"SystemDiskPolicyRetentionLastWeek"`
-	RepeatWeekdays                    string `json:"RepeatWeekdays" xml:"RepeatWeekdays"`
-	AutoSnapshotPolicyId              string `json:"AutoSnapshotPolicyId" xml:"AutoSnapshotPolicyId"`
-	DataDiskPolicyRetentionDays       string `json:"DataDiskPolicyRetentionDays" xml:"DataDiskPolicyRetentionDays"`
-	VolumeNums                        int    `json:"VolumeNums" xml:"VolumeNums"`
-	CreationTime                      string `json:"CreationTime" xml:"CreationTime"`
-	DataDiskPolicyTimePeriod          string `json:"DataDiskPolicyTimePeriod" xml:"DataDiskPolicyTimePeriod"`
-	SystemDiskPolicyTimePeriod        string `json:"SystemDiskPolicyTimePeriod" xml:"SystemDiskPolicyTimePeriod"`
-	SystemDiskPolicyEnabled           string `json:"SystemDiskPolicyEnabled" xml:"SystemDiskPolicyEnabled"`
-	DiskNums                          int    `json:"DiskNums" xml:"DiskNums"`
-	RegionId                          string `json:"RegionId" xml:"RegionId"`
-	AutoSnapshotPolicyName            string `json:"AutoSnapshotPolicyName" xml:"AutoSnapshotPolicyName"`
-	RetentionDays                     int    `json:"RetentionDays" xml:"RetentionDays"`
-	TimePoints                        string `json:"TimePoints" xml:"TimePoints"`
-	SystemDiskPolicyRetentionDays     string `json:"SystemDiskPolicyRetentionDays" xml:"SystemDiskPolicyRetentionDays"`
-	Status                            string `json:"Status" xml:"Status"`
-	DataDiskPolicyRetentionLastWeek   string `json:"DataDiskPolicyRetentionLastWeek" xml:"DataDiskPolicyRetentionLastWeek"`
+	AutoSnapshotPolicyId   string `json:"AutoSnapshotPolicyId" xml:"AutoSnapshotPolicyId"`
+	RegionId               string `json:"RegionId" xml:"RegionId"`
+	AutoSnapshotPolicyName string `json:"AutoSnapshotPolicyName" xml:"AutoSnapshotPolicyName"`
+	TimePoints             string `json:"TimePoints" xml:"TimePoints"`
+	RepeatWeekdays         string `json:"RepeatWeekdays" xml:"RepeatWeekdays"`
+	RetentionDays          int    `json:"RetentionDays" xml:"RetentionDays"`
+	DiskNums               int    `json:"DiskNums" xml:"DiskNums"`
+	VolumeNums             int    `json:"VolumeNums" xml:"VolumeNums"`
+	CreationTime           string `json:"CreationTime" xml:"CreationTime"`
+	Status                 string `json:"Status" xml:"Status"`
 }

@@ -77,10 +77,10 @@ func (client *Client) AttachKeyPairWithCallback(request *AttachKeyPairRequest, c
 type AttachKeyPairRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	KeyPairName          string           `position:"Query" name:"KeyPairName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceIds          string           `position:"Query" name:"InstanceIds"`
+	KeyPairName          string           `position:"Query" name:"KeyPairName"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // AttachKeyPairResponse is the response struct for api AttachKeyPair
@@ -98,7 +98,7 @@ func CreateAttachKeyPairRequest() (request *AttachKeyPairRequest) {
 	request = &AttachKeyPairRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "AttachKeyPair", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "AttachKeyPair", "", "")
 	return
 }
 
