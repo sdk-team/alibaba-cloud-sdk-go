@@ -113,7 +113,7 @@ func CreateDescribeDedicatedHostsRequest() (request *DescribeDedicatedHostsReque
 	request = &DescribeDedicatedHostsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeDedicatedHosts", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDedicatedHosts", "", "")
 	return
 }
 

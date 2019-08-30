@@ -78,7 +78,6 @@ type ModifyDiskSpecRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DiskId               string           `position:"Query" name:"DiskId"`
-	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	PerformanceLevel     string           `position:"Query" name:"PerformanceLevel"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -89,7 +88,6 @@ type ModifyDiskSpecRequest struct {
 type ModifyDiskSpecResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	OrderId   string `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateModifyDiskSpecRequest creates a request to invoke ModifyDiskSpec API
@@ -97,7 +95,7 @@ func CreateModifyDiskSpecRequest() (request *ModifyDiskSpecRequest) {
 	request = &ModifyDiskSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2016-03-14", "ModifyDiskSpec", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDiskSpec", "", "")
 	return
 }
 

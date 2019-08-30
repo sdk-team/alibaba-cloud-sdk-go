@@ -76,13 +76,12 @@ func (client *Client) DescribeDedicatedHostTypesWithCallback(request *DescribeDe
 // DescribeDedicatedHostTypesRequest is the request struct for api DescribeDedicatedHostTypes
 type DescribeDedicatedHostTypesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId           requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SupportInstanceTypeFamily string           `position:"Query" name:"SupportInstanceTypeFamily"`
-	DedicatedHostType         string           `position:"Query" name:"DedicatedHostType"`
-	Generation                string           `position:"Query" name:"Generation"`
-	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                   requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerId             requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SupportedInstanceTypeFamily string           `position:"Query" name:"SupportedInstanceTypeFamily"`
+	DedicatedHostType           string           `position:"Query" name:"DedicatedHostType"`
+	ResourceOwnerAccount        string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount                string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                     requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDedicatedHostTypesResponse is the response struct for api DescribeDedicatedHostTypes
@@ -97,7 +96,7 @@ func CreateDescribeDedicatedHostTypesRequest() (request *DescribeDedicatedHostTy
 	request = &DescribeDedicatedHostTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeDedicatedHostTypes", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDedicatedHostTypes", "", "")
 	return
 }
 

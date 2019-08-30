@@ -100,7 +100,7 @@ func CreateModifyDedicatedHostAttributeRequest() (request *ModifyDedicatedHostAt
 	request = &ModifyDedicatedHostAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2016-03-14", "ModifyDedicatedHostAttribute", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDedicatedHostAttribute", "", "")
 	return
 }
 

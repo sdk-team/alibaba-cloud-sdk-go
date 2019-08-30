@@ -91,11 +91,11 @@ type DescribeStorageSetDetailsRequest struct {
 // DescribeStorageSetDetailsResponse is the response struct for api DescribeStorageSetDetails
 type DescribeStorageSetDetailsResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	Disks      Disks  `json:"Disks" xml:"Disks"`
+	RequestId  string                           `json:"RequestId" xml:"RequestId"`
+	TotalCount int                              `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int                              `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int                              `json:"PageSize" xml:"PageSize"`
+	Disks      DisksInDescribeStorageSetDetails `json:"Disks" xml:"Disks"`
 }
 
 // CreateDescribeStorageSetDetailsRequest creates a request to invoke DescribeStorageSetDetails API
@@ -103,7 +103,7 @@ func CreateDescribeStorageSetDetailsRequest() (request *DescribeStorageSetDetail
 	request = &DescribeStorageSetDetailsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeStorageSetDetails", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeStorageSetDetails", "", "")
 	return
 }
 

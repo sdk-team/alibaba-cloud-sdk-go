@@ -103,7 +103,7 @@ func CreateDescribeStorageSetsRequest() (request *DescribeStorageSetsRequest) {
 	request = &DescribeStorageSetsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2016-03-14", "DescribeStorageSets", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeStorageSets", "", "")
 	return
 }
 

@@ -77,15 +77,14 @@ func (client *Client) ModifyDedicatedHostAutoRenewAttributeWithCallback(request 
 type ModifyDedicatedHostAutoRenewAttributeRequest struct {
 	*requests.RpcRequest
 	Duration             requests.Integer `position:"Query" name:"Duration"`
+	DedicatedHostIds     string           `position:"Query" name:"DedicatedHostIds"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	PeriodUnit           string           `position:"Query" name:"PeriodUnit"`
 	AutoRenew            requests.Boolean `position:"Query" name:"AutoRenew"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	InstanceIds          string           `position:"Query" name:"InstanceIds"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	RenewalStatus        string           `position:"Query" name:"RenewalStatus"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceType         string           `position:"Query" name:"ResourceType"`
 }
 
 // ModifyDedicatedHostAutoRenewAttributeResponse is the response struct for api ModifyDedicatedHostAutoRenewAttribute
@@ -99,7 +98,7 @@ func CreateModifyDedicatedHostAutoRenewAttributeRequest() (request *ModifyDedica
 	request = &ModifyDedicatedHostAutoRenewAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2016-03-14", "ModifyDedicatedHostAutoRenewAttribute", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDedicatedHostAutoRenewAttribute", "", "")
 	return
 }
 

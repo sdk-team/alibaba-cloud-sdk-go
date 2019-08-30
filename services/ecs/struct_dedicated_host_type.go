@@ -17,18 +17,17 @@ package ecs
 
 // DedicatedHostType is a nested struct in ecs response
 type DedicatedHostType struct {
-	DedicatedHostType           string                                                  `json:"DedicatedHostType" xml:"DedicatedHostType"`
-	Generation                  string                                                  `json:"Generation" xml:"Generation"`
-	TotalSockets                int                                                     `json:"TotalSockets" xml:"TotalSockets"`
-	TotalVcpus                  int                                                     `json:"TotalVcpus" xml:"TotalVcpus"`
-	TotalVgpus                  int                                                     `json:"TotalVgpus" xml:"TotalVgpus"`
-	TotalPhysicalCores          int                                                     `json:"TotalPhysicalCores" xml:"TotalPhysicalCores"`
-	PhysicalGpus                int                                                     `json:"PhysicalGpus" xml:"PhysicalGpus"`
-	MemorySize                  float64                                                 `json:"MemorySize" xml:"MemorySize"`
-	LocalStorageCapacity        int64                                                   `json:"LocalStorageCapacity" xml:"LocalStorageCapacity"`
-	LocalStorageAmount          int                                                     `json:"LocalStorageAmount" xml:"LocalStorageAmount"`
-	LocalStorageCategory        string                                                  `json:"LocalStorageCategory" xml:"LocalStorageCategory"`
-	GPUSpec                     string                                                  `json:"GPUSpec" xml:"GPUSpec"`
-	SupportInstanceTypeFamilies SupportInstanceTypeFamiliesInDescribeDedicatedHostTypes `json:"SupportInstanceTypeFamilies" xml:"SupportInstanceTypeFamilies"`
-	SupportInstanceTypesList    SupportInstanceTypesListInDescribeDedicatedHostTypes    `json:"SupportInstanceTypesList" xml:"SupportInstanceTypesList"`
+	DedicatedHostType             string                                                    `json:"DedicatedHostType" xml:"DedicatedHostType"`
+	Sockets                       int                                                       `json:"Sockets" xml:"Sockets"`
+	TotalVcpus                    int                                                       `json:"TotalVcpus" xml:"TotalVcpus"`
+	TotalVgpus                    int                                                       `json:"TotalVgpus" xml:"TotalVgpus"`
+	Cores                         int                                                       `json:"Cores" xml:"Cores"`
+	PhysicalGpus                  int                                                       `json:"PhysicalGpus" xml:"PhysicalGpus"`
+	MemorySize                    float64                                                   `json:"MemorySize" xml:"MemorySize"`
+	LocalStorageCapacity          int64                                                     `json:"LocalStorageCapacity" xml:"LocalStorageCapacity"`
+	LocalStorageAmount            int                                                       `json:"LocalStorageAmount" xml:"LocalStorageAmount"`
+	LocalStorageCategory          string                                                    `json:"LocalStorageCategory" xml:"LocalStorageCategory"`
+	GPUSpec                       string                                                    `json:"GPUSpec" xml:"GPUSpec"`
+	SupportedInstanceTypeFamilies SupportedInstanceTypeFamiliesInDescribeDedicatedHostTypes `json:"SupportedInstanceTypeFamilies" xml:"SupportedInstanceTypeFamilies"`
+	SupportedInstanceTypesList    SupportedInstanceTypesListInDescribeDedicatedHostTypes    `json:"SupportedInstanceTypesList" xml:"SupportedInstanceTypesList"`
 }
