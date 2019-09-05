@@ -98,7 +98,7 @@ func CreateDescribeFleetHistoryRequest() (request *DescribeFleetHistoryRequest) 
 	request = &DescribeFleetHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeFleetHistory", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeFleetHistory", "ecs", "openAPI")
 	return
 }
 

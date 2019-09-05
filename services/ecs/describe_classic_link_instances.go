@@ -77,12 +77,12 @@ func (client *Client) DescribeClassicLinkInstancesWithCallback(request *Describe
 type DescribeClassicLinkInstancesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	VpcId                string           `position:"Query" name:"VpcId"`
-	PageSize             string           `position:"Query" name:"PageSize"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PageNumber           string           `position:"Query" name:"PageNumber"`
+	PageSize             string           `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	VpcId                string           `position:"Query" name:"VpcId"`
 }
 
 // DescribeClassicLinkInstancesResponse is the response struct for api DescribeClassicLinkInstances
@@ -100,7 +100,7 @@ func CreateDescribeClassicLinkInstancesRequest() (request *DescribeClassicLinkIn
 	request = &DescribeClassicLinkInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeClassicLinkInstances", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeClassicLinkInstances", "ecs", "openAPI")
 	return
 }
 

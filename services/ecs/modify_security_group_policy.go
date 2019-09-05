@@ -78,11 +78,11 @@ type ModifySecurityGroupPolicyRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
+	InnerAccessPolicy    string           `position:"Query" name:"InnerAccessPolicy"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InnerAccessPolicy    string           `position:"Query" name:"InnerAccessPolicy"`
 }
 
 // ModifySecurityGroupPolicyResponse is the response struct for api ModifySecurityGroupPolicy
@@ -96,7 +96,7 @@ func CreateModifySecurityGroupPolicyRequest() (request *ModifySecurityGroupPolic
 	request = &ModifySecurityGroupPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifySecurityGroupPolicy", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifySecurityGroupPolicy", "ecs", "openAPI")
 	return
 }
 

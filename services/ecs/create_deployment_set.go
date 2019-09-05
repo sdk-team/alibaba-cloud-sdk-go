@@ -77,10 +77,10 @@ func (client *Client) CreateDeploymentSetWithCallback(request *CreateDeploymentS
 type CreateDeploymentSetRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId                  requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount             string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken                      string           `position:"Query" name:"ClientToken"`
-	OwnerAccount                     string           `position:"Query" name:"OwnerAccount"`
 	Description                      string           `position:"Query" name:"Description"`
+	ResourceOwnerAccount             string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount                     string           `position:"Query" name:"OwnerAccount"`
 	DeploymentSetName                string           `position:"Query" name:"DeploymentSetName"`
 	OwnerId                          requests.Integer `position:"Query" name:"OwnerId"`
 	OnUnableToRedeployFailedInstance string           `position:"Query" name:"OnUnableToRedeployFailedInstance"`
@@ -101,7 +101,7 @@ func CreateCreateDeploymentSetRequest() (request *CreateDeploymentSetRequest) {
 	request = &CreateDeploymentSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateDeploymentSet", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateDeploymentSet", "ecs", "openAPI")
 	return
 }
 

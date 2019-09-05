@@ -77,13 +77,13 @@ func (client *Client) ModifyAutoSnapshotPolicyExWithCallback(request *ModifyAuto
 type ModifyAutoSnapshotPolicyExRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	AutoSnapshotPolicyId   string           `position:"Query" name:"autoSnapshotPolicyId"`
 	TimePoints             string           `position:"Query" name:"timePoints"`
-	RetentionDays          requests.Integer `position:"Query" name:"retentionDays"`
-	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 	RepeatWeekdays         string           `position:"Query" name:"repeatWeekdays"`
+	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 	AutoSnapshotPolicyName string           `position:"Query" name:"autoSnapshotPolicyName"`
+	RetentionDays          requests.Integer `position:"Query" name:"retentionDays"`
 }
 
 // ModifyAutoSnapshotPolicyExResponse is the response struct for api ModifyAutoSnapshotPolicyEx
@@ -97,7 +97,7 @@ func CreateModifyAutoSnapshotPolicyExRequest() (request *ModifyAutoSnapshotPolic
 	request = &ModifyAutoSnapshotPolicyExRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyAutoSnapshotPolicyEx", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyAutoSnapshotPolicyEx", "ecs", "openAPI")
 	return
 }
 

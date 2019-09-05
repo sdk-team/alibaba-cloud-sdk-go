@@ -78,15 +78,15 @@ type DescribeRouteTablesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	VRouterId            string           `position:"Query" name:"VRouterId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	RouteTableName       string           `position:"Query" name:"RouteTableName"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	RouteTableId         string           `position:"Query" name:"RouteTableId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	RouterType           string           `position:"Query" name:"RouterType"`
-	RouteTableName       string           `position:"Query" name:"RouteTableName"`
 	RouterId             string           `position:"Query" name:"RouterId"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	RouteTableId         string           `position:"Query" name:"RouteTableId"`
 }
 
 // DescribeRouteTablesResponse is the response struct for api DescribeRouteTables
@@ -104,7 +104,7 @@ func CreateDescribeRouteTablesRequest() (request *DescribeRouteTablesRequest) {
 	request = &DescribeRouteTablesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeRouteTables", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeRouteTables", "ecs", "openAPI")
 	return
 }
 

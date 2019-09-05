@@ -99,7 +99,7 @@ func CreateCreateStorageSetRequest() (request *CreateStorageSetRequest) {
 	request = &CreateStorageSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateStorageSet", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateStorageSet", "ecs", "openAPI")
 	return
 }
 

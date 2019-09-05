@@ -78,13 +78,13 @@ type CopyImageRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ImageId                string           `position:"Query" name:"ImageId"`
+	DestinationRegionId    string           `position:"Query" name:"DestinationRegionId"`
+	Tag                    *[]CopyImageTag  `position:"Query" name:"Tag"  type:"Repeated"`
 	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	DestinationImageName   string           `position:"Query" name:"DestinationImageName"`
-	DestinationRegionId    string           `position:"Query" name:"DestinationRegionId"`
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 	Encrypted              requests.Boolean `position:"Query" name:"Encrypted"`
-	Tag                    *[]CopyImageTag  `position:"Query" name:"Tag"  type:"Repeated"`
 	KMSKeyId               string           `position:"Query" name:"KMSKeyId"`
 	DestinationDescription string           `position:"Query" name:"DestinationDescription"`
 }
@@ -107,7 +107,7 @@ func CreateCopyImageRequest() (request *CopyImageRequest) {
 	request = &CopyImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CopyImage", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CopyImage", "ecs", "openAPI")
 	return
 }
 

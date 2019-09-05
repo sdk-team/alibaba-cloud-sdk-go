@@ -77,10 +77,10 @@ func (client *Client) DetachClassicLinkVpcWithCallback(request *DetachClassicLin
 type DetachClassicLinkVpcRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	VpcId                string           `position:"Query" name:"VpcId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	VpcId                string           `position:"Query" name:"VpcId"`
 }
 
 // DetachClassicLinkVpcResponse is the response struct for api DetachClassicLinkVpc
@@ -94,7 +94,7 @@ func CreateDetachClassicLinkVpcRequest() (request *DetachClassicLinkVpcRequest) 
 	request = &DetachClassicLinkVpcRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DetachClassicLinkVpc", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DetachClassicLinkVpc", "ecs", "openAPI")
 	return
 }
 

@@ -77,9 +77,9 @@ func (client *Client) DeleteDiskWithCallback(request *DeleteDiskRequest, callbac
 type DeleteDiskRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DiskId               string           `position:"Query" name:"DiskId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	DiskId               string           `position:"Query" name:"DiskId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
@@ -94,7 +94,7 @@ func CreateDeleteDiskRequest() (request *DeleteDiskRequest) {
 	request = &DeleteDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteDisk", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteDisk", "ecs", "openAPI")
 	return
 }
 

@@ -100,7 +100,7 @@ func CreateDescribeFleetInstancesRequest() (request *DescribeFleetInstancesReque
 	request = &DescribeFleetInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeFleetInstances", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeFleetInstances", "ecs", "openAPI")
 	return
 }
 

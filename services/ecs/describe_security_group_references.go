@@ -77,9 +77,9 @@ func (client *Client) DescribeSecurityGroupReferencesWithCallback(request *Descr
 type DescribeSecurityGroupReferencesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SecurityGroupId      *[]string        `position:"Query" name:"SecurityGroupId"  type:"Repeated"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	SecurityGroupId      *[]string        `position:"Query" name:"SecurityGroupId"  type:"Repeated"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
@@ -95,7 +95,7 @@ func CreateDescribeSecurityGroupReferencesRequest() (request *DescribeSecurityGr
 	request = &DescribeSecurityGroupReferencesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSecurityGroupReferences", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSecurityGroupReferences", "ecs", "openAPI")
 	return
 }
 

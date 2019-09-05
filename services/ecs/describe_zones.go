@@ -76,14 +76,14 @@ func (client *Client) DescribeZonesWithCallback(request *DescribeZonesRequest, c
 // DescribeZonesRequest is the request struct for api DescribeZones
 type DescribeZonesRequest struct {
 	*requests.RpcRequest
-	SpotStrategy         string           `position:"Query" name:"SpotStrategy"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	AcceptLanguage       string           `position:"Query" name:"AcceptLanguage"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
 	Verbose              requests.Boolean `position:"Query" name:"Verbose"`
+	SpotStrategy         string           `position:"Query" name:"SpotStrategy"`
+	AcceptLanguage       string           `position:"Query" name:"AcceptLanguage"`
 }
 
 // DescribeZonesResponse is the response struct for api DescribeZones
@@ -98,7 +98,7 @@ func CreateDescribeZonesRequest() (request *DescribeZonesRequest) {
 	request = &DescribeZonesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeZones", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeZones", "ecs", "openAPI")
 	return
 }
 

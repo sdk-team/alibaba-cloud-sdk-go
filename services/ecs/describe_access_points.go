@@ -76,13 +76,13 @@ func (client *Client) DescribeAccessPointsWithCallback(request *DescribeAccessPo
 // DescribeAccessPointsRequest is the request struct for api DescribeAccessPoints
 type DescribeAccessPointsRequest struct {
 	*requests.RpcRequest
-	Filter               *[]DescribeAccessPointsFilter `position:"Query" name:"Filter"  type:"Repeated"`
 	ResourceOwnerId      requests.Integer              `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string                        `position:"Query" name:"ResourceOwnerAccount"`
-	PageSize             requests.Integer              `position:"Query" name:"PageSize"`
-	OwnerId              requests.Integer              `position:"Query" name:"OwnerId"`
 	Type                 string                        `position:"Query" name:"Type"`
 	PageNumber           requests.Integer              `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer              `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string                        `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId              requests.Integer              `position:"Query" name:"OwnerId"`
+	Filter               *[]DescribeAccessPointsFilter `position:"Query" name:"Filter"  type:"Repeated"`
 }
 
 // DescribeAccessPointsFilter is a repeated param struct in DescribeAccessPointsRequest
@@ -106,7 +106,7 @@ func CreateDescribeAccessPointsRequest() (request *DescribeAccessPointsRequest) 
 	request = &DescribeAccessPointsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeAccessPoints", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeAccessPoints", "ecs", "openAPI")
 	return
 }
 

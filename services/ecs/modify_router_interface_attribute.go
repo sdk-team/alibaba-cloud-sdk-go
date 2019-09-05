@@ -78,16 +78,16 @@ type ModifyRouterInterfaceAttributeRequest struct {
 	*requests.RpcRequest
 	OppositeRouterId         string           `position:"Query" name:"OppositeRouterId"`
 	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
 	Description              string           `position:"Query" name:"Description"`
 	HealthCheckTargetIp      string           `position:"Query" name:"HealthCheckTargetIp"`
+	OppositeInterfaceId      string           `position:"Query" name:"OppositeInterfaceId"`
+	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
 	RouterInterfaceId        string           `position:"Query" name:"RouterInterfaceId"`
 	OppositeInterfaceOwnerId requests.Integer `position:"Query" name:"OppositeInterfaceOwnerId"`
 	HealthCheckSourceIp      string           `position:"Query" name:"HealthCheckSourceIp"`
 	Name                     string           `position:"Query" name:"Name"`
 	OppositeRouterType       string           `position:"Query" name:"OppositeRouterType"`
-	OppositeInterfaceId      string           `position:"Query" name:"OppositeInterfaceId"`
 }
 
 // ModifyRouterInterfaceAttributeResponse is the response struct for api ModifyRouterInterfaceAttribute
@@ -101,7 +101,7 @@ func CreateModifyRouterInterfaceAttributeRequest() (request *ModifyRouterInterfa
 	request = &ModifyRouterInterfaceAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyRouterInterfaceAttribute", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyRouterInterfaceAttribute", "ecs", "openAPI")
 	return
 }
 

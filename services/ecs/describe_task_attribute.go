@@ -77,9 +77,9 @@ func (client *Client) DescribeTaskAttributeWithCallback(request *DescribeTaskAtt
 type DescribeTaskAttributeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	TaskId               string           `position:"Query" name:"TaskId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	TaskId               string           `position:"Query" name:"TaskId"`
 }
 
 // DescribeTaskAttributeResponse is the response struct for api DescribeTaskAttribute
@@ -105,7 +105,7 @@ func CreateDescribeTaskAttributeRequest() (request *DescribeTaskAttributeRequest
 	request = &DescribeTaskAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeTaskAttribute", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeTaskAttribute", "ecs", "openAPI")
 	return
 }
 
