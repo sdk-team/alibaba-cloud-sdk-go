@@ -94,7 +94,7 @@ func CreateVnoBatchRefundOrderRequest() (request *VnoBatchRefundOrderRequest) {
 	request = &VnoBatchRefundOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Bss", "2014-07-14", "VnoBatchRefundOrder", "", "")
+	request.InitWithApiInfo("Bss", "2014-07-14", "VnoBatchRefundOrder", "bss", "openAPI")
 	return
 }
 

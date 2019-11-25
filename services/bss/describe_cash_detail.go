@@ -98,7 +98,7 @@ func CreateDescribeCashDetailRequest() (request *DescribeCashDetailRequest) {
 	request = &DescribeCashDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Bss", "2014-07-14", "DescribeCashDetail", "", "")
+	request.InitWithApiInfo("Bss", "2014-07-14", "DescribeCashDetail", "bss", "openAPI")
 	return
 }
 
