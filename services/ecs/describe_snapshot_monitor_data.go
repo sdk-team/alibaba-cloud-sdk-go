@@ -97,7 +97,7 @@ func CreateDescribeSnapshotMonitorDataRequest() (request *DescribeSnapshotMonito
 	request = &DescribeSnapshotMonitorDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSnapshotMonitorData", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSnapshotMonitorData", "", "")
 	return
 }
 

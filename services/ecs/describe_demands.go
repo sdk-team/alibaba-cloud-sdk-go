@@ -88,7 +88,9 @@ type DescribeDemandsRequest struct {
 	InstanceTypeFamily   string                `position:"Query" name:"InstanceTypeFamily"`
 	OwnerId              requests.Integer      `position:"Query" name:"OwnerId"`
 	DemandStatus         *[]string             `position:"Query" name:"DemandStatus"  type:"Repeated"`
+	DemandId             string                `position:"Query" name:"DemandId"`
 	ZoneId               string                `position:"Query" name:"ZoneId"`
+	DemandType           string                `position:"Query" name:"DemandType"`
 }
 
 // DescribeDemandsTag is a repeated param struct in DescribeDemandsRequest
@@ -113,7 +115,7 @@ func CreateDescribeDemandsRequest() (request *DescribeDemandsRequest) {
 	request = &DescribeDemandsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDemands", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDemands", "", "")
 	return
 }
 

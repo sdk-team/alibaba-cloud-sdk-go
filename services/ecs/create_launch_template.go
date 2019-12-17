@@ -167,7 +167,7 @@ func CreateCreateLaunchTemplateRequest() (request *CreateLaunchTemplateRequest) 
 	request = &CreateLaunchTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateLaunchTemplate", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateLaunchTemplate", "", "")
 	return
 }
 

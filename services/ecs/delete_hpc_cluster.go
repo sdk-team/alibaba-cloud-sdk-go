@@ -95,7 +95,7 @@ func CreateDeleteHpcClusterRequest() (request *DeleteHpcClusterRequest) {
 	request = &DeleteHpcClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteHpcCluster", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteHpcCluster", "", "")
 	return
 }
 

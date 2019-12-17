@@ -93,7 +93,7 @@ func CreateCancelTaskRequest() (request *CancelTaskRequest) {
 	request = &CancelTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CancelTask", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CancelTask", "", "")
 	return
 }
 

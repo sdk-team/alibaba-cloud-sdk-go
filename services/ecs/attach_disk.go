@@ -77,6 +77,9 @@ func (client *Client) AttachDiskWithCallback(request *AttachDiskRequest, callbac
 type AttachDiskRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	KeyPairName          string           `position:"Query" name:"KeyPairName"`
+	Bootable             requests.Boolean `position:"Query" name:"Bootable"`
+	Password             string           `position:"Query" name:"Password"`
 	DiskId               string           `position:"Query" name:"DiskId"`
 	DeleteWithInstance   requests.Boolean `position:"Query" name:"DeleteWithInstance"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -97,7 +100,7 @@ func CreateAttachDiskRequest() (request *AttachDiskRequest) {
 	request = &AttachDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "AttachDisk", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "AttachDisk", "", "")
 	return
 }
 

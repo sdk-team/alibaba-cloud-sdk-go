@@ -80,6 +80,7 @@ type ModifyDiskAttributeRequest struct {
 	Description          string           `position:"Query" name:"Description"`
 	DiskName             string           `position:"Query" name:"DiskName"`
 	DeleteAutoSnapshot   requests.Boolean `position:"Query" name:"DeleteAutoSnapshot"`
+	DiskIds              *[]string        `position:"Query" name:"DiskIds"  type:"Repeated"`
 	DiskId               string           `position:"Query" name:"DiskId"`
 	DeleteWithInstance   requests.Boolean `position:"Query" name:"DeleteWithInstance"`
 	EnableAutoSnapshot   requests.Boolean `position:"Query" name:"EnableAutoSnapshot"`
@@ -99,7 +100,7 @@ func CreateModifyDiskAttributeRequest() (request *ModifyDiskAttributeRequest) {
 	request = &ModifyDiskAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDiskAttribute", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDiskAttribute", "", "")
 	return
 }
 

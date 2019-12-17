@@ -94,7 +94,7 @@ func CreateDetachClassicLinkVpcRequest() (request *DetachClassicLinkVpcRequest) 
 	request = &DetachClassicLinkVpcRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DetachClassicLinkVpc", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DetachClassicLinkVpc", "", "")
 	return
 }
 

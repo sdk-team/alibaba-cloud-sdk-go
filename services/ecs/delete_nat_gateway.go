@@ -94,7 +94,7 @@ func CreateDeleteNatGatewayRequest() (request *DeleteNatGatewayRequest) {
 	request = &DeleteNatGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteNatGateway", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteNatGateway", "", "")
 	return
 }
 

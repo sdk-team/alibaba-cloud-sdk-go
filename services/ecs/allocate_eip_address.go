@@ -100,7 +100,7 @@ func CreateAllocateEipAddressRequest() (request *AllocateEipAddressRequest) {
 	request = &AllocateEipAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "AllocateEipAddress", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "AllocateEipAddress", "", "")
 	return
 }
 

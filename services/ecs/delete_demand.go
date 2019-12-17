@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteFleet invokes the ecs.DeleteFleet API synchronously
-// api document: https://help.aliyun.com/api/ecs/deletefleet.html
-func (client *Client) DeleteFleet(request *DeleteFleetRequest) (response *DeleteFleetResponse, err error) {
-	response = CreateDeleteFleetResponse()
+// DeleteDemand invokes the ecs.DeleteDemand API synchronously
+// api document: https://help.aliyun.com/api/ecs/deletedemand.html
+func (client *Client) DeleteDemand(request *DeleteDemandRequest) (response *DeleteDemandResponse, err error) {
+	response = CreateDeleteDemandResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteFleetWithChan invokes the ecs.DeleteFleet API asynchronously
-// api document: https://help.aliyun.com/api/ecs/deletefleet.html
+// DeleteDemandWithChan invokes the ecs.DeleteDemand API asynchronously
+// api document: https://help.aliyun.com/api/ecs/deletedemand.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteFleetWithChan(request *DeleteFleetRequest) (<-chan *DeleteFleetResponse, <-chan error) {
-	responseChan := make(chan *DeleteFleetResponse, 1)
+func (client *Client) DeleteDemandWithChan(request *DeleteDemandRequest) (<-chan *DeleteDemandResponse, <-chan error) {
+	responseChan := make(chan *DeleteDemandResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteFleet(request)
+		response, err := client.DeleteDemand(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DeleteFleetWithChan(request *DeleteFleetRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// DeleteFleetWithCallback invokes the ecs.DeleteFleet API asynchronously
-// api document: https://help.aliyun.com/api/ecs/deletefleet.html
+// DeleteDemandWithCallback invokes the ecs.DeleteDemand API asynchronously
+// api document: https://help.aliyun.com/api/ecs/deletedemand.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteFleetWithCallback(request *DeleteFleetRequest, callback func(response *DeleteFleetResponse, err error)) <-chan int {
+func (client *Client) DeleteDemandWithCallback(request *DeleteDemandRequest, callback func(response *DeleteDemandResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteFleetResponse
+		var response *DeleteDemandResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteFleet(request)
+		response, err = client.DeleteDemand(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,35 +73,36 @@ func (client *Client) DeleteFleetWithCallback(request *DeleteFleetRequest, callb
 	return result
 }
 
-// DeleteFleetRequest is the request struct for api DeleteFleet
-type DeleteFleetRequest struct {
+// DeleteDemandRequest is the request struct for api DeleteDemand
+type DeleteDemandRequest struct {
 	*requests.RpcRequest
+	Reason               string           `position:"Query" name:"Reason"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	TerminateInstances   requests.Boolean `position:"Query" name:"TerminateInstances"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	FleetId              string           `position:"Query" name:"FleetId"`
+	DemandId             string           `position:"Query" name:"DemandId"`
 }
 
-// DeleteFleetResponse is the response struct for api DeleteFleet
-type DeleteFleetResponse struct {
+// DeleteDemandResponse is the response struct for api DeleteDemand
+type DeleteDemandResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateDeleteFleetRequest creates a request to invoke DeleteFleet API
-func CreateDeleteFleetRequest() (request *DeleteFleetRequest) {
-	request = &DeleteFleetRequest{
+// CreateDeleteDemandRequest creates a request to invoke DeleteDemand API
+func CreateDeleteDemandRequest() (request *DeleteDemandRequest) {
+	request = &DeleteDemandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteFleet", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteDemand", "", "")
 	return
 }
 
-// CreateDeleteFleetResponse creates a response to parse from DeleteFleet response
-func CreateDeleteFleetResponse() (response *DeleteFleetResponse) {
-	response = &DeleteFleetResponse{
+// CreateDeleteDemandResponse creates a response to parse from DeleteDemand response
+func CreateDeleteDemandResponse() (response *DeleteDemandResponse) {
+	response = &DeleteDemandResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

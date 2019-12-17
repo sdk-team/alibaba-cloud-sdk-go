@@ -96,6 +96,7 @@ type DescribeRecommendInstanceTypeRequest struct {
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	SpotStrategy         string           `position:"Query" name:"SpotStrategy"`
 	PriorityStrategy     string           `position:"Query" name:"PriorityStrategy"`
+	InstanceFamilyLevel  string           `position:"Query" name:"InstanceFamilyLevel"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
 }
 
@@ -111,7 +112,7 @@ func CreateDescribeRecommendInstanceTypeRequest() (request *DescribeRecommendIns
 	request = &DescribeRecommendInstanceTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeRecommendInstanceType", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeRecommendInstanceType", "", "")
 	return
 }
 

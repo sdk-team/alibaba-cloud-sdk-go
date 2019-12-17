@@ -100,7 +100,7 @@ func CreateCreateVSwitchRequest() (request *CreateVSwitchRequest) {
 	request = &CreateVSwitchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateVSwitch", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateVSwitch", "", "")
 	return
 }
 

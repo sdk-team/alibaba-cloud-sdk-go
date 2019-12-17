@@ -107,7 +107,7 @@ func CreateCopyImageRequest() (request *CopyImageRequest) {
 	request = &CopyImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CopyImage", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CopyImage", "", "")
 	return
 }
 

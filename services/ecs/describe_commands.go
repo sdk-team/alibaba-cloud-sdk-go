@@ -81,6 +81,7 @@ type DescribeCommandsRequest struct {
 	Type                 string           `position:"Query" name:"Type"`
 	CommandId            string           `position:"Query" name:"CommandId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ContentEncoding      string           `position:"Query" name:"ContentEncoding"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -103,7 +104,7 @@ func CreateDescribeCommandsRequest() (request *DescribeCommandsRequest) {
 	request = &DescribeCommandsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeCommands", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeCommands", "", "")
 	return
 }
 

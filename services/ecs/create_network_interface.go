@@ -88,6 +88,7 @@ type CreateNetworkInterfaceRequest struct {
 	ResourceOwnerAccount string                       `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string                       `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer             `position:"Query" name:"OwnerId"`
+	SecurityGroupIds     *[]string                    `position:"Query" name:"SecurityGroupIds"  type:"Repeated"`
 	VSwitchId            string                       `position:"Query" name:"VSwitchId"`
 	PrimaryIpAddress     string                       `position:"Query" name:"PrimaryIpAddress"`
 }
@@ -110,7 +111,7 @@ func CreateCreateNetworkInterfaceRequest() (request *CreateNetworkInterfaceReque
 	request = &CreateNetworkInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateNetworkInterface", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateNetworkInterface", "", "")
 	return
 }
 

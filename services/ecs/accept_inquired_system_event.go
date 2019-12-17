@@ -94,7 +94,7 @@ func CreateAcceptInquiredSystemEventRequest() (request *AcceptInquiredSystemEven
 	request = &AcceptInquiredSystemEventRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "AcceptInquiredSystemEvent", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "AcceptInquiredSystemEvent", "", "")
 	return
 }
 

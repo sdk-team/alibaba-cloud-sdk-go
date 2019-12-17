@@ -105,7 +105,7 @@ func CreateDescribeTasksRequest() (request *DescribeTasksRequest) {
 	request = &DescribeTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeTasks", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeTasks", "", "")
 	return
 }
 

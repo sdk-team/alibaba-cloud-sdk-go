@@ -93,7 +93,7 @@ func CreateDeleteKeyPairsRequest() (request *DeleteKeyPairsRequest) {
 	request = &DeleteKeyPairsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteKeyPairs", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteKeyPairs", "", "")
 	return
 }
 

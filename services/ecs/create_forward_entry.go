@@ -100,7 +100,7 @@ func CreateCreateForwardEntryRequest() (request *CreateForwardEntryRequest) {
 	request = &CreateForwardEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateForwardEntry", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateForwardEntry", "", "")
 	return
 }
 

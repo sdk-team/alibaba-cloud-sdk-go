@@ -98,7 +98,7 @@ func CreateDetachInstanceRamRoleRequest() (request *DetachInstanceRamRoleRequest
 	request = &DetachInstanceRamRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DetachInstanceRamRole", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DetachInstanceRamRole", "", "")
 	return
 }
 
