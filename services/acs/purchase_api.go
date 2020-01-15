@@ -76,13 +76,13 @@ func (client *Client) PurchaseApiWithCallback(request *PurchaseApiRequest, callb
 // PurchaseApiRequest is the request struct for api PurchaseApi
 type PurchaseApiRequest struct {
 	*requests.RoaRequest
-	ServiceDate     string           `position:"Query" name:"ServiceDate"`
-	Quota           requests.Integer `position:"Query" name:"Quota"`
 	OrgCode         string           `position:"Query" name:"OrgCode"`
 	PurchaseProduct string           `position:"Query" name:"PurchaseProduct"`
 	Channel         string           `position:"Query" name:"Channel"`
-	PurchaseVersion string           `position:"Query" name:"PurchaseVersion"`
 	PurchaseApiName string           `position:"Query" name:"PurchaseApiName"`
+	ServiceDate     string           `position:"Query" name:"ServiceDate"`
+	Quota           requests.Integer `position:"Query" name:"Quota"`
+	PurchaseVersion string           `position:"Query" name:"PurchaseVersion"`
 	BillingType     string           `position:"Query" name:"BillingType"`
 }
 
