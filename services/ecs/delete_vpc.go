@@ -94,7 +94,7 @@ func CreateDeleteVpcRequest() (request *DeleteVpcRequest) {
 	request = &DeleteVpcRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteVpc", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteVpc", "ecs", "openAPI")
 	return
 }
 

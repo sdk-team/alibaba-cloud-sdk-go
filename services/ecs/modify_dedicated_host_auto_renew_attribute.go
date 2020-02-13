@@ -98,7 +98,7 @@ func CreateModifyDedicatedHostAutoRenewAttributeRequest() (request *ModifyDedica
 	request = &ModifyDedicatedHostAutoRenewAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDedicatedHostAutoRenewAttribute", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDedicatedHostAutoRenewAttribute", "ecs", "openAPI")
 	return
 }
 

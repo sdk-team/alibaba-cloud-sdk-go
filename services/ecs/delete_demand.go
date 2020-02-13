@@ -96,7 +96,7 @@ func CreateDeleteDemandRequest() (request *DeleteDemandRequest) {
 	request = &DeleteDemandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteDemand", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteDemand", "ecs", "openAPI")
 	return
 }
 

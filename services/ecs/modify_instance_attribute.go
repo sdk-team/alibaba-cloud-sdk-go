@@ -87,6 +87,7 @@ type ModifyInstanceAttributeRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	CreditSpecification  string           `position:"Query" name:"CreditSpecification"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityGroupIds     *[]string        `position:"Query" name:"SecurityGroupIds"  type:"Repeated"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 	InstanceName         string           `position:"Query" name:"InstanceName"`
 }
@@ -102,7 +103,7 @@ func CreateModifyInstanceAttributeRequest() (request *ModifyInstanceAttributeReq
 	request = &ModifyInstanceAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceAttribute", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceAttribute", "ecs", "openAPI")
 	return
 }
 

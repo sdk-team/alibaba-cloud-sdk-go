@@ -84,6 +84,7 @@ type ModifyPrepayInstanceSpecRequest struct {
 	MigrateAcrossZone    requests.Boolean `position:"Query" name:"MigrateAcrossZone"`
 	InstanceType         string           `position:"Query" name:"InstanceType"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
+	RebootWhenFinished   requests.Boolean `position:"Query" name:"RebootWhenFinished"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	EndTime              string           `position:"Query" name:"EndTime"`
@@ -103,7 +104,7 @@ func CreateModifyPrepayInstanceSpecRequest() (request *ModifyPrepayInstanceSpecR
 	request = &ModifyPrepayInstanceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyPrepayInstanceSpec", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyPrepayInstanceSpec", "ecs", "openAPI")
 	return
 }
 

@@ -106,7 +106,7 @@ func CreatePurchaseReservedInstancesOfferingRequest() (request *PurchaseReserved
 	request = &PurchaseReservedInstancesOfferingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "PurchaseReservedInstancesOffering", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "PurchaseReservedInstancesOffering", "ecs", "openAPI")
 	return
 }
 

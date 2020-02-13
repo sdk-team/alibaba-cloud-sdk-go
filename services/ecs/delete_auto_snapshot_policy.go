@@ -93,7 +93,7 @@ func CreateDeleteAutoSnapshotPolicyRequest() (request *DeleteAutoSnapshotPolicyR
 	request = &DeleteAutoSnapshotPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteAutoSnapshotPolicy", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteAutoSnapshotPolicy", "ecs", "openAPI")
 	return
 }
 

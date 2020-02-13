@@ -83,6 +83,7 @@ type DescribeSnapshotMonitorDataRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	EndTime              string           `position:"Query" name:"EndTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Category             string           `position:"Query" name:"Category"`
 }
 
 // DescribeSnapshotMonitorDataResponse is the response struct for api DescribeSnapshotMonitorData
@@ -97,7 +98,7 @@ func CreateDescribeSnapshotMonitorDataRequest() (request *DescribeSnapshotMonito
 	request = &DescribeSnapshotMonitorDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSnapshotMonitorData", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSnapshotMonitorData", "ecs", "openAPI")
 	return
 }
 
