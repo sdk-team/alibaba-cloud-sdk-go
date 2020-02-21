@@ -87,8 +87,8 @@ type DescribeSecurityIpsRequest struct {
 // DescribeSecurityIpsResponse is the response struct for api DescribeSecurityIps
 type DescribeSecurityIpsResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	SecurityIpGroups SecurityIpGroups `json:"SecurityIpGroups" xml:"SecurityIpGroups"`
+	RequestId        string                                `json:"RequestId" xml:"RequestId"`
+	SecurityIpGroups SecurityIpGroupsInDescribeSecurityIps `json:"SecurityIpGroups" xml:"SecurityIpGroups"`
 }
 
 // CreateDescribeSecurityIpsRequest creates a request to invoke DescribeSecurityIps API

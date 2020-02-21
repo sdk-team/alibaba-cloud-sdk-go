@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteInstance invokes the r_kvstore.DeleteInstance API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deleteinstance.html
-func (client *Client) DeleteInstance(request *DeleteInstanceRequest) (response *DeleteInstanceResponse, err error) {
-	response = CreateDeleteInstanceResponse()
+// DescribeCommodity invokes the r_kvstore.DescribeCommodity API synchronously
+// api document: https://help.aliyun.com/api/r-kvstore/describecommodity.html
+func (client *Client) DescribeCommodity(request *DescribeCommodityRequest) (response *DescribeCommodityResponse, err error) {
+	response = CreateDescribeCommodityResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteInstanceWithChan invokes the r_kvstore.DeleteInstance API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deleteinstance.html
+// DescribeCommodityWithChan invokes the r_kvstore.DescribeCommodity API asynchronously
+// api document: https://help.aliyun.com/api/r-kvstore/describecommodity.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteInstanceWithChan(request *DeleteInstanceRequest) (<-chan *DeleteInstanceResponse, <-chan error) {
-	responseChan := make(chan *DeleteInstanceResponse, 1)
+func (client *Client) DescribeCommodityWithChan(request *DescribeCommodityRequest) (<-chan *DescribeCommodityResponse, <-chan error) {
+	responseChan := make(chan *DescribeCommodityResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteInstance(request)
+		response, err := client.DescribeCommodity(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DeleteInstanceWithChan(request *DeleteInstanceRequest) (<-
 	return responseChan, errChan
 }
 
-// DeleteInstanceWithCallback invokes the r_kvstore.DeleteInstance API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deleteinstance.html
+// DescribeCommodityWithCallback invokes the r_kvstore.DescribeCommodity API asynchronously
+// api document: https://help.aliyun.com/api/r-kvstore/describecommodity.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteInstanceWithCallback(request *DeleteInstanceRequest, callback func(response *DeleteInstanceResponse, err error)) <-chan int {
+func (client *Client) DescribeCommodityWithCallback(request *DescribeCommodityRequest, callback func(response *DescribeCommodityResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteInstanceResponse
+		var response *DescribeCommodityResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteInstance(request)
+		response, err = client.DescribeCommodity(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,35 +73,39 @@ func (client *Client) DeleteInstanceWithCallback(request *DeleteInstanceRequest,
 	return result
 }
 
-// DeleteInstanceRequest is the request struct for api DeleteInstance
-type DeleteInstanceRequest struct {
+// DescribeCommodityRequest is the request struct for api DescribeCommodity
+type DescribeCommodityRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	InstanceType         string           `position:"Query" name:"InstanceType"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	CommodityCode        string           `position:"Query" name:"CommodityCode"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	OrderType            string           `position:"Query" name:"OrderType"`
 }
 
-// DeleteInstanceResponse is the response struct for api DeleteInstance
-type DeleteInstanceResponse struct {
+// DescribeCommodityResponse is the response struct for api DescribeCommodity
+type DescribeCommodityResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Commodity string `json:"Commodity" xml:"Commodity"`
 }
 
-// CreateDeleteInstanceRequest creates a request to invoke DeleteInstance API
-func CreateDeleteInstanceRequest() (request *DeleteInstanceRequest) {
-	request = &DeleteInstanceRequest{
+// CreateDescribeCommodityRequest creates a request to invoke DescribeCommodity API
+func CreateDescribeCommodityRequest() (request *DescribeCommodityRequest) {
+	request = &DescribeCommodityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DeleteInstance", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeCommodity", "", "")
 	return
 }
 
-// CreateDeleteInstanceResponse creates a response to parse from DeleteInstance response
-func CreateDeleteInstanceResponse() (response *DeleteInstanceResponse) {
-	response = &DeleteInstanceResponse{
+// CreateDescribeCommodityResponse creates a response to parse from DescribeCommodity response
+func CreateDescribeCommodityResponse() (response *DescribeCommodityResponse) {
+	response = &DescribeCommodityResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

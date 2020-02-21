@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteInstance invokes the r_kvstore.DeleteInstance API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deleteinstance.html
-func (client *Client) DeleteInstance(request *DeleteInstanceRequest) (response *DeleteInstanceResponse, err error) {
-	response = CreateDeleteInstanceResponse()
+// DataOperate invokes the r_kvstore.DataOperate API synchronously
+// api document: https://help.aliyun.com/api/r-kvstore/dataoperate.html
+func (client *Client) DataOperate(request *DataOperateRequest) (response *DataOperateResponse, err error) {
+	response = CreateDataOperateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteInstanceWithChan invokes the r_kvstore.DeleteInstance API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deleteinstance.html
+// DataOperateWithChan invokes the r_kvstore.DataOperate API asynchronously
+// api document: https://help.aliyun.com/api/r-kvstore/dataoperate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteInstanceWithChan(request *DeleteInstanceRequest) (<-chan *DeleteInstanceResponse, <-chan error) {
-	responseChan := make(chan *DeleteInstanceResponse, 1)
+func (client *Client) DataOperateWithChan(request *DataOperateRequest) (<-chan *DataOperateResponse, <-chan error) {
+	responseChan := make(chan *DataOperateResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteInstance(request)
+		response, err := client.DataOperate(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DeleteInstanceWithChan(request *DeleteInstanceRequest) (<-
 	return responseChan, errChan
 }
 
-// DeleteInstanceWithCallback invokes the r_kvstore.DeleteInstance API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deleteinstance.html
+// DataOperateWithCallback invokes the r_kvstore.DataOperate API asynchronously
+// api document: https://help.aliyun.com/api/r-kvstore/dataoperate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteInstanceWithCallback(request *DeleteInstanceRequest, callback func(response *DeleteInstanceResponse, err error)) <-chan int {
+func (client *Client) DataOperateWithCallback(request *DataOperateRequest, callback func(response *DataOperateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteInstanceResponse
+		var response *DataOperateResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteInstance(request)
+		response, err = client.DataOperate(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,35 +73,37 @@ func (client *Client) DeleteInstanceWithCallback(request *DeleteInstanceRequest,
 	return result
 }
 
-// DeleteInstanceRequest is the request struct for api DeleteInstance
-type DeleteInstanceRequest struct {
+// DataOperateRequest is the request struct for api DataOperate
+type DataOperateRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Command              string           `position:"Query" name:"Command"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
-// DeleteInstanceResponse is the response struct for api DeleteInstance
-type DeleteInstanceResponse struct {
+// DataOperateResponse is the response struct for api DataOperate
+type DataOperateResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
+	CommandResult string `json:"CommandResult" xml:"CommandResult"`
 }
 
-// CreateDeleteInstanceRequest creates a request to invoke DeleteInstance API
-func CreateDeleteInstanceRequest() (request *DeleteInstanceRequest) {
-	request = &DeleteInstanceRequest{
+// CreateDataOperateRequest creates a request to invoke DataOperate API
+func CreateDataOperateRequest() (request *DataOperateRequest) {
+	request = &DataOperateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DeleteInstance", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DataOperate", "", "")
 	return
 }
 
-// CreateDeleteInstanceResponse creates a response to parse from DeleteInstance response
-func CreateDeleteInstanceResponse() (response *DeleteInstanceResponse) {
-	response = &DeleteInstanceResponse{
+// CreateDataOperateResponse creates a response to parse from DataOperate response
+func CreateDataOperateResponse() (response *DataOperateResponse) {
+	response = &DataOperateResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

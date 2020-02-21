@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteInstance invokes the r_kvstore.DeleteInstance API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deleteinstance.html
-func (client *Client) DeleteInstance(request *DeleteInstanceRequest) (response *DeleteInstanceResponse, err error) {
-	response = CreateDeleteInstanceResponse()
+// RenewInstances invokes the r_kvstore.RenewInstances API synchronously
+// api document: https://help.aliyun.com/api/r-kvstore/renewinstances.html
+func (client *Client) RenewInstances(request *RenewInstancesRequest) (response *RenewInstancesResponse, err error) {
+	response = CreateRenewInstancesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteInstanceWithChan invokes the r_kvstore.DeleteInstance API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deleteinstance.html
+// RenewInstancesWithChan invokes the r_kvstore.RenewInstances API asynchronously
+// api document: https://help.aliyun.com/api/r-kvstore/renewinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteInstanceWithChan(request *DeleteInstanceRequest) (<-chan *DeleteInstanceResponse, <-chan error) {
-	responseChan := make(chan *DeleteInstanceResponse, 1)
+func (client *Client) RenewInstancesWithChan(request *RenewInstancesRequest) (<-chan *RenewInstancesResponse, <-chan error) {
+	responseChan := make(chan *RenewInstancesResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteInstance(request)
+		response, err := client.RenewInstances(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DeleteInstanceWithChan(request *DeleteInstanceRequest) (<-
 	return responseChan, errChan
 }
 
-// DeleteInstanceWithCallback invokes the r_kvstore.DeleteInstance API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deleteinstance.html
+// RenewInstancesWithCallback invokes the r_kvstore.RenewInstances API asynchronously
+// api document: https://help.aliyun.com/api/r-kvstore/renewinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteInstanceWithCallback(request *DeleteInstanceRequest, callback func(response *DeleteInstanceResponse, err error)) <-chan int {
+func (client *Client) RenewInstancesWithCallback(request *RenewInstancesRequest, callback func(response *RenewInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteInstanceResponse
+		var response *RenewInstancesResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteInstance(request)
+		response, err = client.RenewInstances(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,35 +73,37 @@ func (client *Client) DeleteInstanceWithCallback(request *DeleteInstanceRequest,
 	return result
 }
 
-// DeleteInstanceRequest is the request struct for api DeleteInstance
-type DeleteInstanceRequest struct {
+// RenewInstancesRequest is the request struct for api RenewInstances
+type RenewInstancesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	Period               requests.Integer `position:"Query" name:"Period"`
+	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
-// DeleteInstanceResponse is the response struct for api DeleteInstance
-type DeleteInstanceResponse struct {
+// RenewInstancesResponse is the response struct for api RenewInstances
+type RenewInstancesResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	OrderId   string `json:"OrderId" xml:"OrderId"`
 }
 
-// CreateDeleteInstanceRequest creates a request to invoke DeleteInstance API
-func CreateDeleteInstanceRequest() (request *DeleteInstanceRequest) {
-	request = &DeleteInstanceRequest{
+// CreateRenewInstancesRequest creates a request to invoke RenewInstances API
+func CreateRenewInstancesRequest() (request *RenewInstancesRequest) {
+	request = &RenewInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DeleteInstance", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "RenewInstances", "", "")
 	return
 }
 
-// CreateDeleteInstanceResponse creates a response to parse from DeleteInstance response
-func CreateDeleteInstanceResponse() (response *DeleteInstanceResponse) {
-	response = &DeleteInstanceResponse{
+// CreateRenewInstancesResponse creates a response to parse from RenewInstances response
+func CreateRenewInstancesResponse() (response *RenewInstancesResponse) {
+	response = &RenewInstancesResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteInstance invokes the r_kvstore.DeleteInstance API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deleteinstance.html
-func (client *Client) DeleteInstance(request *DeleteInstanceRequest) (response *DeleteInstanceResponse, err error) {
-	response = CreateDeleteInstanceResponse()
+// DeactivateInstance invokes the r_kvstore.DeactivateInstance API synchronously
+// api document: https://help.aliyun.com/api/r-kvstore/deactivateinstance.html
+func (client *Client) DeactivateInstance(request *DeactivateInstanceRequest) (response *DeactivateInstanceResponse, err error) {
+	response = CreateDeactivateInstanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteInstanceWithChan invokes the r_kvstore.DeleteInstance API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deleteinstance.html
+// DeactivateInstanceWithChan invokes the r_kvstore.DeactivateInstance API asynchronously
+// api document: https://help.aliyun.com/api/r-kvstore/deactivateinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteInstanceWithChan(request *DeleteInstanceRequest) (<-chan *DeleteInstanceResponse, <-chan error) {
-	responseChan := make(chan *DeleteInstanceResponse, 1)
+func (client *Client) DeactivateInstanceWithChan(request *DeactivateInstanceRequest) (<-chan *DeactivateInstanceResponse, <-chan error) {
+	responseChan := make(chan *DeactivateInstanceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteInstance(request)
+		response, err := client.DeactivateInstance(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DeleteInstanceWithChan(request *DeleteInstanceRequest) (<-
 	return responseChan, errChan
 }
 
-// DeleteInstanceWithCallback invokes the r_kvstore.DeleteInstance API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deleteinstance.html
+// DeactivateInstanceWithCallback invokes the r_kvstore.DeactivateInstance API asynchronously
+// api document: https://help.aliyun.com/api/r-kvstore/deactivateinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteInstanceWithCallback(request *DeleteInstanceRequest, callback func(response *DeleteInstanceResponse, err error)) <-chan int {
+func (client *Client) DeactivateInstanceWithCallback(request *DeactivateInstanceRequest, callback func(response *DeactivateInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteInstanceResponse
+		var response *DeactivateInstanceResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteInstance(request)
+		response, err = client.DeactivateInstance(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,8 +73,8 @@ func (client *Client) DeleteInstanceWithCallback(request *DeleteInstanceRequest,
 	return result
 }
 
-// DeleteInstanceRequest is the request struct for api DeleteInstance
-type DeleteInstanceRequest struct {
+// DeactivateInstanceRequest is the request struct for api DeactivateInstance
+type DeactivateInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
@@ -84,24 +84,24 @@ type DeleteInstanceRequest struct {
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
-// DeleteInstanceResponse is the response struct for api DeleteInstance
-type DeleteInstanceResponse struct {
+// DeactivateInstanceResponse is the response struct for api DeactivateInstance
+type DeactivateInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateDeleteInstanceRequest creates a request to invoke DeleteInstance API
-func CreateDeleteInstanceRequest() (request *DeleteInstanceRequest) {
-	request = &DeleteInstanceRequest{
+// CreateDeactivateInstanceRequest creates a request to invoke DeactivateInstance API
+func CreateDeactivateInstanceRequest() (request *DeactivateInstanceRequest) {
+	request = &DeactivateInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DeleteInstance", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DeactivateInstance", "", "")
 	return
 }
 
-// CreateDeleteInstanceResponse creates a response to parse from DeleteInstance response
-func CreateDeleteInstanceResponse() (response *DeleteInstanceResponse) {
-	response = &DeleteInstanceResponse{
+// CreateDeactivateInstanceResponse creates a response to parse from DeactivateInstance response
+func CreateDeactivateInstanceResponse() (response *DeactivateInstanceResponse) {
+	response = &DeactivateInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

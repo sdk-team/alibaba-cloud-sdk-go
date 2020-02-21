@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteInstance invokes the r_kvstore.DeleteInstance API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deleteinstance.html
-func (client *Client) DeleteInstance(request *DeleteInstanceRequest) (response *DeleteInstanceResponse, err error) {
-	response = CreateDeleteInstanceResponse()
+// DescribeInstanceVPCAuth invokes the r_kvstore.DescribeInstanceVPCAuth API synchronously
+// api document: https://help.aliyun.com/api/r-kvstore/describeinstancevpcauth.html
+func (client *Client) DescribeInstanceVPCAuth(request *DescribeInstanceVPCAuthRequest) (response *DescribeInstanceVPCAuthResponse, err error) {
+	response = CreateDescribeInstanceVPCAuthResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteInstanceWithChan invokes the r_kvstore.DeleteInstance API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deleteinstance.html
+// DescribeInstanceVPCAuthWithChan invokes the r_kvstore.DescribeInstanceVPCAuth API asynchronously
+// api document: https://help.aliyun.com/api/r-kvstore/describeinstancevpcauth.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteInstanceWithChan(request *DeleteInstanceRequest) (<-chan *DeleteInstanceResponse, <-chan error) {
-	responseChan := make(chan *DeleteInstanceResponse, 1)
+func (client *Client) DescribeInstanceVPCAuthWithChan(request *DescribeInstanceVPCAuthRequest) (<-chan *DescribeInstanceVPCAuthResponse, <-chan error) {
+	responseChan := make(chan *DescribeInstanceVPCAuthResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteInstance(request)
+		response, err := client.DescribeInstanceVPCAuth(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DeleteInstanceWithChan(request *DeleteInstanceRequest) (<-
 	return responseChan, errChan
 }
 
-// DeleteInstanceWithCallback invokes the r_kvstore.DeleteInstance API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deleteinstance.html
+// DescribeInstanceVPCAuthWithCallback invokes the r_kvstore.DescribeInstanceVPCAuth API asynchronously
+// api document: https://help.aliyun.com/api/r-kvstore/describeinstancevpcauth.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteInstanceWithCallback(request *DeleteInstanceRequest, callback func(response *DeleteInstanceResponse, err error)) <-chan int {
+func (client *Client) DescribeInstanceVPCAuthWithCallback(request *DescribeInstanceVPCAuthRequest, callback func(response *DescribeInstanceVPCAuthResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteInstanceResponse
+		var response *DescribeInstanceVPCAuthResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteInstance(request)
+		response, err = client.DescribeInstanceVPCAuth(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,8 +73,8 @@ func (client *Client) DeleteInstanceWithCallback(request *DeleteInstanceRequest,
 	return result
 }
 
-// DeleteInstanceRequest is the request struct for api DeleteInstance
-type DeleteInstanceRequest struct {
+// DescribeInstanceVPCAuthRequest is the request struct for api DescribeInstanceVPCAuth
+type DescribeInstanceVPCAuthRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
@@ -84,24 +84,25 @@ type DeleteInstanceRequest struct {
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
-// DeleteInstanceResponse is the response struct for api DeleteInstance
-type DeleteInstanceResponse struct {
+// DescribeInstanceVPCAuthResponse is the response struct for api DescribeInstanceVPCAuth
+type DescribeInstanceVPCAuthResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	IsVPCAuth bool   `json:"IsVPCAuth" xml:"IsVPCAuth"`
 }
 
-// CreateDeleteInstanceRequest creates a request to invoke DeleteInstance API
-func CreateDeleteInstanceRequest() (request *DeleteInstanceRequest) {
-	request = &DeleteInstanceRequest{
+// CreateDescribeInstanceVPCAuthRequest creates a request to invoke DescribeInstanceVPCAuth API
+func CreateDescribeInstanceVPCAuthRequest() (request *DescribeInstanceVPCAuthRequest) {
+	request = &DescribeInstanceVPCAuthRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DeleteInstance", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeInstanceVPCAuth", "", "")
 	return
 }
 
-// CreateDeleteInstanceResponse creates a response to parse from DeleteInstance response
-func CreateDeleteInstanceResponse() (response *DeleteInstanceResponse) {
-	response = &DeleteInstanceResponse{
+// CreateDescribeInstanceVPCAuthResponse creates a response to parse from DescribeInstanceVPCAuth response
+func CreateDescribeInstanceVPCAuthResponse() (response *DescribeInstanceVPCAuthResponse) {
+	response = &DescribeInstanceVPCAuthResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

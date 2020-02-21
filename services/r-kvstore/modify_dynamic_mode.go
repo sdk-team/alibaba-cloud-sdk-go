@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteAccount invokes the r_kvstore.DeleteAccount API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deleteaccount.html
-func (client *Client) DeleteAccount(request *DeleteAccountRequest) (response *DeleteAccountResponse, err error) {
-	response = CreateDeleteAccountResponse()
+// ModifyDynamicMode invokes the r_kvstore.ModifyDynamicMode API synchronously
+// api document: https://help.aliyun.com/api/r-kvstore/modifydynamicmode.html
+func (client *Client) ModifyDynamicMode(request *ModifyDynamicModeRequest) (response *ModifyDynamicModeResponse, err error) {
+	response = CreateModifyDynamicModeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteAccountWithChan invokes the r_kvstore.DeleteAccount API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deleteaccount.html
+// ModifyDynamicModeWithChan invokes the r_kvstore.ModifyDynamicMode API asynchronously
+// api document: https://help.aliyun.com/api/r-kvstore/modifydynamicmode.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteAccountWithChan(request *DeleteAccountRequest) (<-chan *DeleteAccountResponse, <-chan error) {
-	responseChan := make(chan *DeleteAccountResponse, 1)
+func (client *Client) ModifyDynamicModeWithChan(request *ModifyDynamicModeRequest) (<-chan *ModifyDynamicModeResponse, <-chan error) {
+	responseChan := make(chan *ModifyDynamicModeResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteAccount(request)
+		response, err := client.ModifyDynamicMode(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DeleteAccountWithChan(request *DeleteAccountRequest) (<-ch
 	return responseChan, errChan
 }
 
-// DeleteAccountWithCallback invokes the r_kvstore.DeleteAccount API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deleteaccount.html
+// ModifyDynamicModeWithCallback invokes the r_kvstore.ModifyDynamicMode API asynchronously
+// api document: https://help.aliyun.com/api/r-kvstore/modifydynamicmode.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteAccountWithCallback(request *DeleteAccountRequest, callback func(response *DeleteAccountResponse, err error)) <-chan int {
+func (client *Client) ModifyDynamicModeWithCallback(request *ModifyDynamicModeRequest, callback func(response *ModifyDynamicModeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteAccountResponse
+		var response *ModifyDynamicModeResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteAccount(request)
+		response, err = client.ModifyDynamicMode(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,36 +73,36 @@ func (client *Client) DeleteAccountWithCallback(request *DeleteAccountRequest, c
 	return result
 }
 
-// DeleteAccountRequest is the request struct for api DeleteAccount
-type DeleteAccountRequest struct {
+// ModifyDynamicModeRequest is the request struct for api ModifyDynamicMode
+type ModifyDynamicModeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AccountName          string           `position:"Query" name:"AccountName"`
+	DynamicMode          string           `position:"Query" name:"DynamicMode"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	ReplicaId            string           `position:"Query" name:"ReplicaId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
-// DeleteAccountResponse is the response struct for api DeleteAccount
-type DeleteAccountResponse struct {
+// ModifyDynamicModeResponse is the response struct for api ModifyDynamicMode
+type ModifyDynamicModeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateDeleteAccountRequest creates a request to invoke DeleteAccount API
-func CreateDeleteAccountRequest() (request *DeleteAccountRequest) {
-	request = &DeleteAccountRequest{
+// CreateModifyDynamicModeRequest creates a request to invoke ModifyDynamicMode API
+func CreateModifyDynamicModeRequest() (request *ModifyDynamicModeRequest) {
+	request = &ModifyDynamicModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DeleteAccount", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyDynamicMode", "", "")
 	return
 }
 
-// CreateDeleteAccountResponse creates a response to parse from DeleteAccount response
-func CreateDeleteAccountResponse() (response *DeleteAccountResponse) {
-	response = &DeleteAccountResponse{
+// CreateModifyDynamicModeResponse creates a response to parse from ModifyDynamicMode response
+func CreateModifyDynamicModeResponse() (response *ModifyDynamicModeResponse) {
+	response = &ModifyDynamicModeResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
