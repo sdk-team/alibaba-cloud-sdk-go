@@ -26,7 +26,7 @@ type Backup struct {
 	BackupMode                string `json:"BackupMode" xml:"BackupMode"`
 	BackupMethod              string `json:"BackupMethod" xml:"BackupMethod"`
 	BackupDownloadURL         string `json:"BackupDownloadURL" xml:"BackupDownloadURL"`
-	BackupSize                int    `json:"BackupSize" xml:"BackupSize"`
+	BackupSize                int64  `json:"BackupSize" xml:"BackupSize"`
 	EngineVersion             string `json:"EngineVersion" xml:"EngineVersion"`
 	NodeInstanceId            string `json:"NodeInstanceId" xml:"NodeInstanceId"`
 	BackupIntranetDownloadURL string `json:"BackupIntranetDownloadURL" xml:"BackupIntranetDownloadURL"`

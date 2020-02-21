@@ -77,11 +77,12 @@ func (client *Client) DescribeIntranetAttributeWithCallback(request *DescribeInt
 type DescribeIntranetAttributeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // DescribeIntranetAttributeResponse is the response struct for api DescribeIntranetAttribute
@@ -97,7 +98,7 @@ func CreateDescribeIntranetAttributeRequest() (request *DescribeIntranetAttribut
 	request = &DescribeIntranetAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeIntranetAttribute", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeIntranetAttribute", "", "")
 	return
 }
 

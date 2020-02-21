@@ -77,28 +77,33 @@ func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest,
 type CreateInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	NodeType             string           `position:"Query" name:"NodeType"`
 	CouponNo             string           `position:"Query" name:"CouponNo"`
 	NetworkType          string           `position:"Query" name:"NetworkType"`
 	EngineVersion        string           `position:"Query" name:"EngineVersion"`
-	InstanceClass        string           `position:"Query" name:"InstanceClass"`
-	Capacity             requests.Integer `position:"Query" name:"Capacity"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	Password             string           `position:"Query" name:"Password"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	InstanceType         string           `position:"Query" name:"InstanceType"`
 	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
+	AutoRenewPeriod      string           `position:"Query" name:"AutoRenewPeriod"`
 	Period               string           `position:"Query" name:"Period"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	SrcDBInstanceId      string           `position:"Query" name:"SrcDBInstanceId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	BackupId             string           `position:"Query" name:"BackupId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Token                string           `position:"Query" name:"Token"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	PrivateIpAddress     string           `position:"Query" name:"PrivateIpAddress"`
 	InstanceName         string           `position:"Query" name:"InstanceName"`
-	VpcId                string           `position:"Query" name:"VpcId"`
+	AutoRenew            string           `position:"Query" name:"AutoRenew"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
+	NodeType             string           `position:"Query" name:"NodeType"`
+	AutoUseCoupon        string           `position:"Query" name:"AutoUseCoupon"`
+	InstanceClass        string           `position:"Query" name:"InstanceClass"`
+	Capacity             requests.Integer `position:"Query" name:"Capacity"`
+	InstanceType         string           `position:"Query" name:"InstanceType"`
+	RestoreTime          string           `position:"Query" name:"RestoreTime"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	SrcDBInstanceId      string           `position:"Query" name:"SrcDBInstanceId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Token                string           `position:"Query" name:"Token"`
+	VpcId                string           `position:"Query" name:"VpcId"`
 	ChargeType           string           `position:"Query" name:"ChargeType"`
 	Config               string           `position:"Query" name:"Config"`
 }
@@ -114,10 +119,10 @@ type CreateInstanceResponse struct {
 	UserName         string `json:"UserName" xml:"UserName"`
 	InstanceStatus   string `json:"InstanceStatus" xml:"InstanceStatus"`
 	RegionId         string `json:"RegionId" xml:"RegionId"`
-	Capacity         int    `json:"Capacity" xml:"Capacity"`
-	QPS              int    `json:"QPS" xml:"QPS"`
-	Bandwidth        int    `json:"Bandwidth" xml:"Bandwidth"`
-	Connections      int    `json:"Connections" xml:"Connections"`
+	Capacity         int64  `json:"Capacity" xml:"Capacity"`
+	QPS              int64  `json:"QPS" xml:"QPS"`
+	Bandwidth        int64  `json:"Bandwidth" xml:"Bandwidth"`
+	Connections      int64  `json:"Connections" xml:"Connections"`
 	ZoneId           string `json:"ZoneId" xml:"ZoneId"`
 	Config           string `json:"Config" xml:"Config"`
 	ChargeType       string `json:"ChargeType" xml:"ChargeType"`
@@ -134,7 +139,7 @@ func CreateCreateInstanceRequest() (request *CreateInstanceRequest) {
 	request = &CreateInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "CreateInstance", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "CreateInstance", "", "")
 	return
 }
 

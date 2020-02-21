@@ -20,14 +20,14 @@ type DBInstanceAttribute struct {
 	InstanceId          string                          `json:"InstanceId" xml:"InstanceId"`
 	InstanceName        string                          `json:"InstanceName" xml:"InstanceName"`
 	ConnectionDomain    string                          `json:"ConnectionDomain" xml:"ConnectionDomain"`
-	Port                int                             `json:"Port" xml:"Port"`
+	Port                int64                           `json:"Port" xml:"Port"`
 	InstanceStatus      string                          `json:"InstanceStatus" xml:"InstanceStatus"`
 	RegionId            string                          `json:"RegionId" xml:"RegionId"`
-	Capacity            int                             `json:"Capacity" xml:"Capacity"`
+	Capacity            int64                           `json:"Capacity" xml:"Capacity"`
 	InstanceClass       string                          `json:"InstanceClass" xml:"InstanceClass"`
-	QPS                 int                             `json:"QPS" xml:"QPS"`
-	Bandwidth           int                             `json:"Bandwidth" xml:"Bandwidth"`
-	Connections         int                             `json:"Connections" xml:"Connections"`
+	QPS                 int64                           `json:"QPS" xml:"QPS"`
+	Bandwidth           int64                           `json:"Bandwidth" xml:"Bandwidth"`
+	Connections         int64                           `json:"Connections" xml:"Connections"`
 	ZoneId              string                          `json:"ZoneId" xml:"ZoneId"`
 	Config              string                          `json:"Config" xml:"Config"`
 	ChargeType          string                          `json:"ChargeType" xml:"ChargeType"`
@@ -53,5 +53,6 @@ type DBInstanceAttribute struct {
 	VpcAuthMode         string                          `json:"VpcAuthMode" xml:"VpcAuthMode"`
 	AuditLogRetention   string                          `json:"AuditLogRetention" xml:"AuditLogRetention"`
 	ReplicationMode     string                          `json:"ReplicationMode" xml:"ReplicationMode"`
+	VpcCloudInstanceId  string                          `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
 	Tags                TagsInDescribeInstanceAttribute `json:"Tags" xml:"Tags"`
 }
