@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteApp invokes the arms.DeleteApp API synchronously
-// api document: https://help.aliyun.com/api/arms/deleteapp.html
-func (client *Client) DeleteApp(request *DeleteAppRequest) (response *DeleteAppResponse, err error) {
-	response = CreateDeleteAppResponse()
+// DeleteRetcodeApp invokes the arms.DeleteRetcodeApp API synchronously
+// api document: https://help.aliyun.com/api/arms/deleteretcodeapp.html
+func (client *Client) DeleteRetcodeApp(request *DeleteRetcodeAppRequest) (response *DeleteRetcodeAppResponse, err error) {
+	response = CreateDeleteRetcodeAppResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteAppWithChan invokes the arms.DeleteApp API asynchronously
-// api document: https://help.aliyun.com/api/arms/deleteapp.html
+// DeleteRetcodeAppWithChan invokes the arms.DeleteRetcodeApp API asynchronously
+// api document: https://help.aliyun.com/api/arms/deleteretcodeapp.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteAppWithChan(request *DeleteAppRequest) (<-chan *DeleteAppResponse, <-chan error) {
-	responseChan := make(chan *DeleteAppResponse, 1)
+func (client *Client) DeleteRetcodeAppWithChan(request *DeleteRetcodeAppRequest) (<-chan *DeleteRetcodeAppResponse, <-chan error) {
+	responseChan := make(chan *DeleteRetcodeAppResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteApp(request)
+		response, err := client.DeleteRetcodeApp(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DeleteAppWithChan(request *DeleteAppRequest) (<-chan *Dele
 	return responseChan, errChan
 }
 
-// DeleteAppWithCallback invokes the arms.DeleteApp API asynchronously
-// api document: https://help.aliyun.com/api/arms/deleteapp.html
+// DeleteRetcodeAppWithCallback invokes the arms.DeleteRetcodeApp API asynchronously
+// api document: https://help.aliyun.com/api/arms/deleteretcodeapp.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteAppWithCallback(request *DeleteAppRequest, callback func(response *DeleteAppResponse, err error)) <-chan int {
+func (client *Client) DeleteRetcodeAppWithCallback(request *DeleteRetcodeAppRequest, callback func(response *DeleteRetcodeAppResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteAppResponse
+		var response *DeleteRetcodeAppResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteApp(request)
+		response, err = client.DeleteRetcodeApp(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,32 +73,31 @@ func (client *Client) DeleteAppWithCallback(request *DeleteAppRequest, callback 
 	return result
 }
 
-// DeleteAppRequest is the request struct for api DeleteApp
-type DeleteAppRequest struct {
+// DeleteRetcodeAppRequest is the request struct for api DeleteRetcodeApp
+type DeleteRetcodeAppRequest struct {
 	*requests.RpcRequest
 	AppId string `position:"Query" name:"AppId"`
-	Type  string `position:"Query" name:"Type"`
 }
 
-// DeleteAppResponse is the response struct for api DeleteApp
-type DeleteAppResponse struct {
+// DeleteRetcodeAppResponse is the response struct for api DeleteRetcodeApp
+type DeleteRetcodeAppResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
 }
 
-// CreateDeleteAppRequest creates a request to invoke DeleteApp API
-func CreateDeleteAppRequest() (request *DeleteAppRequest) {
-	request = &DeleteAppRequest{
+// CreateDeleteRetcodeAppRequest creates a request to invoke DeleteRetcodeApp API
+func CreateDeleteRetcodeAppRequest() (request *DeleteRetcodeAppRequest) {
+	request = &DeleteRetcodeAppRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2018-12-19", "DeleteApp", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "DeleteRetcodeApp", "", "")
 	return
 }
 
-// CreateDeleteAppResponse creates a response to parse from DeleteApp response
-func CreateDeleteAppResponse() (response *DeleteAppResponse) {
-	response = &DeleteAppResponse{
+// CreateDeleteRetcodeAppResponse creates a response to parse from DeleteRetcodeApp response
+func CreateDeleteRetcodeAppResponse() (response *DeleteRetcodeAppResponse) {
+	response = &DeleteRetcodeAppResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

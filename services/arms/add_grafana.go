@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateApp invokes the arms.CreateApp API synchronously
-// api document: https://help.aliyun.com/api/arms/createapp.html
-func (client *Client) CreateApp(request *CreateAppRequest) (response *CreateAppResponse, err error) {
-	response = CreateCreateAppResponse()
+// AddGrafana invokes the arms.AddGrafana API synchronously
+// api document: https://help.aliyun.com/api/arms/addgrafana.html
+func (client *Client) AddGrafana(request *AddGrafanaRequest) (response *AddGrafanaResponse, err error) {
+	response = CreateAddGrafanaResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateAppWithChan invokes the arms.CreateApp API asynchronously
-// api document: https://help.aliyun.com/api/arms/createapp.html
+// AddGrafanaWithChan invokes the arms.AddGrafana API asynchronously
+// api document: https://help.aliyun.com/api/arms/addgrafana.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateAppWithChan(request *CreateAppRequest) (<-chan *CreateAppResponse, <-chan error) {
-	responseChan := make(chan *CreateAppResponse, 1)
+func (client *Client) AddGrafanaWithChan(request *AddGrafanaRequest) (<-chan *AddGrafanaResponse, <-chan error) {
+	responseChan := make(chan *AddGrafanaResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateApp(request)
+		response, err := client.AddGrafana(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) CreateAppWithChan(request *CreateAppRequest) (<-chan *Crea
 	return responseChan, errChan
 }
 
-// CreateAppWithCallback invokes the arms.CreateApp API asynchronously
-// api document: https://help.aliyun.com/api/arms/createapp.html
+// AddGrafanaWithCallback invokes the arms.AddGrafana API asynchronously
+// api document: https://help.aliyun.com/api/arms/addgrafana.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateAppWithCallback(request *CreateAppRequest, callback func(response *CreateAppResponse, err error)) <-chan int {
+func (client *Client) AddGrafanaWithCallback(request *AddGrafanaRequest, callback func(response *AddGrafanaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateAppResponse
+		var response *AddGrafanaResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateApp(request)
+		response, err = client.AddGrafana(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,35 +73,32 @@ func (client *Client) CreateAppWithCallback(request *CreateAppRequest, callback 
 	return result
 }
 
-// CreateAppRequest is the request struct for api CreateApp
-type CreateAppRequest struct {
+// AddGrafanaRequest is the request struct for api AddGrafana
+type AddGrafanaRequest struct {
 	*requests.RpcRequest
-	AppName string `position:"Query" name:"AppName"`
-	AppId   string `position:"Query" name:"AppId"`
-	Source  string `position:"Query" name:"Source"`
-	Type    string `position:"Query" name:"Type"`
-	Config  string `position:"Query" name:"Config"`
+	Integration string `position:"Query" name:"Integration"`
+	ClusterId   string `position:"Query" name:"ClusterId"`
 }
 
-// CreateAppResponse is the response struct for api CreateApp
-type CreateAppResponse struct {
+// AddGrafanaResponse is the response struct for api AddGrafana
+type AddGrafanaResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
 }
 
-// CreateCreateAppRequest creates a request to invoke CreateApp API
-func CreateCreateAppRequest() (request *CreateAppRequest) {
-	request = &CreateAppRequest{
+// CreateAddGrafanaRequest creates a request to invoke AddGrafana API
+func CreateAddGrafanaRequest() (request *AddGrafanaRequest) {
+	request = &AddGrafanaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2018-12-19", "CreateApp", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "AddGrafana", "", "")
 	return
 }
 
-// CreateCreateAppResponse creates a response to parse from CreateApp response
-func CreateCreateAppResponse() (response *CreateAppResponse) {
-	response = &CreateAppResponse{
+// CreateAddGrafanaResponse creates a response to parse from AddGrafana response
+func CreateAddGrafanaResponse() (response *AddGrafanaResponse) {
+	response = &AddGrafanaResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
