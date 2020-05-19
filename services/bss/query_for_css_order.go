@@ -94,7 +94,7 @@ func CreateQueryForCssOrderRequest() (request *QueryForCssOrderRequest) {
 	request = &QueryForCssOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Bss", "2014-07-14", "QueryForCssOrder", "bss", "openAPI")
+	request.InitWithApiInfo("Bss", "2014-07-14", "QueryForCssOrder", "", "")
 	return
 }
 

@@ -94,7 +94,7 @@ func CreateVnoPayCallBackNotifyRequest() (request *VnoPayCallBackNotifyRequest) 
 	request = &VnoPayCallBackNotifyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Bss", "2014-07-14", "VnoPayCallBackNotify", "bss", "openAPI")
+	request.InitWithApiInfo("Bss", "2014-07-14", "VnoPayCallBackNotify", "", "")
 	return
 }
 
