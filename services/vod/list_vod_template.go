@@ -78,8 +78,9 @@ type ListVodTemplateRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	TemplateType         string           `position:"Query" name:"TemplateType"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TemplateType         string           `position:"Query" name:"TemplateType"`
+	AppId                string           `position:"Query" name:"AppId"`
 }
 
 // ListVodTemplateResponse is the response struct for api ListVodTemplate

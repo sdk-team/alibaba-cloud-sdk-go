@@ -17,5 +17,5 @@ package vod
 
 // CounterListInGetMediaAuditResult is a nested struct in vod response
 type CounterListInGetMediaAuditResult struct {
-	CounterListItem []CounterListItem `json:"CounterListItem" xml:"CounterListItem"`
+	CounterListItem []CounterListItem `json:"CounterList" xml:"CounterList"`
 }
