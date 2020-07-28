@@ -1,0 +1,1 @@
+java -jar /Users/yangdengyu/portal-cluster/tools/sdk.generator-1.0.0-SNAPSHOT-jar-with-dependencies.jar --from-dir csharp sdk-test 2019-02-25 public openAPI /Users/yangdengyu/portal-cluster/tools/pop-meta/sdk-test output/d7ad2dc9-e04b-4e17-95e5-fda7d80f0ae5 1 "" 

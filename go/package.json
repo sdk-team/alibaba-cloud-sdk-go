@@ -1,0 +1,11 @@
+{
+  "name": "portal-cpp-worker",
+  "version": "1.0.0",
+  "description": "cpp worker for aliyun sdk portal",
+  "author": "yangdengyu",
+  "license": "MIT",
+  "dependencies": {
+    "node-rdkafka": "^1.0.6",
+    "moment": "^2.24.0"
+  }
+}

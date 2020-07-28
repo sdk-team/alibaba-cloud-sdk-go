@@ -1,0 +1,1 @@
+java -jar /Users/yangdengyu/portal-cluster/tools/sdk.generator-1.0.0-SNAPSHOT-jar-with-dependencies.jar --from-dir go sdk-test 2019-02-25 public openAPI /Users/yangdengyu/portal-cluster/tools/pop-meta/sdk-test output/f4953b06-e9f2-4b63-9ed9-1f4e04106f2b patch "" 

@@ -1,0 +1,13 @@
+{
+  "name": "portal-python-worker",
+  "version": "1.0.0",
+  "description": "python worker for aliyun sdk portal",
+  "author": "yangdengyu",
+  "license": "MIT",
+  "dependencies": {
+    "node-rdkafka": "^1.0.6",
+    "moment": "^2.24.0",
+    "p-map": "^2.1.0",
+    "glob": "^7.1.3"
+  }
+}
