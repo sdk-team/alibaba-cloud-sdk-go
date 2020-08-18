@@ -97,6 +97,7 @@ func CreateTestHttpApiRequest() (request *TestHttpApiRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ft", "2018-07-13", "TestHttpApi", "", "")
+	request.Method = requests.POST
 	return
 }
 

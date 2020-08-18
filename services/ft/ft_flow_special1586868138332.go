@@ -92,6 +92,7 @@ func CreateFtFlowSpecial1586868138332Request() (request *FtFlowSpecial1586868138
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ft", "2018-07-13", "FtFlowSpecial1586868138332", "", "")
+	request.Method = requests.POST
 	return
 }
 

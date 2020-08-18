@@ -94,6 +94,7 @@ func CreateFtDynamicAddressDubboRequest() (request *FtDynamicAddressDubboRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ft", "2018-07-13", "FtDynamicAddressDubbo", "", "")
+	request.Method = requests.POST
 	return
 }
 

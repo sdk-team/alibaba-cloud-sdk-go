@@ -106,6 +106,7 @@ func CreateDescribeResourceTypeRequest() (request *DescribeResourceTypeRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ft", "2018-07-13", "DescribeResourceType", "", "")
+	request.Method = requests.GET
 	return
 }
 

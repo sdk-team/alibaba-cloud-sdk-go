@@ -93,6 +93,7 @@ func CreateBatchAuditTest02Request() (request *BatchAuditTest02Request) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ft", "2018-07-13", "BatchAuditTest02", "", "")
+	request.Method = requests.POST
 	return
 }
 

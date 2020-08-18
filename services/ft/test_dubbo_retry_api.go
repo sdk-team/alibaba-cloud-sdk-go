@@ -90,6 +90,7 @@ func CreateTestDubboRetryApiRequest() (request *TestDubboRetryApiRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ft", "2018-07-13", "TestDubboRetryApi", "", "")
+	request.Method = requests.POST
 	return
 }
 

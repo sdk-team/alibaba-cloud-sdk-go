@@ -99,6 +99,7 @@ func CreateFtParamListRequest() (request *FtParamListRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ft", "2018-07-13", "FtParamList", "", "")
+	request.Method = requests.POST
 	return
 }
 

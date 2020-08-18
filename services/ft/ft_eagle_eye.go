@@ -93,6 +93,7 @@ func CreateFtEagleEyeRequest() (request *FtEagleEyeRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ft", "2018-07-13", "FtEagleEye", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -92,6 +92,7 @@ func CreateFTApiAliasApiRequest() (request *FTApiAliasApiRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ft", "2018-07-13", "FTApiAliasApi", "", "")
+	request.Method = requests.POST
 	return
 }
 

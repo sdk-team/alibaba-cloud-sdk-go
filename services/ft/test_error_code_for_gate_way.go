@@ -98,6 +98,7 @@ func CreateTestErrorCodeForGateWayRequest() (request *TestErrorCodeForGateWayReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ft", "2018-07-13", "TestErrorCodeForGateWay", "", "")
+	request.Method = requests.GET
 	return
 }
 

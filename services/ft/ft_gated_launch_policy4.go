@@ -92,6 +92,7 @@ func CreateFtGatedLaunchPolicy4Request() (request *FtGatedLaunchPolicy4Request) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ft", "2018-07-13", "FtGatedLaunchPolicy4", "", "")
+	request.Method = requests.POST
 	return
 }
 

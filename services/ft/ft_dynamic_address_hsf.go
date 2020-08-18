@@ -90,6 +90,7 @@ func CreateFtDynamicAddressHsfRequest() (request *FtDynamicAddressHsfRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ft", "2018-07-13", "FtDynamicAddressHsf", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -76,14 +76,17 @@ func (client *Client) FtIpFlowControlWithCallback(request *FtIpFlowControlReques
 // FtIpFlowControlRequest is the request struct for api FtIpFlowControl
 type FtIpFlowControlRequest struct {
 	*requests.RpcRequest
-	Name string `position:"Query" name:"Name"`
+	StringList string `position:"Query" name:"StringList"`
 }
 
 // FtIpFlowControlResponse is the response struct for api FtIpFlowControl
 type FtIpFlowControlResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Name      string `json:"Name" xml:"Name"`
+	RequestId    string                 `json:"RequestId" xml:"RequestId"`
+	Names        NamesInFtIpFlowControl `json:"Names" xml:"Names"`
+	Names01      Names01                `json:"Names01" xml:"Names01"`
+	IntegerList  IntegerList            `json:"IntegerList" xml:"IntegerList"`
+	IntegerList1 IntegerList1           `json:"IntegerList1" xml:"IntegerList1"`
 }
 
 // CreateFtIpFlowControlRequest creates a request to invoke FtIpFlowControl API
@@ -92,6 +95,7 @@ func CreateFtIpFlowControlRequest() (request *FtIpFlowControlRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ft", "2018-07-13", "FtIpFlowControl", "", "")
+	request.Method = requests.POST
 	return
 }
 
