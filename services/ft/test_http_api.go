@@ -76,10 +76,12 @@ func (client *Client) TestHttpApiWithCallback(request *TestHttpApiRequest, callb
 // TestHttpApiRequest is the request struct for api TestHttpApi
 type TestHttpApiRequest struct {
 	*requests.RpcRequest
-	StringValue  string           `position:"Query" name:"StringValue"`
-	OtherParam   string           `position:"Query" name:"OtherParam"`
-	BooleanParam requests.Boolean `position:"Query" name:"BooleanParam"`
-	DefaultValue string           `position:"Query" name:"DefaultValue"`
+	IspSignatureSecretKey string           `position:"Query" name:"IspSignatureSecretKey"`
+	StringValue           string           `position:"Body" name:"StringValue"`
+	OtherParam            string           `position:"Body" name:"OtherParam"`
+	BooleanParam          requests.Boolean `position:"Query" name:"BooleanParam"`
+	DefaultValue          string           `position:"Body" name:"DefaultValue"`
+	IspSignature          string           `position:"Query" name:"IspSignature"`
 }
 
 // TestHttpApiResponse is the response struct for api TestHttpApi
