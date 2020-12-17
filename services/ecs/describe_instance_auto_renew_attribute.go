@@ -84,11 +84,11 @@ type DescribeInstanceAutoRenewAttributeRequest struct {
 // DescribeInstanceAutoRenewAttributeResponse is the response struct for api DescribeInstanceAutoRenewAttribute
 type DescribeInstanceAutoRenewAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId               string                  `json:"RequestId" xml:"RequestId"`
-	PageNumber              int                     `json:"PageNumber" xml:"PageNumber"`
-	PageSize                int                     `json:"PageSize" xml:"PageSize"`
-	TotalCount              int                     `json:"TotalCount" xml:"TotalCount"`
-	InstanceRenewAttributes InstanceRenewAttributes `json:"InstanceRenewAttributes" xml:"InstanceRenewAttributes"`
+	RequestId               string                                                      `json:"RequestId" xml:"RequestId"`
+	PageNumber              int                                                         `json:"PageNumber" xml:"PageNumber"`
+	PageSize                int                                                         `json:"PageSize" xml:"PageSize"`
+	TotalCount              int                                                         `json:"TotalCount" xml:"TotalCount"`
+	InstanceRenewAttributes InstanceRenewAttributesInDescribeInstanceAutoRenewAttribute `json:"InstanceRenewAttributes" xml:"InstanceRenewAttributes"`
 }
 
 // CreateDescribeInstanceAutoRenewAttributeRequest creates a request to invoke DescribeInstanceAutoRenewAttribute API

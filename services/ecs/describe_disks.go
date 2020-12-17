@@ -98,6 +98,7 @@ type DescribeDisksRequest struct {
 	DiskIds                       string              `position:"Query" name:"DiskIds"`
 	DeleteWithInstance            requests.Boolean    `position:"Query" name:"DeleteWithInstance"`
 	ResourceOwnerAccount          string              `position:"Query" name:"ResourceOwnerAccount"`
+	PerformanceLevel              string              `position:"Query" name:"PerformanceLevel"`
 	OwnerAccount                  string              `position:"Query" name:"OwnerAccount"`
 	EnableAutomatedSnapshotPolicy requests.Boolean    `position:"Query" name:"EnableAutomatedSnapshotPolicy"`
 	Filter2Key                    string              `position:"Query" name:"Filter.2.Key"`

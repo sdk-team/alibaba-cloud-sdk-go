@@ -18,13 +18,14 @@ package ecs
 // ElasticityAssuranceItem is a nested struct in ecs response
 type ElasticityAssuranceItem struct {
 	PrivatePoolOptionsName          string                                           `json:"PrivatePoolOptionsName" xml:"PrivatePoolOptionsName"`
+	PrivatePoolOptionsMatchCriteria string                                           `json:"PrivatePoolOptionsMatchCriteria" xml:"PrivatePoolOptionsMatchCriteria"`
+	LatestStartTime                 string                                           `json:"LatestStartTime" xml:"LatestStartTime"`
 	RegionId                        string                                           `json:"RegionId" xml:"RegionId"`
 	UsedAssuranceTimes              int                                              `json:"UsedAssuranceTimes" xml:"UsedAssuranceTimes"`
 	StartTime                       string                                           `json:"StartTime" xml:"StartTime"`
 	EndTime                         string                                           `json:"EndTime" xml:"EndTime"`
+	PrivatePoolOptionsType          string                                           `json:"PrivatePoolOptionsType" xml:"PrivatePoolOptionsType"`
 	TotalAssuranceTimes             string                                           `json:"TotalAssuranceTimes" xml:"TotalAssuranceTimes"`
-	PrivatePoolOptionsMatchCriteria string                                           `json:"PrivatePoolOptionsMatchCriteria" xml:"PrivatePoolOptionsMatchCriteria"`
-	LatestStartTime                 string                                           `json:"LatestStartTime" xml:"LatestStartTime"`
 	Status                          string                                           `json:"Status" xml:"Status"`
 	Description                     string                                           `json:"Description" xml:"Description"`
 	PrivatePoolOptionsId            string                                           `json:"PrivatePoolOptionsId" xml:"PrivatePoolOptionsId"`

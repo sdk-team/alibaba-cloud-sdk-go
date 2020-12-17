@@ -21,6 +21,7 @@ type DeploymentSet struct {
 	DeploymentSetDescription string      `json:"DeploymentSetDescription" xml:"DeploymentSetDescription"`
 	DeploymentSetName        string      `json:"DeploymentSetName" xml:"DeploymentSetName"`
 	Strategy                 string      `json:"Strategy" xml:"Strategy"`
+	Tenancy                  string      `json:"Tenancy" xml:"Tenancy"`
 	DeploymentStrategy       string      `json:"DeploymentStrategy" xml:"DeploymentStrategy"`
 	Domain                   string      `json:"Domain" xml:"Domain"`
 	Granularity              string      `json:"Granularity" xml:"Granularity"`

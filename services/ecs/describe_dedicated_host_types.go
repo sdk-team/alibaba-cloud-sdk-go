@@ -75,6 +75,7 @@ type DescribeDedicatedHostTypesRequest struct {
 	SupportedInstanceTypeFamily string           `position:"Query" name:"SupportedInstanceTypeFamily"`
 	DedicatedHostType           string           `position:"Query" name:"DedicatedHostType"`
 	ResourceOwnerAccount        string           `position:"Query" name:"ResourceOwnerAccount"`
+	SupportedInstanceTypesList  string           `position:"Query" name:"SupportedInstanceTypesList"`
 	OwnerAccount                string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                     requests.Integer `position:"Query" name:"OwnerId"`
 }

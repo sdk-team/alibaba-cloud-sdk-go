@@ -17,5 +17,5 @@ package ecs
 
 // MonitorDataInDescribeInstanceMonitorData is a nested struct in ecs response
 type MonitorDataInDescribeInstanceMonitorData struct {
-	InstanceMonitorData []InstanceMonitorData `json:"InstanceMonitorData" xml:"InstanceMonitorData"`
+	InstanceMonitorData []InstanceMonitorDataInDescribeInstanceMonitorData `json:"InstanceMonitorData" xml:"InstanceMonitorData"`
 }

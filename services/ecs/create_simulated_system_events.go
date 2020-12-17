@@ -83,8 +83,8 @@ type CreateSimulatedSystemEventsRequest struct {
 // CreateSimulatedSystemEventsResponse is the response struct for api CreateSimulatedSystemEvents
 type CreateSimulatedSystemEventsResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	EventIdSet EventIdSet `json:"EventIdSet" xml:"EventIdSet"`
+	RequestId  string                                  `json:"RequestId" xml:"RequestId"`
+	EventIdSet EventIdSetInCreateSimulatedSystemEvents `json:"EventIdSet" xml:"EventIdSet"`
 }
 
 // CreateCreateSimulatedSystemEventsRequest creates a request to invoke CreateSimulatedSystemEvents API

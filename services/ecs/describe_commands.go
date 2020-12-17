@@ -78,6 +78,7 @@ type DescribeCommandsRequest struct {
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	ContentEncoding      string           `position:"Query" name:"ContentEncoding"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	SupplierId           string           `position:"Query" name:"SupplierId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`

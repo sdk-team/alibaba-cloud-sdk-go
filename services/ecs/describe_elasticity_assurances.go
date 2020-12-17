@@ -83,16 +83,17 @@ type DescribeElasticityAssurancesRequest struct {
 	MaxResults            requests.Integer `position:"Query" name:"MaxResults"`
 	ZoneId                string           `position:"Query" name:"ZoneId"`
 	PackageType           string           `position:"Query" name:"PackageType"`
+	Status                string           `position:"Query" name:"Status"`
 }
 
 // DescribeElasticityAssurancesResponse is the response struct for api DescribeElasticityAssurances
 type DescribeElasticityAssurancesResponse struct {
 	*responses.BaseResponse
-	RequestId              string                 `json:"RequestId" xml:"RequestId"`
-	NextToken              string                 `json:"NextToken" xml:"NextToken"`
-	MaxResults             int                    `json:"MaxResults" xml:"MaxResults"`
-	TotalCount             int                    `json:"TotalCount" xml:"TotalCount"`
-	ElasticityAssuranceSet ElasticityAssuranceSet `json:"ElasticityAssuranceSet" xml:"ElasticityAssuranceSet"`
+	RequestId              string                                               `json:"RequestId" xml:"RequestId"`
+	NextToken              string                                               `json:"NextToken" xml:"NextToken"`
+	MaxResults             int                                                  `json:"MaxResults" xml:"MaxResults"`
+	TotalCount             int                                                  `json:"TotalCount" xml:"TotalCount"`
+	ElasticityAssuranceSet ElasticityAssuranceSetInDescribeElasticityAssurances `json:"ElasticityAssuranceSet" xml:"ElasticityAssuranceSet"`
 }
 
 // CreateDescribeElasticityAssurancesRequest creates a request to invoke DescribeElasticityAssurances API

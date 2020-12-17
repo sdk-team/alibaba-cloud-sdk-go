@@ -17,12 +17,12 @@ package ecs
 
 // DataDisk is a nested struct in ecs response
 type DataDisk struct {
-	Size               int    `json:"Size" xml:"Size"`
-	SnapshotId         string `json:"SnapshotId" xml:"SnapshotId"`
 	Category           string `json:"Category" xml:"Category"`
-	Encrypted          string `json:"Encrypted" xml:"Encrypted"`
-	DiskName           string `json:"DiskName" xml:"DiskName"`
-	Description        string `json:"Description" xml:"Description"`
+	Size               int    `json:"Size" xml:"Size"`
 	DeleteWithInstance bool   `json:"DeleteWithInstance" xml:"DeleteWithInstance"`
 	Device             string `json:"Device" xml:"Device"`
+	SnapshotId         string `json:"SnapshotId" xml:"SnapshotId"`
+	DiskName           string `json:"DiskName" xml:"DiskName"`
+	Description        string `json:"Description" xml:"Description"`
+	Encrypted          string `json:"Encrypted" xml:"Encrypted"`
 }

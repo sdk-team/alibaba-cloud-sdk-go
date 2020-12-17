@@ -17,40 +17,40 @@ package ecs
 
 // LaunchTemplateData is a nested struct in ecs response
 type LaunchTemplateData struct {
-	ImageId                     string                                            `json:"ImageId" xml:"ImageId"`
-	ImageOwnerAlias             string                                            `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
-	PasswordInherit             bool                                              `json:"PasswordInherit" xml:"PasswordInherit"`
-	InstanceType                string                                            `json:"InstanceType" xml:"InstanceType"`
+	SystemDiskCategory          string                                            `json:"SystemDisk.Category" xml:"SystemDisk.Category"`
 	SecurityGroupId             string                                            `json:"SecurityGroupId" xml:"SecurityGroupId"`
+	SpotPriceLimit              float64                                           `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
+	SecurityEnhancementStrategy string                                            `json:"SecurityEnhancementStrategy" xml:"SecurityEnhancementStrategy"`
+	ImageId                     string                                            `json:"ImageId" xml:"ImageId"`
+	SystemDiskSize              int                                               `json:"SystemDisk.Size" xml:"SystemDisk.Size"`
+	ImageOwnerAlias             string                                            `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
+	InstanceType                string                                            `json:"InstanceType" xml:"InstanceType"`
+	UserData                    string                                            `json:"UserData" xml:"UserData"`
+	SystemDiskDiskName          string                                            `json:"SystemDisk.DiskName" xml:"SystemDisk.DiskName"`
+	AutoReleaseTime             string                                            `json:"AutoReleaseTime" xml:"AutoReleaseTime"`
+	InternetMaxBandwidthOut     int                                               `json:"InternetMaxBandwidthOut" xml:"InternetMaxBandwidthOut"`
+	IoOptimized                 string                                            `json:"IoOptimized" xml:"IoOptimized"`
+	ResourceGroupId             string                                            `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	SystemDiskDescription       string                                            `json:"SystemDisk.Description" xml:"SystemDisk.Description"`
 	VpcId                       string                                            `json:"VpcId" xml:"VpcId"`
+	NetworkType                 string                                            `json:"NetworkType" xml:"NetworkType"`
+	Description                 string                                            `json:"Description" xml:"Description"`
+	InstanceChargeType          string                                            `json:"InstanceChargeType" xml:"InstanceChargeType"`
+	PasswordInherit             bool                                              `json:"PasswordInherit" xml:"PasswordInherit"`
+	EnableVmOsConfig            bool                                              `json:"EnableVmOsConfig" xml:"EnableVmOsConfig"`
 	VSwitchId                   string                                            `json:"VSwitchId" xml:"VSwitchId"`
 	InstanceName                string                                            `json:"InstanceName" xml:"InstanceName"`
-	Description                 string                                            `json:"Description" xml:"Description"`
-	InternetMaxBandwidthIn      int                                               `json:"InternetMaxBandwidthIn" xml:"InternetMaxBandwidthIn"`
-	InternetMaxBandwidthOut     int                                               `json:"InternetMaxBandwidthOut" xml:"InternetMaxBandwidthOut"`
-	HostName                    string                                            `json:"HostName" xml:"HostName"`
-	ZoneId                      string                                            `json:"ZoneId" xml:"ZoneId"`
-	SystemDiskSize              int                                               `json:"SystemDisk.Size" xml:"SystemDisk.Size"`
-	SystemDiskCategory          string                                            `json:"SystemDisk.Category" xml:"SystemDisk.Category"`
-	SystemDiskDiskName          string                                            `json:"SystemDisk.DiskName" xml:"SystemDisk.DiskName"`
-	SystemDiskDescription       string                                            `json:"SystemDisk.Description" xml:"SystemDisk.Description"`
-	SystemDiskIops              int                                               `json:"SystemDisk.Iops" xml:"SystemDisk.Iops"`
-	IoOptimized                 string                                            `json:"IoOptimized" xml:"IoOptimized"`
-	InstanceChargeType          string                                            `json:"InstanceChargeType" xml:"InstanceChargeType"`
 	Period                      int                                               `json:"Period" xml:"Period"`
-	InternetChargeType          string                                            `json:"InternetChargeType" xml:"InternetChargeType"`
-	EnableVmOsConfig            bool                                              `json:"EnableVmOsConfig" xml:"EnableVmOsConfig"`
-	NetworkType                 string                                            `json:"NetworkType" xml:"NetworkType"`
-	UserData                    string                                            `json:"UserData" xml:"UserData"`
-	KeyPairName                 string                                            `json:"KeyPairName" xml:"KeyPairName"`
 	RamRoleName                 string                                            `json:"RamRoleName" xml:"RamRoleName"`
-	AutoReleaseTime             string                                            `json:"AutoReleaseTime" xml:"AutoReleaseTime"`
+	ZoneId                      string                                            `json:"ZoneId" xml:"ZoneId"`
+	KeyPairName                 string                                            `json:"KeyPairName" xml:"KeyPairName"`
+	SystemDiskIops              int                                               `json:"SystemDisk.Iops" xml:"SystemDisk.Iops"`
+	InternetMaxBandwidthIn      int                                               `json:"InternetMaxBandwidthIn" xml:"InternetMaxBandwidthIn"`
+	InternetChargeType          string                                            `json:"InternetChargeType" xml:"InternetChargeType"`
+	HostName                    string                                            `json:"HostName" xml:"HostName"`
 	SpotStrategy                string                                            `json:"SpotStrategy" xml:"SpotStrategy"`
-	SpotPriceLimit              float64                                           `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
 	SpotDuration                int                                               `json:"SpotDuration" xml:"SpotDuration"`
-	ResourceGroupId             string                                            `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	SecurityEnhancementStrategy string                                            `json:"SecurityEnhancementStrategy" xml:"SecurityEnhancementStrategy"`
-	DataDisks                   DataDisks                                         `json:"DataDisks" xml:"DataDisks"`
 	NetworkInterfaces           NetworkInterfacesInDescribeLaunchTemplateVersions `json:"NetworkInterfaces" xml:"NetworkInterfaces"`
+	DataDisks                   DataDisksInDescribeLaunchTemplateVersions         `json:"DataDisks" xml:"DataDisks"`
 	Tags                        TagsInDescribeLaunchTemplateVersions              `json:"Tags" xml:"Tags"`
 }

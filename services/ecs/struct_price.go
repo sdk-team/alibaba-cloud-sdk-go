@@ -17,10 +17,9 @@ package ecs
 
 // Price is a nested struct in ecs response
 type Price struct {
-	DiscountPrice             float64                    `json:"DiscountPrice" xml:"DiscountPrice"`
-	TradePrice                float64                    `json:"TradePrice" xml:"TradePrice"`
-	OriginalPrice             float64                    `json:"OriginalPrice" xml:"OriginalPrice"`
-	ReservedInstanceHourPrice float64                    `json:"ReservedInstanceHourPrice" xml:"ReservedInstanceHourPrice"`
-	Currency                  string                     `json:"Currency" xml:"Currency"`
-	DetailInfos               DetailInfosInDescribePrice `json:"DetailInfos" xml:"DetailInfos"`
+	OriginalPrice string                                `json:"OriginalPrice" xml:"OriginalPrice"`
+	TradePrice    string                                `json:"TradePrice" xml:"TradePrice"`
+	Currency      string                                `json:"Currency" xml:"Currency"`
+	DiscountPrice string                                `json:"DiscountPrice" xml:"DiscountPrice"`
+	PriceRules    PriceRulesInDescribeElasticProtection `json:"PriceRules" xml:"PriceRules"`
 }

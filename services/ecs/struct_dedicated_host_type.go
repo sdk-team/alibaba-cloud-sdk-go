@@ -22,12 +22,14 @@ type DedicatedHostType struct {
 	TotalVcpus                    int                                                       `json:"TotalVcpus" xml:"TotalVcpus"`
 	TotalVgpus                    int                                                       `json:"TotalVgpus" xml:"TotalVgpus"`
 	Cores                         int                                                       `json:"Cores" xml:"Cores"`
+	AutoPlacement                 string                                                    `json:"AutoPlacement" xml:"AutoPlacement"`
 	PhysicalGpus                  int                                                       `json:"PhysicalGpus" xml:"PhysicalGpus"`
 	MemorySize                    float64                                                   `json:"MemorySize" xml:"MemorySize"`
 	LocalStorageCapacity          int64                                                     `json:"LocalStorageCapacity" xml:"LocalStorageCapacity"`
 	LocalStorageAmount            int                                                       `json:"LocalStorageAmount" xml:"LocalStorageAmount"`
 	LocalStorageCategory          string                                                    `json:"LocalStorageCategory" xml:"LocalStorageCategory"`
 	GPUSpec                       string                                                    `json:"GPUSpec" xml:"GPUSpec"`
+	DefaultCpuOverCommitRatio     float64                                                   `json:"DefaultCpuOverCommitRatio" xml:"DefaultCpuOverCommitRatio"`
 	SupportCpuOverCommitRatio     bool                                                      `json:"SupportCpuOverCommitRatio" xml:"SupportCpuOverCommitRatio"`
 	CpuOverCommitRatioRange       string                                                    `json:"CpuOverCommitRatioRange" xml:"CpuOverCommitRatioRange"`
 	SupportedInstanceTypeFamilies SupportedInstanceTypeFamiliesInDescribeDedicatedHostTypes `json:"SupportedInstanceTypeFamilies" xml:"SupportedInstanceTypeFamilies"`

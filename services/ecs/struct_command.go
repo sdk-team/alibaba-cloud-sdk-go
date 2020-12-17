@@ -17,15 +17,18 @@ package ecs
 
 // Command is a nested struct in ecs response
 type Command struct {
-	CommandId       string         `json:"CommandId" xml:"CommandId"`
 	Name            string         `json:"Name" xml:"Name"`
-	Type            string         `json:"Type" xml:"Type"`
-	Description     string         `json:"Description" xml:"Description"`
-	CommandContent  string         `json:"CommandContent" xml:"CommandContent"`
-	WorkingDir      string         `json:"WorkingDir" xml:"WorkingDir"`
+	CommandId       string         `json:"CommandId" xml:"CommandId"`
 	Timeout         int64          `json:"Timeout" xml:"Timeout"`
-	InvokeTimes     int            `json:"InvokeTimes" xml:"InvokeTimes"`
+	Latest          bool           `json:"Latest" xml:"Latest"`
+	WorkingDir      string         `json:"WorkingDir" xml:"WorkingDir"`
 	CreationTime    string         `json:"CreationTime" xml:"CreationTime"`
 	EnableParameter bool           `json:"EnableParameter" xml:"EnableParameter"`
+	InvokeTimes     int            `json:"InvokeTimes" xml:"InvokeTimes"`
+	Version         int            `json:"Version" xml:"Version"`
+	CommandContent  string         `json:"CommandContent" xml:"CommandContent"`
+	Description     string         `json:"Description" xml:"Description"`
+	TimeOut         int64          `json:"TimeOut" xml:"TimeOut"`
+	Type            string         `json:"Type" xml:"Type"`
 	ParameterNames  ParameterNames `json:"ParameterNames" xml:"ParameterNames"`
 }

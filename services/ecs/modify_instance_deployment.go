@@ -76,6 +76,7 @@ type ModifyInstanceDeploymentRequest struct {
 	DedicatedHostClusterId string           `position:"Query" name:"DedicatedHostClusterId"`
 	InstanceType           string           `position:"Query" name:"InstanceType"`
 	DeploymentSetId        string           `position:"Query" name:"DeploymentSetId"`
+	NcId                   string           `position:"Query" name:"NcId"`
 	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
 	Tenancy                string           `position:"Query" name:"Tenancy"`

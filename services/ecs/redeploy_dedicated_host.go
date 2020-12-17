@@ -72,6 +72,7 @@ func (client *Client) RedeployDedicatedHostWithCallback(request *RedeployDedicat
 type RedeployDedicatedHostRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ToDedicatedHostId    string           `position:"Query" name:"ToDedicatedHostId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	DedicatedHostId      string           `position:"Query" name:"DedicatedHostId"`

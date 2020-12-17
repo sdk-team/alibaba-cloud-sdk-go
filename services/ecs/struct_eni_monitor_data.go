@@ -17,12 +17,12 @@ package ecs
 
 // EniMonitorData is a nested struct in ecs response
 type EniMonitorData struct {
-	EniId        string `json:"EniId" xml:"EniId"`
-	TimeStamp    string `json:"TimeStamp" xml:"TimeStamp"`
 	PacketTx     string `json:"PacketTx" xml:"PacketTx"`
+	DropPacketRx string `json:"DropPacketRx" xml:"DropPacketRx"`
+	EniId        string `json:"EniId" xml:"EniId"`
 	PacketRx     string `json:"PacketRx" xml:"PacketRx"`
-	IntranetTx   string `json:"IntranetTx" xml:"IntranetTx"`
+	TimeStamp    string `json:"TimeStamp" xml:"TimeStamp"`
 	IntranetRx   string `json:"IntranetRx" xml:"IntranetRx"`
 	DropPacketTx string `json:"DropPacketTx" xml:"DropPacketTx"`
-	DropPacketRx string `json:"DropPacketRx" xml:"DropPacketRx"`
+	IntranetTx   string `json:"IntranetTx" xml:"IntranetTx"`
 }

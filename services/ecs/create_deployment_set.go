@@ -77,6 +77,7 @@ type CreateDeploymentSetRequest struct {
 	GroupCount                       requests.Integer `position:"Query" name:"GroupCount"`
 	ResourceOwnerAccount             string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                     string           `position:"Query" name:"OwnerAccount"`
+	Tenancy                          string           `position:"Query" name:"Tenancy"`
 	DeploymentSetName                string           `position:"Query" name:"DeploymentSetName"`
 	OwnerId                          requests.Integer `position:"Query" name:"OwnerId"`
 	OnUnableToRedeployFailedInstance string           `position:"Query" name:"OnUnableToRedeployFailedInstance"`

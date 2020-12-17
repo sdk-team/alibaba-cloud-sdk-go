@@ -75,6 +75,7 @@ type CopyImageRequest struct {
 	ImageId                string           `position:"Query" name:"ImageId"`
 	EncryptAlgorithm       string           `position:"Query" name:"EncryptAlgorithm"`
 	DestinationRegionId    string           `position:"Query" name:"DestinationRegionId"`
+	ArnsBase64             string           `position:"Query" name:"ArnsBase64"`
 	ResourceGroupId        string           `position:"Query" name:"ResourceGroupId"`
 	Tag                    *[]CopyImageTag  `position:"Query" name:"Tag"  type:"Repeated"`
 	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -82,7 +83,7 @@ type CopyImageRequest struct {
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 	Encrypted              requests.Boolean `position:"Query" name:"Encrypted"`
-	KMSKeyId               string           `position:"Query" name:"KMSKeyId"`
+	KmsKeyId               string           `position:"Query" name:"KmsKeyId"`
 	DestinationDescription string           `position:"Query" name:"DestinationDescription"`
 }
 

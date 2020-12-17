@@ -197,9 +197,9 @@ type RunInstancesDataDisk struct {
 // RunInstancesResponse is the response struct for api RunInstances
 type RunInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
-	TradePrice     float64        `json:"TradePrice" xml:"TradePrice"`
-	InstanceIdSets InstanceIdSets `json:"InstanceIdSets" xml:"InstanceIdSets"`
+	RequestId      string                       `json:"RequestId" xml:"RequestId"`
+	TradePrice     float64                      `json:"TradePrice" xml:"TradePrice"`
+	InstanceIdSets InstanceIdSetsInRunInstances `json:"InstanceIdSets" xml:"InstanceIdSets"`
 }
 
 // CreateRunInstancesRequest creates a request to invoke RunInstances API

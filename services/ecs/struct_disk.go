@@ -18,9 +18,9 @@ package ecs
 // Disk is a nested struct in ecs response
 type Disk struct {
 	Category                      string                        `json:"Category" xml:"Category"`
-	BdfId                         string                        `json:"BdfId" xml:"BdfId"`
 	ImageId                       string                        `json:"ImageId" xml:"ImageId"`
 	AutoSnapshotPolicyId          string                        `json:"AutoSnapshotPolicyId" xml:"AutoSnapshotPolicyId"`
+	Bootable                      bool                          `json:"Bootable" xml:"Bootable"`
 	DeleteAutoSnapshot            bool                          `json:"DeleteAutoSnapshot" xml:"DeleteAutoSnapshot"`
 	EnableAutomatedSnapshotPolicy bool                          `json:"EnableAutomatedSnapshotPolicy" xml:"EnableAutomatedSnapshotPolicy"`
 	DiskId                        string                        `json:"DiskId" xml:"DiskId"`
@@ -33,6 +33,7 @@ type Disk struct {
 	StorageSetId                  string                        `json:"StorageSetId" xml:"StorageSetId"`
 	InstanceId                    string                        `json:"InstanceId" xml:"InstanceId"`
 	Description                   string                        `json:"Description" xml:"Description"`
+	MaxPartitionNumber            int                           `json:"MaxPartitionNumber" xml:"MaxPartitionNumber"`
 	Type                          string                        `json:"Type" xml:"Type"`
 	ExpiredTime                   string                        `json:"ExpiredTime" xml:"ExpiredTime"`
 	Device                        string                        `json:"Device" xml:"Device"`

@@ -85,8 +85,8 @@ type DescribeBandwidthLimitationRequest struct {
 // DescribeBandwidthLimitationResponse is the response struct for api DescribeBandwidthLimitation
 type DescribeBandwidthLimitationResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	Bandwidths Bandwidths `json:"Bandwidths" xml:"Bandwidths"`
+	RequestId  string                                  `json:"RequestId" xml:"RequestId"`
+	Bandwidths BandwidthsInDescribeBandwidthLimitation `json:"Bandwidths" xml:"Bandwidths"`
 }
 
 // CreateDescribeBandwidthLimitationRequest creates a request to invoke DescribeBandwidthLimitation API
