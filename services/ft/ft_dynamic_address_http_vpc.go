@@ -71,6 +71,7 @@ func (client *Client) FtDynamicAddressHttpVpcWithCallback(request *FtDynamicAddr
 // FtDynamicAddressHttpVpcRequest is the request struct for api FtDynamicAddressHttpVpc
 type FtDynamicAddressHttpVpcRequest struct {
 	*requests.RpcRequest
+	P1           string           `position:"Query" name:"P1"`
 	StringValue  string           `position:"Query" name:"StringValue"`
 	OtherParam   string           `position:"Query" name:"OtherParam"`
 	BooleanParam requests.Boolean `position:"Query" name:"BooleanParam"`

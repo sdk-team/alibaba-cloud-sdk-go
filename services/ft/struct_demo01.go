@@ -17,5 +17,5 @@ package ft
 
 // Demo01 is a nested struct in ft response
 type Demo01 struct {
-	Demo011 []Demo011Item `json:"Demo011" xml:"Demo011"`
+	Demo011 Demo011 `json:"Demo011" xml:"Demo011"`
 }
