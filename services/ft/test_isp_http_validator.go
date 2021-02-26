@@ -21,7 +21,6 @@ import (
 )
 
 // TestIspHttpValidator invokes the ft.TestIspHttpValidator API synchronously
-// api document: https://help.aliyun.com/api/ft/testisphttpvalidator.html
 func (client *Client) TestIspHttpValidator(request *TestIspHttpValidatorRequest) (response *TestIspHttpValidatorResponse, err error) {
 	response = CreateTestIspHttpValidatorResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) TestIspHttpValidator(request *TestIspHttpValidatorRequest)
 }
 
 // TestIspHttpValidatorWithChan invokes the ft.TestIspHttpValidator API asynchronously
-// api document: https://help.aliyun.com/api/ft/testisphttpvalidator.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TestIspHttpValidatorWithChan(request *TestIspHttpValidatorRequest) (<-chan *TestIspHttpValidatorResponse, <-chan error) {
 	responseChan := make(chan *TestIspHttpValidatorResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) TestIspHttpValidatorWithChan(request *TestIspHttpValidator
 }
 
 // TestIspHttpValidatorWithCallback invokes the ft.TestIspHttpValidator API asynchronously
-// api document: https://help.aliyun.com/api/ft/testisphttpvalidator.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TestIspHttpValidatorWithCallback(request *TestIspHttpValidatorRequest, callback func(response *TestIspHttpValidatorResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

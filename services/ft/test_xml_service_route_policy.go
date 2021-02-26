@@ -21,7 +21,6 @@ import (
 )
 
 // TestXmlServiceRoutePolicy invokes the ft.TestXmlServiceRoutePolicy API synchronously
-// api document: https://help.aliyun.com/api/ft/testxmlserviceroutepolicy.html
 func (client *Client) TestXmlServiceRoutePolicy(request *TestXmlServiceRoutePolicyRequest) (response *TestXmlServiceRoutePolicyResponse, err error) {
 	response = CreateTestXmlServiceRoutePolicyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) TestXmlServiceRoutePolicy(request *TestXmlServiceRoutePoli
 }
 
 // TestXmlServiceRoutePolicyWithChan invokes the ft.TestXmlServiceRoutePolicy API asynchronously
-// api document: https://help.aliyun.com/api/ft/testxmlserviceroutepolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TestXmlServiceRoutePolicyWithChan(request *TestXmlServiceRoutePolicyRequest) (<-chan *TestXmlServiceRoutePolicyResponse, <-chan error) {
 	responseChan := make(chan *TestXmlServiceRoutePolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) TestXmlServiceRoutePolicyWithChan(request *TestXmlServiceR
 }
 
 // TestXmlServiceRoutePolicyWithCallback invokes the ft.TestXmlServiceRoutePolicy API asynchronously
-// api document: https://help.aliyun.com/api/ft/testxmlserviceroutepolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TestXmlServiceRoutePolicyWithCallback(request *TestXmlServiceRoutePolicyRequest, callback func(response *TestXmlServiceRoutePolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

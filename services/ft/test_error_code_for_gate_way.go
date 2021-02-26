@@ -21,7 +21,6 @@ import (
 )
 
 // TestErrorCodeForGateWay invokes the ft.TestErrorCodeForGateWay API synchronously
-// api document: https://help.aliyun.com/api/ft/testerrorcodeforgateway.html
 func (client *Client) TestErrorCodeForGateWay(request *TestErrorCodeForGateWayRequest) (response *TestErrorCodeForGateWayResponse, err error) {
 	response = CreateTestErrorCodeForGateWayResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) TestErrorCodeForGateWay(request *TestErrorCodeForGateWayRe
 }
 
 // TestErrorCodeForGateWayWithChan invokes the ft.TestErrorCodeForGateWay API asynchronously
-// api document: https://help.aliyun.com/api/ft/testerrorcodeforgateway.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TestErrorCodeForGateWayWithChan(request *TestErrorCodeForGateWayRequest) (<-chan *TestErrorCodeForGateWayResponse, <-chan error) {
 	responseChan := make(chan *TestErrorCodeForGateWayResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) TestErrorCodeForGateWayWithChan(request *TestErrorCodeForG
 }
 
 // TestErrorCodeForGateWayWithCallback invokes the ft.TestErrorCodeForGateWay API asynchronously
-// api document: https://help.aliyun.com/api/ft/testerrorcodeforgateway.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TestErrorCodeForGateWayWithCallback(request *TestErrorCodeForGateWayRequest, callback func(response *TestErrorCodeForGateWayResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// QueryDomainChangeRecords invokes the ft.QueryDomainChangeRecords API synchronously
-func (client *Client) QueryDomainChangeRecords(request *QueryDomainChangeRecordsRequest) (response *QueryDomainChangeRecordsResponse, err error) {
-	response = CreateQueryDomainChangeRecordsResponse()
+// QueryErrorApis invokes the ft.QueryErrorApis API synchronously
+func (client *Client) QueryErrorApis(request *QueryErrorApisRequest) (response *QueryErrorApisResponse, err error) {
+	response = CreateQueryErrorApisResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// QueryDomainChangeRecordsWithChan invokes the ft.QueryDomainChangeRecords API asynchronously
-func (client *Client) QueryDomainChangeRecordsWithChan(request *QueryDomainChangeRecordsRequest) (<-chan *QueryDomainChangeRecordsResponse, <-chan error) {
-	responseChan := make(chan *QueryDomainChangeRecordsResponse, 1)
+// QueryErrorApisWithChan invokes the ft.QueryErrorApis API asynchronously
+func (client *Client) QueryErrorApisWithChan(request *QueryErrorApisRequest) (<-chan *QueryErrorApisResponse, <-chan error) {
+	responseChan := make(chan *QueryErrorApisResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.QueryDomainChangeRecords(request)
+		response, err := client.QueryErrorApis(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) QueryDomainChangeRecordsWithChan(request *QueryDomainChang
 	return responseChan, errChan
 }
 
-// QueryDomainChangeRecordsWithCallback invokes the ft.QueryDomainChangeRecords API asynchronously
-func (client *Client) QueryDomainChangeRecordsWithCallback(request *QueryDomainChangeRecordsRequest, callback func(response *QueryDomainChangeRecordsResponse, err error)) <-chan int {
+// QueryErrorApisWithCallback invokes the ft.QueryErrorApis API asynchronously
+func (client *Client) QueryErrorApisWithCallback(request *QueryErrorApisRequest, callback func(response *QueryErrorApisResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *QueryDomainChangeRecordsResponse
+		var response *QueryErrorApisResponse
 		var err error
 		defer close(result)
-		response, err = client.QueryDomainChangeRecords(request)
+		response, err = client.QueryErrorApis(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,19 +68,19 @@ func (client *Client) QueryDomainChangeRecordsWithCallback(request *QueryDomainC
 	return result
 }
 
-// QueryDomainChangeRecordsRequest is the request struct for api QueryDomainChangeRecords
-type QueryDomainChangeRecordsRequest struct {
+// QueryErrorApisRequest is the request struct for api QueryErrorApis
+type QueryErrorApisRequest struct {
 	*requests.RpcRequest
-	Product     string           `position:"Query" name:"Product"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	BeginDate   string           `position:"Query" name:"BeginDate"`
+	EndDate     string           `position:"Query" name:"EndDate"`
+	ProductName string           `position:"Query" name:"ProductName"`
 	BucUid      requests.Integer `position:"Query" name:"BucUid"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
 	BucName     string           `position:"Query" name:"BucName"`
 	BucEmpId    string           `position:"Query" name:"BucEmpId"`
 }
 
-// QueryDomainChangeRecordsResponse is the response struct for api QueryDomainChangeRecords
-type QueryDomainChangeRecordsResponse struct {
+// QueryErrorApisResponse is the response struct for api QueryErrorApis
+type QueryErrorApisResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
 	Data      bool   `json:"Data" xml:"Data"`
@@ -90,19 +90,19 @@ type QueryDomainChangeRecordsResponse struct {
 	Success   bool   `json:"Success" xml:"Success"`
 }
 
-// CreateQueryDomainChangeRecordsRequest creates a request to invoke QueryDomainChangeRecords API
-func CreateQueryDomainChangeRecordsRequest() (request *QueryDomainChangeRecordsRequest) {
-	request = &QueryDomainChangeRecordsRequest{
+// CreateQueryErrorApisRequest creates a request to invoke QueryErrorApis API
+func CreateQueryErrorApisRequest() (request *QueryErrorApisRequest) {
+	request = &QueryErrorApisRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ft", "2018-07-13", "QueryDomainChangeRecords", "", "")
+	request.InitWithApiInfo("Ft", "2018-07-13", "QueryErrorApis", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateQueryDomainChangeRecordsResponse creates a response to parse from QueryDomainChangeRecords response
-func CreateQueryDomainChangeRecordsResponse() (response *QueryDomainChangeRecordsResponse) {
-	response = &QueryDomainChangeRecordsResponse{
+// CreateQueryErrorApisResponse creates a response to parse from QueryErrorApis response
+func CreateQueryErrorApisResponse() (response *QueryErrorApisResponse) {
+	response = &QueryErrorApisResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -21,7 +21,6 @@ import (
 )
 
 // BatchAuditTest02 invokes the ft.BatchAuditTest02 API synchronously
-// api document: https://help.aliyun.com/api/ft/batchaudittest02.html
 func (client *Client) BatchAuditTest02(request *BatchAuditTest02Request) (response *BatchAuditTest02Response, err error) {
 	response = CreateBatchAuditTest02Response()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchAuditTest02(request *BatchAuditTest02Request) (respon
 }
 
 // BatchAuditTest02WithChan invokes the ft.BatchAuditTest02 API asynchronously
-// api document: https://help.aliyun.com/api/ft/batchaudittest02.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchAuditTest02WithChan(request *BatchAuditTest02Request) (<-chan *BatchAuditTest02Response, <-chan error) {
 	responseChan := make(chan *BatchAuditTest02Response, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchAuditTest02WithChan(request *BatchAuditTest02Request)
 }
 
 // BatchAuditTest02WithCallback invokes the ft.BatchAuditTest02 API asynchronously
-// api document: https://help.aliyun.com/api/ft/batchaudittest02.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchAuditTest02WithCallback(request *BatchAuditTest02Request, callback func(response *BatchAuditTest02Response, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // FtFlowSpecial1586868138332 invokes the ft.FtFlowSpecial1586868138332 API synchronously
-// api document: https://help.aliyun.com/api/ft/ftflowspecial1586868138332.html
 func (client *Client) FtFlowSpecial1586868138332(request *FtFlowSpecial1586868138332Request) (response *FtFlowSpecial1586868138332Response, err error) {
 	response = CreateFtFlowSpecial1586868138332Response()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) FtFlowSpecial1586868138332(request *FtFlowSpecial158686813
 }
 
 // FtFlowSpecial1586868138332WithChan invokes the ft.FtFlowSpecial1586868138332 API asynchronously
-// api document: https://help.aliyun.com/api/ft/ftflowspecial1586868138332.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FtFlowSpecial1586868138332WithChan(request *FtFlowSpecial1586868138332Request) (<-chan *FtFlowSpecial1586868138332Response, <-chan error) {
 	responseChan := make(chan *FtFlowSpecial1586868138332Response, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) FtFlowSpecial1586868138332WithChan(request *FtFlowSpecial1
 }
 
 // FtFlowSpecial1586868138332WithCallback invokes the ft.FtFlowSpecial1586868138332 API asynchronously
-// api document: https://help.aliyun.com/api/ft/ftflowspecial1586868138332.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FtFlowSpecial1586868138332WithCallback(request *FtFlowSpecial1586868138332Request, callback func(response *FtFlowSpecial1586868138332Response, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // MigrateStrategy invokes the ft.MigrateStrategy API synchronously
-// api document: https://help.aliyun.com/api/ft/migratestrategy.html
 func (client *Client) MigrateStrategy(request *MigrateStrategyRequest) (response *MigrateStrategyResponse, err error) {
 	response = CreateMigrateStrategyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) MigrateStrategy(request *MigrateStrategyRequest) (response
 }
 
 // MigrateStrategyWithChan invokes the ft.MigrateStrategy API asynchronously
-// api document: https://help.aliyun.com/api/ft/migratestrategy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MigrateStrategyWithChan(request *MigrateStrategyRequest) (<-chan *MigrateStrategyResponse, <-chan error) {
 	responseChan := make(chan *MigrateStrategyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) MigrateStrategyWithChan(request *MigrateStrategyRequest) (
 }
 
 // MigrateStrategyWithCallback invokes the ft.MigrateStrategy API asynchronously
-// api document: https://help.aliyun.com/api/ft/migratestrategy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MigrateStrategyWithCallback(request *MigrateStrategyRequest, callback func(response *MigrateStrategyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,9 +71,10 @@ func (client *Client) MigrateStrategyWithCallback(request *MigrateStrategyReques
 // MigrateStrategyRequest is the request struct for api MigrateStrategy
 type MigrateStrategyRequest struct {
 	*requests.RpcRequest
-	ApiName     string           `position:"Query" name:"apiName"`
+	ApiName     string           `position:"Query" name:"ApiName"`
 	ProductName string           `position:"Query" name:"ProductName"`
 	BucUid      requests.Integer `position:"Query" name:"BucUid"`
+	Step        requests.Integer `position:"Query" name:"Step"`
 	BucName     string           `position:"Query" name:"BucName"`
 	Env         string           `position:"Query" name:"Env"`
 	BucEmpId    string           `position:"Query" name:"BucEmpId"`

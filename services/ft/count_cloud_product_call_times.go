@@ -21,7 +21,6 @@ import (
 )
 
 // CountCloudProductCallTimes invokes the ft.CountCloudProductCallTimes API synchronously
-// api document: https://help.aliyun.com/api/ft/countcloudproductcalltimes.html
 func (client *Client) CountCloudProductCallTimes(request *CountCloudProductCallTimesRequest) (response *CountCloudProductCallTimesResponse, err error) {
 	response = CreateCountCloudProductCallTimesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CountCloudProductCallTimes(request *CountCloudProductCallT
 }
 
 // CountCloudProductCallTimesWithChan invokes the ft.CountCloudProductCallTimes API asynchronously
-// api document: https://help.aliyun.com/api/ft/countcloudproductcalltimes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CountCloudProductCallTimesWithChan(request *CountCloudProductCallTimesRequest) (<-chan *CountCloudProductCallTimesResponse, <-chan error) {
 	responseChan := make(chan *CountCloudProductCallTimesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CountCloudProductCallTimesWithChan(request *CountCloudProd
 }
 
 // CountCloudProductCallTimesWithCallback invokes the ft.CountCloudProductCallTimes API asynchronously
-// api document: https://help.aliyun.com/api/ft/countcloudproductcalltimes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CountCloudProductCallTimesWithCallback(request *CountCloudProductCallTimesRequest, callback func(response *CountCloudProductCallTimesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

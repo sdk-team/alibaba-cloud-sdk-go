@@ -21,7 +21,6 @@ import (
 )
 
 // GetMigrateStrategyResult invokes the ft.GetMigrateStrategyResult API synchronously
-// api document: https://help.aliyun.com/api/ft/getmigratestrategyresult.html
 func (client *Client) GetMigrateStrategyResult(request *GetMigrateStrategyResultRequest) (response *GetMigrateStrategyResultResponse, err error) {
 	response = CreateGetMigrateStrategyResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetMigrateStrategyResult(request *GetMigrateStrategyResult
 }
 
 // GetMigrateStrategyResultWithChan invokes the ft.GetMigrateStrategyResult API asynchronously
-// api document: https://help.aliyun.com/api/ft/getmigratestrategyresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMigrateStrategyResultWithChan(request *GetMigrateStrategyResultRequest) (<-chan *GetMigrateStrategyResultResponse, <-chan error) {
 	responseChan := make(chan *GetMigrateStrategyResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetMigrateStrategyResultWithChan(request *GetMigrateStrate
 }
 
 // GetMigrateStrategyResultWithCallback invokes the ft.GetMigrateStrategyResult API asynchronously
-// api document: https://help.aliyun.com/api/ft/getmigratestrategyresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMigrateStrategyResultWithCallback(request *GetMigrateStrategyResultRequest, callback func(response *GetMigrateStrategyResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +95,7 @@ type GetMigrateStrategyResultResponse struct {
 	Message   string `json:"Message" xml:"Message"`
 	MessageCN string `json:"MessageCN" xml:"MessageCN"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	NullValue string `json:"NullValue" xml:"NullValue"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

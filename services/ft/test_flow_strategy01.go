@@ -21,7 +21,6 @@ import (
 )
 
 // TestFlowStrategy01 invokes the ft.TestFlowStrategy01 API synchronously
-// api document: https://help.aliyun.com/api/ft/testflowstrategy01.html
 func (client *Client) TestFlowStrategy01(request *TestFlowStrategy01Request) (response *TestFlowStrategy01Response, err error) {
 	response = CreateTestFlowStrategy01Response()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) TestFlowStrategy01(request *TestFlowStrategy01Request) (re
 }
 
 // TestFlowStrategy01WithChan invokes the ft.TestFlowStrategy01 API asynchronously
-// api document: https://help.aliyun.com/api/ft/testflowstrategy01.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TestFlowStrategy01WithChan(request *TestFlowStrategy01Request) (<-chan *TestFlowStrategy01Response, <-chan error) {
 	responseChan := make(chan *TestFlowStrategy01Response, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) TestFlowStrategy01WithChan(request *TestFlowStrategy01Requ
 }
 
 // TestFlowStrategy01WithCallback invokes the ft.TestFlowStrategy01 API asynchronously
-// api document: https://help.aliyun.com/api/ft/testflowstrategy01.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TestFlowStrategy01WithCallback(request *TestFlowStrategy01Request, callback func(response *TestFlowStrategy01Response, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

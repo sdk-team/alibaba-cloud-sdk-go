@@ -21,7 +21,6 @@ import (
 )
 
 // TestDubboRetryApi invokes the ft.TestDubboRetryApi API synchronously
-// api document: https://help.aliyun.com/api/ft/testdubboretryapi.html
 func (client *Client) TestDubboRetryApi(request *TestDubboRetryApiRequest) (response *TestDubboRetryApiResponse, err error) {
 	response = CreateTestDubboRetryApiResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) TestDubboRetryApi(request *TestDubboRetryApiRequest) (resp
 }
 
 // TestDubboRetryApiWithChan invokes the ft.TestDubboRetryApi API asynchronously
-// api document: https://help.aliyun.com/api/ft/testdubboretryapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TestDubboRetryApiWithChan(request *TestDubboRetryApiRequest) (<-chan *TestDubboRetryApiResponse, <-chan error) {
 	responseChan := make(chan *TestDubboRetryApiResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) TestDubboRetryApiWithChan(request *TestDubboRetryApiReques
 }
 
 // TestDubboRetryApiWithCallback invokes the ft.TestDubboRetryApi API asynchronously
-// api document: https://help.aliyun.com/api/ft/testdubboretryapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TestDubboRetryApiWithCallback(request *TestDubboRetryApiRequest, callback func(response *TestDubboRetryApiResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

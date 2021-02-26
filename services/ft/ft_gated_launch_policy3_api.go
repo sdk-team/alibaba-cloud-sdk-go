@@ -21,7 +21,6 @@ import (
 )
 
 // FtGatedLaunchPolicy3Api invokes the ft.FtGatedLaunchPolicy3Api API synchronously
-// api document: https://help.aliyun.com/api/ft/ftgatedlaunchpolicy3api.html
 func (client *Client) FtGatedLaunchPolicy3Api(request *FtGatedLaunchPolicy3ApiRequest) (response *FtGatedLaunchPolicy3ApiResponse, err error) {
 	response = CreateFtGatedLaunchPolicy3ApiResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) FtGatedLaunchPolicy3Api(request *FtGatedLaunchPolicy3ApiRe
 }
 
 // FtGatedLaunchPolicy3ApiWithChan invokes the ft.FtGatedLaunchPolicy3Api API asynchronously
-// api document: https://help.aliyun.com/api/ft/ftgatedlaunchpolicy3api.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FtGatedLaunchPolicy3ApiWithChan(request *FtGatedLaunchPolicy3ApiRequest) (<-chan *FtGatedLaunchPolicy3ApiResponse, <-chan error) {
 	responseChan := make(chan *FtGatedLaunchPolicy3ApiResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) FtGatedLaunchPolicy3ApiWithChan(request *FtGatedLaunchPoli
 }
 
 // FtGatedLaunchPolicy3ApiWithCallback invokes the ft.FtGatedLaunchPolicy3Api API asynchronously
-// api document: https://help.aliyun.com/api/ft/ftgatedlaunchpolicy3api.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FtGatedLaunchPolicy3ApiWithCallback(request *FtGatedLaunchPolicy3ApiRequest, callback func(response *FtGatedLaunchPolicy3ApiResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

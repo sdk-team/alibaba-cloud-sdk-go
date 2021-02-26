@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateDomainRecordsRegionId invokes the ft.UpdateDomainRecordsRegionId API synchronously
-// api document: https://help.aliyun.com/api/ft/updatedomainrecordsregionid.html
 func (client *Client) UpdateDomainRecordsRegionId(request *UpdateDomainRecordsRegionIdRequest) (response *UpdateDomainRecordsRegionIdResponse, err error) {
 	response = CreateUpdateDomainRecordsRegionIdResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateDomainRecordsRegionId(request *UpdateDomainRecordsRe
 }
 
 // UpdateDomainRecordsRegionIdWithChan invokes the ft.UpdateDomainRecordsRegionId API asynchronously
-// api document: https://help.aliyun.com/api/ft/updatedomainrecordsregionid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDomainRecordsRegionIdWithChan(request *UpdateDomainRecordsRegionIdRequest) (<-chan *UpdateDomainRecordsRegionIdResponse, <-chan error) {
 	responseChan := make(chan *UpdateDomainRecordsRegionIdResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateDomainRecordsRegionIdWithChan(request *UpdateDomainR
 }
 
 // UpdateDomainRecordsRegionIdWithCallback invokes the ft.UpdateDomainRecordsRegionId API asynchronously
-// api document: https://help.aliyun.com/api/ft/updatedomainrecordsregionid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDomainRecordsRegionIdWithCallback(request *UpdateDomainRecordsRegionIdRequest, callback func(response *UpdateDomainRecordsRegionIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

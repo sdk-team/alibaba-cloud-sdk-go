@@ -21,7 +21,6 @@ import (
 )
 
 // GetTairData invokes the ft.GetTairData API synchronously
-// api document: https://help.aliyun.com/api/ft/gettairdata.html
 func (client *Client) GetTairData(request *GetTairDataRequest) (response *GetTairDataResponse, err error) {
 	response = CreateGetTairDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetTairData(request *GetTairDataRequest) (response *GetTai
 }
 
 // GetTairDataWithChan invokes the ft.GetTairData API asynchronously
-// api document: https://help.aliyun.com/api/ft/gettairdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTairDataWithChan(request *GetTairDataRequest) (<-chan *GetTairDataResponse, <-chan error) {
 	responseChan := make(chan *GetTairDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetTairDataWithChan(request *GetTairDataRequest) (<-chan *
 }
 
 // GetTairDataWithCallback invokes the ft.GetTairData API asynchronously
-// api document: https://help.aliyun.com/api/ft/gettairdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTairDataWithCallback(request *GetTairDataRequest, callback func(response *GetTairDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeResourceType invokes the ft.DescribeResourceType API synchronously
-// api document: https://help.aliyun.com/api/ft/describeresourcetype.html
 func (client *Client) DescribeResourceType(request *DescribeResourceTypeRequest) (response *DescribeResourceTypeResponse, err error) {
 	response = CreateDescribeResourceTypeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeResourceType(request *DescribeResourceTypeRequest)
 }
 
 // DescribeResourceTypeWithChan invokes the ft.DescribeResourceType API asynchronously
-// api document: https://help.aliyun.com/api/ft/describeresourcetype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeResourceTypeWithChan(request *DescribeResourceTypeRequest) (<-chan *DescribeResourceTypeResponse, <-chan error) {
 	responseChan := make(chan *DescribeResourceTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeResourceTypeWithChan(request *DescribeResourceType
 }
 
 // DescribeResourceTypeWithCallback invokes the ft.DescribeResourceType API asynchronously
-// api document: https://help.aliyun.com/api/ft/describeresourcetype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeResourceTypeWithCallback(request *DescribeResourceTypeRequest, callback func(response *DescribeResourceTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
